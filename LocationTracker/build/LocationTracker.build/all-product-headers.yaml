@@ -1,0 +1,33 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/cl-macmini-45/Library/Developer/Xcode/DerivedData/LocationTracker-bppyspzlvglrwkdhakwxzbuyzkve/Build/Products/Release-iphonesimulator/LocationTracker.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "LocationTracker-Swift.h",
+          'external-contents': "/Users/cl-macmini-45/Library/Developer/Xcode/DerivedData/LocationTracker-bppyspzlvglrwkdhakwxzbuyzkve/Build/Products/Release-iphonesimulator/LocationTracker.framework/Headers/LocationTracker-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "LocationTracker.h",
+          'external-contents': "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/LocationTracker.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/cl-macmini-45/Library/Developer/Xcode/DerivedData/LocationTracker-bppyspzlvglrwkdhakwxzbuyzkve/Build/Products/Release-iphonesimulator/LocationTracker.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/cl-macmini-45/Documents/github/LocationTracker/build/LocationTracker.build/Release-iphonesimulator/LocationTracker.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}

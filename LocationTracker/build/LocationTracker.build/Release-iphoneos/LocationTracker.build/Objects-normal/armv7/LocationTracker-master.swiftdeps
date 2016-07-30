@@ -1,0 +1,12 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
+options: "6ec2f0292a007014fc4837b7510ae90e"
+build_time: [523113780, 544427000]
+inputs:
+  "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaMQTTFrame.swift": [521724926, 0]
+  "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/MqttClass.swift": [523113670, 0]
+  "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/NetworkingHelper.swift": [523092575, 0]
+  "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaMQTTMessage.swift": [521724926, 0]
+  "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/LocationTrackerFile.swift": [523109295, 0]
+  "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/IJReachability.swift": [523094946, 0]
+  "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/BackgroundTaskManager.swift": [523094771, 0]
+  "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaMQTT.swift": [521724926, 0]

@@ -1,0 +1,10 @@
+framework module LocationTracker {
+  umbrella header "LocationTracker.h"
+
+  export *
+  module * { export * }
+}
+
+module LocationTracker.__Swift {
+    exclude header "LocationTracker-Swift.h"
+}
