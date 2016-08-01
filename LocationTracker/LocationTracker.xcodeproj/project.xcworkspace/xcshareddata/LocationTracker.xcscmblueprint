@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "FD04E57E669EB1EB43978A0B7D34087C42B73A44",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "FD04E57E669EB1EB43978A0B7D34087C42B73A44" : 0,
+    "7C1E42A7A0669EAADEFB1B27134F6578BAE5F14C" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "90AE2FE0-5255-4EA3-94AC-09445E6F2E6E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "FD04E57E669EB1EB43978A0B7D34087C42B73A44" : "tracking-sdk-ios\/",
+    "7C1E42A7A0669EAADEFB1B27134F6578BAE5F14C" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "LocationTracker",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "LocationTracker\/LocationTracker.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/click-labs\/hytch-ios",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7C1E42A7A0669EAADEFB1B27134F6578BAE5F14C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/clicklabs\/tracking-sdk-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FD04E57E669EB1EB43978A0B7D34087C42B73A44"
+    }
+  ]
+}

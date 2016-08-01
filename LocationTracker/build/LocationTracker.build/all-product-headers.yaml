@@ -4,28 +4,28 @@
   'roots': [
     {
       'type': 'directory',
-      'name': "/Users/cl-macmini-45/Library/Developer/Xcode/DerivedData/LocationTracker-bppyspzlvglrwkdhakwxzbuyzkve/Build/Products/Release-iphonesimulator/LocationTracker.framework/Headers",
+      'name': "/Users/cl-macmini-45/Library/Developer/Xcode/DerivedData/LocationTracker-brexdrbwudlutcbpkncbpgloflbm/Build/Products/Release-iphonesimulator/LocationTracker.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "LocationTracker-Swift.h",
-          'external-contents': "/Users/cl-macmini-45/Library/Developer/Xcode/DerivedData/LocationTracker-bppyspzlvglrwkdhakwxzbuyzkve/Build/Products/Release-iphonesimulator/LocationTracker.framework/Headers/LocationTracker-Swift.h"
+          'external-contents': "/Users/cl-macmini-45/Library/Developer/Xcode/DerivedData/LocationTracker-brexdrbwudlutcbpkncbpgloflbm/Build/Products/Release-iphonesimulator/LocationTracker.framework/Headers/LocationTracker-Swift.h"
         },
         {
           'type': 'file',
           'name': "LocationTracker.h",
-          'external-contents': "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/LocationTracker.h"
+          'external-contents': "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/LocationTracker.h"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/cl-macmini-45/Library/Developer/Xcode/DerivedData/LocationTracker-bppyspzlvglrwkdhakwxzbuyzkve/Build/Products/Release-iphonesimulator/LocationTracker.framework/Modules",
+      'name': "/Users/cl-macmini-45/Library/Developer/Xcode/DerivedData/LocationTracker-brexdrbwudlutcbpkncbpgloflbm/Build/Products/Release-iphonesimulator/LocationTracker.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/cl-macmini-45/Documents/github/LocationTracker/build/LocationTracker.build/Release-iphonesimulator/LocationTracker.build/module.modulemap"
+          'external-contents': "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/build/LocationTracker.build/Release-iphonesimulator/LocationTracker.build/module.modulemap"
         }
       ]
     }

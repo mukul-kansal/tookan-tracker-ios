@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/LocationTracker.swiftmodule/arm.swiftmodule</key>
 		<data>
-		/JEDOOhXaqrpGVylh/MI0enRSFA=
+		2AJ96zNas4GpoMc37bvGVjTJ3x8=
 		</data>
 		<key>Modules/LocationTracker.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/LocationTracker.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		0xOZawe6HZgDM2gbU4vs1jsvlkI=
+		13QD2yfvU11d4igec4CrAhJpexU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -91,11 +91,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/JEDOOhXaqrpGVylh/MI0enRSFA=
+			2AJ96zNas4GpoMc37bvGVjTJ3x8=
 			</data>
 			<key>hash2</key>
 			<data>
-			KBxmh2HVu8RubRqeRZFwmjZHKuQaShq2ppJuBcUCtnI=
+			RmlZ9JxwCM2Si+Iy1X+MTtCo9kqzmS65QPemmXeFB8M=
 			</data>
 		</dict>
 		<key>Modules/LocationTracker.swiftmodule/arm64.swiftdoc</key>
@@ -113,11 +113,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0xOZawe6HZgDM2gbU4vs1jsvlkI=
+			13QD2yfvU11d4igec4CrAhJpexU=
 			</data>
 			<key>hash2</key>
 			<data>
-			SziqNgMYkvgpadU1Are7ULcvTq3My0NM4YFj/s1fqUA=
+			4QZIPqaQ8jTHWm/kQ5Si3sopVU7VnHxvuPVDJjbXvWI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

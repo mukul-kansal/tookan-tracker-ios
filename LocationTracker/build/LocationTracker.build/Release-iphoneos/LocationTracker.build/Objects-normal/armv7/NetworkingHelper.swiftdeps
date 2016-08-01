@@ -21,73 +21,77 @@ provides-member:
 - ["SS", "jsonObject"]
 - ["CSo14NSMutableArray", "jsonString"]
 provides-dynamic-lookup:
+- "requestSynchronousDataWithURLString"
 - "jsonString"
+- "decodePolylineForCoordinates"
+- "sharedInstance"
+- "requestSynchronousData"
 - "requestSynchronousJSON"
 - "requestSynchronousJSONWithURLString"
 - "getLatLongFromDirectionAPI"
-- "sharedInstance"
-- "requestSynchronousData"
-- "requestSynchronousDataWithURLString"
-- "decodePolylineForCoordinates"
 depends-top-level:
-- "NSData"
-- "AnyObject"
-- !private "dispatch_semaphore_create"
-- !private "<"
-- !private "-"
-- "NSURLSession"
+- "NetworkingHelper"
 - !private "print"
-- !private "dispatch_semaphore_t"
-- !private "NSLocale"
-- !private "Array"
-- !private "UIApplication"
-- !private "NSDateFormatter"
 - !private "&&"
-- "Double"
+- "CLLocation"
+- !private "NSString"
 - !private "NSJSONWritingOptions"
-- !private "dispatch_semaphore_signal"
-- "String"
+- !private "+"
+- !private "NSMutableURLRequest"
 - !private ">>"
-- !private "unsafeBitCast"
-- !private "<<"
-- "StringLiteralType"
-- !private "NSUTF8StringEncoding"
-- !private "dispatch_semaphore_wait"
-- !private "&"
-- !private "|="
+- !private "NSLocale"
+- "AnyObject"
+- !private "NSDate"
+- "String"
 - !private "NSJSONSerialization"
+- !private "NSTimeZone"
+- "StringLiteralType"
+- !private "dispatch_semaphore_signal"
+- !private "IJReachability"
+- "Bool"
+- !private "NSCharacterSet"
+- !private "Int32"
+- !private "-"
+- "NSURLRequest"
 - !private "UnsafePointer"
 - !private "Int8"
-- "USER_DEFAULT"
-- !private "/"
-- !private "Dictionary"
-- "NSMutableArray"
-- !private "NSURL"
-- !private "*"
-- "NSURLRequest"
-- !private "NSMutableURLRequest"
 - !private "Int"
-- !private "NSDate"
-- !private "~"
 - !private "BooleanLiteralType"
-- !private "NSTimeZone"
-- !private "NSJSONReadingOptions"
-- "NetworkingHelper"
-- !private "DISPATCH_TIME_FOREVER"
-- "NSObject"
-- "NSDictionary"
-- "CLLocation"
-- !private "IJReachability"
-- !private "Int32"
-- "ErrorType"
-- !private "NSString"
-- "=="
+- !private "unsafeBitCast"
 - !private "+="
+- !private "Dictionary"
+- !private "Array"
+- !private "NSUTF8StringEncoding"
+- "NSObject"
+- "ErrorType"
+- !private "NSURL"
+- !private "dispatch_semaphore_wait"
+- "USER_DEFAULT"
+- !private "dispatch_semaphore_t"
+- !private "<<"
+- !private "DISPATCH_TIME_FOREVER"
+- "NSMutableArray"
+- !private "&"
+- !private "~"
+- !private "dispatch_semaphore_create"
+- "NSData"
+- "NSDictionary"
+- "NSURLSession"
+- "Double"
+- !private "UIApplication"
+- !private "/"
+- !private "*"
+- "=="
+- !private "<"
+- !private "|="
+- !private "NSDateFormatter"
+- !private "NSJSONReadingOptions"
 depends-member:
 - !private ["Ps16AbsoluteValuable", "init"]
 - !private ["Ps9AnyObject", "CLLocation"]
 - !private ["Ps9AnyObject", "DISPATCH_TIME_FOREVER"]
 - !private ["Ps9AnyObject", "Double"]
+- !private ["Ps9AnyObject", "HTTPBody"]
 - !private ["Ps9AnyObject", "HTTPMethod"]
 - !private ["Ps9AnyObject", "IJReachability"]
 - !private ["Ps9AnyObject", "Int"]
@@ -95,6 +99,7 @@ depends-member:
 - !private ["Ps9AnyObject", "Int8"]
 - !private ["Ps9AnyObject", "JSONObjectWithData"]
 - !private ["Ps9AnyObject", "Key"]
+- !private ["Ps9AnyObject", "NSCharacterSet"]
 - !private ["Ps9AnyObject", "NSDictionary"]
 - !private ["Ps9AnyObject", "NSJSONSerialization"]
 - !private ["Ps9AnyObject", "NSJSONWritingOptions"]
@@ -107,6 +112,7 @@ depends-member:
 - ["Ps9AnyObject", "NetworkingHelper"]
 - !private ["Ps9AnyObject", "PolylineError"]
 - !private ["Ps9AnyObject", "UIApplication"]
+- !private ["Ps9AnyObject", "URLQueryAllowedCharacterSet"]
 - !private ["Ps9AnyObject", "UnsafePointer"]
 - !private ["Ps9AnyObject", "Value"]
 - !private ["Ps9AnyObject", "addValue"]
@@ -117,10 +123,12 @@ depends-member:
 - !private ["Ps9AnyObject", "dateFormat"]
 - ["Ps9AnyObject", "decodePolylineForCoordinates"]
 - ["Ps9AnyObject", "decodeSingleCoordinate"]
+- !private ["Ps9AnyObject", "deinit"]
 - !private ["Ps9AnyObject", "dispatch_semaphore_create"]
 - !private ["Ps9AnyObject", "dispatch_semaphore_signal"]
 - !private ["Ps9AnyObject", "dispatch_semaphore_wait"]
 - ["Ps9AnyObject", "getLatLongFromDirectionAPI"]
+- ["Ps9AnyObject", "getValidation"]
 - ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "isConnectedToNetwork"]
 - ["Ps9AnyObject", "jsonString"]
@@ -136,8 +144,10 @@ depends-member:
 - !private ["Ps9AnyObject", "sharedApplication"]
 - ["Ps9AnyObject", "sharedInstance"]
 - !private ["Ps9AnyObject", "sharedSession"]
+- !private ["Ps9AnyObject", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["Ps9AnyObject", "stringFromDate"]
 - !private ["Ps9AnyObject", "timeZone"]
+- !private ["Ps9AnyObject", "timeoutInterval"]
 - !private ["Ps9AnyObject", "unsafeBitCast"]
 - ["Ps9AnyObject", ""]
 - !private ["Sa", "Generator"]
@@ -181,6 +191,7 @@ depends-member:
 - !private ["Ps11CVarArgType", "DISPATCH_TIME_FOREVER"]
 - !private ["Ps11CVarArgType", "Distance"]
 - !private ["Ps11CVarArgType", "Double"]
+- !private ["Ps11CVarArgType", "HTTPBody"]
 - !private ["Ps11CVarArgType", "HTTPMethod"]
 - !private ["Ps11CVarArgType", "IJReachability"]
 - !private ["Ps11CVarArgType", "Int"]
@@ -189,6 +200,7 @@ depends-member:
 - !private ["Ps11CVarArgType", "IntegerLiteralType"]
 - !private ["Ps11CVarArgType", "JSONObjectWithData"]
 - !private ["Ps11CVarArgType", "Key"]
+- !private ["Ps11CVarArgType", "NSCharacterSet"]
 - !private ["Ps11CVarArgType", "NSDictionary"]
 - !private ["Ps11CVarArgType", "NSJSONSerialization"]
 - !private ["Ps11CVarArgType", "NSJSONWritingOptions"]
@@ -201,6 +213,7 @@ depends-member:
 - ["Ps11CVarArgType", "NetworkingHelper"]
 - !private ["Ps11CVarArgType", "PolylineError"]
 - !private ["Ps11CVarArgType", "UIApplication"]
+- !private ["Ps11CVarArgType", "URLQueryAllowedCharacterSet"]
 - !private ["Ps11CVarArgType", "UnsafePointer"]
 - !private ["Ps11CVarArgType", "Value"]
 - !private ["Ps11CVarArgType", "addValue"]
@@ -215,6 +228,7 @@ depends-member:
 - !private ["Ps11CVarArgType", "dispatch_semaphore_signal"]
 - !private ["Ps11CVarArgType", "dispatch_semaphore_wait"]
 - ["Ps11CVarArgType", "getLatLongFromDirectionAPI"]
+- ["Ps11CVarArgType", "getValidation"]
 - !private ["Ps11CVarArgType", "hashValue"]
 - ["Ps11CVarArgType", "init"]
 - ["Ps11CVarArgType", "jsonString"]
@@ -230,9 +244,11 @@ depends-member:
 - !private ["Ps11CVarArgType", "sharedApplication"]
 - ["Ps11CVarArgType", "sharedInstance"]
 - !private ["Ps11CVarArgType", "sharedSession"]
+- !private ["Ps11CVarArgType", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["Ps11CVarArgType", "stringFromDate"]
 - !private ["Ps11CVarArgType", "subscript"]
 - !private ["Ps11CVarArgType", "timeZone"]
+- !private ["Ps11CVarArgType", "timeoutInterval"]
 - !private ["Ps11CVarArgType", "unsafeBitCast"]
 - ["Ps11CVarArgType", ""]
 - !private ["Vs9Character", "deinit"]
@@ -256,11 +272,13 @@ depends-member:
 - !private ["Ps10Comparable", "hashValue"]
 - !private ["Ps10Comparable", "init"]
 - !private ["Ps10Comparable", "print"]
+- !private ["Ps10Comparable", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["Ps10Comparable", "subscript"]
 - !private ["Ps28CustomDebugStringConvertible", "CLLocation"]
 - !private ["Ps28CustomDebugStringConvertible", "DISPATCH_TIME_FOREVER"]
 - !private ["Ps28CustomDebugStringConvertible", "Double"]
 - !private ["Ps28CustomDebugStringConvertible", "Generator"]
+- !private ["Ps28CustomDebugStringConvertible", "HTTPBody"]
 - !private ["Ps28CustomDebugStringConvertible", "HTTPMethod"]
 - !private ["Ps28CustomDebugStringConvertible", "IJReachability"]
 - !private ["Ps28CustomDebugStringConvertible", "Index"]
@@ -269,6 +287,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "Int8"]
 - !private ["Ps28CustomDebugStringConvertible", "JSONObjectWithData"]
 - !private ["Ps28CustomDebugStringConvertible", "Key"]
+- !private ["Ps28CustomDebugStringConvertible", "NSCharacterSet"]
 - !private ["Ps28CustomDebugStringConvertible", "NSDate"]
 - !private ["Ps28CustomDebugStringConvertible", "NSDateFormatter"]
 - !private ["Ps28CustomDebugStringConvertible", "NSDictionary"]
@@ -289,6 +308,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "Some"]
 - !private ["Ps28CustomDebugStringConvertible", "SubSequence"]
 - !private ["Ps28CustomDebugStringConvertible", "UIApplication"]
+- !private ["Ps28CustomDebugStringConvertible", "URLQueryAllowedCharacterSet"]
 - !private ["Ps28CustomDebugStringConvertible", "UnsafePointer"]
 - !private ["Ps28CustomDebugStringConvertible", "Value"]
 - !private ["Ps28CustomDebugStringConvertible", "_Element"]
@@ -305,6 +325,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "dispatch_semaphore_signal"]
 - !private ["Ps28CustomDebugStringConvertible", "dispatch_semaphore_wait"]
 - ["Ps28CustomDebugStringConvertible", "getLatLongFromDirectionAPI"]
+- ["Ps28CustomDebugStringConvertible", "getValidation"]
 - ["Ps28CustomDebugStringConvertible", "init"]
 - ["Ps28CustomDebugStringConvertible", "jsonString"]
 - !private ["Ps28CustomDebugStringConvertible", "length"]
@@ -319,9 +340,11 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "sharedApplication"]
 - ["Ps28CustomDebugStringConvertible", "sharedInstance"]
 - !private ["Ps28CustomDebugStringConvertible", "sharedSession"]
+- !private ["Ps28CustomDebugStringConvertible", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["Ps28CustomDebugStringConvertible", "stringFromDate"]
 - !private ["Ps28CustomDebugStringConvertible", "subscript"]
 - !private ["Ps28CustomDebugStringConvertible", "timeZone"]
+- !private ["Ps28CustomDebugStringConvertible", "timeoutInterval"]
 - !private ["Ps28CustomDebugStringConvertible", "unsafeBitCast"]
 - ["Ps28CustomDebugStringConvertible", ""]
 - !private ["Ps23CustomStringConvertible", "CLLocation"]
@@ -329,6 +352,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "Distance"]
 - !private ["Ps23CustomStringConvertible", "Double"]
 - !private ["Ps23CustomStringConvertible", "Generator"]
+- !private ["Ps23CustomStringConvertible", "HTTPBody"]
 - !private ["Ps23CustomStringConvertible", "HTTPMethod"]
 - !private ["Ps23CustomStringConvertible", "IJReachability"]
 - !private ["Ps23CustomStringConvertible", "Index"]
@@ -338,6 +362,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "IntegerLiteralType"]
 - !private ["Ps23CustomStringConvertible", "JSONObjectWithData"]
 - !private ["Ps23CustomStringConvertible", "Key"]
+- !private ["Ps23CustomStringConvertible", "NSCharacterSet"]
 - !private ["Ps23CustomStringConvertible", "NSDictionary"]
 - !private ["Ps23CustomStringConvertible", "NSJSONSerialization"]
 - !private ["Ps23CustomStringConvertible", "NSJSONWritingOptions"]
@@ -351,6 +376,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "PolylineError"]
 - !private ["Ps23CustomStringConvertible", "SubSequence"]
 - !private ["Ps23CustomStringConvertible", "UIApplication"]
+- !private ["Ps23CustomStringConvertible", "URLQueryAllowedCharacterSet"]
 - !private ["Ps23CustomStringConvertible", "UnsafePointer"]
 - !private ["Ps23CustomStringConvertible", "Value"]
 - !private ["Ps23CustomStringConvertible", "_Element"]
@@ -368,6 +394,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "dispatch_semaphore_signal"]
 - !private ["Ps23CustomStringConvertible", "dispatch_semaphore_wait"]
 - ["Ps23CustomStringConvertible", "getLatLongFromDirectionAPI"]
+- ["Ps23CustomStringConvertible", "getValidation"]
 - !private ["Ps23CustomStringConvertible", "hashValue"]
 - ["Ps23CustomStringConvertible", "init"]
 - ["Ps23CustomStringConvertible", "jsonString"]
@@ -383,8 +410,10 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "sharedApplication"]
 - ["Ps23CustomStringConvertible", "sharedInstance"]
 - !private ["Ps23CustomStringConvertible", "sharedSession"]
+- !private ["Ps23CustomStringConvertible", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["Ps23CustomStringConvertible", "stringFromDate"]
 - !private ["Ps23CustomStringConvertible", "timeZone"]
+- !private ["Ps23CustomStringConvertible", "timeoutInterval"]
 - !private ["Ps23CustomStringConvertible", "unsafeBitCast"]
 - ["Ps23CustomStringConvertible", ""]
 - !private ["Ps28DictionaryLiteralConvertible", "Key"]
@@ -397,6 +426,7 @@ depends-member:
 - !private ["Ps9Equatable", "Distance"]
 - !private ["Ps9Equatable", "Double"]
 - !private ["Ps9Equatable", "Element"]
+- !private ["Ps9Equatable", "HTTPBody"]
 - !private ["Ps9Equatable", "HTTPMethod"]
 - !private ["Ps9Equatable", "IJReachability"]
 - !private ["Ps9Equatable", "Int"]
@@ -406,6 +436,7 @@ depends-member:
 - !private ["Ps9Equatable", "JSONObjectWithData"]
 - !private ["Ps9Equatable", "Key"]
 - !private ["Ps9Equatable", "MutableLeaves"]
+- !private ["Ps9Equatable", "NSCharacterSet"]
 - !private ["Ps9Equatable", "NSDate"]
 - !private ["Ps9Equatable", "NSDateFormatter"]
 - !private ["Ps9Equatable", "NSDictionary"]
@@ -426,6 +457,7 @@ depends-member:
 - !private ["Ps9Equatable", "PrettyPrinted"]
 - !private ["Ps9Equatable", "SingleCoordinateDecodingError"]
 - !private ["Ps9Equatable", "UIApplication"]
+- !private ["Ps9Equatable", "URLQueryAllowedCharacterSet"]
 - !private ["Ps9Equatable", "UnsafePointer"]
 - !private ["Ps9Equatable", "Value"]
 - ["Ps9Equatable", "_code"]
@@ -443,6 +475,7 @@ depends-member:
 - !private ["Ps9Equatable", "dispatch_semaphore_signal"]
 - !private ["Ps9Equatable", "dispatch_semaphore_wait"]
 - ["Ps9Equatable", "getLatLongFromDirectionAPI"]
+- ["Ps9Equatable", "getValidation"]
 - ["Ps9Equatable", "hashValue"]
 - ["Ps9Equatable", "init"]
 - ["Ps9Equatable", "jsonString"]
@@ -458,9 +491,11 @@ depends-member:
 - !private ["Ps9Equatable", "sharedApplication"]
 - ["Ps9Equatable", "sharedInstance"]
 - !private ["Ps9Equatable", "sharedSession"]
+- !private ["Ps9Equatable", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["Ps9Equatable", "stringFromDate"]
 - !private ["Ps9Equatable", "subscript"]
 - !private ["Ps9Equatable", "timeZone"]
+- !private ["Ps9Equatable", "timeoutInterval"]
 - !private ["Ps9Equatable", "unsafeBitCast"]
 - ["Ps9Equatable", ""]
 - !private ["Ps9ErrorType", "SingleCoordinateDecodingError"]
@@ -479,6 +514,7 @@ depends-member:
 - !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "dataUsingEncoding"]
 - !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "init"]
 - !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "print"]
+- !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["Sf", "deinit"]
 - !private ["Ps23FloatLiteralConvertible", "init"]
 - !private ["Ps17FloatingPointType", "init"]
@@ -492,6 +528,7 @@ depends-member:
 - !private ["Ps8Hashable", "DISPATCH_TIME_FOREVER"]
 - !private ["Ps8Hashable", "Distance"]
 - !private ["Ps8Hashable", "Double"]
+- !private ["Ps8Hashable", "HTTPBody"]
 - !private ["Ps8Hashable", "HTTPMethod"]
 - !private ["Ps8Hashable", "IJReachability"]
 - !private ["Ps8Hashable", "Int"]
@@ -500,6 +537,7 @@ depends-member:
 - !private ["Ps8Hashable", "IntegerLiteralType"]
 - !private ["Ps8Hashable", "JSONObjectWithData"]
 - !private ["Ps8Hashable", "Key"]
+- !private ["Ps8Hashable", "NSCharacterSet"]
 - !private ["Ps8Hashable", "NSDate"]
 - !private ["Ps8Hashable", "NSDateFormatter"]
 - !private ["Ps8Hashable", "NSDictionary"]
@@ -519,6 +557,7 @@ depends-member:
 - !private ["Ps8Hashable", "PolylineError"]
 - !private ["Ps8Hashable", "SingleCoordinateDecodingError"]
 - !private ["Ps8Hashable", "UIApplication"]
+- !private ["Ps8Hashable", "URLQueryAllowedCharacterSet"]
 - !private ["Ps8Hashable", "UnsafePointer"]
 - !private ["Ps8Hashable", "Value"]
 - ["Ps8Hashable", "_code"]
@@ -536,6 +575,7 @@ depends-member:
 - !private ["Ps8Hashable", "dispatch_semaphore_signal"]
 - !private ["Ps8Hashable", "dispatch_semaphore_wait"]
 - ["Ps8Hashable", "getLatLongFromDirectionAPI"]
+- ["Ps8Hashable", "getValidation"]
 - ["Ps8Hashable", "hashValue"]
 - ["Ps8Hashable", "init"]
 - ["Ps8Hashable", "jsonString"]
@@ -551,9 +591,11 @@ depends-member:
 - !private ["Ps8Hashable", "sharedApplication"]
 - ["Ps8Hashable", "sharedInstance"]
 - !private ["Ps8Hashable", "sharedSession"]
+- !private ["Ps8Hashable", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["Ps8Hashable", "stringFromDate"]
 - !private ["Ps8Hashable", "subscript"]
 - !private ["Ps8Hashable", "timeZone"]
+- !private ["Ps8Hashable", "timeoutInterval"]
 - !private ["Ps8Hashable", "unsafeBitCast"]
 - ["Ps8Hashable", ""]
 - !private ["C15LocationTracker14IJReachability", "isConnectedToNetwork"]
@@ -602,6 +644,7 @@ depends-member:
 - !private ["Ps14MirrorPathType", "hashValue"]
 - !private ["Ps14MirrorPathType", "init"]
 - !private ["Ps14MirrorPathType", "print"]
+- !private ["Ps14MirrorPathType", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["Ps21MutableCollectionType", "Generator"]
 - !private ["Ps21MutableCollectionType", "Index"]
 - !private ["Ps21MutableCollectionType", "SubSequence"]
@@ -629,12 +672,15 @@ depends-member:
 - !private ["CSo7NSArray", "init"]
 - ["CSo7NSArray", "jsonString"]
 - !private ["CSo7NSArray", "print"]
+- !private ["CSo14NSCharacterSet", "URLQueryAllowedCharacterSet"]
+- !private ["PSo8NSCoding", "HTTPBody"]
 - !private ["PSo8NSCoding", "HTTPMethod"]
 - !private ["PSo8NSCoding", "Key"]
 - !private ["PSo8NSCoding", "NSJSONSerialization"]
 - !private ["PSo8NSCoding", "NSJSONWritingOptions"]
 - !private ["PSo8NSCoding", "NSString"]
 - !private ["PSo8NSCoding", "NSUTF8StringEncoding"]
+- !private ["PSo8NSCoding", "URLQueryAllowedCharacterSet"]
 - !private ["PSo8NSCoding", "Value"]
 - !private ["PSo8NSCoding", "addValue"]
 - !private ["PSo8NSCoding", "bytes"]
@@ -645,27 +691,34 @@ depends-member:
 - !private ["PSo8NSCoding", "length"]
 - !private ["PSo8NSCoding", "locale"]
 - !private ["PSo8NSCoding", "print"]
+- !private ["PSo8NSCoding", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["PSo8NSCoding", "stringFromDate"]
 - !private ["PSo8NSCoding", "timeZone"]
+- !private ["PSo8NSCoding", "timeoutInterval"]
+- !private ["PSo9NSCopying", "HTTPBody"]
 - !private ["PSo9NSCopying", "HTTPMethod"]
 - !private ["PSo9NSCopying", "Key"]
 - !private ["PSo9NSCopying", "NSJSONSerialization"]
 - !private ["PSo9NSCopying", "NSJSONWritingOptions"]
 - !private ["PSo9NSCopying", "NSString"]
 - !private ["PSo9NSCopying", "NSUTF8StringEncoding"]
+- !private ["PSo9NSCopying", "URLQueryAllowedCharacterSet"]
 - !private ["PSo9NSCopying", "Value"]
 - !private ["PSo9NSCopying", "addValue"]
 - !private ["PSo9NSCopying", "bytes"]
 - !private ["PSo9NSCopying", "dataUsingEncoding"]
 - !private ["PSo9NSCopying", "dateFormat"]
+- !private ["PSo9NSCopying", "deinit"]
 - !private ["PSo9NSCopying", "init"]
 - ["PSo9NSCopying", "jsonString"]
 - !private ["PSo9NSCopying", "length"]
 - !private ["PSo9NSCopying", "locale"]
 - !private ["PSo9NSCopying", "print"]
 - !private ["PSo9NSCopying", "resume"]
+- !private ["PSo9NSCopying", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["PSo9NSCopying", "stringFromDate"]
 - !private ["PSo9NSCopying", "timeZone"]
+- !private ["PSo9NSCopying", "timeoutInterval"]
 - !private ["CSo6NSData", "bytes"]
 - !private ["CSo6NSData", "length"]
 - !private ["CSo6NSDate", "init"]
@@ -695,6 +748,7 @@ depends-member:
 - !private ["VSC20NSJSONReadingOptions", "MutableLeaves"]
 - !private ["CSo19NSJSONSerialization", "JSONObjectWithData"]
 - !private ["CSo19NSJSONSerialization", "dataWithJSONObject"]
+- !private ["VSC20NSJSONWritingOptions", "Element"]
 - !private ["VSC20NSJSONWritingOptions", "PrettyPrinted"]
 - !private ["CSo8NSLocale", "init"]
 - !private ["CSo14NSMutableArray", "NSData"]
@@ -706,12 +760,14 @@ depends-member:
 - !private ["CSo14NSMutableArray", "init"]
 - ["CSo14NSMutableArray", "jsonString"]
 - !private ["CSo14NSMutableArray", "print"]
+- !private ["PSo16NSMutableCopying", "HTTPBody"]
 - !private ["PSo16NSMutableCopying", "HTTPMethod"]
 - !private ["PSo16NSMutableCopying", "Key"]
 - !private ["PSo16NSMutableCopying", "NSJSONSerialization"]
 - !private ["PSo16NSMutableCopying", "NSJSONWritingOptions"]
 - !private ["PSo16NSMutableCopying", "NSString"]
 - !private ["PSo16NSMutableCopying", "NSUTF8StringEncoding"]
+- !private ["PSo16NSMutableCopying", "URLQueryAllowedCharacterSet"]
 - !private ["PSo16NSMutableCopying", "Value"]
 - !private ["PSo16NSMutableCopying", "addValue"]
 - !private ["PSo16NSMutableCopying", "bytes"]
@@ -720,14 +776,20 @@ depends-member:
 - ["PSo16NSMutableCopying", "jsonString"]
 - !private ["PSo16NSMutableCopying", "length"]
 - !private ["PSo16NSMutableCopying", "print"]
+- !private ["PSo16NSMutableCopying", "stringByAddingPercentEncodingWithAllowedCharacters"]
+- !private ["PSo16NSMutableCopying", "timeoutInterval"]
+- !private ["CSo19NSMutableURLRequest", "HTTPBody"]
 - !private ["CSo19NSMutableURLRequest", "HTTPMethod"]
 - !private ["CSo19NSMutableURLRequest", "addValue"]
 - !private ["CSo19NSMutableURLRequest", "init"]
+- !private ["CSo19NSMutableURLRequest", "timeoutInterval"]
 - ["CSo8NSObject", "AnyObject"]
+- ["CSo8NSObject", "Bool"]
 - ["CSo8NSObject", "CLLocation"]
 - !private ["CSo8NSObject", "DISPATCH_TIME_FOREVER"]
 - ["CSo8NSObject", "Double"]
 - ["CSo8NSObject", "ErrorType"]
+- !private ["CSo8NSObject", "HTTPBody"]
 - !private ["CSo8NSObject", "HTTPMethod"]
 - !private ["CSo8NSObject", "IJReachability"]
 - !private ["CSo8NSObject", "Int"]
@@ -735,6 +797,7 @@ depends-member:
 - !private ["CSo8NSObject", "Int8"]
 - !private ["CSo8NSObject", "JSONObjectWithData"]
 - !private ["CSo8NSObject", "Key"]
+- !private ["CSo8NSObject", "NSCharacterSet"]
 - ["CSo8NSObject", "NSData"]
 - ["CSo8NSObject", "NSDictionary"]
 - !private ["CSo8NSObject", "NSJSONSerialization"]
@@ -749,6 +812,7 @@ depends-member:
 - !private ["CSo8NSObject", "PolylineError"]
 - ["CSo8NSObject", "String"]
 - !private ["CSo8NSObject", "UIApplication"]
+- !private ["CSo8NSObject", "URLQueryAllowedCharacterSet"]
 - !private ["CSo8NSObject", "UnsafePointer"]
 - !private ["CSo8NSObject", "Value"]
 - !private ["CSo8NSObject", "addValue"]
@@ -764,6 +828,7 @@ depends-member:
 - !private ["CSo8NSObject", "dispatch_semaphore_t"]
 - !private ["CSo8NSObject", "dispatch_semaphore_wait"]
 - ["CSo8NSObject", "getLatLongFromDirectionAPI"]
+- ["CSo8NSObject", "getValidation"]
 - ["CSo8NSObject", "init"]
 - ["CSo8NSObject", "jsonString"]
 - !private ["CSo8NSObject", "length"]
@@ -778,13 +843,16 @@ depends-member:
 - !private ["CSo8NSObject", "sharedApplication"]
 - ["CSo8NSObject", "sharedInstance"]
 - !private ["CSo8NSObject", "sharedSession"]
+- !private ["CSo8NSObject", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["CSo8NSObject", "stringFromDate"]
 - !private ["CSo8NSObject", "timeZone"]
+- !private ["CSo8NSObject", "timeoutInterval"]
 - !private ["CSo8NSObject", "unsafeBitCast"]
 - ["CSo8NSObject", ""]
 - !private ["PSo16NSObjectProtocol", "CLLocation"]
 - !private ["PSo16NSObjectProtocol", "DISPATCH_TIME_FOREVER"]
 - !private ["PSo16NSObjectProtocol", "Double"]
+- !private ["PSo16NSObjectProtocol", "HTTPBody"]
 - !private ["PSo16NSObjectProtocol", "HTTPMethod"]
 - !private ["PSo16NSObjectProtocol", "IJReachability"]
 - !private ["PSo16NSObjectProtocol", "Int"]
@@ -792,6 +860,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "Int8"]
 - !private ["PSo16NSObjectProtocol", "JSONObjectWithData"]
 - !private ["PSo16NSObjectProtocol", "Key"]
+- !private ["PSo16NSObjectProtocol", "NSCharacterSet"]
 - !private ["PSo16NSObjectProtocol", "NSDictionary"]
 - !private ["PSo16NSObjectProtocol", "NSJSONSerialization"]
 - !private ["PSo16NSObjectProtocol", "NSJSONWritingOptions"]
@@ -804,6 +873,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "NetworkingHelper"]
 - !private ["PSo16NSObjectProtocol", "PolylineError"]
 - !private ["PSo16NSObjectProtocol", "UIApplication"]
+- !private ["PSo16NSObjectProtocol", "URLQueryAllowedCharacterSet"]
 - !private ["PSo16NSObjectProtocol", "UnsafePointer"]
 - !private ["PSo16NSObjectProtocol", "Value"]
 - !private ["PSo16NSObjectProtocol", "addValue"]
@@ -818,6 +888,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "dispatch_semaphore_signal"]
 - !private ["PSo16NSObjectProtocol", "dispatch_semaphore_wait"]
 - ["PSo16NSObjectProtocol", "getLatLongFromDirectionAPI"]
+- ["PSo16NSObjectProtocol", "getValidation"]
 - ["PSo16NSObjectProtocol", "init"]
 - ["PSo16NSObjectProtocol", "jsonString"]
 - !private ["PSo16NSObjectProtocol", "length"]
@@ -832,10 +903,13 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "sharedApplication"]
 - ["PSo16NSObjectProtocol", "sharedInstance"]
 - !private ["PSo16NSObjectProtocol", "sharedSession"]
+- !private ["PSo16NSObjectProtocol", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["PSo16NSObjectProtocol", "stringFromDate"]
 - !private ["PSo16NSObjectProtocol", "timeZone"]
+- !private ["PSo16NSObjectProtocol", "timeoutInterval"]
 - !private ["PSo16NSObjectProtocol", "unsafeBitCast"]
 - ["PSo16NSObjectProtocol", ""]
+- !private ["PSo14NSSecureCoding", "HTTPBody"]
 - !private ["PSo14NSSecureCoding", "HTTPMethod"]
 - !private ["PSo14NSSecureCoding", "Key"]
 - !private ["PSo14NSSecureCoding", "NSJSONSerialization"]
@@ -850,14 +924,19 @@ depends-member:
 - ["PSo14NSSecureCoding", "jsonString"]
 - !private ["PSo14NSSecureCoding", "length"]
 - !private ["PSo14NSSecureCoding", "print"]
+- !private ["PSo14NSSecureCoding", "stringByAddingPercentEncodingWithAllowedCharacters"]
+- !private ["PSo14NSSecureCoding", "timeoutInterval"]
 - !private ["CSo8NSString", "dataUsingEncoding"]
 - !private ["CSo8NSString", "deinit"]
 - !private ["CSo8NSString", "init"]
+- !private ["CSo8NSString", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["CSo10NSTimeZone", "init"]
 - !private ["CSo5NSURL", "init"]
+- !private ["CSo12NSURLRequest", "HTTPBody"]
 - !private ["CSo12NSURLRequest", "HTTPMethod"]
 - !private ["CSo12NSURLRequest", "addValue"]
 - !private ["CSo12NSURLRequest", "init"]
+- !private ["CSo12NSURLRequest", "timeoutInterval"]
 - ["CSo12NSURLSession", "AnyObject"]
 - !private ["CSo12NSURLSession", "DISPATCH_TIME_FOREVER"]
 - ["CSo12NSURLSession", "NSData"]
@@ -880,6 +959,7 @@ depends-member:
 - !private ["CSo12NSURLSession", "sharedSession"]
 - !private ["CSo20NSURLSessionDataTask", "resume"]
 - !private ["CSo16NSURLSessionTask", "resume"]
+- ["C15LocationTracker16NetworkingHelper", "Bool"]
 - ["C15LocationTracker16NetworkingHelper", "CLLocation"]
 - ["C15LocationTracker16NetworkingHelper", "Double"]
 - ["C15LocationTracker16NetworkingHelper", "ErrorType"]
@@ -887,7 +967,11 @@ depends-member:
 - !private ["C15LocationTracker16NetworkingHelper", "Int"]
 - !private ["C15LocationTracker16NetworkingHelper", "Int32"]
 - !private ["C15LocationTracker16NetworkingHelper", "Int8"]
+- !private ["C15LocationTracker16NetworkingHelper", "NSCharacterSet"]
 - ["C15LocationTracker16NetworkingHelper", "NSDictionary"]
+- !private ["C15LocationTracker16NetworkingHelper", "NSJSONSerialization"]
+- !private ["C15LocationTracker16NetworkingHelper", "NSMutableURLRequest"]
+- !private ["C15LocationTracker16NetworkingHelper", "NSURL"]
 - !private ["C15LocationTracker16NetworkingHelper", "NSURLSession"]
 - !private ["C15LocationTracker16NetworkingHelper", "NSUTF8StringEncoding"]
 - ["C15LocationTracker16NetworkingHelper", "NetworkingHelper"]
@@ -899,6 +983,7 @@ depends-member:
 - !private ["C15LocationTracker16NetworkingHelper", "decodeSingleCoordinate"]
 - ["C15LocationTracker16NetworkingHelper", "deinit"]
 - ["C15LocationTracker16NetworkingHelper", "getLatLongFromDirectionAPI"]
+- ["C15LocationTracker16NetworkingHelper", "getValidation"]
 - ["C15LocationTracker16NetworkingHelper", "init"]
 - !private ["C15LocationTracker16NetworkingHelper", "print"]
 - ["C15LocationTracker16NetworkingHelper", "sharedInstance"]
@@ -921,6 +1006,7 @@ depends-member:
 - !private ["Ps16OutputStreamType", "dataUsingEncoding"]
 - !private ["Ps16OutputStreamType", "init"]
 - !private ["Ps16OutputStreamType", "print"]
+- !private ["Ps16OutputStreamType", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - ["OC15LocationTracker16NetworkingHelper13PolylineError", "ChunkExtractingError"]
 - ["OC15LocationTracker16NetworkingHelper13PolylineError", "SingleCoordinateDecodingError"]
 - ["OC15LocationTracker16NetworkingHelper13PolylineError", "_code"]
@@ -978,6 +1064,7 @@ depends-member:
 - !private ["Ps10Streamable", "dataUsingEncoding"]
 - !private ["Ps10Streamable", "init"]
 - !private ["Ps10Streamable", "print"]
+- !private ["Ps10Streamable", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["Ps10Strideable", "Distance"]
 - !private ["Ps10Strideable", "IntegerLiteralType"]
 - !private ["Ps10Strideable", "hashValue"]
@@ -994,10 +1081,12 @@ depends-member:
 - !private ["SS", "NSUTF8StringEncoding"]
 - ["SS", "String"]
 - !private ["SS", "dataUsingEncoding"]
+- !private ["SS", "deinit"]
 - ["SS", "getUTCDateString"]
 - !private ["SS", "init"]
 - ["SS", "jsonObject"]
 - !private ["SS", "print"]
+- !private ["SS", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["Ps30StringInterpolationConvertible", "NSDate"]
 - !private ["Ps30StringInterpolationConvertible", "NSDateFormatter"]
 - !private ["Ps30StringInterpolationConvertible", "NSJSONReadingOptions"]
@@ -1009,6 +1098,7 @@ depends-member:
 - !private ["Ps30StringInterpolationConvertible", "dataUsingEncoding"]
 - !private ["Ps30StringInterpolationConvertible", "init"]
 - !private ["Ps30StringInterpolationConvertible", "print"]
+- !private ["Ps30StringInterpolationConvertible", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["Ps24StringLiteralConvertible", "NSDate"]
 - !private ["Ps24StringLiteralConvertible", "NSDateFormatter"]
 - !private ["Ps24StringLiteralConvertible", "NSJSONReadingOptions"]
@@ -1020,6 +1110,7 @@ depends-member:
 - !private ["Ps24StringLiteralConvertible", "dataUsingEncoding"]
 - !private ["Ps24StringLiteralConvertible", "init"]
 - !private ["Ps24StringLiteralConvertible", "print"]
+- !private ["Ps24StringLiteralConvertible", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["CSo13UIApplication", "networkActivityIndicatorVisible"]
 - !private ["CSo13UIApplication", "sharedApplication"]
 - !private ["CSo11UIResponder", "networkActivityIndicatorVisible"]
@@ -1046,6 +1137,7 @@ depends-member:
 - !private ["Ps31UnicodeScalarLiteralConvertible", "dataUsingEncoding"]
 - !private ["Ps31UnicodeScalarLiteralConvertible", "init"]
 - !private ["Ps31UnicodeScalarLiteralConvertible", "print"]
+- !private ["Ps31UnicodeScalarLiteralConvertible", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["SP", "subscript"]
 - !private ["Ps10_ArrayType", "Generator"]
 - !private ["Ps10_ArrayType", "Index"]
@@ -1065,6 +1157,7 @@ depends-member:
 - !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "dataUsingEncoding"]
 - !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "init"]
 - !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "print"]
+- !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["Ps31_BuiltinFloatLiteralConvertible", "init"]
 - !private ["Ps33_BuiltinIntegerLiteralConvertible", "Distance"]
 - !private ["Ps33_BuiltinIntegerLiteralConvertible", "IntegerLiteralType"]
@@ -1081,6 +1174,7 @@ depends-member:
 - !private ["Ps32_BuiltinStringLiteralConvertible", "dataUsingEncoding"]
 - !private ["Ps32_BuiltinStringLiteralConvertible", "init"]
 - !private ["Ps32_BuiltinStringLiteralConvertible", "print"]
+- !private ["Ps32_BuiltinStringLiteralConvertible", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "NSDate"]
 - !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "NSDateFormatter"]
 - !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "NSJSONReadingOptions"]
@@ -1092,6 +1186,7 @@ depends-member:
 - !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "dataUsingEncoding"]
 - !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "init"]
 - !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "print"]
+- !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "NSDate"]
 - !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "NSDateFormatter"]
 - !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "NSJSONReadingOptions"]
@@ -1103,6 +1198,7 @@ depends-member:
 - !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "dataUsingEncoding"]
 - !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "init"]
 - !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "print"]
+- !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["Ps19_CVarArgAlignedType", "init"]
 - !private ["Ps22_CVarArgPassedAsDouble", "init"]
 - !private ["Ps24_DestructorSafeContainer", "Generator"]
@@ -1145,6 +1241,7 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "hashValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
 - !private ["Ps21_ObjectiveCBridgeable", "print"]
+- !private ["Ps21_ObjectiveCBridgeable", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["Vs26_OptionalNilComparisonType", "deinit"]
 - !private ["Ps12_PointerType", "subscript"]
 - !private ["Ps22_RandomAccessAmbiguity", "Distance"]
@@ -1178,6 +1275,7 @@ depends-member:
 - !private ["Ps12_Reflectable", "init"]
 - ["Ps12_Reflectable", "jsonString"]
 - !private ["Ps12_Reflectable", "print"]
+- !private ["Ps12_Reflectable", "stringByAddingPercentEncodingWithAllowedCharacters"]
 - !private ["Ps12_Reflectable", "subscript"]
 - !private ["Ps18_SignedIntegerType", "Distance"]
 - !private ["Ps18_SignedIntegerType", "IntegerLiteralType"]
@@ -1229,6 +1327,7 @@ depends-nominal:
 - !private "Ps16MutableIndexable"
 - !private "Ps16MutableSliceable"
 - "CSo7NSArray"
+- !private "CSo14NSCharacterSet"
 - "PSo8NSCoding"
 - "PSo9NSCopying"
 - !private "CSo6NSData"
@@ -1307,8 +1406,8 @@ depends-nominal:
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Swift.swiftmodule"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/LocationTracker.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/build/LocationTracker.build/Release-iphoneos/LocationTracker.build/unextended-module.modulemap"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/LocationTracker.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/build/LocationTracker.build/Release-iphoneos/LocationTracker.build/unextended-module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Foundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Darwin.swiftmodule"
@@ -1316,19 +1415,19 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreImage.swiftmodule"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaMQTT.framework/Modules/CocoaMQTT.swiftmodule/arm.swiftmodule"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Modules/module.modulemap"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaMQTT.framework/Headers/CocoaMQTT-Swift.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaMQTT.framework/Headers/CocoaMQTT.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaMQTT.framework/Headers/CocoaMQTT-umbrella.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaMQTT.framework/Modules/module.modulemap"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/MSWeakTimer.framework/Headers/MSWeakTimer.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/MSWeakTimer.framework/Headers/MSWeakTimer-umbrella.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/MSWeakTimer.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaMQTT.framework/Modules/CocoaMQTT.swiftmodule/arm.swiftmodule"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaMQTT.framework/Headers/CocoaMQTT-Swift.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaMQTT.framework/Headers/CocoaMQTT.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaMQTT.framework/Headers/CocoaMQTT-umbrella.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaMQTT.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/MSWeakTimer.framework/Headers/MSWeakTimer.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/MSWeakTimer.framework/Headers/MSWeakTimer-umbrella.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/MSWeakTimer.framework/Modules/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreLocation.swiftmodule"
-interface-hash: "c9b53b38e37ff3f0c9950e75ba8f969b"
+interface-hash: "693953b0f25a3445085cb7ddc52af5b7"

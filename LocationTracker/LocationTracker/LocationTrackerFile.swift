@@ -17,6 +17,13 @@ import SystemConfiguration
     optional func currentLocation(location:CLLocation)
 }
 
+
+public enum LocationFrequency: Int {
+    case LOW = 0
+    case MEDIUM
+    case HIGH
+}
+
 public class LocationTrackerFile:NSObject, CLLocationManagerDelegate {
     
     public var delegate:LocationTrackerDelegate!
@@ -26,6 +33,9 @@ public class LocationTrackerFile:NSObject, CLLocationManagerDelegate {
     public var maxSpeed:Float = 30.0
     public var maxAccuracy = 20.0
     public var maxDistance = 20.0
+    public var locationFrequencyMode = LocationFrequency.HIGH
+    public var accessToken:String = ""
+    public var uniqueKey:String = ""
     
     private static let locationManagerObj = CLLocationManager()
     private static let locationTracker = LocationTrackerFile()
@@ -37,8 +47,7 @@ public class LocationTrackerFile:NSObject, CLLocationManagerDelegate {
     private var locationManager:CLLocationManager!
     private var speed:Float = 0
     private var bgTask: BackgroundTaskManager?
-    public var accessToken:String = ""
-    public var uniqueKey:String = ""
+    
     
     override init() {
         super.init()
@@ -111,6 +120,7 @@ public class LocationTrackerFile:NSObject, CLLocationManagerDelegate {
                 self.locationManager.stopMonitoringSignificantLocationChanges()
             }
             locationManager = LocationTrackerFile.sharedLocationManager()
+            self.setFrequency()
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
             locationManager.activityType = CLActivityType.AutomotiveNavigation
@@ -128,6 +138,24 @@ public class LocationTrackerFile:NSObject, CLLocationManagerDelegate {
             }
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
+        }
+    }
+    
+    
+     private func setFrequency() {
+        switch locationFrequencyMode {
+        case LocationFrequency.LOW:
+            slotTime = 60.0
+            maxDistance = 100.0
+            break
+        case LocationFrequency.MEDIUM:
+            slotTime = 30.0
+            maxDistance = 50.0
+            break
+        case LocationFrequency.HIGH:
+            slotTime = 5.0
+            maxDistance = 20.0
+            break
         }
     }
     
@@ -316,7 +344,7 @@ public class LocationTrackerFile:NSObject, CLLocationManagerDelegate {
                         if(speed > 0) {
                             return speed
                         }
-                        return maxSpeed
+                        return 0.0
                     }
                 } else {
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -325,15 +353,15 @@ public class LocationTrackerFile:NSObject, CLLocationManagerDelegate {
                     if(speed > 0) {
                         return speed
                     }
-                    return maxSpeed
+                    return 0.0
                 }
-                return maxSpeed
+                return 0.0
             } else {
                 speed = Float(distance) / Float(time)
                 if(speed > 0) {
                     return speed
                 }
-                return maxSpeed
+                return 0.0
             }
         }
         return 0.0
@@ -358,8 +386,27 @@ public class LocationTrackerFile:NSObject, CLLocationManagerDelegate {
             if authorizationStatus == CLAuthorizationStatus.Denied || authorizationStatus == CLAuthorizationStatus.Restricted {
                 return (false,"Background Location Access Disabled")
             } else {
-                return (true,"")
+                return self.isAuthorizedUser()
             }
+        }
+    }
+    
+    private func isAuthorizedUser() -> (Bool,String) {
+        let params = ["u_socket_id":uniqueKey,"f_socket_id":self.accessToken]
+        let jsonResponse = NetworkingHelper.sharedInstance.getValidation("validate", params: params)
+        if(jsonResponse.0 == true) {
+            let json = jsonResponse.1
+            if let status = json["status"] as? Int {
+                if status == 200 {
+                   return (true,json["message"] as! String)
+                } else {
+                    return (false,json["message"] as! String)
+                }
+            }
+            return (false,"Invalid Access")
+        } else {
+            let json = jsonResponse.1
+            return (false,json["message"] as! String)
         }
     }
 }

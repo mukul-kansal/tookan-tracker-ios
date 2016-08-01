@@ -448,6 +448,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.clicklabs.LocationTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Release;
 		};

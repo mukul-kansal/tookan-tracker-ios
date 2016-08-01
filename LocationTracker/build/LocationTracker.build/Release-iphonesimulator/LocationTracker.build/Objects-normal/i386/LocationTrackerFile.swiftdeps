@@ -1,84 +1,89 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
 - "LocationTrackerDelegate"
+- "LocationFrequency"
 - "LocationTrackerFile"
 provides-nominal:
 - "P15LocationTracker23LocationTrackerDelegate"
+- "O15LocationTracker17LocationFrequency"
 - "C15LocationTracker19LocationTrackerFile"
 provides-member:
 - ["P15LocationTracker23LocationTrackerDelegate", ""]
+- ["O15LocationTracker17LocationFrequency", ""]
 - ["C15LocationTracker19LocationTrackerFile", ""]
 provides-dynamic-lookup:
 - "slotTime"
-- "accessToken"
-- "currentLocation"
 - "maxDistance"
-- "startLocationTracking"
 - "uniqueKey"
-- "becomeActive"
-- "applicationEnterBackground"
+- "sharedLocationManager"
+- "startLocationTracking"
+- "delegate"
+- "currentLocation"
 - "host"
 - "maxSpeed"
-- "sharedLocationManager"
-- "appEnterInTerminateState"
+- "accessToken"
+- "becomeActive"
+- "getCurrentLocation"
 - "enterInForegroundFromBackground"
+- "updateLocationToServer"
 - "locationManager"
 - "sharedInstance"
-- "updateLocationToServer"
-- "delegate"
-- "getCurrentLocation"
-- "stopLocationTracking"
 - "maxAccuracy"
+- "stopLocationTracking"
+- "applicationEnterBackground"
+- "appEnterInTerminateState"
 - "portNumber"
 depends-top-level:
-- "CLLocation"
-- !private "UIApplicationWillEnterForegroundNotification"
-- !private "kCLDistanceFilterNone"
-- !private "UIApplication"
-- "Bool"
-- !private "NSNotificationCenter"
-- !private "!="
-- "BackgroundTaskManager"
-- !private "*"
-- "LocationTrackerDelegate"
-- "String"
-- !private "CLAuthorizationStatus"
-- "Float"
-- !private "IJReachability"
-- !private "Double"
-- !private "UIApplicationDidEnterBackgroundNotification"
 - "UInt16"
-- "StringLiteralType"
-- !private "kCLLocationAccuracyBestForNavigation"
-- !private "CLLocationDistance"
-- !private "NetworkingHelper"
-- !private "NSMutableDictionary"
-- !private "||"
-- !private "<"
-- !private "..<"
-- "CLLocationAccuracy"
-- !private "CLActivityType"
-- !private "BooleanLiteralType"
-- !private "Int"
-- !private "UIBackgroundRefreshStatus"
-- !private "UIApplicationWillTerminateNotification"
-- "NSTimer"
-- !private "MqttClass"
-- "LocationTrackerFile"
-- !private "UIApplicationDidBecomeActiveNotification"
 - "CLLocationManager"
-- !private "Dictionary"
-- !private "USER_DEFAULT"
-- !private ">"
-- "NSObject"
-- !private "NSUserDefaults"
-- !private "UIDevice"
-- !private ">="
-- !private "/"
-- !private "=="
-- "CLLocationManagerDelegate"
-- !private "NSMutableArray"
+- "String"
+- !private "CLActivityType"
+- !private "NetworkingHelper"
+- !private "UIApplicationDidBecomeActiveNotification"
+- !private "CLLocationDistance"
+- "Int"
+- !private "UIApplicationDidEnterBackgroundNotification"
+- "CLLocation"
+- "Bool"
+- !private "UIBackgroundRefreshStatus"
+- !private "MqttClass"
 - !private "UnicodeScalarType"
+- "LocationTrackerFile"
+- !private "kCLLocationAccuracyBestForNavigation"
+- !private ">="
+- !private "IJReachability"
+- "LocationTrackerDelegate"
+- "NSObject"
+- !private "/"
+- !private "UIApplicationWillTerminateNotification"
+- "StringLiteralType"
+- "BackgroundTaskManager"
+- !private "Dictionary"
+- !private ">"
+- !private "<"
+- !private "NSUserDefaults"
+- "CLLocationManagerDelegate"
+- !private "!="
+- !private "NSMutableDictionary"
+- "NSTimer"
+- !private "BooleanLiteralType"
+- "CLLocationAccuracy"
+- !private "kCLDistanceFilterNone"
+- !private "..<"
+- !private "NSNotificationCenter"
+- !private "NSMutableArray"
+- "LocationFrequency"
+- "Float"
+- !private "USER_DEFAULT"
+- !private "||"
+- !private "UIApplication"
+- !private "UIDevice"
+- !private "~="
+- "=="
+- !private "Double"
+- !private "CLAuthorizationStatus"
+- !private "UIApplicationWillEnterForegroundNotification"
+- !private "*"
 depends-member:
 - !private ["Ps16AbsoluteValuable", "init"]
 - !private ["Ps9AnyObject", "BackgroundTaskManager"]
@@ -89,6 +94,7 @@ depends-member:
 - !private ["Ps9AnyObject", "Float"]
 - !private ["Ps9AnyObject", "IJReachability"]
 - !private ["Ps9AnyObject", "Key"]
+- ["Ps9AnyObject", "LocationFrequency"]
 - ["Ps9AnyObject", "LocationTrackerFile"]
 - !private ["Ps9AnyObject", "MqttClass"]
 - !private ["Ps9AnyObject", "NSMutableArray"]
@@ -141,6 +147,7 @@ depends-member:
 - !private ["Ps9AnyObject", "getLatLongFromDirectionAPI"]
 - ["Ps9AnyObject", "getSpeed"]
 - !private ["Ps9AnyObject", "getUTCDateString"]
+- !private ["Ps9AnyObject", "getValidation"]
 - !private ["Ps9AnyObject", "horizontalAccuracy"]
 - ["Ps9AnyObject", "host"]
 - !private ["Ps9AnyObject", "hostAddress"]
@@ -148,11 +155,13 @@ depends-member:
 - !private ["Ps9AnyObject", "invalidate"]
 - ["Ps9AnyObject", "isAllPermissionAuthorized"]
 - ["Ps9AnyObject", "isAppLocationEnabled"]
+- ["Ps9AnyObject", "isAuthorizedUser"]
 - !private ["Ps9AnyObject", "isConnectedToNetwork"]
 - !private ["Ps9AnyObject", "jsonString"]
 - !private ["Ps9AnyObject", "kCLDistanceFilterNone"]
 - !private ["Ps9AnyObject", "kCLLocationAccuracyBestForNavigation"]
 - !private ["Ps9AnyObject", "key"]
+- ["Ps9AnyObject", "locationFrequencyMode"]
 - ["Ps9AnyObject", "locationManager"]
 - ["Ps9AnyObject", "locationManagerDidPauseLocationUpdates"]
 - ["Ps9AnyObject", "locationManagerDidResumeLocationUpdates"]
@@ -179,6 +188,7 @@ depends-member:
 - !private ["Ps9AnyObject", "sendLocation"]
 - ["Ps9AnyObject", "sendRequestToServer"]
 - !private ["Ps9AnyObject", "setBool"]
+- ["Ps9AnyObject", "setFrequency"]
 - ["Ps9AnyObject", "setLocationUpdate"]
 - !private ["Ps9AnyObject", "setObject"]
 - !private ["Ps9AnyObject", "setValue"]
@@ -228,9 +238,11 @@ depends-member:
 - !private ["Ps22BidirectionalIndexType", "Distance"]
 - !private ["Ps22BidirectionalIndexType", "IntegerLiteralType"]
 - !private ["Ps22BidirectionalIndexType", "_DisabledRangeIndex"]
+- !private ["Ps22BidirectionalIndexType", "hashValue"]
 - !private ["Ps21BitwiseOperationsType", "Distance"]
 - !private ["Ps21BitwiseOperationsType", "IntegerLiteralType"]
 - !private ["Ps21BitwiseOperationsType", "_DisabledRangeIndex"]
+- !private ["Ps21BitwiseOperationsType", "hashValue"]
 - !private ["Sb", "_getBuiltinLogicValue"]
 - !private ["Sb", "deinit"]
 - !private ["Ps25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
@@ -270,6 +282,7 @@ depends-member:
 - ["PSo25CLLocationManagerDelegate", "CLLocationManager"]
 - !private ["PSo25CLLocationManagerDelegate", "Float"]
 - !private ["PSo25CLLocationManagerDelegate", "IJReachability"]
+- ["PSo25CLLocationManagerDelegate", "LocationFrequency"]
 - ["PSo25CLLocationManagerDelegate", "LocationTrackerFile"]
 - !private ["PSo25CLLocationManagerDelegate", "MqttClass"]
 - !private ["PSo25CLLocationManagerDelegate", "NSMutableArray"]
@@ -301,8 +314,10 @@ depends-member:
 - !private ["PSo25CLLocationManagerDelegate", "host"]
 - ["PSo25CLLocationManagerDelegate", "init"]
 - !private ["PSo25CLLocationManagerDelegate", "isAppLocationEnabled"]
+- !private ["PSo25CLLocationManagerDelegate", "isAuthorizedUser"]
 - !private ["PSo25CLLocationManagerDelegate", "kCLDistanceFilterNone"]
 - !private ["PSo25CLLocationManagerDelegate", "kCLLocationAccuracyBestForNavigation"]
+- !private ["PSo25CLLocationManagerDelegate", "locationFrequencyMode"]
 - ["PSo25CLLocationManagerDelegate", "locationManager"]
 - ["PSo25CLLocationManagerDelegate", "locationManagerDidPauseLocationUpdates"]
 - ["PSo25CLLocationManagerDelegate", "locationManagerDidResumeLocationUpdates"]
@@ -319,6 +334,7 @@ depends-member:
 - !private ["PSo25CLLocationManagerDelegate", "portNumber"]
 - !private ["PSo25CLLocationManagerDelegate", "restartLocationUpdates"]
 - !private ["PSo25CLLocationManagerDelegate", "sendRequestToServer"]
+- !private ["PSo25CLLocationManagerDelegate", "setFrequency"]
 - !private ["PSo25CLLocationManagerDelegate", "setLocationUpdate"]
 - !private ["PSo25CLLocationManagerDelegate", "sharedBackgroundTaskManager"]
 - !private ["PSo25CLLocationManagerDelegate", "sharedLocationManager"]
@@ -337,6 +353,7 @@ depends-member:
 - !private ["Ps11CVarArgType", "IJReachability"]
 - !private ["Ps11CVarArgType", "IntegerLiteralType"]
 - !private ["Ps11CVarArgType", "Key"]
+- ["Ps11CVarArgType", "LocationFrequency"]
 - ["Ps11CVarArgType", "LocationTrackerFile"]
 - !private ["Ps11CVarArgType", "MqttClass"]
 - !private ["Ps11CVarArgType", "NSMutableArray"]
@@ -389,6 +406,8 @@ depends-member:
 - !private ["Ps11CVarArgType", "getLatLongFromDirectionAPI"]
 - ["Ps11CVarArgType", "getSpeed"]
 - !private ["Ps11CVarArgType", "getUTCDateString"]
+- !private ["Ps11CVarArgType", "getValidation"]
+- !private ["Ps11CVarArgType", "hashValue"]
 - !private ["Ps11CVarArgType", "horizontalAccuracy"]
 - ["Ps11CVarArgType", "host"]
 - !private ["Ps11CVarArgType", "hostAddress"]
@@ -396,10 +415,12 @@ depends-member:
 - !private ["Ps11CVarArgType", "invalidate"]
 - ["Ps11CVarArgType", "isAllPermissionAuthorized"]
 - ["Ps11CVarArgType", "isAppLocationEnabled"]
+- ["Ps11CVarArgType", "isAuthorizedUser"]
 - !private ["Ps11CVarArgType", "jsonString"]
 - !private ["Ps11CVarArgType", "kCLDistanceFilterNone"]
 - !private ["Ps11CVarArgType", "kCLLocationAccuracyBestForNavigation"]
 - !private ["Ps11CVarArgType", "key"]
+- ["Ps11CVarArgType", "locationFrequencyMode"]
 - ["Ps11CVarArgType", "locationManager"]
 - ["Ps11CVarArgType", "locationManagerDidPauseLocationUpdates"]
 - ["Ps11CVarArgType", "locationManagerDidResumeLocationUpdates"]
@@ -426,6 +447,7 @@ depends-member:
 - !private ["Ps11CVarArgType", "sendLocation"]
 - ["Ps11CVarArgType", "sendRequestToServer"]
 - !private ["Ps11CVarArgType", "setBool"]
+- ["Ps11CVarArgType", "setFrequency"]
 - ["Ps11CVarArgType", "setLocationUpdate"]
 - !private ["Ps11CVarArgType", "setObject"]
 - !private ["Ps11CVarArgType", "setValue"]
@@ -461,7 +483,9 @@ depends-member:
 - !private ["P15LocationTracker17CocoaMQTTDelegate", "sharedInstance"]
 - !private ["Ps14CollectionType", "Generator"]
 - !private ["Ps14CollectionType", "Index"]
+- !private ["Ps14CollectionType", "Key"]
 - !private ["Ps14CollectionType", "SubSequence"]
+- !private ["Ps14CollectionType", "Value"]
 - !private ["Ps14CollectionType", "_Element"]
 - !private ["Ps14CollectionType", "count"]
 - !private ["Ps14CollectionType", "last"]
@@ -470,6 +494,7 @@ depends-member:
 - !private ["Ps10Comparable", "IntegerLiteralType"]
 - !private ["Ps10Comparable", "_DisabledRangeIndex"]
 - !private ["Ps10Comparable", "getUTCDateString"]
+- !private ["Ps10Comparable", "hashValue"]
 - !private ["Ps10Comparable", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "BackgroundTaskManager"]
 - !private ["Ps28CustomDebugStringConvertible", "CLActivityType"]
@@ -481,6 +506,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "IJReachability"]
 - !private ["Ps28CustomDebugStringConvertible", "Index"]
 - !private ["Ps28CustomDebugStringConvertible", "Key"]
+- ["Ps28CustomDebugStringConvertible", "LocationFrequency"]
 - ["Ps28CustomDebugStringConvertible", "LocationTrackerFile"]
 - !private ["Ps28CustomDebugStringConvertible", "MqttClass"]
 - !private ["Ps28CustomDebugStringConvertible", "NSMutableArray"]
@@ -535,6 +561,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "getLatLongFromDirectionAPI"]
 - ["Ps28CustomDebugStringConvertible", "getSpeed"]
 - !private ["Ps28CustomDebugStringConvertible", "getUTCDateString"]
+- !private ["Ps28CustomDebugStringConvertible", "getValidation"]
 - !private ["Ps28CustomDebugStringConvertible", "horizontalAccuracy"]
 - ["Ps28CustomDebugStringConvertible", "host"]
 - !private ["Ps28CustomDebugStringConvertible", "hostAddress"]
@@ -542,11 +569,13 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "invalidate"]
 - ["Ps28CustomDebugStringConvertible", "isAllPermissionAuthorized"]
 - ["Ps28CustomDebugStringConvertible", "isAppLocationEnabled"]
+- ["Ps28CustomDebugStringConvertible", "isAuthorizedUser"]
 - !private ["Ps28CustomDebugStringConvertible", "jsonString"]
 - !private ["Ps28CustomDebugStringConvertible", "kCLDistanceFilterNone"]
 - !private ["Ps28CustomDebugStringConvertible", "kCLLocationAccuracyBestForNavigation"]
 - !private ["Ps28CustomDebugStringConvertible", "key"]
 - !private ["Ps28CustomDebugStringConvertible", "last"]
+- ["Ps28CustomDebugStringConvertible", "locationFrequencyMode"]
 - ["Ps28CustomDebugStringConvertible", "locationManager"]
 - ["Ps28CustomDebugStringConvertible", "locationManagerDidPauseLocationUpdates"]
 - ["Ps28CustomDebugStringConvertible", "locationManagerDidResumeLocationUpdates"]
@@ -573,6 +602,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "sendLocation"]
 - ["Ps28CustomDebugStringConvertible", "sendRequestToServer"]
 - !private ["Ps28CustomDebugStringConvertible", "setBool"]
+- ["Ps28CustomDebugStringConvertible", "setFrequency"]
 - ["Ps28CustomDebugStringConvertible", "setLocationUpdate"]
 - !private ["Ps28CustomDebugStringConvertible", "setObject"]
 - !private ["Ps28CustomDebugStringConvertible", "setValue"]
@@ -608,6 +638,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "Index"]
 - !private ["Ps23CustomStringConvertible", "IntegerLiteralType"]
 - !private ["Ps23CustomStringConvertible", "Key"]
+- ["Ps23CustomStringConvertible", "LocationFrequency"]
 - ["Ps23CustomStringConvertible", "LocationTrackerFile"]
 - !private ["Ps23CustomStringConvertible", "MqttClass"]
 - !private ["Ps23CustomStringConvertible", "NSMutableArray"]
@@ -664,6 +695,8 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "getLatLongFromDirectionAPI"]
 - ["Ps23CustomStringConvertible", "getSpeed"]
 - !private ["Ps23CustomStringConvertible", "getUTCDateString"]
+- !private ["Ps23CustomStringConvertible", "getValidation"]
+- !private ["Ps23CustomStringConvertible", "hashValue"]
 - !private ["Ps23CustomStringConvertible", "horizontalAccuracy"]
 - ["Ps23CustomStringConvertible", "host"]
 - !private ["Ps23CustomStringConvertible", "hostAddress"]
@@ -671,11 +704,13 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "invalidate"]
 - ["Ps23CustomStringConvertible", "isAllPermissionAuthorized"]
 - ["Ps23CustomStringConvertible", "isAppLocationEnabled"]
+- ["Ps23CustomStringConvertible", "isAuthorizedUser"]
 - !private ["Ps23CustomStringConvertible", "jsonString"]
 - !private ["Ps23CustomStringConvertible", "kCLDistanceFilterNone"]
 - !private ["Ps23CustomStringConvertible", "kCLLocationAccuracyBestForNavigation"]
 - !private ["Ps23CustomStringConvertible", "key"]
 - !private ["Ps23CustomStringConvertible", "last"]
+- ["Ps23CustomStringConvertible", "locationFrequencyMode"]
 - ["Ps23CustomStringConvertible", "locationManager"]
 - ["Ps23CustomStringConvertible", "locationManagerDidPauseLocationUpdates"]
 - ["Ps23CustomStringConvertible", "locationManagerDidResumeLocationUpdates"]
@@ -702,6 +737,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "sendLocation"]
 - ["Ps23CustomStringConvertible", "sendRequestToServer"]
 - !private ["Ps23CustomStringConvertible", "setBool"]
+- ["Ps23CustomStringConvertible", "setFrequency"]
 - ["Ps23CustomStringConvertible", "setLocationUpdate"]
 - !private ["Ps23CustomStringConvertible", "setObject"]
 - !private ["Ps23CustomStringConvertible", "setValue"]
@@ -725,6 +761,8 @@ depends-member:
 - ["Ps23CustomStringConvertible", "updateLastSavedLocationOnServer"]
 - ["Ps23CustomStringConvertible", "updateLocationToServer"]
 - ["Ps23CustomStringConvertible", ""]
+- !private ["Vs10Dictionary", "Key"]
+- !private ["Vs10Dictionary", "Value"]
 - !private ["Ps28DictionaryLiteralConvertible", "Key"]
 - !private ["Ps28DictionaryLiteralConvertible", "Value"]
 - !private ["Ps28DictionaryLiteralConvertible", "init"]
@@ -740,10 +778,14 @@ depends-member:
 - !private ["Ps9Equatable", "Distance"]
 - !private ["Ps9Equatable", "Float"]
 - !private ["Ps9Equatable", "Generator"]
+- ["Ps9Equatable", "HIGH"]
 - !private ["Ps9Equatable", "IJReachability"]
 - !private ["Ps9Equatable", "IntegerLiteralType"]
 - !private ["Ps9Equatable", "Key"]
+- !private ["Ps9Equatable", "LOW"]
+- ["Ps9Equatable", "LocationFrequency"]
 - ["Ps9Equatable", "LocationTrackerFile"]
+- !private ["Ps9Equatable", "MEDIUM"]
 - !private ["Ps9Equatable", "MqttClass"]
 - !private ["Ps9Equatable", "NSMutableArray"]
 - !private ["Ps9Equatable", "NSMutableDictionary"]
@@ -751,7 +793,7 @@ depends-member:
 - !private ["Ps9Equatable", "NSTimer"]
 - !private ["Ps9Equatable", "NSUserDefaults"]
 - !private ["Ps9Equatable", "NetworkingHelper"]
-- !private ["Ps9Equatable", "RawValue"]
+- ["Ps9Equatable", "RawValue"]
 - !private ["Ps9Equatable", "Restricted"]
 - !private ["Ps9Equatable", "String"]
 - !private ["Ps9Equatable", "UIApplication"]
@@ -798,6 +840,8 @@ depends-member:
 - !private ["Ps9Equatable", "getLatLongFromDirectionAPI"]
 - ["Ps9Equatable", "getSpeed"]
 - !private ["Ps9Equatable", "getUTCDateString"]
+- !private ["Ps9Equatable", "getValidation"]
+- ["Ps9Equatable", "hashValue"]
 - !private ["Ps9Equatable", "horizontalAccuracy"]
 - ["Ps9Equatable", "host"]
 - !private ["Ps9Equatable", "hostAddress"]
@@ -805,10 +849,12 @@ depends-member:
 - !private ["Ps9Equatable", "invalidate"]
 - ["Ps9Equatable", "isAllPermissionAuthorized"]
 - ["Ps9Equatable", "isAppLocationEnabled"]
+- ["Ps9Equatable", "isAuthorizedUser"]
 - !private ["Ps9Equatable", "jsonString"]
 - !private ["Ps9Equatable", "kCLDistanceFilterNone"]
 - !private ["Ps9Equatable", "kCLLocationAccuracyBestForNavigation"]
 - !private ["Ps9Equatable", "key"]
+- ["Ps9Equatable", "locationFrequencyMode"]
 - ["Ps9Equatable", "locationManager"]
 - ["Ps9Equatable", "locationManagerDidPauseLocationUpdates"]
 - ["Ps9Equatable", "locationManagerDidResumeLocationUpdates"]
@@ -828,6 +874,7 @@ depends-member:
 - !private ["Ps9Equatable", "objectForKey"]
 - !private ["Ps9Equatable", "pausesLocationUpdatesAutomatically"]
 - ["Ps9Equatable", "portNumber"]
+- ["Ps9Equatable", "rawValue"]
 - !private ["Ps9Equatable", "removeObjectAtIndex"]
 - !private ["Ps9Equatable", "requestAlwaysAuthorization"]
 - ["Ps9Equatable", "restartLocationUpdates"]
@@ -835,6 +882,7 @@ depends-member:
 - !private ["Ps9Equatable", "sendLocation"]
 - ["Ps9Equatable", "sendRequestToServer"]
 - !private ["Ps9Equatable", "setBool"]
+- ["Ps9Equatable", "setFrequency"]
 - ["Ps9Equatable", "setLocationUpdate"]
 - !private ["Ps9Equatable", "setObject"]
 - !private ["Ps9Equatable", "setValue"]
@@ -867,6 +915,7 @@ depends-member:
 - !private ["Ps16ForwardIndexType", "Distance"]
 - !private ["Ps16ForwardIndexType", "IntegerLiteralType"]
 - !private ["Ps16ForwardIndexType", "_DisabledRangeIndex"]
+- !private ["Ps16ForwardIndexType", "hashValue"]
 - !private ["Ps13GeneratorType", "Element"]
 - !private ["Vs16HalfOpenInterval", "Generator"]
 - !private ["Vs16HalfOpenInterval", "deinit"]
@@ -879,10 +928,14 @@ depends-member:
 - !private ["Ps8Hashable", "Denied"]
 - !private ["Ps8Hashable", "Distance"]
 - !private ["Ps8Hashable", "Float"]
+- ["Ps8Hashable", "HIGH"]
 - !private ["Ps8Hashable", "IJReachability"]
 - !private ["Ps8Hashable", "IntegerLiteralType"]
 - !private ["Ps8Hashable", "Key"]
+- !private ["Ps8Hashable", "LOW"]
+- ["Ps8Hashable", "LocationFrequency"]
 - ["Ps8Hashable", "LocationTrackerFile"]
+- !private ["Ps8Hashable", "MEDIUM"]
 - !private ["Ps8Hashable", "MqttClass"]
 - !private ["Ps8Hashable", "NSMutableArray"]
 - !private ["Ps8Hashable", "NSMutableDictionary"]
@@ -890,7 +943,7 @@ depends-member:
 - !private ["Ps8Hashable", "NSTimer"]
 - !private ["Ps8Hashable", "NSUserDefaults"]
 - !private ["Ps8Hashable", "NetworkingHelper"]
-- !private ["Ps8Hashable", "RawValue"]
+- ["Ps8Hashable", "RawValue"]
 - !private ["Ps8Hashable", "Restricted"]
 - !private ["Ps8Hashable", "String"]
 - !private ["Ps8Hashable", "UIApplication"]
@@ -937,6 +990,8 @@ depends-member:
 - !private ["Ps8Hashable", "getLatLongFromDirectionAPI"]
 - ["Ps8Hashable", "getSpeed"]
 - !private ["Ps8Hashable", "getUTCDateString"]
+- !private ["Ps8Hashable", "getValidation"]
+- ["Ps8Hashable", "hashValue"]
 - !private ["Ps8Hashable", "horizontalAccuracy"]
 - ["Ps8Hashable", "host"]
 - !private ["Ps8Hashable", "hostAddress"]
@@ -944,10 +999,12 @@ depends-member:
 - !private ["Ps8Hashable", "invalidate"]
 - ["Ps8Hashable", "isAllPermissionAuthorized"]
 - ["Ps8Hashable", "isAppLocationEnabled"]
+- ["Ps8Hashable", "isAuthorizedUser"]
 - !private ["Ps8Hashable", "jsonString"]
 - !private ["Ps8Hashable", "kCLDistanceFilterNone"]
 - !private ["Ps8Hashable", "kCLLocationAccuracyBestForNavigation"]
 - !private ["Ps8Hashable", "key"]
+- ["Ps8Hashable", "locationFrequencyMode"]
 - ["Ps8Hashable", "locationManager"]
 - ["Ps8Hashable", "locationManagerDidPauseLocationUpdates"]
 - ["Ps8Hashable", "locationManagerDidResumeLocationUpdates"]
@@ -967,6 +1024,7 @@ depends-member:
 - !private ["Ps8Hashable", "objectForKey"]
 - !private ["Ps8Hashable", "pausesLocationUpdatesAutomatically"]
 - ["Ps8Hashable", "portNumber"]
+- ["Ps8Hashable", "rawValue"]
 - !private ["Ps8Hashable", "removeObjectAtIndex"]
 - !private ["Ps8Hashable", "requestAlwaysAuthorization"]
 - ["Ps8Hashable", "restartLocationUpdates"]
@@ -974,6 +1032,7 @@ depends-member:
 - !private ["Ps8Hashable", "sendLocation"]
 - ["Ps8Hashable", "sendRequestToServer"]
 - !private ["Ps8Hashable", "setBool"]
+- ["Ps8Hashable", "setFrequency"]
 - ["Ps8Hashable", "setLocationUpdate"]
 - !private ["Ps8Hashable", "setObject"]
 - !private ["Ps8Hashable", "setValue"]
@@ -1002,7 +1061,9 @@ depends-member:
 - !private ["SQ", "deinit"]
 - !private ["Ps9Indexable", "Generator"]
 - !private ["Ps9Indexable", "Index"]
+- !private ["Ps9Indexable", "Key"]
 - !private ["Ps9Indexable", "SubSequence"]
+- !private ["Ps9Indexable", "Value"]
 - !private ["Ps9Indexable", "_Element"]
 - !private ["Ps9Indexable", "count"]
 - !private ["Ps9Indexable", "last"]
@@ -1012,6 +1073,7 @@ depends-member:
 - !private ["Si", "IntegerLiteralType"]
 - !private ["Si", "_DisabledRangeIndex"]
 - !private ["Si", "deinit"]
+- !private ["Si", "hashValue"]
 - !private ["Vs5Int16", "deinit"]
 - !private ["Vs5Int32", "deinit"]
 - !private ["Vs5Int64", "deinit"]
@@ -1019,14 +1081,25 @@ depends-member:
 - !private ["Ps21IntegerArithmeticType", "Distance"]
 - !private ["Ps21IntegerArithmeticType", "IntegerLiteralType"]
 - !private ["Ps21IntegerArithmeticType", "_DisabledRangeIndex"]
+- !private ["Ps21IntegerArithmeticType", "hashValue"]
 - !private ["Ps25IntegerLiteralConvertible", "Distance"]
 - !private ["Ps25IntegerLiteralConvertible", "IntegerLiteralType"]
 - !private ["Ps25IntegerLiteralConvertible", "_DisabledRangeIndex"]
+- !private ["Ps25IntegerLiteralConvertible", "hashValue"]
 - !private ["Ps25IntegerLiteralConvertible", "init"]
 - !private ["Ps11IntegerType", "Distance"]
 - !private ["Ps11IntegerType", "IntegerLiteralType"]
 - !private ["Ps11IntegerType", "_DisabledRangeIndex"]
+- !private ["Ps11IntegerType", "hashValue"]
 - !private ["Ps12IntervalType", "Generator"]
+- ["O15LocationTracker17LocationFrequency", "HIGH"]
+- ["O15LocationTracker17LocationFrequency", "LOW"]
+- ["O15LocationTracker17LocationFrequency", "MEDIUM"]
+- ["O15LocationTracker17LocationFrequency", "RawValue"]
+- ["O15LocationTracker17LocationFrequency", "deinit"]
+- ["O15LocationTracker17LocationFrequency", "hashValue"]
+- ["O15LocationTracker17LocationFrequency", "init"]
+- ["O15LocationTracker17LocationFrequency", "rawValue"]
 - ["P15LocationTracker23LocationTrackerDelegate", "CLLocation"]
 - ["P15LocationTracker23LocationTrackerDelegate", "currentLocation"]
 - ["C15LocationTracker19LocationTrackerFile", "BackgroundTaskManager"]
@@ -1041,6 +1114,7 @@ depends-member:
 - ["C15LocationTracker19LocationTrackerFile", "Float"]
 - !private ["C15LocationTracker19LocationTrackerFile", "IJReachability"]
 - !private ["C15LocationTracker19LocationTrackerFile", "Int"]
+- ["C15LocationTracker19LocationTrackerFile", "LocationFrequency"]
 - ["C15LocationTracker19LocationTrackerFile", "LocationTrackerDelegate"]
 - ["C15LocationTracker19LocationTrackerFile", "LocationTrackerFile"]
 - !private ["C15LocationTracker19LocationTrackerFile", "MqttClass"]
@@ -1077,8 +1151,10 @@ depends-member:
 - ["C15LocationTracker19LocationTrackerFile", "init"]
 - ["C15LocationTracker19LocationTrackerFile", "isAllPermissionAuthorized"]
 - !private ["C15LocationTracker19LocationTrackerFile", "isAppLocationEnabled"]
+- !private ["C15LocationTracker19LocationTrackerFile", "isAuthorizedUser"]
 - !private ["C15LocationTracker19LocationTrackerFile", "kCLDistanceFilterNone"]
 - !private ["C15LocationTracker19LocationTrackerFile", "kCLLocationAccuracyBestForNavigation"]
+- ["C15LocationTracker19LocationTrackerFile", "locationFrequencyMode"]
 - ["C15LocationTracker19LocationTrackerFile", "locationManager"]
 - ["C15LocationTracker19LocationTrackerFile", "locationManagerDidPauseLocationUpdates"]
 - ["C15LocationTracker19LocationTrackerFile", "locationManagerDidResumeLocationUpdates"]
@@ -1095,6 +1171,7 @@ depends-member:
 - ["C15LocationTracker19LocationTrackerFile", "portNumber"]
 - !private ["C15LocationTracker19LocationTrackerFile", "restartLocationUpdates"]
 - !private ["C15LocationTracker19LocationTrackerFile", "sendRequestToServer"]
+- !private ["C15LocationTracker19LocationTrackerFile", "setFrequency"]
 - !private ["C15LocationTracker19LocationTrackerFile", "setLocationUpdate"]
 - !private ["C15LocationTracker19LocationTrackerFile", "sharedBackgroundTaskManager"]
 - ["C15LocationTracker19LocationTrackerFile", "sharedInstance"]
@@ -1110,6 +1187,7 @@ depends-member:
 - !private ["Ps14MirrorPathType", "IntegerLiteralType"]
 - !private ["Ps14MirrorPathType", "_DisabledRangeIndex"]
 - !private ["Ps14MirrorPathType", "getUTCDateString"]
+- !private ["Ps14MirrorPathType", "hashValue"]
 - !private ["Ps14MirrorPathType", "init"]
 - !private ["C15LocationTracker9MqttClass", "accessToken"]
 - !private ["C15LocationTracker9MqttClass", "connectToServer"]
@@ -1207,6 +1285,7 @@ depends-member:
 - !private ["CSo19NSMutableDictionary", "init"]
 - !private ["CSo20NSNotificationCenter", "addObserver"]
 - !private ["CSo20NSNotificationCenter", "defaultCenter"]
+- !private ["CSo8NSNumber", "deinit"]
 - ["CSo8NSObject", "BackgroundTaskManager"]
 - ["CSo8NSObject", "Bool"]
 - !private ["CSo8NSObject", "CLActivityType"]
@@ -1220,6 +1299,7 @@ depends-member:
 - !private ["CSo8NSObject", "IJReachability"]
 - !private ["CSo8NSObject", "Int"]
 - !private ["CSo8NSObject", "Key"]
+- ["CSo8NSObject", "LocationFrequency"]
 - ["CSo8NSObject", "LocationTrackerDelegate"]
 - ["CSo8NSObject", "LocationTrackerFile"]
 - !private ["CSo8NSObject", "MqttClass"]
@@ -1274,6 +1354,7 @@ depends-member:
 - !private ["CSo8NSObject", "getLatLongFromDirectionAPI"]
 - ["CSo8NSObject", "getSpeed"]
 - !private ["CSo8NSObject", "getUTCDateString"]
+- !private ["CSo8NSObject", "getValidation"]
 - !private ["CSo8NSObject", "horizontalAccuracy"]
 - ["CSo8NSObject", "host"]
 - !private ["CSo8NSObject", "hostAddress"]
@@ -1281,10 +1362,12 @@ depends-member:
 - !private ["CSo8NSObject", "invalidate"]
 - ["CSo8NSObject", "isAllPermissionAuthorized"]
 - ["CSo8NSObject", "isAppLocationEnabled"]
+- ["CSo8NSObject", "isAuthorizedUser"]
 - !private ["CSo8NSObject", "jsonString"]
 - !private ["CSo8NSObject", "kCLDistanceFilterNone"]
 - !private ["CSo8NSObject", "kCLLocationAccuracyBestForNavigation"]
 - !private ["CSo8NSObject", "key"]
+- ["CSo8NSObject", "locationFrequencyMode"]
 - ["CSo8NSObject", "locationManager"]
 - ["CSo8NSObject", "locationManagerDidPauseLocationUpdates"]
 - ["CSo8NSObject", "locationManagerDidResumeLocationUpdates"]
@@ -1311,6 +1394,7 @@ depends-member:
 - !private ["CSo8NSObject", "sendLocation"]
 - ["CSo8NSObject", "sendRequestToServer"]
 - !private ["CSo8NSObject", "setBool"]
+- ["CSo8NSObject", "setFrequency"]
 - ["CSo8NSObject", "setLocationUpdate"]
 - !private ["CSo8NSObject", "setObject"]
 - !private ["CSo8NSObject", "setValue"]
@@ -1342,6 +1426,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "Float"]
 - !private ["PSo16NSObjectProtocol", "IJReachability"]
 - !private ["PSo16NSObjectProtocol", "Key"]
+- ["PSo16NSObjectProtocol", "LocationFrequency"]
 - ["PSo16NSObjectProtocol", "LocationTrackerFile"]
 - !private ["PSo16NSObjectProtocol", "MqttClass"]
 - !private ["PSo16NSObjectProtocol", "NSMutableArray"]
@@ -1393,6 +1478,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "getLatLongFromDirectionAPI"]
 - ["PSo16NSObjectProtocol", "getSpeed"]
 - !private ["PSo16NSObjectProtocol", "getUTCDateString"]
+- !private ["PSo16NSObjectProtocol", "getValidation"]
 - !private ["PSo16NSObjectProtocol", "horizontalAccuracy"]
 - ["PSo16NSObjectProtocol", "host"]
 - !private ["PSo16NSObjectProtocol", "hostAddress"]
@@ -1400,10 +1486,12 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "invalidate"]
 - ["PSo16NSObjectProtocol", "isAllPermissionAuthorized"]
 - ["PSo16NSObjectProtocol", "isAppLocationEnabled"]
+- ["PSo16NSObjectProtocol", "isAuthorizedUser"]
 - !private ["PSo16NSObjectProtocol", "jsonString"]
 - !private ["PSo16NSObjectProtocol", "kCLDistanceFilterNone"]
 - !private ["PSo16NSObjectProtocol", "kCLLocationAccuracyBestForNavigation"]
 - !private ["PSo16NSObjectProtocol", "key"]
+- ["PSo16NSObjectProtocol", "locationFrequencyMode"]
 - ["PSo16NSObjectProtocol", "locationManager"]
 - ["PSo16NSObjectProtocol", "locationManagerDidPauseLocationUpdates"]
 - ["PSo16NSObjectProtocol", "locationManagerDidResumeLocationUpdates"]
@@ -1430,6 +1518,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "sendLocation"]
 - ["PSo16NSObjectProtocol", "sendRequestToServer"]
 - !private ["PSo16NSObjectProtocol", "setBool"]
+- ["PSo16NSObjectProtocol", "setFrequency"]
 - ["PSo16NSObjectProtocol", "setLocationUpdate"]
 - !private ["PSo16NSObjectProtocol", "setObject"]
 - !private ["PSo16NSObjectProtocol", "setValue"]
@@ -1478,8 +1567,10 @@ depends-member:
 - !private ["CSo14NSUserDefaults", "setObject"]
 - !private ["CSo14NSUserDefaults", "setValue"]
 - !private ["CSo14NSUserDefaults", "standardUserDefaults"]
+- !private ["CSo7NSValue", "deinit"]
 - !private ["C15LocationTracker16NetworkingHelper", "decodePolylineForCoordinates"]
 - !private ["C15LocationTracker16NetworkingHelper", "getLatLongFromDirectionAPI"]
+- !private ["C15LocationTracker16NetworkingHelper", "getValidation"]
 - !private ["C15LocationTracker16NetworkingHelper", "sharedInstance"]
 - ["Ps21NilLiteralConvertible", "Some"]
 - !private ["Ps21NilLiteralConvertible", "subscript"]
@@ -1491,7 +1582,9 @@ depends-member:
 - !private ["Ps21RandomAccessIndexType", "Distance"]
 - !private ["Ps21RandomAccessIndexType", "IntegerLiteralType"]
 - !private ["Ps21RandomAccessIndexType", "_DisabledRangeIndex"]
+- !private ["Ps21RandomAccessIndexType", "hashValue"]
 - !private ["Vs5Range", "Generator"]
+- !private ["Vs5Range", "deinit"]
 - !private ["Vs14RangeGenerator", "Element"]
 - !private ["Ps30RangeReplaceableCollectionType", "Generator"]
 - !private ["Ps30RangeReplaceableCollectionType", "Index"]
@@ -1502,8 +1595,15 @@ depends-member:
 - !private ["Ps30RangeReplaceableCollectionType", "subscript"]
 - !private ["Ps16RawRepresentable", "AutomotiveNavigation"]
 - !private ["Ps16RawRepresentable", "Denied"]
-- !private ["Ps16RawRepresentable", "RawValue"]
+- ["Ps16RawRepresentable", "HIGH"]
+- !private ["Ps16RawRepresentable", "LOW"]
+- !private ["Ps16RawRepresentable", "MEDIUM"]
+- ["Ps16RawRepresentable", "RawValue"]
 - !private ["Ps16RawRepresentable", "Restricted"]
+- ["Ps16RawRepresentable", "hashValue"]
+- ["Ps16RawRepresentable", "init"]
+- ["Ps16RawRepresentable", "rawValue"]
+- ["Ps16RawRepresentable", ""]
 - !private ["Ps12SequenceType", "Element"]
 - !private ["Ps12SequenceType", "Generator"]
 - !private ["Ps12SequenceType", "Index"]
@@ -1521,9 +1621,11 @@ depends-member:
 - !private ["Ps17SignedIntegerType", "Distance"]
 - !private ["Ps17SignedIntegerType", "IntegerLiteralType"]
 - !private ["Ps17SignedIntegerType", "_DisabledRangeIndex"]
+- !private ["Ps17SignedIntegerType", "hashValue"]
 - !private ["Ps16SignedNumberType", "Distance"]
 - !private ["Ps16SignedNumberType", "IntegerLiteralType"]
 - !private ["Ps16SignedNumberType", "_DisabledRangeIndex"]
+- !private ["Ps16SignedNumberType", "hashValue"]
 - !private ["Ps16SignedNumberType", "init"]
 - !private ["Vs5Slice", "Generator"]
 - !private ["Vs5Slice", "Index"]
@@ -1534,6 +1636,7 @@ depends-member:
 - !private ["Ps10Strideable", "Distance"]
 - !private ["Ps10Strideable", "IntegerLiteralType"]
 - !private ["Ps10Strideable", "_DisabledRangeIndex"]
+- !private ["Ps10Strideable", "hashValue"]
 - !private ["Ps10Strideable", "init"]
 - !private ["SS", "deinit"]
 - !private ["SS", "getUTCDateString"]
@@ -1581,6 +1684,7 @@ depends-member:
 - !private ["Ps33_BuiltinIntegerLiteralConvertible", "Distance"]
 - !private ["Ps33_BuiltinIntegerLiteralConvertible", "IntegerLiteralType"]
 - !private ["Ps33_BuiltinIntegerLiteralConvertible", "_DisabledRangeIndex"]
+- !private ["Ps33_BuiltinIntegerLiteralConvertible", "hashValue"]
 - !private ["Ps33_BuiltinIntegerLiteralConvertible", "init"]
 - !private ["Ps32_BuiltinStringLiteralConvertible", "getUTCDateString"]
 - !private ["Ps32_BuiltinStringLiteralConvertible", "init"]
@@ -1600,23 +1704,29 @@ depends-member:
 - !private ["Ps14_Incrementable", "Distance"]
 - !private ["Ps14_Incrementable", "IntegerLiteralType"]
 - !private ["Ps14_Incrementable", "_DisabledRangeIndex"]
+- !private ["Ps14_Incrementable", "hashValue"]
 - !private ["Ps22_IntegerArithmeticType", "Distance"]
 - !private ["Ps22_IntegerArithmeticType", "IntegerLiteralType"]
 - !private ["Ps22_IntegerArithmeticType", "_DisabledRangeIndex"]
+- !private ["Ps22_IntegerArithmeticType", "hashValue"]
 - !private ["Ps12_IntegerType", "Distance"]
 - !private ["Ps12_IntegerType", "IntegerLiteralType"]
 - !private ["Ps12_IntegerType", "_DisabledRangeIndex"]
+- !private ["Ps12_IntegerType", "hashValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "Distance"]
 - !private ["Ps21_ObjectiveCBridgeable", "Generator"]
 - !private ["Ps21_ObjectiveCBridgeable", "Index"]
 - !private ["Ps21_ObjectiveCBridgeable", "IntegerLiteralType"]
+- !private ["Ps21_ObjectiveCBridgeable", "Key"]
 - !private ["Ps21_ObjectiveCBridgeable", "Some"]
 - !private ["Ps21_ObjectiveCBridgeable", "SubSequence"]
+- !private ["Ps21_ObjectiveCBridgeable", "Value"]
 - !private ["Ps21_ObjectiveCBridgeable", "_DisabledRangeIndex"]
 - !private ["Ps21_ObjectiveCBridgeable", "_Element"]
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "count"]
 - !private ["Ps21_ObjectiveCBridgeable", "getUTCDateString"]
+- !private ["Ps21_ObjectiveCBridgeable", "hashValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
 - !private ["Ps21_ObjectiveCBridgeable", "last"]
 - !private ["Ps21_ObjectiveCBridgeable", "subscript"]
@@ -1624,6 +1734,7 @@ depends-member:
 - !private ["Ps22_RandomAccessAmbiguity", "Distance"]
 - !private ["Ps22_RandomAccessAmbiguity", "IntegerLiteralType"]
 - !private ["Ps22_RandomAccessAmbiguity", "_DisabledRangeIndex"]
+- !private ["Ps22_RandomAccessAmbiguity", "hashValue"]
 - !private ["Ps12_Reflectable", "Distance"]
 - !private ["Ps12_Reflectable", "Generator"]
 - !private ["Ps12_Reflectable", "Index"]
@@ -1638,6 +1749,7 @@ depends-member:
 - !private ["Ps12_Reflectable", "addObject"]
 - !private ["Ps12_Reflectable", "count"]
 - !private ["Ps12_Reflectable", "getUTCDateString"]
+- !private ["Ps12_Reflectable", "hashValue"]
 - !private ["Ps12_Reflectable", "init"]
 - !private ["Ps12_Reflectable", "jsonString"]
 - !private ["Ps12_Reflectable", "last"]
@@ -1647,6 +1759,7 @@ depends-member:
 - !private ["Ps18_SignedIntegerType", "Distance"]
 - !private ["Ps18_SignedIntegerType", "IntegerLiteralType"]
 - !private ["Ps18_SignedIntegerType", "_DisabledRangeIndex"]
+- !private ["Ps18_SignedIntegerType", "hashValue"]
 depends-nominal:
 - !private "Ps16AbsoluteValuable"
 - "Ps9AnyObject"
@@ -1672,6 +1785,7 @@ depends-nominal:
 - !private "Ps10Comparable"
 - "Ps28CustomDebugStringConvertible"
 - "Ps23CustomStringConvertible"
+- !private "Vs10Dictionary"
 - !private "Ps28DictionaryLiteralConvertible"
 - !private "Sd"
 - "Ps9Equatable"
@@ -1696,6 +1810,7 @@ depends-nominal:
 - !private "Ps25IntegerLiteralConvertible"
 - !private "Ps11IntegerType"
 - !private "Ps12IntervalType"
+- "O15LocationTracker17LocationFrequency"
 - "P15LocationTracker23LocationTrackerDelegate"
 - "C15LocationTracker19LocationTrackerFile"
 - !private "Ps14MirrorPathType"
@@ -1713,12 +1828,14 @@ depends-nominal:
 - !private "PSo16NSMutableCopying"
 - !private "CSo19NSMutableDictionary"
 - !private "CSo20NSNotificationCenter"
+- !private "CSo8NSNumber"
 - "CSo8NSObject"
 - "PSo16NSObjectProtocol"
 - !private "PSo14NSSecureCoding"
 - !private "CSo8NSString"
 - !private "CSo7NSTimer"
 - !private "CSo14NSUserDefaults"
+- !private "CSo7NSValue"
 - !private "C15LocationTracker16NetworkingHelper"
 - "Ps21NilLiteralConvertible"
 - "Sq"
@@ -1727,7 +1844,7 @@ depends-nominal:
 - !private "Vs5Range"
 - !private "Vs14RangeGenerator"
 - !private "Ps30RangeReplaceableCollectionType"
-- !private "Ps16RawRepresentable"
+- "Ps16RawRepresentable"
 - !private "Ps12SequenceType"
 - !private "Ps17SignedIntegerType"
 - !private "Ps16SignedNumberType"
@@ -1773,8 +1890,8 @@ depends-dynamic-lookup:
 - !private "subscript"
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Swift.swiftmodule"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/LocationTracker.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/build/LocationTracker.build/Release-iphonesimulator/LocationTracker.build/unextended-module.modulemap"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/LocationTracker.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/build/LocationTracker.build/Release-iphonesimulator/LocationTracker.build/unextended-module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Foundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Darwin.swiftmodule"
@@ -1782,18 +1899,18 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreImage.swiftmodule"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Modules/module.modulemap"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaMQTT.framework/Headers/CocoaMQTT-Swift.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaMQTT.framework/Headers/CocoaMQTT.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaMQTT.framework/Headers/CocoaMQTT-umbrella.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/CocoaMQTT.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaAsyncSocket.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaMQTT.framework/Headers/CocoaMQTT-Swift.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaMQTT.framework/Headers/CocoaMQTT.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaMQTT.framework/Headers/CocoaMQTT-umbrella.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/CocoaMQTT.framework/Modules/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreLocation.swiftmodule"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/MSWeakTimer.framework/Headers/MSWeakTimer.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/MSWeakTimer.framework/Headers/MSWeakTimer-umbrella.h"
-- "/Users/cl-macmini-45/Documents/github/LocationTracker/LocationTracker/MSWeakTimer.framework/Modules/module.modulemap"
-interface-hash: "4f2b34ec032c3942a6e9f884298d213d"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/MSWeakTimer.framework/Headers/MSWeakTimer.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/MSWeakTimer.framework/Headers/MSWeakTimer-umbrella.h"
+- "/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/LocationTracker/MSWeakTimer.framework/Modules/module.modulemap"
+interface-hash: "2071dc77137c54d1b2d85ae96ed08668"

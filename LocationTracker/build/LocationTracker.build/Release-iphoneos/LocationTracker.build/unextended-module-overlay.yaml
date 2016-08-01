@@ -3,11 +3,11 @@
   'case-sensitive': 'false',
   'roots': [{
     'type': 'directory',
-    'name': '/Users/cl-macmini-45/Library/Developer/Xcode/DerivedData/LocationTracker-bppyspzlvglrwkdhakwxzbuyzkve/Build/Products/Release-iphoneos/LocationTracker.framework/Modules'
+    'name': '/Users/cl-macmini-45/Library/Developer/Xcode/DerivedData/LocationTracker-brexdrbwudlutcbpkncbpgloflbm/Build/Products/Release-iphoneos/LocationTracker.framework/Modules'
     'contents': [{
       'type': 'file',
       'name': 'module.modulemap',
-      'external-contents': '/Users/cl-macmini-45/Documents/github/LocationTracker/build/LocationTracker.build/Release-iphoneos/LocationTracker.build/unextended-module.modulemap',
+      'external-contents': '/Users/cl-macmini-45/Documents/github/tracking-sdk-ios/LocationTracker/build/LocationTracker.build/Release-iphoneos/LocationTracker.build/unextended-module.modulemap',
     }]
   }]
 }

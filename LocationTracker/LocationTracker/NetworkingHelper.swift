@@ -109,11 +109,34 @@ class NetworkingHelper: NSObject {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
             if let json = NSURLSession.requestSynchronousJSONWithURLString(urlString) {
                 encodedRoute = json as! NSDictionary
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             }
         } else {
             encodedRoute = [:]
         }
         return encodedRoute
+    }
+    
+    func getValidation(url:String, params: NSDictionary) -> (Bool,NSDictionary!) {
+        let urlString = url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://tracking.tookan.io:3012/" + urlString!)!)
+        request.HTTPMethod = "POST"
+        request.timeoutInterval = 20
+        request.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(params, options: [])
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        if IJReachability.isConnectedToNetwork() == true {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            if let json = NSURLSession.requestSynchronousJSON(request) {
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                return (true, json as! NSDictionary)
+            } else {
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                return (false, ["message":"Invalid Access"])
+            }
+        } else {
+            return (false, ["message":"No Internet Connection"])
+        }
     }
     
     func decodePolylineForCoordinates(encodedPolyline: String, precision: Double = 1e5) -> [CLLocation]! {
