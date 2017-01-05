@@ -1,12 +1,13 @@
-version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
-options: "b00afe42628e5932f99e276f8b1a7ee4"
-build_time: [523022035, 887028000]
+version: "Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)"
+options: "bc82d4234a0c10be19e619d5c9d4d86f"
+build_time: [536939770, 20236000]
 inputs:
-  "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/BackgroundTaskManager.swift": [521880669, 0]
-  "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/LocationTrackerFile.swift": [523003592, 0]
-  "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/CocoaMQTTMessage.swift": [521724926, 0]
-  "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/CocoaMQTT.swift": [521724926, 0]
-  "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/CocoaMQTTFrame.swift": [521724926, 0]
-  "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/MqttClass.swift": [523002099, 0]
-  "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/IJReachability.swift": [521719948, 0]
-  "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/NetworkingHelper.swift": [521725286, 0]
+  "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/ExtensionClass.swift": [536918465, 0]
+  "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaMQTTFrame.swift": [536047011, 0]
+  "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/BackgroundTaskManager.swift": [536845563, 0]
+  "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/LocationTrackerFile.swift": [536939676, 0]
+  "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaMQTTMessage.swift": [536047011, 0]
+  "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MqttClass.swift": [536928270, 0]
+  "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/IJReachability.swift": [536828887, 0]
+  "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/NetworkingHelper.swift": [536938349, 0]
+  "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaMQTT.swift": [536927883, 0]

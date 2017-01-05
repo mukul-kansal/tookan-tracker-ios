@@ -242,21 +242,22 @@ public class LocationTrackerFile:NSObject, CLLocationManagerDelegate,recieveData
     
     
     
-    private func startLocationTracking()  -> (Bool, String){
-//        let response = self.isAllPermissionAuthorized()
-//        //setLocationUpdate()
-//        if(response.0 == true) {
-//            UserDefaults.standard.set(true, forKey: USER_DEFAULT.isLocationTrackingRunning)
-//            setLocationUpdate()
-//            if(self.locationUpdateTimer != nil) {
-//                self.locationUpdateTimer?.invalidate()
-//                self.locationUpdateTimer = nil
-//            }
-//            //self.updateLocationToServer()
-//            //self.locationUpdateTimer = Timer.scheduledTimer(timeInterval: self.slotTime, target: self, selector: #selector(LocationTrackerFile.updateLocationToServer), userInfo: nil, repeats: true)
-//        }
-//        return response
-    }
+//    private func startLocationTracking()  -> (Bool, String){
+////        let response = self.isAllPermissionAuthorized()
+////        //setLocationUpdate()
+////        if(response.0 == true) {
+////            UserDefaults.standard.set(true, forKey: USER_DEFAULT.isLocationTrackingRunning)
+////            setLocationUpdate()
+////            if(self.locationUpdateTimer != nil) {
+////                self.locationUpdateTimer?.invalidate()
+////                self.locationUpdateTimer = nil
+////            }
+////            //self.updateLocationToServer()
+////            //self.locationUpdateTimer = Timer.scheduledTimer(timeInterval: self.slotTime, target: self, selector: #selector(LocationTrackerFile.updateLocationToServer), userInfo: nil, repeats: true)
+////        }
+////        return response
+//        return (false:"")
+//    }
     
     public func stopLocationTracking() {
 //        if(self.locationUpdateTimer != nil) {
@@ -527,6 +528,7 @@ public class LocationTrackerFile:NSObject, CLLocationManagerDelegate,recieveData
         "request_type":"1"
         ]
         //print(params)
+         self.sessionId = ""
         let jsonResponse = NetworkingHelper.sharedInstance.getValidation("generate_session", params: params)
         print("in isAuthorizedUser")
         if jsonResponse.1 != nil{
@@ -538,10 +540,10 @@ public class LocationTrackerFile:NSObject, CLLocationManagerDelegate,recieveData
                         print("in recieved sessionId")
                         return(true,"recieved sessionId")
                     }else{
-                        return(false,"Invalid Access")
+                        return(false,jsonData["message"] as! String)
                     }
             }
-            return(false,"Invalid Access")
+            return(false,jsonData["message"] as! String)
         } else {
             let jsonData = jsonResponse.1!
            // let json = jsonResponse.1
@@ -571,9 +573,17 @@ extension LocationTrackerFile{
             if permissionResponse.0 == true{
              self.jobId = jobId
              let sessionIdData = isAuthorizedUser()
+                if sessionIdData.0 == true  {
                 permissionResponse = sessionIdData
                 initMqtt()
+                }else{
+                    stopTracking()
+                    return sessionIdData
                 }
+            }else{
+                return permissionResponse
+            }
+            return permissionResponse
         }
     }else{
         return (false,"Please choose for tracking service type.")
@@ -581,7 +591,7 @@ extension LocationTrackerFile{
     }else{
        return (false,"No internet connection found")
     }
-    return (true,"\(jobId) \(sessionId) \(apiKey)")
+  //  return permissionResponse
     }
     
     open func stopTrackingService(){

@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/GCD/GCDAsyncUdpSocket.m \
-  /Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/GCD/GCDAsyncUdpSocket.h
+  /Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/GCD/GCDAsyncUdpSocket.m \
+  /Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/GCD/GCDAsyncUdpSocket.h

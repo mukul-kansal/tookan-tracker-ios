@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/cl-macmini-45/Desktop/LocationTracker/build/LocationDemo.build/Release-iphonesimulator/LocationDemo.build/DerivedSources/LocationDemo_vers.c
+  /Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/build/LocationDemo.build/Release-iphonesimulator/LocationDemo.build/DerivedSources/LocationDemo_vers.c

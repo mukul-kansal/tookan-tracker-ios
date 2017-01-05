@@ -26,104 +26,104 @@ provides-member:
 - ["C12LocationDemo19LocationTrackerFile", "stopTracking"]
 - ["C12LocationDemo19LocationTrackerFile", "checkMqttConnectionState"]
 provides-dynamic-lookup:
-- "uniqueKey"
-- "stopTrackingService"
-- "sharedLocationManager"
-- "restartLocationUpdates"
-- "checkMqttConnectionState"
-- "setLocationUpdate"
-- "addFilteredLocationToLocationArray"
-- "host"
-- "locationManager"
-- "locationManager"
-- "maxDistance"
-- "subscribeTimer"
-- "sendRequestToServer"
-- "SDKVersion"
-- "subsribeMQTTForTracking"
-- "enterInForegroundFromBackground"
-- "stopTracking"
-- "updateLocationToServer"
-- "accessToken"
-- "portNumber"
-- "getCurrentLocation"
-- "locationUpdateTimer"
-- "sessionId"
-- "applicationEnterBackground"
-- "maxSpeed"
-- "myLastLocation"
-- "sharedInstance"
+- "appEnterInTerminateState"
+- "trackingLatLong"
+- "bgTask"
 - "currentLocation"
-- "getSpeed"
-- "stopLocationTracking"
+- "maxSpeed"
+- "sharedInstance"
+- "getCurrentLocation"
+- "myLastLocation"
 - "slotTime"
 - "jobId"
-- "updateLastSavedLocationOnServer"
+- "getSpeed"
 - "speed"
-- "becomeActive"
-- "applyFilterOnGetLocation"
-- "delegate"
-- "maxAccuracy"
-- "myLocation"
-- "apiKey"
-- "appEnterInTerminateState"
-- "bgTask"
-- "trackingLatLong"
 - "initMqtt"
+- "stopTrackingService"
+- "updateLocationToServer"
+- "stopTracking"
+- "sessionId"
+- "locationManager"
+- "locationManager"
+- "portNumber"
+- "enterInForegroundFromBackground"
+- "applicationEnterBackground"
+- "addFilteredLocationToLocationArray"
+- "locationUpdateTimer"
+- "subscribeTimer"
+- "host"
+- "uniqueKey"
+- "restartLocationUpdates"
+- "sharedLocationManager"
+- "stopLocationTracking"
+- "setLocationUpdate"
+- "subsribeMQTTForTracking"
+- "accessToken"
+- "checkMqttConnectionState"
+- "maxDistance"
+- "SDKVersion"
+- "maxAccuracy"
+- "delegate"
+- "apiKey"
+- "myLocation"
+- "applyFilterOnGetLocation"
+- "updateLastSavedLocationOnServer"
+- "sendRequestToServer"
+- "becomeActive"
 depends-top-level:
-- !private "UIApplication"
-- "Timer"
-- !private "CLActivityType"
-- !private "AnyObject"
-- !private "BooleanLiteralType"
-- !private "UIDevice"
-- "BackgroundTaskManager"
-- "CLLocation"
-- "StringLiteralType"
-- "CLLocationCoordinate2D"
-- !private ">="
-- !private "*"
-- "CLLocationManagerDelegate"
-- "LocationTrackerDelegate"
-- "CLLocationAccuracy"
-- !private "NotificationCenter"
-- !private ">"
-- "NSObject"
-- "recieveDataFromMqttClass"
-- !private "/"
-- !private "CocoaMQTTConnState"
-- "String"
-- !private "||"
-- "ServiceType"
-- !private "USER_DEFAULT"
-- !private "NetworkingHelper"
-- !private "print"
-- !private "UserDefaults"
 - !private "MqttClass"
-- !private "<"
-- !private "..<"
-- "CLLocationManager"
-- "Bool"
+- "CLLocation"
+- !private "CocoaMQTTConnState"
 - !private "kCLDistanceFilterNone"
-- !private "IJReachability"
-- "Int"
-- !private "Double"
-- !private "~="
-- "LocationTrackerFile"
-- "CastingPrecedence"
+- !private "print"
+- !private "<"
+- !private "UserDefaults"
+- "Bool"
+- !private "NSNotification"
+- !private "..<"
+- !private "UIDevice"
+- !private "USER_DEFAULT"
+- !private "NotificationCenter"
+- "recieveDataFromMqttClass"
+- !private "UIApplication"
+- !private "BooleanLiteralType"
+- "NSObject"
+- "LocationTrackerDelegate"
+- "UInt16"
+- "StringLiteralType"
+- !private "Dictionary"
+- "String"
+- !private ">="
+- "ServiceType"
+- !private "NetworkingHelper"
+- !private "+"
+- "Timer"
 - "AssignmentPrecedence"
 - "=="
-- !private "NSNotification"
-- "TernaryPrecedence"
-- !private "!="
+- "CastingPrecedence"
+- !private "CLActivityType"
+- !private "~="
+- !private "/"
+- "CLLocationAccuracy"
+- !private ">"
 - !private "CLLocationDistance"
-- !private "Dictionary"
-- !private "kCLLocationAccuracyBestForNavigation"
+- "CLLocationCoordinate2D"
 - !private "UnicodeScalarType"
-- !private "+"
-- "Float"
-- "UInt16"
+- "CLLocationManager"
+- "TernaryPrecedence"
+- "BackgroundTaskManager"
 - "LocationFrequency"
+- "Int"
+- !private "Double"
+- "CLLocationManagerDelegate"
+- "LocationTrackerFile"
+- "Float"
+- !private "!="
+- !private "AnyObject"
+- !private "*"
+- !private "IJReachability"
+- !private "||"
+- !private "kCLLocationAccuracyBestForNavigation"
 depends-member:
 - !private ["Ps16AbsoluteValuable", "init"]
 - !private ["Ps9AnyObject", "BackgroundTaskManager"]
@@ -172,7 +172,6 @@ depends-member:
 - ["Ps9AnyObject", "deinit"]
 - ["Ps9AnyObject", "delegate"]
 - !private ["Ps9AnyObject", "desiredAccuracy"]
-- !private ["Ps9AnyObject", "disconnect"]
 - !private ["Ps9AnyObject", "distance"]
 - !private ["Ps9AnyObject", "distanceFilter"]
 - ["Ps9AnyObject", "enterInForegroundFromBackground"]
@@ -236,7 +235,6 @@ depends-member:
 - ["Ps9AnyObject", "slotTime"]
 - ["Ps9AnyObject", "speed"]
 - !private ["Ps9AnyObject", "standard"]
-- ["Ps9AnyObject", "startLocationTracking"]
 - ["Ps9AnyObject", "startTracking"]
 - !private ["Ps9AnyObject", "startUpdatingLocation"]
 - ["Ps9AnyObject", "stopLocationTracking"]
@@ -463,7 +461,6 @@ depends-member:
 - !private ["Ps7CVarArg", "default"]
 - ["Ps7CVarArg", "delegate"]
 - !private ["Ps7CVarArg", "desiredAccuracy"]
-- !private ["Ps7CVarArg", "disconnect"]
 - !private ["Ps7CVarArg", "distance"]
 - !private ["Ps7CVarArg", "distanceFilter"]
 - ["Ps7CVarArg", "enterInForegroundFromBackground"]
@@ -530,7 +527,6 @@ depends-member:
 - ["Ps7CVarArg", "slotTime"]
 - ["Ps7CVarArg", "speed"]
 - !private ["Ps7CVarArg", "standard"]
-- ["Ps7CVarArg", "startLocationTracking"]
 - ["Ps7CVarArg", "startTracking"]
 - !private ["Ps7CVarArg", "startUpdatingLocation"]
 - ["Ps7CVarArg", "stopLocationTracking"]
@@ -559,7 +555,6 @@ depends-member:
 - !private ["P12LocationDemo17CocoaMQTTDelegate", "accessToken"]
 - !private ["P12LocationDemo17CocoaMQTTDelegate", "connectToServer"]
 - !private ["P12LocationDemo17CocoaMQTTDelegate", "delegate"]
-- !private ["P12LocationDemo17CocoaMQTTDelegate", "disconnect"]
 - !private ["P12LocationDemo17CocoaMQTTDelegate", "hostAddress"]
 - !private ["P12LocationDemo17CocoaMQTTDelegate", "key"]
 - !private ["P12LocationDemo17CocoaMQTTDelegate", "mqtt"]
@@ -656,7 +651,6 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "default"]
 - ["Ps28CustomDebugStringConvertible", "delegate"]
 - !private ["Ps28CustomDebugStringConvertible", "desiredAccuracy"]
-- !private ["Ps28CustomDebugStringConvertible", "disconnect"]
 - !private ["Ps28CustomDebugStringConvertible", "distance"]
 - !private ["Ps28CustomDebugStringConvertible", "distanceFilter"]
 - ["Ps28CustomDebugStringConvertible", "enterInForegroundFromBackground"]
@@ -723,7 +717,6 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "some"]
 - ["Ps28CustomDebugStringConvertible", "speed"]
 - !private ["Ps28CustomDebugStringConvertible", "standard"]
-- ["Ps28CustomDebugStringConvertible", "startLocationTracking"]
 - ["Ps28CustomDebugStringConvertible", "startTracking"]
 - !private ["Ps28CustomDebugStringConvertible", "startUpdatingLocation"]
 - ["Ps28CustomDebugStringConvertible", "stopLocationTracking"]
@@ -832,7 +825,6 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "default"]
 - ["Ps23CustomStringConvertible", "delegate"]
 - !private ["Ps23CustomStringConvertible", "desiredAccuracy"]
-- !private ["Ps23CustomStringConvertible", "disconnect"]
 - !private ["Ps23CustomStringConvertible", "distance"]
 - !private ["Ps23CustomStringConvertible", "distanceFilter"]
 - ["Ps23CustomStringConvertible", "enterInForegroundFromBackground"]
@@ -899,7 +891,6 @@ depends-member:
 - ["Ps23CustomStringConvertible", "slotTime"]
 - ["Ps23CustomStringConvertible", "speed"]
 - !private ["Ps23CustomStringConvertible", "standard"]
-- ["Ps23CustomStringConvertible", "startLocationTracking"]
 - ["Ps23CustomStringConvertible", "startTracking"]
 - !private ["Ps23CustomStringConvertible", "startUpdatingLocation"]
 - ["Ps23CustomStringConvertible", "stopLocationTracking"]
@@ -999,7 +990,6 @@ depends-member:
 - !private ["Ps9Equatable", "default"]
 - ["Ps9Equatable", "delegate"]
 - !private ["Ps9Equatable", "desiredAccuracy"]
-- !private ["Ps9Equatable", "disconnect"]
 - !private ["Ps9Equatable", "distance"]
 - !private ["Ps9Equatable", "distanceFilter"]
 - ["Ps9Equatable", "enterInForegroundFromBackground"]
@@ -1067,7 +1057,6 @@ depends-member:
 - ["Ps9Equatable", "slotTime"]
 - ["Ps9Equatable", "speed"]
 - !private ["Ps9Equatable", "standard"]
-- ["Ps9Equatable", "startLocationTracking"]
 - ["Ps9Equatable", "startTracking"]
 - !private ["Ps9Equatable", "startUpdatingLocation"]
 - ["Ps9Equatable", "stopLocationTracking"]
@@ -1185,7 +1174,6 @@ depends-member:
 - !private ["Ps8Hashable", "default"]
 - ["Ps8Hashable", "delegate"]
 - !private ["Ps8Hashable", "desiredAccuracy"]
-- !private ["Ps8Hashable", "disconnect"]
 - !private ["Ps8Hashable", "distance"]
 - !private ["Ps8Hashable", "distanceFilter"]
 - ["Ps8Hashable", "enterInForegroundFromBackground"]
@@ -1253,7 +1241,6 @@ depends-member:
 - ["Ps8Hashable", "slotTime"]
 - ["Ps8Hashable", "speed"]
 - !private ["Ps8Hashable", "standard"]
-- ["Ps8Hashable", "startLocationTracking"]
 - ["Ps8Hashable", "startTracking"]
 - !private ["Ps8Hashable", "startUpdatingLocation"]
 - ["Ps8Hashable", "stopLocationTracking"]
@@ -1420,7 +1407,6 @@ depends-member:
 - ["C12LocationDemo19LocationTrackerFile", "sharedLocationManager"]
 - ["C12LocationDemo19LocationTrackerFile", "slotTime"]
 - ["C12LocationDemo19LocationTrackerFile", "speed"]
-- !private ["C12LocationDemo19LocationTrackerFile", "startLocationTracking"]
 - ["C12LocationDemo19LocationTrackerFile", "startTracking"]
 - ["C12LocationDemo19LocationTrackerFile", "stopLocationTracking"]
 - ["C12LocationDemo19LocationTrackerFile", "stopTracking"]
@@ -1443,7 +1429,6 @@ depends-member:
 - !private ["C12LocationDemo9MqttClass", "connectToServer"]
 - ["C12LocationDemo9MqttClass", "deinit"]
 - !private ["C12LocationDemo9MqttClass", "delegate"]
-- !private ["C12LocationDemo9MqttClass", "disconnect"]
 - !private ["C12LocationDemo9MqttClass", "hostAddress"]
 - !private ["C12LocationDemo9MqttClass", "key"]
 - !private ["C12LocationDemo9MqttClass", "mqtt"]
@@ -1557,7 +1542,6 @@ depends-member:
 - ["CSo8NSObject", "deinit"]
 - ["CSo8NSObject", "delegate"]
 - !private ["CSo8NSObject", "desiredAccuracy"]
-- !private ["CSo8NSObject", "disconnect"]
 - !private ["CSo8NSObject", "distance"]
 - !private ["CSo8NSObject", "distanceFilter"]
 - ["CSo8NSObject", "enterInForegroundFromBackground"]
@@ -1620,7 +1604,6 @@ depends-member:
 - ["CSo8NSObject", "slotTime"]
 - ["CSo8NSObject", "speed"]
 - !private ["CSo8NSObject", "standard"]
-- ["CSo8NSObject", "startLocationTracking"]
 - ["CSo8NSObject", "startTracking"]
 - !private ["CSo8NSObject", "startUpdatingLocation"]
 - ["CSo8NSObject", "stopLocationTracking"]
@@ -1684,7 +1667,6 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "default"]
 - ["PSo16NSObjectProtocol", "delegate"]
 - !private ["PSo16NSObjectProtocol", "desiredAccuracy"]
-- !private ["PSo16NSObjectProtocol", "disconnect"]
 - !private ["PSo16NSObjectProtocol", "distance"]
 - !private ["PSo16NSObjectProtocol", "distanceFilter"]
 - ["PSo16NSObjectProtocol", "enterInForegroundFromBackground"]
@@ -1747,7 +1729,6 @@ depends-member:
 - ["PSo16NSObjectProtocol", "slotTime"]
 - ["PSo16NSObjectProtocol", "speed"]
 - !private ["PSo16NSObjectProtocol", "standard"]
-- ["PSo16NSObjectProtocol", "startLocationTracking"]
 - ["PSo16NSObjectProtocol", "startTracking"]
 - !private ["PSo16NSObjectProtocol", "startUpdatingLocation"]
 - ["PSo16NSObjectProtocol", "stopLocationTracking"]
@@ -2045,7 +2026,6 @@ depends-member:
 - !private ["Ps9_Hashable", "default"]
 - ["Ps9_Hashable", "delegate"]
 - !private ["Ps9_Hashable", "desiredAccuracy"]
-- !private ["Ps9_Hashable", "disconnect"]
 - !private ["Ps9_Hashable", "distance"]
 - !private ["Ps9_Hashable", "distanceFilter"]
 - ["Ps9_Hashable", "enterInForegroundFromBackground"]
@@ -2113,7 +2093,6 @@ depends-member:
 - ["Ps9_Hashable", "slotTime"]
 - ["Ps9_Hashable", "speed"]
 - !private ["Ps9_Hashable", "standard"]
-- ["Ps9_Hashable", "startLocationTracking"]
 - ["Ps9_Hashable", "startTracking"]
 - !private ["Ps9_Hashable", "startUpdatingLocation"]
 - ["Ps9_Hashable", "stopLocationTracking"]
@@ -2414,13 +2393,13 @@ depends-external:
 - "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
 - "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
-- "/Users/cl-macmini-57/Desktop/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
-- "/Users/cl-macmini-57/Desktop/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
-- "/Users/cl-macmini-57/Desktop/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
-- "/Users/cl-macmini-57/Desktop/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
-- "/Users/cl-macmini-57/Desktop/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
-- "/Users/cl-macmini-57/Desktop/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Modules/module.modulemap"
-- "/Users/cl-macmini-57/Desktop/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer.h"
-- "/Users/cl-macmini-57/Desktop/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer-umbrella.h"
-- "/Users/cl-macmini-57/Desktop/LocationTracker/LocationDemo/MSWeakTimer.framework/Modules/module.modulemap"
-interface-hash: "088c278c99ce94ecd93a527d0b00353d"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer-umbrella.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Modules/module.modulemap"
+interface-hash: "f5b2447137aa7da2e7e9ee3acffca80d"

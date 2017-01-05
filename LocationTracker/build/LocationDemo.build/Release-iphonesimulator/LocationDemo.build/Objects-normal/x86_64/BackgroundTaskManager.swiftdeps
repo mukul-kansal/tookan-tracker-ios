@@ -6,34 +6,39 @@ provides-nominal:
 provides-member:
 - ["C12LocationDemo21BackgroundTaskManager", ""]
 provides-dynamic-lookup:
-- "drainBGTaskList"
-- "sharedBackgroundTaskManager"
-- "endBackgroundTasks"
-- "endAllBackgroundTasks"
-- "bgTaskIdList"
 - "beginNewBackgroundTask"
+- "bgTaskIdList"
+- "sharedBackgroundTaskManager"
+- "endAllBackgroundTasks"
+- "endBackgroundTasks"
+- "drainBGTaskList"
 depends-top-level:
-- !private "BooleanLiteralType"
-- "NSMutableArray"
-- !private "UIApplication"
-- "BackgroundTaskManager"
-- !private ">"
-- "Bool"
-- !private "..<"
-- !private "UIBackgroundTaskInvalid"
+- "TernaryPrecedence"
 - "LocationTrackerFile"
-- "UIBackgroundTaskIdentifier"
+- "NSMutableArray"
+- "AssignmentPrecedence"
+- !private "UIApplication"
 - !private "=="
+- "CastingPrecedence"
+- "UIBackgroundTaskIdentifier"
+- "Bool"
+- !private "UIBackgroundTaskInvalid"
+- !private "..<"
+- !private ">"
+- !private "BooleanLiteralType"
+- !private "AnyObject"
+- "BackgroundTaskManager"
 depends-member:
 - ["Ps9AnyObject", "BackgroundTaskManager"]
 - !private ["Ps9AnyObject", "NSMutableArray"]
 - !private ["Ps9AnyObject", "UIApplication"]
 - !private ["Ps9AnyObject", "UIBackgroundTaskInvalid"]
-- !private ["Ps9AnyObject", "addObject"]
-- !private ["Ps9AnyObject", "beginBackgroundTaskWithExpirationHandler"]
+- !private ["Ps9AnyObject", "add"]
+- !private ["Ps9AnyObject", "beginBackgroundTask"]
 - ["Ps9AnyObject", "beginNewBackgroundTask"]
 - ["Ps9AnyObject", "bgTaskIdList"]
 - !private ["Ps9AnyObject", "count"]
+- ["Ps9AnyObject", "deinit"]
 - ["Ps9AnyObject", "drainBGTaskList"]
 - ["Ps9AnyObject", "endAllBackgroundTasks"]
 - !private ["Ps9AnyObject", "endBackgroundTask"]
@@ -41,18 +46,14 @@ depends-member:
 - ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "integerValue"]
 - ["Ps9AnyObject", "masterTaskId"]
-- !private ["Ps9AnyObject", "objectAtIndex"]
-- !private ["Ps9AnyObject", "removeObjectAtIndex"]
-- !private ["Ps9AnyObject", "respondsToSelector"]
-- !private ["Ps9AnyObject", "sharedApplication"]
+- !private ["Ps9AnyObject", "object"]
+- !private ["Ps9AnyObject", "removeObject"]
+- !private ["Ps9AnyObject", "responds"]
+- !private ["Ps9AnyObject", "shared"]
 - ["Ps9AnyObject", "sharedBGTaskManager"]
 - ["Ps9AnyObject", "sharedBackgroundTaskManager"]
 - ["Ps9AnyObject", ""]
-- !private ["Ps23ArrayLiteralConvertible", "addObject"]
-- !private ["Ps23ArrayLiteralConvertible", "count"]
-- !private ["Ps23ArrayLiteralConvertible", "init"]
-- !private ["Ps23ArrayLiteralConvertible", "objectAtIndex"]
-- !private ["Ps23ArrayLiteralConvertible", "removeObjectAtIndex"]
+- !private ["C12LocationDemo21BackgroundTaskManager", "AnyObject"]
 - ["C12LocationDemo21BackgroundTaskManager", "BackgroundTaskManager"]
 - ["C12LocationDemo21BackgroundTaskManager", "Bool"]
 - ["C12LocationDemo21BackgroundTaskManager", "NSMutableArray"]
@@ -69,15 +70,15 @@ depends-member:
 - ["C12LocationDemo21BackgroundTaskManager", "masterTaskId"]
 - !private ["C12LocationDemo21BackgroundTaskManager", "sharedBGTaskManager"]
 - ["C12LocationDemo21BackgroundTaskManager", "sharedBackgroundTaskManager"]
-- !private ["Ps22BidirectionalIndexType", "Distance"]
-- !private ["Ps22BidirectionalIndexType", "IntegerLiteralType"]
-- !private ["Ps22BidirectionalIndexType", "_DisabledRangeIndex"]
-- !private ["Ps21BitwiseOperationsType", "Distance"]
-- !private ["Ps21BitwiseOperationsType", "IntegerLiteralType"]
-- !private ["Ps21BitwiseOperationsType", "_DisabledRangeIndex"]
+- !private ["Ps23BidirectionalCollection", "Iterator"]
+- !private ["Ps23BidirectionalCollection", "_Element"]
+- !private ["Ps22BidirectionalIndexable", "Iterator"]
+- !private ["Ps22BidirectionalIndexable", "_Element"]
+- !private ["Ps17BitwiseOperations", "IntegerLiteralType"]
+- !private ["Ps17BitwiseOperations", "Stride"]
+- !private ["Ps17BitwiseOperations", "_DisabledRangeIndex"]
 - !private ["Sb", "_getBuiltinLogicValue"]
-- !private ["Ps25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
-- !private ["Ps11BooleanType", "_getBuiltinLogicValue"]
+- ["Sb", "deinit"]
 - ["PSo25CLLocationManagerDelegate", "BackgroundTaskManager"]
 - !private ["PSo25CLLocationManagerDelegate", "NSMutableArray"]
 - !private ["PSo25CLLocationManagerDelegate", "UIApplication"]
@@ -92,42 +93,47 @@ depends-member:
 - ["PSo25CLLocationManagerDelegate", "sharedBGTaskManager"]
 - ["PSo25CLLocationManagerDelegate", "sharedBackgroundTaskManager"]
 - ["PSo25CLLocationManagerDelegate", ""]
-- ["Ps11CVarArgType", "BackgroundTaskManager"]
-- !private ["Ps11CVarArgType", "Distance"]
-- !private ["Ps11CVarArgType", "IntegerLiteralType"]
-- !private ["Ps11CVarArgType", "NSMutableArray"]
-- !private ["Ps11CVarArgType", "UIApplication"]
-- !private ["Ps11CVarArgType", "UIBackgroundTaskInvalid"]
-- !private ["Ps11CVarArgType", "_DisabledRangeIndex"]
-- !private ["Ps11CVarArgType", "addObject"]
-- !private ["Ps11CVarArgType", "beginBackgroundTaskWithExpirationHandler"]
-- ["Ps11CVarArgType", "beginNewBackgroundTask"]
-- ["Ps11CVarArgType", "bgTaskIdList"]
-- !private ["Ps11CVarArgType", "count"]
-- ["Ps11CVarArgType", "drainBGTaskList"]
-- ["Ps11CVarArgType", "endAllBackgroundTasks"]
-- !private ["Ps11CVarArgType", "endBackgroundTask"]
-- ["Ps11CVarArgType", "endBackgroundTasks"]
-- ["Ps11CVarArgType", "init"]
-- ["Ps11CVarArgType", "masterTaskId"]
-- !private ["Ps11CVarArgType", "objectAtIndex"]
-- !private ["Ps11CVarArgType", "removeObjectAtIndex"]
-- !private ["Ps11CVarArgType", "respondsToSelector"]
-- !private ["Ps11CVarArgType", "sharedApplication"]
-- ["Ps11CVarArgType", "sharedBGTaskManager"]
-- ["Ps11CVarArgType", "sharedBackgroundTaskManager"]
-- ["Ps11CVarArgType", ""]
-- !private ["Ps14CollectionType", "Generator"]
-- !private ["Ps10Comparable", "Distance"]
+- ["Ps7CVarArg", "BackgroundTaskManager"]
+- !private ["Ps7CVarArg", "IntegerLiteralType"]
+- !private ["Ps7CVarArg", "NSMutableArray"]
+- !private ["Ps7CVarArg", "Stride"]
+- !private ["Ps7CVarArg", "UIApplication"]
+- !private ["Ps7CVarArg", "UIBackgroundTaskInvalid"]
+- !private ["Ps7CVarArg", "_DisabledRangeIndex"]
+- !private ["Ps7CVarArg", "add"]
+- !private ["Ps7CVarArg", "beginBackgroundTask"]
+- ["Ps7CVarArg", "beginNewBackgroundTask"]
+- ["Ps7CVarArg", "bgTaskIdList"]
+- !private ["Ps7CVarArg", "count"]
+- ["Ps7CVarArg", "drainBGTaskList"]
+- ["Ps7CVarArg", "endAllBackgroundTasks"]
+- !private ["Ps7CVarArg", "endBackgroundTask"]
+- ["Ps7CVarArg", "endBackgroundTasks"]
+- ["Ps7CVarArg", "init"]
+- ["Ps7CVarArg", "masterTaskId"]
+- !private ["Ps7CVarArg", "object"]
+- !private ["Ps7CVarArg", "removeObject"]
+- !private ["Ps7CVarArg", "responds"]
+- !private ["Ps7CVarArg", "shared"]
+- ["Ps7CVarArg", "sharedBGTaskManager"]
+- ["Ps7CVarArg", "sharedBackgroundTaskManager"]
+- ["Ps7CVarArg", ""]
+- !private ["Ps10Collection", "Iterator"]
+- !private ["Ps10Collection", "_Element"]
 - !private ["Ps10Comparable", "IntegerLiteralType"]
+- !private ["Ps10Comparable", "Stride"]
 - !private ["Ps10Comparable", "_DisabledRangeIndex"]
+- !private ["Vs14CountableRange", "Iterator"]
+- !private ["Vs14CountableRange", "_Element"]
+- ["Vs14CountableRange", "deinit"]
 - ["Ps28CustomDebugStringConvertible", "BackgroundTaskManager"]
-- !private ["Ps28CustomDebugStringConvertible", "Generator"]
+- !private ["Ps28CustomDebugStringConvertible", "Iterator"]
 - !private ["Ps28CustomDebugStringConvertible", "NSMutableArray"]
 - !private ["Ps28CustomDebugStringConvertible", "UIApplication"]
 - !private ["Ps28CustomDebugStringConvertible", "UIBackgroundTaskInvalid"]
-- !private ["Ps28CustomDebugStringConvertible", "addObject"]
-- !private ["Ps28CustomDebugStringConvertible", "beginBackgroundTaskWithExpirationHandler"]
+- !private ["Ps28CustomDebugStringConvertible", "_Element"]
+- !private ["Ps28CustomDebugStringConvertible", "add"]
+- !private ["Ps28CustomDebugStringConvertible", "beginBackgroundTask"]
 - ["Ps28CustomDebugStringConvertible", "beginNewBackgroundTask"]
 - ["Ps28CustomDebugStringConvertible", "bgTaskIdList"]
 - !private ["Ps28CustomDebugStringConvertible", "count"]
@@ -137,24 +143,40 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "endBackgroundTasks"]
 - ["Ps28CustomDebugStringConvertible", "init"]
 - ["Ps28CustomDebugStringConvertible", "masterTaskId"]
-- !private ["Ps28CustomDebugStringConvertible", "objectAtIndex"]
-- !private ["Ps28CustomDebugStringConvertible", "removeObjectAtIndex"]
-- !private ["Ps28CustomDebugStringConvertible", "respondsToSelector"]
-- !private ["Ps28CustomDebugStringConvertible", "sharedApplication"]
+- !private ["Ps28CustomDebugStringConvertible", "object"]
+- !private ["Ps28CustomDebugStringConvertible", "removeObject"]
+- !private ["Ps28CustomDebugStringConvertible", "responds"]
+- !private ["Ps28CustomDebugStringConvertible", "shared"]
 - ["Ps28CustomDebugStringConvertible", "sharedBGTaskManager"]
 - ["Ps28CustomDebugStringConvertible", "sharedBackgroundTaskManager"]
 - ["Ps28CustomDebugStringConvertible", ""]
+- !private ["Ps29CustomPlaygroundQuickLookable", "IntegerLiteralType"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "Stride"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "_DisabledRangeIndex"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
+- !private ["Ps17CustomReflectable", "IntegerLiteralType"]
+- !private ["Ps17CustomReflectable", "Iterator"]
+- !private ["Ps17CustomReflectable", "Stride"]
+- !private ["Ps17CustomReflectable", "_DisabledRangeIndex"]
+- !private ["Ps17CustomReflectable", "_Element"]
+- !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
+- !private ["Ps17CustomReflectable", "add"]
+- !private ["Ps17CustomReflectable", "count"]
+- !private ["Ps17CustomReflectable", "init"]
+- !private ["Ps17CustomReflectable", "object"]
+- !private ["Ps17CustomReflectable", "removeObject"]
 - ["Ps23CustomStringConvertible", "BackgroundTaskManager"]
-- !private ["Ps23CustomStringConvertible", "Distance"]
-- !private ["Ps23CustomStringConvertible", "Generator"]
 - !private ["Ps23CustomStringConvertible", "IntegerLiteralType"]
+- !private ["Ps23CustomStringConvertible", "Iterator"]
 - !private ["Ps23CustomStringConvertible", "NSMutableArray"]
+- !private ["Ps23CustomStringConvertible", "Stride"]
 - !private ["Ps23CustomStringConvertible", "UIApplication"]
 - !private ["Ps23CustomStringConvertible", "UIBackgroundTaskInvalid"]
 - !private ["Ps23CustomStringConvertible", "_DisabledRangeIndex"]
+- !private ["Ps23CustomStringConvertible", "_Element"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
-- !private ["Ps23CustomStringConvertible", "addObject"]
-- !private ["Ps23CustomStringConvertible", "beginBackgroundTaskWithExpirationHandler"]
+- !private ["Ps23CustomStringConvertible", "add"]
+- !private ["Ps23CustomStringConvertible", "beginBackgroundTask"]
 - ["Ps23CustomStringConvertible", "beginNewBackgroundTask"]
 - ["Ps23CustomStringConvertible", "bgTaskIdList"]
 - !private ["Ps23CustomStringConvertible", "count"]
@@ -164,24 +186,25 @@ depends-member:
 - ["Ps23CustomStringConvertible", "endBackgroundTasks"]
 - ["Ps23CustomStringConvertible", "init"]
 - ["Ps23CustomStringConvertible", "masterTaskId"]
-- !private ["Ps23CustomStringConvertible", "objectAtIndex"]
-- !private ["Ps23CustomStringConvertible", "removeObjectAtIndex"]
-- !private ["Ps23CustomStringConvertible", "respondsToSelector"]
-- !private ["Ps23CustomStringConvertible", "sharedApplication"]
+- !private ["Ps23CustomStringConvertible", "object"]
+- !private ["Ps23CustomStringConvertible", "removeObject"]
+- !private ["Ps23CustomStringConvertible", "responds"]
+- !private ["Ps23CustomStringConvertible", "shared"]
 - ["Ps23CustomStringConvertible", "sharedBGTaskManager"]
 - ["Ps23CustomStringConvertible", "sharedBackgroundTaskManager"]
 - ["Ps23CustomStringConvertible", ""]
 - ["Ps9Equatable", "BackgroundTaskManager"]
-- !private ["Ps9Equatable", "Distance"]
-- !private ["Ps9Equatable", "Generator"]
 - !private ["Ps9Equatable", "IntegerLiteralType"]
+- !private ["Ps9Equatable", "Iterator"]
 - !private ["Ps9Equatable", "NSMutableArray"]
+- !private ["Ps9Equatable", "Stride"]
 - !private ["Ps9Equatable", "UIApplication"]
 - !private ["Ps9Equatable", "UIBackgroundTaskInvalid"]
 - !private ["Ps9Equatable", "_DisabledRangeIndex"]
+- !private ["Ps9Equatable", "_Element"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
-- !private ["Ps9Equatable", "addObject"]
-- !private ["Ps9Equatable", "beginBackgroundTaskWithExpirationHandler"]
+- !private ["Ps9Equatable", "add"]
+- !private ["Ps9Equatable", "beginBackgroundTask"]
 - ["Ps9Equatable", "beginNewBackgroundTask"]
 - ["Ps9Equatable", "bgTaskIdList"]
 - !private ["Ps9Equatable", "count"]
@@ -191,28 +214,32 @@ depends-member:
 - ["Ps9Equatable", "endBackgroundTasks"]
 - ["Ps9Equatable", "init"]
 - ["Ps9Equatable", "masterTaskId"]
-- !private ["Ps9Equatable", "objectAtIndex"]
-- !private ["Ps9Equatable", "removeObjectAtIndex"]
-- !private ["Ps9Equatable", "respondsToSelector"]
-- !private ["Ps9Equatable", "sharedApplication"]
+- !private ["Ps9Equatable", "object"]
+- !private ["Ps9Equatable", "removeObject"]
+- !private ["Ps9Equatable", "responds"]
+- !private ["Ps9Equatable", "shared"]
 - ["Ps9Equatable", "sharedBGTaskManager"]
 - ["Ps9Equatable", "sharedBackgroundTaskManager"]
 - ["Ps9Equatable", ""]
-- !private ["Ps16ForwardIndexType", "Distance"]
-- !private ["Ps16ForwardIndexType", "IntegerLiteralType"]
-- !private ["Ps16ForwardIndexType", "_DisabledRangeIndex"]
-- !private ["Ps13GeneratorType", "Element"]
-- !private ["Vs16HalfOpenInterval", "deinit"]
+- !private ["Ps25ExpressibleByArrayLiteral", "add"]
+- !private ["Ps25ExpressibleByArrayLiteral", "count"]
+- !private ["Ps25ExpressibleByArrayLiteral", "init"]
+- !private ["Ps25ExpressibleByArrayLiteral", "object"]
+- !private ["Ps25ExpressibleByArrayLiteral", "removeObject"]
+- !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps27ExpressibleByIntegerLiteral", "IntegerLiteralType"]
+- !private ["Ps27ExpressibleByIntegerLiteral", "Stride"]
+- !private ["Ps27ExpressibleByIntegerLiteral", "_DisabledRangeIndex"]
 - ["Ps8Hashable", "BackgroundTaskManager"]
-- !private ["Ps8Hashable", "Distance"]
 - !private ["Ps8Hashable", "IntegerLiteralType"]
 - !private ["Ps8Hashable", "NSMutableArray"]
+- !private ["Ps8Hashable", "Stride"]
 - !private ["Ps8Hashable", "UIApplication"]
 - !private ["Ps8Hashable", "UIBackgroundTaskInvalid"]
 - !private ["Ps8Hashable", "_DisabledRangeIndex"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
-- !private ["Ps8Hashable", "addObject"]
-- !private ["Ps8Hashable", "beginBackgroundTaskWithExpirationHandler"]
+- !private ["Ps8Hashable", "add"]
+- !private ["Ps8Hashable", "beginBackgroundTask"]
 - ["Ps8Hashable", "beginNewBackgroundTask"]
 - ["Ps8Hashable", "bgTaskIdList"]
 - !private ["Ps8Hashable", "count"]
@@ -222,27 +249,31 @@ depends-member:
 - ["Ps8Hashable", "endBackgroundTasks"]
 - ["Ps8Hashable", "init"]
 - ["Ps8Hashable", "masterTaskId"]
-- !private ["Ps8Hashable", "objectAtIndex"]
-- !private ["Ps8Hashable", "removeObjectAtIndex"]
-- !private ["Ps8Hashable", "respondsToSelector"]
-- !private ["Ps8Hashable", "sharedApplication"]
+- !private ["Ps8Hashable", "object"]
+- !private ["Ps8Hashable", "removeObject"]
+- !private ["Ps8Hashable", "responds"]
+- !private ["Ps8Hashable", "shared"]
 - ["Ps8Hashable", "sharedBGTaskManager"]
 - ["Ps8Hashable", "sharedBackgroundTaskManager"]
 - ["Ps8Hashable", ""]
-- !private ["Ps9Indexable", "Generator"]
-- !private ["Si", "Distance"]
+- ["SQ", "deinit"]
+- !private ["Ps9Indexable", "Iterator"]
+- !private ["Ps9Indexable", "_Element"]
+- !private ["Ps13IndexableBase", "Iterator"]
+- !private ["Ps13IndexableBase", "_Element"]
+- !private ["Vs16IndexingIterator", "Element"]
 - !private ["Si", "IntegerLiteralType"]
+- !private ["Si", "Stride"]
 - !private ["Si", "_DisabledRangeIndex"]
-- !private ["Si", "deinit"]
-- !private ["Ps21IntegerArithmeticType", "Distance"]
-- !private ["Ps21IntegerArithmeticType", "IntegerLiteralType"]
-- !private ["Ps21IntegerArithmeticType", "_DisabledRangeIndex"]
-- !private ["Ps25IntegerLiteralConvertible", "Distance"]
-- !private ["Ps25IntegerLiteralConvertible", "IntegerLiteralType"]
-- !private ["Ps25IntegerLiteralConvertible", "_DisabledRangeIndex"]
-- !private ["Ps11IntegerType", "Distance"]
-- !private ["Ps11IntegerType", "IntegerLiteralType"]
-- !private ["Ps11IntegerType", "_DisabledRangeIndex"]
+- ["Si", "deinit"]
+- !private ["Ps7Integer", "IntegerLiteralType"]
+- !private ["Ps7Integer", "Stride"]
+- !private ["Ps7Integer", "_DisabledRangeIndex"]
+- !private ["Ps17IntegerArithmetic", "IntegerLiteralType"]
+- !private ["Ps17IntegerArithmetic", "Stride"]
+- !private ["Ps17IntegerArithmetic", "_DisabledRangeIndex"]
+- !private ["Ps16IteratorProtocol", "Element"]
+- !private ["C12LocationDemo19LocationTrackerFile", "AnyObject"]
 - ["C12LocationDemo19LocationTrackerFile", "BackgroundTaskManager"]
 - ["C12LocationDemo19LocationTrackerFile", "Bool"]
 - ["C12LocationDemo19LocationTrackerFile", "NSMutableArray"]
@@ -251,6 +282,7 @@ depends-member:
 - !private ["C12LocationDemo19LocationTrackerFile", "UIBackgroundTaskInvalid"]
 - ["C12LocationDemo19LocationTrackerFile", "beginNewBackgroundTask"]
 - ["C12LocationDemo19LocationTrackerFile", "bgTaskIdList"]
+- ["C12LocationDemo19LocationTrackerFile", "deinit"]
 - ["C12LocationDemo19LocationTrackerFile", "drainBGTaskList"]
 - ["C12LocationDemo19LocationTrackerFile", "endAllBackgroundTasks"]
 - ["C12LocationDemo19LocationTrackerFile", "endBackgroundTasks"]
@@ -259,47 +291,50 @@ depends-member:
 - ["C12LocationDemo19LocationTrackerFile", "sharedBGTaskManager"]
 - ["C12LocationDemo19LocationTrackerFile", "sharedBackgroundTaskManager"]
 - ["C12LocationDemo19LocationTrackerFile", ""]
-- !private ["Ps14MirrorPathType", "Distance"]
-- !private ["Ps14MirrorPathType", "IntegerLiteralType"]
-- !private ["Ps14MirrorPathType", "_DisabledRangeIndex"]
-- !private ["CSo7NSArray", "addObject"]
+- !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps10MirrorPath", "IntegerLiteralType"]
+- !private ["Ps10MirrorPath", "Stride"]
+- !private ["Ps10MirrorPath", "_DisabledRangeIndex"]
+- !private ["CSo7NSArray", "add"]
 - !private ["CSo7NSArray", "count"]
 - !private ["CSo7NSArray", "init"]
-- !private ["CSo7NSArray", "objectAtIndex"]
-- !private ["CSo7NSArray", "removeObjectAtIndex"]
-- !private ["PSo8NSCoding", "addObject"]
+- !private ["CSo7NSArray", "object"]
+- !private ["CSo7NSArray", "removeObject"]
+- !private ["PSo8NSCoding", "add"]
 - !private ["PSo8NSCoding", "count"]
 - !private ["PSo8NSCoding", "init"]
-- !private ["PSo8NSCoding", "objectAtIndex"]
-- !private ["PSo8NSCoding", "removeObjectAtIndex"]
-- !private ["PSo9NSCopying", "addObject"]
+- !private ["PSo8NSCoding", "object"]
+- !private ["PSo8NSCoding", "removeObject"]
+- !private ["PSo9NSCopying", "add"]
 - !private ["PSo9NSCopying", "count"]
 - !private ["PSo9NSCopying", "init"]
-- !private ["PSo9NSCopying", "objectAtIndex"]
-- !private ["PSo9NSCopying", "removeObjectAtIndex"]
-- !private ["PSo17NSFastEnumeration", "addObject"]
+- !private ["PSo9NSCopying", "object"]
+- !private ["PSo9NSCopying", "removeObject"]
+- !private ["PSo17NSFastEnumeration", "add"]
 - !private ["PSo17NSFastEnumeration", "count"]
 - !private ["PSo17NSFastEnumeration", "init"]
-- !private ["PSo17NSFastEnumeration", "objectAtIndex"]
-- !private ["PSo17NSFastEnumeration", "removeObjectAtIndex"]
-- !private ["CSo14NSMutableArray", "addObject"]
+- !private ["PSo17NSFastEnumeration", "object"]
+- !private ["PSo17NSFastEnumeration", "removeObject"]
+- !private ["CSo14NSMutableArray", "add"]
 - !private ["CSo14NSMutableArray", "count"]
+- ["CSo14NSMutableArray", "deinit"]
 - !private ["CSo14NSMutableArray", "init"]
-- !private ["CSo14NSMutableArray", "objectAtIndex"]
-- !private ["CSo14NSMutableArray", "removeObjectAtIndex"]
-- !private ["PSo16NSMutableCopying", "addObject"]
+- !private ["CSo14NSMutableArray", "object"]
+- !private ["CSo14NSMutableArray", "removeObject"]
+- !private ["PSo16NSMutableCopying", "add"]
 - !private ["PSo16NSMutableCopying", "count"]
 - !private ["PSo16NSMutableCopying", "init"]
-- !private ["PSo16NSMutableCopying", "objectAtIndex"]
-- !private ["PSo16NSMutableCopying", "removeObjectAtIndex"]
+- !private ["PSo16NSMutableCopying", "object"]
+- !private ["PSo16NSMutableCopying", "removeObject"]
+- !private ["CSo8NSObject", "AnyObject"]
 - ["CSo8NSObject", "BackgroundTaskManager"]
 - ["CSo8NSObject", "Bool"]
 - ["CSo8NSObject", "NSMutableArray"]
 - !private ["CSo8NSObject", "UIApplication"]
 - ["CSo8NSObject", "UIBackgroundTaskIdentifier"]
 - !private ["CSo8NSObject", "UIBackgroundTaskInvalid"]
-- !private ["CSo8NSObject", "addObject"]
-- !private ["CSo8NSObject", "beginBackgroundTaskWithExpirationHandler"]
+- !private ["CSo8NSObject", "add"]
+- !private ["CSo8NSObject", "beginBackgroundTask"]
 - ["CSo8NSObject", "beginNewBackgroundTask"]
 - ["CSo8NSObject", "bgTaskIdList"]
 - !private ["CSo8NSObject", "count"]
@@ -309,18 +344,18 @@ depends-member:
 - ["CSo8NSObject", "endBackgroundTasks"]
 - ["CSo8NSObject", "init"]
 - ["CSo8NSObject", "masterTaskId"]
-- !private ["CSo8NSObject", "objectAtIndex"]
-- !private ["CSo8NSObject", "removeObjectAtIndex"]
-- !private ["CSo8NSObject", "respondsToSelector"]
-- !private ["CSo8NSObject", "sharedApplication"]
+- !private ["CSo8NSObject", "object"]
+- !private ["CSo8NSObject", "removeObject"]
+- !private ["CSo8NSObject", "responds"]
+- !private ["CSo8NSObject", "shared"]
 - ["CSo8NSObject", "sharedBGTaskManager"]
 - ["CSo8NSObject", "sharedBackgroundTaskManager"]
 - ["PSo16NSObjectProtocol", "BackgroundTaskManager"]
 - !private ["PSo16NSObjectProtocol", "NSMutableArray"]
 - !private ["PSo16NSObjectProtocol", "UIApplication"]
 - !private ["PSo16NSObjectProtocol", "UIBackgroundTaskInvalid"]
-- !private ["PSo16NSObjectProtocol", "addObject"]
-- !private ["PSo16NSObjectProtocol", "beginBackgroundTaskWithExpirationHandler"]
+- !private ["PSo16NSObjectProtocol", "add"]
+- !private ["PSo16NSObjectProtocol", "beginBackgroundTask"]
 - ["PSo16NSObjectProtocol", "beginNewBackgroundTask"]
 - ["PSo16NSObjectProtocol", "bgTaskIdList"]
 - !private ["PSo16NSObjectProtocol", "count"]
@@ -330,157 +365,198 @@ depends-member:
 - ["PSo16NSObjectProtocol", "endBackgroundTasks"]
 - ["PSo16NSObjectProtocol", "init"]
 - ["PSo16NSObjectProtocol", "masterTaskId"]
-- !private ["PSo16NSObjectProtocol", "objectAtIndex"]
-- !private ["PSo16NSObjectProtocol", "removeObjectAtIndex"]
-- !private ["PSo16NSObjectProtocol", "respondsToSelector"]
-- !private ["PSo16NSObjectProtocol", "sharedApplication"]
+- !private ["PSo16NSObjectProtocol", "object"]
+- !private ["PSo16NSObjectProtocol", "removeObject"]
+- !private ["PSo16NSObjectProtocol", "responds"]
+- !private ["PSo16NSObjectProtocol", "shared"]
 - ["PSo16NSObjectProtocol", "sharedBGTaskManager"]
 - ["PSo16NSObjectProtocol", "sharedBackgroundTaskManager"]
 - ["PSo16NSObjectProtocol", ""]
-- !private ["PSo14NSSecureCoding", "addObject"]
+- !private ["PSo14NSSecureCoding", "add"]
 - !private ["PSo14NSSecureCoding", "count"]
 - !private ["PSo14NSSecureCoding", "init"]
-- !private ["PSo14NSSecureCoding", "objectAtIndex"]
-- !private ["PSo14NSSecureCoding", "removeObjectAtIndex"]
-- !private ["Ps21RandomAccessIndexType", "Distance"]
-- !private ["Ps21RandomAccessIndexType", "IntegerLiteralType"]
-- !private ["Ps21RandomAccessIndexType", "_DisabledRangeIndex"]
-- !private ["Vs5Range", "Generator"]
-- !private ["Vs14RangeGenerator", "Element"]
-- !private ["Ps12SequenceType", "Element"]
-- !private ["Ps12SequenceType", "Generator"]
-- !private ["Ps12SequenceType", "addObject"]
-- !private ["Ps12SequenceType", "count"]
-- !private ["Ps12SequenceType", "init"]
-- !private ["Ps12SequenceType", "objectAtIndex"]
-- !private ["Ps12SequenceType", "removeObjectAtIndex"]
-- !private ["Ps17SignedIntegerType", "Distance"]
-- !private ["Ps17SignedIntegerType", "IntegerLiteralType"]
-- !private ["Ps17SignedIntegerType", "_DisabledRangeIndex"]
-- !private ["Ps16SignedNumberType", "Distance"]
-- !private ["Ps16SignedNumberType", "IntegerLiteralType"]
-- !private ["Ps16SignedNumberType", "_DisabledRangeIndex"]
-- !private ["Ps10Strideable", "Distance"]
+- !private ["PSo14NSSecureCoding", "object"]
+- !private ["PSo14NSSecureCoding", "removeObject"]
+- !private ["Ps22RandomAccessCollection", "Iterator"]
+- !private ["Ps22RandomAccessCollection", "_Element"]
+- !private ["Ps21RandomAccessIndexable", "Iterator"]
+- !private ["Ps21RandomAccessIndexable", "_Element"]
+- !private ["Vs5Range", "deinit"]
+- ["V10ObjectiveC8Selector", "deinit"]
+- !private ["Ps8Sequence", "Element"]
+- !private ["Ps8Sequence", "Iterator"]
+- !private ["Ps8Sequence", "_Element"]
+- !private ["Ps8Sequence", "add"]
+- !private ["Ps8Sequence", "count"]
+- !private ["Ps8Sequence", "init"]
+- !private ["Ps8Sequence", "object"]
+- !private ["Ps8Sequence", "removeObject"]
+- !private ["Ps13SignedInteger", "IntegerLiteralType"]
+- !private ["Ps13SignedInteger", "Stride"]
+- !private ["Ps13SignedInteger", "_DisabledRangeIndex"]
+- !private ["Ps12SignedNumber", "IntegerLiteralType"]
+- !private ["Ps12SignedNumber", "Stride"]
+- !private ["Ps12SignedNumber", "_DisabledRangeIndex"]
 - !private ["Ps10Strideable", "IntegerLiteralType"]
+- !private ["Ps10Strideable", "Stride"]
 - !private ["Ps10Strideable", "_DisabledRangeIndex"]
-- !private ["CSo13UIApplication", "beginBackgroundTaskWithExpirationHandler"]
+- !private ["CSo13UIApplication", "beginBackgroundTask"]
+- ["CSo13UIApplication", "deinit"]
 - !private ["CSo13UIApplication", "endBackgroundTask"]
-- !private ["CSo13UIApplication", "respondsToSelector"]
-- !private ["CSo13UIApplication", "sharedApplication"]
-- !private ["CSo11UIResponder", "beginBackgroundTaskWithExpirationHandler"]
+- !private ["CSo13UIApplication", "responds"]
+- !private ["CSo13UIApplication", "shared"]
+- !private ["CSo11UIResponder", "beginBackgroundTask"]
 - !private ["CSo11UIResponder", "endBackgroundTask"]
-- !private ["CSo11UIResponder", "respondsToSelector"]
-- !private ["CSo11UIResponder", "sharedApplication"]
-- !private ["Ps33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
-- !private ["Ps33_BuiltinIntegerLiteralConvertible", "Distance"]
-- !private ["Ps33_BuiltinIntegerLiteralConvertible", "IntegerLiteralType"]
-- !private ["Ps33_BuiltinIntegerLiteralConvertible", "_DisabledRangeIndex"]
-- !private ["Ps14_Incrementable", "Distance"]
+- !private ["CSo11UIResponder", "responds"]
+- !private ["CSo11UIResponder", "shared"]
+- !private ["PSo30UIResponderStandardEditActions", "beginBackgroundTask"]
+- !private ["PSo30UIResponderStandardEditActions", "endBackgroundTask"]
+- !private ["PSo30UIResponderStandardEditActions", "responds"]
+- !private ["PSo30UIResponderStandardEditActions", "shared"]
+- !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "IntegerLiteralType"]
+- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "Stride"]
+- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "_DisabledRangeIndex"]
+- ["Ps9_Hashable", "BackgroundTaskManager"]
+- !private ["Ps9_Hashable", "IntegerLiteralType"]
+- !private ["Ps9_Hashable", "NSMutableArray"]
+- !private ["Ps9_Hashable", "Stride"]
+- !private ["Ps9_Hashable", "UIApplication"]
+- !private ["Ps9_Hashable", "UIBackgroundTaskInvalid"]
+- !private ["Ps9_Hashable", "_DisabledRangeIndex"]
+- !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps9_Hashable", "add"]
+- !private ["Ps9_Hashable", "beginBackgroundTask"]
+- ["Ps9_Hashable", "beginNewBackgroundTask"]
+- ["Ps9_Hashable", "bgTaskIdList"]
+- !private ["Ps9_Hashable", "count"]
+- ["Ps9_Hashable", "drainBGTaskList"]
+- ["Ps9_Hashable", "endAllBackgroundTasks"]
+- !private ["Ps9_Hashable", "endBackgroundTask"]
+- ["Ps9_Hashable", "endBackgroundTasks"]
+- ["Ps9_Hashable", "init"]
+- ["Ps9_Hashable", "masterTaskId"]
+- !private ["Ps9_Hashable", "object"]
+- !private ["Ps9_Hashable", "removeObject"]
+- !private ["Ps9_Hashable", "responds"]
+- !private ["Ps9_Hashable", "shared"]
+- ["Ps9_Hashable", "sharedBGTaskManager"]
+- ["Ps9_Hashable", "sharedBackgroundTaskManager"]
+- ["Ps9_Hashable", ""]
 - !private ["Ps14_Incrementable", "IntegerLiteralType"]
+- !private ["Ps14_Incrementable", "Stride"]
 - !private ["Ps14_Incrementable", "_DisabledRangeIndex"]
-- !private ["Ps22_IntegerArithmeticType", "Distance"]
-- !private ["Ps22_IntegerArithmeticType", "IntegerLiteralType"]
-- !private ["Ps22_IntegerArithmeticType", "_DisabledRangeIndex"]
-- !private ["Ps12_IntegerType", "Distance"]
-- !private ["Ps12_IntegerType", "IntegerLiteralType"]
-- !private ["Ps12_IntegerType", "_DisabledRangeIndex"]
-- !private ["Ps21_ObjectiveCBridgeable", "Distance"]
+- !private ["Ps8_Integer", "IntegerLiteralType"]
+- !private ["Ps8_Integer", "Stride"]
+- !private ["Ps8_Integer", "_DisabledRangeIndex"]
+- !private ["Ps18_IntegerArithmetic", "IntegerLiteralType"]
+- !private ["Ps18_IntegerArithmetic", "Stride"]
+- !private ["Ps18_IntegerArithmetic", "_DisabledRangeIndex"]
 - !private ["Ps21_ObjectiveCBridgeable", "IntegerLiteralType"]
+- !private ["Ps21_ObjectiveCBridgeable", "Stride"]
 - !private ["Ps21_ObjectiveCBridgeable", "_DisabledRangeIndex"]
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
-- !private ["Ps22_RandomAccessAmbiguity", "Distance"]
-- !private ["Ps22_RandomAccessAmbiguity", "IntegerLiteralType"]
-- !private ["Ps22_RandomAccessAmbiguity", "_DisabledRangeIndex"]
-- !private ["Ps12_Reflectable", "Distance"]
-- !private ["Ps12_Reflectable", "Generator"]
-- !private ["Ps12_Reflectable", "IntegerLiteralType"]
-- !private ["Ps12_Reflectable", "_DisabledRangeIndex"]
-- !private ["Ps12_Reflectable", "_getBuiltinLogicValue"]
-- !private ["Ps12_Reflectable", "addObject"]
-- !private ["Ps12_Reflectable", "count"]
-- !private ["Ps12_Reflectable", "init"]
-- !private ["Ps12_Reflectable", "objectAtIndex"]
-- !private ["Ps12_Reflectable", "removeObjectAtIndex"]
-- !private ["Ps18_SignedIntegerType", "Distance"]
-- !private ["Ps18_SignedIntegerType", "IntegerLiteralType"]
-- !private ["Ps18_SignedIntegerType", "_DisabledRangeIndex"]
+- !private ["Ps14_SignedInteger", "IntegerLiteralType"]
+- !private ["Ps14_SignedInteger", "Stride"]
+- !private ["Ps14_SignedInteger", "_DisabledRangeIndex"]
+- !private ["Ps11_Strideable", "IntegerLiteralType"]
+- !private ["Ps11_Strideable", "Stride"]
+- !private ["Ps11_Strideable", "_DisabledRangeIndex"]
+- ["P12LocationDemo24recieveDataFromMqttClass", "BackgroundTaskManager"]
+- !private ["P12LocationDemo24recieveDataFromMqttClass", "NSMutableArray"]
+- !private ["P12LocationDemo24recieveDataFromMqttClass", "UIApplication"]
+- !private ["P12LocationDemo24recieveDataFromMqttClass", "UIBackgroundTaskInvalid"]
+- ["P12LocationDemo24recieveDataFromMqttClass", "beginNewBackgroundTask"]
+- ["P12LocationDemo24recieveDataFromMqttClass", "bgTaskIdList"]
+- ["P12LocationDemo24recieveDataFromMqttClass", "drainBGTaskList"]
+- ["P12LocationDemo24recieveDataFromMqttClass", "endAllBackgroundTasks"]
+- ["P12LocationDemo24recieveDataFromMqttClass", "endBackgroundTasks"]
+- ["P12LocationDemo24recieveDataFromMqttClass", "init"]
+- ["P12LocationDemo24recieveDataFromMqttClass", "masterTaskId"]
+- ["P12LocationDemo24recieveDataFromMqttClass", "sharedBGTaskManager"]
+- ["P12LocationDemo24recieveDataFromMqttClass", "sharedBackgroundTaskManager"]
+- ["P12LocationDemo24recieveDataFromMqttClass", ""]
 depends-nominal:
 - "Ps9AnyObject"
-- !private "Ps23ArrayLiteralConvertible"
 - "C12LocationDemo21BackgroundTaskManager"
-- !private "Ps22BidirectionalIndexType"
-- !private "Ps21BitwiseOperationsType"
-- !private "Sb"
-- !private "Ps25BooleanLiteralConvertible"
-- !private "Ps11BooleanType"
+- !private "Ps23BidirectionalCollection"
+- !private "Ps22BidirectionalIndexable"
+- !private "Ps17BitwiseOperations"
+- "Sb"
 - "PSo25CLLocationManagerDelegate"
-- "Ps11CVarArgType"
-- !private "Ps14CollectionType"
+- "Ps7CVarArg"
+- !private "Ps10Collection"
 - !private "Ps10Comparable"
+- "Vs14CountableRange"
 - "Ps28CustomDebugStringConvertible"
+- !private "Ps29CustomPlaygroundQuickLookable"
+- !private "Ps17CustomReflectable"
 - "Ps23CustomStringConvertible"
 - "Ps9Equatable"
-- !private "Ps16ForwardIndexType"
-- !private "Ps13GeneratorType"
-- !private "Vs16HalfOpenInterval"
+- !private "Ps25ExpressibleByArrayLiteral"
+- !private "Ps27ExpressibleByBooleanLiteral"
+- !private "Ps27ExpressibleByIntegerLiteral"
 - "Ps8Hashable"
+- "SQ"
 - !private "Ps9Indexable"
-- !private "Si"
-- !private "Ps21IntegerArithmeticType"
-- !private "Ps25IntegerLiteralConvertible"
-- !private "Ps11IntegerType"
+- !private "Ps13IndexableBase"
+- !private "Vs16IndexingIterator"
+- "Si"
+- !private "Ps7Integer"
+- !private "Ps17IntegerArithmetic"
+- !private "Ps16IteratorProtocol"
 - "C12LocationDemo19LocationTrackerFile"
-- !private "Ps14MirrorPathType"
+- !private "Ps25LosslessStringConvertible"
+- !private "Ps10MirrorPath"
 - !private "CSo7NSArray"
 - !private "PSo8NSCoding"
 - !private "PSo9NSCopying"
 - !private "PSo17NSFastEnumeration"
-- !private "CSo14NSMutableArray"
+- "CSo14NSMutableArray"
 - !private "PSo16NSMutableCopying"
 - "CSo8NSObject"
 - "PSo16NSObjectProtocol"
 - !private "PSo14NSSecureCoding"
-- !private "Ps21RandomAccessIndexType"
+- !private "Ps22RandomAccessCollection"
+- !private "Ps21RandomAccessIndexable"
 - !private "Vs5Range"
-- !private "Vs14RangeGenerator"
-- !private "Ps12SequenceType"
-- !private "Ps17SignedIntegerType"
-- !private "Ps16SignedNumberType"
+- "V10ObjectiveC8Selector"
+- !private "Ps8Sequence"
+- !private "Ps13SignedInteger"
+- !private "Ps12SignedNumber"
 - !private "Ps10Strideable"
-- !private "CSo13UIApplication"
+- "CSo13UIApplication"
 - !private "CSo11UIResponder"
-- !private "Ps33_BuiltinBooleanLiteralConvertible"
-- !private "Ps33_BuiltinIntegerLiteralConvertible"
+- !private "PSo30UIResponderStandardEditActions"
+- !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
+- !private "Ps35_ExpressibleByBuiltinIntegerLiteral"
+- "Ps9_Hashable"
 - !private "Ps14_Incrementable"
-- !private "Ps22_IntegerArithmeticType"
-- !private "Ps12_IntegerType"
+- !private "Ps8_Integer"
+- !private "Ps18_IntegerArithmetic"
 - !private "Ps21_ObjectiveCBridgeable"
-- !private "Ps22_RandomAccessAmbiguity"
-- !private "Ps12_Reflectable"
-- !private "Ps18_SignedIntegerType"
+- !private "Ps14_SignedInteger"
+- !private "Ps11_Strideable"
+- "P12LocationDemo24recieveDataFromMqttClass"
 depends-dynamic-lookup:
 - !private "integerValue"
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
-- "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
-- "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
-- "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
-- "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
-- "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
-- "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Modules/module.modulemap"
-- "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer.h"
-- "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer-umbrella.h"
-- "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/MSWeakTimer.framework/Modules/module.modulemap"
-- "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/CocoaMQTT.framework/Headers/CocoaMQTT-Swift.h"
-- "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/CocoaMQTT.framework/Headers/CocoaMQTT.h"
-- "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/CocoaMQTT.framework/Headers/CocoaMQTT-umbrella.h"
-- "/Users/cl-macmini-45/Desktop/LocationTracker/LocationDemo/CocoaMQTT.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer-umbrella.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Modules/module.modulemap"
 interface-hash: "dd79d44029dba94eddfc6d9aef47b4e4"
