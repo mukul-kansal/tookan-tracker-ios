@@ -1,0 +1,13 @@
+version: "Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)"
+options: "e212441e3bdde9fbd0cde5a9ec5b0e77"
+build_time: [536928285, 176912000]
+inputs:
+  "/Users/cl-macmini-57/Desktop/LocationTracker/LocationDemo/ExtensionClass.swift": [536918465, 0]
+  "/Users/cl-macmini-57/Desktop/LocationTracker/LocationDemo/CocoaMQTTFrame.swift": [536047011, 0]
+  "/Users/cl-macmini-57/Desktop/LocationTracker/LocationDemo/BackgroundTaskManager.swift": [536845563, 0]
+  "/Users/cl-macmini-57/Desktop/LocationTracker/LocationDemo/LocationTrackerFile.swift": [536928255, 0]
+  "/Users/cl-macmini-57/Desktop/LocationTracker/LocationDemo/CocoaMQTTMessage.swift": [536047011, 0]
+  "/Users/cl-macmini-57/Desktop/LocationTracker/LocationDemo/MqttClass.swift": [536928270, 0]
+  "/Users/cl-macmini-57/Desktop/LocationTracker/LocationDemo/IJReachability.swift": [536828887, 0]
+  "/Users/cl-macmini-57/Desktop/LocationTracker/LocationDemo/NetworkingHelper.swift": [536916345, 0]
+  "/Users/cl-macmini-57/Desktop/LocationTracker/LocationDemo/CocoaMQTT.swift": [536927883, 0]
