@@ -194,7 +194,7 @@ class NetworkingHelper: NSObject {
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         let urlString = url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        let request = NSMutableURLRequest(url: URL(string: "https://api2.tookanapp.com:8080/" + urlString!)!)
+        let request = NSMutableURLRequest(url: URL(string: "https://api.tookanapp.com/" + urlString!)!)
         request.httpMethod = "POST"
         request.timeoutInterval = 20
         request.httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])

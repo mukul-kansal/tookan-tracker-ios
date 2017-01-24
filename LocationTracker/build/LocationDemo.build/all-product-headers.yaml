@@ -4,23 +4,23 @@
   'roots': [
     {
       'type': 'directory',
-      'name': "/Users/cl-macmini-57/Library/Developer/Xcode/DerivedData/LocationDemo-anwptoqnnfocwwgerpskrclidcna/Build/Intermediates/ArchiveIntermediates/LocationDemoUniversal/BuildProductsPath/Release-iphonesimulator/LocationDemo.framework/Headers",
+      'name': "/Users/cl-macmini-57/Library/Developer/Xcode/DerivedData/LocationDemo-anwptoqnnfocwwgerpskrclidcna/Build/Products/Debug-iphonesimulator/LocationDemo.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "LocationDemo-Swift.h",
-          'external-contents': "/Users/cl-macmini-57/Library/Developer/Xcode/DerivedData/LocationDemo-anwptoqnnfocwwgerpskrclidcna/Build/Intermediates/ArchiveIntermediates/LocationDemoUniversal/BuildProductsPath/Release-iphonesimulator/LocationDemo.framework/Headers/LocationDemo-Swift.h"
+          'external-contents': "/Users/cl-macmini-57/Library/Developer/Xcode/DerivedData/LocationDemo-anwptoqnnfocwwgerpskrclidcna/Build/Products/Debug-iphonesimulator/LocationDemo.framework/Headers/LocationDemo-Swift.h"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/cl-macmini-57/Library/Developer/Xcode/DerivedData/LocationDemo-anwptoqnnfocwwgerpskrclidcna/Build/Intermediates/ArchiveIntermediates/LocationDemoUniversal/BuildProductsPath/Release-iphonesimulator/LocationDemo.framework/Modules",
+      'name': "/Users/cl-macmini-57/Library/Developer/Xcode/DerivedData/LocationDemo-anwptoqnnfocwwgerpskrclidcna/Build/Products/Debug-iphonesimulator/LocationDemo.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/build/LocationDemo.build/Release-iphonesimulator/LocationDemo.build/module.modulemap"
+          'external-contents': "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/build/LocationDemo.build/Debug-iphonesimulator/LocationDemo.build/module.modulemap"
         }
       ]
     }

@@ -208,13 +208,14 @@ SWIFT_PROTOCOL("_TtP12LocationDemo23LocationTrackerDelegate_")
 @protocol LocationTrackerDelegate
 @optional
 - (void)currentLocation:(CLLocation * _Nonnull)location;
-- (void)trackingLatLong:(NSArray<CLLocation *> * _Nonnull)locations;
+- (void)trackingLatLong:(NSArray<CLLocation *> * _Nonnull)locations message:(NSString * _Nonnull)message;
 @end
 
 
 
 @interface LocationTrackerFile (SWIFT_EXTENSION(LocationDemo))
 - (void)stopTrackingService;
+- (void)setApiKeyWithApiKey:(NSString * _Nonnull)apiKey;
 @end
 
 

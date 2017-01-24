@@ -11,21 +11,21 @@ provides-member:
 provides-dynamic-lookup:
 - "dup"
 - "topic"
-- "retained"
 - "string"
+- "retained"
 depends-top-level:
-- "CastingPrecedence"
 - "AssignmentPrecedence"
-- "UInt8"
-- "CocoaMQTTWill"
-- "NSObject"
-- !private "NSString"
+- "CastingPrecedence"
 - "String"
 - "CocoaMQTTQOS"
-- !private "StringLiteralType"
-- "BooleanLiteralType"
+- "CocoaMQTTWill"
 - "CocoaMQTTMessage"
+- !private "NSString"
+- "NSObject"
 - "Bool"
+- "BooleanLiteralType"
+- "UInt8"
+- !private "StringLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "Encoding"]
 - !private ["Ps9AnyObject", "NSString"]

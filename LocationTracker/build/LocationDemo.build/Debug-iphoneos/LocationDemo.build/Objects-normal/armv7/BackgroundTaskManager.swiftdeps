@@ -6,28 +6,28 @@ provides-nominal:
 provides-member:
 - ["C12LocationDemo21BackgroundTaskManager", ""]
 provides-dynamic-lookup:
-- "sharedBackgroundTaskManager"
-- "endBackgroundTasks"
-- "drainBGTaskList"
 - "beginNewBackgroundTask"
 - "endAllBackgroundTasks"
+- "drainBGTaskList"
+- "endBackgroundTasks"
+- "sharedBackgroundTaskManager"
 - "bgTaskIdList"
 depends-top-level:
+- "LocationTrackerFile"
+- "AssignmentPrecedence"
+- !private "=="
+- "CastingPrecedence"
+- "Bool"
+- !private "UIApplication"
 - !private "UIBackgroundTaskInvalid"
 - "UIBackgroundTaskIdentifier"
-- !private "BooleanLiteralType"
-- "LocationTrackerFile"
-- !private "..<"
-- "Bool"
-- "BackgroundTaskManager"
-- !private ">"
-- !private "UIApplication"
-- !private "=="
-- "NSMutableArray"
-- "AssignmentPrecedence"
-- "CastingPrecedence"
 - "TernaryPrecedence"
 - !private "AnyObject"
+- !private "BooleanLiteralType"
+- !private "..<"
+- "BackgroundTaskManager"
+- !private ">"
+- "NSMutableArray"
 depends-member:
 - ["Ps9AnyObject", "BackgroundTaskManager"]
 - !private ["Ps9AnyObject", "NSMutableArray"]

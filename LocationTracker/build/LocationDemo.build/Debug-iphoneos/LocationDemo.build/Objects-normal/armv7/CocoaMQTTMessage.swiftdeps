@@ -9,23 +9,23 @@ provides-member:
 - ["C12LocationDemo16CocoaMQTTMessage", ""]
 - ["C12LocationDemo13CocoaMQTTWill", ""]
 provides-dynamic-lookup:
+- "string"
 - "dup"
 - "retained"
-- "string"
 - "topic"
 depends-top-level:
+- "CocoaMQTTWill"
 - "UInt8"
-- "CocoaMQTTMessage"
 - "AssignmentPrecedence"
 - "CastingPrecedence"
-- "CocoaMQTTQOS"
-- "CocoaMQTTWill"
-- !private "StringLiteralType"
-- "String"
-- !private "NSString"
-- "BooleanLiteralType"
-- "NSObject"
 - "Bool"
+- !private "NSString"
+- "String"
+- "CocoaMQTTQOS"
+- "CocoaMQTTMessage"
+- "BooleanLiteralType"
+- !private "StringLiteralType"
+- "NSObject"
 depends-member:
 - !private ["Ps9AnyObject", "Encoding"]
 - !private ["Ps9AnyObject", "NSString"]

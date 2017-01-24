@@ -188,6 +188,17 @@ func parsingLocations(locationArray:[Any])  -> [CLLocationCoordinate2D] {
         } else if let long = locationData["lng"] as? String {
             longitudeString = Double(long)
         }
+        if let lat = locationData["latitude"] as? NSNumber {
+            latitudeString = Double(lat)
+        } else if let lat = locationData["latitude"] as? String {
+            latitudeString = Double(lat)
+        }
+        
+        if let long = locationData["longitude"] as? NSNumber {
+            longitudeString = Double(long)
+        } else if let long = locationData["longitude"] as? String {
+            longitudeString = Double(long)
+        }
         
         let coordinate = CLLocationCoordinate2D(latitude: latitudeString!, longitude: longitudeString!)
         locationDictionary = ["Latitude":coordinate.latitude, "Longitude":coordinate.longitude]

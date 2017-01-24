@@ -26,104 +26,105 @@ provides-member:
 - ["C12LocationDemo19LocationTrackerFile", "stopTracking"]
 - ["C12LocationDemo19LocationTrackerFile", "checkMqttConnectionState"]
 provides-dynamic-lookup:
-- "locationManager"
-- "locationManager"
-- "initMqtt"
-- "portNumber"
-- "SDKVersion"
-- "stopTracking"
-- "subscribeTimer"
-- "uniqueKey"
-- "updateLocationToServer"
-- "setLocationUpdate"
 - "apiKey"
-- "slotTime"
-- "subsribeMQTTForTracking"
-- "sendRequestToServer"
-- "speed"
-- "trackingLatLong"
-- "sharedLocationManager"
+- "stopTracking"
 - "appEnterInTerminateState"
+- "slotTime"
+- "sendRequestToServer"
+- "stopLocationTracking"
+- "speed"
+- "becomeActive"
+- "trackingLatLong"
+- "maxSpeed"
+- "restartLocationUpdates"
 - "bgTask"
 - "addFilteredLocationToLocationArray"
-- "maxSpeed"
-- "becomeActive"
-- "updateLastSavedLocationOnServer"
-- "applyFilterOnGetLocation"
 - "myLastLocation"
-- "myLocation"
-- "jobId"
+- "portNumber"
+- "locationManager"
+- "locationManager"
+- "sharedLocationManager"
 - "checkMqttConnectionState"
-- "maxAccuracy"
-- "stopTrackingService"
-- "currentLocation"
-- "sharedInstance"
-- "delegate"
-- "sessionId"
-- "accessToken"
-- "getSpeed"
-- "enterInForegroundFromBackground"
+- "SDKVersion"
+- "setLocationUpdate"
+- "subscribeTimer"
+- "uniqueKey"
+- "initMqtt"
+- "unsubscribeSocket"
 - "maxDistance"
-- "applicationEnterBackground"
-- "locationUpdateTimer"
-- "host"
-- "restartLocationUpdates"
-- "stopLocationTracking"
+- "sessionId"
 - "getCurrentLocation"
+- "applyFilterOnGetLocation"
+- "enterInForegroundFromBackground"
+- "applicationEnterBackground"
+- "getSpeed"
+- "updateLastSavedLocationOnServer"
+- "host"
+- "locationUpdateTimer"
+- "accessToken"
+- "stopTrackingService"
+- "myLocation"
+- "setApiKey"
+- "jobId"
+- "subsribeMQTTForTracking"
+- "sharedInstance"
+- "currentLocation"
+- "maxAccuracy"
+- "updateLocationToServer"
+- "delegate"
 depends-top-level:
-- !private "Dictionary"
-- !private ">"
-- !private "*"
-- "ServiceType"
-- "BackgroundTaskManager"
-- "Timer"
-- "Int"
-- !private "..<"
-- !private "CLActivityType"
-- !private "UIDevice"
-- "UInt16"
-- !private "/"
-- "CLLocationManager"
-- !private "CLLocationDistance"
-- !private "kCLLocationAccuracyBestForNavigation"
-- "LocationFrequency"
-- !private "UIApplication"
-- !private "!="
-- "LocationTrackerFile"
-- "CLLocationManagerDelegate"
-- !private "||"
-- "Float"
-- !private "BooleanLiteralType"
-- !private "UserDefaults"
-- "Bool"
-- !private "NetworkingHelper"
-- !private "IJReachability"
-- "CLLocationCoordinate2D"
-- !private "MqttClass"
-- !private "NSNotification"
-- !private "+"
-- "CLLocation"
-- !private "AnyObject"
 - !private "print"
+- !private "..<"
+- !private "AnyObject"
+- !private "MqttClass"
 - "StringLiteralType"
-- "CLLocationAccuracy"
-- !private "kCLDistanceFilterNone"
-- "String"
-- !private "Double"
-- !private "~="
-- "=="
-- "AssignmentPrecedence"
-- "CastingPrecedence"
-- !private "CocoaMQTTConnState"
+- !private "BooleanLiteralType"
+- "Bool"
+- !private "+"
+- !private "UserDefaults"
+- !private "UIApplication"
+- !private "Dictionary"
 - "TernaryPrecedence"
-- !private "UnicodeScalarType"
+- !private "NSNotification"
+- "ServiceType"
+- !private "CLActivityType"
+- "Timer"
 - !private "USER_DEFAULT"
-- !private ">="
-- !private "NotificationCenter"
+- !private "~="
+- !private "CocoaMQTTConnState"
+- "CastingPrecedence"
+- !private "*"
+- !private "Double"
+- "AssignmentPrecedence"
+- !private "kCLLocationAccuracyBestForNavigation"
+- !private "!="
+- "Int"
+- "CLLocationCoordinate2D"
+- "CLLocationAccuracy"
+- !private "IJReachability"
+- "=="
+- !private "UIDevice"
 - "recieveDataFromMqttClass"
-- !private "<"
-- "NSObject"
+- !private ">="
+- "CLLocation"
+- "LocationTrackerFile"
+- !private "NetworkingHelper"
 - "LocationTrackerDelegate"
+- "CLLocationManagerDelegate"
+- !private "/"
+- !private "<"
+- "LocationFrequency"
+- "NSObject"
+- !private "UnicodeScalarType"
+- "UInt16"
+- "Float"
+- !private "kCLDistanceFilterNone"
+- !private "NotificationCenter"
+- "BackgroundTaskManager"
+- !private ">"
+- !private "CLLocationDistance"
+- "CLLocationManager"
+- "String"
 depends-member:
 - !private ["Ps16AbsoluteValuable", "init"]
 - !private ["Ps9AnyObject", "BackgroundTaskManager"]
@@ -250,6 +251,7 @@ depends-member:
 - !private ["Ps9AnyObject", "topic"]
 - ["Ps9AnyObject", "uniqueKey"]
 - !private ["Ps9AnyObject", "unsubscribeLocation"]
+- ["Ps9AnyObject", "unsubscribeSocket"]
 - ["Ps9AnyObject", "updateLastSavedLocationOnServer"]
 - ["Ps9AnyObject", "updateLocationToServer"]
 - ["Ps9AnyObject", ""]
@@ -390,7 +392,6 @@ depends-member:
 - !private ["PSo25CLLocationManagerDelegate", "print"]
 - ["PSo25CLLocationManagerDelegate", "recievedLatlong"]
 - !private ["PSo25CLLocationManagerDelegate", "sendRequestToServer"]
-- !private ["PSo25CLLocationManagerDelegate", "serviceType"]
 - !private ["PSo25CLLocationManagerDelegate", "sessionId"]
 - !private ["PSo25CLLocationManagerDelegate", "setFrequency"]
 - !private ["PSo25CLLocationManagerDelegate", "setLocationUpdate"]
@@ -402,6 +403,7 @@ depends-member:
 - !private ["PSo25CLLocationManagerDelegate", "subscribeTimer"]
 - !private ["PSo25CLLocationManagerDelegate", "subsribeMQTTForTracking"]
 - !private ["PSo25CLLocationManagerDelegate", "uniqueKey"]
+- ["PSo25CLLocationManagerDelegate", "unsubscribeSocket"]
 - !private ["PSo25CLLocationManagerDelegate", "updateLocationToServer"]
 - ["PSo25CLLocationManagerDelegate", ""]
 - !private ["Ps7CVarArg", "BackgroundTaskManager"]
@@ -542,6 +544,7 @@ depends-member:
 - !private ["Ps7CVarArg", "topic"]
 - ["Ps7CVarArg", "uniqueKey"]
 - !private ["Ps7CVarArg", "unsubscribeLocation"]
+- ["Ps7CVarArg", "unsubscribeSocket"]
 - ["Ps7CVarArg", "updateLastSavedLocationOnServer"]
 - ["Ps7CVarArg", "updateLocationToServer"]
 - ["Ps7CVarArg", ""]
@@ -640,7 +643,6 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "beginNewBackgroundTask"]
 - ["Ps28CustomDebugStringConvertible", "bgTask"]
 - !private ["Ps28CustomDebugStringConvertible", "bool"]
-- !private ["Ps28CustomDebugStringConvertible", "both"]
 - ["Ps28CustomDebugStringConvertible", "checkMqttConnectionState"]
 - !private ["Ps28CustomDebugStringConvertible", "connState"]
 - !private ["Ps28CustomDebugStringConvertible", "connectToServer"]
@@ -733,6 +735,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "topic"]
 - ["Ps28CustomDebugStringConvertible", "uniqueKey"]
 - !private ["Ps28CustomDebugStringConvertible", "unsubscribeLocation"]
+- ["Ps28CustomDebugStringConvertible", "unsubscribeSocket"]
 - ["Ps28CustomDebugStringConvertible", "updateLastSavedLocationOnServer"]
 - ["Ps28CustomDebugStringConvertible", "updateLocationToServer"]
 - ["Ps28CustomDebugStringConvertible", ""]
@@ -756,7 +759,6 @@ depends-member:
 - !private ["Ps17CustomReflectable", "_Element"]
 - !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
 - !private ["Ps17CustomReflectable", "append"]
-- !private ["Ps17CustomReflectable", "both"]
 - !private ["Ps17CustomReflectable", "count"]
 - !private ["Ps17CustomReflectable", "getUTCDateString"]
 - !private ["Ps17CustomReflectable", "hashValue"]
@@ -907,6 +909,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "topic"]
 - ["Ps23CustomStringConvertible", "uniqueKey"]
 - !private ["Ps23CustomStringConvertible", "unsubscribeLocation"]
+- ["Ps23CustomStringConvertible", "unsubscribeSocket"]
 - ["Ps23CustomStringConvertible", "updateLastSavedLocationOnServer"]
 - ["Ps23CustomStringConvertible", "updateLocationToServer"]
 - ["Ps23CustomStringConvertible", ""]
@@ -980,7 +983,6 @@ depends-member:
 - !private ["Ps9Equatable", "beginNewBackgroundTask"]
 - ["Ps9Equatable", "bgTask"]
 - !private ["Ps9Equatable", "bool"]
-- !private ["Ps9Equatable", "both"]
 - ["Ps9Equatable", "checkMqttConnectionState"]
 - !private ["Ps9Equatable", "connState"]
 - !private ["Ps9Equatable", "connectToServer"]
@@ -1074,6 +1076,7 @@ depends-member:
 - ["Ps9Equatable", "tracking"]
 - ["Ps9Equatable", "uniqueKey"]
 - !private ["Ps9Equatable", "unsubscribeLocation"]
+- ["Ps9Equatable", "unsubscribeSocket"]
 - ["Ps9Equatable", "updateLastSavedLocationOnServer"]
 - ["Ps9Equatable", "updateLocationToServer"]
 - ["Ps9Equatable", ""]
@@ -1104,7 +1107,6 @@ depends-member:
 - !private ["Ps27ExpressibleByIntegerLiteral", "_DisabledRangeIndex"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "hashValue"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "init"]
-- !private ["Ps23ExpressibleByNilLiteral", "both"]
 - ["Ps23ExpressibleByNilLiteral", "some"]
 - !private ["Ps32ExpressibleByStringInterpolation", "getUTCDateString"]
 - ["Ps32ExpressibleByStringInterpolation", "init"]
@@ -1164,7 +1166,6 @@ depends-member:
 - !private ["Ps8Hashable", "beginNewBackgroundTask"]
 - ["Ps8Hashable", "bgTask"]
 - !private ["Ps8Hashable", "bool"]
-- !private ["Ps8Hashable", "both"]
 - ["Ps8Hashable", "checkMqttConnectionState"]
 - !private ["Ps8Hashable", "connState"]
 - !private ["Ps8Hashable", "connectToServer"]
@@ -1258,6 +1259,7 @@ depends-member:
 - ["Ps8Hashable", "tracking"]
 - ["Ps8Hashable", "uniqueKey"]
 - !private ["Ps8Hashable", "unsubscribeLocation"]
+- ["Ps8Hashable", "unsubscribeSocket"]
 - ["Ps8Hashable", "updateLastSavedLocationOnServer"]
 - ["Ps8Hashable", "updateLocationToServer"]
 - ["Ps8Hashable", ""]
@@ -1322,6 +1324,7 @@ depends-member:
 - ["O12LocationDemo17LocationFrequency", "medium"]
 - ["O12LocationDemo17LocationFrequency", "rawValue"]
 - ["P12LocationDemo23LocationTrackerDelegate", "CLLocation"]
+- ["P12LocationDemo23LocationTrackerDelegate", "String"]
 - ["P12LocationDemo23LocationTrackerDelegate", "currentLocation"]
 - ["P12LocationDemo23LocationTrackerDelegate", "trackingLatLong"]
 - !private ["C12LocationDemo19LocationTrackerFile", "AnyObject"]
@@ -1414,6 +1417,7 @@ depends-member:
 - ["C12LocationDemo19LocationTrackerFile", "subscribeTimer"]
 - ["C12LocationDemo19LocationTrackerFile", "subsribeMQTTForTracking"]
 - ["C12LocationDemo19LocationTrackerFile", "uniqueKey"]
+- ["C12LocationDemo19LocationTrackerFile", "unsubscribeSocket"]
 - ["C12LocationDemo19LocationTrackerFile", "updateLastSavedLocationOnServer"]
 - ["C12LocationDemo19LocationTrackerFile", "updateLocationToServer"]
 - !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
@@ -1619,6 +1623,7 @@ depends-member:
 - !private ["CSo8NSObject", "topic"]
 - ["CSo8NSObject", "uniqueKey"]
 - !private ["CSo8NSObject", "unsubscribeLocation"]
+- ["CSo8NSObject", "unsubscribeSocket"]
 - ["CSo8NSObject", "updateLastSavedLocationOnServer"]
 - ["CSo8NSObject", "updateLocationToServer"]
 - ["CSo8NSObject", ""]
@@ -1744,6 +1749,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "topic"]
 - ["PSo16NSObjectProtocol", "uniqueKey"]
 - !private ["PSo16NSObjectProtocol", "unsubscribeLocation"]
+- ["PSo16NSObjectProtocol", "unsubscribeSocket"]
 - ["PSo16NSObjectProtocol", "updateLastSavedLocationOnServer"]
 - ["PSo16NSObjectProtocol", "updateLocationToServer"]
 - ["PSo16NSObjectProtocol", ""]
@@ -1769,7 +1775,6 @@ depends-member:
 - !private ["CSo18NotificationCenter", "addObserver"]
 - !private ["CSo18NotificationCenter", "default"]
 - ["CSo18NotificationCenter", "deinit"]
-- !private ["Sq", "both"]
 - ["Sq", "deinit"]
 - ["Sq", "some"]
 - !private ["Ps22RandomAccessCollection", "Index"]
@@ -2016,7 +2021,6 @@ depends-member:
 - !private ["Ps9_Hashable", "beginNewBackgroundTask"]
 - ["Ps9_Hashable", "bgTask"]
 - !private ["Ps9_Hashable", "bool"]
-- !private ["Ps9_Hashable", "both"]
 - ["Ps9_Hashable", "checkMqttConnectionState"]
 - !private ["Ps9_Hashable", "connState"]
 - !private ["Ps9_Hashable", "connectToServer"]
@@ -2110,6 +2114,7 @@ depends-member:
 - ["Ps9_Hashable", "tracking"]
 - ["Ps9_Hashable", "uniqueKey"]
 - !private ["Ps9_Hashable", "unsubscribeLocation"]
+- ["Ps9_Hashable", "unsubscribeSocket"]
 - ["Ps9_Hashable", "updateLastSavedLocationOnServer"]
 - ["Ps9_Hashable", "updateLocationToServer"]
 - ["Ps9_Hashable", ""]
@@ -2150,7 +2155,6 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "remove"]
 - !private ["Ps21_ObjectiveCBridgeable", "subscript"]
 - !private ["Ps21_ObjectiveCBridgeable", "timeIntervalSince"]
-- !private ["Vs26_OptionalNilComparisonType", "both"]
 - !private ["Vs26_OptionalNilComparisonType", "deinit"]
 - !private ["Ps14_SignedInteger", "IntegerLiteralType"]
 - !private ["Ps14_SignedInteger", "Stride"]
@@ -2180,7 +2184,7 @@ depends-member:
 - !private ["P12LocationDemo24recieveDataFromMqttClass", "NetworkingHelper"]
 - !private ["P12LocationDemo24recieveDataFromMqttClass", "NotificationCenter"]
 - ["P12LocationDemo24recieveDataFromMqttClass", "ServiceType"]
-- !private ["P12LocationDemo24recieveDataFromMqttClass", "String"]
+- ["P12LocationDemo24recieveDataFromMqttClass", "String"]
 - !private ["P12LocationDemo24recieveDataFromMqttClass", "Timer"]
 - !private ["P12LocationDemo24recieveDataFromMqttClass", "UIApplication"]
 - !private ["P12LocationDemo24recieveDataFromMqttClass", "UIDevice"]
@@ -2225,7 +2229,6 @@ depends-member:
 - !private ["P12LocationDemo24recieveDataFromMqttClass", "print"]
 - ["P12LocationDemo24recieveDataFromMqttClass", "recievedLatlong"]
 - !private ["P12LocationDemo24recieveDataFromMqttClass", "sendRequestToServer"]
-- !private ["P12LocationDemo24recieveDataFromMqttClass", "serviceType"]
 - !private ["P12LocationDemo24recieveDataFromMqttClass", "sessionId"]
 - !private ["P12LocationDemo24recieveDataFromMqttClass", "setFrequency"]
 - !private ["P12LocationDemo24recieveDataFromMqttClass", "setLocationUpdate"]
@@ -2237,6 +2240,7 @@ depends-member:
 - !private ["P12LocationDemo24recieveDataFromMqttClass", "subscribeTimer"]
 - !private ["P12LocationDemo24recieveDataFromMqttClass", "subsribeMQTTForTracking"]
 - !private ["P12LocationDemo24recieveDataFromMqttClass", "uniqueKey"]
+- ["P12LocationDemo24recieveDataFromMqttClass", "unsubscribeSocket"]
 - !private ["P12LocationDemo24recieveDataFromMqttClass", "updateLocationToServer"]
 - ["P12LocationDemo24recieveDataFromMqttClass", ""]
 depends-nominal:
@@ -2402,4 +2406,4 @@ depends-external:
 - "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer.h"
 - "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer-umbrella.h"
 - "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Modules/module.modulemap"
-interface-hash: "f5b2447137aa7da2e7e9ee3acffca80d"
+interface-hash: "d42a11683025de7d4e8386e7582e2097"

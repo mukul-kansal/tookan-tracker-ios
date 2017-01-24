@@ -17,10 +17,12 @@ import SystemConfiguration
 
 @objc public protocol LocationTrackerDelegate {
     @objc optional func currentLocation(_ location:CLLocation)
-    @objc optional func trackingLatLong(_ locations:[CLLocation])
+    @objc optional func onLocationArrive(_ locations:[CLLocation],message:String)
+    @objc optional func onJobComplete()
 }
 protocol recieveDataFromMqttClass :class {
-    func recievedLatlong(data:[CLLocationCoordinate2D])
+    func recievedLatlong(data:[CLLocationCoordinate2D],message:String)
+    func unsubscribeSocket()
 }
 
 public enum LocationFrequency: Int {
@@ -84,18 +86,22 @@ public class LocationTrackerFile:NSObject, CLLocationManagerDelegate,recieveData
         UIDevice.current.isBatteryMonitoringEnabled = true
     }
     
-    func recievedLatlong(data: [CLLocationCoordinate2D]) {
-        print("\(data)" + " finalLatLong")
+    func recievedLatlong(data: [CLLocationCoordinate2D],message:String) {
         var locationArrayToSend = [CLLocation]()
         for i in data {
             locationArrayToSend.append(CLLocation(latitude: i.latitude, longitude: i.longitude))
         }
-        delegate.trackingLatLong!(locationArrayToSend)
+        delegate.onLocationArrive!(locationArrayToSend,message:message)
+    }
+    
+    func unsubscribeSocket(){
+    delegate.onJobComplete!()
+    stopTracking()
     }
     
     
-    
-    public class func sharedInstance() -> LocationTrackerFile {
+    public class func sharedInstance(apiKey:String) -> LocationTrackerFile {
+        locationTracker.apiKey = apiKey
         return locationTracker
     }
     
@@ -186,7 +192,6 @@ public class LocationTrackerFile:NSObject, CLLocationManagerDelegate,recieveData
             // Fallback on earlier versions
         }
         locationManager.requestAlwaysAuthorization()
-            print("start updating")
         locationManager.startUpdatingLocation()
         }
     }
@@ -219,7 +224,7 @@ public class LocationTrackerFile:NSObject, CLLocationManagerDelegate,recieveData
     
     
     
-     func restartLocationUpdates() {
+    private func restartLocationUpdates() {
         if(self.locationUpdateTimer != nil) {
             self.locationUpdateTimer.invalidate()
             self.locationUpdateTimer = nil
@@ -277,10 +282,8 @@ public class LocationTrackerFile:NSObject, CLLocationManagerDelegate,recieveData
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.bgTask = BackgroundTaskManager.sharedBackgroundTaskManager()
         _ = self.bgTask!.beginNewBackgroundTask()
-        print("delegate location = \(self.myLocation)")
         if locations.last != nil {
             self.myLocation = locations.last! as CLLocation
-            print("delegate location = \(self.myLocation)")
             self.myLocationAccuracy = self.myLocation.horizontalAccuracy
             self.applyFilterOnGetLocation()
             if(UserDefaults.standard.bool(forKey: USER_DEFAULT.isLocationTrackingRunning) == true) {
@@ -329,68 +332,68 @@ public class LocationTrackerFile:NSObject, CLLocationManagerDelegate,recieveData
     
     
     func addFilteredLocationToLocationArray(myLocationToSend:[String:Any]) {
-        if(UserDefaults.standard.bool(forKey: USER_DEFAULT.isLocationTrackingRunning) == true){
-            var locationArray = [Any]()
-            if let array = UserDefaults.standard.object(forKey: USER_DEFAULT.locationArray) as? [Any] {
-                locationArray = array
-            }
-            if(locationArray.count >= 1000) {
-                locationArray.remove(at: 0)
-            }
-            print(myLocationToSend)
-            locationArray.append(myLocationToSend as! Any)
-           // UserDefaults.standard.set(locationArray, forKey: USER_DEFAULT.locationArray)
-        }
+//        if(UserDefaults.standard.bool(forKey: USER_DEFAULT.isLocationTrackingRunning) == true){
+//            var locationArray = [Any]()
+//            if let array = UserDefaults.standard.object(forKey: USER_DEFAULT.locationArray) as? [Any] {
+//                locationArray = array
+//            }
+//            if(locationArray.count >= 1000) {
+//                locationArray.remove(at: 0)
+//            }
+//            print(myLocationToSend)
+//            //locationArray.append(myLocationToSend as! Any)
+//           // UserDefaults.standard.set(locationArray, forKey: USER_DEFAULT.locationArray)
+//        }
     }
     
     
     
     func updateLocationToServer() {
-        var locationArray = [Any]()
-        if let array = UserDefaults.standard.object(forKey: USER_DEFAULT.locationArray) as? [Any] {
-            locationArray = array
-        }
-        if IJReachability.isConnectedToNetwork(){
-            if(UserDefaults.standard.bool(forKey: USER_DEFAULT.isHitInProgress) == false) {
-                if locationArray.count > 0 {
-                    let locationString = locationArray.jsonString
-                    sendRequestToServer(locationString: locationString)
-                }
-            }
-        }
+//        var locationArray = [Any]()
+//        if let array = UserDefaults.standard.object(forKey: USER_DEFAULT.locationArray) as? [Any] {
+//            locationArray = array
+//        }
+//        if IJReachability.isConnectedToNetwork(){
+//            if(UserDefaults.standard.bool(forKey: USER_DEFAULT.isHitInProgress) == false) {
+//                if locationArray.count > 0 {
+//                    let locationString = locationArray.jsonString
+//                    sendRequestToServer(locationString: locationString)
+//                }
+//            }
+//        }
     }
     
     func sendRequestToServer(locationString:String) {
-         if(UserDefaults.standard.bool(forKey: USER_DEFAULT.isLocationTrackingRunning) == true) {
-            MqttClass.sharedInstance.hostAddress = self.host
-            MqttClass.sharedInstance.portNumber = self.portNumber
-            MqttClass.sharedInstance.accessToken = self.accessToken
-            MqttClass.sharedInstance.key = self.uniqueKey
-            MqttClass.sharedInstance.sendLocation(location:locationString)//MQTT
-        }
+//         if(UserDefaults.standard.bool(forKey: USER_DEFAULT.isLocationTrackingRunning) == true) {
+//            MqttClass.sharedInstance.hostAddress = self.host
+//            MqttClass.sharedInstance.portNumber = self.portNumber
+//            MqttClass.sharedInstance.accessToken = self.accessToken
+//            MqttClass.sharedInstance.key = self.uniqueKey
+//            MqttClass.sharedInstance.sendLocation(location:locationString)//MQTT
+//        }
     }
     
     
     func updateLastSavedLocationOnServer() {
-         if(UserDefaults.standard.bool(forKey: USER_DEFAULT.isLocationTrackingRunning) == true) {
-            var locationArray = [Any]()
-            if let array = UserDefaults.standard.object(forKey: USER_DEFAULT.locationArray) as? [Any] {
-                locationArray = array
-            }
-            self.setLocationUpdate()
-            if(UserDefaults.standard.bool(forKey: USER_DEFAULT.isHitInProgress) == false) {
-                if(locationArray.count > 0) {
-                    sendRequestToServer(locationString: locationArray.jsonString)
-                } else {
-                    var myLocationToSend = [String:Any]()
-                    myLocationToSend = ["bat_lvl" : UIDevice.current.batteryLevel * 100]
-                    var highLocationArray = [Any]()
-                    highLocationArray.append(myLocationToSend)
-                    let locationString = highLocationArray.jsonString
-                    sendRequestToServer(locationString: locationString)
-                }
-            }
-        }
+//         if(UserDefaults.standard.bool(forKey: USER_DEFAULT.isLocationTrackingRunning) == true) {
+//            var locationArray = [Any]()
+//            if let array = UserDefaults.standard.object(forKey: USER_DEFAULT.locationArray) as? [Any] {
+//                locationArray = array
+//            }
+//            self.setLocationUpdate()
+//            if(UserDefaults.standard.bool(forKey: USER_DEFAULT.isHitInProgress) == false) {
+//                if(locationArray.count > 0) {
+//                    sendRequestToServer(locationString: locationArray.jsonString)
+//                } else {
+//                    var myLocationToSend = [String:Any]()
+//                    myLocationToSend = ["bat_lvl" : UIDevice.current.batteryLevel * 100]
+//                    var highLocationArray = [Any]()
+//                    highLocationArray.append(myLocationToSend)
+//                    let locationString = highLocationArray.jsonString
+//                    sendRequestToServer(locationString: locationString)
+//                }
+//            }
+//        }
     }
     
     
@@ -513,14 +516,6 @@ public class LocationTrackerFile:NSObject, CLLocationManagerDelegate,recieveData
         return (true,"")
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
     fileprivate func isAuthorizedUser() -> (Bool,String) {
         let params = [
         "api_key":self.apiKey,
@@ -530,15 +525,20 @@ public class LocationTrackerFile:NSObject, CLLocationManagerDelegate,recieveData
         //print(params)
          self.sessionId = ""
         let jsonResponse = NetworkingHelper.sharedInstance.getValidation("generate_session", params: params)
-        print("in isAuthorizedUser")
         if jsonResponse.1 != nil{
         if(jsonResponse.0 == true) {
             let jsonData = jsonResponse.1!
+            print("\(jsonResponse.1)" + "jsonData")
                 if let data = jsonData["data"] as? [String:Any] {
+                    if let fleetData = data["fleet"] as? [Any]{
+                         let parsedData = parsingLocations(locationArray: fleetData)
+                        recievedLatlong(data: parsedData,message:"")
+                        print("\(parsedData)" + "jsonData")
+                    }
                     if let sessionId = data["session_id"] as? String {
                        self.sessionId = sessionId
                         print("in recieved sessionId")
-                        return(true,"recieved sessionId")
+                        return(true,jsonData["message"] as! String)
                     }else{
                         return(false,jsonData["message"] as! String)
                     }
@@ -562,14 +562,14 @@ public class LocationTrackerFile:NSObject, CLLocationManagerDelegate,recieveData
 
 extension LocationTrackerFile{
     
-    
-   open func startTracking(jobId:String) -> (Bool, String) {
+    open func startTracking(jobId:String) -> (isAuthorized:Bool,message:String) {
     if IJReachability.isConnectedToNetwork() == true{
-    if (self.serviceType == ServiceType.tracking) || (self.serviceType == .both){
+        stopTracking()
         var permissionResponse = self.isAllPermissionAuthorized()
         if apiKey == ""{
             return (false,"Please provide the api key.")
         }else{
+            if jobId != ""{
             if permissionResponse.0 == true{
              self.jobId = jobId
              let sessionIdData = isAuthorizedUser()
@@ -584,10 +584,10 @@ extension LocationTrackerFile{
                 return permissionResponse
             }
             return permissionResponse
+            }else{
+                return (false,"Please provide the jobId.")
+            }
         }
-    }else{
-        return (false,"Please choose for tracking service type.")
-    }
     }else{
        return (false,"No internet connection found")
     }
@@ -598,9 +598,8 @@ extension LocationTrackerFile{
         self.stopTracking()
     }
     
-    open func setApiKey(apiKey:String,serviceType:ServiceType) {
+    open func setApiKey(apiKey:String) {
         self.apiKey = apiKey
-        self.serviceType = serviceType
     }
     
     //d27cba08585826d65bda03ff78332ddd0cd1a4d862882548e5f3b18e9dc0a2b5
@@ -625,12 +624,11 @@ extension LocationTrackerFile{
     func stopTracking() {
         if  MqttClass.sharedInstance.mqtt?.connState == CocoaMQTTConnState.CONNECTED{
             MqttClass.sharedInstance.unsubscribeLocation()
-            print("stopped")
             if subscribeTimer != nil {
             subscribeTimer.invalidate()
+            
             }
         }
-        print("not stoped")
         // UserDefaults.standard.setValue([Any](), forKey: USER_DEFAULT.updatingLocationPathArray)
     }
     

@@ -1,0 +1,251 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "IJReachabilityType"
+- "IJReachability"
+- "=="
+provides-nominal:
+- "O13TookanTracker18IJReachabilityType"
+- "C13TookanTracker14IJReachability"
+provides-member:
+- ["O13TookanTracker18IJReachabilityType", ""]
+- ["C13TookanTracker14IJReachability", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "IJReachabilityType"
+- "=="
+- "AssignmentPrecedence"
+- "IJReachability"
+- !private "&"
+- !private "sockaddr"
+- !private "!="
+- !private "sa_family_t"
+- !private "sockaddr_in"
+- !private "AF_INET"
+- !private "&&"
+- !private "SCNetworkReachabilityFlags"
+- "Bool"
+- !private "kSCNetworkFlagsConnectionRequired"
+- !private "SCNetworkReachabilityCreateWithAddress"
+- !private "SCNetworkReachabilityGetFlags"
+- !private "BooleanLiteralType"
+- !private "!"
+- !private "withUnsafePointer"
+- !private "MemoryLayout"
+- !private "UInt32"
+- !private "kSCNetworkFlagsReachable"
+- !private "UInt8"
+depends-member:
+- !private ["Ps9AnyObject", "AF_INET"]
+- !private ["Ps9AnyObject", "MemoryLayout"]
+- !private ["Ps9AnyObject", "SCNetworkReachabilityCreateWithAddress"]
+- !private ["Ps9AnyObject", "SCNetworkReachabilityFlags"]
+- !private ["Ps9AnyObject", "SCNetworkReachabilityGetFlags"]
+- !private ["Ps9AnyObject", "UInt32"]
+- !private ["Ps9AnyObject", "UInt8"]
+- !private ["Ps9AnyObject", "kSCNetworkFlagsConnectionRequired"]
+- !private ["Ps9AnyObject", "kSCNetworkFlagsReachable"]
+- !private ["Ps9AnyObject", "sa_family_t"]
+- !private ["Ps9AnyObject", "sockaddr"]
+- !private ["Ps9AnyObject", "sockaddr_in"]
+- !private ["Ps9AnyObject", "withUnsafePointer"]
+- ["Ps9AnyObject", ""]
+- !private ["Ps17BitwiseOperations", "hashValue"]
+- !private ["Ps17BitwiseOperations", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- ["Sb", "deinit"]
+- !private ["Ps7CVarArg", "hashValue"]
+- !private ["Ps7CVarArg", "init"]
+- !private ["Ps7CVarArg", "withMemoryRebound"]
+- !private ["Ps10Comparable", "hashValue"]
+- !private ["Ps10Comparable", "init"]
+- !private ["Ps10Comparable", "withMemoryRebound"]
+- !private ["Ps28CustomDebugStringConvertible", "withMemoryRebound"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "hashValue"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "init"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "withMemoryRebound"]
+- !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
+- !private ["Ps17CustomReflectable", "hashValue"]
+- !private ["Ps17CustomReflectable", "init"]
+- !private ["Ps17CustomReflectable", "withMemoryRebound"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps23CustomStringConvertible", "hashValue"]
+- !private ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- ["Ps9Equatable", "_toAnyHashable"]
+- !private ["Ps9Equatable", "connectionAutomatic"]
+- ["Ps9Equatable", "hashValue"]
+- !private ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "rawValue"]
+- !private ["Ps9Equatable", "withMemoryRebound"]
+- ["Ps9Equatable", ""]
+- !private ["Ps25ExpressibleByArrayLiteral", "connectionAutomatic"]
+- !private ["Ps25ExpressibleByArrayLiteral", "rawValue"]
+- !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps27ExpressibleByIntegerLiteral", "hashValue"]
+- !private ["Ps27ExpressibleByIntegerLiteral", "init"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- ["Ps8Hashable", "_toAnyHashable"]
+- ["Ps8Hashable", "hashValue"]
+- !private ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "withMemoryRebound"]
+- ["Ps8Hashable", ""]
+- !private ["C13TookanTracker14IJReachability", "AF_INET"]
+- ["C13TookanTracker14IJReachability", "Bool"]
+- !private ["C13TookanTracker14IJReachability", "MemoryLayout"]
+- !private ["C13TookanTracker14IJReachability", "SCNetworkReachabilityCreateWithAddress"]
+- !private ["C13TookanTracker14IJReachability", "SCNetworkReachabilityFlags"]
+- !private ["C13TookanTracker14IJReachability", "SCNetworkReachabilityGetFlags"]
+- !private ["C13TookanTracker14IJReachability", "UInt32"]
+- !private ["C13TookanTracker14IJReachability", "UInt8"]
+- ["C13TookanTracker14IJReachability", "deinit"]
+- ["C13TookanTracker14IJReachability", "init"]
+- ["C13TookanTracker14IJReachability", "isConnectedToNetwork"]
+- !private ["C13TookanTracker14IJReachability", "kSCNetworkFlagsConnectionRequired"]
+- !private ["C13TookanTracker14IJReachability", "kSCNetworkFlagsReachable"]
+- !private ["C13TookanTracker14IJReachability", "sa_family_t"]
+- !private ["C13TookanTracker14IJReachability", "sockaddr"]
+- !private ["C13TookanTracker14IJReachability", "sockaddr_in"]
+- !private ["C13TookanTracker14IJReachability", "withUnsafePointer"]
+- ["O13TookanTracker18IJReachabilityType", "=="]
+- ["O13TookanTracker18IJReachabilityType", "NotConnected"]
+- ["O13TookanTracker18IJReachabilityType", "WWAN"]
+- ["O13TookanTracker18IJReachabilityType", "WiFi"]
+- ["O13TookanTracker18IJReachabilityType", "_toAnyHashable"]
+- ["O13TookanTracker18IJReachabilityType", "deinit"]
+- ["O13TookanTracker18IJReachabilityType", "hashValue"]
+- ["Si", "deinit"]
+- !private ["Si", "hashValue"]
+- ["Vs5Int32", "deinit"]
+- !private ["Ps7Integer", "hashValue"]
+- !private ["Ps7Integer", "init"]
+- !private ["Ps17IntegerArithmetic", "hashValue"]
+- !private ["Ps17IntegerArithmetic", "init"]
+- !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Os12MemoryLayout", "size"]
+- !private ["Ps10MirrorPath", "hashValue"]
+- !private ["Ps9OptionSet", "connectionAutomatic"]
+- !private ["Ps9OptionSet", "rawValue"]
+- ["Sq", "deinit"]
+- !private ["Ps16RawRepresentable", "connectionAutomatic"]
+- !private ["Ps16RawRepresentable", "rawValue"]
+- ["CSo21SCNetworkReachability", "deinit"]
+- !private ["VSC26SCNetworkReachabilityFlags", "connectionAutomatic"]
+- ["VSC26SCNetworkReachabilityFlags", "deinit"]
+- !private ["VSC26SCNetworkReachabilityFlags", "rawValue"]
+- !private ["Ps10SetAlgebra", "connectionAutomatic"]
+- !private ["Ps10SetAlgebra", "rawValue"]
+- !private ["Ps13SignedInteger", "hashValue"]
+- !private ["Ps12SignedNumber", "hashValue"]
+- !private ["Ps10Strideable", "hashValue"]
+- !private ["Ps10Strideable", "init"]
+- !private ["Ps10Strideable", "withMemoryRebound"]
+- ["Vs6UInt32", "deinit"]
+- !private ["Vs6UInt32", "init"]
+- ["Vs5UInt8", "deinit"]
+- !private ["Vs5UInt8", "init"]
+- !private ["Sp", "deinit"]
+- !private ["SP", "deinit"]
+- !private ["SP", "withMemoryRebound"]
+- !private ["Ps15UnsignedInteger", "init"]
+- !private ["Ps28_DisallowMixedSignArithmetic", "init"]
+- !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "hashValue"]
+- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "init"]
+- !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
+- ["Ps9_Hashable", "_toAnyHashable"]
+- ["Ps9_Hashable", "hashValue"]
+- !private ["Ps9_Hashable", "init"]
+- !private ["Ps9_Hashable", "withMemoryRebound"]
+- ["Ps9_Hashable", ""]
+- !private ["Ps14_Incrementable", "hashValue"]
+- !private ["Ps14_Incrementable", "init"]
+- !private ["Ps8_Integer", "hashValue"]
+- !private ["Ps8_Integer", "init"]
+- !private ["Ps18_IntegerArithmetic", "hashValue"]
+- !private ["Ps18_IntegerArithmetic", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "hashValue"]
+- !private ["Ps8_Pointer", "withMemoryRebound"]
+- !private ["Ps14_SignedInteger", "hashValue"]
+- !private ["Ps11_Strideable", "hashValue"]
+- !private ["Ps11_Strideable", "init"]
+- !private ["Ps11_Strideable", "withMemoryRebound"]
+- !private ["Ps14_StringElement", "init"]
+- ["VSC11sockaddr_in", "deinit"]
+- !private ["VSC11sockaddr_in", "init"]
+- !private ["VSC11sockaddr_in", "sin_family"]
+- !private ["VSC11sockaddr_in", "sin_len"]
+depends-nominal:
+- "Ps9AnyObject"
+- !private "Ps17BitwiseOperations"
+- "Sb"
+- !private "Ps7CVarArg"
+- !private "Ps10Comparable"
+- !private "Ps28CustomDebugStringConvertible"
+- !private "Ps29CustomPlaygroundQuickLookable"
+- !private "Ps17CustomReflectable"
+- !private "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- !private "Ps25ExpressibleByArrayLiteral"
+- !private "Ps27ExpressibleByBooleanLiteral"
+- !private "Ps27ExpressibleByIntegerLiteral"
+- "Ps8Hashable"
+- "C13TookanTracker14IJReachability"
+- "O13TookanTracker18IJReachabilityType"
+- "Si"
+- "Vs5Int32"
+- !private "Ps7Integer"
+- !private "Ps17IntegerArithmetic"
+- !private "Ps25LosslessStringConvertible"
+- !private "Os12MemoryLayout"
+- !private "Ps10MirrorPath"
+- !private "Ps9OptionSet"
+- "Sq"
+- !private "Ps16RawRepresentable"
+- "CSo21SCNetworkReachability"
+- "VSC26SCNetworkReachabilityFlags"
+- !private "Ps10SetAlgebra"
+- !private "Ps13SignedInteger"
+- !private "Ps12SignedNumber"
+- !private "Ps10Strideable"
+- "Vs6UInt32"
+- "Vs5UInt8"
+- !private "Sp"
+- !private "SP"
+- !private "Ps15UnsignedInteger"
+- !private "Ps28_DisallowMixedSignArithmetic"
+- !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
+- !private "Ps35_ExpressibleByBuiltinIntegerLiteral"
+- "Ps9_Hashable"
+- !private "Ps14_Incrementable"
+- !private "Ps8_Integer"
+- !private "Ps18_IntegerArithmetic"
+- !private "Ps21_ObjectiveCBridgeable"
+- !private "Ps8_Pointer"
+- !private "Ps14_SignedInteger"
+- !private "Ps11_Strideable"
+- !private "Ps14_StringElement"
+- "VSC11sockaddr_in"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Swift.swiftmodule"
+- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/SwiftOnoneSupport.swiftmodule"
+- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/UIKit.swiftmodule"
+- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Foundation.swiftmodule"
+- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Darwin.swiftmodule"
+- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Dispatch.swiftmodule"
+- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/ObjectiveC.swiftmodule"
+- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreGraphics.swiftmodule"
+- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreImage.swiftmodule"
+- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreLocation.swiftmodule"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer-umbrella.h"
+- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Modules/module.modulemap"
+interface-hash: "9cc03a12693d5e2bc3d16f2b425164c2"

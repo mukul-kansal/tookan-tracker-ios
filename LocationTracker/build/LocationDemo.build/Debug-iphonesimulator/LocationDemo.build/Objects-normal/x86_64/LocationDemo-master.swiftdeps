@@ -1,13 +1,13 @@
 version: "Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)"
 options: "aa611f933ff234a173daba23097e06e4"
-build_time: [536939688, 688829000]
+build_time: [537000074, 703386000]
 inputs:
   "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/ExtensionClass.swift": [536918465, 0]
   "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaMQTTFrame.swift": [536047011, 0]
   "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/BackgroundTaskManager.swift": [536845563, 0]
-  "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/LocationTrackerFile.swift": [536939676, 0]
+  "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/LocationTrackerFile.swift": [537000062, 0]
   "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaMQTTMessage.swift": [536047011, 0]
-  "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MqttClass.swift": [536928270, 0]
+  "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MqttClass.swift": [537000062, 0]
   "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/IJReachability.swift": [536828887, 0]
   "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/NetworkingHelper.swift": [536938349, 0]
   "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaMQTT.swift": [536927883, 0]

@@ -6,64 +6,65 @@ provides-nominal:
 provides-member:
 - ["C12LocationDemo9MqttClass", ""]
 provides-dynamic-lookup:
-- "mqttSetting"
-- "mqttDidReceivePong"
-- "key"
+- "connectToServer"
 - "mqttDidPing"
 - "unsubscribeLocation"
-- "_console"
-- "connectToServer"
+- "mqttDidReceivePong"
+- "mqttDidDisconnect"
+- "topic"
+- "key"
+- "mqttSetting"
 - "stopLocation"
-- "sendLocation"
+- "accessToken"
+- "hostAddress"
+- "subscribeLocation"
+- "mqtt"
+- "mqtt"
+- "mqtt"
+- "mqtt"
+- "mqtt"
+- "mqtt"
+- "mqtt"
 - "disconnect"
 - "portNumber"
-- "topic"
-- "isConnectionEstablished"
 - "didConnectAck"
 - "sharedInstance"
-- "mqtt"
-- "mqtt"
-- "mqtt"
-- "mqtt"
-- "mqtt"
-- "mqtt"
-- "mqtt"
-- "hostAddress"
-- "accessToken"
-- "subscribeLocation"
-- "mqttDidDisconnect"
+- "_console"
+- "isConnectionEstablished"
+- "sendLocation"
 depends-top-level:
 - !private "+"
-- !private "CocoaMQTTWill"
-- !private "print"
-- "CocoaMQTTMessage"
-- !private "USER_DEFAULT"
-- !private "||"
-- "CocoaMQTTConnAck"
-- "StringLiteralType"
-- "recieveDataFromMqttClass"
-- "BooleanLiteralType"
-- "NSError"
-- !private "??"
-- "Bool"
-- "NSObject"
-- "CocoaMQTT"
-- !private "UIApplication"
-- "MqttClass"
 - !private "Dictionary"
-- !private "UnicodeScalarType"
-- "CocoaMQTTDelegate"
-- !private "CocoaMQTTConnState"
-- !private "CocoaMQTTQOS"
-- !private "IJReachability"
-- !private "UserDefaults"
 - !private "parsingLocations"
-- "String"
-- "Int"
-- !private "=="
+- !private "CocoaMQTTConnState"
+- !private "print"
+- !private ">"
+- !private "UnicodeScalarType"
+- !private "UIApplication"
+- !private "CocoaMQTTQOS"
+- "Bool"
+- !private "??"
+- !private "UserDefaults"
 - "AssignmentPrecedence"
+- !private "IJReachability"
+- !private "=="
+- "CocoaMQTTConnAck"
+- "NSObject"
 - "CastingPrecedence"
+- "StringLiteralType"
+- !private "USER_DEFAULT"
+- "CocoaMQTT"
+- "recieveDataFromMqttClass"
+- "CocoaMQTTMessage"
+- "BooleanLiteralType"
+- "CocoaMQTTDelegate"
+- "MqttClass"
+- "Int"
+- "String"
 - "UInt16"
+- !private "||"
+- "NSError"
+- !private "CocoaMQTTWill"
 depends-member:
 - !private ["Ps9AnyObject", "CocoaMQTT"]
 - !private ["Ps9AnyObject", "CocoaMQTTConnState"]
@@ -116,10 +117,12 @@ depends-member:
 - !private ["Ps9AnyObject", "willMessage"]
 - ["Ps9AnyObject", ""]
 - !private ["Sa", "Index"]
+- !private ["Sa", "IndexDistance"]
 - !private ["Sa", "Iterator"]
 - !private ["Sa", "SubSequence"]
 - !private ["Sa", "_Element"]
 - !private ["Sa", "append"]
+- !private ["Sa", "count"]
 - ["Sa", "deinit"]
 - !private ["Sa", "init"]
 - !private ["Sa", "jsonString"]
@@ -131,6 +134,7 @@ depends-member:
 - !private ["Ps23BidirectionalCollection", "SubSequence"]
 - !private ["Ps23BidirectionalCollection", "_Element"]
 - !private ["Ps23BidirectionalCollection", "append"]
+- !private ["Ps23BidirectionalCollection", "count"]
 - !private ["Ps23BidirectionalCollection", "init"]
 - !private ["Ps23BidirectionalCollection", "jsonString"]
 - !private ["Ps23BidirectionalCollection", "subscript"]
@@ -141,6 +145,7 @@ depends-member:
 - !private ["Ps22BidirectionalIndexable", "SubSequence"]
 - !private ["Ps22BidirectionalIndexable", "_Element"]
 - !private ["Ps22BidirectionalIndexable", "append"]
+- !private ["Ps22BidirectionalIndexable", "count"]
 - !private ["Ps22BidirectionalIndexable", "init"]
 - !private ["Ps22BidirectionalIndexable", "jsonString"]
 - !private ["Ps22BidirectionalIndexable", "subscript"]
@@ -161,6 +166,7 @@ depends-member:
 - !private ["Ps7CVarArg", "CocoaMQTTWill"]
 - !private ["Ps7CVarArg", "IJReachability"]
 - !private ["Ps7CVarArg", "Index"]
+- !private ["Ps7CVarArg", "IndexDistance"]
 - !private ["Ps7CVarArg", "IntegerLiteralType"]
 - !private ["Ps7CVarArg", "Iterator"]
 - !private ["Ps7CVarArg", "Key"]
@@ -179,6 +185,7 @@ depends-member:
 - !private ["Ps7CVarArg", "connState"]
 - !private ["Ps7CVarArg", "connect"]
 - ["Ps7CVarArg", "connectToServer"]
+- !private ["Ps7CVarArg", "count"]
 - ["Ps7CVarArg", "delegate"]
 - ["Ps7CVarArg", "didConnectAck"]
 - ["Ps7CVarArg", "disconnect"]
@@ -300,6 +307,7 @@ depends-member:
 - !private ["Ps10Collection", "Value"]
 - !private ["Ps10Collection", "_Element"]
 - !private ["Ps10Collection", "append"]
+- !private ["Ps10Collection", "count"]
 - !private ["Ps10Collection", "init"]
 - !private ["Ps10Collection", "jsonString"]
 - !private ["Ps10Collection", "subscript"]
@@ -314,6 +322,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "CocoaMQTTWill"]
 - !private ["Ps28CustomDebugStringConvertible", "IJReachability"]
 - !private ["Ps28CustomDebugStringConvertible", "Index"]
+- !private ["Ps28CustomDebugStringConvertible", "IndexDistance"]
 - !private ["Ps28CustomDebugStringConvertible", "Iterator"]
 - !private ["Ps28CustomDebugStringConvertible", "Key"]
 - ["Ps28CustomDebugStringConvertible", "MqttClass"]
@@ -329,6 +338,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "connState"]
 - !private ["Ps28CustomDebugStringConvertible", "connect"]
 - ["Ps28CustomDebugStringConvertible", "connectToServer"]
+- !private ["Ps28CustomDebugStringConvertible", "count"]
 - ["Ps28CustomDebugStringConvertible", "delegate"]
 - ["Ps28CustomDebugStringConvertible", "didConnectAck"]
 - ["Ps28CustomDebugStringConvertible", "disconnect"]
@@ -374,6 +384,7 @@ depends-member:
 - ["Ps29CustomPlaygroundQuickLookable", "init"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "jsonObjectArray"]
 - !private ["Ps17CustomReflectable", "Index"]
+- !private ["Ps17CustomReflectable", "IndexDistance"]
 - !private ["Ps17CustomReflectable", "IntegerLiteralType"]
 - !private ["Ps17CustomReflectable", "Iterator"]
 - !private ["Ps17CustomReflectable", "Key"]
@@ -384,6 +395,7 @@ depends-member:
 - !private ["Ps17CustomReflectable", "_Element"]
 - !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
 - !private ["Ps17CustomReflectable", "append"]
+- !private ["Ps17CustomReflectable", "count"]
 - ["Ps17CustomReflectable", "init"]
 - !private ["Ps17CustomReflectable", "jsonObjectArray"]
 - !private ["Ps17CustomReflectable", "jsonString"]
@@ -395,6 +407,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "CocoaMQTTWill"]
 - !private ["Ps23CustomStringConvertible", "IJReachability"]
 - !private ["Ps23CustomStringConvertible", "Index"]
+- !private ["Ps23CustomStringConvertible", "IndexDistance"]
 - !private ["Ps23CustomStringConvertible", "IntegerLiteralType"]
 - !private ["Ps23CustomStringConvertible", "Iterator"]
 - !private ["Ps23CustomStringConvertible", "Key"]
@@ -414,6 +427,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "connState"]
 - !private ["Ps23CustomStringConvertible", "connect"]
 - ["Ps23CustomStringConvertible", "connectToServer"]
+- !private ["Ps23CustomStringConvertible", "count"]
 - ["Ps23CustomStringConvertible", "delegate"]
 - ["Ps23CustomStringConvertible", "didConnectAck"]
 - ["Ps23CustomStringConvertible", "disconnect"]
@@ -528,10 +542,12 @@ depends-member:
 - ["Ps9Equatable", ""]
 - !private ["Ps5Error", "localizedDescription"]
 - !private ["Ps25ExpressibleByArrayLiteral", "Index"]
+- !private ["Ps25ExpressibleByArrayLiteral", "IndexDistance"]
 - !private ["Ps25ExpressibleByArrayLiteral", "Iterator"]
 - !private ["Ps25ExpressibleByArrayLiteral", "SubSequence"]
 - !private ["Ps25ExpressibleByArrayLiteral", "_Element"]
 - !private ["Ps25ExpressibleByArrayLiteral", "append"]
+- !private ["Ps25ExpressibleByArrayLiteral", "count"]
 - !private ["Ps25ExpressibleByArrayLiteral", "init"]
 - !private ["Ps25ExpressibleByArrayLiteral", "jsonString"]
 - !private ["Ps25ExpressibleByArrayLiteral", "subscript"]
@@ -633,6 +649,7 @@ depends-member:
 - !private ["Ps9Indexable", "Value"]
 - !private ["Ps9Indexable", "_Element"]
 - !private ["Ps9Indexable", "append"]
+- !private ["Ps9Indexable", "count"]
 - !private ["Ps9Indexable", "init"]
 - !private ["Ps9Indexable", "jsonString"]
 - !private ["Ps9Indexable", "subscript"]
@@ -645,6 +662,7 @@ depends-member:
 - !private ["Ps13IndexableBase", "Value"]
 - !private ["Ps13IndexableBase", "_Element"]
 - !private ["Ps13IndexableBase", "append"]
+- !private ["Ps13IndexableBase", "count"]
 - !private ["Ps13IndexableBase", "init"]
 - !private ["Ps13IndexableBase", "jsonString"]
 - !private ["Ps13IndexableBase", "subscript"]
@@ -715,18 +733,22 @@ depends-member:
 - ["C12LocationDemo9MqttClass", "topic"]
 - ["C12LocationDemo9MqttClass", "unsubscribeLocation"]
 - !private ["Ps17MutableCollection", "Index"]
+- !private ["Ps17MutableCollection", "IndexDistance"]
 - !private ["Ps17MutableCollection", "Iterator"]
 - !private ["Ps17MutableCollection", "SubSequence"]
 - !private ["Ps17MutableCollection", "_Element"]
 - !private ["Ps17MutableCollection", "append"]
+- !private ["Ps17MutableCollection", "count"]
 - !private ["Ps17MutableCollection", "init"]
 - !private ["Ps17MutableCollection", "jsonString"]
 - !private ["Ps17MutableCollection", "subscript"]
 - !private ["Ps16MutableIndexable", "Index"]
+- !private ["Ps16MutableIndexable", "IndexDistance"]
 - !private ["Ps16MutableIndexable", "Iterator"]
 - !private ["Ps16MutableIndexable", "SubSequence"]
 - !private ["Ps16MutableIndexable", "_Element"]
 - !private ["Ps16MutableIndexable", "append"]
+- !private ["Ps16MutableIndexable", "count"]
 - !private ["Ps16MutableIndexable", "init"]
 - !private ["Ps16MutableIndexable", "jsonString"]
 - !private ["Ps16MutableIndexable", "subscript"]
@@ -861,6 +883,7 @@ depends-member:
 - !private ["Ps22RandomAccessCollection", "SubSequence"]
 - !private ["Ps22RandomAccessCollection", "_Element"]
 - !private ["Ps22RandomAccessCollection", "append"]
+- !private ["Ps22RandomAccessCollection", "count"]
 - !private ["Ps22RandomAccessCollection", "init"]
 - !private ["Ps22RandomAccessCollection", "jsonString"]
 - !private ["Ps22RandomAccessCollection", "subscript"]
@@ -871,6 +894,7 @@ depends-member:
 - !private ["Ps21RandomAccessIndexable", "SubSequence"]
 - !private ["Ps21RandomAccessIndexable", "_Element"]
 - !private ["Ps21RandomAccessIndexable", "append"]
+- !private ["Ps21RandomAccessIndexable", "count"]
 - !private ["Ps21RandomAccessIndexable", "init"]
 - !private ["Ps21RandomAccessIndexable", "jsonString"]
 - !private ["Ps21RandomAccessIndexable", "subscript"]
@@ -881,18 +905,22 @@ depends-member:
 - !private ["Vs17RandomAccessSlice", "SubSequence"]
 - !private ["Vs17RandomAccessSlice", "_Element"]
 - !private ["Ps26RangeReplaceableCollection", "Index"]
+- !private ["Ps26RangeReplaceableCollection", "IndexDistance"]
 - !private ["Ps26RangeReplaceableCollection", "Iterator"]
 - !private ["Ps26RangeReplaceableCollection", "SubSequence"]
 - !private ["Ps26RangeReplaceableCollection", "_Element"]
 - !private ["Ps26RangeReplaceableCollection", "append"]
+- !private ["Ps26RangeReplaceableCollection", "count"]
 - !private ["Ps26RangeReplaceableCollection", "init"]
 - !private ["Ps26RangeReplaceableCollection", "jsonString"]
 - !private ["Ps26RangeReplaceableCollection", "subscript"]
 - !private ["Ps25RangeReplaceableIndexable", "Index"]
+- !private ["Ps25RangeReplaceableIndexable", "IndexDistance"]
 - !private ["Ps25RangeReplaceableIndexable", "Iterator"]
 - !private ["Ps25RangeReplaceableIndexable", "SubSequence"]
 - !private ["Ps25RangeReplaceableIndexable", "_Element"]
 - !private ["Ps25RangeReplaceableIndexable", "append"]
+- !private ["Ps25RangeReplaceableIndexable", "count"]
 - !private ["Ps25RangeReplaceableIndexable", "init"]
 - !private ["Ps25RangeReplaceableIndexable", "jsonString"]
 - !private ["Ps25RangeReplaceableIndexable", "subscript"]
@@ -911,6 +939,7 @@ depends-member:
 - !private ["Ps8Sequence", "Value"]
 - !private ["Ps8Sequence", "_Element"]
 - !private ["Ps8Sequence", "append"]
+- !private ["Ps8Sequence", "count"]
 - !private ["Ps8Sequence", "init"]
 - !private ["Ps8Sequence", "jsonString"]
 - !private ["Ps8Sequence", "subscript"]
@@ -953,18 +982,22 @@ depends-member:
 - !private ["CSo12UserDefaults", "set"]
 - !private ["CSo12UserDefaults", "standard"]
 - !private ["Ps14_ArrayProtocol", "Index"]
+- !private ["Ps14_ArrayProtocol", "IndexDistance"]
 - !private ["Ps14_ArrayProtocol", "Iterator"]
 - !private ["Ps14_ArrayProtocol", "SubSequence"]
 - !private ["Ps14_ArrayProtocol", "_Element"]
 - !private ["Ps14_ArrayProtocol", "append"]
+- !private ["Ps14_ArrayProtocol", "count"]
 - !private ["Ps14_ArrayProtocol", "init"]
 - !private ["Ps14_ArrayProtocol", "jsonString"]
 - !private ["Ps14_ArrayProtocol", "subscript"]
 - !private ["Ps24_DestructorSafeContainer", "Index"]
+- !private ["Ps24_DestructorSafeContainer", "IndexDistance"]
 - !private ["Ps24_DestructorSafeContainer", "Iterator"]
 - !private ["Ps24_DestructorSafeContainer", "SubSequence"]
 - !private ["Ps24_DestructorSafeContainer", "_Element"]
 - !private ["Ps24_DestructorSafeContainer", "append"]
+- !private ["Ps24_DestructorSafeContainer", "count"]
 - !private ["Ps24_DestructorSafeContainer", "init"]
 - !private ["Ps24_DestructorSafeContainer", "jsonString"]
 - !private ["Ps24_DestructorSafeContainer", "subscript"]
@@ -1050,6 +1083,7 @@ depends-member:
 - !private ["Ps18_IntegerArithmetic", "Stride"]
 - !private ["Ps18_IntegerArithmetic", "_DisabledRangeIndex"]
 - !private ["Ps21_ObjectiveCBridgeable", "Index"]
+- !private ["Ps21_ObjectiveCBridgeable", "IndexDistance"]
 - !private ["Ps21_ObjectiveCBridgeable", "IntegerLiteralType"]
 - !private ["Ps21_ObjectiveCBridgeable", "Iterator"]
 - !private ["Ps21_ObjectiveCBridgeable", "Key"]
@@ -1060,10 +1094,12 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "_Element"]
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "append"]
+- !private ["Ps21_ObjectiveCBridgeable", "count"]
 - ["Ps21_ObjectiveCBridgeable", "init"]
 - !private ["Ps21_ObjectiveCBridgeable", "jsonObjectArray"]
 - !private ["Ps21_ObjectiveCBridgeable", "jsonString"]
 - !private ["Ps21_ObjectiveCBridgeable", "subscript"]
+- !private ["Vs26_OptionalNilComparisonType", "deinit"]
 - !private ["Ps14_SignedInteger", "IntegerLiteralType"]
 - !private ["Ps14_SignedInteger", "Stride"]
 - !private ["Ps14_SignedInteger", "_DisabledRangeIndex"]
@@ -1071,6 +1107,7 @@ depends-member:
 - !private ["Ps11_Strideable", "Stride"]
 - !private ["Ps11_Strideable", "_DisabledRangeIndex"]
 - !private ["P12LocationDemo24recieveDataFromMqttClass", "recievedLatlong"]
+- !private ["P12LocationDemo24recieveDataFromMqttClass", "unsubscribeSocket"]
 depends-nominal:
 - "Ps9AnyObject"
 - "Sa"
@@ -1180,6 +1217,7 @@ depends-nominal:
 - !private "Ps8_Integer"
 - !private "Ps18_IntegerArithmetic"
 - "Ps21_ObjectiveCBridgeable"
+- !private "Vs26_OptionalNilComparisonType"
 - !private "Ps14_SignedInteger"
 - !private "Ps11_Strideable"
 - !private "P12LocationDemo24recieveDataFromMqttClass"

@@ -42,7 +42,6 @@ public class MqttClass: NSObject {
     }
     
     public func sendLocation(location:String) {
-        print(location)
         if IJReachability.isConnectedToNetwork() == true {
             if(didConnectAck == true) {
                 UserDefaults.standard.set(true, forKey: USER_DEFAULT.isHitInProgress)
@@ -51,7 +50,6 @@ public class MqttClass: NSObject {
                                 "location":"\(location)"]
                 var sendDataArray = [Any]()
                 sendDataArray.append(sendData)
-                print(sendDataArray.jsonString)
                 _ =  mqtt?.publish(topic: "UpdateLocation", withString: sendDataArray.jsonString, qos: .QOS1)
                 //mqtt!.publish("UpdateLocation", withString:sendDataArray.jsonString , qos: .QOS1)
             } else {
@@ -64,7 +62,6 @@ public class MqttClass: NSObject {
     }
     
     func subscribeLocation() {
-        print(self.topic)
         if IJReachability.isConnectedToNetwork() == true {
             if(didConnectAck == true) {
                 UserDefaults.standard.set(true, forKey: USER_DEFAULT.isHitInProgress)
@@ -110,7 +107,6 @@ public class MqttClass: NSObject {
 extension MqttClass: CocoaMQTTDelegate {
     
     public func mqtt(_ mqtt: CocoaMQTT, didConnect host: String, port: Int) {
-        print("didConnect \(host):\(port)")
     }
     
     
@@ -177,34 +173,35 @@ extension MqttClass: CocoaMQTTDelegate {
     }
     
     public func mqtt(_ mqtt: CocoaMQTT, didPublishAck id: UInt16) {
-        print("didPublishAck with id: \(id)")
         UserDefaults.standard.set(false, forKey: USER_DEFAULT.isHitInProgress)
     }
     
     public func mqtt(_ mqtt: CocoaMQTT, didReceiveMessage message: CocoaMQTTMessage, id: UInt16 ) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        let locationDictionary = message.string?.jsonObjectArray[0] as! [String:Any]
-        print("\(locationDictionary)" + "the location Dictionary")
+        let locationDictionaryArray = message.string?.jsonObjectArray
+        if locationDictionaryArray!.count > 0{
+            let locationDictionary = message.string?.jsonObjectArray[0] as! [String:Any]
         if let locationArray = locationDictionary["location"] as? [Any] {
           let data = parsingLocations(locationArray: locationArray)
-            delegate?.recievedLatlong(data: data)
+            delegate?.recievedLatlong(data: data,message:message.string!)
+            }
         } else {
+            if message.string == "NaN"{
+                delegate?.unsubscribeSocket()
+            }
             //NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: NOTIFICATION_OBSERVER.stopTracking), object: nil)
         }
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
     public func mqtt(_ mqtt: CocoaMQTT, didSubscribeTopic topic: String) {
-        print("didSubscribeTopic to \(topic)")
     }
     
     public func mqtt(_ mqtt: CocoaMQTT, didUnsubscribeTopic topic: String) {
-        print("didUnsubscribeTopic to \(topic)")
     }
     
     
     public func mqttDidPing(_ mqtt: CocoaMQTT) {
-        print("didPing")
     }
     
     
@@ -218,7 +215,6 @@ extension MqttClass: CocoaMQTTDelegate {
     public func mqttDidDisconnect(_ mqtt: CocoaMQTT, withError err: NSError?) {
         didConnectAck = false
         _console(info: "mqttDidDisconnect")
-        print(err?.localizedDescription ?? "error")
             if(mqtt.connState == CocoaMQTTConnState.DISCONNECTED) {
                 self.mqttSetting()
                 self.connectToServer()
@@ -227,7 +223,6 @@ extension MqttClass: CocoaMQTTDelegate {
         UserDefaults.standard.set(false, forKey: USER_DEFAULT.isHitInProgress)
     }
     func _console(info: String) {
-        print("Delegate: \(info)")
     }
     
     
