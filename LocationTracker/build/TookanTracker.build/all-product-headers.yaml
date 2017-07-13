@@ -4,23 +4,23 @@
   'roots': [
     {
       'type': 'directory',
-      'name': "/Users/cl-macmini-57/Library/Developer/Xcode/DerivedData/TookanTracker-ekhgzskygvuxnzhfxymezeaicrun/Build/Products/Debug-iphonesimulator/TookanTracker.framework/Headers",
+      'name': "/Users/samneetkharbanda/Library/Developer/Xcode/DerivedData/TookanTracker-hcdkshpvmmtnoebbtaiiyjmhtjym/Build/Products/Debug-iphonesimulator/TookanTracker.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "TookanTracker-Swift.h",
-          'external-contents': "/Users/cl-macmini-57/Library/Developer/Xcode/DerivedData/TookanTracker-ekhgzskygvuxnzhfxymezeaicrun/Build/Products/Debug-iphonesimulator/TookanTracker.framework/Headers/TookanTracker-Swift.h"
+          'external-contents': "/Users/samneetkharbanda/Library/Developer/Xcode/DerivedData/TookanTracker-hcdkshpvmmtnoebbtaiiyjmhtjym/Build/Products/Debug-iphonesimulator/TookanTracker.framework/Headers/TookanTracker-Swift.h"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/cl-macmini-57/Library/Developer/Xcode/DerivedData/TookanTracker-ekhgzskygvuxnzhfxymezeaicrun/Build/Products/Debug-iphonesimulator/TookanTracker.framework/Modules",
+      'name': "/Users/samneetkharbanda/Library/Developer/Xcode/DerivedData/TookanTracker-hcdkshpvmmtnoebbtaiiyjmhtjym/Build/Products/Debug-iphonesimulator/TookanTracker.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/build/TookanTracker.build/Debug-iphonesimulator/TookanTracker.build/module.modulemap"
+          'external-contents': "/Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/build/TookanTracker.build/Debug-iphonesimulator/TookanTracker.build/module.modulemap"
         }
       ]
     }

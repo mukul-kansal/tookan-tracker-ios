@@ -33,40 +33,40 @@ provides-dynamic-lookup:
 - "setLabelWithFontColorText"
 - "setShadow"
 depends-top-level:
-- !private "Dictionary"
-- "CGFloat"
-- "UIButton"
-- "Bool"
-- !private "TimeZone"
-- !private "NSNumber"
-- "CLLocationCoordinate2D"
-- "Int"
-- !private "NSTimeZone"
-- "ExtensionClass"
-- "NSLocale"
-- !private "JSONSerialization"
-- !private "DateFormatter"
-- !private "Double"
-- !private "..<"
-- "CGRect"
-- "AssignmentPrecedence"
-- !private "CharacterSet"
-- "CastingPrecedence"
-- "parsingLocations"
-- "String"
 - !private "!="
-- !private "StringLiteralType"
-- "UIView"
-- "UIColor"
-- "UILabel"
+- !private "..<"
+- "AssignmentPrecedence"
+- "Bool"
 - !private "BooleanLiteralType"
-- !private "NSFontAttributeName"
-- "UIFont"
-- !private "print"
+- "CGFloat"
+- "CGRect"
 - !private "CGSize"
+- "CLLocationCoordinate2D"
+- "CastingPrecedence"
+- !private "CharacterSet"
+- !private "DateFormatter"
+- !private "Dictionary"
+- !private "Double"
+- "ExtensionClass"
+- "Int"
+- !private "JSONSerialization"
 - !private "Locale"
+- !private "NSFontAttributeName"
+- "NSLocale"
+- !private "NSNumber"
 - "NSObject"
 - !private "NSStringDrawingOptions"
+- !private "NSTimeZone"
+- "String"
+- !private "StringLiteralType"
+- !private "TimeZone"
+- "UIButton"
+- "UIColor"
+- "UIFont"
+- "UILabel"
+- "UIView"
+- "parsingLocations"
+- !private "print"
 depends-member:
 - !private ["Ps16AbsoluteValuable", "greatestFiniteMagnitude"]
 - !private ["Ps16AbsoluteValuable", "init"]
@@ -94,12 +94,7 @@ depends-member:
 - !private ["Ps9AnyObject", "layer"]
 - !private ["Ps9AnyObject", "local"]
 - !private ["Ps9AnyObject", "locale"]
-- ["Ps9AnyObject", "locales"]
 - !private ["Ps9AnyObject", "masksToBounds"]
-- ["Ps9AnyObject", "setBorder"]
-- ["Ps9AnyObject", "setCornerRadius"]
-- ["Ps9AnyObject", "setLabelWithFontColorText"]
-- ["Ps9AnyObject", "setShadow"]
 - !private ["Ps9AnyObject", "shadowColor"]
 - !private ["Ps9AnyObject", "shadowOffset"]
 - !private ["Ps9AnyObject", "shadowOpacity"]
@@ -110,53 +105,20 @@ depends-member:
 - !private ["Ps9AnyObject", "timeZone"]
 - !private ["Ps9AnyObject", "trimmingCharacters"]
 - ["Ps9AnyObject", ""]
-- !private ["Sa", "Index"]
-- !private ["Sa", "IndexDistance"]
-- !private ["Sa", "Iterator"]
-- !private ["Sa", "SubSequence"]
-- !private ["Sa", "_Element"]
 - !private ["Sa", "append"]
 - !private ["Sa", "count"]
-- ["Sa", "deinit"]
 - !private ["Sa", "init"]
 - !private ["Sa", "subscript"]
-- !private ["Ps23BidirectionalCollection", "Index"]
-- !private ["Ps23BidirectionalCollection", "IndexDistance"]
-- !private ["Ps23BidirectionalCollection", "Indices"]
-- !private ["Ps23BidirectionalCollection", "Iterator"]
-- !private ["Ps23BidirectionalCollection", "SubSequence"]
-- !private ["Ps23BidirectionalCollection", "_Element"]
 - !private ["Ps23BidirectionalCollection", "append"]
 - !private ["Ps23BidirectionalCollection", "count"]
 - !private ["Ps23BidirectionalCollection", "init"]
 - !private ["Ps23BidirectionalCollection", "subscript"]
-- !private ["Ps22BidirectionalIndexable", "Index"]
-- !private ["Ps22BidirectionalIndexable", "IndexDistance"]
-- !private ["Ps22BidirectionalIndexable", "Indices"]
-- !private ["Ps22BidirectionalIndexable", "Iterator"]
-- !private ["Ps22BidirectionalIndexable", "SubSequence"]
-- !private ["Ps22BidirectionalIndexable", "_Element"]
-- !private ["Ps22BidirectionalIndexable", "append"]
-- !private ["Ps22BidirectionalIndexable", "count"]
-- !private ["Ps22BidirectionalIndexable", "init"]
-- !private ["Ps22BidirectionalIndexable", "subscript"]
-- !private ["Vs18BidirectionalSlice", "Index"]
-- !private ["Vs18BidirectionalSlice", "IndexDistance"]
-- !private ["Vs18BidirectionalSlice", "Indices"]
-- !private ["Vs18BidirectionalSlice", "Iterator"]
-- !private ["Vs18BidirectionalSlice", "SubSequence"]
-- !private ["Vs18BidirectionalSlice", "_Element"]
 - !private ["Ps19BinaryFloatingPoint", "greatestFiniteMagnitude"]
 - !private ["Ps19BinaryFloatingPoint", "init"]
-- !private ["Ps17BitwiseOperations", "IntegerLiteralType"]
-- !private ["Ps17BitwiseOperations", "Stride"]
-- !private ["Ps17BitwiseOperations", "_DisabledRangeIndex"]
 - !private ["Sb", "_getBuiltinLogicValue"]
-- ["Sb", "deinit"]
 - !private ["CSo7CALayer", "borderColor"]
 - !private ["CSo7CALayer", "borderWidth"]
 - !private ["CSo7CALayer", "cornerRadius"]
-- ["CSo7CALayer", "deinit"]
 - !private ["CSo7CALayer", "masksToBounds"]
 - !private ["CSo7CALayer", "shadowColor"]
 - !private ["CSo7CALayer", "shadowOffset"]
@@ -167,8 +129,6 @@ depends-member:
 - !private ["PSo15CALayerDelegate", "UIFont"]
 - !private ["PSo15CALayerDelegate", "font"]
 - !private ["PSo15CALayerDelegate", "layer"]
-- ["PSo15CALayerDelegate", "setLabelWithFontColorText"]
-- ["PSo15CALayerDelegate", "setShadow"]
 - !private ["PSo15CALayerDelegate", "text"]
 - !private ["PSo15CALayerDelegate", "textColor"]
 - !private ["PSo13CAMediaTiming", "borderColor"]
@@ -179,13 +139,8 @@ depends-member:
 - !private ["PSo13CAMediaTiming", "shadowOffset"]
 - !private ["PSo13CAMediaTiming", "shadowOpacity"]
 - !private ["PSo13CAMediaTiming", "shadowRadius"]
-- ["CSo7CGColor", "deinit"]
-- ["V12CoreGraphics7CGFloat", "deinit"]
 - !private ["V12CoreGraphics7CGFloat", "greatestFiniteMagnitude"]
-- ["VSC6CGRect", "deinit"]
-- ["VSC6CGSize", "deinit"]
 - !private ["VSC6CGSize", "init"]
-- ["VSC22CLLocationCoordinate2D", "deinit"]
 - !private ["VSC22CLLocationCoordinate2D", "init"]
 - !private ["VSC22CLLocationCoordinate2D", "latitude"]
 - !private ["VSC22CLLocationCoordinate2D", "longitude"]
@@ -194,27 +149,17 @@ depends-member:
 - !private ["Ps7CVarArg", "CharacterSet"]
 - !private ["Ps7CVarArg", "DateFormatter"]
 - !private ["Ps7CVarArg", "Encoding"]
-- !private ["Ps7CVarArg", "Index"]
-- !private ["Ps7CVarArg", "IndexDistance"]
-- !private ["Ps7CVarArg", "IntegerLiteralType"]
-- !private ["Ps7CVarArg", "Iterator"]
 - !private ["Ps7CVarArg", "JSONSerialization"]
-- !private ["Ps7CVarArg", "Key"]
 - !private ["Ps7CVarArg", "Locale"]
 - !private ["Ps7CVarArg", "NSFontAttributeName"]
 - !private ["Ps7CVarArg", "NSLocale"]
 - !private ["Ps7CVarArg", "NSStringDrawingOptions"]
 - !private ["Ps7CVarArg", "NSTimeZone"]
 - !private ["Ps7CVarArg", "ReadingOptions"]
-- !private ["Ps7CVarArg", "Stride"]
 - !private ["Ps7CVarArg", "String"]
-- !private ["Ps7CVarArg", "SubSequence"]
 - !private ["Ps7CVarArg", "TimeZone"]
 - !private ["Ps7CVarArg", "UIColor"]
 - !private ["Ps7CVarArg", "UIFont"]
-- !private ["Ps7CVarArg", "Value"]
-- !private ["Ps7CVarArg", "_DisabledRangeIndex"]
-- !private ["Ps7CVarArg", "_Element"]
 - !private ["Ps7CVarArg", "append"]
 - !private ["Ps7CVarArg", "borderColor"]
 - !private ["Ps7CVarArg", "borderWidth"]
@@ -235,13 +180,8 @@ depends-member:
 - !private ["Ps7CVarArg", "layer"]
 - !private ["Ps7CVarArg", "local"]
 - !private ["Ps7CVarArg", "locale"]
-- ["Ps7CVarArg", "locales"]
 - !private ["Ps7CVarArg", "masksToBounds"]
 - !private ["Ps7CVarArg", "print"]
-- ["Ps7CVarArg", "setBorder"]
-- ["Ps7CVarArg", "setCornerRadius"]
-- ["Ps7CVarArg", "setLabelWithFontColorText"]
-- ["Ps7CVarArg", "setShadow"]
 - !private ["Ps7CVarArg", "shadowColor"]
 - !private ["Ps7CVarArg", "shadowOffset"]
 - !private ["Ps7CVarArg", "shadowOpacity"]
@@ -253,19 +193,8 @@ depends-member:
 - !private ["Ps7CVarArg", "timeZone"]
 - !private ["Ps7CVarArg", "trimmingCharacters"]
 - ["Ps7CVarArg", ""]
-- ["V10Foundation12CharacterSet", "deinit"]
 - !private ["V10Foundation12CharacterSet", "whitespacesAndNewlines"]
-- !private ["VSS13CharacterView", "IndexDistance"]
 - !private ["VSS13CharacterView", "count"]
-- ["VSS13CharacterView", "deinit"]
-- !private ["Ps10Collection", "Index"]
-- !private ["Ps10Collection", "IndexDistance"]
-- !private ["Ps10Collection", "Indices"]
-- !private ["Ps10Collection", "Iterator"]
-- !private ["Ps10Collection", "Key"]
-- !private ["Ps10Collection", "SubSequence"]
-- !private ["Ps10Collection", "Value"]
-- !private ["Ps10Collection", "_Element"]
 - !private ["Ps10Collection", "append"]
 - !private ["Ps10Collection", "count"]
 - !private ["Ps10Collection", "init"]
@@ -275,16 +204,13 @@ depends-member:
 - !private ["Ps10Comparable", "CharacterSet"]
 - !private ["Ps10Comparable", "DateFormatter"]
 - !private ["Ps10Comparable", "Encoding"]
-- !private ["Ps10Comparable", "IntegerLiteralType"]
 - !private ["Ps10Comparable", "JSONSerialization"]
 - !private ["Ps10Comparable", "NSFontAttributeName"]
 - !private ["Ps10Comparable", "NSLocale"]
 - !private ["Ps10Comparable", "NSStringDrawingOptions"]
 - !private ["Ps10Comparable", "NSTimeZone"]
-- !private ["Ps10Comparable", "Stride"]
 - !private ["Ps10Comparable", "String"]
 - !private ["Ps10Comparable", "TimeZone"]
-- !private ["Ps10Comparable", "_DisabledRangeIndex"]
 - !private ["Ps10Comparable", "boundingRect"]
 - !private ["Ps10Comparable", "characters"]
 - !private ["Ps10Comparable", "data"]
@@ -293,19 +219,12 @@ depends-member:
 - !private ["Ps10Comparable", "isEmpty"]
 - !private ["Ps10Comparable", "print"]
 - !private ["Ps10Comparable", "trimmingCharacters"]
-- !private ["Vs14CountableRange", "Iterator"]
-- !private ["Vs14CountableRange", "_Element"]
-- ["Vs14CountableRange", "deinit"]
 - !private ["Ps28CustomDebugStringConvertible", "CGFloat"]
 - !private ["Ps28CustomDebugStringConvertible", "CGSize"]
 - !private ["Ps28CustomDebugStringConvertible", "CharacterSet"]
 - !private ["Ps28CustomDebugStringConvertible", "DateFormatter"]
 - !private ["Ps28CustomDebugStringConvertible", "Encoding"]
-- !private ["Ps28CustomDebugStringConvertible", "Index"]
-- !private ["Ps28CustomDebugStringConvertible", "IndexDistance"]
-- !private ["Ps28CustomDebugStringConvertible", "Iterator"]
 - !private ["Ps28CustomDebugStringConvertible", "JSONSerialization"]
-- !private ["Ps28CustomDebugStringConvertible", "Key"]
 - !private ["Ps28CustomDebugStringConvertible", "Locale"]
 - !private ["Ps28CustomDebugStringConvertible", "NSFontAttributeName"]
 - !private ["Ps28CustomDebugStringConvertible", "NSLocale"]
@@ -313,12 +232,9 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "NSTimeZone"]
 - !private ["Ps28CustomDebugStringConvertible", "ReadingOptions"]
 - !private ["Ps28CustomDebugStringConvertible", "String"]
-- !private ["Ps28CustomDebugStringConvertible", "SubSequence"]
 - !private ["Ps28CustomDebugStringConvertible", "TimeZone"]
 - !private ["Ps28CustomDebugStringConvertible", "UIColor"]
 - !private ["Ps28CustomDebugStringConvertible", "UIFont"]
-- !private ["Ps28CustomDebugStringConvertible", "Value"]
-- !private ["Ps28CustomDebugStringConvertible", "_Element"]
 - !private ["Ps28CustomDebugStringConvertible", "append"]
 - !private ["Ps28CustomDebugStringConvertible", "borderColor"]
 - !private ["Ps28CustomDebugStringConvertible", "borderWidth"]
@@ -339,19 +255,13 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "layer"]
 - !private ["Ps28CustomDebugStringConvertible", "local"]
 - !private ["Ps28CustomDebugStringConvertible", "locale"]
-- ["Ps28CustomDebugStringConvertible", "locales"]
 - !private ["Ps28CustomDebugStringConvertible", "localizedString"]
 - !private ["Ps28CustomDebugStringConvertible", "masksToBounds"]
 - !private ["Ps28CustomDebugStringConvertible", "print"]
-- ["Ps28CustomDebugStringConvertible", "setBorder"]
-- ["Ps28CustomDebugStringConvertible", "setCornerRadius"]
-- ["Ps28CustomDebugStringConvertible", "setLabelWithFontColorText"]
-- ["Ps28CustomDebugStringConvertible", "setShadow"]
 - !private ["Ps28CustomDebugStringConvertible", "shadowColor"]
 - !private ["Ps28CustomDebugStringConvertible", "shadowOffset"]
 - !private ["Ps28CustomDebugStringConvertible", "shadowOpacity"]
 - !private ["Ps28CustomDebugStringConvertible", "shadowRadius"]
-- ["Ps28CustomDebugStringConvertible", "some"]
 - !private ["Ps28CustomDebugStringConvertible", "string"]
 - !private ["Ps28CustomDebugStringConvertible", "subscript"]
 - !private ["Ps28CustomDebugStringConvertible", "text"]
@@ -365,16 +275,13 @@ depends-member:
 - !private ["Ps29CustomPlaygroundQuickLookable", "CharacterSet"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "DateFormatter"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "Encoding"]
-- !private ["Ps29CustomPlaygroundQuickLookable", "IntegerLiteralType"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "JSONSerialization"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "NSFontAttributeName"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "NSLocale"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "NSStringDrawingOptions"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "NSTimeZone"]
-- !private ["Ps29CustomPlaygroundQuickLookable", "Stride"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "String"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "TimeZone"]
-- !private ["Ps29CustomPlaygroundQuickLookable", "_DisabledRangeIndex"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "boundingRect"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "characters"]
@@ -388,23 +295,13 @@ depends-member:
 - !private ["Ps17CustomReflectable", "CharacterSet"]
 - !private ["Ps17CustomReflectable", "DateFormatter"]
 - !private ["Ps17CustomReflectable", "Encoding"]
-- !private ["Ps17CustomReflectable", "Index"]
-- !private ["Ps17CustomReflectable", "IndexDistance"]
-- !private ["Ps17CustomReflectable", "IntegerLiteralType"]
-- !private ["Ps17CustomReflectable", "Iterator"]
 - !private ["Ps17CustomReflectable", "JSONSerialization"]
-- !private ["Ps17CustomReflectable", "Key"]
 - !private ["Ps17CustomReflectable", "NSFontAttributeName"]
 - !private ["Ps17CustomReflectable", "NSLocale"]
 - !private ["Ps17CustomReflectable", "NSStringDrawingOptions"]
 - !private ["Ps17CustomReflectable", "NSTimeZone"]
-- !private ["Ps17CustomReflectable", "Stride"]
 - !private ["Ps17CustomReflectable", "String"]
-- !private ["Ps17CustomReflectable", "SubSequence"]
 - !private ["Ps17CustomReflectable", "TimeZone"]
-- !private ["Ps17CustomReflectable", "Value"]
-- !private ["Ps17CustomReflectable", "_DisabledRangeIndex"]
-- !private ["Ps17CustomReflectable", "_Element"]
 - !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
 - !private ["Ps17CustomReflectable", "append"]
 - !private ["Ps17CustomReflectable", "boundingRect"]
@@ -417,7 +314,6 @@ depends-member:
 - !private ["Ps17CustomReflectable", "isEmpty"]
 - !private ["Ps17CustomReflectable", "localizedString"]
 - !private ["Ps17CustomReflectable", "print"]
-- ["Ps17CustomReflectable", "some"]
 - !private ["Ps17CustomReflectable", "subscript"]
 - !private ["Ps17CustomReflectable", "trimmingCharacters"]
 - !private ["Ps23CustomStringConvertible", "CGFloat"]
@@ -425,27 +321,17 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "CharacterSet"]
 - !private ["Ps23CustomStringConvertible", "DateFormatter"]
 - !private ["Ps23CustomStringConvertible", "Encoding"]
-- !private ["Ps23CustomStringConvertible", "Index"]
-- !private ["Ps23CustomStringConvertible", "IndexDistance"]
-- !private ["Ps23CustomStringConvertible", "IntegerLiteralType"]
-- !private ["Ps23CustomStringConvertible", "Iterator"]
 - !private ["Ps23CustomStringConvertible", "JSONSerialization"]
-- !private ["Ps23CustomStringConvertible", "Key"]
 - !private ["Ps23CustomStringConvertible", "Locale"]
 - !private ["Ps23CustomStringConvertible", "NSFontAttributeName"]
 - !private ["Ps23CustomStringConvertible", "NSLocale"]
 - !private ["Ps23CustomStringConvertible", "NSStringDrawingOptions"]
 - !private ["Ps23CustomStringConvertible", "NSTimeZone"]
 - !private ["Ps23CustomStringConvertible", "ReadingOptions"]
-- !private ["Ps23CustomStringConvertible", "Stride"]
 - !private ["Ps23CustomStringConvertible", "String"]
-- !private ["Ps23CustomStringConvertible", "SubSequence"]
 - !private ["Ps23CustomStringConvertible", "TimeZone"]
 - !private ["Ps23CustomStringConvertible", "UIColor"]
 - !private ["Ps23CustomStringConvertible", "UIFont"]
-- !private ["Ps23CustomStringConvertible", "Value"]
-- !private ["Ps23CustomStringConvertible", "_DisabledRangeIndex"]
-- !private ["Ps23CustomStringConvertible", "_Element"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps23CustomStringConvertible", "append"]
 - !private ["Ps23CustomStringConvertible", "borderColor"]
@@ -468,14 +354,9 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "layer"]
 - !private ["Ps23CustomStringConvertible", "local"]
 - !private ["Ps23CustomStringConvertible", "locale"]
-- ["Ps23CustomStringConvertible", "locales"]
 - !private ["Ps23CustomStringConvertible", "localizedString"]
 - !private ["Ps23CustomStringConvertible", "masksToBounds"]
 - !private ["Ps23CustomStringConvertible", "print"]
-- ["Ps23CustomStringConvertible", "setBorder"]
-- ["Ps23CustomStringConvertible", "setCornerRadius"]
-- ["Ps23CustomStringConvertible", "setLabelWithFontColorText"]
-- ["Ps23CustomStringConvertible", "setShadow"]
 - !private ["Ps23CustomStringConvertible", "shadowColor"]
 - !private ["Ps23CustomStringConvertible", "shadowOffset"]
 - !private ["Ps23CustomStringConvertible", "shadowOpacity"]
@@ -489,43 +370,21 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "utf8"]
 - !private ["Ps23CustomStringConvertible", "whitespacesAndNewlines"]
 - ["Ps23CustomStringConvertible", ""]
-- ["V10Foundation4Data", "deinit"]
-- ["V10Foundation4Date", "deinit"]
 - !private ["CSo13DateFormatter", "date"]
 - !private ["CSo13DateFormatter", "dateFormat"]
-- ["CSo13DateFormatter", "deinit"]
 - !private ["CSo13DateFormatter", "init"]
 - !private ["CSo13DateFormatter", "locale"]
 - !private ["CSo13DateFormatter", "string"]
 - !private ["CSo13DateFormatter", "timeZone"]
-- !private ["Vs27DefaultBidirectionalIndices", "Index"]
-- !private ["Vs27DefaultBidirectionalIndices", "Iterator"]
-- !private ["Vs27DefaultBidirectionalIndices", "SubSequence"]
-- !private ["Vs27DefaultBidirectionalIndices", "_Element"]
-- !private ["Vs26DefaultRandomAccessIndices", "Index"]
-- !private ["Vs26DefaultRandomAccessIndices", "IndexDistance"]
-- !private ["Vs26DefaultRandomAccessIndices", "Indices"]
-- !private ["Vs26DefaultRandomAccessIndices", "Iterator"]
-- !private ["Vs26DefaultRandomAccessIndices", "SubSequence"]
-- !private ["Vs26DefaultRandomAccessIndices", "_Element"]
-- !private ["Vs10Dictionary", "Index"]
-- !private ["Vs10Dictionary", "Key"]
-- !private ["Vs10Dictionary", "SubSequence"]
-- !private ["Vs10Dictionary", "Value"]
-- ["Vs10Dictionary", "deinit"]
 - !private ["Vs10Dictionary", "init"]
 - !private ["Vs10Dictionary", "subscript"]
-- ["Sd", "deinit"]
 - !private ["Sd", "init"]
-- ["VE10FoundationSS8Encoding", "deinit"]
 - !private ["VE10FoundationSS8Encoding", "utf8"]
 - !private ["Ps9Equatable", "CGFloat"]
 - !private ["Ps9Equatable", "CGSize"]
 - !private ["Ps9Equatable", "CharacterSet"]
 - !private ["Ps9Equatable", "DateFormatter"]
 - !private ["Ps9Equatable", "Encoding"]
-- !private ["Ps9Equatable", "IntegerLiteralType"]
-- !private ["Ps9Equatable", "Iterator"]
 - !private ["Ps9Equatable", "JSONSerialization"]
 - !private ["Ps9Equatable", "Locale"]
 - !private ["Ps9Equatable", "NSFontAttributeName"]
@@ -533,13 +392,10 @@ depends-member:
 - !private ["Ps9Equatable", "NSStringDrawingOptions"]
 - !private ["Ps9Equatable", "NSTimeZone"]
 - !private ["Ps9Equatable", "ReadingOptions"]
-- !private ["Ps9Equatable", "Stride"]
 - !private ["Ps9Equatable", "String"]
 - !private ["Ps9Equatable", "TimeZone"]
 - !private ["Ps9Equatable", "UIColor"]
 - !private ["Ps9Equatable", "UIFont"]
-- !private ["Ps9Equatable", "_DisabledRangeIndex"]
-- !private ["Ps9Equatable", "_Element"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - !private ["Ps9Equatable", "borderColor"]
 - !private ["Ps9Equatable", "borderWidth"]
@@ -560,15 +416,10 @@ depends-member:
 - !private ["Ps9Equatable", "layer"]
 - !private ["Ps9Equatable", "local"]
 - !private ["Ps9Equatable", "locale"]
-- ["Ps9Equatable", "locales"]
 - !private ["Ps9Equatable", "localizedString"]
 - !private ["Ps9Equatable", "masksToBounds"]
 - !private ["Ps9Equatable", "mutableLeaves"]
 - !private ["Ps9Equatable", "print"]
-- ["Ps9Equatable", "setBorder"]
-- ["Ps9Equatable", "setCornerRadius"]
-- ["Ps9Equatable", "setLabelWithFontColorText"]
-- ["Ps9Equatable", "setShadow"]
 - !private ["Ps9Equatable", "shadowColor"]
 - !private ["Ps9Equatable", "shadowOffset"]
 - !private ["Ps9Equatable", "shadowOpacity"]
@@ -582,11 +433,6 @@ depends-member:
 - !private ["Ps9Equatable", "utf8"]
 - !private ["Ps9Equatable", "whitespacesAndNewlines"]
 - ["Ps9Equatable", ""]
-- !private ["Ps25ExpressibleByArrayLiteral", "Index"]
-- !private ["Ps25ExpressibleByArrayLiteral", "IndexDistance"]
-- !private ["Ps25ExpressibleByArrayLiteral", "Iterator"]
-- !private ["Ps25ExpressibleByArrayLiteral", "SubSequence"]
-- !private ["Ps25ExpressibleByArrayLiteral", "_Element"]
 - !private ["Ps25ExpressibleByArrayLiteral", "append"]
 - !private ["Ps25ExpressibleByArrayLiteral", "count"]
 - !private ["Ps25ExpressibleByArrayLiteral", "init"]
@@ -595,10 +441,6 @@ depends-member:
 - !private ["Ps25ExpressibleByArrayLiteral", "usesLineFragmentOrigin"]
 - !private ["Ps25ExpressibleByArrayLiteral", "whitespacesAndNewlines"]
 - !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
-- !private ["Ps30ExpressibleByDictionaryLiteral", "Index"]
-- !private ["Ps30ExpressibleByDictionaryLiteral", "Key"]
-- !private ["Ps30ExpressibleByDictionaryLiteral", "SubSequence"]
-- !private ["Ps30ExpressibleByDictionaryLiteral", "Value"]
 - !private ["Ps30ExpressibleByDictionaryLiteral", "init"]
 - !private ["Ps30ExpressibleByDictionaryLiteral", "subscript"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "CGFloat"]
@@ -622,31 +464,8 @@ depends-member:
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "trimmingCharacters"]
 - !private ["Ps25ExpressibleByFloatLiteral", "greatestFiniteMagnitude"]
 - !private ["Ps25ExpressibleByFloatLiteral", "init"]
-- !private ["Ps27ExpressibleByIntegerLiteral", "IntegerLiteralType"]
-- !private ["Ps27ExpressibleByIntegerLiteral", "Stride"]
-- !private ["Ps27ExpressibleByIntegerLiteral", "_DisabledRangeIndex"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "greatestFiniteMagnitude"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "init"]
-- ["Ps23ExpressibleByNilLiteral", "some"]
-- !private ["Ps32ExpressibleByStringInterpolation", "CGFloat"]
-- !private ["Ps32ExpressibleByStringInterpolation", "CGSize"]
-- !private ["Ps32ExpressibleByStringInterpolation", "CharacterSet"]
-- !private ["Ps32ExpressibleByStringInterpolation", "DateFormatter"]
-- !private ["Ps32ExpressibleByStringInterpolation", "Encoding"]
-- !private ["Ps32ExpressibleByStringInterpolation", "JSONSerialization"]
-- !private ["Ps32ExpressibleByStringInterpolation", "NSFontAttributeName"]
-- !private ["Ps32ExpressibleByStringInterpolation", "NSLocale"]
-- !private ["Ps32ExpressibleByStringInterpolation", "NSStringDrawingOptions"]
-- !private ["Ps32ExpressibleByStringInterpolation", "NSTimeZone"]
-- !private ["Ps32ExpressibleByStringInterpolation", "String"]
-- !private ["Ps32ExpressibleByStringInterpolation", "TimeZone"]
-- !private ["Ps32ExpressibleByStringInterpolation", "boundingRect"]
-- !private ["Ps32ExpressibleByStringInterpolation", "characters"]
-- !private ["Ps32ExpressibleByStringInterpolation", "data"]
-- !private ["Ps32ExpressibleByStringInterpolation", "init"]
-- !private ["Ps32ExpressibleByStringInterpolation", "isEmpty"]
-- !private ["Ps32ExpressibleByStringInterpolation", "print"]
-- !private ["Ps32ExpressibleByStringInterpolation", "trimmingCharacters"]
 - !private ["Ps26ExpressibleByStringLiteral", "CGFloat"]
 - !private ["Ps26ExpressibleByStringLiteral", "CGSize"]
 - !private ["Ps26ExpressibleByStringLiteral", "CharacterSet"]
@@ -687,7 +506,6 @@ depends-member:
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "trimmingCharacters"]
 - ["C13TookanTracker14ExtensionClass", "deinit"]
 - ["C13TookanTracker14ExtensionClass", "init"]
-- ["Sf", "deinit"]
 - !private ["Ps13FloatingPoint", "greatestFiniteMagnitude"]
 - !private ["Ps13FloatingPoint", "init"]
 - !private ["CSo9Formatter", "date"]
@@ -701,7 +519,6 @@ depends-member:
 - !private ["Ps8Hashable", "CharacterSet"]
 - !private ["Ps8Hashable", "DateFormatter"]
 - !private ["Ps8Hashable", "Encoding"]
-- !private ["Ps8Hashable", "IntegerLiteralType"]
 - !private ["Ps8Hashable", "JSONSerialization"]
 - !private ["Ps8Hashable", "Locale"]
 - !private ["Ps8Hashable", "NSFontAttributeName"]
@@ -709,12 +526,10 @@ depends-member:
 - !private ["Ps8Hashable", "NSStringDrawingOptions"]
 - !private ["Ps8Hashable", "NSTimeZone"]
 - !private ["Ps8Hashable", "ReadingOptions"]
-- !private ["Ps8Hashable", "Stride"]
 - !private ["Ps8Hashable", "String"]
 - !private ["Ps8Hashable", "TimeZone"]
 - !private ["Ps8Hashable", "UIColor"]
 - !private ["Ps8Hashable", "UIFont"]
-- !private ["Ps8Hashable", "_DisabledRangeIndex"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps8Hashable", "borderColor"]
 - !private ["Ps8Hashable", "borderWidth"]
@@ -735,14 +550,9 @@ depends-member:
 - !private ["Ps8Hashable", "layer"]
 - !private ["Ps8Hashable", "local"]
 - !private ["Ps8Hashable", "locale"]
-- ["Ps8Hashable", "locales"]
 - !private ["Ps8Hashable", "localizedString"]
 - !private ["Ps8Hashable", "masksToBounds"]
 - !private ["Ps8Hashable", "print"]
-- ["Ps8Hashable", "setBorder"]
-- ["Ps8Hashable", "setCornerRadius"]
-- ["Ps8Hashable", "setLabelWithFontColorText"]
-- ["Ps8Hashable", "setShadow"]
 - !private ["Ps8Hashable", "shadowColor"]
 - !private ["Ps8Hashable", "shadowOffset"]
 - !private ["Ps8Hashable", "shadowOpacity"]
@@ -755,47 +565,9 @@ depends-member:
 - !private ["Ps8Hashable", "utf8"]
 - !private ["Ps8Hashable", "whitespacesAndNewlines"]
 - ["Ps8Hashable", ""]
-- ["SQ", "deinit"]
-- !private ["Ps9Indexable", "Index"]
-- !private ["Ps9Indexable", "IndexDistance"]
-- !private ["Ps9Indexable", "Indices"]
-- !private ["Ps9Indexable", "Iterator"]
-- !private ["Ps9Indexable", "Key"]
-- !private ["Ps9Indexable", "SubSequence"]
-- !private ["Ps9Indexable", "Value"]
-- !private ["Ps9Indexable", "_Element"]
-- !private ["Ps9Indexable", "append"]
-- !private ["Ps9Indexable", "count"]
-- !private ["Ps9Indexable", "init"]
-- !private ["Ps9Indexable", "subscript"]
-- !private ["Ps13IndexableBase", "Index"]
-- !private ["Ps13IndexableBase", "IndexDistance"]
-- !private ["Ps13IndexableBase", "Indices"]
-- !private ["Ps13IndexableBase", "Iterator"]
-- !private ["Ps13IndexableBase", "Key"]
-- !private ["Ps13IndexableBase", "SubSequence"]
-- !private ["Ps13IndexableBase", "Value"]
-- !private ["Ps13IndexableBase", "_Element"]
-- !private ["Ps13IndexableBase", "append"]
-- !private ["Ps13IndexableBase", "count"]
-- !private ["Ps13IndexableBase", "init"]
-- !private ["Ps13IndexableBase", "subscript"]
-- !private ["Vs16IndexingIterator", "Element"]
-- !private ["Si", "IntegerLiteralType"]
-- !private ["Si", "Stride"]
-- !private ["Si", "_DisabledRangeIndex"]
-- ["Si", "deinit"]
-- !private ["Ps7Integer", "IntegerLiteralType"]
-- !private ["Ps7Integer", "Stride"]
-- !private ["Ps7Integer", "_DisabledRangeIndex"]
-- !private ["Ps17IntegerArithmetic", "IntegerLiteralType"]
-- !private ["Ps17IntegerArithmetic", "Stride"]
-- !private ["Ps17IntegerArithmetic", "_DisabledRangeIndex"]
-- !private ["Ps16IteratorProtocol", "Element"]
 - !private ["CSo17JSONSerialization", "ReadingOptions"]
 - !private ["CSo17JSONSerialization", "jsonObject"]
 - !private ["V10Foundation6Locale", "current"]
-- ["V10Foundation6Locale", "deinit"]
 - !private ["V10Foundation6Locale", "localizedString"]
 - !private ["Ps25LosslessStringConvertible", "CGFloat"]
 - !private ["Ps25LosslessStringConvertible", "CGSize"]
@@ -822,16 +594,13 @@ depends-member:
 - !private ["Ps10MirrorPath", "CharacterSet"]
 - !private ["Ps10MirrorPath", "DateFormatter"]
 - !private ["Ps10MirrorPath", "Encoding"]
-- !private ["Ps10MirrorPath", "IntegerLiteralType"]
 - !private ["Ps10MirrorPath", "JSONSerialization"]
 - !private ["Ps10MirrorPath", "NSFontAttributeName"]
 - !private ["Ps10MirrorPath", "NSLocale"]
 - !private ["Ps10MirrorPath", "NSStringDrawingOptions"]
 - !private ["Ps10MirrorPath", "NSTimeZone"]
-- !private ["Ps10MirrorPath", "Stride"]
 - !private ["Ps10MirrorPath", "String"]
 - !private ["Ps10MirrorPath", "TimeZone"]
-- !private ["Ps10MirrorPath", "_DisabledRangeIndex"]
 - !private ["Ps10MirrorPath", "boundingRect"]
 - !private ["Ps10MirrorPath", "characters"]
 - !private ["Ps10MirrorPath", "data"]
@@ -839,24 +608,10 @@ depends-member:
 - !private ["Ps10MirrorPath", "isEmpty"]
 - !private ["Ps10MirrorPath", "print"]
 - !private ["Ps10MirrorPath", "trimmingCharacters"]
-- !private ["Ps17MutableCollection", "Index"]
-- !private ["Ps17MutableCollection", "IndexDistance"]
-- !private ["Ps17MutableCollection", "Iterator"]
-- !private ["Ps17MutableCollection", "SubSequence"]
-- !private ["Ps17MutableCollection", "_Element"]
 - !private ["Ps17MutableCollection", "append"]
 - !private ["Ps17MutableCollection", "count"]
 - !private ["Ps17MutableCollection", "init"]
 - !private ["Ps17MutableCollection", "subscript"]
-- !private ["Ps16MutableIndexable", "Index"]
-- !private ["Ps16MutableIndexable", "IndexDistance"]
-- !private ["Ps16MutableIndexable", "Iterator"]
-- !private ["Ps16MutableIndexable", "SubSequence"]
-- !private ["Ps16MutableIndexable", "_Element"]
-- !private ["Ps16MutableIndexable", "append"]
-- !private ["Ps16MutableIndexable", "count"]
-- !private ["Ps16MutableIndexable", "init"]
-- !private ["Ps16MutableIndexable", "subscript"]
 - !private ["PSo8NSCoding", "CGSize"]
 - !private ["PSo8NSCoding", "Encoding"]
 - !private ["PSo8NSCoding", "Locale"]
@@ -880,8 +635,6 @@ depends-member:
 - !private ["PSo8NSCoding", "local"]
 - !private ["PSo8NSCoding", "locale"]
 - !private ["PSo8NSCoding", "masksToBounds"]
-- ["PSo8NSCoding", "setLabelWithFontColorText"]
-- ["PSo8NSCoding", "setShadow"]
 - !private ["PSo8NSCoding", "shadowColor"]
 - !private ["PSo8NSCoding", "shadowOffset"]
 - !private ["PSo8NSCoding", "shadowOpacity"]
@@ -911,7 +664,6 @@ depends-member:
 - !private ["CSo8NSLocale", "Locale"]
 - !private ["CSo8NSLocale", "NSLocale"]
 - ["CSo8NSLocale", "String"]
-- ["CSo8NSLocale", "deinit"]
 - !private ["CSo8NSLocale", "init"]
 - !private ["CSo8NSLocale", "isoCountryCodes"]
 - ["CSo8NSLocale", "locale"]
@@ -923,7 +675,6 @@ depends-member:
 - !private ["PSo16NSMutableCopying", "init"]
 - !private ["PSo16NSMutableCopying", "isEmpty"]
 - !private ["PSo16NSMutableCopying", "trimmingCharacters"]
-- ["CSo8NSNumber", "deinit"]
 - ["CSo8NSObject", "CGFloat"]
 - !private ["CSo8NSObject", "CGSize"]
 - !private ["CSo8NSObject", "Encoding"]
@@ -942,7 +693,6 @@ depends-member:
 - !private ["CSo8NSObject", "data"]
 - !private ["CSo8NSObject", "date"]
 - !private ["CSo8NSObject", "dateFormat"]
-- ["CSo8NSObject", "deinit"]
 - !private ["CSo8NSObject", "font"]
 - ["CSo8NSObject", "init"]
 - !private ["CSo8NSObject", "isEmpty"]
@@ -991,12 +741,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "layer"]
 - !private ["PSo16NSObjectProtocol", "local"]
 - !private ["PSo16NSObjectProtocol", "locale"]
-- ["PSo16NSObjectProtocol", "locales"]
 - !private ["PSo16NSObjectProtocol", "masksToBounds"]
-- ["PSo16NSObjectProtocol", "setBorder"]
-- ["PSo16NSObjectProtocol", "setCornerRadius"]
-- ["PSo16NSObjectProtocol", "setLabelWithFontColorText"]
-- ["PSo16NSObjectProtocol", "setShadow"]
 - !private ["PSo16NSObjectProtocol", "shadowColor"]
 - !private ["PSo16NSObjectProtocol", "shadowOffset"]
 - !private ["PSo16NSObjectProtocol", "shadowOpacity"]
@@ -1027,77 +772,26 @@ depends-member:
 - !private ["CSo8NSString", "init"]
 - !private ["CSo8NSString", "isEmpty"]
 - !private ["CSo8NSString", "trimmingCharacters"]
-- ["VSC22NSStringDrawingOptions", "deinit"]
 - !private ["VSC22NSStringDrawingOptions", "usesLineFragmentOrigin"]
 - !private ["CSo10NSTimeZone", "local"]
 - !private ["Ps9OptionSet", "mutableLeaves"]
 - !private ["Ps9OptionSet", "usesLineFragmentOrigin"]
-- ["Sq", "deinit"]
-- ["Sq", "some"]
-- !private ["Ps22RandomAccessCollection", "Index"]
-- !private ["Ps22RandomAccessCollection", "IndexDistance"]
-- !private ["Ps22RandomAccessCollection", "Indices"]
-- !private ["Ps22RandomAccessCollection", "Iterator"]
-- !private ["Ps22RandomAccessCollection", "SubSequence"]
-- !private ["Ps22RandomAccessCollection", "_Element"]
 - !private ["Ps22RandomAccessCollection", "append"]
 - !private ["Ps22RandomAccessCollection", "count"]
 - !private ["Ps22RandomAccessCollection", "init"]
 - !private ["Ps22RandomAccessCollection", "subscript"]
-- !private ["Ps21RandomAccessIndexable", "Index"]
-- !private ["Ps21RandomAccessIndexable", "IndexDistance"]
-- !private ["Ps21RandomAccessIndexable", "Indices"]
-- !private ["Ps21RandomAccessIndexable", "Iterator"]
-- !private ["Ps21RandomAccessIndexable", "SubSequence"]
-- !private ["Ps21RandomAccessIndexable", "_Element"]
-- !private ["Ps21RandomAccessIndexable", "append"]
-- !private ["Ps21RandomAccessIndexable", "count"]
-- !private ["Ps21RandomAccessIndexable", "init"]
-- !private ["Ps21RandomAccessIndexable", "subscript"]
-- !private ["Vs17RandomAccessSlice", "Index"]
-- !private ["Vs17RandomAccessSlice", "IndexDistance"]
-- !private ["Vs17RandomAccessSlice", "Indices"]
-- !private ["Vs17RandomAccessSlice", "Iterator"]
-- !private ["Vs17RandomAccessSlice", "SubSequence"]
-- !private ["Vs17RandomAccessSlice", "_Element"]
-- !private ["Vs5Range", "Iterator"]
-- !private ["Vs5Range", "deinit"]
-- !private ["Ps26RangeReplaceableCollection", "Index"]
-- !private ["Ps26RangeReplaceableCollection", "IndexDistance"]
-- !private ["Ps26RangeReplaceableCollection", "Iterator"]
-- !private ["Ps26RangeReplaceableCollection", "SubSequence"]
-- !private ["Ps26RangeReplaceableCollection", "_Element"]
 - !private ["Ps26RangeReplaceableCollection", "append"]
 - !private ["Ps26RangeReplaceableCollection", "count"]
 - !private ["Ps26RangeReplaceableCollection", "init"]
 - !private ["Ps26RangeReplaceableCollection", "subscript"]
-- !private ["Ps25RangeReplaceableIndexable", "Index"]
-- !private ["Ps25RangeReplaceableIndexable", "IndexDistance"]
-- !private ["Ps25RangeReplaceableIndexable", "Iterator"]
-- !private ["Ps25RangeReplaceableIndexable", "SubSequence"]
-- !private ["Ps25RangeReplaceableIndexable", "_Element"]
-- !private ["Ps25RangeReplaceableIndexable", "append"]
-- !private ["Ps25RangeReplaceableIndexable", "count"]
-- !private ["Ps25RangeReplaceableIndexable", "init"]
-- !private ["Ps25RangeReplaceableIndexable", "subscript"]
 - !private ["Ps16RawRepresentable", "mutableLeaves"]
 - !private ["Ps16RawRepresentable", "usesLineFragmentOrigin"]
 - !private ["Ps16RawRepresentable", "utf8"]
-- ["VCSo17JSONSerialization14ReadingOptions", "deinit"]
 - !private ["VCSo17JSONSerialization14ReadingOptions", "mutableLeaves"]
 - !private ["P10Foundation20ReferenceConvertible", "current"]
 - !private ["P10Foundation20ReferenceConvertible", "init"]
 - !private ["P10Foundation20ReferenceConvertible", "localizedString"]
 - !private ["P10Foundation20ReferenceConvertible", "whitespacesAndNewlines"]
-- !private ["Ps8Sequence", "Element"]
-- !private ["Ps8Sequence", "Index"]
-- !private ["Ps8Sequence", "IndexDistance"]
-- !private ["Ps8Sequence", "Indices"]
-- !private ["Ps8Sequence", "Iterator"]
-- !private ["Ps8Sequence", "Key"]
-- !private ["Ps8Sequence", "SubSequence"]
-- !private ["Ps8Sequence", "Value"]
-- !private ["Ps8Sequence", "_Element"]
 - !private ["Ps8Sequence", "append"]
 - !private ["Ps8Sequence", "count"]
 - !private ["Ps8Sequence", "init"]
@@ -1105,21 +799,8 @@ depends-member:
 - !private ["Ps10SetAlgebra", "mutableLeaves"]
 - !private ["Ps10SetAlgebra", "usesLineFragmentOrigin"]
 - !private ["Ps10SetAlgebra", "whitespacesAndNewlines"]
-- !private ["Ps13SignedInteger", "IntegerLiteralType"]
-- !private ["Ps13SignedInteger", "Stride"]
-- !private ["Ps13SignedInteger", "_DisabledRangeIndex"]
-- !private ["Ps12SignedNumber", "IntegerLiteralType"]
-- !private ["Ps12SignedNumber", "Stride"]
-- !private ["Ps12SignedNumber", "_DisabledRangeIndex"]
 - !private ["Ps12SignedNumber", "greatestFiniteMagnitude"]
 - !private ["Ps12SignedNumber", "init"]
-- !private ["Vs5Slice", "Index"]
-- !private ["Vs5Slice", "Iterator"]
-- !private ["Vs5Slice", "SubSequence"]
-- !private ["Vs5Slice", "_Element"]
-- !private ["Ps10Strideable", "IntegerLiteralType"]
-- !private ["Ps10Strideable", "Stride"]
-- !private ["Ps10Strideable", "_DisabledRangeIndex"]
 - !private ["Ps10Strideable", "greatestFiniteMagnitude"]
 - !private ["Ps10Strideable", "init"]
 - ["SS", "Bool"]
@@ -1146,7 +827,6 @@ depends-member:
 - !private ["SS", "data"]
 - ["SS", "dateFromString"]
 - ["SS", "datefromYourInputFormatToOutputFormat"]
-- ["SS", "deinit"]
 - ["SS", "heightWithConstrainedWidth"]
 - !private ["SS", "init"]
 - !private ["SS", "isEmpty"]
@@ -1193,15 +873,12 @@ depends-member:
 - !private ["Ps20TextOutputStreamable", "isEmpty"]
 - !private ["Ps20TextOutputStreamable", "print"]
 - !private ["Ps20TextOutputStreamable", "trimmingCharacters"]
-- ["V10Foundation8TimeZone", "deinit"]
 - !private ["V10Foundation8TimeZone", "init"]
 - !private ["PSo29UIAccessibilityIdentification", "CGSize"]
 - !private ["PSo29UIAccessibilityIdentification", "UIColor"]
 - !private ["PSo29UIAccessibilityIdentification", "UIFont"]
 - !private ["PSo29UIAccessibilityIdentification", "font"]
 - !private ["PSo29UIAccessibilityIdentification", "layer"]
-- ["PSo29UIAccessibilityIdentification", "setLabelWithFontColorText"]
-- ["PSo29UIAccessibilityIdentification", "setShadow"]
 - !private ["PSo29UIAccessibilityIdentification", "text"]
 - !private ["PSo29UIAccessibilityIdentification", "textColor"]
 - !private ["PSo12UIAppearance", "CGSize"]
@@ -1209,8 +886,6 @@ depends-member:
 - !private ["PSo12UIAppearance", "UIFont"]
 - !private ["PSo12UIAppearance", "font"]
 - !private ["PSo12UIAppearance", "layer"]
-- ["PSo12UIAppearance", "setLabelWithFontColorText"]
-- ["PSo12UIAppearance", "setShadow"]
 - !private ["PSo12UIAppearance", "text"]
 - !private ["PSo12UIAppearance", "textColor"]
 - !private ["PSo21UIAppearanceContainer", "CGSize"]
@@ -1218,17 +893,13 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "UIFont"]
 - !private ["PSo21UIAppearanceContainer", "font"]
 - !private ["PSo21UIAppearanceContainer", "layer"]
-- ["PSo21UIAppearanceContainer", "setLabelWithFontColorText"]
-- ["PSo21UIAppearanceContainer", "setShadow"]
 - !private ["PSo21UIAppearanceContainer", "text"]
 - !private ["PSo21UIAppearanceContainer", "textColor"]
 - !private ["CSo8UIButton", "CGSize"]
 - !private ["CSo8UIButton", "UIColor"]
-- ["CSo8UIButton", "deinit"]
 - !private ["CSo8UIButton", "layer"]
 - ["CSo8UIButton", "setShadow"]
 - !private ["CSo7UIColor", "cgColor"]
-- ["CSo7UIColor", "deinit"]
 - !private ["CSo7UIColor", "init"]
 - !private ["PSo30UIContentSizeCategoryAdjusting", "UIFont"]
 - !private ["PSo30UIContentSizeCategoryAdjusting", "font"]
@@ -1243,8 +914,6 @@ depends-member:
 - !private ["PSo17UICoordinateSpace", "UIFont"]
 - !private ["PSo17UICoordinateSpace", "font"]
 - !private ["PSo17UICoordinateSpace", "layer"]
-- ["PSo17UICoordinateSpace", "setLabelWithFontColorText"]
-- ["PSo17UICoordinateSpace", "setShadow"]
 - !private ["PSo17UICoordinateSpace", "text"]
 - !private ["PSo17UICoordinateSpace", "textColor"]
 - !private ["PSo13UIDynamicItem", "CGSize"]
@@ -1252,8 +921,6 @@ depends-member:
 - !private ["PSo13UIDynamicItem", "UIFont"]
 - !private ["PSo13UIDynamicItem", "font"]
 - !private ["PSo13UIDynamicItem", "layer"]
-- ["PSo13UIDynamicItem", "setLabelWithFontColorText"]
-- ["PSo13UIDynamicItem", "setShadow"]
 - !private ["PSo13UIDynamicItem", "text"]
 - !private ["PSo13UIDynamicItem", "textColor"]
 - !private ["PSo18UIFocusEnvironment", "CGSize"]
@@ -1261,8 +928,6 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "UIFont"]
 - !private ["PSo18UIFocusEnvironment", "font"]
 - !private ["PSo18UIFocusEnvironment", "layer"]
-- ["PSo18UIFocusEnvironment", "setLabelWithFontColorText"]
-- ["PSo18UIFocusEnvironment", "setShadow"]
 - !private ["PSo18UIFocusEnvironment", "text"]
 - !private ["PSo18UIFocusEnvironment", "textColor"]
 - !private ["PSo11UIFocusItem", "CGSize"]
@@ -1270,17 +935,13 @@ depends-member:
 - !private ["PSo11UIFocusItem", "UIFont"]
 - !private ["PSo11UIFocusItem", "font"]
 - !private ["PSo11UIFocusItem", "layer"]
-- ["PSo11UIFocusItem", "setLabelWithFontColorText"]
-- ["PSo11UIFocusItem", "setShadow"]
 - !private ["PSo11UIFocusItem", "text"]
 - !private ["PSo11UIFocusItem", "textColor"]
-- ["CSo6UIFont", "deinit"]
 - !private ["CSo6UIFont", "init"]
 - ["CSo7UILabel", "CGFloat"]
 - ["CSo7UILabel", "String"]
 - ["CSo7UILabel", "UIColor"]
 - !private ["CSo7UILabel", "UIFont"]
-- ["CSo7UILabel", "deinit"]
 - !private ["CSo7UILabel", "font"]
 - ["CSo7UILabel", "setLabelWithFontColorText"]
 - !private ["CSo7UILabel", "text"]
@@ -1303,10 +964,6 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "UIFont"]
 - !private ["PSo30UIResponderStandardEditActions", "font"]
 - !private ["PSo30UIResponderStandardEditActions", "layer"]
-- ["PSo30UIResponderStandardEditActions", "setBorder"]
-- ["PSo30UIResponderStandardEditActions", "setCornerRadius"]
-- ["PSo30UIResponderStandardEditActions", "setLabelWithFontColorText"]
-- ["PSo30UIResponderStandardEditActions", "setShadow"]
 - !private ["PSo30UIResponderStandardEditActions", "text"]
 - !private ["PSo30UIResponderStandardEditActions", "textColor"]
 - !private ["PSo18UITraitEnvironment", "CGSize"]
@@ -1314,8 +971,6 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "UIFont"]
 - !private ["PSo18UITraitEnvironment", "font"]
 - !private ["PSo18UITraitEnvironment", "layer"]
-- ["PSo18UITraitEnvironment", "setLabelWithFontColorText"]
-- ["PSo18UITraitEnvironment", "setShadow"]
 - !private ["PSo18UITraitEnvironment", "text"]
 - !private ["PSo18UITraitEnvironment", "textColor"]
 - ["CSo6UIView", "CGFloat"]
@@ -1323,7 +978,6 @@ depends-member:
 - ["CSo6UIView", "String"]
 - ["CSo6UIView", "UIColor"]
 - !private ["CSo6UIView", "UIFont"]
-- ["CSo6UIView", "deinit"]
 - !private ["CSo6UIView", "font"]
 - !private ["CSo6UIView", "layer"]
 - ["CSo6UIView", "setBorder"]
@@ -1332,15 +986,14 @@ depends-member:
 - ["CSo6UIView", "setShadow"]
 - !private ["CSo6UIView", "text"]
 - !private ["CSo6UIView", "textColor"]
-- !private ["Ps14_ArrayProtocol", "Index"]
-- !private ["Ps14_ArrayProtocol", "IndexDistance"]
-- !private ["Ps14_ArrayProtocol", "Iterator"]
-- !private ["Ps14_ArrayProtocol", "SubSequence"]
-- !private ["Ps14_ArrayProtocol", "_Element"]
 - !private ["Ps14_ArrayProtocol", "append"]
 - !private ["Ps14_ArrayProtocol", "count"]
 - !private ["Ps14_ArrayProtocol", "init"]
 - !private ["Ps14_ArrayProtocol", "subscript"]
+- !private ["Ps23_BidirectionalIndexable", "append"]
+- !private ["Ps23_BidirectionalIndexable", "count"]
+- !private ["Ps23_BidirectionalIndexable", "init"]
+- !private ["Ps23_BidirectionalIndexable", "subscript"]
 - !private ["Ps15_CVarArgAligned", "greatestFiniteMagnitude"]
 - !private ["Ps15_CVarArgAligned", "init"]
 - !private ["Ps22_CVarArgPassedAsDouble", "greatestFiniteMagnitude"]
@@ -1350,15 +1003,8 @@ depends-member:
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "UIFont"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "font"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "layer"]
-- ["Ps37_DefaultCustomPlaygroundQuickLookable", "setLabelWithFontColorText"]
-- ["Ps37_DefaultCustomPlaygroundQuickLookable", "setShadow"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "text"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "textColor"]
-- !private ["Ps24_DestructorSafeContainer", "Index"]
-- !private ["Ps24_DestructorSafeContainer", "IndexDistance"]
-- !private ["Ps24_DestructorSafeContainer", "Iterator"]
-- !private ["Ps24_DestructorSafeContainer", "SubSequence"]
-- !private ["Ps24_DestructorSafeContainer", "_Element"]
 - !private ["Ps24_DestructorSafeContainer", "append"]
 - !private ["Ps24_DestructorSafeContainer", "count"]
 - !private ["Ps24_DestructorSafeContainer", "init"]
@@ -1384,9 +1030,6 @@ depends-member:
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "print"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "trimmingCharacters"]
 - !private ["Ps33_ExpressibleByBuiltinFloatLiteral", "init"]
-- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "IntegerLiteralType"]
-- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "Stride"]
-- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "_DisabledRangeIndex"]
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "init"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "CGFloat"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "CGSize"]
@@ -1447,6 +1090,25 @@ depends-member:
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "trimmingCharacters"]
 - !private ["Ps26_ExpressibleByColorLiteral", "cgColor"]
 - !private ["Ps26_ExpressibleByColorLiteral", "init"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "CGFloat"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "CGSize"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "CharacterSet"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "DateFormatter"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "Encoding"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "JSONSerialization"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "NSFontAttributeName"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "NSLocale"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "NSStringDrawingOptions"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "NSTimeZone"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "String"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "TimeZone"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "boundingRect"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "characters"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "data"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "init"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "isEmpty"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "print"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "trimmingCharacters"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "Encoding"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "Locale"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "NSLocale"]
@@ -1464,7 +1126,6 @@ depends-member:
 - !private ["Ps9_Hashable", "CharacterSet"]
 - !private ["Ps9_Hashable", "DateFormatter"]
 - !private ["Ps9_Hashable", "Encoding"]
-- !private ["Ps9_Hashable", "IntegerLiteralType"]
 - !private ["Ps9_Hashable", "JSONSerialization"]
 - !private ["Ps9_Hashable", "Locale"]
 - !private ["Ps9_Hashable", "NSFontAttributeName"]
@@ -1472,12 +1133,10 @@ depends-member:
 - !private ["Ps9_Hashable", "NSStringDrawingOptions"]
 - !private ["Ps9_Hashable", "NSTimeZone"]
 - !private ["Ps9_Hashable", "ReadingOptions"]
-- !private ["Ps9_Hashable", "Stride"]
 - !private ["Ps9_Hashable", "String"]
 - !private ["Ps9_Hashable", "TimeZone"]
 - !private ["Ps9_Hashable", "UIColor"]
 - !private ["Ps9_Hashable", "UIFont"]
-- !private ["Ps9_Hashable", "_DisabledRangeIndex"]
 - !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps9_Hashable", "borderColor"]
 - !private ["Ps9_Hashable", "borderWidth"]
@@ -1498,14 +1157,9 @@ depends-member:
 - !private ["Ps9_Hashable", "layer"]
 - !private ["Ps9_Hashable", "local"]
 - !private ["Ps9_Hashable", "locale"]
-- ["Ps9_Hashable", "locales"]
 - !private ["Ps9_Hashable", "localizedString"]
 - !private ["Ps9_Hashable", "masksToBounds"]
 - !private ["Ps9_Hashable", "print"]
-- ["Ps9_Hashable", "setBorder"]
-- ["Ps9_Hashable", "setCornerRadius"]
-- ["Ps9_Hashable", "setLabelWithFontColorText"]
-- ["Ps9_Hashable", "setShadow"]
 - !private ["Ps9_Hashable", "shadowColor"]
 - !private ["Ps9_Hashable", "shadowOffset"]
 - !private ["Ps9_Hashable", "shadowOpacity"]
@@ -1518,38 +1172,31 @@ depends-member:
 - !private ["Ps9_Hashable", "utf8"]
 - !private ["Ps9_Hashable", "whitespacesAndNewlines"]
 - ["Ps9_Hashable", ""]
-- !private ["Ps14_Incrementable", "IntegerLiteralType"]
-- !private ["Ps14_Incrementable", "Stride"]
-- !private ["Ps14_Incrementable", "_DisabledRangeIndex"]
-- !private ["Ps8_Integer", "IntegerLiteralType"]
-- !private ["Ps8_Integer", "Stride"]
-- !private ["Ps8_Integer", "_DisabledRangeIndex"]
-- !private ["Ps18_IntegerArithmetic", "IntegerLiteralType"]
-- !private ["Ps18_IntegerArithmetic", "Stride"]
-- !private ["Ps18_IntegerArithmetic", "_DisabledRangeIndex"]
+- !private ["Ps10_Indexable", "append"]
+- !private ["Ps10_Indexable", "count"]
+- !private ["Ps10_Indexable", "init"]
+- !private ["Ps10_Indexable", "subscript"]
+- !private ["Ps14_IndexableBase", "append"]
+- !private ["Ps14_IndexableBase", "count"]
+- !private ["Ps14_IndexableBase", "init"]
+- !private ["Ps14_IndexableBase", "subscript"]
+- !private ["Ps17_MutableIndexable", "append"]
+- !private ["Ps17_MutableIndexable", "count"]
+- !private ["Ps17_MutableIndexable", "init"]
+- !private ["Ps17_MutableIndexable", "subscript"]
 - !private ["P10Foundation18_MutablePairBoxing", "whitespacesAndNewlines"]
 - !private ["Ps21_ObjectiveCBridgeable", "CGFloat"]
 - !private ["Ps21_ObjectiveCBridgeable", "CGSize"]
 - !private ["Ps21_ObjectiveCBridgeable", "CharacterSet"]
 - !private ["Ps21_ObjectiveCBridgeable", "DateFormatter"]
 - !private ["Ps21_ObjectiveCBridgeable", "Encoding"]
-- !private ["Ps21_ObjectiveCBridgeable", "Index"]
-- !private ["Ps21_ObjectiveCBridgeable", "IndexDistance"]
-- !private ["Ps21_ObjectiveCBridgeable", "IntegerLiteralType"]
-- !private ["Ps21_ObjectiveCBridgeable", "Iterator"]
 - !private ["Ps21_ObjectiveCBridgeable", "JSONSerialization"]
-- !private ["Ps21_ObjectiveCBridgeable", "Key"]
 - !private ["Ps21_ObjectiveCBridgeable", "NSFontAttributeName"]
 - !private ["Ps21_ObjectiveCBridgeable", "NSLocale"]
 - !private ["Ps21_ObjectiveCBridgeable", "NSStringDrawingOptions"]
 - !private ["Ps21_ObjectiveCBridgeable", "NSTimeZone"]
-- !private ["Ps21_ObjectiveCBridgeable", "Stride"]
 - !private ["Ps21_ObjectiveCBridgeable", "String"]
-- !private ["Ps21_ObjectiveCBridgeable", "SubSequence"]
 - !private ["Ps21_ObjectiveCBridgeable", "TimeZone"]
-- !private ["Ps21_ObjectiveCBridgeable", "Value"]
-- !private ["Ps21_ObjectiveCBridgeable", "_DisabledRangeIndex"]
-- !private ["Ps21_ObjectiveCBridgeable", "_Element"]
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "append"]
 - !private ["Ps21_ObjectiveCBridgeable", "boundingRect"]
@@ -1560,61 +1207,53 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "greatestFiniteMagnitude"]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
 - !private ["Ps21_ObjectiveCBridgeable", "isEmpty"]
+- !private ["Ps21_ObjectiveCBridgeable", "latitude"]
 - !private ["Ps21_ObjectiveCBridgeable", "localizedString"]
+- !private ["Ps21_ObjectiveCBridgeable", "longitude"]
 - !private ["Ps21_ObjectiveCBridgeable", "print"]
 - !private ["Ps21_ObjectiveCBridgeable", "subscript"]
 - !private ["Ps21_ObjectiveCBridgeable", "trimmingCharacters"]
 - !private ["Ps21_ObjectiveCBridgeable", "whitespacesAndNewlines"]
-- !private ["Vs26_OptionalNilComparisonType", "deinit"]
-- !private ["Ps14_SignedInteger", "IntegerLiteralType"]
-- !private ["Ps14_SignedInteger", "Stride"]
-- !private ["Ps14_SignedInteger", "_DisabledRangeIndex"]
-- !private ["Ps11_Strideable", "IntegerLiteralType"]
-- !private ["Ps11_Strideable", "Stride"]
-- !private ["Ps11_Strideable", "_DisabledRangeIndex"]
+- !private ["Ps22_RandomAccessIndexable", "append"]
+- !private ["Ps22_RandomAccessIndexable", "count"]
+- !private ["Ps22_RandomAccessIndexable", "init"]
+- !private ["Ps22_RandomAccessIndexable", "subscript"]
+- !private ["Ps26_RangeReplaceableIndexable", "append"]
+- !private ["Ps26_RangeReplaceableIndexable", "count"]
+- !private ["Ps26_RangeReplaceableIndexable", "init"]
+- !private ["Ps26_RangeReplaceableIndexable", "subscript"]
 - !private ["Ps11_Strideable", "greatestFiniteMagnitude"]
 - !private ["Ps11_Strideable", "init"]
 - ["VE13TookanTrackerCSo8NSLocale6locale", "String"]
 - ["VE13TookanTrackerCSo8NSLocale6locale", "countryCode"]
 - ["VE13TookanTrackerCSo8NSLocale6locale", "countryName"]
-- ["VE13TookanTrackerCSo8NSLocale6locale", "deinit"]
 - ["VE13TookanTrackerCSo8NSLocale6locale", "init"]
 depends-nominal:
 - !private "Ps16AbsoluteValuable"
 - "Ps9AnyObject"
-- "Sa"
+- !private "Sa"
 - !private "Ps23BidirectionalCollection"
-- !private "Ps22BidirectionalIndexable"
-- !private "Vs18BidirectionalSlice"
 - !private "Ps19BinaryFloatingPoint"
-- !private "Ps17BitwiseOperations"
-- "Sb"
-- "CSo7CALayer"
-- "PSo15CALayerDelegate"
+- !private "Sb"
+- !private "CSo7CALayer"
+- !private "PSo15CALayerDelegate"
 - !private "PSo13CAMediaTiming"
-- "CSo7CGColor"
-- "V12CoreGraphics7CGFloat"
-- "VSC6CGRect"
-- "VSC6CGSize"
-- "VSC22CLLocationCoordinate2D"
+- !private "V12CoreGraphics7CGFloat"
+- !private "VSC6CGSize"
+- !private "VSC22CLLocationCoordinate2D"
 - "Ps7CVarArg"
-- "V10Foundation12CharacterSet"
-- "VSS13CharacterView"
+- !private "V10Foundation12CharacterSet"
+- !private "VSS13CharacterView"
 - !private "Ps10Collection"
 - !private "Ps10Comparable"
-- "Vs14CountableRange"
 - "Ps28CustomDebugStringConvertible"
 - !private "Ps29CustomPlaygroundQuickLookable"
-- "Ps17CustomReflectable"
+- !private "Ps17CustomReflectable"
 - "Ps23CustomStringConvertible"
-- "V10Foundation4Data"
-- "V10Foundation4Date"
-- "CSo13DateFormatter"
-- !private "Vs27DefaultBidirectionalIndices"
-- !private "Vs26DefaultRandomAccessIndices"
-- "Vs10Dictionary"
-- "Sd"
-- "VE10FoundationSS8Encoding"
+- !private "CSo13DateFormatter"
+- !private "Vs10Dictionary"
+- !private "Sd"
+- !private "VE10FoundationSS8Encoding"
 - "Ps9Equatable"
 - !private "Ps25ExpressibleByArrayLiteral"
 - !private "Ps27ExpressibleByBooleanLiteral"
@@ -1622,82 +1261,63 @@ depends-nominal:
 - !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
 - !private "Ps25ExpressibleByFloatLiteral"
 - !private "Ps27ExpressibleByIntegerLiteral"
-- "Ps23ExpressibleByNilLiteral"
-- !private "Ps32ExpressibleByStringInterpolation"
 - !private "Ps26ExpressibleByStringLiteral"
 - !private "Ps33ExpressibleByUnicodeScalarLiteral"
 - "C13TookanTracker14ExtensionClass"
-- "Sf"
 - !private "Ps13FloatingPoint"
 - !private "CSo9Formatter"
 - "Ps8Hashable"
-- "SQ"
-- !private "Ps9Indexable"
-- !private "Ps13IndexableBase"
-- !private "Vs16IndexingIterator"
-- "Si"
-- !private "Ps7Integer"
-- !private "Ps17IntegerArithmetic"
-- !private "Ps16IteratorProtocol"
 - !private "CSo17JSONSerialization"
-- "V10Foundation6Locale"
+- !private "V10Foundation6Locale"
 - !private "Ps25LosslessStringConvertible"
 - !private "Ps10MirrorPath"
 - !private "Ps17MutableCollection"
-- !private "Ps16MutableIndexable"
-- "PSo8NSCoding"
+- !private "PSo8NSCoding"
 - !private "PSo9NSCopying"
 - "CSo8NSLocale"
 - !private "PSo16NSMutableCopying"
-- "CSo8NSNumber"
 - "CSo8NSObject"
 - "PSo16NSObjectProtocol"
 - !private "PSo14NSSecureCoding"
 - !private "CSo8NSString"
-- "VSC22NSStringDrawingOptions"
+- !private "VSC22NSStringDrawingOptions"
 - !private "CSo10NSTimeZone"
 - !private "Ps9OptionSet"
-- "Sq"
 - !private "Ps22RandomAccessCollection"
-- !private "Ps21RandomAccessIndexable"
-- !private "Vs17RandomAccessSlice"
-- !private "Vs5Range"
 - !private "Ps26RangeReplaceableCollection"
-- !private "Ps25RangeReplaceableIndexable"
 - !private "Ps16RawRepresentable"
-- "VCSo17JSONSerialization14ReadingOptions"
+- !private "VCSo17JSONSerialization14ReadingOptions"
 - !private "P10Foundation20ReferenceConvertible"
 - !private "Ps8Sequence"
 - !private "Ps10SetAlgebra"
-- !private "Ps13SignedInteger"
 - !private "Ps12SignedNumber"
-- !private "Vs5Slice"
 - !private "Ps10Strideable"
 - "SS"
 - !private "Ps16TextOutputStream"
 - !private "Ps20TextOutputStreamable"
-- "V10Foundation8TimeZone"
-- "PSo29UIAccessibilityIdentification"
-- "PSo12UIAppearance"
-- "PSo21UIAppearanceContainer"
+- !private "V10Foundation8TimeZone"
+- !private "PSo29UIAccessibilityIdentification"
+- !private "PSo12UIAppearance"
+- !private "PSo21UIAppearanceContainer"
 - "CSo8UIButton"
-- "CSo7UIColor"
+- !private "CSo7UIColor"
 - !private "PSo30UIContentSizeCategoryAdjusting"
 - "CSo9UIControl"
-- "PSo17UICoordinateSpace"
-- "PSo13UIDynamicItem"
-- "PSo18UIFocusEnvironment"
-- "PSo11UIFocusItem"
-- "CSo6UIFont"
+- !private "PSo17UICoordinateSpace"
+- !private "PSo13UIDynamicItem"
+- !private "PSo18UIFocusEnvironment"
+- !private "PSo11UIFocusItem"
+- !private "CSo6UIFont"
 - "CSo7UILabel"
 - "CSo11UIResponder"
-- "PSo30UIResponderStandardEditActions"
-- "PSo18UITraitEnvironment"
+- !private "PSo30UIResponderStandardEditActions"
+- !private "PSo18UITraitEnvironment"
 - "CSo6UIView"
 - !private "Ps14_ArrayProtocol"
+- !private "Ps23_BidirectionalIndexable"
 - !private "Ps15_CVarArgAligned"
 - !private "Ps22_CVarArgPassedAsDouble"
-- "Ps37_DefaultCustomPlaygroundQuickLookable"
+- !private "Ps37_DefaultCustomPlaygroundQuickLookable"
 - !private "Ps24_DestructorSafeContainer"
 - !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
 - !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
@@ -1707,36 +1327,45 @@ depends-nominal:
 - !private "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
 - !private "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
 - !private "Ps26_ExpressibleByColorLiteral"
+- !private "Ps33_ExpressibleByStringInterpolation"
 - !private "Ps35_HasCustomAnyHashableRepresentation"
 - "Ps9_Hashable"
-- !private "Ps14_Incrementable"
-- !private "Ps8_Integer"
-- !private "Ps18_IntegerArithmetic"
+- !private "Ps10_Indexable"
+- !private "Ps14_IndexableBase"
+- !private "Ps17_MutableIndexable"
 - !private "P10Foundation18_MutablePairBoxing"
 - !private "Ps21_ObjectiveCBridgeable"
-- !private "Vs26_OptionalNilComparisonType"
-- !private "Ps14_SignedInteger"
+- !private "Ps22_RandomAccessIndexable"
+- !private "Ps26_RangeReplaceableIndexable"
 - !private "Ps11_Strideable"
 - "VE13TookanTrackerCSo8NSLocale6locale"
 depends-dynamic-lookup:
 depends-external:
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
-- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
-- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
-- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
-- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
-- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
-- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Modules/module.modulemap"
-- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer.h"
-- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer-umbrella.h"
-- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreText.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer-umbrella.h"
+- "/Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
+- "/Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer.h"
+- "/Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
+- "/Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
+- "/Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
+- "/Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
+- "/Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Modules/module.modulemap"
+- "/Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Modules/module.modulemap"
 interface-hash: "682ded2105c621d4db484289cc6f8fb2"

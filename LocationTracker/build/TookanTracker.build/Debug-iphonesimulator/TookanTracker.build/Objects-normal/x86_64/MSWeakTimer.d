@@ -1,3 +1,4 @@
 dependencies: \
-  /Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer/MSWeakTimer.m \
-  /Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer/MSWeakTimer.h
+  /Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer/MSWeakTimer.m \
+  /Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/build/TookanTracker.build/Debug-iphonesimulator/TookanTracker.build/module.modulemap \
+  /Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer/MSWeakTimer.h

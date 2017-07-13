@@ -11,29 +11,29 @@ provides-member:
 - ["C13TookanTracker14IJReachability", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "SCNetworkReachabilityCreateWithAddress"
-- "Bool"
-- !private "&&"
-- !private "SCNetworkReachabilityFlags"
-- !private "UInt32"
-- !private "MemoryLayout"
-- !private "withUnsafePointer"
-- "IJReachability"
-- "AssignmentPrecedence"
-- "=="
+- !private "!"
+- !private "!="
 - !private "&"
-- !private "sockaddr"
+- !private "&&"
+- "=="
 - !private "AF_INET"
+- "AssignmentPrecedence"
+- "Bool"
+- !private "BooleanLiteralType"
+- "IJReachability"
+- "IJReachabilityType"
+- !private "MemoryLayout"
+- !private "SCNetworkReachabilityCreateWithAddress"
+- !private "SCNetworkReachabilityFlags"
 - !private "SCNetworkReachabilityGetFlags"
-- !private "kSCNetworkFlagsReachable"
+- !private "UInt32"
 - !private "UInt8"
 - !private "kSCNetworkFlagsConnectionRequired"
-- !private "!="
-- !private "!"
-- !private "sockaddr_in"
-- !private "BooleanLiteralType"
-- "IJReachabilityType"
+- !private "kSCNetworkFlagsReachable"
 - !private "sa_family_t"
+- !private "sockaddr"
+- !private "sockaddr_in"
+- !private "withUnsafePointer"
 depends-member:
 - !private ["Ps9AnyObject", "AF_INET"]
 - !private ["Ps9AnyObject", "MemoryLayout"]
@@ -52,7 +52,6 @@ depends-member:
 - !private ["Ps17BitwiseOperations", "hashValue"]
 - !private ["Ps17BitwiseOperations", "init"]
 - !private ["Sb", "_getBuiltinLogicValue"]
-- ["Sb", "deinit"]
 - !private ["Ps7CVarArg", "hashValue"]
 - !private ["Ps7CVarArg", "init"]
 - !private ["Ps7CVarArg", "withMemoryRebound"]
@@ -114,9 +113,7 @@ depends-member:
 - ["O13TookanTracker18IJReachabilityType", "_toAnyHashable"]
 - ["O13TookanTracker18IJReachabilityType", "deinit"]
 - ["O13TookanTracker18IJReachabilityType", "hashValue"]
-- ["Si", "deinit"]
 - !private ["Si", "hashValue"]
-- ["Vs5Int32", "deinit"]
 - !private ["Ps7Integer", "hashValue"]
 - !private ["Ps7Integer", "init"]
 - !private ["Ps17IntegerArithmetic", "hashValue"]
@@ -126,12 +123,9 @@ depends-member:
 - !private ["Ps10MirrorPath", "hashValue"]
 - !private ["Ps9OptionSet", "connectionAutomatic"]
 - !private ["Ps9OptionSet", "rawValue"]
-- ["Sq", "deinit"]
 - !private ["Ps16RawRepresentable", "connectionAutomatic"]
 - !private ["Ps16RawRepresentable", "rawValue"]
-- ["CSo21SCNetworkReachability", "deinit"]
 - !private ["VSC26SCNetworkReachabilityFlags", "connectionAutomatic"]
-- ["VSC26SCNetworkReachabilityFlags", "deinit"]
 - !private ["VSC26SCNetworkReachabilityFlags", "rawValue"]
 - !private ["Ps10SetAlgebra", "connectionAutomatic"]
 - !private ["Ps10SetAlgebra", "rawValue"]
@@ -140,12 +134,8 @@ depends-member:
 - !private ["Ps10Strideable", "hashValue"]
 - !private ["Ps10Strideable", "init"]
 - !private ["Ps10Strideable", "withMemoryRebound"]
-- ["Vs6UInt32", "deinit"]
 - !private ["Vs6UInt32", "init"]
-- ["Vs5UInt8", "deinit"]
 - !private ["Vs5UInt8", "init"]
-- !private ["Sp", "deinit"]
-- !private ["SP", "deinit"]
 - !private ["SP", "withMemoryRebound"]
 - !private ["Ps15UnsignedInteger", "init"]
 - !private ["Ps28_DisallowMixedSignArithmetic", "init"]
@@ -166,20 +156,20 @@ depends-member:
 - !private ["Ps18_IntegerArithmetic", "init"]
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "hashValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "init"]
 - !private ["Ps8_Pointer", "withMemoryRebound"]
 - !private ["Ps14_SignedInteger", "hashValue"]
 - !private ["Ps11_Strideable", "hashValue"]
 - !private ["Ps11_Strideable", "init"]
 - !private ["Ps11_Strideable", "withMemoryRebound"]
 - !private ["Ps14_StringElement", "init"]
-- ["VSC11sockaddr_in", "deinit"]
 - !private ["VSC11sockaddr_in", "init"]
 - !private ["VSC11sockaddr_in", "sin_family"]
 - !private ["VSC11sockaddr_in", "sin_len"]
 depends-nominal:
 - "Ps9AnyObject"
 - !private "Ps17BitwiseOperations"
-- "Sb"
+- !private "Sb"
 - !private "Ps7CVarArg"
 - !private "Ps10Comparable"
 - !private "Ps28CustomDebugStringConvertible"
@@ -193,25 +183,21 @@ depends-nominal:
 - "Ps8Hashable"
 - "C13TookanTracker14IJReachability"
 - "O13TookanTracker18IJReachabilityType"
-- "Si"
-- "Vs5Int32"
+- !private "Si"
 - !private "Ps7Integer"
 - !private "Ps17IntegerArithmetic"
 - !private "Ps25LosslessStringConvertible"
 - !private "Os12MemoryLayout"
 - !private "Ps10MirrorPath"
 - !private "Ps9OptionSet"
-- "Sq"
 - !private "Ps16RawRepresentable"
-- "CSo21SCNetworkReachability"
-- "VSC26SCNetworkReachabilityFlags"
+- !private "VSC26SCNetworkReachabilityFlags"
 - !private "Ps10SetAlgebra"
 - !private "Ps13SignedInteger"
 - !private "Ps12SignedNumber"
 - !private "Ps10Strideable"
-- "Vs6UInt32"
-- "Vs5UInt8"
-- !private "Sp"
+- !private "Vs6UInt32"
+- !private "Vs5UInt8"
 - !private "SP"
 - !private "Ps15UnsignedInteger"
 - !private "Ps28_DisallowMixedSignArithmetic"
@@ -226,26 +212,34 @@ depends-nominal:
 - !private "Ps14_SignedInteger"
 - !private "Ps11_Strideable"
 - !private "Ps14_StringElement"
-- "VSC11sockaddr_in"
+- !private "VSC11sockaddr_in"
 depends-dynamic-lookup:
 depends-external:
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Swift.swiftmodule"
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/SwiftOnoneSupport.swiftmodule"
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/UIKit.swiftmodule"
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Foundation.swiftmodule"
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Darwin.swiftmodule"
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Dispatch.swiftmodule"
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/ObjectiveC.swiftmodule"
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.swiftmodule"
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreImage.swiftmodule"
-- "/Users/cl-macmini-57/Desktop/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreLocation.swiftmodule"
-- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
-- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
-- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
-- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
-- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
-- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Modules/module.modulemap"
-- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer.h"
-- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer-umbrella.h"
-- "/Users/cl-macmini-57/Documents/GitHubTookan/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreLocation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/UIKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreText.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/SwiftOnoneSupport.swiftmodule"
+- "/Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer-umbrella.h"
+- "/Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
+- "/Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Headers/MSWeakTimer.h"
+- "/Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
+- "/Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
+- "/Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
+- "/Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
+- "/Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/MSWeakTimer.framework/Modules/module.modulemap"
+- "/Users/samneetkharbanda/Documents/GitHub/tracking-sdk-ios/LocationTracker/LocationDemo/CocoaAsyncSocket.framework/Modules/module.modulemap"
 interface-hash: "9cc03a12693d5e2bc3d16f2b425164c2"
