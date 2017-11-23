@@ -1,0 +1,10 @@
+framework module TookanTracker_SDK {
+  umbrella header "TookanTracker_SDK.h"
+
+  export *
+  module * { export * }
+}
+
+module TookanTracker_SDK.__Swift {
+    exclude header "TookanTracker_SDK-Swift.h"
+}

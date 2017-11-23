@@ -1,3 +1,0 @@
-framework module TookanTracker {
-    header "TookanTracker-Swift.h"
-}

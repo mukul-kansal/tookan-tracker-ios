@@ -1,0 +1,33 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/cl-macmini-110/Library/Developer/Xcode/DerivedData/TookanTracker-SDK-ghozgfypcahtucbfgnnzjnneufjg/Build/Products/Debug-iphoneos/TookanTracker_SDK.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "TookanTracker_SDK-Swift.h",
+          'external-contents': "/Users/cl-macmini-110/Library/Developer/Xcode/DerivedData/TookanTracker-SDK-ghozgfypcahtucbfgnnzjnneufjg/Build/Products/Debug-iphoneos/TookanTracker_SDK.framework/Headers/TookanTracker_SDK-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "TookanTracker_SDK.h",
+          'external-contents': "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/TookanTracker-SDK/TookanTracker_SDK.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/cl-macmini-110/Library/Developer/Xcode/DerivedData/TookanTracker-SDK-ghozgfypcahtucbfgnnzjnneufjg/Build/Products/Debug-iphoneos/TookanTracker_SDK.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/build/TookanTracker-SDK.build/Debug-iphoneos/TookanTracker-SDK.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}

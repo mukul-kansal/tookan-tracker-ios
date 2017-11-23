@@ -1,0 +1,930 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "CocoaMQTTFrameType"
+- "CocoaMQTTFrame"
+- "CocoaMQTTFrameConnect"
+- "CocoaMQTTFramePublish"
+- "CocoaMQTTFramePubAck"
+- "CocoaMQTTFrameSubscribe"
+- "CocoaMQTTFrameUnsubscribe"
+provides-nominal:
+- "17TookanTracker_SDK18CocoaMQTTFrameTypeO"
+- "17TookanTracker_SDK14CocoaMQTTFrameC"
+- "17TookanTracker_SDK21CocoaMQTTFrameConnectC"
+- "17TookanTracker_SDK21CocoaMQTTFramePublishC"
+- "17TookanTracker_SDK20CocoaMQTTFramePubAckC"
+- "17TookanTracker_SDK23CocoaMQTTFrameSubscribeC"
+- "17TookanTracker_SDK25CocoaMQTTFrameUnsubscribeC"
+provides-member:
+- ["s6UInt16V", ""]
+- ["SS", ""]
+- ["Sb", ""]
+- ["s5UInt8V", ""]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", ""]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", ""]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", ""]
+- ["17TookanTracker_SDK21CocoaMQTTFramePublishC", ""]
+- ["17TookanTracker_SDK20CocoaMQTTFramePubAckC", ""]
+- ["17TookanTracker_SDK23CocoaMQTTFrameSubscribeC", ""]
+- ["17TookanTracker_SDK25CocoaMQTTFrameUnsubscribeC", ""]
+- ["s6UInt16V", "highByte"]
+- ["s6UInt16V", "lowByte"]
+- ["s6UInt16V", "hlBytes"]
+- ["SS", "bytesWithLength"]
+- ["Sb", "bit"]
+- ["Sb", "init"]
+- ["s5UInt8V", "bitAt"]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "%"
+- !private "&"
+- !private "+"
+- !private "+="
+- !private "-"
+- !private "..."
+- !private "/"
+- !private "<<"
+- "=="
+- !private ">"
+- !private ">="
+- !private ">>"
+- !private "Array"
+- "AssignmentPrecedence"
+- "Bool"
+- !private "BooleanLiteralType"
+- "CastingPrecedence"
+- "CocoaMQTT"
+- "CocoaMQTTClient"
+- "CocoaMQTTFrame"
+- "CocoaMQTTFrameConnect"
+- "CocoaMQTTFramePubAck"
+- "CocoaMQTTFramePublish"
+- "CocoaMQTTFrameSubscribe"
+- "CocoaMQTTFrameType"
+- "CocoaMQTTFrameUnsubscribe"
+- "CocoaMQTTQOS"
+- "FloatLiteralType"
+- !private "Int"
+- "IntegerLiteralType"
+- !private "NSString"
+- "String"
+- "StringLiteralType"
+- "TernaryPrecedence"
+- "UInt16"
+- !private "UInt32"
+- "UInt8"
+- !private "|"
+- !private "|="
+- !private "~="
+depends-member:
+- !private ["Sa", "append"]
+- !private ["Sa", "count"]
+- !private ["Sa", "init"]
+- !private ["Sa", "subscript"]
+- !private ["s23BidirectionalCollectionP", "Encoding"]
+- !private ["s23BidirectionalCollectionP", "UInt16"]
+- !private ["s23BidirectionalCollectionP", "append"]
+- !private ["s23BidirectionalCollectionP", "bytesWithLength"]
+- !private ["s23BidirectionalCollectionP", "count"]
+- ["s23BidirectionalCollectionP", "init"]
+- !private ["s23BidirectionalCollectionP", "subscript"]
+- !private ["s23BidirectionalCollectionP", "utf8"]
+- !private ["s13BinaryIntegerP", "UInt8"]
+- !private ["s13BinaryIntegerP", "hashValue"]
+- !private ["s13BinaryIntegerP", "highByte"]
+- !private ["s13BinaryIntegerP", "hlBytes"]
+- ["s13BinaryIntegerP", "init"]
+- !private ["s13BinaryIntegerP", "lowByte"]
+- ["Sb", "UInt8"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- ["Sb", "bit"]
+- ["Sb", "init"]
+- !private ["s7CVarArgP", "Encoding"]
+- !private ["s7CVarArgP", "UInt16"]
+- !private ["s7CVarArgP", "UInt8"]
+- !private ["s7CVarArgP", "append"]
+- !private ["s7CVarArgP", "bytesWithLength"]
+- !private ["s7CVarArgP", "count"]
+- !private ["s7CVarArgP", "hashValue"]
+- !private ["s7CVarArgP", "highByte"]
+- !private ["s7CVarArgP", "hlBytes"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "lowByte"]
+- !private ["s7CVarArgP", "payload"]
+- !private ["s7CVarArgP", "qos"]
+- !private ["s7CVarArgP", "retained"]
+- !private ["s7CVarArgP", "subscript"]
+- !private ["s7CVarArgP", "topic"]
+- !private ["s7CVarArgP", "utf8"]
+- !private ["17TookanTracker_SDK9CocoaMQTTC", "deinit"]
+- !private ["17TookanTracker_SDK15CocoaMQTTClientP", "cleanSess"]
+- !private ["17TookanTracker_SDK15CocoaMQTTClientP", "clientId"]
+- !private ["17TookanTracker_SDK15CocoaMQTTClientP", "keepAlive"]
+- !private ["17TookanTracker_SDK15CocoaMQTTClientP", "password"]
+- !private ["17TookanTracker_SDK15CocoaMQTTClientP", "username"]
+- !private ["17TookanTracker_SDK15CocoaMQTTClientP", "willMessage"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "Bool"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "CocoaMQTT"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "CocoaMQTTClient"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "CocoaMQTTFrameType"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "CocoaMQTTQOS"]
+- !private ["17TookanTracker_SDK14CocoaMQTTFrameC", "Int"]
+- !private ["17TookanTracker_SDK14CocoaMQTTFrameC", "NSString"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "PROTOCOL_LEVEL"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "PROTOCOL_MAGIC"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "PROTOCOL_VERSION"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "String"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "UInt16"]
+- !private ["17TookanTracker_SDK14CocoaMQTTFrameC", "UInt32"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "UInt8"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "client"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "data"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "deinit"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "dup"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "encodeLength"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "flagCleanSess"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "flagPasswd"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "flagUsername"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "flagWill"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "flagWillQOS"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "flagWillRetain"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "flags"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "header"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "init"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "msgid"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "pack"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "payload"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "qos"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "reqos"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "retained"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "topic"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "type"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "unpack"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", "variableHeader"]
+- ["17TookanTracker_SDK14CocoaMQTTFrameC", ""]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "Bool"]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "CocoaMQTT"]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "CocoaMQTTClient"]
+- !private ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "CocoaMQTTFrameType"]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "PROTOCOL_LEVEL"]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "PROTOCOL_MAGIC"]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "PROTOCOL_VERSION"]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "String"]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "UInt8"]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "client"]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "deinit"]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "flagCleanSess"]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "flagPasswd"]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "flagUsername"]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "flagWill"]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "flagWillQOS"]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "flagWillRetain"]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "flags"]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "init"]
+- ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "pack"]
+- !private ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "payload"]
+- !private ["17TookanTracker_SDK21CocoaMQTTFrameConnectC", "variableHeader"]
+- ["17TookanTracker_SDK20CocoaMQTTFramePubAckC", "CocoaMQTTFrameType"]
+- !private ["17TookanTracker_SDK20CocoaMQTTFramePubAckC", "CocoaMQTTQOS"]
+- ["17TookanTracker_SDK20CocoaMQTTFramePubAckC", "UInt16"]
+- ["17TookanTracker_SDK20CocoaMQTTFramePubAckC", "deinit"]
+- ["17TookanTracker_SDK20CocoaMQTTFramePubAckC", "init"]
+- ["17TookanTracker_SDK20CocoaMQTTFramePubAckC", "msgid"]
+- ["17TookanTracker_SDK20CocoaMQTTFramePubAckC", "pack"]
+- !private ["17TookanTracker_SDK20CocoaMQTTFramePubAckC", "qos"]
+- !private ["17TookanTracker_SDK20CocoaMQTTFramePubAckC", "variableHeader"]
+- !private ["17TookanTracker_SDK21CocoaMQTTFramePublishC", "CocoaMQTTFrameType"]
+- !private ["17TookanTracker_SDK21CocoaMQTTFramePublishC", "Int"]
+- !private ["17TookanTracker_SDK21CocoaMQTTFramePublishC", "NSString"]
+- ["17TookanTracker_SDK21CocoaMQTTFramePublishC", "String"]
+- ["17TookanTracker_SDK21CocoaMQTTFramePublishC", "UInt16"]
+- ["17TookanTracker_SDK21CocoaMQTTFramePublishC", "UInt8"]
+- ["17TookanTracker_SDK21CocoaMQTTFramePublishC", "data"]
+- ["17TookanTracker_SDK21CocoaMQTTFramePublishC", "deinit"]
+- ["17TookanTracker_SDK21CocoaMQTTFramePublishC", "init"]
+- ["17TookanTracker_SDK21CocoaMQTTFramePublishC", "msgid"]
+- ["17TookanTracker_SDK21CocoaMQTTFramePublishC", "pack"]
+- !private ["17TookanTracker_SDK21CocoaMQTTFramePublishC", "payload"]
+- !private ["17TookanTracker_SDK21CocoaMQTTFramePublishC", "qos"]
+- ["17TookanTracker_SDK21CocoaMQTTFramePublishC", "topic"]
+- ["17TookanTracker_SDK21CocoaMQTTFramePublishC", "unpack"]
+- !private ["17TookanTracker_SDK21CocoaMQTTFramePublishC", "variableHeader"]
+- !private ["17TookanTracker_SDK23CocoaMQTTFrameSubscribeC", "CocoaMQTTFrameType"]
+- ["17TookanTracker_SDK23CocoaMQTTFrameSubscribeC", "CocoaMQTTQOS"]
+- ["17TookanTracker_SDK23CocoaMQTTFrameSubscribeC", "String"]
+- ["17TookanTracker_SDK23CocoaMQTTFrameSubscribeC", "UInt16"]
+- ["17TookanTracker_SDK23CocoaMQTTFrameSubscribeC", "UInt8"]
+- ["17TookanTracker_SDK23CocoaMQTTFrameSubscribeC", "deinit"]
+- ["17TookanTracker_SDK23CocoaMQTTFrameSubscribeC", "init"]
+- ["17TookanTracker_SDK23CocoaMQTTFrameSubscribeC", "msgid"]
+- ["17TookanTracker_SDK23CocoaMQTTFrameSubscribeC", "pack"]
+- !private ["17TookanTracker_SDK23CocoaMQTTFrameSubscribeC", "payload"]
+- !private ["17TookanTracker_SDK23CocoaMQTTFrameSubscribeC", "qos"]
+- ["17TookanTracker_SDK23CocoaMQTTFrameSubscribeC", "reqos"]
+- ["17TookanTracker_SDK23CocoaMQTTFrameSubscribeC", "topic"]
+- !private ["17TookanTracker_SDK23CocoaMQTTFrameSubscribeC", "variableHeader"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "CONNACK"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "CONNECT"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "DISCONNECT"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "PINGREQ"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "PINGRESP"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "PUBACK"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "PUBCOMP"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "PUBLISH"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "PUBREC"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "PUBREL"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "RESERVED"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "RawValue"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "SUBACK"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "SUBSCRIBE"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "UNSUBACK"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "UNSUBSCRIBE"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "deinit"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "hashValue"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "init"]
+- ["17TookanTracker_SDK18CocoaMQTTFrameTypeO", "rawValue"]
+- !private ["17TookanTracker_SDK25CocoaMQTTFrameUnsubscribeC", "CocoaMQTTFrameType"]
+- !private ["17TookanTracker_SDK25CocoaMQTTFrameUnsubscribeC", "CocoaMQTTQOS"]
+- ["17TookanTracker_SDK25CocoaMQTTFrameUnsubscribeC", "String"]
+- ["17TookanTracker_SDK25CocoaMQTTFrameUnsubscribeC", "UInt16"]
+- ["17TookanTracker_SDK25CocoaMQTTFrameUnsubscribeC", "deinit"]
+- ["17TookanTracker_SDK25CocoaMQTTFrameUnsubscribeC", "init"]
+- ["17TookanTracker_SDK25CocoaMQTTFrameUnsubscribeC", "msgid"]
+- ["17TookanTracker_SDK25CocoaMQTTFrameUnsubscribeC", "pack"]
+- !private ["17TookanTracker_SDK25CocoaMQTTFrameUnsubscribeC", "payload"]
+- !private ["17TookanTracker_SDK25CocoaMQTTFrameUnsubscribeC", "qos"]
+- ["17TookanTracker_SDK25CocoaMQTTFrameUnsubscribeC", "topic"]
+- !private ["17TookanTracker_SDK25CocoaMQTTFrameUnsubscribeC", "variableHeader"]
+- !private ["17TookanTracker_SDK16CocoaMQTTMessageC", "payload"]
+- !private ["17TookanTracker_SDK16CocoaMQTTMessageC", "qos"]
+- !private ["17TookanTracker_SDK16CocoaMQTTMessageC", "retained"]
+- !private ["17TookanTracker_SDK16CocoaMQTTMessageC", "topic"]
+- ["17TookanTracker_SDK12CocoaMQTTQOSO", "QOS0"]
+- !private ["17TookanTracker_SDK12CocoaMQTTQOSO", "QOS1"]
+- ["17TookanTracker_SDK12CocoaMQTTQOSO", "deinit"]
+- ["17TookanTracker_SDK12CocoaMQTTQOSO", "rawValue"]
+- !private ["17TookanTracker_SDK13CocoaMQTTWillC", "payload"]
+- !private ["17TookanTracker_SDK13CocoaMQTTWillC", "qos"]
+- !private ["17TookanTracker_SDK13CocoaMQTTWillC", "retained"]
+- !private ["17TookanTracker_SDK13CocoaMQTTWillC", "topic"]
+- !private ["s10CollectionP", "Encoding"]
+- !private ["s10CollectionP", "UInt16"]
+- !private ["s10CollectionP", "append"]
+- !private ["s10CollectionP", "bytesWithLength"]
+- !private ["s10CollectionP", "count"]
+- ["s10CollectionP", "init"]
+- !private ["s10CollectionP", "subscript"]
+- !private ["s10CollectionP", "utf8"]
+- !private ["s10ComparableP", "Encoding"]
+- !private ["s10ComparableP", "UInt16"]
+- !private ["s10ComparableP", "UInt8"]
+- !private ["s10ComparableP", "bytesWithLength"]
+- !private ["s10ComparableP", "hashValue"]
+- !private ["s10ComparableP", "highByte"]
+- !private ["s10ComparableP", "hlBytes"]
+- ["s10ComparableP", "init"]
+- !private ["s10ComparableP", "lowByte"]
+- !private ["s10ComparableP", "utf8"]
+- !private ["s28CustomDebugStringConvertibleP", "Encoding"]
+- !private ["s28CustomDebugStringConvertibleP", "UInt16"]
+- !private ["s28CustomDebugStringConvertibleP", "append"]
+- !private ["s28CustomDebugStringConvertibleP", "bytesWithLength"]
+- !private ["s28CustomDebugStringConvertibleP", "count"]
+- !private ["s28CustomDebugStringConvertibleP", "hlBytes"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "payload"]
+- !private ["s28CustomDebugStringConvertibleP", "qos"]
+- !private ["s28CustomDebugStringConvertibleP", "retained"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "topic"]
+- !private ["s28CustomDebugStringConvertibleP", "utf8"]
+- !private ["s29CustomPlaygroundQuickLookableP", "Encoding"]
+- !private ["s29CustomPlaygroundQuickLookableP", "UInt16"]
+- !private ["s29CustomPlaygroundQuickLookableP", "UInt8"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "bit"]
+- !private ["s29CustomPlaygroundQuickLookableP", "bytesWithLength"]
+- !private ["s29CustomPlaygroundQuickLookableP", "count"]
+- !private ["s29CustomPlaygroundQuickLookableP", "hashValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "highByte"]
+- !private ["s29CustomPlaygroundQuickLookableP", "hlBytes"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "lowByte"]
+- !private ["s29CustomPlaygroundQuickLookableP", "utf8"]
+- !private ["s17CustomReflectableP", "Encoding"]
+- !private ["s17CustomReflectableP", "UInt16"]
+- !private ["s17CustomReflectableP", "UInt8"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "append"]
+- !private ["s17CustomReflectableP", "bit"]
+- !private ["s17CustomReflectableP", "bytesWithLength"]
+- !private ["s17CustomReflectableP", "count"]
+- !private ["s17CustomReflectableP", "hashValue"]
+- !private ["s17CustomReflectableP", "highByte"]
+- !private ["s17CustomReflectableP", "hlBytes"]
+- ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "lowByte"]
+- !private ["s17CustomReflectableP", "subscript"]
+- !private ["s17CustomReflectableP", "utf8"]
+- !private ["s23CustomStringConvertibleP", "Encoding"]
+- !private ["s23CustomStringConvertibleP", "UInt16"]
+- !private ["s23CustomStringConvertibleP", "UInt8"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "append"]
+- !private ["s23CustomStringConvertibleP", "bit"]
+- !private ["s23CustomStringConvertibleP", "bytesWithLength"]
+- !private ["s23CustomStringConvertibleP", "count"]
+- !private ["s23CustomStringConvertibleP", "hashValue"]
+- !private ["s23CustomStringConvertibleP", "highByte"]
+- !private ["s23CustomStringConvertibleP", "hlBytes"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "lowByte"]
+- !private ["s23CustomStringConvertibleP", "payload"]
+- !private ["s23CustomStringConvertibleP", "qos"]
+- !private ["s23CustomStringConvertibleP", "rawValue"]
+- !private ["s23CustomStringConvertibleP", "retained"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "topic"]
+- !private ["s23CustomStringConvertibleP", "utf8"]
+- !private ["s9DecodableP", "Encoding"]
+- !private ["s9DecodableP", "UInt16"]
+- !private ["s9DecodableP", "UInt8"]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "append"]
+- !private ["s9DecodableP", "bit"]
+- !private ["s9DecodableP", "bytesWithLength"]
+- !private ["s9DecodableP", "count"]
+- !private ["s9DecodableP", "hashValue"]
+- !private ["s9DecodableP", "highByte"]
+- !private ["s9DecodableP", "hlBytes"]
+- ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "lowByte"]
+- !private ["s9DecodableP", "subscript"]
+- !private ["s9DecodableP", "utf8"]
+- !private ["s9EncodableP", "Encoding"]
+- !private ["s9EncodableP", "UInt16"]
+- !private ["s9EncodableP", "UInt8"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "append"]
+- !private ["s9EncodableP", "bit"]
+- !private ["s9EncodableP", "bytesWithLength"]
+- !private ["s9EncodableP", "count"]
+- !private ["s9EncodableP", "hashValue"]
+- !private ["s9EncodableP", "highByte"]
+- !private ["s9EncodableP", "hlBytes"]
+- ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "lowByte"]
+- !private ["s9EncodableP", "subscript"]
+- !private ["s9EncodableP", "utf8"]
+- !private ["SS10FoundationE8EncodingV", "rawValue"]
+- !private ["SS10FoundationE8EncodingV", "utf8"]
+- !private ["s9EquatableP", "CONNECT"]
+- !private ["s9EquatableP", "Encoding"]
+- !private ["s9EquatableP", "PUBLISH"]
+- !private ["s9EquatableP", "PUBREL"]
+- ["s9EquatableP", "QOS0"]
+- !private ["s9EquatableP", "QOS1"]
+- ["s9EquatableP", "RawValue"]
+- !private ["s9EquatableP", "SUBSCRIBE"]
+- !private ["s9EquatableP", "UInt16"]
+- !private ["s9EquatableP", "UInt8"]
+- !private ["s9EquatableP", "UNSUBSCRIBE"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "bit"]
+- !private ["s9EquatableP", "bytesWithLength"]
+- ["s9EquatableP", "hashValue"]
+- !private ["s9EquatableP", "highByte"]
+- !private ["s9EquatableP", "hlBytes"]
+- ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "lowByte"]
+- !private ["s9EquatableP", "payload"]
+- !private ["s9EquatableP", "qos"]
+- ["s9EquatableP", "rawValue"]
+- !private ["s9EquatableP", "retained"]
+- !private ["s9EquatableP", "topic"]
+- !private ["s9EquatableP", "utf8"]
+- ["s9EquatableP", ""]
+- !private ["s25ExpressibleByArrayLiteralP", "append"]
+- !private ["s25ExpressibleByArrayLiteralP", "count"]
+- !private ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "subscript"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s27ExpressibleByBooleanLiteralP", "bit"]
+- !private ["s27ExpressibleByBooleanLiteralP", "init"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "Encoding"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "UInt16"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "bytesWithLength"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "utf8"]
+- !private ["s27ExpressibleByIntegerLiteralP", "UInt8"]
+- !private ["s27ExpressibleByIntegerLiteralP", "hashValue"]
+- !private ["s27ExpressibleByIntegerLiteralP", "highByte"]
+- !private ["s27ExpressibleByIntegerLiteralP", "hlBytes"]
+- ["s27ExpressibleByIntegerLiteralP", "init"]
+- !private ["s27ExpressibleByIntegerLiteralP", "lowByte"]
+- !private ["s23ExpressibleByNilLiteralP", "hlBytes"]
+- !private ["s26ExpressibleByStringLiteralP", "Encoding"]
+- !private ["s26ExpressibleByStringLiteralP", "UInt16"]
+- !private ["s26ExpressibleByStringLiteralP", "bytesWithLength"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "utf8"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "Encoding"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "UInt16"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "bytesWithLength"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "utf8"]
+- !private ["s17FixedWidthIntegerP", "UInt8"]
+- !private ["s17FixedWidthIntegerP", "hashValue"]
+- !private ["s17FixedWidthIntegerP", "highByte"]
+- !private ["s17FixedWidthIntegerP", "hlBytes"]
+- ["s17FixedWidthIntegerP", "init"]
+- !private ["s17FixedWidthIntegerP", "lowByte"]
+- !private ["s8HashableP", "CONNECT"]
+- !private ["s8HashableP", "Encoding"]
+- !private ["s8HashableP", "PUBLISH"]
+- !private ["s8HashableP", "PUBREL"]
+- ["s8HashableP", "QOS0"]
+- !private ["s8HashableP", "QOS1"]
+- ["s8HashableP", "RawValue"]
+- !private ["s8HashableP", "SUBSCRIBE"]
+- !private ["s8HashableP", "UInt16"]
+- !private ["s8HashableP", "UInt8"]
+- !private ["s8HashableP", "UNSUBSCRIBE"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "bit"]
+- !private ["s8HashableP", "bytesWithLength"]
+- ["s8HashableP", "hashValue"]
+- !private ["s8HashableP", "highByte"]
+- !private ["s8HashableP", "hlBytes"]
+- ["s8HashableP", "init"]
+- !private ["s8HashableP", "lowByte"]
+- !private ["s8HashableP", "payload"]
+- !private ["s8HashableP", "qos"]
+- ["s8HashableP", "rawValue"]
+- !private ["s8HashableP", "retained"]
+- !private ["s8HashableP", "topic"]
+- !private ["s8HashableP", "utf8"]
+- ["s8HashableP", ""]
+- !private ["Si", "hashValue"]
+- !private ["Si", "init"]
+- !private ["s25LosslessStringConvertibleP", "Encoding"]
+- !private ["s25LosslessStringConvertibleP", "UInt16"]
+- !private ["s25LosslessStringConvertibleP", "UInt8"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s25LosslessStringConvertibleP", "bit"]
+- !private ["s25LosslessStringConvertibleP", "bytesWithLength"]
+- !private ["s25LosslessStringConvertibleP", "hashValue"]
+- !private ["s25LosslessStringConvertibleP", "highByte"]
+- !private ["s25LosslessStringConvertibleP", "hlBytes"]
+- ["s25LosslessStringConvertibleP", "init"]
+- !private ["s25LosslessStringConvertibleP", "lowByte"]
+- !private ["s25LosslessStringConvertibleP", "utf8"]
+- !private ["s10MirrorPathP", "Encoding"]
+- !private ["s10MirrorPathP", "UInt16"]
+- !private ["s10MirrorPathP", "bytesWithLength"]
+- !private ["s10MirrorPathP", "hashValue"]
+- ["s10MirrorPathP", "init"]
+- !private ["s10MirrorPathP", "utf8"]
+- !private ["s17MutableCollectionP", "append"]
+- !private ["s17MutableCollectionP", "count"]
+- !private ["s17MutableCollectionP", "init"]
+- !private ["s17MutableCollectionP", "subscript"]
+- !private ["So8NSCodingP", "bytesWithLength"]
+- ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "utf8"]
+- !private ["So9NSCopyingP", "bytesWithLength"]
+- ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "utf8"]
+- !private ["So21NSItemProviderReadingP", "bytesWithLength"]
+- ["So21NSItemProviderReadingP", "init"]
+- !private ["So21NSItemProviderReadingP", "utf8"]
+- !private ["So21NSItemProviderWritingP", "bytesWithLength"]
+- ["So21NSItemProviderWritingP", "init"]
+- !private ["So21NSItemProviderWritingP", "utf8"]
+- !private ["So16NSMutableCopyingP", "bytesWithLength"]
+- ["So16NSMutableCopyingP", "init"]
+- !private ["So16NSMutableCopyingP", "utf8"]
+- !private ["So8NSObjectC", "bytesWithLength"]
+- !private ["So8NSObjectC", "payload"]
+- !private ["So8NSObjectC", "qos"]
+- !private ["So8NSObjectC", "retained"]
+- !private ["So8NSObjectC", "topic"]
+- !private ["So8NSObjectC", "utf8"]
+- !private ["So16NSObjectProtocolP", "bytesWithLength"]
+- ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "payload"]
+- !private ["So16NSObjectProtocolP", "qos"]
+- !private ["So16NSObjectProtocolP", "retained"]
+- !private ["So16NSObjectProtocolP", "topic"]
+- !private ["So16NSObjectProtocolP", "utf8"]
+- !private ["So14NSSecureCodingP", "bytesWithLength"]
+- ["So14NSSecureCodingP", "init"]
+- !private ["So14NSSecureCodingP", "utf8"]
+- !private ["So8NSStringC", "bytesWithLength"]
+- ["So8NSStringC", "init"]
+- !private ["So8NSStringC", "utf8"]
+- !private ["s7NumericP", "UInt8"]
+- !private ["s7NumericP", "hashValue"]
+- !private ["s7NumericP", "highByte"]
+- !private ["s7NumericP", "hlBytes"]
+- ["s7NumericP", "init"]
+- !private ["s7NumericP", "lowByte"]
+- !private ["Sq", "hlBytes"]
+- !private ["s22RandomAccessCollectionP", "append"]
+- !private ["s22RandomAccessCollectionP", "count"]
+- !private ["s22RandomAccessCollectionP", "init"]
+- !private ["s22RandomAccessCollectionP", "subscript"]
+- !private ["s26RangeReplaceableCollectionP", "Encoding"]
+- !private ["s26RangeReplaceableCollectionP", "UInt16"]
+- !private ["s26RangeReplaceableCollectionP", "append"]
+- !private ["s26RangeReplaceableCollectionP", "bytesWithLength"]
+- !private ["s26RangeReplaceableCollectionP", "count"]
+- ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s26RangeReplaceableCollectionP", "subscript"]
+- !private ["s26RangeReplaceableCollectionP", "utf8"]
+- !private ["s16RawRepresentableP", "CONNECT"]
+- !private ["s16RawRepresentableP", "PUBLISH"]
+- !private ["s16RawRepresentableP", "PUBREL"]
+- ["s16RawRepresentableP", "QOS0"]
+- !private ["s16RawRepresentableP", "QOS1"]
+- ["s16RawRepresentableP", "RawValue"]
+- !private ["s16RawRepresentableP", "SUBSCRIBE"]
+- !private ["s16RawRepresentableP", "UNSUBSCRIBE"]
+- ["s16RawRepresentableP", "hashValue"]
+- ["s16RawRepresentableP", "init"]
+- ["s16RawRepresentableP", "rawValue"]
+- !private ["s16RawRepresentableP", "utf8"]
+- ["s16RawRepresentableP", ""]
+- !private ["s8SequenceP", "Encoding"]
+- !private ["s8SequenceP", "UInt16"]
+- !private ["s8SequenceP", "append"]
+- !private ["s8SequenceP", "bytesWithLength"]
+- !private ["s8SequenceP", "count"]
+- ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "subscript"]
+- !private ["s8SequenceP", "utf8"]
+- !private ["s13SignedIntegerP", "hashValue"]
+- !private ["s13SignedIntegerP", "init"]
+- !private ["s13SignedNumericP", "hashValue"]
+- !private ["s13SignedNumericP", "init"]
+- !private ["s12StaticStringV", "init"]
+- !private ["s10StrideableP", "UInt8"]
+- !private ["s10StrideableP", "hashValue"]
+- !private ["s10StrideableP", "highByte"]
+- !private ["s10StrideableP", "hlBytes"]
+- ["s10StrideableP", "init"]
+- !private ["s10StrideableP", "lowByte"]
+- !private ["SS", "Encoding"]
+- !private ["SS", "UInt16"]
+- ["SS", "UInt8"]
+- ["SS", "bytesWithLength"]
+- ["SS", "init"]
+- !private ["SS", "utf8"]
+- !private ["s14StringProtocolP", "Encoding"]
+- !private ["s14StringProtocolP", "UInt16"]
+- !private ["s14StringProtocolP", "bytesWithLength"]
+- ["s14StringProtocolP", "init"]
+- !private ["s14StringProtocolP", "utf8"]
+- !private ["s16TextOutputStreamP", "Encoding"]
+- !private ["s16TextOutputStreamP", "UInt16"]
+- !private ["s16TextOutputStreamP", "bytesWithLength"]
+- ["s16TextOutputStreamP", "init"]
+- !private ["s16TextOutputStreamP", "utf8"]
+- !private ["s20TextOutputStreamableP", "Encoding"]
+- !private ["s20TextOutputStreamableP", "UInt16"]
+- !private ["s20TextOutputStreamableP", "bytesWithLength"]
+- ["s20TextOutputStreamableP", "init"]
+- !private ["s20TextOutputStreamableP", "utf8"]
+- ["s6UInt16V", "UInt8"]
+- ["s6UInt16V", "highByte"]
+- ["s6UInt16V", "hlBytes"]
+- !private ["s6UInt16V", "init"]
+- ["s6UInt16V", "lowByte"]
+- !private ["s6UInt32V", "init"]
+- ["s5UInt8V", "UInt8"]
+- ["s5UInt8V", "bitAt"]
+- ["s5UInt8V", "init"]
+- !private ["SS8UTF8ViewV", "count"]
+- !private ["s15UnsignedIntegerP", "UInt8"]
+- !private ["s15UnsignedIntegerP", "highByte"]
+- !private ["s15UnsignedIntegerP", "hlBytes"]
+- ["s15UnsignedIntegerP", "init"]
+- !private ["s15UnsignedIntegerP", "lowByte"]
+- !private ["s14_ArrayProtocolP", "append"]
+- !private ["s14_ArrayProtocolP", "count"]
+- !private ["s14_ArrayProtocolP", "init"]
+- !private ["s14_ArrayProtocolP", "subscript"]
+- !private ["s23_BidirectionalIndexableP", "Encoding"]
+- !private ["s23_BidirectionalIndexableP", "UInt16"]
+- !private ["s23_BidirectionalIndexableP", "append"]
+- !private ["s23_BidirectionalIndexableP", "bytesWithLength"]
+- !private ["s23_BidirectionalIndexableP", "count"]
+- ["s23_BidirectionalIndexableP", "init"]
+- !private ["s23_BidirectionalIndexableP", "subscript"]
+- !private ["s23_BidirectionalIndexableP", "utf8"]
+- !private ["s18_BitwiseOperationsP", "UInt8"]
+- !private ["s18_BitwiseOperationsP", "hashValue"]
+- !private ["s18_BitwiseOperationsP", "highByte"]
+- !private ["s18_BitwiseOperationsP", "hlBytes"]
+- ["s18_BitwiseOperationsP", "init"]
+- !private ["s18_BitwiseOperationsP", "lowByte"]
+- !private ["s24_DestructorSafeContainerP", "append"]
+- !private ["s24_DestructorSafeContainerP", "count"]
+- !private ["s24_DestructorSafeContainerP", "init"]
+- !private ["s24_DestructorSafeContainerP", "subscript"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "bit"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "Encoding"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "UInt16"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "bytesWithLength"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "utf8"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "UInt8"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "hashValue"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "highByte"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "hlBytes"]
+- ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "lowByte"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "Encoding"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "UInt16"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "bytesWithLength"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "utf8"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "Encoding"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "UInt16"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "bytesWithLength"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "utf8"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "Encoding"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "UInt16"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "bytesWithLength"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "utf8"]
+- !private ["s33_ExpressibleByStringInterpolationP", "Encoding"]
+- !private ["s33_ExpressibleByStringInterpolationP", "UInt16"]
+- !private ["s33_ExpressibleByStringInterpolationP", "bytesWithLength"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "utf8"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "bytesWithLength"]
+- ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "utf8"]
+- !private ["s10_IndexableP", "Encoding"]
+- !private ["s10_IndexableP", "UInt16"]
+- !private ["s10_IndexableP", "append"]
+- !private ["s10_IndexableP", "bytesWithLength"]
+- !private ["s10_IndexableP", "count"]
+- ["s10_IndexableP", "init"]
+- !private ["s10_IndexableP", "subscript"]
+- !private ["s10_IndexableP", "utf8"]
+- !private ["s14_IndexableBaseP", "Encoding"]
+- !private ["s14_IndexableBaseP", "UInt16"]
+- !private ["s14_IndexableBaseP", "append"]
+- !private ["s14_IndexableBaseP", "bytesWithLength"]
+- !private ["s14_IndexableBaseP", "count"]
+- ["s14_IndexableBaseP", "init"]
+- !private ["s14_IndexableBaseP", "subscript"]
+- !private ["s14_IndexableBaseP", "utf8"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "bytesWithLength"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "payload"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "qos"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "retained"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "topic"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "utf8"]
+- !private ["s17_MutableIndexableP", "append"]
+- !private ["s17_MutableIndexableP", "count"]
+- !private ["s17_MutableIndexableP", "init"]
+- !private ["s17_MutableIndexableP", "subscript"]
+- !private ["s21_ObjectiveCBridgeableP", "Encoding"]
+- !private ["s21_ObjectiveCBridgeableP", "UInt16"]
+- !private ["s21_ObjectiveCBridgeableP", "UInt8"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "append"]
+- !private ["s21_ObjectiveCBridgeableP", "bit"]
+- !private ["s21_ObjectiveCBridgeableP", "bytesWithLength"]
+- !private ["s21_ObjectiveCBridgeableP", "count"]
+- !private ["s21_ObjectiveCBridgeableP", "hashValue"]
+- !private ["s21_ObjectiveCBridgeableP", "highByte"]
+- !private ["s21_ObjectiveCBridgeableP", "hlBytes"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "lowByte"]
+- !private ["s21_ObjectiveCBridgeableP", "subscript"]
+- !private ["s21_ObjectiveCBridgeableP", "utf8"]
+- !private ["s22_RandomAccessIndexableP", "append"]
+- !private ["s22_RandomAccessIndexableP", "count"]
+- !private ["s22_RandomAccessIndexableP", "init"]
+- !private ["s22_RandomAccessIndexableP", "subscript"]
+- !private ["s26_RangeReplaceableIndexableP", "Encoding"]
+- !private ["s26_RangeReplaceableIndexableP", "UInt16"]
+- !private ["s26_RangeReplaceableIndexableP", "append"]
+- !private ["s26_RangeReplaceableIndexableP", "bytesWithLength"]
+- !private ["s26_RangeReplaceableIndexableP", "count"]
+- ["s26_RangeReplaceableIndexableP", "init"]
+- !private ["s26_RangeReplaceableIndexableP", "subscript"]
+- !private ["s26_RangeReplaceableIndexableP", "utf8"]
+- !private ["s11_StrideableP", "UInt8"]
+- !private ["s11_StrideableP", "hashValue"]
+- !private ["s11_StrideableP", "highByte"]
+- !private ["s11_StrideableP", "hlBytes"]
+- ["s11_StrideableP", "init"]
+- !private ["s11_StrideableP", "lowByte"]
+- !private ["s14_StringElementP", "UInt8"]
+- !private ["s14_StringElementP", "highByte"]
+- !private ["s14_StringElementP", "hlBytes"]
+- ["s14_StringElementP", "init"]
+- !private ["s14_StringElementP", "lowByte"]
+- !private ["s16_SwiftStringViewP", "Encoding"]
+- !private ["s16_SwiftStringViewP", "UInt16"]
+- !private ["s16_SwiftStringViewP", "bytesWithLength"]
+- !private ["s16_SwiftStringViewP", "count"]
+- ["s16_SwiftStringViewP", "init"]
+- !private ["s16_SwiftStringViewP", "utf8"]
+depends-nominal:
+- !private "Sa"
+- "s23BidirectionalCollectionP"
+- "s13BinaryIntegerP"
+- "Sb"
+- "s7CVarArgP"
+- !private "17TookanTracker_SDK9CocoaMQTTC"
+- !private "17TookanTracker_SDK15CocoaMQTTClientP"
+- "17TookanTracker_SDK14CocoaMQTTFrameC"
+- "17TookanTracker_SDK21CocoaMQTTFrameConnectC"
+- "17TookanTracker_SDK20CocoaMQTTFramePubAckC"
+- "17TookanTracker_SDK21CocoaMQTTFramePublishC"
+- "17TookanTracker_SDK23CocoaMQTTFrameSubscribeC"
+- "17TookanTracker_SDK18CocoaMQTTFrameTypeO"
+- "17TookanTracker_SDK25CocoaMQTTFrameUnsubscribeC"
+- !private "17TookanTracker_SDK16CocoaMQTTMessageC"
+- "17TookanTracker_SDK12CocoaMQTTQOSO"
+- !private "17TookanTracker_SDK13CocoaMQTTWillC"
+- "s10CollectionP"
+- "s10ComparableP"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "s9DecodableP"
+- "s9EncodableP"
+- !private "SS10FoundationE8EncodingV"
+- "s9EquatableP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- "s27ExpressibleByIntegerLiteralP"
+- !private "s23ExpressibleByNilLiteralP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
+- "s17FixedWidthIntegerP"
+- "s8HashableP"
+- !private "Si"
+- "s25LosslessStringConvertibleP"
+- "s10MirrorPathP"
+- !private "s17MutableCollectionP"
+- "So8NSCodingP"
+- "So9NSCopyingP"
+- "So21NSItemProviderReadingP"
+- "So21NSItemProviderWritingP"
+- "So16NSMutableCopyingP"
+- !private "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- "So14NSSecureCodingP"
+- "So8NSStringC"
+- "s7NumericP"
+- !private "Sq"
+- !private "s22RandomAccessCollectionP"
+- "s26RangeReplaceableCollectionP"
+- "s16RawRepresentableP"
+- "s8SequenceP"
+- !private "s13SignedIntegerP"
+- !private "s13SignedNumericP"
+- !private "s12StaticStringV"
+- "s10StrideableP"
+- "SS"
+- "s14StringProtocolP"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
+- "s6UInt16V"
+- !private "s6UInt32V"
+- "s5UInt8V"
+- !private "SS8UTF8ViewV"
+- "s15UnsignedIntegerP"
+- !private "s14_ArrayProtocolP"
+- "s23_BidirectionalIndexableP"
+- "s18_BitwiseOperationsP"
+- !private "s24_DestructorSafeContainerP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s35_ExpressibleByBuiltinIntegerLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "s33_ExpressibleByStringInterpolationP"
+- "s35_HasCustomAnyHashableRepresentationP"
+- "s10_IndexableP"
+- "s14_IndexableBaseP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s17_MutableIndexableP"
+- "s21_ObjectiveCBridgeableP"
+- !private "s22_RandomAccessIndexableP"
+- "s26_RangeReplaceableIndexableP"
+- "s11_StrideableP"
+- "s14_StringElementP"
+- "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.apinotesc"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreData.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/simd.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/QuartzCore.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Metal.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreLocation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SwiftOnoneSupport.swiftmodule"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/TookanTracker-SDK/TookanTracker_SDK.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/MSWeakTimer.framework/Headers/MSWeakTimer-umbrella.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPanorama.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPanoramaCamera.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSPlacePhotoMetadata.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSPlaceLikelihood.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSPlace.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSUserAddedPlace.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPanoramaService.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSAutocompleteTableDataSource.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSAutocompleteBoundsMode.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSCircle.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSMapStyle.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPolyline.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMapsBase.framework/Headers/GoogleMapsBase.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSCameraUpdate.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPanoramaCameraUpdate.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSIndoorBuilding.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPath.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSMutablePath.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPanoramaLink.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSIndoorLevel.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPolygon.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSMapView+Animation.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSOrientation.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSProjection.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSAutocompletePrediction.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSCameraPosition.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSGeocoder.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSAutocompleteFetcher.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSMarker.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSAutocompleteViewController.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSAutocompleteResultsViewController.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/MSWeakTimer.framework/Headers/MSWeakTimer.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSAutocompleteFilter.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSCALayer.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPanoramaLayer.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSURLTileLayer.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSTileLayer.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSSyncTileLayer.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSMapLayer.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSMarkerLayer.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMapsBase.framework/Headers/GMSCoordinateBounds.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GooglePlaces.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSServices.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSPlaceTypes.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSUISettings.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSGeometryUtils.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMapsBase.framework/Headers/GMSDeprecationMacros.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMapsBase.framework/Headers/GMSCompatabilityMacros.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSCoordinateBounds+GoogleMaps.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GoogleMaps.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSPlacesErrors.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSAddress.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSPlacesClient.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSAutocompleteMatchFragment.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSAddressComponent.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSPlacePhotoMetadataList.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSPlaceLikelihoodList.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPanoramaView.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSMapView.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSIndoorDisplay.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSOverlay.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSGroundOverlay.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/build/TookanTracker-SDK.build/Debug-iphoneos/TookanTracker-SDK.build/unextended-module.modulemap"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMapsBase.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/MSWeakTimer.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/CocoaAsyncSocket.framework/Modules/module.modulemap"
+interface-hash: "6d40584062d963228372881b0eb70b3c"

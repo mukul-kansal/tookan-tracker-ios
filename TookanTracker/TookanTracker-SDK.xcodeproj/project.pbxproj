@@ -1,0 +1,794 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		267C127C1FC58EDB003F844D /* TookanTrackerUniversal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 267C127D1FC58EDB003F844D /* Build configuration list for PBXAggregateTarget "TookanTrackerUniversal" */;
+			buildPhases = (
+				267C12801FC58F62003F844D /* Run Script */,
+			);
+			dependencies = (
+			);
+			name = TookanTrackerUniversal;
+			productName = TookanTrackerUniversal;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		265C80531FC436D500D773B0 /* BottomButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265C800B1FC4016000D773B0 /* BottomButtonView.xib */; };
+		265C80541FC436D500D773B0 /* SessionDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265C800D1FC4016000D773B0 /* SessionDetailView.xib */; };
+		265C80551FC436D500D773B0 /* SliderButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265C800F1FC4016000D773B0 /* SliderButton.xib */; };
+		265C80561FC436D500D773B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 265C7FF01FC4016000D773B0 /* Main.storyboard */; };
+		265C80571FC436F000D773B0 /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 265C7FDF1FC4016000D773B0 /* GCDAsyncSocket.h */; };
+		265C80581FC436F000D773B0 /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 265C7FE11FC4016000D773B0 /* GCDAsyncUdpSocket.h */; };
+		265C80591FC436F000D773B0 /* Tracker-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 265C7FEE1FC4016000D773B0 /* Tracker-Bridging-Header.h */; };
+		265C805A1FC436F000D773B0 /* MSWeakTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 265C7FF91FC4016000D773B0 /* MSWeakTimer.h */; };
+		265C805B1FC436F000D773B0 /* AsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 265C7FFC1FC4016000D773B0 /* AsyncSocket.h */; };
+		265C805C1FC436F000D773B0 /* AsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 265C7FFE1FC4016000D773B0 /* AsyncUdpSocket.h */; };
+		265C805D1FC436F000D773B0 /* FBShimmering.h in Headers */ = {isa = PBXBuildFile; fileRef = 265C80021FC4016000D773B0 /* FBShimmering.h */; };
+		265C805E1FC436F000D773B0 /* FBShimmeringLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 265C80031FC4016000D773B0 /* FBShimmeringLayer.h */; };
+		265C805F1FC436F000D773B0 /* FBShimmeringView.h in Headers */ = {isa = PBXBuildFile; fileRef = 265C80051FC4016000D773B0 /* FBShimmeringView.h */; };
+		265C80601FC436F000D773B0 /* Shimmer.h in Headers */ = {isa = PBXBuildFile; fileRef = 265C80071FC4016000D773B0 /* Shimmer.h */; };
+		265C80611FC436F000D773B0 /* TookanTracker_SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 265C80081FC4016000D773B0 /* TookanTracker_SDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		265C80631FC4378C00D773B0 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FDC1FC4016000D773B0 /* HomeController.swift */; };
+		265C80641FC4378C00D773B0 /* TookanTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FDD1FC4016000D773B0 /* TookanTracker.swift */; };
+		265C80651FC4379400D773B0 /* Auxillary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FE41FC4016000D773B0 /* Auxillary.swift */; };
+		265C80661FC4379400D773B0 /* BackgroundTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FE51FC4016000D773B0 /* BackgroundTaskManager.swift */; };
+		265C80671FC4379400D773B0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FE61FC4016000D773B0 /* Constants.swift */; };
+		265C80681FC4379400D773B0 /* ExtensionClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FE71FC4016000D773B0 /* ExtensionClass.swift */; };
+		265C80691FC4379400D773B0 /* IJReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FE81FC4016000D773B0 /* IJReachability.swift */; };
+		265C806A1FC4379400D773B0 /* LocationTrackerFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FE91FC4016000D773B0 /* LocationTrackerFile.swift */; };
+		265C806B1FC4379400D773B0 /* MqttClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FEA1FC4016000D773B0 /* MqttClass.swift */; };
+		265C806C1FC4379400D773B0 /* NetworkingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FEB1FC4016000D773B0 /* NetworkingHelper.swift */; };
+		265C806D1FC4379400D773B0 /* ServerCallAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FEC1FC4016000D773B0 /* ServerCallAPI.swift */; };
+		265C806E1FC4379F00D773B0 /* TrackerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FF21FC4016000D773B0 /* TrackerModel.swift */; };
+		265C806F1FC4379F00D773B0 /* CocoaMQTT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FF41FC4016000D773B0 /* CocoaMQTT.swift */; };
+		265C80701FC4379F00D773B0 /* CocoaMQTTFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FF51FC4016000D773B0 /* CocoaMQTTFrame.swift */; };
+		265C80711FC4379F00D773B0 /* CocoaMQTTMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FF61FC4016000D773B0 /* CocoaMQTTMessage.swift */; };
+		265C80721FC437B800D773B0 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FE01FC4016000D773B0 /* GCDAsyncSocket.m */; };
+		265C80731FC437B800D773B0 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FE21FC4016000D773B0 /* GCDAsyncUdpSocket.m */; };
+		265C80741FC437B800D773B0 /* MSWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FFA1FC4016000D773B0 /* MSWeakTimer.m */; };
+		265C80751FC437B800D773B0 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FFD1FC4016000D773B0 /* AsyncSocket.m */; };
+		265C80761FC437B800D773B0 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C7FFF1FC4016000D773B0 /* AsyncUdpSocket.m */; };
+		265C80771FC437B800D773B0 /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C800A1FC4016000D773B0 /* BottomButtonView.swift */; };
+		265C80781FC437B800D773B0 /* SessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C800C1FC4016000D773B0 /* SessionDetailView.swift */; };
+		265C80791FC437B800D773B0 /* SliderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C800E1FC4016000D773B0 /* SliderButton.swift */; };
+		265C807A1FC437B800D773B0 /* FBShimmeringLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C80041FC4016000D773B0 /* FBShimmeringLayer.m */; };
+		265C807B1FC437B800D773B0 /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C80061FC4016000D773B0 /* FBShimmeringView.m */; };
+		265C807D1FC437ED00D773B0 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 265C807C1FC437E800D773B0 /* GoogleMaps.bundle */; };
+		265C807E1FC4381C00D773B0 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C7FD41FC4016000D773B0 /* CocoaAsyncSocket.framework */; };
+		265C807F1FC4381F00D773B0 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C7FD51FC4016000D773B0 /* GoogleMaps.framework */; };
+		265C80801FC4382200D773B0 /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C7FD61FC4016000D773B0 /* GoogleMapsBase.framework */; };
+		265C80811FC4382500D773B0 /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C7FD71FC4016000D773B0 /* GoogleMapsCore.framework */; };
+		265C80821FC4382800D773B0 /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C7FD81FC4016000D773B0 /* GooglePlaces.framework */; };
+		265C80831FC4382A00D773B0 /* MSWeakTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C7FD91FC4016000D773B0 /* MSWeakTimer.framework */; };
+		267C127A1FC54F47003F844D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 267C12791FC54257003F844D /* Assets.xcassets */; };
+		267F82D31FC3FFAB005B5A1B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267F82D21FC3FFAB005B5A1B /* Accelerate.framework */; };
+		267F82D51FC3FFB6005B5A1B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267F82D41FC3FFB6005B5A1B /* CoreData.framework */; };
+		267F82D71FC3FFC0005B5A1B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267F82D61FC3FFC0005B5A1B /* CoreGraphics.framework */; };
+		267F82D91FC3FFCB005B5A1B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267F82D81FC3FFCB005B5A1B /* CoreLocation.framework */; };
+		267F82DB1FC3FFD1005B5A1B /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267F82DA1FC3FFD1005B5A1B /* CoreTelephony.framework */; };
+		267F82DD1FC3FFD6005B5A1B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267F82DC1FC3FFD6005B5A1B /* CoreText.framework */; };
+		267F82E21FC4001A005B5A1B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 267F82DE1FC4001A005B5A1B /* libz.tbd */; };
+		267F82E31FC4001A005B5A1B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 267F82DF1FC4001A005B5A1B /* libc++.tbd */; };
+		267F82E41FC4001A005B5A1B /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267F82E01FC4001A005B5A1B /* GLKit.framework */; };
+		267F82E51FC4001A005B5A1B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267F82E11FC4001A005B5A1B /* ImageIO.framework */; };
+		267F82EA1FC40039005B5A1B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267F82E61FC40039005B5A1B /* UIKit.framework */; };
+		267F82EB1FC40039005B5A1B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267F82E71FC40039005B5A1B /* QuartzCore.framework */; };
+		267F82EC1FC40039005B5A1B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267F82E81FC40039005B5A1B /* OpenGLES.framework */; };
+		267F82ED1FC40039005B5A1B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267F82E91FC40039005B5A1B /* SystemConfiguration.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		265C7FD41FC4016000D773B0 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		265C7FD51FC4016000D773B0 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		265C7FD61FC4016000D773B0 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
+		265C7FD71FC4016000D773B0 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsCore.framework; sourceTree = "<group>"; };
+		265C7FD81FC4016000D773B0 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlaces.framework; sourceTree = "<group>"; };
+		265C7FD91FC4016000D773B0 /* MSWeakTimer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MSWeakTimer.framework; sourceTree = "<group>"; };
+		265C7FDC1FC4016000D773B0 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		265C7FDD1FC4016000D773B0 /* TookanTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TookanTracker.swift; sourceTree = "<group>"; };
+		265C7FDF1FC4016000D773B0 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		265C7FE01FC4016000D773B0 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		265C7FE11FC4016000D773B0 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		265C7FE21FC4016000D773B0 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		265C7FE41FC4016000D773B0 /* Auxillary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auxillary.swift; sourceTree = "<group>"; };
+		265C7FE51FC4016000D773B0 /* BackgroundTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTaskManager.swift; sourceTree = "<group>"; };
+		265C7FE61FC4016000D773B0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		265C7FE71FC4016000D773B0 /* ExtensionClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionClass.swift; sourceTree = "<group>"; };
+		265C7FE81FC4016000D773B0 /* IJReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IJReachability.swift; sourceTree = "<group>"; };
+		265C7FE91FC4016000D773B0 /* LocationTrackerFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTrackerFile.swift; sourceTree = "<group>"; };
+		265C7FEA1FC4016000D773B0 /* MqttClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MqttClass.swift; sourceTree = "<group>"; };
+		265C7FEB1FC4016000D773B0 /* NetworkingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHelper.swift; sourceTree = "<group>"; };
+		265C7FEC1FC4016000D773B0 /* ServerCallAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCallAPI.swift; sourceTree = "<group>"; };
+		265C7FED1FC4016000D773B0 /* style.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
+		265C7FEE1FC4016000D773B0 /* Tracker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tracker-Bridging-Header.h"; sourceTree = "<group>"; };
+		265C7FEF1FC4016000D773B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		265C7FF01FC4016000D773B0 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		265C7FF21FC4016000D773B0 /* TrackerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerModel.swift; sourceTree = "<group>"; };
+		265C7FF41FC4016000D773B0 /* CocoaMQTT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaMQTT.swift; sourceTree = "<group>"; };
+		265C7FF51FC4016000D773B0 /* CocoaMQTTFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaMQTTFrame.swift; sourceTree = "<group>"; };
+		265C7FF61FC4016000D773B0 /* CocoaMQTTMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaMQTTMessage.swift; sourceTree = "<group>"; };
+		265C7FF81FC4016000D773B0 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		265C7FF91FC4016000D773B0 /* MSWeakTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSWeakTimer.h; sourceTree = "<group>"; };
+		265C7FFA1FC4016000D773B0 /* MSWeakTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSWeakTimer.m; sourceTree = "<group>"; };
+		265C7FFC1FC4016000D773B0 /* AsyncSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		265C7FFD1FC4016000D773B0 /* AsyncSocket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		265C7FFE1FC4016000D773B0 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		265C7FFF1FC4016000D773B0 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		265C80011FC4016000D773B0 /* FBShimmering-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBShimmering-Prefix.pch"; sourceTree = "<group>"; };
+		265C80021FC4016000D773B0 /* FBShimmering.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBShimmering.h; sourceTree = "<group>"; };
+		265C80031FC4016000D773B0 /* FBShimmeringLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBShimmeringLayer.h; sourceTree = "<group>"; };
+		265C80041FC4016000D773B0 /* FBShimmeringLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBShimmeringLayer.m; sourceTree = "<group>"; };
+		265C80051FC4016000D773B0 /* FBShimmeringView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBShimmeringView.h; sourceTree = "<group>"; };
+		265C80061FC4016000D773B0 /* FBShimmeringView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBShimmeringView.m; sourceTree = "<group>"; };
+		265C80071FC4016000D773B0 /* Shimmer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shimmer.h; sourceTree = "<group>"; };
+		265C80081FC4016000D773B0 /* TookanTracker_SDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TookanTracker_SDK.h; sourceTree = "<group>"; };
+		265C800A1FC4016000D773B0 /* BottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
+		265C800B1FC4016000D773B0 /* BottomButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomButtonView.xib; sourceTree = "<group>"; };
+		265C800C1FC4016000D773B0 /* SessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailView.swift; sourceTree = "<group>"; };
+		265C800D1FC4016000D773B0 /* SessionDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionDetailView.xib; sourceTree = "<group>"; };
+		265C800E1FC4016000D773B0 /* SliderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderButton.swift; sourceTree = "<group>"; };
+		265C800F1FC4016000D773B0 /* SliderButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderButton.xib; sourceTree = "<group>"; };
+		265C807C1FC437E800D773B0 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		267C12791FC54257003F844D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		267F82D21FC3FFAB005B5A1B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		267F82D41FC3FFB6005B5A1B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		267F82D61FC3FFC0005B5A1B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		267F82D81FC3FFCB005B5A1B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		267F82DA1FC3FFD1005B5A1B /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		267F82DC1FC3FFD6005B5A1B /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		267F82DE1FC4001A005B5A1B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		267F82DF1FC4001A005B5A1B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		267F82E01FC4001A005B5A1B /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		267F82E11FC4001A005B5A1B /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		267F82E61FC40039005B5A1B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		267F82E71FC40039005B5A1B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		267F82E81FC40039005B5A1B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		267F82E91FC40039005B5A1B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		26ECCA6D1FC30118001F5C83 /* TookanTracker_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TookanTracker_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26ECCA691FC30118001F5C83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				267F82EA1FC40039005B5A1B /* UIKit.framework in Frameworks */,
+				267F82EB1FC40039005B5A1B /* QuartzCore.framework in Frameworks */,
+				267F82EC1FC40039005B5A1B /* OpenGLES.framework in Frameworks */,
+				267F82ED1FC40039005B5A1B /* SystemConfiguration.framework in Frameworks */,
+				267F82E21FC4001A005B5A1B /* libz.tbd in Frameworks */,
+				267F82E31FC4001A005B5A1B /* libc++.tbd in Frameworks */,
+				265C80831FC4382A00D773B0 /* MSWeakTimer.framework in Frameworks */,
+				265C80801FC4382200D773B0 /* GoogleMapsBase.framework in Frameworks */,
+				265C80811FC4382500D773B0 /* GoogleMapsCore.framework in Frameworks */,
+				267F82E41FC4001A005B5A1B /* GLKit.framework in Frameworks */,
+				267F82E51FC4001A005B5A1B /* ImageIO.framework in Frameworks */,
+				267F82DD1FC3FFD6005B5A1B /* CoreText.framework in Frameworks */,
+				267F82DB1FC3FFD1005B5A1B /* CoreTelephony.framework in Frameworks */,
+				265C80821FC4382800D773B0 /* GooglePlaces.framework in Frameworks */,
+				267F82D91FC3FFCB005B5A1B /* CoreLocation.framework in Frameworks */,
+				267F82D71FC3FFC0005B5A1B /* CoreGraphics.framework in Frameworks */,
+				265C807E1FC4381C00D773B0 /* CocoaAsyncSocket.framework in Frameworks */,
+				267F82D51FC3FFB6005B5A1B /* CoreData.framework in Frameworks */,
+				265C807F1FC4381F00D773B0 /* GoogleMaps.framework in Frameworks */,
+				267F82D31FC3FFAB005B5A1B /* Accelerate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		265C7FD31FC4016000D773B0 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				265C807C1FC437E800D773B0 /* GoogleMaps.bundle */,
+				265C7FD41FC4016000D773B0 /* CocoaAsyncSocket.framework */,
+				265C7FD51FC4016000D773B0 /* GoogleMaps.framework */,
+				265C7FD61FC4016000D773B0 /* GoogleMapsBase.framework */,
+				265C7FD71FC4016000D773B0 /* GoogleMapsCore.framework */,
+				265C7FD81FC4016000D773B0 /* GooglePlaces.framework */,
+				265C7FD91FC4016000D773B0 /* MSWeakTimer.framework */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		265C7FDA1FC4016000D773B0 /* TookanTracker-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				265C7FDB1FC4016000D773B0 /* Controller */,
+				265C7FDE1FC4016000D773B0 /* GCD */,
+				265C7FE31FC4016000D773B0 /* Helper */,
+				265C7FF11FC4016000D773B0 /* Model */,
+				265C7FF31FC4016000D773B0 /* MQTT */,
+				265C7FF71FC4016000D773B0 /* MSWeakTimer */,
+				265C7FFB1FC4016000D773B0 /* RunLoop */,
+				265C80091FC4016000D773B0 /* Views */,
+				265C80001FC4016000D773B0 /* Shimmer */,
+				265C80081FC4016000D773B0 /* TookanTracker_SDK.h */,
+				267C12791FC54257003F844D /* Assets.xcassets */,
+				265C7FF01FC4016000D773B0 /* Main.storyboard */,
+				265C7FEF1FC4016000D773B0 /* Info.plist */,
+			);
+			path = "TookanTracker-SDK";
+			sourceTree = "<group>";
+		};
+		265C7FDB1FC4016000D773B0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				265C7FDC1FC4016000D773B0 /* HomeController.swift */,
+				265C7FDD1FC4016000D773B0 /* TookanTracker.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		265C7FDE1FC4016000D773B0 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				265C7FDF1FC4016000D773B0 /* GCDAsyncSocket.h */,
+				265C7FE01FC4016000D773B0 /* GCDAsyncSocket.m */,
+				265C7FE11FC4016000D773B0 /* GCDAsyncUdpSocket.h */,
+				265C7FE21FC4016000D773B0 /* GCDAsyncUdpSocket.m */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		265C7FE31FC4016000D773B0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				265C7FE41FC4016000D773B0 /* Auxillary.swift */,
+				265C7FE51FC4016000D773B0 /* BackgroundTaskManager.swift */,
+				265C7FE61FC4016000D773B0 /* Constants.swift */,
+				265C7FE71FC4016000D773B0 /* ExtensionClass.swift */,
+				265C7FE81FC4016000D773B0 /* IJReachability.swift */,
+				265C7FE91FC4016000D773B0 /* LocationTrackerFile.swift */,
+				265C7FEA1FC4016000D773B0 /* MqttClass.swift */,
+				265C7FEB1FC4016000D773B0 /* NetworkingHelper.swift */,
+				265C7FEC1FC4016000D773B0 /* ServerCallAPI.swift */,
+				265C7FED1FC4016000D773B0 /* style.json */,
+				265C7FEE1FC4016000D773B0 /* Tracker-Bridging-Header.h */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		265C7FF11FC4016000D773B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				265C7FF21FC4016000D773B0 /* TrackerModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		265C7FF31FC4016000D773B0 /* MQTT */ = {
+			isa = PBXGroup;
+			children = (
+				265C7FF41FC4016000D773B0 /* CocoaMQTT.swift */,
+				265C7FF51FC4016000D773B0 /* CocoaMQTTFrame.swift */,
+				265C7FF61FC4016000D773B0 /* CocoaMQTTMessage.swift */,
+			);
+			path = MQTT;
+			sourceTree = "<group>";
+		};
+		265C7FF71FC4016000D773B0 /* MSWeakTimer */ = {
+			isa = PBXGroup;
+			children = (
+				265C7FF81FC4016000D773B0 /* LICENSE */,
+				265C7FF91FC4016000D773B0 /* MSWeakTimer.h */,
+				265C7FFA1FC4016000D773B0 /* MSWeakTimer.m */,
+			);
+			path = MSWeakTimer;
+			sourceTree = "<group>";
+		};
+		265C7FFB1FC4016000D773B0 /* RunLoop */ = {
+			isa = PBXGroup;
+			children = (
+				265C7FFC1FC4016000D773B0 /* AsyncSocket.h */,
+				265C7FFD1FC4016000D773B0 /* AsyncSocket.m */,
+				265C7FFE1FC4016000D773B0 /* AsyncUdpSocket.h */,
+				265C7FFF1FC4016000D773B0 /* AsyncUdpSocket.m */,
+			);
+			path = RunLoop;
+			sourceTree = "<group>";
+		};
+		265C80001FC4016000D773B0 /* Shimmer */ = {
+			isa = PBXGroup;
+			children = (
+				265C80011FC4016000D773B0 /* FBShimmering-Prefix.pch */,
+				265C80021FC4016000D773B0 /* FBShimmering.h */,
+				265C80031FC4016000D773B0 /* FBShimmeringLayer.h */,
+				265C80041FC4016000D773B0 /* FBShimmeringLayer.m */,
+				265C80051FC4016000D773B0 /* FBShimmeringView.h */,
+				265C80061FC4016000D773B0 /* FBShimmeringView.m */,
+				265C80071FC4016000D773B0 /* Shimmer.h */,
+			);
+			path = Shimmer;
+			sourceTree = "<group>";
+		};
+		265C80091FC4016000D773B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				265C800A1FC4016000D773B0 /* BottomButtonView.swift */,
+				265C800B1FC4016000D773B0 /* BottomButtonView.xib */,
+				265C800C1FC4016000D773B0 /* SessionDetailView.swift */,
+				265C800D1FC4016000D773B0 /* SessionDetailView.xib */,
+				265C800E1FC4016000D773B0 /* SliderButton.swift */,
+				265C800F1FC4016000D773B0 /* SliderButton.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		26ECCA631FC30118001F5C83 = {
+			isa = PBXGroup;
+			children = (
+				265C7FD31FC4016000D773B0 /* SDK */,
+				265C7FDA1FC4016000D773B0 /* TookanTracker-SDK */,
+				26ECCA6E1FC30118001F5C83 /* Products */,
+				26ECCAF81FC30CE3001F5C83 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		26ECCA6E1FC30118001F5C83 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26ECCA6D1FC30118001F5C83 /* TookanTracker_SDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26ECCAF81FC30CE3001F5C83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				267F82E81FC40039005B5A1B /* OpenGLES.framework */,
+				267F82E71FC40039005B5A1B /* QuartzCore.framework */,
+				267F82E91FC40039005B5A1B /* SystemConfiguration.framework */,
+				267F82E61FC40039005B5A1B /* UIKit.framework */,
+				267F82E01FC4001A005B5A1B /* GLKit.framework */,
+				267F82E11FC4001A005B5A1B /* ImageIO.framework */,
+				267F82DF1FC4001A005B5A1B /* libc++.tbd */,
+				267F82DE1FC4001A005B5A1B /* libz.tbd */,
+				267F82DC1FC3FFD6005B5A1B /* CoreText.framework */,
+				267F82DA1FC3FFD1005B5A1B /* CoreTelephony.framework */,
+				267F82D81FC3FFCB005B5A1B /* CoreLocation.framework */,
+				267F82D61FC3FFC0005B5A1B /* CoreGraphics.framework */,
+				267F82D41FC3FFB6005B5A1B /* CoreData.framework */,
+				267F82D21FC3FFAB005B5A1B /* Accelerate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		26ECCA6A1FC30118001F5C83 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				265C80571FC436F000D773B0 /* GCDAsyncSocket.h in Headers */,
+				265C80581FC436F000D773B0 /* GCDAsyncUdpSocket.h in Headers */,
+				265C80591FC436F000D773B0 /* Tracker-Bridging-Header.h in Headers */,
+				265C805A1FC436F000D773B0 /* MSWeakTimer.h in Headers */,
+				265C805B1FC436F000D773B0 /* AsyncSocket.h in Headers */,
+				265C805C1FC436F000D773B0 /* AsyncUdpSocket.h in Headers */,
+				265C805D1FC436F000D773B0 /* FBShimmering.h in Headers */,
+				265C805E1FC436F000D773B0 /* FBShimmeringLayer.h in Headers */,
+				265C805F1FC436F000D773B0 /* FBShimmeringView.h in Headers */,
+				265C80601FC436F000D773B0 /* Shimmer.h in Headers */,
+				265C80611FC436F000D773B0 /* TookanTracker_SDK.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		26ECCA6C1FC30118001F5C83 /* TookanTracker-SDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26ECCA751FC30118001F5C83 /* Build configuration list for PBXNativeTarget "TookanTracker-SDK" */;
+			buildPhases = (
+				26ECCA681FC30118001F5C83 /* Sources */,
+				26ECCA691FC30118001F5C83 /* Frameworks */,
+				26ECCA6A1FC30118001F5C83 /* Headers */,
+				26ECCA6B1FC30118001F5C83 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TookanTracker-SDK";
+			productName = "TookanTracker-SDK";
+			productReference = 26ECCA6D1FC30118001F5C83 /* TookanTracker_SDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26ECCA641FC30118001F5C83 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "CL-Macmini-110";
+				TargetAttributes = {
+					267C127C1FC58EDB003F844D = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					26ECCA6C1FC30118001F5C83 = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 26ECCA671FC30118001F5C83 /* Build configuration list for PBXProject "TookanTracker-SDK" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 26ECCA631FC30118001F5C83;
+			productRefGroup = 26ECCA6E1FC30118001F5C83 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26ECCA6C1FC30118001F5C83 /* TookanTracker-SDK */,
+				267C127C1FC58EDB003F844D /* TookanTrackerUniversal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26ECCA6B1FC30118001F5C83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				265C807D1FC437ED00D773B0 /* GoogleMaps.bundle in Resources */,
+				265C80531FC436D500D773B0 /* BottomButtonView.xib in Resources */,
+				265C80541FC436D500D773B0 /* SessionDetailView.xib in Resources */,
+				265C80551FC436D500D773B0 /* SliderButton.xib in Resources */,
+				267C127A1FC54F47003F844D /* Assets.xcassets in Resources */,
+				265C80561FC436D500D773B0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		267C12801FC58F62003F844D /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "UNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${PROJECT_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Step 3. Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule\"\nfi\n\n# Step 4. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n\n# Step 5. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}\"\n\n# Step 6. Convenience step to open the project's directory in Finder\nopen \"${PROJECT_DIR}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26ECCA681FC30118001F5C83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				265C80721FC437B800D773B0 /* GCDAsyncSocket.m in Sources */,
+				265C80731FC437B800D773B0 /* GCDAsyncUdpSocket.m in Sources */,
+				265C80741FC437B800D773B0 /* MSWeakTimer.m in Sources */,
+				265C80751FC437B800D773B0 /* AsyncSocket.m in Sources */,
+				265C80761FC437B800D773B0 /* AsyncUdpSocket.m in Sources */,
+				265C80771FC437B800D773B0 /* BottomButtonView.swift in Sources */,
+				265C80781FC437B800D773B0 /* SessionDetailView.swift in Sources */,
+				265C80791FC437B800D773B0 /* SliderButton.swift in Sources */,
+				265C807A1FC437B800D773B0 /* FBShimmeringLayer.m in Sources */,
+				265C807B1FC437B800D773B0 /* FBShimmeringView.m in Sources */,
+				265C806E1FC4379F00D773B0 /* TrackerModel.swift in Sources */,
+				265C806F1FC4379F00D773B0 /* CocoaMQTT.swift in Sources */,
+				265C80701FC4379F00D773B0 /* CocoaMQTTFrame.swift in Sources */,
+				265C80711FC4379F00D773B0 /* CocoaMQTTMessage.swift in Sources */,
+				265C80651FC4379400D773B0 /* Auxillary.swift in Sources */,
+				265C80661FC4379400D773B0 /* BackgroundTaskManager.swift in Sources */,
+				265C80671FC4379400D773B0 /* Constants.swift in Sources */,
+				265C80681FC4379400D773B0 /* ExtensionClass.swift in Sources */,
+				265C80691FC4379400D773B0 /* IJReachability.swift in Sources */,
+				265C806A1FC4379400D773B0 /* LocationTrackerFile.swift in Sources */,
+				265C806B1FC4379400D773B0 /* MqttClass.swift in Sources */,
+				265C806C1FC4379400D773B0 /* NetworkingHelper.swift in Sources */,
+				265C806D1FC4379400D773B0 /* ServerCallAPI.swift in Sources */,
+				265C80631FC4378C00D773B0 /* HomeController.swift in Sources */,
+				265C80641FC4378C00D773B0 /* TookanTracker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		267C127E1FC58EDB003F844D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9BMB7KMY7Q;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/SDK",
+				);
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_STYLE = debugging;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+				USE_HEADERMAP = YES;
+			};
+			name = Debug;
+		};
+		267C127F1FC58EDB003F844D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9BMB7KMY7Q;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/SDK",
+				);
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_STYLE = debugging;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+				USE_HEADERMAP = YES;
+			};
+			name = Release;
+		};
+		26ECCA731FC30118001F5C83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		26ECCA741FC30118001F5C83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		26ECCA761FC30118001F5C83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9BMB7KMY7Q;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/SDK",
+				);
+				INFOPLIST_FILE = "TookanTracker-SDK/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.click-labs.TookanTracker-SDK";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+				USE_HEADERMAP = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
+			};
+			name = Debug;
+		};
+		26ECCA771FC30118001F5C83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9BMB7KMY7Q;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/SDK",
+				);
+				INFOPLIST_FILE = "TookanTracker-SDK/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.click-labs.TookanTracker-SDK";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+				USE_HEADERMAP = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		267C127D1FC58EDB003F844D /* Build configuration list for PBXAggregateTarget "TookanTrackerUniversal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				267C127E1FC58EDB003F844D /* Debug */,
+				267C127F1FC58EDB003F844D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26ECCA671FC30118001F5C83 /* Build configuration list for PBXProject "TookanTracker-SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26ECCA731FC30118001F5C83 /* Debug */,
+				26ECCA741FC30118001F5C83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26ECCA751FC30118001F5C83 /* Build configuration list for PBXNativeTarget "TookanTracker-SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26ECCA761FC30118001F5C83 /* Debug */,
+				26ECCA771FC30118001F5C83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 26ECCA641FC30118001F5C83 /* Project object */;
+}

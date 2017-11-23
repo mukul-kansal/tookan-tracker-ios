@@ -1,0 +1,1061 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "MqttClass"
+provides-nominal:
+- "17TookanTracker_SDK9MqttClassC"
+provides-member:
+- ["17TookanTracker_SDK9MqttClassC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "..<"
+- !private "=="
+- "AssignmentPrecedence"
+- "BooleanLiteralType"
+- !private "CLLocationCoordinate2D"
+- "CastingPrecedence"
+- "CocoaMQTT"
+- "CocoaMQTTConnAck"
+- !private "CocoaMQTTConnState"
+- "CocoaMQTTDelegate"
+- "CocoaMQTTMessage"
+- !private "CocoaMQTTQOS"
+- !private "CocoaMQTTWill"
+- !private "Dictionary"
+- !private "Double"
+- !private "Foundation"
+- !private "IJReachability"
+- "Int"
+- "MqttClass"
+- "NSError"
+- !private "NSNumber"
+- "NSObject"
+- !private "NotificationCenter"
+- !private "OBSERVER"
+- "String"
+- "StringLiteralType"
+- !private "UIApplication"
+- "UInt16"
+- !private "USER_DEFAULT"
+- !private "UnicodeScalarType"
+- !private "UserDefaults"
+- !private "print"
+depends-member:
+- !private ["Sa", "append"]
+- !private ["Sa", "count"]
+- !private ["Sa", "init"]
+- !private ["Sa", "jsonString"]
+- !private ["Sa", "remove"]
+- !private ["Sa", "subscript"]
+- !private ["s23BidirectionalCollectionP", "append"]
+- !private ["s23BidirectionalCollectionP", "count"]
+- ["s23BidirectionalCollectionP", "init"]
+- !private ["s23BidirectionalCollectionP", "jsonObjectArray"]
+- !private ["s23BidirectionalCollectionP", "jsonString"]
+- !private ["s23BidirectionalCollectionP", "remove"]
+- !private ["s23BidirectionalCollectionP", "subscript"]
+- !private ["s19BinaryFloatingPointP", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["SC22CLLocationCoordinate2DV", "init"]
+- !private ["SC22CLLocationCoordinate2DV", "latitude"]
+- !private ["SC22CLLocationCoordinate2DV", "longitude"]
+- !private ["s7CVarArgP", "CLLocationCoordinate2D"]
+- !private ["s7CVarArgP", "CocoaMQTT"]
+- !private ["s7CVarArgP", "CocoaMQTTConnState"]
+- !private ["s7CVarArgP", "CocoaMQTTQOS"]
+- !private ["s7CVarArgP", "CocoaMQTTWill"]
+- !private ["s7CVarArgP", "Double"]
+- !private ["s7CVarArgP", "Foundation"]
+- !private ["s7CVarArgP", "IJReachability"]
+- ["s7CVarArgP", "MqttClass"]
+- !private ["s7CVarArgP", "NotificationCenter"]
+- !private ["s7CVarArgP", "OBSERVER"]
+- !private ["s7CVarArgP", "String"]
+- !private ["s7CVarArgP", "UIApplication"]
+- !private ["s7CVarArgP", "USER_DEFAULT"]
+- !private ["s7CVarArgP", "UserDefaults"]
+- !private ["s7CVarArgP", "_console"]
+- !private ["s7CVarArgP", "append"]
+- !private ["s7CVarArgP", "bool"]
+- !private ["s7CVarArgP", "connState"]
+- !private ["s7CVarArgP", "connect"]
+- !private ["s7CVarArgP", "connectToServer"]
+- !private ["s7CVarArgP", "count"]
+- !private ["s7CVarArgP", "default"]
+- !private ["s7CVarArgP", "delegate"]
+- !private ["s7CVarArgP", "didConnectAck"]
+- !private ["s7CVarArgP", "disconnect"]
+- !private ["s7CVarArgP", "hostAddress"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "isNetworkActivityIndicatorVisible"]
+- !private ["s7CVarArgP", "jsonObjectArray"]
+- !private ["s7CVarArgP", "jsonString"]
+- !private ["s7CVarArgP", "keepAlive"]
+- ["s7CVarArgP", "mqtt"]
+- ["s7CVarArgP", "mqttDidDisconnect"]
+- ["s7CVarArgP", "mqttDidPing"]
+- ["s7CVarArgP", "mqttDidReceivePong"]
+- !private ["s7CVarArgP", "mqttSetting"]
+- !private ["s7CVarArgP", "object"]
+- !private ["s7CVarArgP", "ping"]
+- !private ["s7CVarArgP", "portNumber"]
+- !private ["s7CVarArgP", "post"]
+- !private ["s7CVarArgP", "print"]
+- !private ["s7CVarArgP", "publish"]
+- !private ["s7CVarArgP", "remove"]
+- !private ["s7CVarArgP", "set"]
+- !private ["s7CVarArgP", "setValue"]
+- !private ["s7CVarArgP", "shared"]
+- !private ["s7CVarArgP", "standard"]
+- !private ["s7CVarArgP", "string"]
+- !private ["s7CVarArgP", "subscribe"]
+- !private ["s7CVarArgP", "subscript"]
+- !private ["s7CVarArgP", "synchronize"]
+- !private ["s7CVarArgP", "topic"]
+- !private ["s7CVarArgP", "unsubscribe"]
+- !private ["s7CVarArgP", "value"]
+- !private ["s7CVarArgP", "willMessage"]
+- ["s7CVarArgP", ""]
+- !private ["17TookanTracker_SDK9CocoaMQTTC", "connState"]
+- !private ["17TookanTracker_SDK9CocoaMQTTC", "connect"]
+- !private ["17TookanTracker_SDK9CocoaMQTTC", "deinit"]
+- !private ["17TookanTracker_SDK9CocoaMQTTC", "delegate"]
+- !private ["17TookanTracker_SDK9CocoaMQTTC", "disconnect"]
+- !private ["17TookanTracker_SDK9CocoaMQTTC", "init"]
+- !private ["17TookanTracker_SDK9CocoaMQTTC", "keepAlive"]
+- !private ["17TookanTracker_SDK9CocoaMQTTC", "ping"]
+- !private ["17TookanTracker_SDK9CocoaMQTTC", "publish"]
+- !private ["17TookanTracker_SDK9CocoaMQTTC", "subscribe"]
+- !private ["17TookanTracker_SDK9CocoaMQTTC", "unsubscribe"]
+- !private ["17TookanTracker_SDK9CocoaMQTTC", "willMessage"]
+- !private ["17TookanTracker_SDK15CocoaMQTTClientP", "connState"]
+- !private ["17TookanTracker_SDK15CocoaMQTTClientP", "connect"]
+- !private ["17TookanTracker_SDK15CocoaMQTTClientP", "delegate"]
+- !private ["17TookanTracker_SDK15CocoaMQTTClientP", "disconnect"]
+- !private ["17TookanTracker_SDK15CocoaMQTTClientP", "init"]
+- !private ["17TookanTracker_SDK15CocoaMQTTClientP", "keepAlive"]
+- !private ["17TookanTracker_SDK15CocoaMQTTClientP", "ping"]
+- !private ["17TookanTracker_SDK15CocoaMQTTClientP", "publish"]
+- !private ["17TookanTracker_SDK15CocoaMQTTClientP", "subscribe"]
+- !private ["17TookanTracker_SDK15CocoaMQTTClientP", "unsubscribe"]
+- !private ["17TookanTracker_SDK15CocoaMQTTClientP", "willMessage"]
+- !private ["17TookanTracker_SDK16CocoaMQTTConnAckO", "ACCEPT"]
+- !private ["17TookanTracker_SDK16CocoaMQTTConnAckO", "deinit"]
+- !private ["17TookanTracker_SDK18CocoaMQTTConnStateO", "DISCONNECTED"]
+- !private ["17TookanTracker_SDK18CocoaMQTTConnStateO", "deinit"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "CLLocationCoordinate2D"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "CocoaMQTT"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "CocoaMQTTConnState"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "CocoaMQTTQOS"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "CocoaMQTTWill"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "Double"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "Foundation"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "IJReachability"]
+- ["17TookanTracker_SDK17CocoaMQTTDelegateP", "MqttClass"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "NotificationCenter"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "OBSERVER"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "String"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "UIApplication"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "USER_DEFAULT"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "UserDefaults"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "_console"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "connectToServer"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "didConnectAck"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "hostAddress"]
+- ["17TookanTracker_SDK17CocoaMQTTDelegateP", "init"]
+- ["17TookanTracker_SDK17CocoaMQTTDelegateP", "mqtt"]
+- ["17TookanTracker_SDK17CocoaMQTTDelegateP", "mqttDidDisconnect"]
+- ["17TookanTracker_SDK17CocoaMQTTDelegateP", "mqttDidPing"]
+- ["17TookanTracker_SDK17CocoaMQTTDelegateP", "mqttDidReceivePong"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "mqttSetting"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "portNumber"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "print"]
+- !private ["17TookanTracker_SDK17CocoaMQTTDelegateP", "topic"]
+- ["17TookanTracker_SDK17CocoaMQTTDelegateP", ""]
+- !private ["17TookanTracker_SDK16CocoaMQTTMessageC", "string"]
+- !private ["17TookanTracker_SDK12CocoaMQTTQOSO", "QOS2"]
+- !private ["17TookanTracker_SDK23CocoaMQTTReaderDelegateP", "connState"]
+- !private ["17TookanTracker_SDK23CocoaMQTTReaderDelegateP", "connect"]
+- !private ["17TookanTracker_SDK23CocoaMQTTReaderDelegateP", "delegate"]
+- !private ["17TookanTracker_SDK23CocoaMQTTReaderDelegateP", "disconnect"]
+- !private ["17TookanTracker_SDK23CocoaMQTTReaderDelegateP", "init"]
+- !private ["17TookanTracker_SDK23CocoaMQTTReaderDelegateP", "keepAlive"]
+- !private ["17TookanTracker_SDK23CocoaMQTTReaderDelegateP", "ping"]
+- !private ["17TookanTracker_SDK23CocoaMQTTReaderDelegateP", "publish"]
+- !private ["17TookanTracker_SDK23CocoaMQTTReaderDelegateP", "subscribe"]
+- !private ["17TookanTracker_SDK23CocoaMQTTReaderDelegateP", "unsubscribe"]
+- !private ["17TookanTracker_SDK23CocoaMQTTReaderDelegateP", "willMessage"]
+- !private ["17TookanTracker_SDK13CocoaMQTTWillC", "init"]
+- !private ["s10CollectionP", "append"]
+- !private ["s10CollectionP", "count"]
+- ["s10CollectionP", "init"]
+- !private ["s10CollectionP", "jsonObjectArray"]
+- !private ["s10CollectionP", "jsonString"]
+- !private ["s10CollectionP", "remove"]
+- !private ["s10CollectionP", "subscript"]
+- ["s10ComparableP", "init"]
+- !private ["s10ComparableP", "jsonObjectArray"]
+- !private ["s28CustomDebugStringConvertibleP", "CLLocationCoordinate2D"]
+- !private ["s28CustomDebugStringConvertibleP", "CocoaMQTT"]
+- !private ["s28CustomDebugStringConvertibleP", "CocoaMQTTConnState"]
+- !private ["s28CustomDebugStringConvertibleP", "CocoaMQTTQOS"]
+- !private ["s28CustomDebugStringConvertibleP", "CocoaMQTTWill"]
+- !private ["s28CustomDebugStringConvertibleP", "Double"]
+- !private ["s28CustomDebugStringConvertibleP", "Foundation"]
+- !private ["s28CustomDebugStringConvertibleP", "IJReachability"]
+- ["s28CustomDebugStringConvertibleP", "MqttClass"]
+- !private ["s28CustomDebugStringConvertibleP", "Name"]
+- !private ["s28CustomDebugStringConvertibleP", "NotificationCenter"]
+- !private ["s28CustomDebugStringConvertibleP", "OBSERVER"]
+- !private ["s28CustomDebugStringConvertibleP", "String"]
+- !private ["s28CustomDebugStringConvertibleP", "UIApplication"]
+- !private ["s28CustomDebugStringConvertibleP", "USER_DEFAULT"]
+- !private ["s28CustomDebugStringConvertibleP", "UserDefaults"]
+- !private ["s28CustomDebugStringConvertibleP", "_console"]
+- !private ["s28CustomDebugStringConvertibleP", "append"]
+- !private ["s28CustomDebugStringConvertibleP", "bool"]
+- !private ["s28CustomDebugStringConvertibleP", "connState"]
+- !private ["s28CustomDebugStringConvertibleP", "connect"]
+- !private ["s28CustomDebugStringConvertibleP", "connectToServer"]
+- !private ["s28CustomDebugStringConvertibleP", "count"]
+- !private ["s28CustomDebugStringConvertibleP", "default"]
+- !private ["s28CustomDebugStringConvertibleP", "delegate"]
+- !private ["s28CustomDebugStringConvertibleP", "didConnectAck"]
+- !private ["s28CustomDebugStringConvertibleP", "disconnect"]
+- !private ["s28CustomDebugStringConvertibleP", "hostAddress"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "isNetworkActivityIndicatorVisible"]
+- !private ["s28CustomDebugStringConvertibleP", "jsonObjectArray"]
+- !private ["s28CustomDebugStringConvertibleP", "jsonString"]
+- !private ["s28CustomDebugStringConvertibleP", "keepAlive"]
+- ["s28CustomDebugStringConvertibleP", "mqtt"]
+- ["s28CustomDebugStringConvertibleP", "mqttDidDisconnect"]
+- ["s28CustomDebugStringConvertibleP", "mqttDidPing"]
+- ["s28CustomDebugStringConvertibleP", "mqttDidReceivePong"]
+- !private ["s28CustomDebugStringConvertibleP", "mqttSetting"]
+- !private ["s28CustomDebugStringConvertibleP", "object"]
+- !private ["s28CustomDebugStringConvertibleP", "ping"]
+- !private ["s28CustomDebugStringConvertibleP", "portNumber"]
+- !private ["s28CustomDebugStringConvertibleP", "post"]
+- !private ["s28CustomDebugStringConvertibleP", "print"]
+- !private ["s28CustomDebugStringConvertibleP", "publish"]
+- !private ["s28CustomDebugStringConvertibleP", "remove"]
+- !private ["s28CustomDebugStringConvertibleP", "set"]
+- !private ["s28CustomDebugStringConvertibleP", "setValue"]
+- !private ["s28CustomDebugStringConvertibleP", "shared"]
+- !private ["s28CustomDebugStringConvertibleP", "standard"]
+- !private ["s28CustomDebugStringConvertibleP", "string"]
+- !private ["s28CustomDebugStringConvertibleP", "subscribe"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "synchronize"]
+- !private ["s28CustomDebugStringConvertibleP", "topic"]
+- !private ["s28CustomDebugStringConvertibleP", "unsubscribe"]
+- !private ["s28CustomDebugStringConvertibleP", "value"]
+- !private ["s28CustomDebugStringConvertibleP", "willMessage"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "jsonObjectArray"]
+- !private ["s17CustomReflectableP", "Name"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "append"]
+- !private ["s17CustomReflectableP", "count"]
+- ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "jsonObjectArray"]
+- !private ["s17CustomReflectableP", "jsonString"]
+- !private ["s17CustomReflectableP", "remove"]
+- !private ["s17CustomReflectableP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "CLLocationCoordinate2D"]
+- !private ["s23CustomStringConvertibleP", "CocoaMQTT"]
+- !private ["s23CustomStringConvertibleP", "CocoaMQTTConnState"]
+- !private ["s23CustomStringConvertibleP", "CocoaMQTTQOS"]
+- !private ["s23CustomStringConvertibleP", "CocoaMQTTWill"]
+- !private ["s23CustomStringConvertibleP", "Double"]
+- !private ["s23CustomStringConvertibleP", "Foundation"]
+- !private ["s23CustomStringConvertibleP", "IJReachability"]
+- ["s23CustomStringConvertibleP", "MqttClass"]
+- !private ["s23CustomStringConvertibleP", "Name"]
+- !private ["s23CustomStringConvertibleP", "NotificationCenter"]
+- !private ["s23CustomStringConvertibleP", "OBSERVER"]
+- !private ["s23CustomStringConvertibleP", "String"]
+- !private ["s23CustomStringConvertibleP", "UIApplication"]
+- !private ["s23CustomStringConvertibleP", "USER_DEFAULT"]
+- !private ["s23CustomStringConvertibleP", "UserDefaults"]
+- !private ["s23CustomStringConvertibleP", "_console"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "append"]
+- !private ["s23CustomStringConvertibleP", "bool"]
+- !private ["s23CustomStringConvertibleP", "connState"]
+- !private ["s23CustomStringConvertibleP", "connect"]
+- !private ["s23CustomStringConvertibleP", "connectToServer"]
+- !private ["s23CustomStringConvertibleP", "count"]
+- !private ["s23CustomStringConvertibleP", "default"]
+- !private ["s23CustomStringConvertibleP", "delegate"]
+- !private ["s23CustomStringConvertibleP", "didConnectAck"]
+- !private ["s23CustomStringConvertibleP", "disconnect"]
+- !private ["s23CustomStringConvertibleP", "hostAddress"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "isNetworkActivityIndicatorVisible"]
+- !private ["s23CustomStringConvertibleP", "jsonObjectArray"]
+- !private ["s23CustomStringConvertibleP", "jsonString"]
+- !private ["s23CustomStringConvertibleP", "keepAlive"]
+- ["s23CustomStringConvertibleP", "mqtt"]
+- ["s23CustomStringConvertibleP", "mqttDidDisconnect"]
+- ["s23CustomStringConvertibleP", "mqttDidPing"]
+- ["s23CustomStringConvertibleP", "mqttDidReceivePong"]
+- !private ["s23CustomStringConvertibleP", "mqttSetting"]
+- !private ["s23CustomStringConvertibleP", "object"]
+- !private ["s23CustomStringConvertibleP", "ping"]
+- !private ["s23CustomStringConvertibleP", "portNumber"]
+- !private ["s23CustomStringConvertibleP", "post"]
+- !private ["s23CustomStringConvertibleP", "print"]
+- !private ["s23CustomStringConvertibleP", "publish"]
+- !private ["s23CustomStringConvertibleP", "remove"]
+- !private ["s23CustomStringConvertibleP", "set"]
+- !private ["s23CustomStringConvertibleP", "setValue"]
+- !private ["s23CustomStringConvertibleP", "shared"]
+- !private ["s23CustomStringConvertibleP", "standard"]
+- !private ["s23CustomStringConvertibleP", "string"]
+- !private ["s23CustomStringConvertibleP", "subscribe"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "synchronize"]
+- !private ["s23CustomStringConvertibleP", "topic"]
+- !private ["s23CustomStringConvertibleP", "unsubscribe"]
+- !private ["s23CustomStringConvertibleP", "value"]
+- !private ["s23CustomStringConvertibleP", "willMessage"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "append"]
+- !private ["s9DecodableP", "count"]
+- ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "jsonObjectArray"]
+- !private ["s9DecodableP", "jsonString"]
+- !private ["s9DecodableP", "remove"]
+- !private ["s9DecodableP", "subscript"]
+- !private ["s10DictionaryV", "init"]
+- !private ["s10DictionaryV", "subscript"]
+- !private ["Sd", "init"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "append"]
+- !private ["s9EncodableP", "count"]
+- ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "jsonObjectArray"]
+- !private ["s9EncodableP", "jsonString"]
+- !private ["s9EncodableP", "remove"]
+- !private ["s9EncodableP", "subscript"]
+- !private ["s9EquatableP", "ACCEPT"]
+- !private ["s9EquatableP", "CLLocationCoordinate2D"]
+- !private ["s9EquatableP", "CocoaMQTT"]
+- !private ["s9EquatableP", "CocoaMQTTConnState"]
+- !private ["s9EquatableP", "CocoaMQTTQOS"]
+- !private ["s9EquatableP", "CocoaMQTTWill"]
+- !private ["s9EquatableP", "DISCONNECTED"]
+- !private ["s9EquatableP", "Double"]
+- !private ["s9EquatableP", "Foundation"]
+- !private ["s9EquatableP", "IJReachability"]
+- ["s9EquatableP", "MqttClass"]
+- !private ["s9EquatableP", "Name"]
+- !private ["s9EquatableP", "NotificationCenter"]
+- !private ["s9EquatableP", "OBSERVER"]
+- !private ["s9EquatableP", "QOS2"]
+- !private ["s9EquatableP", "String"]
+- !private ["s9EquatableP", "UIApplication"]
+- !private ["s9EquatableP", "USER_DEFAULT"]
+- !private ["s9EquatableP", "UserDefaults"]
+- !private ["s9EquatableP", "_console"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "bool"]
+- !private ["s9EquatableP", "connState"]
+- !private ["s9EquatableP", "connect"]
+- !private ["s9EquatableP", "connectToServer"]
+- !private ["s9EquatableP", "default"]
+- !private ["s9EquatableP", "delegate"]
+- !private ["s9EquatableP", "didConnectAck"]
+- !private ["s9EquatableP", "disconnect"]
+- !private ["s9EquatableP", "hostAddress"]
+- ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "isNetworkActivityIndicatorVisible"]
+- !private ["s9EquatableP", "jsonObjectArray"]
+- !private ["s9EquatableP", "keepAlive"]
+- ["s9EquatableP", "mqtt"]
+- ["s9EquatableP", "mqttDidDisconnect"]
+- ["s9EquatableP", "mqttDidPing"]
+- ["s9EquatableP", "mqttDidReceivePong"]
+- !private ["s9EquatableP", "mqttSetting"]
+- !private ["s9EquatableP", "object"]
+- !private ["s9EquatableP", "ping"]
+- !private ["s9EquatableP", "portNumber"]
+- !private ["s9EquatableP", "post"]
+- !private ["s9EquatableP", "print"]
+- !private ["s9EquatableP", "publish"]
+- !private ["s9EquatableP", "set"]
+- !private ["s9EquatableP", "setValue"]
+- !private ["s9EquatableP", "shared"]
+- !private ["s9EquatableP", "standard"]
+- !private ["s9EquatableP", "string"]
+- !private ["s9EquatableP", "subscribe"]
+- !private ["s9EquatableP", "synchronize"]
+- !private ["s9EquatableP", "topic"]
+- !private ["s9EquatableP", "unsubscribe"]
+- !private ["s9EquatableP", "value"]
+- !private ["s9EquatableP", "willMessage"]
+- ["s9EquatableP", ""]
+- !private ["s25ExpressibleByArrayLiteralP", "append"]
+- !private ["s25ExpressibleByArrayLiteralP", "count"]
+- !private ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "jsonString"]
+- !private ["s25ExpressibleByArrayLiteralP", "remove"]
+- !private ["s25ExpressibleByArrayLiteralP", "subscript"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "init"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "subscript"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "jsonObjectArray"]
+- !private ["s25ExpressibleByFloatLiteralP", "init"]
+- !private ["s27ExpressibleByIntegerLiteralP", "init"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "jsonObjectArray"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "jsonObjectArray"]
+- !private ["s13FloatingPointP", "init"]
+- !private ["So22GCDAsyncSocketDelegateP", "connState"]
+- !private ["So22GCDAsyncSocketDelegateP", "connect"]
+- !private ["So22GCDAsyncSocketDelegateP", "delegate"]
+- !private ["So22GCDAsyncSocketDelegateP", "disconnect"]
+- !private ["So22GCDAsyncSocketDelegateP", "init"]
+- !private ["So22GCDAsyncSocketDelegateP", "keepAlive"]
+- !private ["So22GCDAsyncSocketDelegateP", "ping"]
+- !private ["So22GCDAsyncSocketDelegateP", "publish"]
+- !private ["So22GCDAsyncSocketDelegateP", "subscribe"]
+- !private ["So22GCDAsyncSocketDelegateP", "unsubscribe"]
+- !private ["So22GCDAsyncSocketDelegateP", "willMessage"]
+- !private ["s8HashableP", "ACCEPT"]
+- !private ["s8HashableP", "CLLocationCoordinate2D"]
+- !private ["s8HashableP", "CocoaMQTT"]
+- !private ["s8HashableP", "CocoaMQTTConnState"]
+- !private ["s8HashableP", "CocoaMQTTQOS"]
+- !private ["s8HashableP", "CocoaMQTTWill"]
+- !private ["s8HashableP", "DISCONNECTED"]
+- !private ["s8HashableP", "Double"]
+- !private ["s8HashableP", "Foundation"]
+- !private ["s8HashableP", "IJReachability"]
+- ["s8HashableP", "MqttClass"]
+- !private ["s8HashableP", "Name"]
+- !private ["s8HashableP", "NotificationCenter"]
+- !private ["s8HashableP", "OBSERVER"]
+- !private ["s8HashableP", "QOS2"]
+- !private ["s8HashableP", "String"]
+- !private ["s8HashableP", "UIApplication"]
+- !private ["s8HashableP", "USER_DEFAULT"]
+- !private ["s8HashableP", "UserDefaults"]
+- !private ["s8HashableP", "_console"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "bool"]
+- !private ["s8HashableP", "connState"]
+- !private ["s8HashableP", "connect"]
+- !private ["s8HashableP", "connectToServer"]
+- !private ["s8HashableP", "default"]
+- !private ["s8HashableP", "delegate"]
+- !private ["s8HashableP", "didConnectAck"]
+- !private ["s8HashableP", "disconnect"]
+- !private ["s8HashableP", "hostAddress"]
+- ["s8HashableP", "init"]
+- !private ["s8HashableP", "isNetworkActivityIndicatorVisible"]
+- !private ["s8HashableP", "jsonObjectArray"]
+- !private ["s8HashableP", "keepAlive"]
+- ["s8HashableP", "mqtt"]
+- ["s8HashableP", "mqttDidDisconnect"]
+- ["s8HashableP", "mqttDidPing"]
+- ["s8HashableP", "mqttDidReceivePong"]
+- !private ["s8HashableP", "mqttSetting"]
+- !private ["s8HashableP", "object"]
+- !private ["s8HashableP", "ping"]
+- !private ["s8HashableP", "portNumber"]
+- !private ["s8HashableP", "post"]
+- !private ["s8HashableP", "print"]
+- !private ["s8HashableP", "publish"]
+- !private ["s8HashableP", "set"]
+- !private ["s8HashableP", "setValue"]
+- !private ["s8HashableP", "shared"]
+- !private ["s8HashableP", "standard"]
+- !private ["s8HashableP", "string"]
+- !private ["s8HashableP", "subscribe"]
+- !private ["s8HashableP", "synchronize"]
+- !private ["s8HashableP", "topic"]
+- !private ["s8HashableP", "unsubscribe"]
+- !private ["s8HashableP", "value"]
+- !private ["s8HashableP", "willMessage"]
+- ["s8HashableP", ""]
+- !private ["17TookanTracker_SDK14IJReachabilityC", "isConnectedToNetwork"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- ["s25LosslessStringConvertibleP", "init"]
+- !private ["s25LosslessStringConvertibleP", "jsonObjectArray"]
+- ["s10MirrorPathP", "init"]
+- !private ["s10MirrorPathP", "jsonObjectArray"]
+- !private ["17TookanTracker_SDK9MqttClassC", "CLLocationCoordinate2D"]
+- ["17TookanTracker_SDK9MqttClassC", "CocoaMQTT"]
+- ["17TookanTracker_SDK9MqttClassC", "CocoaMQTTConnAck"]
+- !private ["17TookanTracker_SDK9MqttClassC", "CocoaMQTTConnState"]
+- ["17TookanTracker_SDK9MqttClassC", "CocoaMQTTMessage"]
+- !private ["17TookanTracker_SDK9MqttClassC", "CocoaMQTTQOS"]
+- !private ["17TookanTracker_SDK9MqttClassC", "CocoaMQTTWill"]
+- !private ["17TookanTracker_SDK9MqttClassC", "Double"]
+- !private ["17TookanTracker_SDK9MqttClassC", "Foundation"]
+- !private ["17TookanTracker_SDK9MqttClassC", "IJReachability"]
+- ["17TookanTracker_SDK9MqttClassC", "Int"]
+- ["17TookanTracker_SDK9MqttClassC", "MqttClass"]
+- ["17TookanTracker_SDK9MqttClassC", "NSError"]
+- !private ["17TookanTracker_SDK9MqttClassC", "NSNumber"]
+- !private ["17TookanTracker_SDK9MqttClassC", "NotificationCenter"]
+- !private ["17TookanTracker_SDK9MqttClassC", "OBSERVER"]
+- ["17TookanTracker_SDK9MqttClassC", "String"]
+- !private ["17TookanTracker_SDK9MqttClassC", "UIApplication"]
+- ["17TookanTracker_SDK9MqttClassC", "UInt16"]
+- !private ["17TookanTracker_SDK9MqttClassC", "USER_DEFAULT"]
+- !private ["17TookanTracker_SDK9MqttClassC", "UserDefaults"]
+- ["17TookanTracker_SDK9MqttClassC", "_console"]
+- ["17TookanTracker_SDK9MqttClassC", "connectToServer"]
+- ["17TookanTracker_SDK9MqttClassC", "deinit"]
+- ["17TookanTracker_SDK9MqttClassC", "didConnectAck"]
+- ["17TookanTracker_SDK9MqttClassC", "disconnect"]
+- ["17TookanTracker_SDK9MqttClassC", "hostAddress"]
+- ["17TookanTracker_SDK9MqttClassC", "init"]
+- ["17TookanTracker_SDK9MqttClassC", "mqtt"]
+- ["17TookanTracker_SDK9MqttClassC", "mqttDidDisconnect"]
+- ["17TookanTracker_SDK9MqttClassC", "mqttDidPing"]
+- ["17TookanTracker_SDK9MqttClassC", "mqttDidReceivePong"]
+- ["17TookanTracker_SDK9MqttClassC", "mqttSetting"]
+- ["17TookanTracker_SDK9MqttClassC", "portNumber"]
+- !private ["17TookanTracker_SDK9MqttClassC", "print"]
+- ["17TookanTracker_SDK9MqttClassC", "sendLocation"]
+- ["17TookanTracker_SDK9MqttClassC", "sharedInstance"]
+- ["17TookanTracker_SDK9MqttClassC", "stopLocation"]
+- ["17TookanTracker_SDK9MqttClassC", "subscribeLocation"]
+- ["17TookanTracker_SDK9MqttClassC", "topic"]
+- ["17TookanTracker_SDK9MqttClassC", "unsubscribeLocation"]
+- !private ["s17MutableCollectionP", "append"]
+- !private ["s17MutableCollectionP", "count"]
+- !private ["s17MutableCollectionP", "init"]
+- !private ["s17MutableCollectionP", "jsonString"]
+- !private ["s17MutableCollectionP", "remove"]
+- !private ["s17MutableCollectionP", "subscript"]
+- ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "jsonObjectArray"]
+- ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "jsonObjectArray"]
+- ["So21NSItemProviderReadingP", "init"]
+- !private ["So21NSItemProviderReadingP", "jsonObjectArray"]
+- ["So21NSItemProviderWritingP", "init"]
+- !private ["So21NSItemProviderWritingP", "jsonObjectArray"]
+- ["So16NSMutableCopyingP", "init"]
+- !private ["So16NSMutableCopyingP", "jsonObjectArray"]
+- !private ["So8NSObjectC", "CLLocationCoordinate2D"]
+- ["So8NSObjectC", "CocoaMQTT"]
+- ["So8NSObjectC", "CocoaMQTTConnAck"]
+- !private ["So8NSObjectC", "CocoaMQTTConnState"]
+- ["So8NSObjectC", "CocoaMQTTMessage"]
+- !private ["So8NSObjectC", "CocoaMQTTQOS"]
+- !private ["So8NSObjectC", "CocoaMQTTWill"]
+- !private ["So8NSObjectC", "Double"]
+- !private ["So8NSObjectC", "Foundation"]
+- !private ["So8NSObjectC", "IJReachability"]
+- ["So8NSObjectC", "Int"]
+- ["So8NSObjectC", "MqttClass"]
+- ["So8NSObjectC", "NSError"]
+- !private ["So8NSObjectC", "NSNumber"]
+- !private ["So8NSObjectC", "NotificationCenter"]
+- !private ["So8NSObjectC", "OBSERVER"]
+- ["So8NSObjectC", "String"]
+- !private ["So8NSObjectC", "UIApplication"]
+- ["So8NSObjectC", "UInt16"]
+- !private ["So8NSObjectC", "USER_DEFAULT"]
+- !private ["So8NSObjectC", "UserDefaults"]
+- ["So8NSObjectC", "_console"]
+- !private ["So8NSObjectC", "bool"]
+- !private ["So8NSObjectC", "connState"]
+- !private ["So8NSObjectC", "connect"]
+- ["So8NSObjectC", "connectToServer"]
+- !private ["So8NSObjectC", "default"]
+- !private ["So8NSObjectC", "delegate"]
+- ["So8NSObjectC", "didConnectAck"]
+- ["So8NSObjectC", "disconnect"]
+- ["So8NSObjectC", "hostAddress"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "isNetworkActivityIndicatorVisible"]
+- !private ["So8NSObjectC", "jsonObjectArray"]
+- !private ["So8NSObjectC", "keepAlive"]
+- ["So8NSObjectC", "mqtt"]
+- ["So8NSObjectC", "mqttDidDisconnect"]
+- ["So8NSObjectC", "mqttDidPing"]
+- ["So8NSObjectC", "mqttDidReceivePong"]
+- ["So8NSObjectC", "mqttSetting"]
+- !private ["So8NSObjectC", "object"]
+- !private ["So8NSObjectC", "ping"]
+- ["So8NSObjectC", "portNumber"]
+- !private ["So8NSObjectC", "post"]
+- !private ["So8NSObjectC", "print"]
+- !private ["So8NSObjectC", "publish"]
+- ["So8NSObjectC", "sendLocation"]
+- !private ["So8NSObjectC", "set"]
+- !private ["So8NSObjectC", "setValue"]
+- !private ["So8NSObjectC", "shared"]
+- ["So8NSObjectC", "sharedInstance"]
+- !private ["So8NSObjectC", "standard"]
+- ["So8NSObjectC", "stopLocation"]
+- !private ["So8NSObjectC", "string"]
+- !private ["So8NSObjectC", "subscribe"]
+- ["So8NSObjectC", "subscribeLocation"]
+- !private ["So8NSObjectC", "synchronize"]
+- ["So8NSObjectC", "topic"]
+- !private ["So8NSObjectC", "unsubscribe"]
+- ["So8NSObjectC", "unsubscribeLocation"]
+- !private ["So8NSObjectC", "value"]
+- !private ["So8NSObjectC", "willMessage"]
+- ["So8NSObjectC", ""]
+- !private ["So16NSObjectProtocolP", "CLLocationCoordinate2D"]
+- !private ["So16NSObjectProtocolP", "CocoaMQTT"]
+- !private ["So16NSObjectProtocolP", "CocoaMQTTConnState"]
+- !private ["So16NSObjectProtocolP", "CocoaMQTTQOS"]
+- !private ["So16NSObjectProtocolP", "CocoaMQTTWill"]
+- !private ["So16NSObjectProtocolP", "Double"]
+- !private ["So16NSObjectProtocolP", "Foundation"]
+- !private ["So16NSObjectProtocolP", "IJReachability"]
+- ["So16NSObjectProtocolP", "MqttClass"]
+- !private ["So16NSObjectProtocolP", "NotificationCenter"]
+- !private ["So16NSObjectProtocolP", "OBSERVER"]
+- !private ["So16NSObjectProtocolP", "String"]
+- !private ["So16NSObjectProtocolP", "UIApplication"]
+- !private ["So16NSObjectProtocolP", "USER_DEFAULT"]
+- !private ["So16NSObjectProtocolP", "UserDefaults"]
+- !private ["So16NSObjectProtocolP", "_console"]
+- !private ["So16NSObjectProtocolP", "bool"]
+- !private ["So16NSObjectProtocolP", "connState"]
+- !private ["So16NSObjectProtocolP", "connect"]
+- !private ["So16NSObjectProtocolP", "connectToServer"]
+- !private ["So16NSObjectProtocolP", "default"]
+- !private ["So16NSObjectProtocolP", "delegate"]
+- !private ["So16NSObjectProtocolP", "didConnectAck"]
+- !private ["So16NSObjectProtocolP", "disconnect"]
+- !private ["So16NSObjectProtocolP", "hostAddress"]
+- ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "isNetworkActivityIndicatorVisible"]
+- !private ["So16NSObjectProtocolP", "jsonObjectArray"]
+- !private ["So16NSObjectProtocolP", "keepAlive"]
+- ["So16NSObjectProtocolP", "mqtt"]
+- ["So16NSObjectProtocolP", "mqttDidDisconnect"]
+- ["So16NSObjectProtocolP", "mqttDidPing"]
+- ["So16NSObjectProtocolP", "mqttDidReceivePong"]
+- !private ["So16NSObjectProtocolP", "mqttSetting"]
+- !private ["So16NSObjectProtocolP", "object"]
+- !private ["So16NSObjectProtocolP", "ping"]
+- !private ["So16NSObjectProtocolP", "portNumber"]
+- !private ["So16NSObjectProtocolP", "post"]
+- !private ["So16NSObjectProtocolP", "print"]
+- !private ["So16NSObjectProtocolP", "publish"]
+- !private ["So16NSObjectProtocolP", "set"]
+- !private ["So16NSObjectProtocolP", "setValue"]
+- !private ["So16NSObjectProtocolP", "shared"]
+- !private ["So16NSObjectProtocolP", "standard"]
+- !private ["So16NSObjectProtocolP", "string"]
+- !private ["So16NSObjectProtocolP", "subscribe"]
+- !private ["So16NSObjectProtocolP", "synchronize"]
+- !private ["So16NSObjectProtocolP", "topic"]
+- !private ["So16NSObjectProtocolP", "unsubscribe"]
+- !private ["So16NSObjectProtocolP", "value"]
+- !private ["So16NSObjectProtocolP", "willMessage"]
+- ["So16NSObjectProtocolP", ""]
+- ["So14NSSecureCodingP", "init"]
+- !private ["So14NSSecureCodingP", "jsonObjectArray"]
+- ["So8NSStringC", "init"]
+- !private ["So8NSStringC", "jsonObjectArray"]
+- !private ["So14NSNotificationC4NameV", "init"]
+- !private ["10Foundation12NotificationV", "Name"]
+- !private ["So18NotificationCenterC", "default"]
+- !private ["So18NotificationCenterC", "post"]
+- !private ["s7NumericP", "init"]
+- !private ["17TookanTracker_SDK8OBSERVERV", "stopTracking"]
+- !private ["17TookanTracker_SDK8OBSERVERV", "updatePath"]
+- !private ["s22RandomAccessCollectionP", "append"]
+- !private ["s22RandomAccessCollectionP", "count"]
+- !private ["s22RandomAccessCollectionP", "init"]
+- !private ["s22RandomAccessCollectionP", "jsonString"]
+- !private ["s22RandomAccessCollectionP", "remove"]
+- !private ["s22RandomAccessCollectionP", "subscript"]
+- !private ["s26RangeReplaceableCollectionP", "append"]
+- !private ["s26RangeReplaceableCollectionP", "count"]
+- ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s26RangeReplaceableCollectionP", "jsonObjectArray"]
+- !private ["s26RangeReplaceableCollectionP", "jsonString"]
+- !private ["s26RangeReplaceableCollectionP", "remove"]
+- !private ["s26RangeReplaceableCollectionP", "subscript"]
+- !private ["s16RawRepresentableP", "ACCEPT"]
+- !private ["s16RawRepresentableP", "DISCONNECTED"]
+- !private ["s16RawRepresentableP", "QOS2"]
+- !private ["s16RawRepresentableP", "init"]
+- !private ["10Foundation20ReferenceConvertibleP", "Name"]
+- !private ["s8SequenceP", "append"]
+- !private ["s8SequenceP", "count"]
+- ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "jsonObjectArray"]
+- !private ["s8SequenceP", "jsonString"]
+- !private ["s8SequenceP", "remove"]
+- !private ["s8SequenceP", "subscript"]
+- !private ["s13SignedNumericP", "init"]
+- !private ["s10StrideableP", "init"]
+- ["SS", "init"]
+- !private ["SS", "jsonObjectArray"]
+- ["s14StringProtocolP", "init"]
+- !private ["s14StringProtocolP", "jsonObjectArray"]
+- ["s16TextOutputStreamP", "init"]
+- !private ["s16TextOutputStreamP", "jsonObjectArray"]
+- ["s20TextOutputStreamableP", "init"]
+- !private ["s20TextOutputStreamableP", "jsonObjectArray"]
+- !private ["So13UIApplicationC", "isNetworkActivityIndicatorVisible"]
+- !private ["So13UIApplicationC", "shared"]
+- !private ["So30UIPasteConfigurationSupportingP", "isNetworkActivityIndicatorVisible"]
+- !private ["So30UIPasteConfigurationSupportingP", "shared"]
+- !private ["So11UIResponderC", "isNetworkActivityIndicatorVisible"]
+- !private ["So11UIResponderC", "shared"]
+- !private ["So30UIResponderStandardEditActionsP", "isNetworkActivityIndicatorVisible"]
+- !private ["So30UIResponderStandardEditActionsP", "shared"]
+- !private ["17TookanTracker_SDK12USER_DEFAULTV", "isHitInProgress"]
+- !private ["17TookanTracker_SDK12USER_DEFAULTV", "locationArray"]
+- !private ["17TookanTracker_SDK12USER_DEFAULTV", "subscribeLocation"]
+- !private ["17TookanTracker_SDK12USER_DEFAULTV", "updatingLocationPathArray"]
+- !private ["So12UserDefaultsC", "bool"]
+- !private ["So12UserDefaultsC", "object"]
+- !private ["So12UserDefaultsC", "set"]
+- !private ["So12UserDefaultsC", "setValue"]
+- !private ["So12UserDefaultsC", "standard"]
+- !private ["So12UserDefaultsC", "synchronize"]
+- !private ["So12UserDefaultsC", "value"]
+- !private ["s14_ArrayProtocolP", "append"]
+- !private ["s14_ArrayProtocolP", "count"]
+- !private ["s14_ArrayProtocolP", "init"]
+- !private ["s14_ArrayProtocolP", "jsonString"]
+- !private ["s14_ArrayProtocolP", "remove"]
+- !private ["s14_ArrayProtocolP", "subscript"]
+- !private ["s23_BidirectionalIndexableP", "append"]
+- !private ["s23_BidirectionalIndexableP", "count"]
+- ["s23_BidirectionalIndexableP", "init"]
+- !private ["s23_BidirectionalIndexableP", "jsonObjectArray"]
+- !private ["s23_BidirectionalIndexableP", "jsonString"]
+- !private ["s23_BidirectionalIndexableP", "remove"]
+- !private ["s23_BidirectionalIndexableP", "subscript"]
+- !private ["s15_CVarArgAlignedP", "init"]
+- !private ["s22_CVarArgPassedAsDoubleP", "init"]
+- !private ["s24_DestructorSafeContainerP", "append"]
+- !private ["s24_DestructorSafeContainerP", "count"]
+- !private ["s24_DestructorSafeContainerP", "init"]
+- !private ["s24_DestructorSafeContainerP", "jsonString"]
+- !private ["s24_DestructorSafeContainerP", "remove"]
+- !private ["s24_DestructorSafeContainerP", "subscript"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "jsonObjectArray"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "init"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "jsonObjectArray"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "jsonObjectArray"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "jsonObjectArray"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "jsonObjectArray"]
+- ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "jsonObjectArray"]
+- !private ["s10_IndexableP", "append"]
+- !private ["s10_IndexableP", "count"]
+- ["s10_IndexableP", "init"]
+- !private ["s10_IndexableP", "jsonObjectArray"]
+- !private ["s10_IndexableP", "jsonString"]
+- !private ["s10_IndexableP", "remove"]
+- !private ["s10_IndexableP", "subscript"]
+- !private ["s14_IndexableBaseP", "append"]
+- !private ["s14_IndexableBaseP", "count"]
+- ["s14_IndexableBaseP", "init"]
+- !private ["s14_IndexableBaseP", "jsonObjectArray"]
+- !private ["s14_IndexableBaseP", "jsonString"]
+- !private ["s14_IndexableBaseP", "remove"]
+- !private ["s14_IndexableBaseP", "subscript"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "CLLocationCoordinate2D"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "CocoaMQTT"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "CocoaMQTTConnState"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "CocoaMQTTQOS"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "CocoaMQTTWill"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Double"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Foundation"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "IJReachability"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "MqttClass"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NotificationCenter"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "OBSERVER"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "String"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UIApplication"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "USER_DEFAULT"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UserDefaults"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "_console"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "bool"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "connState"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "connect"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "connectToServer"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "default"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "didConnectAck"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "disconnect"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "hostAddress"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "isNetworkActivityIndicatorVisible"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "jsonObjectArray"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "keepAlive"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "mqtt"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "mqttDidDisconnect"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "mqttDidPing"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "mqttDidReceivePong"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "mqttSetting"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "object"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "ping"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "portNumber"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "post"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "publish"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "set"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setValue"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "shared"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "standard"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "string"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "subscribe"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "synchronize"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "topic"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "unsubscribe"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "value"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "willMessage"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["s17_MutableIndexableP", "append"]
+- !private ["s17_MutableIndexableP", "count"]
+- !private ["s17_MutableIndexableP", "init"]
+- !private ["s17_MutableIndexableP", "jsonString"]
+- !private ["s17_MutableIndexableP", "remove"]
+- !private ["s17_MutableIndexableP", "subscript"]
+- !private ["s21_ObjectiveCBridgeableP", "Name"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "append"]
+- !private ["s21_ObjectiveCBridgeableP", "count"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "jsonObjectArray"]
+- !private ["s21_ObjectiveCBridgeableP", "jsonString"]
+- !private ["s21_ObjectiveCBridgeableP", "latitude"]
+- !private ["s21_ObjectiveCBridgeableP", "longitude"]
+- !private ["s21_ObjectiveCBridgeableP", "remove"]
+- !private ["s21_ObjectiveCBridgeableP", "subscript"]
+- !private ["s22_RandomAccessIndexableP", "append"]
+- !private ["s22_RandomAccessIndexableP", "count"]
+- !private ["s22_RandomAccessIndexableP", "init"]
+- !private ["s22_RandomAccessIndexableP", "jsonString"]
+- !private ["s22_RandomAccessIndexableP", "remove"]
+- !private ["s22_RandomAccessIndexableP", "subscript"]
+- !private ["s26_RangeReplaceableIndexableP", "append"]
+- !private ["s26_RangeReplaceableIndexableP", "count"]
+- ["s26_RangeReplaceableIndexableP", "init"]
+- !private ["s26_RangeReplaceableIndexableP", "jsonObjectArray"]
+- !private ["s26_RangeReplaceableIndexableP", "jsonString"]
+- !private ["s26_RangeReplaceableIndexableP", "remove"]
+- !private ["s26_RangeReplaceableIndexableP", "subscript"]
+- !private ["s11_StrideableP", "init"]
+- !private ["s20_SwiftNewtypeWrapperP", "init"]
+- ["s16_SwiftStringViewP", "init"]
+- !private ["s16_SwiftStringViewP", "jsonObjectArray"]
+depends-nominal:
+- !private "Sa"
+- "s23BidirectionalCollectionP"
+- !private "s19BinaryFloatingPointP"
+- !private "Sb"
+- !private "SC22CLLocationCoordinate2DV"
+- "s7CVarArgP"
+- !private "17TookanTracker_SDK9CocoaMQTTC"
+- !private "17TookanTracker_SDK15CocoaMQTTClientP"
+- !private "17TookanTracker_SDK16CocoaMQTTConnAckO"
+- !private "17TookanTracker_SDK18CocoaMQTTConnStateO"
+- "17TookanTracker_SDK17CocoaMQTTDelegateP"
+- !private "17TookanTracker_SDK16CocoaMQTTMessageC"
+- !private "17TookanTracker_SDK12CocoaMQTTQOSO"
+- !private "17TookanTracker_SDK23CocoaMQTTReaderDelegateP"
+- !private "17TookanTracker_SDK13CocoaMQTTWillC"
+- "s10CollectionP"
+- "s10ComparableP"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "s9DecodableP"
+- !private "s10DictionaryV"
+- !private "Sd"
+- "s9EncodableP"
+- "s9EquatableP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- !private "s30ExpressibleByDictionaryLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s25ExpressibleByFloatLiteralP"
+- !private "s27ExpressibleByIntegerLiteralP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "s13FloatingPointP"
+- !private "So22GCDAsyncSocketDelegateP"
+- "s8HashableP"
+- !private "17TookanTracker_SDK14IJReachabilityC"
+- "s25LosslessStringConvertibleP"
+- "s10MirrorPathP"
+- "17TookanTracker_SDK9MqttClassC"
+- !private "s17MutableCollectionP"
+- "So8NSCodingP"
+- "So9NSCopyingP"
+- "So21NSItemProviderReadingP"
+- "So21NSItemProviderWritingP"
+- "So16NSMutableCopyingP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- "So14NSSecureCodingP"
+- "So8NSStringC"
+- !private "So14NSNotificationC4NameV"
+- !private "10Foundation12NotificationV"
+- !private "So18NotificationCenterC"
+- !private "s7NumericP"
+- !private "17TookanTracker_SDK8OBSERVERV"
+- !private "s22RandomAccessCollectionP"
+- "s26RangeReplaceableCollectionP"
+- !private "s16RawRepresentableP"
+- !private "10Foundation20ReferenceConvertibleP"
+- "s8SequenceP"
+- !private "s13SignedNumericP"
+- !private "s10StrideableP"
+- "SS"
+- "s14StringProtocolP"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
+- !private "So13UIApplicationC"
+- !private "So30UIPasteConfigurationSupportingP"
+- !private "So11UIResponderC"
+- !private "So30UIResponderStandardEditActionsP"
+- !private "17TookanTracker_SDK12USER_DEFAULTV"
+- !private "So12UserDefaultsC"
+- !private "s14_ArrayProtocolP"
+- "s23_BidirectionalIndexableP"
+- !private "s15_CVarArgAlignedP"
+- !private "s22_CVarArgPassedAsDoubleP"
+- !private "s24_DestructorSafeContainerP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s33_ExpressibleByBuiltinFloatLiteralP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "s33_ExpressibleByStringInterpolationP"
+- "s35_HasCustomAnyHashableRepresentationP"
+- "s10_IndexableP"
+- "s14_IndexableBaseP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s17_MutableIndexableP"
+- "s21_ObjectiveCBridgeableP"
+- !private "s22_RandomAccessIndexableP"
+- "s26_RangeReplaceableIndexableP"
+- !private "s11_StrideableP"
+- !private "s20_SwiftNewtypeWrapperP"
+- "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Dispatch.apinotesc"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/ObjectiveC.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreMedia.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreData.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/simd.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreImage.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/QuartzCore.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Dispatch.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Metal.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Darwin.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreLocation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Foundation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/AVFoundation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreFoundation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreAudio.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreGraphics.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Swift.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/UIKit.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/SwiftOnoneSupport.swiftmodule"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/TookanTracker-SDK/TookanTracker_SDK.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/MSWeakTimer.framework/Headers/MSWeakTimer-umbrella.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPanorama.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPanoramaCamera.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSPlacePhotoMetadata.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSPlaceLikelihood.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSPlace.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSUserAddedPlace.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPanoramaService.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSAutocompleteTableDataSource.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSAutocompleteBoundsMode.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSCircle.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSMapStyle.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPolyline.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMapsBase.framework/Headers/GoogleMapsBase.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSCameraUpdate.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPanoramaCameraUpdate.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSIndoorBuilding.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPath.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSMutablePath.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPanoramaLink.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSIndoorLevel.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPolygon.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSMapView+Animation.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSOrientation.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSProjection.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSAutocompletePrediction.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSCameraPosition.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSGeocoder.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSAutocompleteFetcher.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSMarker.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSAutocompleteViewController.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSAutocompleteResultsViewController.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/MSWeakTimer.framework/Headers/MSWeakTimer.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSAutocompleteFilter.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSCALayer.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPanoramaLayer.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSURLTileLayer.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSTileLayer.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSSyncTileLayer.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSMapLayer.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSMarkerLayer.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMapsBase.framework/Headers/GMSCoordinateBounds.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GooglePlaces.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSServices.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSPlaceTypes.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSUISettings.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSGeometryUtils.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMapsBase.framework/Headers/GMSDeprecationMacros.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMapsBase.framework/Headers/GMSCompatabilityMacros.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSCoordinateBounds+GoogleMaps.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GoogleMaps.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSPlacesErrors.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSAddress.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSPlacesClient.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSAutocompleteMatchFragment.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSAddressComponent.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSPlacePhotoMetadataList.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Headers/GMSPlaceLikelihoodList.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSPanoramaView.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSMapView.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSIndoorDisplay.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSOverlay.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Headers/GMSGroundOverlay.h"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/build/TookanTracker-SDK.build/Debug-iphoneos/TookanTracker-SDK.build/unextended-module.modulemap"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMapsBase.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/MSWeakTimer.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GooglePlaces.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/GoogleMaps.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Documents/github/TookanTracker-SDK/SDK/CocoaAsyncSocket.framework/Modules/module.modulemap"
+interface-hash: "71f8a3cc3dc528c7c2d1935bf7987b62"
