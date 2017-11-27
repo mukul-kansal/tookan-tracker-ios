@@ -1,0 +1,434 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "BackgroundTaskManager"
+provides-nominal:
+- "13TookanTracker21BackgroundTaskManagerC"
+provides-member:
+- ["13TookanTracker21BackgroundTaskManagerC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "..<"
+- !private "=="
+- !private ">"
+- !private "AnyObject"
+- "AssignmentPrecedence"
+- "BackgroundTaskManager"
+- "Bool"
+- !private "BooleanLiteralType"
+- "CastingPrecedence"
+- "LocationTrackerFile"
+- "NSMutableArray"
+- "TernaryPrecedence"
+- !private "UIApplication"
+- "UIBackgroundTaskIdentifier"
+- !private "UIBackgroundTaskInvalid"
+depends-member:
+- !private ["13TookanTracker21BackgroundTaskManagerC", "AnyObject"]
+- ["13TookanTracker21BackgroundTaskManagerC", "BackgroundTaskManager"]
+- ["13TookanTracker21BackgroundTaskManagerC", "Bool"]
+- ["13TookanTracker21BackgroundTaskManagerC", "NSMutableArray"]
+- !private ["13TookanTracker21BackgroundTaskManagerC", "UIApplication"]
+- ["13TookanTracker21BackgroundTaskManagerC", "UIBackgroundTaskIdentifier"]
+- !private ["13TookanTracker21BackgroundTaskManagerC", "UIBackgroundTaskInvalid"]
+- ["13TookanTracker21BackgroundTaskManagerC", "beginNewBackgroundTask"]
+- !private ["13TookanTracker21BackgroundTaskManagerC", "bgTaskIdList"]
+- ["13TookanTracker21BackgroundTaskManagerC", "deinit"]
+- ["13TookanTracker21BackgroundTaskManagerC", "drainBGTaskList"]
+- ["13TookanTracker21BackgroundTaskManagerC", "endAllBackgroundTasks"]
+- ["13TookanTracker21BackgroundTaskManagerC", "endBackgroundTasks"]
+- ["13TookanTracker21BackgroundTaskManagerC", "init"]
+- !private ["13TookanTracker21BackgroundTaskManagerC", "masterTaskId"]
+- !private ["13TookanTracker21BackgroundTaskManagerC", "sharedBGTaskManager"]
+- ["13TookanTracker21BackgroundTaskManagerC", "sharedBackgroundTaskManager"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- ["So25CLLocationManagerDelegateP", "BackgroundTaskManager"]
+- !private ["So25CLLocationManagerDelegateP", "NSMutableArray"]
+- !private ["So25CLLocationManagerDelegateP", "UIApplication"]
+- !private ["So25CLLocationManagerDelegateP", "UIBackgroundTaskInvalid"]
+- !private ["So25CLLocationManagerDelegateP", "bgTaskIdList"]
+- !private ["So25CLLocationManagerDelegateP", "drainBGTaskList"]
+- !private ["So25CLLocationManagerDelegateP", "endBackgroundTasks"]
+- ["So25CLLocationManagerDelegateP", "init"]
+- !private ["So25CLLocationManagerDelegateP", "masterTaskId"]
+- !private ["So25CLLocationManagerDelegateP", "sharedBGTaskManager"]
+- ["So25CLLocationManagerDelegateP", ""]
+- ["s7CVarArgP", "BackgroundTaskManager"]
+- !private ["s7CVarArgP", "NSMutableArray"]
+- !private ["s7CVarArgP", "UIApplication"]
+- !private ["s7CVarArgP", "UIBackgroundTaskInvalid"]
+- !private ["s7CVarArgP", "add"]
+- !private ["s7CVarArgP", "beginBackgroundTask"]
+- !private ["s7CVarArgP", "bgTaskIdList"]
+- !private ["s7CVarArgP", "count"]
+- !private ["s7CVarArgP", "drainBGTaskList"]
+- !private ["s7CVarArgP", "endBackgroundTask"]
+- !private ["s7CVarArgP", "endBackgroundTasks"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "masterTaskId"]
+- !private ["s7CVarArgP", "object"]
+- !private ["s7CVarArgP", "removeObject"]
+- !private ["s7CVarArgP", "responds"]
+- !private ["s7CVarArgP", "shared"]
+- !private ["s7CVarArgP", "sharedBGTaskManager"]
+- ["s7CVarArgP", ""]
+- ["s28CustomDebugStringConvertibleP", "BackgroundTaskManager"]
+- !private ["s28CustomDebugStringConvertibleP", "NSMutableArray"]
+- !private ["s28CustomDebugStringConvertibleP", "UIApplication"]
+- !private ["s28CustomDebugStringConvertibleP", "UIBackgroundTaskInvalid"]
+- !private ["s28CustomDebugStringConvertibleP", "add"]
+- !private ["s28CustomDebugStringConvertibleP", "beginBackgroundTask"]
+- !private ["s28CustomDebugStringConvertibleP", "bgTaskIdList"]
+- !private ["s28CustomDebugStringConvertibleP", "count"]
+- !private ["s28CustomDebugStringConvertibleP", "drainBGTaskList"]
+- !private ["s28CustomDebugStringConvertibleP", "endBackgroundTask"]
+- !private ["s28CustomDebugStringConvertibleP", "endBackgroundTasks"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "masterTaskId"]
+- !private ["s28CustomDebugStringConvertibleP", "object"]
+- !private ["s28CustomDebugStringConvertibleP", "removeObject"]
+- !private ["s28CustomDebugStringConvertibleP", "responds"]
+- !private ["s28CustomDebugStringConvertibleP", "shared"]
+- !private ["s28CustomDebugStringConvertibleP", "sharedBGTaskManager"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "add"]
+- !private ["s17CustomReflectableP", "count"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "object"]
+- !private ["s17CustomReflectableP", "removeObject"]
+- ["s23CustomStringConvertibleP", "BackgroundTaskManager"]
+- !private ["s23CustomStringConvertibleP", "NSMutableArray"]
+- !private ["s23CustomStringConvertibleP", "UIApplication"]
+- !private ["s23CustomStringConvertibleP", "UIBackgroundTaskInvalid"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "add"]
+- !private ["s23CustomStringConvertibleP", "beginBackgroundTask"]
+- !private ["s23CustomStringConvertibleP", "bgTaskIdList"]
+- !private ["s23CustomStringConvertibleP", "count"]
+- !private ["s23CustomStringConvertibleP", "drainBGTaskList"]
+- !private ["s23CustomStringConvertibleP", "endBackgroundTask"]
+- !private ["s23CustomStringConvertibleP", "endBackgroundTasks"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "masterTaskId"]
+- !private ["s23CustomStringConvertibleP", "object"]
+- !private ["s23CustomStringConvertibleP", "removeObject"]
+- !private ["s23CustomStringConvertibleP", "responds"]
+- !private ["s23CustomStringConvertibleP", "shared"]
+- !private ["s23CustomStringConvertibleP", "sharedBGTaskManager"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- ["s9EquatableP", "BackgroundTaskManager"]
+- !private ["s9EquatableP", "NSMutableArray"]
+- !private ["s9EquatableP", "UIApplication"]
+- !private ["s9EquatableP", "UIBackgroundTaskInvalid"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "add"]
+- !private ["s9EquatableP", "beginBackgroundTask"]
+- !private ["s9EquatableP", "bgTaskIdList"]
+- !private ["s9EquatableP", "count"]
+- !private ["s9EquatableP", "drainBGTaskList"]
+- !private ["s9EquatableP", "endBackgroundTask"]
+- !private ["s9EquatableP", "endBackgroundTasks"]
+- ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "masterTaskId"]
+- !private ["s9EquatableP", "object"]
+- !private ["s9EquatableP", "removeObject"]
+- !private ["s9EquatableP", "responds"]
+- !private ["s9EquatableP", "shared"]
+- !private ["s9EquatableP", "sharedBGTaskManager"]
+- ["s9EquatableP", ""]
+- !private ["s25ExpressibleByArrayLiteralP", "add"]
+- !private ["s25ExpressibleByArrayLiteralP", "count"]
+- !private ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "object"]
+- !private ["s25ExpressibleByArrayLiteralP", "removeObject"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- ["s8HashableP", "BackgroundTaskManager"]
+- !private ["s8HashableP", "NSMutableArray"]
+- !private ["s8HashableP", "UIApplication"]
+- !private ["s8HashableP", "UIBackgroundTaskInvalid"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "add"]
+- !private ["s8HashableP", "beginBackgroundTask"]
+- !private ["s8HashableP", "bgTaskIdList"]
+- !private ["s8HashableP", "count"]
+- !private ["s8HashableP", "drainBGTaskList"]
+- !private ["s8HashableP", "endBackgroundTask"]
+- !private ["s8HashableP", "endBackgroundTasks"]
+- ["s8HashableP", "init"]
+- !private ["s8HashableP", "masterTaskId"]
+- !private ["s8HashableP", "object"]
+- !private ["s8HashableP", "removeObject"]
+- !private ["s8HashableP", "responds"]
+- !private ["s8HashableP", "shared"]
+- !private ["s8HashableP", "sharedBGTaskManager"]
+- ["s8HashableP", ""]
+- !private ["13TookanTracker08LocationB4FileC", "AnyObject"]
+- ["13TookanTracker08LocationB4FileC", "BackgroundTaskManager"]
+- ["13TookanTracker08LocationB4FileC", "Bool"]
+- ["13TookanTracker08LocationB4FileC", "NSMutableArray"]
+- !private ["13TookanTracker08LocationB4FileC", "UIApplication"]
+- ["13TookanTracker08LocationB4FileC", "UIBackgroundTaskIdentifier"]
+- !private ["13TookanTracker08LocationB4FileC", "UIBackgroundTaskInvalid"]
+- ["13TookanTracker08LocationB4FileC", "beginNewBackgroundTask"]
+- ["13TookanTracker08LocationB4FileC", "bgTaskIdList"]
+- ["13TookanTracker08LocationB4FileC", "drainBGTaskList"]
+- ["13TookanTracker08LocationB4FileC", "endAllBackgroundTasks"]
+- ["13TookanTracker08LocationB4FileC", "endBackgroundTasks"]
+- ["13TookanTracker08LocationB4FileC", "init"]
+- ["13TookanTracker08LocationB4FileC", "masterTaskId"]
+- ["13TookanTracker08LocationB4FileC", "sharedBGTaskManager"]
+- ["13TookanTracker08LocationB4FileC", "sharedBackgroundTaskManager"]
+- ["13TookanTracker08LocationB4FileC", ""]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["So7NSArrayC", "add"]
+- !private ["So7NSArrayC", "count"]
+- !private ["So7NSArrayC", "init"]
+- !private ["So7NSArrayC", "object"]
+- !private ["So7NSArrayC", "removeObject"]
+- !private ["So8NSCodingP", "add"]
+- !private ["So8NSCodingP", "count"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "object"]
+- !private ["So8NSCodingP", "removeObject"]
+- !private ["So9NSCopyingP", "add"]
+- !private ["So9NSCopyingP", "count"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "object"]
+- !private ["So9NSCopyingP", "removeObject"]
+- !private ["So17NSFastEnumerationP", "add"]
+- !private ["So17NSFastEnumerationP", "count"]
+- !private ["So17NSFastEnumerationP", "init"]
+- !private ["So17NSFastEnumerationP", "object"]
+- !private ["So17NSFastEnumerationP", "removeObject"]
+- !private ["So14NSMutableArrayC", "add"]
+- !private ["So14NSMutableArrayC", "count"]
+- !private ["So14NSMutableArrayC", "init"]
+- !private ["So14NSMutableArrayC", "object"]
+- !private ["So14NSMutableArrayC", "removeObject"]
+- !private ["So16NSMutableCopyingP", "add"]
+- !private ["So16NSMutableCopyingP", "count"]
+- !private ["So16NSMutableCopyingP", "init"]
+- !private ["So16NSMutableCopyingP", "object"]
+- !private ["So16NSMutableCopyingP", "removeObject"]
+- !private ["So8NSObjectC", "AnyObject"]
+- ["So8NSObjectC", "BackgroundTaskManager"]
+- ["So8NSObjectC", "Bool"]
+- ["So8NSObjectC", "NSMutableArray"]
+- !private ["So8NSObjectC", "UIApplication"]
+- ["So8NSObjectC", "UIBackgroundTaskIdentifier"]
+- !private ["So8NSObjectC", "UIBackgroundTaskInvalid"]
+- !private ["So8NSObjectC", "add"]
+- !private ["So8NSObjectC", "beginBackgroundTask"]
+- ["So8NSObjectC", "beginNewBackgroundTask"]
+- ["So8NSObjectC", "bgTaskIdList"]
+- !private ["So8NSObjectC", "count"]
+- ["So8NSObjectC", "drainBGTaskList"]
+- ["So8NSObjectC", "endAllBackgroundTasks"]
+- !private ["So8NSObjectC", "endBackgroundTask"]
+- ["So8NSObjectC", "endBackgroundTasks"]
+- ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "masterTaskId"]
+- !private ["So8NSObjectC", "object"]
+- !private ["So8NSObjectC", "removeObject"]
+- !private ["So8NSObjectC", "responds"]
+- !private ["So8NSObjectC", "shared"]
+- ["So8NSObjectC", "sharedBGTaskManager"]
+- ["So8NSObjectC", "sharedBackgroundTaskManager"]
+- ["So16NSObjectProtocolP", "BackgroundTaskManager"]
+- !private ["So16NSObjectProtocolP", "NSMutableArray"]
+- !private ["So16NSObjectProtocolP", "UIApplication"]
+- !private ["So16NSObjectProtocolP", "UIBackgroundTaskInvalid"]
+- !private ["So16NSObjectProtocolP", "add"]
+- !private ["So16NSObjectProtocolP", "beginBackgroundTask"]
+- !private ["So16NSObjectProtocolP", "bgTaskIdList"]
+- !private ["So16NSObjectProtocolP", "count"]
+- !private ["So16NSObjectProtocolP", "drainBGTaskList"]
+- !private ["So16NSObjectProtocolP", "endBackgroundTask"]
+- !private ["So16NSObjectProtocolP", "endBackgroundTasks"]
+- ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "masterTaskId"]
+- !private ["So16NSObjectProtocolP", "object"]
+- !private ["So16NSObjectProtocolP", "removeObject"]
+- !private ["So16NSObjectProtocolP", "responds"]
+- !private ["So16NSObjectProtocolP", "shared"]
+- !private ["So16NSObjectProtocolP", "sharedBGTaskManager"]
+- ["So16NSObjectProtocolP", ""]
+- !private ["So14NSSecureCodingP", "add"]
+- !private ["So14NSSecureCodingP", "count"]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So14NSSecureCodingP", "object"]
+- !private ["So14NSSecureCodingP", "removeObject"]
+- !private ["s8SequenceP", "add"]
+- !private ["s8SequenceP", "count"]
+- !private ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "object"]
+- !private ["s8SequenceP", "removeObject"]
+- !private ["So13UIApplicationC", "beginBackgroundTask"]
+- !private ["So13UIApplicationC", "endBackgroundTask"]
+- !private ["So13UIApplicationC", "responds"]
+- !private ["So13UIApplicationC", "shared"]
+- !private ["So30UIPasteConfigurationSupportingP", "beginBackgroundTask"]
+- !private ["So30UIPasteConfigurationSupportingP", "endBackgroundTask"]
+- !private ["So30UIPasteConfigurationSupportingP", "responds"]
+- !private ["So30UIPasteConfigurationSupportingP", "shared"]
+- !private ["So11UIResponderC", "beginBackgroundTask"]
+- !private ["So11UIResponderC", "endBackgroundTask"]
+- !private ["So11UIResponderC", "responds"]
+- !private ["So11UIResponderC", "shared"]
+- !private ["So30UIResponderStandardEditActionsP", "beginBackgroundTask"]
+- !private ["So30UIResponderStandardEditActionsP", "endBackgroundTask"]
+- !private ["So30UIResponderStandardEditActionsP", "responds"]
+- !private ["So30UIResponderStandardEditActionsP", "shared"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "BackgroundTaskManager"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSMutableArray"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UIApplication"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UIBackgroundTaskInvalid"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "add"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "beginBackgroundTask"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "bgTaskIdList"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "count"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "drainBGTaskList"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "endBackgroundTask"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "endBackgroundTasks"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "masterTaskId"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "object"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "removeObject"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "responds"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "shared"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "sharedBGTaskManager"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+depends-nominal:
+- "13TookanTracker21BackgroundTaskManagerC"
+- !private "Sb"
+- "So25CLLocationManagerDelegateP"
+- "s7CVarArgP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "s9EncodableP"
+- "s9EquatableP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- "s8HashableP"
+- "13TookanTracker08LocationB4FileC"
+- !private "s25LosslessStringConvertibleP"
+- !private "So7NSArrayC"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So17NSFastEnumerationP"
+- !private "So14NSMutableArrayC"
+- !private "So16NSMutableCopyingP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- !private "So14NSSecureCodingP"
+- !private "s8SequenceP"
+- !private "So13UIApplicationC"
+- !private "So30UIPasteConfigurationSupportingP"
+- !private "So11UIResponderC"
+- !private "So30UIResponderStandardEditActionsP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+- !private "intValue"
+depends-external:
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Dispatch.apinotesc"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/ObjectiveC.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreMedia.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreData.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/simd.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreImage.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/QuartzCore.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Dispatch.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Metal.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Darwin.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreLocation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Foundation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/AVFoundation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreFoundation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreAudio.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreGraphics.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Swift.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/UIKit.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/SwiftOnoneSupport.swiftmodule"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanorama.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaCamera.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacePhotoMetadata.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceLikelihood.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlace.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSUserAddedPlace.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaService.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteTableDataSource.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteBoundsMode.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCircle.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapStyle.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPolyline.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GoogleMapsBase.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCameraUpdate.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaCameraUpdate.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorBuilding.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPath.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMutablePath.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaLink.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorLevel.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPolygon.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapView+Animation.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSOrientation.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSProjection.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompletePrediction.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCameraPosition.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGeocoder.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteFetcher.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/TookanTracker.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMarker.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteViewController.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteResultsViewController.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteFilter.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCALayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaLayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSURLTileLayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSTileLayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSSyncTileLayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapLayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMarkerLayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSCoordinateBounds.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GooglePlaces.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSServices.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceTypes.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSUISettings.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGeometryUtils.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSDeprecationMacros.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSCompatabilityMacros.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCoordinateBounds+GoogleMaps.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GoogleMaps.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacesErrors.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSAddress.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacesClient.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteMatchFragment.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAddressComponent.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacePhotoMetadataList.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceLikelihoodList.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaView.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapView.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorDisplay.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSOverlay.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGroundOverlay.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/build/TookanTracker.build/Debug-iphoneos/TookanTracker.build/unextended-module.modulemap"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Modules/module.modulemap"
+interface-hash: "0d5a4fe7e52ad0e31dd43831899396fb"

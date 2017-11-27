@@ -1,0 +1,415 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "Constants"
+- "SERVER_PORT"
+- "APIKeyForGoogleMaps"
+- "globalAPIKey"
+- "globalUserId"
+- "frameworkBundle"
+- "getCurrentLocation"
+- "destinationMarker"
+- "SERVER"
+- "USER_JOB_STATUS"
+- "USER_DEFAULT"
+- "OBSERVER"
+- "STATUS_CODES"
+- "SHARE_MESSAGE"
+- "ALERT_MESSAGE"
+- "StoryBoard"
+- "STORYBOARD_NAME"
+- "STORYBOARD_ID"
+provides-nominal:
+- "13TookanTracker9ConstantsC"
+- "13TookanTracker6SERVERV"
+- "13TookanTracker15USER_JOB_STATUSV"
+- "13TookanTracker12USER_DEFAULTV"
+- "13TookanTracker8OBSERVERV"
+- "13TookanTracker12STATUS_CODESV"
+- "13TookanTracker13SHARE_MESSAGEV"
+- "13TookanTracker13ALERT_MESSAGEV"
+- "13TookanTracker10StoryBoardO"
+- "13TookanTracker15STORYBOARD_NAMEV"
+- "13TookanTracker13STORYBOARD_IDV"
+provides-member:
+- ["13TookanTracker9ConstantsC", ""]
+- ["13TookanTracker6SERVERV", ""]
+- ["13TookanTracker15USER_JOB_STATUSV", ""]
+- ["13TookanTracker12USER_DEFAULTV", ""]
+- ["13TookanTracker8OBSERVERV", ""]
+- ["13TookanTracker12STATUS_CODESV", ""]
+- ["13TookanTracker13SHARE_MESSAGEV", ""]
+- ["13TookanTracker13ALERT_MESSAGEV", ""]
+- ["13TookanTracker10StoryBoardO", ""]
+- ["13TookanTracker15STORYBOARD_NAMEV", ""]
+- ["13TookanTracker13STORYBOARD_IDV", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "=="
+- "ALERT_MESSAGE"
+- "APIKeyForGoogleMaps"
+- "Bundle"
+- "Constants"
+- "FloatLiteralType"
+- "IntegerLiteralType"
+- "NSObject"
+- "OBSERVER"
+- "SERVER"
+- "SERVER_PORT"
+- "SHARE_MESSAGE"
+- "STATUS_CODES"
+- "STORYBOARD_ID"
+- "STORYBOARD_NAME"
+- "StoryBoard"
+- "String"
+- "StringLiteralType"
+- "UIImage"
+- "USER_DEFAULT"
+- "USER_JOB_STATUS"
+- "destinationMarker"
+- "frameworkBundle"
+- "getCurrentLocation"
+- "globalAPIKey"
+- "globalUserId"
+- !private "~="
+depends-member:
+- ["13TookanTracker13ALERT_MESSAGEV", "ALREADY_SHARING_LOCATION"]
+- ["13TookanTracker13ALERT_MESSAGEV", "ALREADY_TRACKING_FOR_TRACKING"]
+- ["13TookanTracker13ALERT_MESSAGEV", "ALREADY_TRACKING_LOCATION"]
+- ["13TookanTracker13ALERT_MESSAGEV", "OWN_REQUEST_LINK"]
+- ["13TookanTracker13ALERT_MESSAGEV", "SHARE_LOCATION"]
+- ["13TookanTracker13ALERT_MESSAGEV", "STOP_SHARING"]
+- ["13TookanTracker13ALERT_MESSAGEV", "STOP_TRACKING"]
+- ["13TookanTracker13ALERT_MESSAGEV", "TRACKING_PUSH_ALERT"]
+- ["13TookanTracker13ALERT_MESSAGEV", "init"]
+- ["s23BidirectionalCollectionP", "init"]
+- !private ["s13BinaryIntegerP", "hashValue"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- ["So6BundleC", "init"]
+- !private ["s7CVarArgP", "hashValue"]
+- ["s7CVarArgP", "init"]
+- ["s7CVarArgP", ""]
+- ["s10CollectionP", "init"]
+- !private ["s10ComparableP", "hashValue"]
+- ["s10ComparableP", "init"]
+- ["13TookanTracker9ConstantsC", "deinit"]
+- ["13TookanTracker9ConstantsC", "init"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "hashValue"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "hashValue"]
+- ["s17CustomReflectableP", "init"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "hashValue"]
+- ["s23CustomStringConvertibleP", "init"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "hashValue"]
+- ["s9DecodableP", "init"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "hashValue"]
+- ["s9EncodableP", "init"]
+- ["s9EquatableP", "RawValue"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- ["s9EquatableP", "hashValue"]
+- ["s9EquatableP", "init"]
+- ["s9EquatableP", "main"]
+- ["s9EquatableP", "rawValue"]
+- ["s9EquatableP", ""]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s27ExpressibleByIntegerLiteralP", "hashValue"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s17FixedWidthIntegerP", "hashValue"]
+- ["s8HashableP", "RawValue"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- ["s8HashableP", "hashValue"]
+- ["s8HashableP", "init"]
+- ["s8HashableP", "main"]
+- ["s8HashableP", "rawValue"]
+- ["s8HashableP", ""]
+- !private ["Si", "hashValue"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s25LosslessStringConvertibleP", "hashValue"]
+- ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "hashValue"]
+- ["s10MirrorPathP", "init"]
+- ["So8NSCodingP", "init"]
+- ["So9NSCopyingP", "init"]
+- ["So21NSItemProviderReadingP", "init"]
+- ["So21NSItemProviderWritingP", "init"]
+- ["So16NSMutableCopyingP", "init"]
+- ["So8NSObjectC", "init"]
+- ["So8NSObjectC", ""]
+- ["So16NSObjectProtocolP", "init"]
+- ["So16NSObjectProtocolP", ""]
+- ["So14NSSecureCodingP", "init"]
+- ["So8NSStringC", "init"]
+- !private ["s7NumericP", "hashValue"]
+- ["13TookanTracker8OBSERVERV", "init"]
+- ["13TookanTracker8OBSERVERV", "requestIdURL"]
+- ["13TookanTracker8OBSERVERV", "sessionIdPush"]
+- ["13TookanTracker8OBSERVERV", "sessionIdURL"]
+- ["13TookanTracker8OBSERVERV", "stopTracking"]
+- ["13TookanTracker8OBSERVERV", "updatePath"]
+- ["s26RangeReplaceableCollectionP", "init"]
+- ["s16RawRepresentableP", "RawValue"]
+- ["s16RawRepresentableP", "hashValue"]
+- ["s16RawRepresentableP", "init"]
+- ["s16RawRepresentableP", "main"]
+- ["s16RawRepresentableP", "rawValue"]
+- ["s16RawRepresentableP", ""]
+- ["13TookanTracker6SERVERV", "dev"]
+- ["13TookanTracker6SERVERV", "init"]
+- ["13TookanTracker6SERVERV", "live"]
+- ["13TookanTracker6SERVERV", "test"]
+- ["13TookanTracker13SHARE_MESSAGEV", "REQUEST_MESSAGE"]
+- ["13TookanTracker13SHARE_MESSAGEV", "SHARE_LOCATION_MESSAGE"]
+- ["13TookanTracker13SHARE_MESSAGEV", "init"]
+- ["13TookanTracker12STATUS_CODESV", "BAD_REQUEST"]
+- ["13TookanTracker12STATUS_CODESV", "DELETED_TASK"]
+- ["13TookanTracker12STATUS_CODESV", "ERROR_IN_EXECUTION"]
+- ["13TookanTracker12STATUS_CODESV", "INVALID_ACCESS_TOKEN"]
+- ["13TookanTracker12STATUS_CODESV", "NOT_FOUND_MESSAGE"]
+- ["13TookanTracker12STATUS_CODESV", "NO_INTERNET_CONNECTION"]
+- ["13TookanTracker12STATUS_CODESV", "PICKUP_TASK"]
+- ["13TookanTracker12STATUS_CODESV", "SERVER_NOT_RESPONDING"]
+- ["13TookanTracker12STATUS_CODESV", "SHOW_DATA"]
+- ["13TookanTracker12STATUS_CODESV", "SHOW_ERROR_MESSAGE"]
+- ["13TookanTracker12STATUS_CODESV", "SHOW_MESSAGE"]
+- ["13TookanTracker12STATUS_CODESV", "SLOW_INTERNET_CONNECTION"]
+- ["13TookanTracker12STATUS_CODESV", "SYNC_FAILED_MESSAGE"]
+- ["13TookanTracker12STATUS_CODESV", "UNAUTHORIZED_ACCESS"]
+- ["13TookanTracker12STATUS_CODESV", "init"]
+- ["13TookanTracker13STORYBOARD_IDV", "home"]
+- ["13TookanTracker13STORYBOARD_IDV", "init"]
+- ["13TookanTracker15STORYBOARD_NAMEV", "StoryBoard"]
+- ["13TookanTracker15STORYBOARD_NAMEV", "init"]
+- ["13TookanTracker15STORYBOARD_NAMEV", "main"]
+- ["s8SequenceP", "init"]
+- !private ["s13SignedIntegerP", "hashValue"]
+- !private ["s13SignedNumericP", "hashValue"]
+- ["13TookanTracker10StoryBoardO", "RawValue"]
+- ["13TookanTracker10StoryBoardO", "deinit"]
+- ["13TookanTracker10StoryBoardO", "hashValue"]
+- ["13TookanTracker10StoryBoardO", "init"]
+- ["13TookanTracker10StoryBoardO", "main"]
+- ["13TookanTracker10StoryBoardO", "rawValue"]
+- !private ["s10StrideableP", "hashValue"]
+- ["SS", "init"]
+- ["s14StringProtocolP", "init"]
+- ["s16TextOutputStreamP", "init"]
+- ["s20TextOutputStreamableP", "init"]
+- ["So29UIAccessibilityIdentificationP", "init"]
+- ["So7UIImageC", "init"]
+- ["So39UIItemProviderPresentationSizeProvidingP", "init"]
+- ["13TookanTracker12USER_DEFAULTV", "applicationMode"]
+- ["13TookanTracker12USER_DEFAULTV", "deviceToken"]
+- ["13TookanTracker12USER_DEFAULTV", "init"]
+- ["13TookanTracker12USER_DEFAULTV", "isHitInProgress"]
+- ["13TookanTracker12USER_DEFAULTV", "isLocationTrackingRunning"]
+- ["13TookanTracker12USER_DEFAULTV", "locationArray"]
+- ["13TookanTracker12USER_DEFAULTV", "requestID"]
+- ["13TookanTracker12USER_DEFAULTV", "sessionId"]
+- ["13TookanTracker12USER_DEFAULTV", "sessionURL"]
+- ["13TookanTracker12USER_DEFAULTV", "subscribeLocation"]
+- ["13TookanTracker12USER_DEFAULTV", "updatingLocationPathArray"]
+- ["13TookanTracker15USER_JOB_STATUSV", "free"]
+- ["13TookanTracker15USER_JOB_STATUSV", "init"]
+- ["13TookanTracker15USER_JOB_STATUSV", "sharingLocation"]
+- ["13TookanTracker15USER_JOB_STATUSV", "trackingLocation"]
+- ["s23_BidirectionalIndexableP", "init"]
+- !private ["s18_BitwiseOperationsP", "hashValue"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "hashValue"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- ["s26_ExpressibleByImageLiteralP", "init"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- ["s10_IndexableP", "init"]
+- ["s14_IndexableBaseP", "init"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "hashValue"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- ["s26_RangeReplaceableIndexableP", "init"]
+- !private ["s11_StrideableP", "hashValue"]
+- ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- "13TookanTracker13ALERT_MESSAGEV"
+- "s23BidirectionalCollectionP"
+- !private "s13BinaryIntegerP"
+- !private "Sb"
+- "So6BundleC"
+- "s7CVarArgP"
+- "s10CollectionP"
+- "s10ComparableP"
+- "13TookanTracker9ConstantsC"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "s9DecodableP"
+- "s9EncodableP"
+- "s9EquatableP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s27ExpressibleByIntegerLiteralP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "s17FixedWidthIntegerP"
+- "s8HashableP"
+- !private "Si"
+- "s25LosslessStringConvertibleP"
+- "s10MirrorPathP"
+- "So8NSCodingP"
+- "So9NSCopyingP"
+- "So21NSItemProviderReadingP"
+- "So21NSItemProviderWritingP"
+- "So16NSMutableCopyingP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- "So14NSSecureCodingP"
+- "So8NSStringC"
+- !private "s7NumericP"
+- "13TookanTracker8OBSERVERV"
+- "s26RangeReplaceableCollectionP"
+- "s16RawRepresentableP"
+- "13TookanTracker6SERVERV"
+- "13TookanTracker13SHARE_MESSAGEV"
+- "13TookanTracker12STATUS_CODESV"
+- "13TookanTracker13STORYBOARD_IDV"
+- "13TookanTracker15STORYBOARD_NAMEV"
+- "s8SequenceP"
+- !private "s13SignedIntegerP"
+- !private "s13SignedNumericP"
+- "13TookanTracker10StoryBoardO"
+- !private "s10StrideableP"
+- "SS"
+- "s14StringProtocolP"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
+- "So29UIAccessibilityIdentificationP"
+- "So7UIImageC"
+- "So39UIItemProviderPresentationSizeProvidingP"
+- "13TookanTracker12USER_DEFAULTV"
+- "13TookanTracker15USER_JOB_STATUSV"
+- "s23_BidirectionalIndexableP"
+- !private "s18_BitwiseOperationsP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "s26_ExpressibleByImageLiteralP"
+- "s33_ExpressibleByStringInterpolationP"
+- "s35_HasCustomAnyHashableRepresentationP"
+- "s10_IndexableP"
+- "s14_IndexableBaseP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "s21_ObjectiveCBridgeableP"
+- "s26_RangeReplaceableIndexableP"
+- !private "s11_StrideableP"
+- "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.apinotesc"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreData.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/simd.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/QuartzCore.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Metal.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreLocation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SwiftOnoneSupport.swiftmodule"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanorama.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaCamera.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacePhotoMetadata.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceLikelihood.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlace.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSUserAddedPlace.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaService.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteTableDataSource.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteBoundsMode.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCircle.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapStyle.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPolyline.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GoogleMapsBase.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCameraUpdate.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaCameraUpdate.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorBuilding.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPath.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMutablePath.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaLink.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorLevel.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPolygon.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapView+Animation.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSOrientation.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSProjection.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompletePrediction.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCameraPosition.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGeocoder.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteFetcher.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/TookanTracker.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMarker.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteViewController.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteResultsViewController.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteFilter.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCALayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaLayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSURLTileLayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSTileLayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSSyncTileLayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapLayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMarkerLayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSCoordinateBounds.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GooglePlaces.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSServices.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceTypes.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSUISettings.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGeometryUtils.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSDeprecationMacros.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSCompatabilityMacros.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCoordinateBounds+GoogleMaps.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GoogleMaps.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacesErrors.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSAddress.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacesClient.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteMatchFragment.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAddressComponent.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacePhotoMetadataList.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceLikelihoodList.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaView.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapView.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorDisplay.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSOverlay.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGroundOverlay.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/build/TookanTracker.build/Debug-iphoneos/TookanTracker.build/unextended-module.modulemap"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Modules/module.modulemap"
+interface-hash: "1b4b2bf7d3f6e8c62a83484f7f20608f"

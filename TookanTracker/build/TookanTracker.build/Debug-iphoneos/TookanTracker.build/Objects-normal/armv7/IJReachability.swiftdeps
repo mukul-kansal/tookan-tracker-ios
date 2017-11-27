@@ -1,0 +1,285 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "IJReachabilityType"
+- "IJReachability"
+provides-nominal:
+- "13TookanTracker18IJReachabilityTypeO"
+- "13TookanTracker14IJReachabilityC"
+provides-member:
+- ["13TookanTracker18IJReachabilityTypeO", ""]
+- ["13TookanTracker14IJReachabilityC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "!"
+- !private "!="
+- !private "&"
+- !private "&&"
+- "=="
+- !private "AF_INET"
+- "AssignmentPrecedence"
+- "Bool"
+- !private "BooleanLiteralType"
+- !private "FloatLiteralType"
+- "IJReachability"
+- "IJReachabilityType"
+- !private "IntegerLiteralType"
+- !private "MemoryLayout"
+- !private "SCNetworkReachabilityCreateWithAddress"
+- !private "SCNetworkReachabilityFlags"
+- !private "SCNetworkReachabilityGetFlags"
+- !private "UInt32"
+- !private "UInt8"
+- !private "kSCNetworkFlagsConnectionRequired"
+- !private "kSCNetworkFlagsReachable"
+- !private "sa_family_t"
+- !private "sockaddr"
+- !private "sockaddr_in"
+- !private "withUnsafePointer"
+depends-member:
+- !private ["s13BinaryIntegerP", "hashValue"]
+- !private ["s13BinaryIntegerP", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "hashValue"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "withMemoryRebound"]
+- !private ["s10ComparableP", "hashValue"]
+- !private ["s10ComparableP", "init"]
+- !private ["s10ComparableP", "withMemoryRebound"]
+- !private ["s28CustomDebugStringConvertibleP", "withMemoryRebound"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "hashValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "withMemoryRebound"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "hashValue"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "withMemoryRebound"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "hashValue"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "hashValue"]
+- !private ["s9DecodableP", "init"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "hashValue"]
+- !private ["s9EncodableP", "init"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "connectionAutomatic"]
+- ["s9EquatableP", "hashValue"]
+- !private ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "rawValue"]
+- !private ["s9EquatableP", "withMemoryRebound"]
+- ["s9EquatableP", ""]
+- !private ["s25ExpressibleByArrayLiteralP", "connectionAutomatic"]
+- !private ["s25ExpressibleByArrayLiteralP", "rawValue"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s27ExpressibleByIntegerLiteralP", "hashValue"]
+- !private ["s27ExpressibleByIntegerLiteralP", "init"]
+- !private ["s17FixedWidthIntegerP", "hashValue"]
+- !private ["s17FixedWidthIntegerP", "init"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- ["s8HashableP", "hashValue"]
+- !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "withMemoryRebound"]
+- ["s8HashableP", ""]
+- !private ["13TookanTracker14IJReachabilityC", "AF_INET"]
+- ["13TookanTracker14IJReachabilityC", "Bool"]
+- !private ["13TookanTracker14IJReachabilityC", "MemoryLayout"]
+- !private ["13TookanTracker14IJReachabilityC", "SCNetworkReachabilityCreateWithAddress"]
+- !private ["13TookanTracker14IJReachabilityC", "SCNetworkReachabilityFlags"]
+- !private ["13TookanTracker14IJReachabilityC", "SCNetworkReachabilityGetFlags"]
+- !private ["13TookanTracker14IJReachabilityC", "UInt32"]
+- !private ["13TookanTracker14IJReachabilityC", "UInt8"]
+- ["13TookanTracker14IJReachabilityC", "deinit"]
+- ["13TookanTracker14IJReachabilityC", "init"]
+- ["13TookanTracker14IJReachabilityC", "isConnectedToNetwork"]
+- !private ["13TookanTracker14IJReachabilityC", "kSCNetworkFlagsConnectionRequired"]
+- !private ["13TookanTracker14IJReachabilityC", "kSCNetworkFlagsReachable"]
+- !private ["13TookanTracker14IJReachabilityC", "sa_family_t"]
+- !private ["13TookanTracker14IJReachabilityC", "sockaddr"]
+- !private ["13TookanTracker14IJReachabilityC", "sockaddr_in"]
+- !private ["13TookanTracker14IJReachabilityC", "withUnsafePointer"]
+- ["13TookanTracker18IJReachabilityTypeO", "__derived_enum_equals"]
+- ["13TookanTracker18IJReachabilityTypeO", "deinit"]
+- ["13TookanTracker18IJReachabilityTypeO", "hashValue"]
+- ["13TookanTracker18IJReachabilityTypeO", "notConnected"]
+- ["13TookanTracker18IJReachabilityTypeO", "wiFi"]
+- ["13TookanTracker18IJReachabilityTypeO", "wwan"]
+- !private ["Si", "hashValue"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s25LosslessStringConvertibleP", "hashValue"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s12MemoryLayoutO", "size"]
+- !private ["s10MirrorPathP", "hashValue"]
+- !private ["s7NumericP", "hashValue"]
+- !private ["s7NumericP", "init"]
+- !private ["s9OptionSetP", "connectionAutomatic"]
+- !private ["s9OptionSetP", "rawValue"]
+- !private ["s16RawRepresentableP", "connectionAutomatic"]
+- !private ["s16RawRepresentableP", "rawValue"]
+- !private ["SC26SCNetworkReachabilityFlagsV", "connectionAutomatic"]
+- !private ["SC26SCNetworkReachabilityFlagsV", "rawValue"]
+- !private ["s10SetAlgebraP", "connectionAutomatic"]
+- !private ["s10SetAlgebraP", "rawValue"]
+- !private ["s13SignedIntegerP", "hashValue"]
+- !private ["s13SignedNumericP", "hashValue"]
+- !private ["s10StrideableP", "hashValue"]
+- !private ["s10StrideableP", "init"]
+- !private ["s10StrideableP", "withMemoryRebound"]
+- !private ["s6UInt32V", "init"]
+- !private ["s5UInt8V", "init"]
+- !private ["SP", "withMemoryRebound"]
+- !private ["s15UnsignedIntegerP", "init"]
+- !private ["s18_BitwiseOperationsP", "hashValue"]
+- !private ["s18_BitwiseOperationsP", "init"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "hashValue"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "hashValue"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s8_PointerP", "withMemoryRebound"]
+- !private ["s11_StrideableP", "hashValue"]
+- !private ["s11_StrideableP", "init"]
+- !private ["s11_StrideableP", "withMemoryRebound"]
+- !private ["s14_StringElementP", "init"]
+- !private ["SC11sockaddr_inV", "init"]
+- !private ["SC11sockaddr_inV", "sin_family"]
+- !private ["SC11sockaddr_inV", "sin_len"]
+depends-nominal:
+- !private "s13BinaryIntegerP"
+- !private "Sb"
+- !private "s7CVarArgP"
+- !private "s10ComparableP"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- !private "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "s9EncodableP"
+- "s9EquatableP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- !private "s27ExpressibleByIntegerLiteralP"
+- !private "s17FixedWidthIntegerP"
+- "s8HashableP"
+- "13TookanTracker14IJReachabilityC"
+- "13TookanTracker18IJReachabilityTypeO"
+- !private "Si"
+- !private "s25LosslessStringConvertibleP"
+- !private "s12MemoryLayoutO"
+- !private "s10MirrorPathP"
+- !private "s7NumericP"
+- !private "s9OptionSetP"
+- !private "s16RawRepresentableP"
+- !private "SC26SCNetworkReachabilityFlagsV"
+- !private "s10SetAlgebraP"
+- !private "s13SignedIntegerP"
+- !private "s13SignedNumericP"
+- !private "s10StrideableP"
+- !private "s6UInt32V"
+- !private "s5UInt8V"
+- !private "SP"
+- !private "s15UnsignedIntegerP"
+- !private "s18_BitwiseOperationsP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s8_PointerP"
+- !private "s11_StrideableP"
+- !private "s14_StringElementP"
+- !private "SC11sockaddr_inV"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Dispatch.apinotesc"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/ObjectiveC.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreMedia.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreData.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/simd.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreImage.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/QuartzCore.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Dispatch.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Metal.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Darwin.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreLocation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Foundation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/AVFoundation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreFoundation.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreAudio.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreGraphics.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Swift.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/UIKit.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/SwiftOnoneSupport.swiftmodule"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanorama.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaCamera.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacePhotoMetadata.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceLikelihood.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlace.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSUserAddedPlace.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaService.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteTableDataSource.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteBoundsMode.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCircle.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapStyle.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPolyline.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GoogleMapsBase.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCameraUpdate.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaCameraUpdate.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorBuilding.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPath.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMutablePath.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaLink.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorLevel.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPolygon.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapView+Animation.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSOrientation.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSProjection.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompletePrediction.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCameraPosition.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGeocoder.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteFetcher.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/TookanTracker.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMarker.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteViewController.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteResultsViewController.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteFilter.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCALayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaLayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSURLTileLayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSTileLayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSSyncTileLayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapLayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMarkerLayer.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSCoordinateBounds.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GooglePlaces.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSServices.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceTypes.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSUISettings.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGeometryUtils.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSDeprecationMacros.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSCompatabilityMacros.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCoordinateBounds+GoogleMaps.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GoogleMaps.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacesErrors.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSAddress.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacesClient.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteMatchFragment.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAddressComponent.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacePhotoMetadataList.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceLikelihoodList.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaView.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapView.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorDisplay.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSOverlay.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGroundOverlay.h"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/build/TookanTracker.build/Debug-iphoneos/TookanTracker.build/unextended-module.modulemap"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Modules/module.modulemap"
+interface-hash: "303035abc1be21116ce8fec2eeddf24c"

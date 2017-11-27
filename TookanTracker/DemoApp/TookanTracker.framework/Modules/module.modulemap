@@ -1,0 +1,11 @@
+framework module TookanTracker {
+  umbrella header "TookanTracker.h"
+
+  export *
+  module * { export * }
+}
+
+module TookanTracker.Swift {
+    header "TookanTracker-Swift.h"
+    requires objc
+}

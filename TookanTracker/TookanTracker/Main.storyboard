@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6el-ee-H8O">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Splash Controller-->
+        <scene sceneID="Lzx-El-rph">
+            <objects>
+                <viewController id="8hw-n9-NyH" customClass="SplashController" customModule="TookanTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MoH-Jm-N9g"/>
+                        <viewControllerLayoutGuide type="bottom" id="8wT-P4-uHV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GAX-RP-aLX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="fvN-0A-F9o">
+                                <rect key="frame" x="127.5" y="233" width="120" height="121"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rp5-tk-WOb">
+                                <rect key="frame" x="141.5" y="389" width="92" height="33"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by Tookan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5f6-eC-1vQ">
+                                <rect key="frame" x="134.5" y="633" width="106.5" height="14"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tookanLogo" translatesAutoresizingMaskIntoConstraints="NO" id="OPT-Hc-oQJ">
+                                <rect key="frame" x="247" y="632.5" width="11" height="16"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OPT-Hc-oQJ" firstAttribute="centerY" secondItem="5f6-eC-1vQ" secondAttribute="centerY" id="4nS-ad-Isp"/>
+                            <constraint firstItem="OPT-Hc-oQJ" firstAttribute="leading" secondItem="5f6-eC-1vQ" secondAttribute="trailing" constant="6" id="E3a-R7-0fv"/>
+                            <constraint firstItem="Rp5-tk-WOb" firstAttribute="centerX" secondItem="fvN-0A-F9o" secondAttribute="centerX" id="FNh-AQ-YA8"/>
+                            <constraint firstItem="5f6-eC-1vQ" firstAttribute="centerX" secondItem="GAX-RP-aLX" secondAttribute="centerX" id="HCk-Jk-lLd"/>
+                            <constraint firstItem="8wT-P4-uHV" firstAttribute="top" secondItem="5f6-eC-1vQ" secondAttribute="bottom" constant="20" id="Ojg-uf-yOG"/>
+                            <constraint firstItem="Rp5-tk-WOb" firstAttribute="top" secondItem="fvN-0A-F9o" secondAttribute="bottom" constant="35" id="QP6-mC-fmp"/>
+                            <constraint firstItem="fvN-0A-F9o" firstAttribute="centerY" secondItem="GAX-RP-aLX" secondAttribute="centerY" constant="-40" id="SZp-ZU-SoZ"/>
+                            <constraint firstItem="fvN-0A-F9o" firstAttribute="centerX" secondItem="GAX-RP-aLX" secondAttribute="centerX" id="dKE-HK-cdW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qQD-bq-D0f"/>
+                    <connections>
+                        <outlet property="logo" destination="fvN-0A-F9o" id="LEH-Md-0Li"/>
+                        <outlet property="poweredLabel" destination="5f6-eC-1vQ" id="WMK-XH-5mY"/>
+                        <outlet property="tookanLogo" destination="OPT-Hc-oQJ" id="UVu-9N-HdS"/>
+                        <outlet property="trackerLabel" destination="Rp5-tk-WOb" id="l3D-pg-MjL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2x6-oy-jkN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4" y="85.907046476761622"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LyU-Ac-zyI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="6el-ee-H8O" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Zr5-kI-DCS">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ew3-rY-6jo" kind="relationship" relationship="rootViewController" id="ieT-vR-HGm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eO7-U5-s9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4" y="-646.32683658170924"/>
+        </scene>
+        <!--Home Controller-->
+        <scene sceneID="i66-Va-93q">
+            <objects>
+                <viewController storyboardIdentifier="HomeController" id="Ew3-rY-6jo" customClass="HomeController" customModule="TookanTracker_SDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ufm-C5-hrs"/>
+                        <viewControllerLayoutGuide type="bottom" id="f0D-Mn-r9Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0pV-sP-9sJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdr-6d-jKe" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="-25" width="375" height="727"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCD-8p-QvU">
+                                <rect key="frame" x="316" y="498" width="39" height="39"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="currentLocation"/>
+                                <connections>
+                                    <action selector="currentLocationAction:" destination="Ew3-rY-6jo" eventType="touchUpInside" id="aS0-IJ-BnP"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmx-Sv-wQE">
+                                <rect key="frame" x="0.0" y="557" width="375" height="110"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="lTM-oS-5EW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="tCD-8p-QvU" secondAttribute="trailing" constant="20" id="AyZ-R6-oC0"/>
+                            <constraint firstItem="f0D-Mn-r9Z" firstAttribute="top" secondItem="fdr-6d-jKe" secondAttribute="bottom" constant="-35" id="M2U-W4-mJd"/>
+                            <constraint firstItem="nmx-Sv-wQE" firstAttribute="top" secondItem="tCD-8p-QvU" secondAttribute="bottom" constant="20" id="Q1I-eS-n9X"/>
+                            <constraint firstAttribute="trailing" secondItem="fdr-6d-jKe" secondAttribute="trailing" id="SoX-g2-qdS"/>
+                            <constraint firstItem="fdr-6d-jKe" firstAttribute="top" secondItem="ufm-C5-hrs" secondAttribute="bottom" constant="-45" id="TBL-pU-xgC"/>
+                            <constraint firstItem="nmx-Sv-wQE" firstAttribute="leading" secondItem="0pV-sP-9sJ" secondAttribute="leading" id="aqH-oY-jBT"/>
+                            <constraint firstAttribute="trailing" secondItem="nmx-Sv-wQE" secondAttribute="trailing" id="eYR-jb-JxN"/>
+                            <constraint firstItem="f0D-Mn-r9Z" firstAttribute="top" secondItem="nmx-Sv-wQE" secondAttribute="bottom" id="gKN-5d-FIr"/>
+                            <constraint firstItem="fdr-6d-jKe" firstAttribute="leading" secondItem="0pV-sP-9sJ" secondAttribute="leading" id="i4J-Uv-uTk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jn6-MI-4jU"/>
+                    <connections>
+                        <outlet property="currentLocation" destination="tCD-8p-QvU" id="e9q-qM-nzD"/>
+                        <outlet property="googleMapView" destination="fdr-6d-jKe" id="aq4-gF-EzC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j3a-mb-kqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="906" y="-646"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="currentLocation" width="39" height="39"/>
+        <image name="logoIcon" width="120" height="121"/>
+        <image name="tookanLogo" width="11" height="16"/>
+    </resources>
+</document>
