@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2629CC361FCBD95C009A37B0 /* TookanTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2692FCE21FCBD42C00E76CD2 /* TookanTracker.framework */; };
-		2629CC371FCBD95C009A37B0 /* TookanTracker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2692FCE21FCBD42C00E76CD2 /* TookanTracker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2629CC401FCC1F90009A37B0 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2629CC3F1FCC1F90009A37B0 /* Extension.swift */; };
 		2632133E1FC86F4F00E0C2AA /* OTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2632133D1FC86F4F00E0C2AA /* OTPController.swift */; };
 		263213411FC86FF200E0C2AA /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2632133F1FC86FF200E0C2AA /* Networking.swift */; };
 		263213421FC86FF200E0C2AA /* IJReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263213401FC86FF200E0C2AA /* IJReachability.swift */; };
+		2643AF561FCDB27300DBB343 /* TookanTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2643AF551FCDB26A00DBB343 /* TookanTracker.framework */; };
+		2643AF571FCDB27300DBB343 /* TookanTracker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2643AF551FCDB26A00DBB343 /* TookanTracker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2643AF5B1FCEEB5800DBB343 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643AF5A1FCEEB5800DBB343 /* SignupViewController.swift */; };
+		2643AF5E1FCEF19900DBB343 /* SignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643AF5C1FCEF19800DBB343 /* SignupModel.swift */; };
+		2643AF5F1FCEF19900DBB343 /* SignupVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643AF5D1FCEF19900DBB343 /* SignupVCModel.swift */; };
+		2643AF621FCEF52500DBB343 /* SignupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643AF611FCEF52500DBB343 /* SignupCell.swift */; };
+		2643AF631FCEFAEC00DBB343 /* SignupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2643AF601FCEF52400DBB343 /* SignupCell.xib */; };
+		264719F71FCF021600E91784 /* SignupFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264719F41FCF021600E91784 /* SignupFooterView.swift */; };
+		264719F81FCF022C00E91784 /* SignupFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264719F61FCF021600E91784 /* SignupFooterView.xib */; };
 		26F5BDD71FC83335000D2715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5BDD61FC83335000D2715 /* AppDelegate.swift */; };
 		26F5BDD91FC83335000D2715 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5BDD81FC83335000D2715 /* ViewController.swift */; };
 		26F5BDDC1FC83335000D2715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F5BDDA1FC83335000D2715 /* Main.storyboard */; };
@@ -20,30 +28,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2629CC381FCBD95D009A37B0 /* PBXContainerItemProxy */ = {
+		2643AF541FCDB26A00DBB343 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2692FCDC1FCBD42C00E76CD2 /* TookanTracker.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 26F5BD4A1FC817BB000D2715;
-			remoteInfo = TookanTracker;
-		};
-		2692FCE11FCBD42C00E76CD2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2692FCDC1FCBD42C00E76CD2 /* TookanTracker.xcodeproj */;
+			containerPortal = 2643AF4F1FCDB26A00DBB343 /* TookanTracker.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 26F5BD4B1FC817BC000D2715;
+			remoteInfo = TookanTracker;
+		};
+		2643AF581FCDB27300DBB343 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2643AF4F1FCDB26A00DBB343 /* TookanTracker.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 26F5BD4A1FC817BB000D2715;
 			remoteInfo = TookanTracker;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		26F5BDEC1FC83393000D2715 /* Embed Frameworks */ = {
+		2643AF431FCD505600DBB343 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2629CC371FCBD95C009A37B0 /* TookanTracker.framework in Embed Frameworks */,
+				2643AF571FCDB27300DBB343 /* TookanTracker.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,10 +59,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2629CC3C1FCC1ED9009A37B0 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
+		2629CC3F1FCC1F90009A37B0 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		2632133D1FC86F4F00E0C2AA /* OTPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPController.swift; sourceTree = "<group>"; };
 		2632133F1FC86FF200E0C2AA /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		263213401FC86FF200E0C2AA /* IJReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IJReachability.swift; sourceTree = "<group>"; };
-		2692FCDC1FCBD42C00E76CD2 /* TookanTracker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TookanTracker.xcodeproj; path = ../TookanTracker.xcodeproj; sourceTree = "<group>"; };
+		2643AF4F1FCDB26A00DBB343 /* TookanTracker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TookanTracker.xcodeproj; path = ../TookanTracker.xcodeproj; sourceTree = "<group>"; };
+		2643AF5A1FCEEB5800DBB343 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		2643AF5C1FCEF19800DBB343 /* SignupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModel.swift; sourceTree = "<group>"; };
+		2643AF5D1FCEF19900DBB343 /* SignupVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVCModel.swift; sourceTree = "<group>"; };
+		2643AF601FCEF52400DBB343 /* SignupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupCell.xib; sourceTree = "<group>"; };
+		2643AF611FCEF52500DBB343 /* SignupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCell.swift; sourceTree = "<group>"; };
+		264719F41FCF021600E91784 /* SignupFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFooterView.swift; sourceTree = "<group>"; };
+		264719F61FCF021600E91784 /* SignupFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupFooterView.xib; sourceTree = "<group>"; };
 		26F5BDD31FC83335000D2715 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F5BDD61FC83335000D2715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26F5BDD81FC83335000D2715 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,17 +86,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2629CC361FCBD95C009A37B0 /* TookanTracker.framework in Frameworks */,
+				2643AF561FCDB27300DBB343 /* TookanTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2692FCDD1FCBD42C00E76CD2 /* Products */ = {
+		2643AF501FCDB26A00DBB343 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2692FCE21FCBD42C00E76CD2 /* TookanTracker.framework */,
+				2643AF551FCDB26A00DBB343 /* TookanTracker.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,7 +104,7 @@
 		26F5BDCA1FC83335000D2715 = {
 			isa = PBXGroup;
 			children = (
-				2692FCDC1FCBD42C00E76CD2 /* TookanTracker.xcodeproj */,
+				2643AF4F1FCDB26A00DBB343 /* TookanTracker.xcodeproj */,
 				26F5BDD51FC83335000D2715 /* DemoApp */,
 				26F5BDD41FC83335000D2715 /* Products */,
 			);
@@ -107,12 +124,21 @@
 				26F5BDD61FC83335000D2715 /* AppDelegate.swift */,
 				2632133D1FC86F4F00E0C2AA /* OTPController.swift */,
 				26F5BDD81FC83335000D2715 /* ViewController.swift */,
+				2629CC3C1FCC1ED9009A37B0 /* SplashController.swift */,
 				263213401FC86FF200E0C2AA /* IJReachability.swift */,
 				2632133F1FC86FF200E0C2AA /* Networking.swift */,
+				2643AF5C1FCEF19800DBB343 /* SignupModel.swift */,
+				2643AF5D1FCEF19900DBB343 /* SignupVCModel.swift */,
+				2643AF5A1FCEEB5800DBB343 /* SignupViewController.swift */,
+				2643AF611FCEF52500DBB343 /* SignupCell.swift */,
+				264719F41FCF021600E91784 /* SignupFooterView.swift */,
+				264719F61FCF021600E91784 /* SignupFooterView.xib */,
+				2643AF601FCEF52400DBB343 /* SignupCell.xib */,
 				26F5BDDA1FC83335000D2715 /* Main.storyboard */,
 				26F5BDDD1FC83335000D2715 /* Assets.xcassets */,
 				26F5BDDF1FC83335000D2715 /* LaunchScreen.storyboard */,
 				26F5BDE21FC83335000D2715 /* Info.plist */,
+				2629CC3F1FCC1F90009A37B0 /* Extension.swift */,
 			);
 			path = DemoApp;
 			sourceTree = "<group>";
@@ -127,12 +153,12 @@
 				26F5BDCF1FC83335000D2715 /* Sources */,
 				26F5BDD01FC83335000D2715 /* Frameworks */,
 				26F5BDD11FC83335000D2715 /* Resources */,
-				26F5BDEC1FC83393000D2715 /* Embed Frameworks */,
+				2643AF431FCD505600DBB343 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2629CC391FCBD95D009A37B0 /* PBXTargetDependency */,
+				2643AF591FCDB27300DBB343 /* PBXTargetDependency */,
 			);
 			name = DemoApp;
 			productName = DemoApp;
@@ -151,7 +177,7 @@
 				TargetAttributes = {
 					26F5BDD21FC83335000D2715 = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -168,8 +194,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 2692FCDD1FCBD42C00E76CD2 /* Products */;
-					ProjectRef = 2692FCDC1FCBD42C00E76CD2 /* TookanTracker.xcodeproj */;
+					ProductGroup = 2643AF501FCDB26A00DBB343 /* Products */;
+					ProjectRef = 2643AF4F1FCDB26A00DBB343 /* TookanTracker.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -180,11 +206,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		2692FCE21FCBD42C00E76CD2 /* TookanTracker.framework */ = {
+		2643AF551FCDB26A00DBB343 /* TookanTracker.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = TookanTracker.framework;
-			remoteRef = 2692FCE11FCBD42C00E76CD2 /* PBXContainerItemProxy */;
+			remoteRef = 2643AF541FCDB26A00DBB343 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -194,6 +220,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264719F81FCF022C00E91784 /* SignupFooterView.xib in Resources */,
+				2643AF631FCEFAEC00DBB343 /* SignupCell.xib in Resources */,
 				26F5BDE11FC83335000D2715 /* LaunchScreen.storyboard in Resources */,
 				26F5BDDE1FC83335000D2715 /* Assets.xcassets in Resources */,
 				26F5BDDC1FC83335000D2715 /* Main.storyboard in Resources */,
@@ -207,8 +235,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2643AF5F1FCEF19900DBB343 /* SignupVCModel.swift in Sources */,
+				2643AF621FCEF52500DBB343 /* SignupCell.swift in Sources */,
 				2632133E1FC86F4F00E0C2AA /* OTPController.swift in Sources */,
+				264719F71FCF021600E91784 /* SignupFooterView.swift in Sources */,
+				2643AF5B1FCEEB5800DBB343 /* SignupViewController.swift in Sources */,
 				26F5BDD91FC83335000D2715 /* ViewController.swift in Sources */,
+				2643AF5E1FCEF19900DBB343 /* SignupModel.swift in Sources */,
+				2629CC401FCC1F90009A37B0 /* Extension.swift in Sources */,
 				263213421FC86FF200E0C2AA /* IJReachability.swift in Sources */,
 				26F5BDD71FC83335000D2715 /* AppDelegate.swift in Sources */,
 				263213411FC86FF200E0C2AA /* Networking.swift in Sources */,
@@ -218,10 +252,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2629CC391FCBD95D009A37B0 /* PBXTargetDependency */ = {
+		2643AF591FCDB27300DBB343 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TookanTracker;
-			targetProxy = 2629CC381FCBD95D009A37B0 /* PBXContainerItemProxy */;
+			targetProxy = 2643AF581FCDB27300DBB343 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -358,20 +392,21 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9BMB7KMY7Q;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 7W7G24P7A2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/DemoApp",
 				);
 				INFOPLIST_FILE = DemoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.click-labs.DemoApp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.clicklabs.Tookan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "759cb139-7a14-486a-90fa-7a89128c2c14";
+				PROVISIONING_PROFILE_SPECIFIER = TookanDevInhouse;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -383,20 +418,21 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9BMB7KMY7Q;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 7W7G24P7A2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/DemoApp",
 				);
 				INFOPLIST_FILE = DemoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.click-labs.DemoApp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.clicklabs.Tookan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "759cb139-7a14-486a-90fa-7a89128c2c14";
+				PROVISIONING_PROFILE_SPECIFIER = TookanDevInhouse;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -20,6 +20,25 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Getting location of fleet in background and foreground </string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Sending location in background for tracking of fleet</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Sending location  for tracking of fleet</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Sending location in foreground for tracking of fleet</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>location</string>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -41,24 +60,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Getting location of fleet in background and foreground </string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Sending location in background for tracking of fleet</string>
-	<key>NSLocationUsageDescription</key>
-	<string>Sending location  for tracking of fleet</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Sending location in foreground for tracking of fleet</string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>fetch</string>
-		<string>location</string>
-		<string>remote-notification</string>
-	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 </dict>
 </plist>

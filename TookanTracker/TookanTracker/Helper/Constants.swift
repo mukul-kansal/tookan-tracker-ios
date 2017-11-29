@@ -20,6 +20,7 @@ let frameworkBundle = Bundle(identifier: "com.click-labs.TookanTracker")
 
 let getCurrentLocation  = UIImage(named: "currentLocation", in: frameworkBundle, compatibleWith: nil)
 let destinationMarker  = UIImage(named: "marker", in: frameworkBundle, compatibleWith: nil)
+let close  = UIImage(named: "closeButton", in: frameworkBundle, compatibleWith: nil)
 
 struct SERVER {
     static let dev = "http://tracking.tookan.io:3008/"//"https://dev.tracking.tookan.io:3008/"//"http://dev.tracking.tookan.io:3005/"
@@ -46,6 +47,8 @@ struct USER_DEFAULT {
     static let subscribeLocation = "subscribeLocation"
     static let requestID = "requestID"
     static let sessionURL = "sessionUrl"
+    static let apiKey = "apiKey"
+    static let userId = "userId"
 }
 
 struct OBSERVER {

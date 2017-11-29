@@ -12,11 +12,16 @@ import Foundation
 import CoreLocation
 import UIKit
 import SystemConfiguration
-
+import MapKit
 @objc public protocol LocationTrackerDelegate {
     @objc optional func currentLocationOfUser(_ location:CLLocation)
+    
 }
 
+@objc public protocol TrackingDelegate {
+    @objc optional func getCoordinates(_ location:CLLocation)
+    @objc optional func logout()
+}
 
 public enum LocationFrequency: Int {
     case low = 0
@@ -24,14 +29,15 @@ public enum LocationFrequency: Int {
     case high
 }
 
-open class LocationTrackerFile:NSObject, CLLocationManagerDelegate {
+open class LocationTrackerFile:NSObject, CLLocationManagerDelegate, MKMapViewDelegate {
     
     open var delegate:LocationTrackerDelegate!
+    var trackingDelegate:TrackingDelegate!
     //fileprivate var host = "dev.tracking.tookan.io"////"test.mosquitto.org"//"test.tookanapp.com"//
     //fileprivate var portNumber:UInt16 = 1883
     fileprivate var slotTime = 5.0
     fileprivate var maxSpeed:Float = 30.0
-    fileprivate var maxAccuracy = 20.0
+    var maxAccuracy = 20.0
     fileprivate var maxDistance = 20.0
     open var locationFrequencyMode = LocationFrequency.high
   //  open var accessToken:String = ""
@@ -43,12 +49,12 @@ open class LocationTrackerFile:NSObject, CLLocationManagerDelegate {
     
     fileprivate var myLastLocation: CLLocation!
     fileprivate var myLocation: CLLocation!
-    fileprivate var myLocationAccuracy: CLLocationAccuracy!
+    var myLocationAccuracy: CLLocationAccuracy!
     fileprivate var locationUpdateTimer: Timer!
     fileprivate var locationManager:CLLocationManager!
     fileprivate var speed:Float = 0
     fileprivate var bgTask: BackgroundTaskManager?
-    
+//    var getCoordinates : ((_ coordinates: CLLocation) -> Void)?
     
     let SDKVersion = "1.0"
     
@@ -108,6 +114,15 @@ open class LocationTrackerFile:NSObject, CLLocationManagerDelegate {
         }
     }
 
+    func registerAllRequiredInitilazers()  {
+//        self.delegate = controller as! LocationTrackerDelegate
+        self.initMqtt()
+        self.locationFrequencyMode = LocationFrequency.high
+        self.setLocationUpdate()
+        _ = self.startLocationService()
+        self.subsribeMQTTForTracking()
+    }
+    
     open func getCurrentLocation() -> CLLocation! {
         if(self.myLocation == nil) {
             return CLLocation()
@@ -160,7 +175,7 @@ open class LocationTrackerFile:NSObject, CLLocationManagerDelegate {
             break
         case LocationFrequency.high:
             slotTime = 5.0
-            maxDistance = 20.0
+            maxDistance = 0
             break
         }
     }
@@ -213,27 +228,32 @@ open class LocationTrackerFile:NSObject, CLLocationManagerDelegate {
         let locationManager: CLLocationManager = LocationTrackerFile.sharedLocationManager()
         locationManager.stopUpdatingLocation()
         
-       // MqttClass.sharedInstance.stopLocation()
+//        MqttClass.sharedInstance.stopLocation()
         UserDefaults.standard.set(false, forKey: USER_DEFAULT.isLocationTrackingRunning)
         MqttClass.sharedInstance.unsubscribeLocation()
-       // MqttClass.sharedInstance.disconnect()
+        MqttClass.sharedInstance.disconnect()
     }
     
     open func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.bgTask = BackgroundTaskManager.sharedBackgroundTaskManager()
         _ = self.bgTask!.beginNewBackgroundTask()
         if locations.last != nil {
+            
             self.myLocation = locations.last! as CLLocation
+            print("didUpdateLocations  \(self.myLocation.coordinate.latitude)")
             self.myLocationAccuracy = self.myLocation.horizontalAccuracy
             if(firstTime == true) {
                 firstTime = false
                 delegate?.currentLocationOfUser?(locations.last!)
             }
+            self.trackingDelegate.getCoordinates?(locations.last!)
             if(UserDefaults.standard.bool(forKey: USER_DEFAULT.isLocationTrackingRunning) == true) {
                 self.applyFilterOnGetLocation()
             }
         }
     }
+    
+    
     
     fileprivate func applyFilterOnGetLocation() {
         if self.myLocation != nil  {
@@ -246,8 +266,8 @@ open class LocationTrackerFile:NSObject, CLLocationManagerDelegate {
                 if(self.myLocationAccuracy < maxAccuracy){
                     if(self.myLastLocation == nil) {
                         var myLocationToSend = [String:Any]()
-                        let timestamp = String().getUTCDateString as String
-                        myLocationToSend = ["lat" : myLocation!.coordinate.latitude as Double,"lng" :myLocation!.coordinate.longitude as Double, "tm_stmp" : timestamp, "bat_lvl" : UIDevice.current.batteryLevel * 100, "acc":(self.myLocationAccuracy != nil ? self.myLocationAccuracy! : 300)]
+                        let timestamp = "\(Date().millisecondsSince1970)"  //String().getUTCDateString as String
+                        myLocationToSend = ["lat" : myLocation!.coordinate.latitude as Double,"lng" :myLocation!.coordinate.longitude as Double, "tm_stmp" : timestamp, "bat_lvl" : UIDevice.current.batteryLevel * 100, "acc":(self.myLocationAccuracy != nil ? self.myLocationAccuracy! : 300), "api_key": globalAPIKey, "unique_user_id": globalUserId]
                         self.addFilteredLocationToLocationArray(myLocationToSend)
                         self.myLastLocation = self.myLocation
                         /*------- For Updating Path ------------*/
@@ -265,8 +285,8 @@ open class LocationTrackerFile:NSObject, CLLocationManagerDelegate {
                     } else {
                         if(self.getSpeed() < maxSpeed) {
                             var myLocationToSend = [String:Any]()
-                            let timestamp = String().getUTCDateString as String
-                            myLocationToSend = ["lat" : myLocation!.coordinate.latitude as Double,"lng" :myLocation!.coordinate.longitude as Double, "tm_stmp" : timestamp, "bat_lvl" : UIDevice.current.batteryLevel * 100, "acc":(self.myLocationAccuracy != nil ? self.myLocationAccuracy! : 300)]
+                            let timestamp = "\(Date().millisecondsSince1970)" //String().getUTCDateString as String
+                            myLocationToSend = ["lat" : myLocation!.coordinate.latitude as Double,"lng" :myLocation!.coordinate.longitude as Double, "tm_stmp" : timestamp, "bat_lvl" : UIDevice.current.batteryLevel * 100, "acc":(self.myLocationAccuracy != nil ? self.myLocationAccuracy! : 300), "api_key": globalAPIKey, "unique_user_id": globalUserId]
                             self.addFilteredLocationToLocationArray(myLocationToSend)
                             self.myLastLocation = self.myLocation
 

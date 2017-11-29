@@ -18,8 +18,6 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
-	<key>NSPrincipalClass</key>
-	<string></string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -27,21 +25,23 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>This app needs access to the camera to take photos.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app needs access to photos.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Getting location of fleet in background and foreground </string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Sending location in background for tracking of fleet</string>
 	<key>NSLocationUsageDescription</key>
 	<string>Sending location in foreground for tracking of fleet</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Sending location in foreground for tracking of fleet</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs access to photos.</string>
+	<key>NSPrincipalClass</key>
+	<string></string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
 		<string>location</string>
 		<string>remote-notification</string>
 	</array>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Getting location of fleet in background and foreground </string>
 </dict>
 </plist>

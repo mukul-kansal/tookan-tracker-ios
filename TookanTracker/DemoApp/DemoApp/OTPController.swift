@@ -8,8 +8,9 @@
 
 import UIKit
 import TookanTracker
+import CoreLocation
 
-class OTPController: UIViewController {
+class OTPController: UIViewController, TookanTrackerDelegate {
 
     @IBOutlet var subTitleLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
@@ -132,6 +133,7 @@ class OTPController: UIViewController {
                         case STATUS_CODES.SHOW_DATA:
                             if self.navigationController != nil {
                                 UserDefaults.standard.set(false, forKey: USER_DEFAULT.isSessionExpire)
+                                TookanTracker.shared.delegate = self
                                 TookanTracker.shared.createSession(userID: userID, apiKey: apiKey, navigationController: self.navigationController!)
                             }
 //                            if Singleton.sharedInstance.fleetDetails == nil {
@@ -215,12 +217,21 @@ class OTPController: UIViewController {
         self.thirdField.text = ""
         self.fourthField.text = ""
         UserDefaults.standard.set(false, forKey: USER_DEFAULT.isSessionExpire)
+        TookanTracker.shared.delegate = self
         TookanTracker.shared.createSession(userID: userID, apiKey: apiKey, navigationController: self.navigationController!)
+//        TookanTracker.shared.delegate = self
+//        TookanTracker.shared.getLocationCoordinates = { (coordinates) in
+//            print("INAPP COORDINATES \(coordinates)")
+//        }
 //        self.resendOTPRequestToServer()
     }
 //    var length: Int {
 //        return self.characters.count
 //    }
+    
+    internal func getCurrentCoordinates(_ location: CLLocation) {
+        print("INAPP COORDINATES \(location)")
+    }
     
     @IBAction func verifyAction(_ sender: Any) {
         guard self.firstField.text?.characters.count == 1 else {

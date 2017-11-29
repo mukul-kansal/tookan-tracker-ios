@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6el-ee-H8O">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -23,26 +24,26 @@
                         <viewControllerLayoutGuide type="bottom" id="8wT-P4-uHV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GAX-RP-aLX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="fvN-0A-F9o">
-                                <rect key="frame" x="127.5" y="233" width="120" height="121"/>
+                                <rect key="frame" x="127.66666666666666" y="305.66666666666669" width="119.99999999999997" height="121"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rp5-tk-WOb">
-                                <rect key="frame" x="141.5" y="389" width="92" height="33"/>
+                                <rect key="frame" x="141.66666666666666" y="461.66666666666669" width="92" height="33"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by Tookan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5f6-eC-1vQ">
-                                <rect key="frame" x="134.5" y="633" width="106.5" height="14"/>
+                                <rect key="frame" x="134.66666666666663" y="744" width="106.33333333333334" height="14"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tookanLogo" translatesAutoresizingMaskIntoConstraints="NO" id="OPT-Hc-oQJ">
-                                <rect key="frame" x="247" y="632.5" width="11" height="16"/>
+                                <rect key="frame" x="247" y="740.66666666666663" width="17" height="22"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -89,38 +90,65 @@
         <!--Home Controller-->
         <scene sceneID="i66-Va-93q">
             <objects>
-                <viewController storyboardIdentifier="HomeController" id="Ew3-rY-6jo" customClass="HomeController" customModule="TookanTracker_SDK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeController" id="Ew3-rY-6jo" customClass="HomeController" customModule="TookanTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ufm-C5-hrs"/>
                         <viewControllerLayoutGuide type="bottom" id="f0D-Mn-r9Z"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0pV-sP-9sJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdr-6d-jKe" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="-25" width="375" height="727"/>
+                                <rect key="frame" x="0.0" y="-1" width="375" height="814"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCD-8p-QvU">
-                                <rect key="frame" x="316" y="498" width="39" height="39"/>
+                                <rect key="frame" x="316" y="609" width="39" height="39"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="currentLocation"/>
                                 <connections>
                                     <action selector="currentLocationAction:" destination="Ew3-rY-6jo" eventType="touchUpInside" id="aS0-IJ-BnP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uO5-jL-Lnf">
+                                <rect key="frame" x="26" y="54" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0yv-gs-K3D"/>
+                                    <constraint firstAttribute="width" constant="50" id="5Jc-ek-2m3"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="logoutAction:" destination="Ew3-rY-6jo" eventType="touchUpInside" id="ApZ-Ns-eCZ"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmx-Sv-wQE">
-                                <rect key="frame" x="0.0" y="557" width="375" height="110"/>
+                                <rect key="frame" x="0.0" y="668" width="375" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ql-od-vMp">
+                                        <rect key="frame" x="35" y="30" width="305" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Htw-8M-aLT"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="stopTrackingAction:" destination="Ew3-rY-6jo" eventType="touchUpInside" id="fCN-YT-h9G"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="0ql-od-vMp" secondAttribute="trailing" constant="35" id="6Hb-nR-oNV"/>
+                                    <constraint firstItem="0ql-od-vMp" firstAttribute="centerX" secondItem="nmx-Sv-wQE" secondAttribute="centerX" id="8Cz-zQ-I4N"/>
+                                    <constraint firstItem="0ql-od-vMp" firstAttribute="centerY" secondItem="nmx-Sv-wQE" secondAttribute="centerY" id="Emk-sq-pCN"/>
                                     <constraint firstAttribute="height" constant="110" id="lTM-oS-5EW"/>
+                                    <constraint firstItem="0ql-od-vMp" firstAttribute="leading" secondItem="nmx-Sv-wQE" secondAttribute="leading" constant="35" id="yvN-3j-epm"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tCD-8p-QvU" secondAttribute="trailing" constant="20" id="AyZ-R6-oC0"/>
+                            <constraint firstItem="uO5-jL-Lnf" firstAttribute="top" secondItem="ufm-C5-hrs" secondAttribute="bottom" constant="10" id="KZd-HU-Asc"/>
                             <constraint firstItem="f0D-Mn-r9Z" firstAttribute="top" secondItem="fdr-6d-jKe" secondAttribute="bottom" constant="-35" id="M2U-W4-mJd"/>
                             <constraint firstItem="nmx-Sv-wQE" firstAttribute="top" secondItem="tCD-8p-QvU" secondAttribute="bottom" constant="20" id="Q1I-eS-n9X"/>
                             <constraint firstAttribute="trailing" secondItem="fdr-6d-jKe" secondAttribute="trailing" id="SoX-g2-qdS"/>
@@ -129,12 +157,15 @@
                             <constraint firstAttribute="trailing" secondItem="nmx-Sv-wQE" secondAttribute="trailing" id="eYR-jb-JxN"/>
                             <constraint firstItem="f0D-Mn-r9Z" firstAttribute="top" secondItem="nmx-Sv-wQE" secondAttribute="bottom" id="gKN-5d-FIr"/>
                             <constraint firstItem="fdr-6d-jKe" firstAttribute="leading" secondItem="0pV-sP-9sJ" secondAttribute="leading" id="i4J-Uv-uTk"/>
+                            <constraint firstItem="uO5-jL-Lnf" firstAttribute="leading" secondItem="0pV-sP-9sJ" secondAttribute="leadingMargin" constant="10" id="ilc-eq-xVQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jn6-MI-4jU"/>
                     <connections>
                         <outlet property="currentLocation" destination="tCD-8p-QvU" id="e9q-qM-nzD"/>
                         <outlet property="googleMapView" destination="fdr-6d-jKe" id="aq4-gF-EzC"/>
+                        <outlet property="logout" destination="uO5-jL-Lnf" id="eQn-8P-UlY"/>
+                        <outlet property="stopTrackingButton" destination="0ql-od-vMp" id="8r8-PI-EVW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j3a-mb-kqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -145,6 +176,6 @@
     <resources>
         <image name="currentLocation" width="39" height="39"/>
         <image name="logoIcon" width="120" height="121"/>
-        <image name="tookanLogo" width="11" height="16"/>
+        <image name="tookanLogo" width="17" height="22"/>
     </resources>
 </document>

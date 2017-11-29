@@ -39,7 +39,7 @@ class NetworkingHelper: NSObject {
         //            "email": emailId]
         NSLog("Params = %@", params)
         if IJReachability.isConnectedToNetwork() == true {
-            sendRequestToServer("create_session", params: params as [String : AnyObject], httpMethod: "POST") { (succeeded:Bool, response:[String:Any]) -> () in
+            sendRequestToServer("start_sharing", params: params as [String : AnyObject], httpMethod: "POST") { (succeeded:Bool, response:[String:Any]) -> () in
                 print(response)
                 if(succeeded){
                     NetworkingHelper.sharedInstance.requestId = ""
@@ -158,6 +158,42 @@ class NetworkingHelper: NSObject {
         NSLog("Params = %@", params)
         if IJReachability.isConnectedToNetwork() == true {
             sendRequestToServer("validate_request_id", params: params as [String : AnyObject], httpMethod: "POST") { (succeeded:Bool, response:[String:Any]) -> () in
+                print(response)
+                if(succeeded){
+                    switch(response["status"] as! Int) {
+                    case STATUS_CODES.SHOW_DATA, STATUS_CODES.INVALID_ACCESS_TOKEN:
+                        DispatchQueue.main.async(execute: { () -> Void in
+                            receivedResponse(true, response)
+                        })
+                        break
+                        
+                    case STATUS_CODES.SHOW_MESSAGE:
+                        Auxillary.showAlert(response["message"] as! String!)
+                        receivedResponse(false, [:])
+                        break
+                        
+                    default:
+                        Auxillary.showAlert(response["message"] as! String!)
+                        receivedResponse(false, [:])
+                    }
+                } else {
+                    Auxillary.showAlert(STATUS_CODES.SERVER_NOT_RESPONDING)
+                    receivedResponse(false, [:])
+                }
+            }
+        } else {
+            Auxillary.showAlert(STATUS_CODES.NO_INTERNET_CONNECTION)
+            receivedResponse(false, [:])
+        }
+    }
+    
+    func stopTracking(_ sessionID:String,userID: String, apiKey:String, receivedResponse:@escaping (_ succeeded:Bool, _ response:[String:Any]) -> ()){
+        var params : [String : Any] = ["session_id": sessionID]
+        params["unique_user_id"] = userID
+        params["api_key"] = apiKey
+        NSLog("logout = %@", params)
+        if IJReachability.isConnectedToNetwork() == true {
+            sendRequestToServer("stop_sharing", params: params as [String : AnyObject], httpMethod: "POST") { (succeeded:Bool, response:[String:Any]) -> () in
                 print(response)
                 if(succeeded){
                     switch(response["status"] as! Int) {

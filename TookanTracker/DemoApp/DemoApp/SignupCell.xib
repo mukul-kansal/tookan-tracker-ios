@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="SignupCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="SignupCell" rowHeight="57" id="KGk-i7-Jjw" customClass="SignupCell" customModule="Tookan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="56.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="h0M-aS-87J">
+                        <rect key="frame" x="0.0" y="12" width="320" height="32.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32.5" id="Qrn-yR-BYd"/>
+                        </constraints>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                    </textField>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHa-Td-uPj">
+                        <rect key="frame" x="0.0" y="57" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Kr2-aT-OeK"/>
+                        </constraints>
+                    </view>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="8" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pV2-HR-Foa">
+                        <rect key="frame" x="0.0" y="12" width="8" height="33"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32.5" id="AhL-48-xdb"/>
+                        </constraints>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="YHa-Td-uPj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8La-iw-ghS"/>
+                    <constraint firstItem="h0M-aS-87J" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ASd-ZG-zsk"/>
+                    <constraint firstItem="pV2-HR-Foa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="IbS-Fr-roe"/>
+                    <constraint firstItem="pV2-HR-Foa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="K68-MT-Nr7"/>
+                    <constraint firstAttribute="bottom" secondItem="YHa-Td-uPj" secondAttribute="bottom" id="TNz-1d-6uf"/>
+                    <constraint firstItem="h0M-aS-87J" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Zuk-y4-ZqV"/>
+                    <constraint firstAttribute="trailing" secondItem="h0M-aS-87J" secondAttribute="trailing" id="ctc-bY-Mv3"/>
+                    <constraint firstItem="YHa-Td-uPj" firstAttribute="top" secondItem="pV2-HR-Foa" secondAttribute="bottom" constant="12" id="fcq-of-TYQ"/>
+                    <constraint firstAttribute="trailing" secondItem="YHa-Td-uPj" secondAttribute="trailing" id="pUd-1b-FzM"/>
+                    <constraint firstAttribute="bottom" secondItem="h0M-aS-87J" secondAttribute="bottom" constant="12" id="qdT-eA-pRm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="countryField" destination="pV2-HR-Foa" id="G99-Jf-N3H"/>
+                <outlet property="leadingConstraint" destination="ASd-ZG-zsk" id="wvC-Qa-FBI"/>
+                <outlet property="signupField" destination="h0M-aS-87J" id="bgQ-7B-QIy"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="58.5"/>
+        </tableViewCell>
+    </objects>
+</document>
