@@ -57,6 +57,7 @@ class ViewController: UIViewController, TookanTrackerDelegate {
         self.setTextField()
 //        self.setBottomView()
         self.setSignInButton()
+        self.setSignUpButton()
         self.navigationController?.isNavigationBarHidden = true
         
     }
@@ -94,7 +95,7 @@ class ViewController: UIViewController, TookanTrackerDelegate {
     
     func setSignUpButton() {
         self.signup.layer.cornerRadius = 25.0
-        self.signup.setTitle("Sign In", for: .normal)
+        self.signup.setTitle("Sign Up", for: .normal)
         self.signup.backgroundColor = UIColor.white
         self.signup.setTitleColor(UIColor(red: 70/255, green: 149/255, blue: 246/255, alpha: 1.0), for: .normal)
     }

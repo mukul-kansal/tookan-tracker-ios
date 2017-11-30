@@ -11,8 +11,6 @@
 		2632133E1FC86F4F00E0C2AA /* OTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2632133D1FC86F4F00E0C2AA /* OTPController.swift */; };
 		263213411FC86FF200E0C2AA /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2632133F1FC86FF200E0C2AA /* Networking.swift */; };
 		263213421FC86FF200E0C2AA /* IJReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263213401FC86FF200E0C2AA /* IJReachability.swift */; };
-		2643AF561FCDB27300DBB343 /* TookanTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2643AF551FCDB26A00DBB343 /* TookanTracker.framework */; };
-		2643AF571FCDB27300DBB343 /* TookanTracker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2643AF551FCDB26A00DBB343 /* TookanTracker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2643AF5B1FCEEB5800DBB343 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643AF5A1FCEEB5800DBB343 /* SignupViewController.swift */; };
 		2643AF5E1FCEF19900DBB343 /* SignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643AF5C1FCEF19800DBB343 /* SignupModel.swift */; };
 		2643AF5F1FCEF19900DBB343 /* SignupVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643AF5D1FCEF19900DBB343 /* SignupVCModel.swift */; };
@@ -25,19 +23,21 @@
 		26F5BDDC1FC83335000D2715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F5BDDA1FC83335000D2715 /* Main.storyboard */; };
 		26F5BDDE1FC83335000D2715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26F5BDDD1FC83335000D2715 /* Assets.xcassets */; };
 		26F5BDE11FC83335000D2715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F5BDDF1FC83335000D2715 /* LaunchScreen.storyboard */; };
+		26FA42F51FD00F7B00EF21E9 /* TookanTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26FA42F41FD00F4D00EF21E9 /* TookanTracker.framework */; };
+		26FA42F61FD00F7B00EF21E9 /* TookanTracker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26FA42F41FD00F4D00EF21E9 /* TookanTracker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2643AF541FCDB26A00DBB343 /* PBXContainerItemProxy */ = {
+		26FA42F31FD00F4D00EF21E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2643AF4F1FCDB26A00DBB343 /* TookanTracker.xcodeproj */;
+			containerPortal = 26FA42EE1FD00F4D00EF21E9 /* TookanTracker.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 26F5BD4B1FC817BC000D2715;
 			remoteInfo = TookanTracker;
 		};
-		2643AF581FCDB27300DBB343 /* PBXContainerItemProxy */ = {
+		26FA42F71FD00F7B00EF21E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2643AF4F1FCDB26A00DBB343 /* TookanTracker.xcodeproj */;
+			containerPortal = 26FA42EE1FD00F4D00EF21E9 /* TookanTracker.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 26F5BD4A1FC817BB000D2715;
 			remoteInfo = TookanTracker;
@@ -51,7 +51,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2643AF571FCDB27300DBB343 /* TookanTracker.framework in Embed Frameworks */,
+				26FA42F61FD00F7B00EF21E9 /* TookanTracker.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,7 +64,6 @@
 		2632133D1FC86F4F00E0C2AA /* OTPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPController.swift; sourceTree = "<group>"; };
 		2632133F1FC86FF200E0C2AA /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		263213401FC86FF200E0C2AA /* IJReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IJReachability.swift; sourceTree = "<group>"; };
-		2643AF4F1FCDB26A00DBB343 /* TookanTracker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TookanTracker.xcodeproj; path = ../TookanTracker.xcodeproj; sourceTree = "<group>"; };
 		2643AF5A1FCEEB5800DBB343 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		2643AF5C1FCEF19800DBB343 /* SignupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModel.swift; sourceTree = "<group>"; };
 		2643AF5D1FCEF19900DBB343 /* SignupVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVCModel.swift; sourceTree = "<group>"; };
@@ -79,6 +78,7 @@
 		26F5BDDD1FC83335000D2715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26F5BDE01FC83335000D2715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26F5BDE21FC83335000D2715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26FA42EE1FD00F4D00EF21E9 /* TookanTracker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TookanTracker.xcodeproj; path = ../TookanTracker.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,25 +86,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2643AF561FCDB27300DBB343 /* TookanTracker.framework in Frameworks */,
+				26FA42F51FD00F7B00EF21E9 /* TookanTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2643AF501FCDB26A00DBB343 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2643AF551FCDB26A00DBB343 /* TookanTracker.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		26F5BDCA1FC83335000D2715 = {
 			isa = PBXGroup;
 			children = (
-				2643AF4F1FCDB26A00DBB343 /* TookanTracker.xcodeproj */,
+				26FA42EE1FD00F4D00EF21E9 /* TookanTracker.xcodeproj */,
 				26F5BDD51FC83335000D2715 /* DemoApp */,
 				26F5BDD41FC83335000D2715 /* Products */,
 			);
@@ -143,6 +135,14 @@
 			path = DemoApp;
 			sourceTree = "<group>";
 		};
+		26FA42EF1FD00F4D00EF21E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26FA42F41FD00F4D00EF21E9 /* TookanTracker.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,7 +158,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				2643AF591FCDB27300DBB343 /* PBXTargetDependency */,
+				26FA42F81FD00F7B00EF21E9 /* PBXTargetDependency */,
 			);
 			name = DemoApp;
 			productName = DemoApp;
@@ -194,8 +194,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 2643AF501FCDB26A00DBB343 /* Products */;
-					ProjectRef = 2643AF4F1FCDB26A00DBB343 /* TookanTracker.xcodeproj */;
+					ProductGroup = 26FA42EF1FD00F4D00EF21E9 /* Products */;
+					ProjectRef = 26FA42EE1FD00F4D00EF21E9 /* TookanTracker.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -206,11 +206,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		2643AF551FCDB26A00DBB343 /* TookanTracker.framework */ = {
+		26FA42F41FD00F4D00EF21E9 /* TookanTracker.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = TookanTracker.framework;
-			remoteRef = 2643AF541FCDB26A00DBB343 /* PBXContainerItemProxy */;
+			remoteRef = 26FA42F31FD00F4D00EF21E9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -252,10 +252,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2643AF591FCDB27300DBB343 /* PBXTargetDependency */ = {
+		26FA42F81FD00F7B00EF21E9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TookanTracker;
-			targetProxy = 2643AF581FCDB27300DBB343 /* PBXContainerItemProxy */;
+			targetProxy = 26FA42F71FD00F7B00EF21E9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

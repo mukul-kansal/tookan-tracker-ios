@@ -1,14 +1,17 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
 - "LocationTrackerDelegate"
+- "TrackingDelegate"
 - "LocationFrequency"
 - "LocationTrackerFile"
 provides-nominal:
 - "13TookanTracker08LocationB8DelegateP"
+- "13TookanTracker16TrackingDelegateP"
 - "13TookanTracker17LocationFrequencyO"
 - "13TookanTracker08LocationB4FileC"
 provides-member:
 - ["13TookanTracker08LocationB8DelegateP", ""]
+- ["13TookanTracker16TrackingDelegateP", ""]
 - ["13TookanTracker17LocationFrequencyO", ""]
 - ["13TookanTracker08LocationB4FileC", ""]
 provides-dynamic-lookup:
@@ -17,7 +20,9 @@ provides-dynamic-lookup:
 - "becomeActive"
 - "currentLocationOfUser"
 - "enterInForegroundFromBackground"
+- "getCoordinates"
 - "locationManager"
+- "logout"
 - "updateLocationToServer"
 depends-top-level:
 - !private "!="
@@ -40,6 +45,7 @@ depends-top-level:
 - "CLLocationManager"
 - "CLLocationManagerDelegate"
 - "CastingPrecedence"
+- !private "Date"
 - !private "Dictionary"
 - !private "Double"
 - "Float"
@@ -49,6 +55,7 @@ depends-top-level:
 - "LocationFrequency"
 - "LocationTrackerDelegate"
 - "LocationTrackerFile"
+- "MKMapViewDelegate"
 - !private "MqttClass"
 - !private "NSNotification"
 - "NSObject"
@@ -58,13 +65,17 @@ depends-top-level:
 - "StringLiteralType"
 - !private "TernaryPrecedence"
 - "Timer"
+- "TrackingDelegate"
 - !private "UIApplication"
 - !private "UIBackgroundRefreshStatus"
 - !private "UIDevice"
 - !private "USER_DEFAULT"
 - !private "UserDefaults"
+- !private "globalAPIKey"
+- !private "globalUserId"
 - !private "kCLDistanceFilterNone"
 - !private "kCLLocationAccuracyBestForNavigation"
+- !private "print"
 - !private "||"
 - !private "~="
 depends-member:
@@ -78,7 +89,6 @@ depends-member:
 - !private ["13TookanTracker21BackgroundTaskManagerC", "sharedBackgroundTaskManager"]
 - !private ["s23BidirectionalCollectionP", "append"]
 - !private ["s23BidirectionalCollectionP", "count"]
-- !private ["s23BidirectionalCollectionP", "getUTCDateString"]
 - ["s23BidirectionalCollectionP", "init"]
 - !private ["s23BidirectionalCollectionP", "jsonString"]
 - !private ["s23BidirectionalCollectionP", "last"]
@@ -115,6 +125,7 @@ depends-member:
 - !private ["So25CLLocationManagerDelegateP", "CLAuthorizationStatus"]
 - !private ["So25CLLocationManagerDelegateP", "CLLocation"]
 - ["So25CLLocationManagerDelegateP", "CLLocationManager"]
+- !private ["So25CLLocationManagerDelegateP", "Date"]
 - !private ["So25CLLocationManagerDelegateP", "Float"]
 - !private ["So25CLLocationManagerDelegateP", "Foundation"]
 - !private ["So25CLLocationManagerDelegateP", "IJReachability"]
@@ -142,7 +153,10 @@ depends-member:
 - !private ["So25CLLocationManagerDelegateP", "enterInForegroundFromBackground"]
 - !private ["So25CLLocationManagerDelegateP", "firstTime"]
 - !private ["So25CLLocationManagerDelegateP", "getSpeed"]
+- !private ["So25CLLocationManagerDelegateP", "globalAPIKey"]
+- !private ["So25CLLocationManagerDelegateP", "globalUserId"]
 - ["So25CLLocationManagerDelegateP", "init"]
+- !private ["So25CLLocationManagerDelegateP", "initMqtt"]
 - !private ["So25CLLocationManagerDelegateP", "isAllPermissionAuthorized"]
 - !private ["So25CLLocationManagerDelegateP", "isAppLocationEnabled"]
 - !private ["So25CLLocationManagerDelegateP", "isAuthorizedUser"]
@@ -156,12 +170,21 @@ depends-member:
 - ["So25CLLocationManagerDelegateP", "locationManagerShouldDisplayHeadingCalibration"]
 - !private ["So25CLLocationManagerDelegateP", "locationTracker"]
 - !private ["So25CLLocationManagerDelegateP", "locationUpdateTimer"]
+- ["So25CLLocationManagerDelegateP", "mapView"]
+- ["So25CLLocationManagerDelegateP", "mapViewDidFailLoadingMap"]
+- ["So25CLLocationManagerDelegateP", "mapViewDidFinishLoadingMap"]
+- ["So25CLLocationManagerDelegateP", "mapViewDidFinishRenderingMap"]
+- ["So25CLLocationManagerDelegateP", "mapViewDidStopLocatingUser"]
+- ["So25CLLocationManagerDelegateP", "mapViewWillStartLoadingMap"]
+- ["So25CLLocationManagerDelegateP", "mapViewWillStartLocatingUser"]
+- ["So25CLLocationManagerDelegateP", "mapViewWillStartRenderingMap"]
 - !private ["So25CLLocationManagerDelegateP", "maxAccuracy"]
 - !private ["So25CLLocationManagerDelegateP", "maxDistance"]
 - !private ["So25CLLocationManagerDelegateP", "maxSpeed"]
 - !private ["So25CLLocationManagerDelegateP", "myLastLocation"]
 - !private ["So25CLLocationManagerDelegateP", "myLocation"]
 - !private ["So25CLLocationManagerDelegateP", "myLocationAccuracy"]
+- !private ["So25CLLocationManagerDelegateP", "print"]
 - !private ["So25CLLocationManagerDelegateP", "restartLocationUpdates"]
 - !private ["So25CLLocationManagerDelegateP", "sendRequestToServer"]
 - !private ["So25CLLocationManagerDelegateP", "setFrequency"]
@@ -170,7 +193,10 @@ depends-member:
 - !private ["So25CLLocationManagerDelegateP", "sharedLocationManager"]
 - !private ["So25CLLocationManagerDelegateP", "slotTime"]
 - !private ["So25CLLocationManagerDelegateP", "speed"]
+- !private ["So25CLLocationManagerDelegateP", "startLocationService"]
+- !private ["So25CLLocationManagerDelegateP", "subsribeMQTTForTracking"]
 - !private ["So25CLLocationManagerDelegateP", "topic"]
+- !private ["So25CLLocationManagerDelegateP", "trackingDelegate"]
 - !private ["So25CLLocationManagerDelegateP", "updateLocationToServer"]
 - ["So25CLLocationManagerDelegateP", ""]
 - !private ["s7CVarArgP", "BackgroundTaskManager"]
@@ -178,6 +204,7 @@ depends-member:
 - !private ["s7CVarArgP", "CLAuthorizationStatus"]
 - !private ["s7CVarArgP", "CLLocation"]
 - ["s7CVarArgP", "CLLocationManager"]
+- !private ["s7CVarArgP", "Date"]
 - !private ["s7CVarArgP", "Float"]
 - !private ["s7CVarArgP", "Foundation"]
 - !private ["s7CVarArgP", "IJReachability"]
@@ -217,15 +244,18 @@ depends-member:
 - !private ["s7CVarArgP", "default"]
 - !private ["s7CVarArgP", "delegate"]
 - !private ["s7CVarArgP", "desiredAccuracy"]
+- !private ["s7CVarArgP", "disconnect"]
 - !private ["s7CVarArgP", "distance"]
 - !private ["s7CVarArgP", "distanceFilter"]
 - !private ["s7CVarArgP", "enterInForegroundFromBackground"]
 - !private ["s7CVarArgP", "firstTime"]
 - !private ["s7CVarArgP", "getSpeed"]
-- !private ["s7CVarArgP", "getUTCDateString"]
+- !private ["s7CVarArgP", "globalAPIKey"]
+- !private ["s7CVarArgP", "globalUserId"]
 - !private ["s7CVarArgP", "hashValue"]
 - !private ["s7CVarArgP", "horizontalAccuracy"]
 - ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "initMqtt"]
 - !private ["s7CVarArgP", "invalidate"]
 - !private ["s7CVarArgP", "isAllPermissionAuthorized"]
 - !private ["s7CVarArgP", "isAppLocationEnabled"]
@@ -244,6 +274,14 @@ depends-member:
 - !private ["s7CVarArgP", "locationServicesEnabled"]
 - !private ["s7CVarArgP", "locationTracker"]
 - !private ["s7CVarArgP", "locationUpdateTimer"]
+- ["s7CVarArgP", "mapView"]
+- ["s7CVarArgP", "mapViewDidFailLoadingMap"]
+- ["s7CVarArgP", "mapViewDidFinishLoadingMap"]
+- ["s7CVarArgP", "mapViewDidFinishRenderingMap"]
+- ["s7CVarArgP", "mapViewDidStopLocatingUser"]
+- ["s7CVarArgP", "mapViewWillStartLoadingMap"]
+- ["s7CVarArgP", "mapViewWillStartLocatingUser"]
+- ["s7CVarArgP", "mapViewWillStartRenderingMap"]
 - !private ["s7CVarArgP", "maxAccuracy"]
 - !private ["s7CVarArgP", "maxDistance"]
 - !private ["s7CVarArgP", "maxSpeed"]
@@ -254,6 +292,7 @@ depends-member:
 - !private ["s7CVarArgP", "object"]
 - !private ["s7CVarArgP", "pausesLocationUpdatesAutomatically"]
 - !private ["s7CVarArgP", "post"]
+- !private ["s7CVarArgP", "print"]
 - !private ["s7CVarArgP", "remove"]
 - !private ["s7CVarArgP", "requestAlwaysAuthorization"]
 - !private ["s7CVarArgP", "restartLocationUpdates"]
@@ -271,18 +310,22 @@ depends-member:
 - !private ["s7CVarArgP", "slotTime"]
 - !private ["s7CVarArgP", "speed"]
 - !private ["s7CVarArgP", "standard"]
+- !private ["s7CVarArgP", "startLocationService"]
 - !private ["s7CVarArgP", "startMonitoringSignificantLocationChanges"]
 - !private ["s7CVarArgP", "startUpdatingLocation"]
 - !private ["s7CVarArgP", "stopMonitoringSignificantLocationChanges"]
 - !private ["s7CVarArgP", "stopUpdatingLocation"]
 - !private ["s7CVarArgP", "subscribeLocation"]
+- !private ["s7CVarArgP", "subsribeMQTTForTracking"]
 - !private ["s7CVarArgP", "timestamp"]
 - !private ["s7CVarArgP", "topic"]
+- !private ["s7CVarArgP", "trackingDelegate"]
 - !private ["s7CVarArgP", "unsubscribeLocation"]
 - !private ["s7CVarArgP", "updateLocationToServer"]
 - !private ["s7CVarArgP", "value"]
 - ["s7CVarArgP", ""]
 - !private ["13TookanTracker17CocoaMQTTDelegateP", "connectToServer"]
+- !private ["13TookanTracker17CocoaMQTTDelegateP", "disconnect"]
 - !private ["13TookanTracker17CocoaMQTTDelegateP", "mqttSetting"]
 - !private ["13TookanTracker17CocoaMQTTDelegateP", "sendLocation"]
 - !private ["13TookanTracker17CocoaMQTTDelegateP", "sharedInstance"]
@@ -291,20 +334,20 @@ depends-member:
 - !private ["13TookanTracker17CocoaMQTTDelegateP", "unsubscribeLocation"]
 - !private ["s10CollectionP", "append"]
 - !private ["s10CollectionP", "count"]
-- !private ["s10CollectionP", "getUTCDateString"]
 - ["s10CollectionP", "init"]
 - !private ["s10CollectionP", "jsonString"]
 - !private ["s10CollectionP", "last"]
 - !private ["s10CollectionP", "remove"]
-- !private ["s10ComparableP", "getUTCDateString"]
 - !private ["s10ComparableP", "hashValue"]
 - ["s10ComparableP", "init"]
+- !private ["s10ComparableP", "millisecondsSince1970"]
 - !private ["s10ComparableP", "timeIntervalSince"]
 - !private ["s28CustomDebugStringConvertibleP", "BackgroundTaskManager"]
 - !private ["s28CustomDebugStringConvertibleP", "CLActivityType"]
 - !private ["s28CustomDebugStringConvertibleP", "CLAuthorizationStatus"]
 - !private ["s28CustomDebugStringConvertibleP", "CLLocation"]
 - ["s28CustomDebugStringConvertibleP", "CLLocationManager"]
+- !private ["s28CustomDebugStringConvertibleP", "Date"]
 - !private ["s28CustomDebugStringConvertibleP", "Float"]
 - !private ["s28CustomDebugStringConvertibleP", "Foundation"]
 - !private ["s28CustomDebugStringConvertibleP", "IJReachability"]
@@ -344,14 +387,17 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "default"]
 - !private ["s28CustomDebugStringConvertibleP", "delegate"]
 - !private ["s28CustomDebugStringConvertibleP", "desiredAccuracy"]
+- !private ["s28CustomDebugStringConvertibleP", "disconnect"]
 - !private ["s28CustomDebugStringConvertibleP", "distance"]
 - !private ["s28CustomDebugStringConvertibleP", "distanceFilter"]
 - !private ["s28CustomDebugStringConvertibleP", "enterInForegroundFromBackground"]
 - !private ["s28CustomDebugStringConvertibleP", "firstTime"]
 - !private ["s28CustomDebugStringConvertibleP", "getSpeed"]
-- !private ["s28CustomDebugStringConvertibleP", "getUTCDateString"]
+- !private ["s28CustomDebugStringConvertibleP", "globalAPIKey"]
+- !private ["s28CustomDebugStringConvertibleP", "globalUserId"]
 - !private ["s28CustomDebugStringConvertibleP", "horizontalAccuracy"]
 - ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "initMqtt"]
 - !private ["s28CustomDebugStringConvertibleP", "invalidate"]
 - !private ["s28CustomDebugStringConvertibleP", "isAllPermissionAuthorized"]
 - !private ["s28CustomDebugStringConvertibleP", "isAppLocationEnabled"]
@@ -370,9 +416,18 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "locationServicesEnabled"]
 - !private ["s28CustomDebugStringConvertibleP", "locationTracker"]
 - !private ["s28CustomDebugStringConvertibleP", "locationUpdateTimer"]
+- ["s28CustomDebugStringConvertibleP", "mapView"]
+- ["s28CustomDebugStringConvertibleP", "mapViewDidFailLoadingMap"]
+- ["s28CustomDebugStringConvertibleP", "mapViewDidFinishLoadingMap"]
+- ["s28CustomDebugStringConvertibleP", "mapViewDidFinishRenderingMap"]
+- ["s28CustomDebugStringConvertibleP", "mapViewDidStopLocatingUser"]
+- ["s28CustomDebugStringConvertibleP", "mapViewWillStartLoadingMap"]
+- ["s28CustomDebugStringConvertibleP", "mapViewWillStartLocatingUser"]
+- ["s28CustomDebugStringConvertibleP", "mapViewWillStartRenderingMap"]
 - !private ["s28CustomDebugStringConvertibleP", "maxAccuracy"]
 - !private ["s28CustomDebugStringConvertibleP", "maxDistance"]
 - !private ["s28CustomDebugStringConvertibleP", "maxSpeed"]
+- !private ["s28CustomDebugStringConvertibleP", "millisecondsSince1970"]
 - !private ["s28CustomDebugStringConvertibleP", "mqttSetting"]
 - !private ["s28CustomDebugStringConvertibleP", "myLastLocation"]
 - !private ["s28CustomDebugStringConvertibleP", "myLocation"]
@@ -380,6 +435,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "object"]
 - !private ["s28CustomDebugStringConvertibleP", "pausesLocationUpdatesAutomatically"]
 - !private ["s28CustomDebugStringConvertibleP", "post"]
+- !private ["s28CustomDebugStringConvertibleP", "print"]
 - !private ["s28CustomDebugStringConvertibleP", "remove"]
 - !private ["s28CustomDebugStringConvertibleP", "requestAlwaysAuthorization"]
 - !private ["s28CustomDebugStringConvertibleP", "restartLocationUpdates"]
@@ -397,32 +453,35 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "slotTime"]
 - !private ["s28CustomDebugStringConvertibleP", "speed"]
 - !private ["s28CustomDebugStringConvertibleP", "standard"]
+- !private ["s28CustomDebugStringConvertibleP", "startLocationService"]
 - !private ["s28CustomDebugStringConvertibleP", "startMonitoringSignificantLocationChanges"]
 - !private ["s28CustomDebugStringConvertibleP", "startUpdatingLocation"]
 - !private ["s28CustomDebugStringConvertibleP", "stopMonitoringSignificantLocationChanges"]
 - !private ["s28CustomDebugStringConvertibleP", "stopUpdatingLocation"]
 - !private ["s28CustomDebugStringConvertibleP", "subscribeLocation"]
+- !private ["s28CustomDebugStringConvertibleP", "subsribeMQTTForTracking"]
 - !private ["s28CustomDebugStringConvertibleP", "timeIntervalSince"]
 - !private ["s28CustomDebugStringConvertibleP", "timestamp"]
 - !private ["s28CustomDebugStringConvertibleP", "topic"]
+- !private ["s28CustomDebugStringConvertibleP", "trackingDelegate"]
 - !private ["s28CustomDebugStringConvertibleP", "unsubscribeLocation"]
 - !private ["s28CustomDebugStringConvertibleP", "updateLocationToServer"]
 - !private ["s28CustomDebugStringConvertibleP", "value"]
 - ["s28CustomDebugStringConvertibleP", ""]
 - !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
-- !private ["s29CustomPlaygroundQuickLookableP", "getUTCDateString"]
 - !private ["s29CustomPlaygroundQuickLookableP", "hashValue"]
 - ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "millisecondsSince1970"]
 - !private ["s29CustomPlaygroundQuickLookableP", "timeIntervalSince"]
 - !private ["s17CustomReflectableP", "Name"]
 - !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
 - !private ["s17CustomReflectableP", "append"]
 - !private ["s17CustomReflectableP", "count"]
-- !private ["s17CustomReflectableP", "getUTCDateString"]
 - !private ["s17CustomReflectableP", "hashValue"]
 - ["s17CustomReflectableP", "init"]
 - !private ["s17CustomReflectableP", "jsonString"]
 - !private ["s17CustomReflectableP", "last"]
+- !private ["s17CustomReflectableP", "millisecondsSince1970"]
 - !private ["s17CustomReflectableP", "remove"]
 - !private ["s17CustomReflectableP", "timeIntervalSince"]
 - !private ["s23CustomStringConvertibleP", "BackgroundTaskManager"]
@@ -430,6 +489,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "CLAuthorizationStatus"]
 - !private ["s23CustomStringConvertibleP", "CLLocation"]
 - ["s23CustomStringConvertibleP", "CLLocationManager"]
+- !private ["s23CustomStringConvertibleP", "Date"]
 - !private ["s23CustomStringConvertibleP", "Float"]
 - !private ["s23CustomStringConvertibleP", "Foundation"]
 - !private ["s23CustomStringConvertibleP", "IJReachability"]
@@ -470,15 +530,18 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "default"]
 - !private ["s23CustomStringConvertibleP", "delegate"]
 - !private ["s23CustomStringConvertibleP", "desiredAccuracy"]
+- !private ["s23CustomStringConvertibleP", "disconnect"]
 - !private ["s23CustomStringConvertibleP", "distance"]
 - !private ["s23CustomStringConvertibleP", "distanceFilter"]
 - !private ["s23CustomStringConvertibleP", "enterInForegroundFromBackground"]
 - !private ["s23CustomStringConvertibleP", "firstTime"]
 - !private ["s23CustomStringConvertibleP", "getSpeed"]
-- !private ["s23CustomStringConvertibleP", "getUTCDateString"]
+- !private ["s23CustomStringConvertibleP", "globalAPIKey"]
+- !private ["s23CustomStringConvertibleP", "globalUserId"]
 - !private ["s23CustomStringConvertibleP", "hashValue"]
 - !private ["s23CustomStringConvertibleP", "horizontalAccuracy"]
 - ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "initMqtt"]
 - !private ["s23CustomStringConvertibleP", "invalidate"]
 - !private ["s23CustomStringConvertibleP", "isAllPermissionAuthorized"]
 - !private ["s23CustomStringConvertibleP", "isAppLocationEnabled"]
@@ -497,9 +560,18 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "locationServicesEnabled"]
 - !private ["s23CustomStringConvertibleP", "locationTracker"]
 - !private ["s23CustomStringConvertibleP", "locationUpdateTimer"]
+- ["s23CustomStringConvertibleP", "mapView"]
+- ["s23CustomStringConvertibleP", "mapViewDidFailLoadingMap"]
+- ["s23CustomStringConvertibleP", "mapViewDidFinishLoadingMap"]
+- ["s23CustomStringConvertibleP", "mapViewDidFinishRenderingMap"]
+- ["s23CustomStringConvertibleP", "mapViewDidStopLocatingUser"]
+- ["s23CustomStringConvertibleP", "mapViewWillStartLoadingMap"]
+- ["s23CustomStringConvertibleP", "mapViewWillStartLocatingUser"]
+- ["s23CustomStringConvertibleP", "mapViewWillStartRenderingMap"]
 - !private ["s23CustomStringConvertibleP", "maxAccuracy"]
 - !private ["s23CustomStringConvertibleP", "maxDistance"]
 - !private ["s23CustomStringConvertibleP", "maxSpeed"]
+- !private ["s23CustomStringConvertibleP", "millisecondsSince1970"]
 - !private ["s23CustomStringConvertibleP", "mqttSetting"]
 - !private ["s23CustomStringConvertibleP", "myLastLocation"]
 - !private ["s23CustomStringConvertibleP", "myLocation"]
@@ -507,6 +579,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "object"]
 - !private ["s23CustomStringConvertibleP", "pausesLocationUpdatesAutomatically"]
 - !private ["s23CustomStringConvertibleP", "post"]
+- !private ["s23CustomStringConvertibleP", "print"]
 - !private ["s23CustomStringConvertibleP", "remove"]
 - !private ["s23CustomStringConvertibleP", "requestAlwaysAuthorization"]
 - !private ["s23CustomStringConvertibleP", "restartLocationUpdates"]
@@ -524,38 +597,43 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "slotTime"]
 - !private ["s23CustomStringConvertibleP", "speed"]
 - !private ["s23CustomStringConvertibleP", "standard"]
+- !private ["s23CustomStringConvertibleP", "startLocationService"]
 - !private ["s23CustomStringConvertibleP", "startMonitoringSignificantLocationChanges"]
 - !private ["s23CustomStringConvertibleP", "startUpdatingLocation"]
 - !private ["s23CustomStringConvertibleP", "stopMonitoringSignificantLocationChanges"]
 - !private ["s23CustomStringConvertibleP", "stopUpdatingLocation"]
 - !private ["s23CustomStringConvertibleP", "subscribeLocation"]
+- !private ["s23CustomStringConvertibleP", "subsribeMQTTForTracking"]
 - !private ["s23CustomStringConvertibleP", "timeIntervalSince"]
 - !private ["s23CustomStringConvertibleP", "timestamp"]
 - !private ["s23CustomStringConvertibleP", "topic"]
+- !private ["s23CustomStringConvertibleP", "trackingDelegate"]
 - !private ["s23CustomStringConvertibleP", "unsubscribeLocation"]
 - !private ["s23CustomStringConvertibleP", "updateLocationToServer"]
 - !private ["s23CustomStringConvertibleP", "value"]
 - ["s23CustomStringConvertibleP", ""]
+- !private ["10Foundation4DateV", "init"]
+- !private ["10Foundation4DateV", "millisecondsSince1970"]
 - !private ["10Foundation4DateV", "timeIntervalSince"]
 - !private ["s9DecodableP", "_getBuiltinLogicValue"]
 - !private ["s9DecodableP", "append"]
 - !private ["s9DecodableP", "count"]
-- !private ["s9DecodableP", "getUTCDateString"]
 - !private ["s9DecodableP", "hashValue"]
 - ["s9DecodableP", "init"]
 - !private ["s9DecodableP", "jsonString"]
 - !private ["s9DecodableP", "last"]
+- !private ["s9DecodableP", "millisecondsSince1970"]
 - !private ["s9DecodableP", "remove"]
 - !private ["s9DecodableP", "timeIntervalSince"]
 - !private ["s10DictionaryV", "init"]
 - !private ["s9EncodableP", "_getBuiltinLogicValue"]
 - !private ["s9EncodableP", "append"]
 - !private ["s9EncodableP", "count"]
-- !private ["s9EncodableP", "getUTCDateString"]
 - !private ["s9EncodableP", "hashValue"]
 - ["s9EncodableP", "init"]
 - !private ["s9EncodableP", "jsonString"]
 - !private ["s9EncodableP", "last"]
+- !private ["s9EncodableP", "millisecondsSince1970"]
 - !private ["s9EncodableP", "remove"]
 - !private ["s9EncodableP", "timeIntervalSince"]
 - !private ["s9EquatableP", "BackgroundTaskManager"]
@@ -563,6 +641,7 @@ depends-member:
 - !private ["s9EquatableP", "CLAuthorizationStatus"]
 - !private ["s9EquatableP", "CLLocation"]
 - ["s9EquatableP", "CLLocationManager"]
+- !private ["s9EquatableP", "Date"]
 - !private ["s9EquatableP", "Float"]
 - !private ["s9EquatableP", "Foundation"]
 - !private ["s9EquatableP", "IJReachability"]
@@ -608,16 +687,19 @@ depends-member:
 - !private ["s9EquatableP", "delegate"]
 - !private ["s9EquatableP", "denied"]
 - !private ["s9EquatableP", "desiredAccuracy"]
+- !private ["s9EquatableP", "disconnect"]
 - !private ["s9EquatableP", "distance"]
 - !private ["s9EquatableP", "distanceFilter"]
 - !private ["s9EquatableP", "enterInForegroundFromBackground"]
 - !private ["s9EquatableP", "firstTime"]
 - !private ["s9EquatableP", "getSpeed"]
-- !private ["s9EquatableP", "getUTCDateString"]
+- !private ["s9EquatableP", "globalAPIKey"]
+- !private ["s9EquatableP", "globalUserId"]
 - ["s9EquatableP", "hashValue"]
 - ["s9EquatableP", "high"]
 - !private ["s9EquatableP", "horizontalAccuracy"]
 - ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "initMqtt"]
 - !private ["s9EquatableP", "invalidate"]
 - !private ["s9EquatableP", "isAllPermissionAuthorized"]
 - !private ["s9EquatableP", "isAppLocationEnabled"]
@@ -635,10 +717,19 @@ depends-member:
 - !private ["s9EquatableP", "locationTracker"]
 - !private ["s9EquatableP", "locationUpdateTimer"]
 - !private ["s9EquatableP", "low"]
+- ["s9EquatableP", "mapView"]
+- ["s9EquatableP", "mapViewDidFailLoadingMap"]
+- ["s9EquatableP", "mapViewDidFinishLoadingMap"]
+- ["s9EquatableP", "mapViewDidFinishRenderingMap"]
+- ["s9EquatableP", "mapViewDidStopLocatingUser"]
+- ["s9EquatableP", "mapViewWillStartLoadingMap"]
+- ["s9EquatableP", "mapViewWillStartLocatingUser"]
+- ["s9EquatableP", "mapViewWillStartRenderingMap"]
 - !private ["s9EquatableP", "maxAccuracy"]
 - !private ["s9EquatableP", "maxDistance"]
 - !private ["s9EquatableP", "maxSpeed"]
 - !private ["s9EquatableP", "medium"]
+- !private ["s9EquatableP", "millisecondsSince1970"]
 - !private ["s9EquatableP", "mqttSetting"]
 - !private ["s9EquatableP", "myLastLocation"]
 - !private ["s9EquatableP", "myLocation"]
@@ -646,6 +737,7 @@ depends-member:
 - !private ["s9EquatableP", "object"]
 - !private ["s9EquatableP", "pausesLocationUpdatesAutomatically"]
 - !private ["s9EquatableP", "post"]
+- !private ["s9EquatableP", "print"]
 - ["s9EquatableP", "rawValue"]
 - !private ["s9EquatableP", "requestAlwaysAuthorization"]
 - !private ["s9EquatableP", "restartLocationUpdates"]
@@ -664,14 +756,17 @@ depends-member:
 - !private ["s9EquatableP", "slotTime"]
 - !private ["s9EquatableP", "speed"]
 - !private ["s9EquatableP", "standard"]
+- !private ["s9EquatableP", "startLocationService"]
 - !private ["s9EquatableP", "startMonitoringSignificantLocationChanges"]
 - !private ["s9EquatableP", "startUpdatingLocation"]
 - !private ["s9EquatableP", "stopMonitoringSignificantLocationChanges"]
 - !private ["s9EquatableP", "stopUpdatingLocation"]
 - !private ["s9EquatableP", "subscribeLocation"]
+- !private ["s9EquatableP", "subsribeMQTTForTracking"]
 - !private ["s9EquatableP", "timeIntervalSince"]
 - !private ["s9EquatableP", "timestamp"]
 - !private ["s9EquatableP", "topic"]
+- !private ["s9EquatableP", "trackingDelegate"]
 - !private ["s9EquatableP", "unsubscribeLocation"]
 - !private ["s9EquatableP", "updateLocationToServer"]
 - !private ["s9EquatableP", "value"]
@@ -684,14 +779,11 @@ depends-member:
 - !private ["s25ExpressibleByArrayLiteralP", "remove"]
 - !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
 - !private ["s30ExpressibleByDictionaryLiteralP", "init"]
-- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "getUTCDateString"]
 - ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
 - !private ["s25ExpressibleByFloatLiteralP", "init"]
 - !private ["s27ExpressibleByIntegerLiteralP", "hashValue"]
 - !private ["s27ExpressibleByIntegerLiteralP", "init"]
-- !private ["s26ExpressibleByStringLiteralP", "getUTCDateString"]
 - ["s26ExpressibleByStringLiteralP", "init"]
-- !private ["s33ExpressibleByUnicodeScalarLiteralP", "getUTCDateString"]
 - ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
 - !private ["s17FixedWidthIntegerP", "hashValue"]
 - !private ["Sf", "init"]
@@ -701,6 +793,7 @@ depends-member:
 - !private ["s8HashableP", "CLAuthorizationStatus"]
 - !private ["s8HashableP", "CLLocation"]
 - ["s8HashableP", "CLLocationManager"]
+- !private ["s8HashableP", "Date"]
 - !private ["s8HashableP", "Float"]
 - !private ["s8HashableP", "Foundation"]
 - !private ["s8HashableP", "IJReachability"]
@@ -746,16 +839,19 @@ depends-member:
 - !private ["s8HashableP", "delegate"]
 - !private ["s8HashableP", "denied"]
 - !private ["s8HashableP", "desiredAccuracy"]
+- !private ["s8HashableP", "disconnect"]
 - !private ["s8HashableP", "distance"]
 - !private ["s8HashableP", "distanceFilter"]
 - !private ["s8HashableP", "enterInForegroundFromBackground"]
 - !private ["s8HashableP", "firstTime"]
 - !private ["s8HashableP", "getSpeed"]
-- !private ["s8HashableP", "getUTCDateString"]
+- !private ["s8HashableP", "globalAPIKey"]
+- !private ["s8HashableP", "globalUserId"]
 - ["s8HashableP", "hashValue"]
 - ["s8HashableP", "high"]
 - !private ["s8HashableP", "horizontalAccuracy"]
 - ["s8HashableP", "init"]
+- !private ["s8HashableP", "initMqtt"]
 - !private ["s8HashableP", "invalidate"]
 - !private ["s8HashableP", "isAllPermissionAuthorized"]
 - !private ["s8HashableP", "isAppLocationEnabled"]
@@ -773,10 +869,19 @@ depends-member:
 - !private ["s8HashableP", "locationTracker"]
 - !private ["s8HashableP", "locationUpdateTimer"]
 - !private ["s8HashableP", "low"]
+- ["s8HashableP", "mapView"]
+- ["s8HashableP", "mapViewDidFailLoadingMap"]
+- ["s8HashableP", "mapViewDidFinishLoadingMap"]
+- ["s8HashableP", "mapViewDidFinishRenderingMap"]
+- ["s8HashableP", "mapViewDidStopLocatingUser"]
+- ["s8HashableP", "mapViewWillStartLoadingMap"]
+- ["s8HashableP", "mapViewWillStartLocatingUser"]
+- ["s8HashableP", "mapViewWillStartRenderingMap"]
 - !private ["s8HashableP", "maxAccuracy"]
 - !private ["s8HashableP", "maxDistance"]
 - !private ["s8HashableP", "maxSpeed"]
 - !private ["s8HashableP", "medium"]
+- !private ["s8HashableP", "millisecondsSince1970"]
 - !private ["s8HashableP", "mqttSetting"]
 - !private ["s8HashableP", "myLastLocation"]
 - !private ["s8HashableP", "myLocation"]
@@ -784,6 +889,7 @@ depends-member:
 - !private ["s8HashableP", "object"]
 - !private ["s8HashableP", "pausesLocationUpdatesAutomatically"]
 - !private ["s8HashableP", "post"]
+- !private ["s8HashableP", "print"]
 - ["s8HashableP", "rawValue"]
 - !private ["s8HashableP", "requestAlwaysAuthorization"]
 - !private ["s8HashableP", "restartLocationUpdates"]
@@ -802,14 +908,17 @@ depends-member:
 - !private ["s8HashableP", "slotTime"]
 - !private ["s8HashableP", "speed"]
 - !private ["s8HashableP", "standard"]
+- !private ["s8HashableP", "startLocationService"]
 - !private ["s8HashableP", "startMonitoringSignificantLocationChanges"]
 - !private ["s8HashableP", "startUpdatingLocation"]
 - !private ["s8HashableP", "stopMonitoringSignificantLocationChanges"]
 - !private ["s8HashableP", "stopUpdatingLocation"]
 - !private ["s8HashableP", "subscribeLocation"]
+- !private ["s8HashableP", "subsribeMQTTForTracking"]
 - !private ["s8HashableP", "timeIntervalSince"]
 - !private ["s8HashableP", "timestamp"]
 - !private ["s8HashableP", "topic"]
+- !private ["s8HashableP", "trackingDelegate"]
 - !private ["s8HashableP", "unsubscribeLocation"]
 - !private ["s8HashableP", "updateLocationToServer"]
 - !private ["s8HashableP", "value"]
@@ -834,6 +943,7 @@ depends-member:
 - ["13TookanTracker08LocationB4FileC", "CLLocationAccuracy"]
 - !private ["13TookanTracker08LocationB4FileC", "CLLocationDistance"]
 - ["13TookanTracker08LocationB4FileC", "CLLocationManager"]
+- !private ["13TookanTracker08LocationB4FileC", "Date"]
 - !private ["13TookanTracker08LocationB4FileC", "Double"]
 - ["13TookanTracker08LocationB4FileC", "Float"]
 - !private ["13TookanTracker08LocationB4FileC", "Foundation"]
@@ -848,6 +958,7 @@ depends-member:
 - ["13TookanTracker08LocationB4FileC", "SDKVersion"]
 - ["13TookanTracker08LocationB4FileC", "String"]
 - ["13TookanTracker08LocationB4FileC", "Timer"]
+- ["13TookanTracker08LocationB4FileC", "TrackingDelegate"]
 - !private ["13TookanTracker08LocationB4FileC", "UIApplication"]
 - !private ["13TookanTracker08LocationB4FileC", "UIBackgroundRefreshStatus"]
 - !private ["13TookanTracker08LocationB4FileC", "UIDevice"]
@@ -866,6 +977,8 @@ depends-member:
 - ["13TookanTracker08LocationB4FileC", "firstTime"]
 - ["13TookanTracker08LocationB4FileC", "getCurrentLocation"]
 - !private ["13TookanTracker08LocationB4FileC", "getSpeed"]
+- !private ["13TookanTracker08LocationB4FileC", "globalAPIKey"]
+- !private ["13TookanTracker08LocationB4FileC", "globalUserId"]
 - ["13TookanTracker08LocationB4FileC", "init"]
 - ["13TookanTracker08LocationB4FileC", "initMqtt"]
 - !private ["13TookanTracker08LocationB4FileC", "isAllPermissionAuthorized"]
@@ -881,12 +994,22 @@ depends-member:
 - ["13TookanTracker08LocationB4FileC", "locationManagerShouldDisplayHeadingCalibration"]
 - !private ["13TookanTracker08LocationB4FileC", "locationTracker"]
 - !private ["13TookanTracker08LocationB4FileC", "locationUpdateTimer"]
-- !private ["13TookanTracker08LocationB4FileC", "maxAccuracy"]
+- ["13TookanTracker08LocationB4FileC", "mapView"]
+- ["13TookanTracker08LocationB4FileC", "mapViewDidFailLoadingMap"]
+- ["13TookanTracker08LocationB4FileC", "mapViewDidFinishLoadingMap"]
+- ["13TookanTracker08LocationB4FileC", "mapViewDidFinishRenderingMap"]
+- ["13TookanTracker08LocationB4FileC", "mapViewDidStopLocatingUser"]
+- ["13TookanTracker08LocationB4FileC", "mapViewWillStartLoadingMap"]
+- ["13TookanTracker08LocationB4FileC", "mapViewWillStartLocatingUser"]
+- ["13TookanTracker08LocationB4FileC", "mapViewWillStartRenderingMap"]
+- ["13TookanTracker08LocationB4FileC", "maxAccuracy"]
 - !private ["13TookanTracker08LocationB4FileC", "maxDistance"]
 - !private ["13TookanTracker08LocationB4FileC", "maxSpeed"]
 - !private ["13TookanTracker08LocationB4FileC", "myLastLocation"]
 - !private ["13TookanTracker08LocationB4FileC", "myLocation"]
-- !private ["13TookanTracker08LocationB4FileC", "myLocationAccuracy"]
+- ["13TookanTracker08LocationB4FileC", "myLocationAccuracy"]
+- !private ["13TookanTracker08LocationB4FileC", "print"]
+- ["13TookanTracker08LocationB4FileC", "registerAllRequiredInitilazers"]
 - !private ["13TookanTracker08LocationB4FileC", "restartLocationUpdates"]
 - !private ["13TookanTracker08LocationB4FileC", "sendRequestToServer"]
 - !private ["13TookanTracker08LocationB4FileC", "setFrequency"]
@@ -900,16 +1023,95 @@ depends-member:
 - ["13TookanTracker08LocationB4FileC", "stopLocationService"]
 - ["13TookanTracker08LocationB4FileC", "subsribeMQTTForTracking"]
 - ["13TookanTracker08LocationB4FileC", "topic"]
+- ["13TookanTracker08LocationB4FileC", "trackingDelegate"]
 - !private ["13TookanTracker08LocationB4FileC", "updateLastSavedLocationOnServer"]
 - ["13TookanTracker08LocationB4FileC", "updateLocationToServer"]
 - !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
-- !private ["s25LosslessStringConvertibleP", "getUTCDateString"]
 - !private ["s25LosslessStringConvertibleP", "hashValue"]
 - ["s25LosslessStringConvertibleP", "init"]
-- !private ["s10MirrorPathP", "getUTCDateString"]
+- !private ["So17MKMapViewDelegateP", "BackgroundTaskManager"]
+- !private ["So17MKMapViewDelegateP", "CLActivityType"]
+- !private ["So17MKMapViewDelegateP", "CLAuthorizationStatus"]
+- !private ["So17MKMapViewDelegateP", "CLLocation"]
+- ["So17MKMapViewDelegateP", "CLLocationManager"]
+- !private ["So17MKMapViewDelegateP", "Date"]
+- !private ["So17MKMapViewDelegateP", "Float"]
+- !private ["So17MKMapViewDelegateP", "Foundation"]
+- !private ["So17MKMapViewDelegateP", "IJReachability"]
+- ["So17MKMapViewDelegateP", "LocationFrequency"]
+- ["So17MKMapViewDelegateP", "LocationTrackerFile"]
+- !private ["So17MKMapViewDelegateP", "MqttClass"]
+- !private ["So17MKMapViewDelegateP", "NSNotification"]
+- !private ["So17MKMapViewDelegateP", "NotificationCenter"]
+- !private ["So17MKMapViewDelegateP", "OBSERVER"]
+- !private ["So17MKMapViewDelegateP", "String"]
+- !private ["So17MKMapViewDelegateP", "Timer"]
+- !private ["So17MKMapViewDelegateP", "UIApplication"]
+- !private ["So17MKMapViewDelegateP", "UIBackgroundRefreshStatus"]
+- !private ["So17MKMapViewDelegateP", "UIDevice"]
+- !private ["So17MKMapViewDelegateP", "USER_DEFAULT"]
+- !private ["So17MKMapViewDelegateP", "UserDefaults"]
+- !private ["So17MKMapViewDelegateP", "addFilteredLocationToLocationArray"]
+- !private ["So17MKMapViewDelegateP", "appEnterInTerminateState"]
+- !private ["So17MKMapViewDelegateP", "applicationEnterBackground"]
+- !private ["So17MKMapViewDelegateP", "applyFilterOnGetLocation"]
+- !private ["So17MKMapViewDelegateP", "becomeActive"]
+- !private ["So17MKMapViewDelegateP", "beginNewBackgroundTask"]
+- !private ["So17MKMapViewDelegateP", "bgTask"]
+- !private ["So17MKMapViewDelegateP", "delegate"]
+- !private ["So17MKMapViewDelegateP", "enterInForegroundFromBackground"]
+- !private ["So17MKMapViewDelegateP", "firstTime"]
+- !private ["So17MKMapViewDelegateP", "getSpeed"]
+- !private ["So17MKMapViewDelegateP", "globalAPIKey"]
+- !private ["So17MKMapViewDelegateP", "globalUserId"]
+- ["So17MKMapViewDelegateP", "init"]
+- !private ["So17MKMapViewDelegateP", "initMqtt"]
+- !private ["So17MKMapViewDelegateP", "isAllPermissionAuthorized"]
+- !private ["So17MKMapViewDelegateP", "isAppLocationEnabled"]
+- !private ["So17MKMapViewDelegateP", "isAuthorizedUser"]
+- !private ["So17MKMapViewDelegateP", "kCLDistanceFilterNone"]
+- !private ["So17MKMapViewDelegateP", "kCLLocationAccuracyBestForNavigation"]
+- !private ["So17MKMapViewDelegateP", "locationFrequencyMode"]
+- ["So17MKMapViewDelegateP", "locationManager"]
+- ["So17MKMapViewDelegateP", "locationManagerDidPauseLocationUpdates"]
+- ["So17MKMapViewDelegateP", "locationManagerDidResumeLocationUpdates"]
+- !private ["So17MKMapViewDelegateP", "locationManagerObj"]
+- ["So17MKMapViewDelegateP", "locationManagerShouldDisplayHeadingCalibration"]
+- !private ["So17MKMapViewDelegateP", "locationTracker"]
+- !private ["So17MKMapViewDelegateP", "locationUpdateTimer"]
+- ["So17MKMapViewDelegateP", "mapView"]
+- ["So17MKMapViewDelegateP", "mapViewDidFailLoadingMap"]
+- ["So17MKMapViewDelegateP", "mapViewDidFinishLoadingMap"]
+- ["So17MKMapViewDelegateP", "mapViewDidFinishRenderingMap"]
+- ["So17MKMapViewDelegateP", "mapViewDidStopLocatingUser"]
+- ["So17MKMapViewDelegateP", "mapViewWillStartLoadingMap"]
+- ["So17MKMapViewDelegateP", "mapViewWillStartLocatingUser"]
+- ["So17MKMapViewDelegateP", "mapViewWillStartRenderingMap"]
+- !private ["So17MKMapViewDelegateP", "maxAccuracy"]
+- !private ["So17MKMapViewDelegateP", "maxDistance"]
+- !private ["So17MKMapViewDelegateP", "maxSpeed"]
+- !private ["So17MKMapViewDelegateP", "myLastLocation"]
+- !private ["So17MKMapViewDelegateP", "myLocation"]
+- !private ["So17MKMapViewDelegateP", "myLocationAccuracy"]
+- !private ["So17MKMapViewDelegateP", "print"]
+- !private ["So17MKMapViewDelegateP", "restartLocationUpdates"]
+- !private ["So17MKMapViewDelegateP", "sendRequestToServer"]
+- !private ["So17MKMapViewDelegateP", "setFrequency"]
+- !private ["So17MKMapViewDelegateP", "setLocationUpdate"]
+- !private ["So17MKMapViewDelegateP", "sharedBackgroundTaskManager"]
+- !private ["So17MKMapViewDelegateP", "sharedLocationManager"]
+- !private ["So17MKMapViewDelegateP", "slotTime"]
+- !private ["So17MKMapViewDelegateP", "speed"]
+- !private ["So17MKMapViewDelegateP", "startLocationService"]
+- !private ["So17MKMapViewDelegateP", "subsribeMQTTForTracking"]
+- !private ["So17MKMapViewDelegateP", "topic"]
+- !private ["So17MKMapViewDelegateP", "trackingDelegate"]
+- !private ["So17MKMapViewDelegateP", "updateLocationToServer"]
+- ["So17MKMapViewDelegateP", ""]
 - !private ["s10MirrorPathP", "hashValue"]
 - ["s10MirrorPathP", "init"]
 - !private ["13TookanTracker9MqttClassC", "connectToServer"]
+- !private ["13TookanTracker9MqttClassC", "disconnect"]
 - !private ["13TookanTracker9MqttClassC", "mqttSetting"]
 - !private ["13TookanTracker9MqttClassC", "sendLocation"]
 - !private ["13TookanTracker9MqttClassC", "sharedInstance"]
@@ -925,22 +1127,17 @@ depends-member:
 - !private ["So8NSCodingP", "Name"]
 - !private ["So8NSCodingP", "coordinate"]
 - !private ["So8NSCodingP", "distance"]
-- !private ["So8NSCodingP", "getUTCDateString"]
 - !private ["So8NSCodingP", "horizontalAccuracy"]
 - ["So8NSCodingP", "init"]
 - !private ["So8NSCodingP", "timestamp"]
 - !private ["So9NSCopyingP", "Name"]
 - !private ["So9NSCopyingP", "coordinate"]
 - !private ["So9NSCopyingP", "distance"]
-- !private ["So9NSCopyingP", "getUTCDateString"]
 - !private ["So9NSCopyingP", "horizontalAccuracy"]
 - ["So9NSCopyingP", "init"]
 - !private ["So9NSCopyingP", "timestamp"]
-- !private ["So21NSItemProviderReadingP", "getUTCDateString"]
 - ["So21NSItemProviderReadingP", "init"]
-- !private ["So21NSItemProviderWritingP", "getUTCDateString"]
 - ["So21NSItemProviderWritingP", "init"]
-- !private ["So16NSMutableCopyingP", "getUTCDateString"]
 - ["So16NSMutableCopyingP", "init"]
 - !private ["So14NSNotificationC", "Name"]
 - ["So8NSObjectC", "BackgroundTaskManager"]
@@ -951,6 +1148,7 @@ depends-member:
 - ["So8NSObjectC", "CLLocationAccuracy"]
 - !private ["So8NSObjectC", "CLLocationDistance"]
 - ["So8NSObjectC", "CLLocationManager"]
+- !private ["So8NSObjectC", "Date"]
 - !private ["So8NSObjectC", "Double"]
 - ["So8NSObjectC", "Float"]
 - !private ["So8NSObjectC", "Foundation"]
@@ -966,6 +1164,7 @@ depends-member:
 - ["So8NSObjectC", "SDKVersion"]
 - ["So8NSObjectC", "String"]
 - ["So8NSObjectC", "Timer"]
+- ["So8NSObjectC", "TrackingDelegate"]
 - !private ["So8NSObjectC", "UIApplication"]
 - !private ["So8NSObjectC", "UIBackgroundRefreshStatus"]
 - !private ["So8NSObjectC", "UIDevice"]
@@ -991,13 +1190,15 @@ depends-member:
 - !private ["So8NSObjectC", "default"]
 - ["So8NSObjectC", "delegate"]
 - !private ["So8NSObjectC", "desiredAccuracy"]
+- !private ["So8NSObjectC", "disconnect"]
 - !private ["So8NSObjectC", "distance"]
 - !private ["So8NSObjectC", "distanceFilter"]
 - ["So8NSObjectC", "enterInForegroundFromBackground"]
 - ["So8NSObjectC", "firstTime"]
 - ["So8NSObjectC", "getCurrentLocation"]
 - ["So8NSObjectC", "getSpeed"]
-- !private ["So8NSObjectC", "getUTCDateString"]
+- !private ["So8NSObjectC", "globalAPIKey"]
+- !private ["So8NSObjectC", "globalUserId"]
 - !private ["So8NSObjectC", "horizontalAccuracy"]
 - ["So8NSObjectC", "init"]
 - ["So8NSObjectC", "initMqtt"]
@@ -1017,6 +1218,14 @@ depends-member:
 - !private ["So8NSObjectC", "locationServicesEnabled"]
 - ["So8NSObjectC", "locationTracker"]
 - ["So8NSObjectC", "locationUpdateTimer"]
+- ["So8NSObjectC", "mapView"]
+- ["So8NSObjectC", "mapViewDidFailLoadingMap"]
+- ["So8NSObjectC", "mapViewDidFinishLoadingMap"]
+- ["So8NSObjectC", "mapViewDidFinishRenderingMap"]
+- ["So8NSObjectC", "mapViewDidStopLocatingUser"]
+- ["So8NSObjectC", "mapViewWillStartLoadingMap"]
+- ["So8NSObjectC", "mapViewWillStartLocatingUser"]
+- ["So8NSObjectC", "mapViewWillStartRenderingMap"]
 - ["So8NSObjectC", "maxAccuracy"]
 - ["So8NSObjectC", "maxDistance"]
 - ["So8NSObjectC", "maxSpeed"]
@@ -1027,6 +1236,8 @@ depends-member:
 - !private ["So8NSObjectC", "object"]
 - !private ["So8NSObjectC", "pausesLocationUpdatesAutomatically"]
 - !private ["So8NSObjectC", "post"]
+- !private ["So8NSObjectC", "print"]
+- ["So8NSObjectC", "registerAllRequiredInitilazers"]
 - !private ["So8NSObjectC", "requestAlwaysAuthorization"]
 - ["So8NSObjectC", "restartLocationUpdates"]
 - !private ["So8NSObjectC", "scheduledTimer"]
@@ -1053,6 +1264,7 @@ depends-member:
 - ["So8NSObjectC", "subsribeMQTTForTracking"]
 - !private ["So8NSObjectC", "timestamp"]
 - ["So8NSObjectC", "topic"]
+- ["So8NSObjectC", "trackingDelegate"]
 - !private ["So8NSObjectC", "unsubscribeLocation"]
 - ["So8NSObjectC", "updateLastSavedLocationOnServer"]
 - ["So8NSObjectC", "updateLocationToServer"]
@@ -1063,6 +1275,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "CLAuthorizationStatus"]
 - !private ["So16NSObjectProtocolP", "CLLocation"]
 - ["So16NSObjectProtocolP", "CLLocationManager"]
+- !private ["So16NSObjectProtocolP", "Date"]
 - !private ["So16NSObjectProtocolP", "Float"]
 - !private ["So16NSObjectProtocolP", "Foundation"]
 - !private ["So16NSObjectProtocolP", "IJReachability"]
@@ -1100,14 +1313,17 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "default"]
 - !private ["So16NSObjectProtocolP", "delegate"]
 - !private ["So16NSObjectProtocolP", "desiredAccuracy"]
+- !private ["So16NSObjectProtocolP", "disconnect"]
 - !private ["So16NSObjectProtocolP", "distance"]
 - !private ["So16NSObjectProtocolP", "distanceFilter"]
 - !private ["So16NSObjectProtocolP", "enterInForegroundFromBackground"]
 - !private ["So16NSObjectProtocolP", "firstTime"]
 - !private ["So16NSObjectProtocolP", "getSpeed"]
-- !private ["So16NSObjectProtocolP", "getUTCDateString"]
+- !private ["So16NSObjectProtocolP", "globalAPIKey"]
+- !private ["So16NSObjectProtocolP", "globalUserId"]
 - !private ["So16NSObjectProtocolP", "horizontalAccuracy"]
 - ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "initMqtt"]
 - !private ["So16NSObjectProtocolP", "invalidate"]
 - !private ["So16NSObjectProtocolP", "isAllPermissionAuthorized"]
 - !private ["So16NSObjectProtocolP", "isAppLocationEnabled"]
@@ -1124,6 +1340,14 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "locationServicesEnabled"]
 - !private ["So16NSObjectProtocolP", "locationTracker"]
 - !private ["So16NSObjectProtocolP", "locationUpdateTimer"]
+- ["So16NSObjectProtocolP", "mapView"]
+- ["So16NSObjectProtocolP", "mapViewDidFailLoadingMap"]
+- ["So16NSObjectProtocolP", "mapViewDidFinishLoadingMap"]
+- ["So16NSObjectProtocolP", "mapViewDidFinishRenderingMap"]
+- ["So16NSObjectProtocolP", "mapViewDidStopLocatingUser"]
+- ["So16NSObjectProtocolP", "mapViewWillStartLoadingMap"]
+- ["So16NSObjectProtocolP", "mapViewWillStartLocatingUser"]
+- ["So16NSObjectProtocolP", "mapViewWillStartRenderingMap"]
 - !private ["So16NSObjectProtocolP", "maxAccuracy"]
 - !private ["So16NSObjectProtocolP", "maxDistance"]
 - !private ["So16NSObjectProtocolP", "maxSpeed"]
@@ -1134,6 +1358,7 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "object"]
 - !private ["So16NSObjectProtocolP", "pausesLocationUpdatesAutomatically"]
 - !private ["So16NSObjectProtocolP", "post"]
+- !private ["So16NSObjectProtocolP", "print"]
 - !private ["So16NSObjectProtocolP", "requestAlwaysAuthorization"]
 - !private ["So16NSObjectProtocolP", "restartLocationUpdates"]
 - !private ["So16NSObjectProtocolP", "scheduledTimer"]
@@ -1150,24 +1375,25 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "slotTime"]
 - !private ["So16NSObjectProtocolP", "speed"]
 - !private ["So16NSObjectProtocolP", "standard"]
+- !private ["So16NSObjectProtocolP", "startLocationService"]
 - !private ["So16NSObjectProtocolP", "startMonitoringSignificantLocationChanges"]
 - !private ["So16NSObjectProtocolP", "startUpdatingLocation"]
 - !private ["So16NSObjectProtocolP", "stopMonitoringSignificantLocationChanges"]
 - !private ["So16NSObjectProtocolP", "stopUpdatingLocation"]
 - !private ["So16NSObjectProtocolP", "subscribeLocation"]
+- !private ["So16NSObjectProtocolP", "subsribeMQTTForTracking"]
 - !private ["So16NSObjectProtocolP", "timestamp"]
 - !private ["So16NSObjectProtocolP", "topic"]
+- !private ["So16NSObjectProtocolP", "trackingDelegate"]
 - !private ["So16NSObjectProtocolP", "unsubscribeLocation"]
 - !private ["So16NSObjectProtocolP", "updateLocationToServer"]
 - !private ["So16NSObjectProtocolP", "value"]
 - ["So16NSObjectProtocolP", ""]
 - !private ["So14NSSecureCodingP", "coordinate"]
 - !private ["So14NSSecureCodingP", "distance"]
-- !private ["So14NSSecureCodingP", "getUTCDateString"]
 - !private ["So14NSSecureCodingP", "horizontalAccuracy"]
 - ["So14NSSecureCodingP", "init"]
 - !private ["So14NSSecureCodingP", "timestamp"]
-- !private ["So8NSStringC", "getUTCDateString"]
 - ["So8NSStringC", "init"]
 - !private ["So14NSNotificationC4NameV", "UIApplicationDidBecomeActive"]
 - !private ["So14NSNotificationC4NameV", "UIApplicationDidEnterBackground"]
@@ -1189,7 +1415,6 @@ depends-member:
 - !private ["s22RandomAccessCollectionP", "remove"]
 - !private ["s26RangeReplaceableCollectionP", "append"]
 - !private ["s26RangeReplaceableCollectionP", "count"]
-- !private ["s26RangeReplaceableCollectionP", "getUTCDateString"]
 - ["s26RangeReplaceableCollectionP", "init"]
 - !private ["s26RangeReplaceableCollectionP", "jsonString"]
 - !private ["s26RangeReplaceableCollectionP", "last"]
@@ -1210,10 +1435,11 @@ depends-member:
 - !private ["s16RawRepresentableP", "restricted"]
 - ["s16RawRepresentableP", ""]
 - !private ["10Foundation20ReferenceConvertibleP", "Name"]
+- !private ["10Foundation20ReferenceConvertibleP", "init"]
+- !private ["10Foundation20ReferenceConvertibleP", "millisecondsSince1970"]
 - !private ["10Foundation20ReferenceConvertibleP", "timeIntervalSince"]
 - !private ["s8SequenceP", "append"]
 - !private ["s8SequenceP", "count"]
-- !private ["s8SequenceP", "getUTCDateString"]
 - ["s8SequenceP", "init"]
 - !private ["s8SequenceP", "jsonString"]
 - !private ["s8SequenceP", "last"]
@@ -1223,16 +1449,15 @@ depends-member:
 - !private ["s13SignedNumericP", "init"]
 - !private ["s10StrideableP", "hashValue"]
 - !private ["s10StrideableP", "init"]
-- !private ["SS", "getUTCDateString"]
 - ["SS", "init"]
-- !private ["s14StringProtocolP", "getUTCDateString"]
 - ["s14StringProtocolP", "init"]
-- !private ["s16TextOutputStreamP", "getUTCDateString"]
 - ["s16TextOutputStreamP", "init"]
-- !private ["s20TextOutputStreamableP", "getUTCDateString"]
 - ["s20TextOutputStreamableP", "init"]
 - !private ["So5TimerC", "invalidate"]
 - !private ["So5TimerC", "scheduledTimer"]
+- ["13TookanTracker16TrackingDelegateP", "CLLocation"]
+- ["13TookanTracker16TrackingDelegateP", "getCoordinates"]
+- ["13TookanTracker16TrackingDelegateP", "logout"]
 - !private ["So13UIApplicationC", "backgroundRefreshStatus"]
 - !private ["So13UIApplicationC", "shared"]
 - !private ["SC25UIBackgroundRefreshStatusO", "denied"]
@@ -1265,7 +1490,6 @@ depends-member:
 - !private ["s14_ArrayProtocolP", "remove"]
 - !private ["s23_BidirectionalIndexableP", "append"]
 - !private ["s23_BidirectionalIndexableP", "count"]
-- !private ["s23_BidirectionalIndexableP", "getUTCDateString"]
 - ["s23_BidirectionalIndexableP", "init"]
 - !private ["s23_BidirectionalIndexableP", "jsonString"]
 - !private ["s23_BidirectionalIndexableP", "last"]
@@ -1280,32 +1504,24 @@ depends-member:
 - !private ["s24_DestructorSafeContainerP", "last"]
 - !private ["s24_DestructorSafeContainerP", "remove"]
 - !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
-- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "getUTCDateString"]
 - ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
 - !private ["s33_ExpressibleByBuiltinFloatLiteralP", "init"]
 - !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "hashValue"]
 - !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
-- !private ["s34_ExpressibleByBuiltinStringLiteralP", "getUTCDateString"]
 - ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
-- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "getUTCDateString"]
 - ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
-- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "getUTCDateString"]
 - ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
-- !private ["s33_ExpressibleByStringInterpolationP", "getUTCDateString"]
 - ["s33_ExpressibleByStringInterpolationP", "init"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "Name"]
-- !private ["s35_HasCustomAnyHashableRepresentationP", "getUTCDateString"]
 - ["s35_HasCustomAnyHashableRepresentationP", "init"]
 - !private ["s10_IndexableP", "append"]
 - !private ["s10_IndexableP", "count"]
-- !private ["s10_IndexableP", "getUTCDateString"]
 - ["s10_IndexableP", "init"]
 - !private ["s10_IndexableP", "jsonString"]
 - !private ["s10_IndexableP", "last"]
 - !private ["s10_IndexableP", "remove"]
 - !private ["s14_IndexableBaseP", "append"]
 - !private ["s14_IndexableBaseP", "count"]
-- !private ["s14_IndexableBaseP", "getUTCDateString"]
 - ["s14_IndexableBaseP", "init"]
 - !private ["s14_IndexableBaseP", "jsonString"]
 - !private ["s14_IndexableBaseP", "last"]
@@ -1315,6 +1531,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "CLAuthorizationStatus"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "CLLocation"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "CLLocationManager"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Date"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "Float"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "Foundation"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "IJReachability"]
@@ -1352,14 +1569,17 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "default"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "desiredAccuracy"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "disconnect"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "distance"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "distanceFilter"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "enterInForegroundFromBackground"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "firstTime"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "getSpeed"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "getUTCDateString"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "globalAPIKey"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "globalUserId"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "horizontalAccuracy"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "initMqtt"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "invalidate"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "isAllPermissionAuthorized"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "isAppLocationEnabled"]
@@ -1376,6 +1596,14 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "locationServicesEnabled"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "locationTracker"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "locationUpdateTimer"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "mapView"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "mapViewDidFailLoadingMap"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "mapViewDidFinishLoadingMap"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "mapViewDidFinishRenderingMap"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "mapViewDidStopLocatingUser"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "mapViewWillStartLoadingMap"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "mapViewWillStartLocatingUser"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "mapViewWillStartRenderingMap"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "maxAccuracy"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "maxDistance"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "maxSpeed"]
@@ -1386,6 +1614,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "object"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "pausesLocationUpdatesAutomatically"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "post"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "requestAlwaysAuthorization"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "restartLocationUpdates"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "scheduledTimer"]
@@ -1402,13 +1631,16 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "slotTime"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "speed"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "standard"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "startLocationService"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "startMonitoringSignificantLocationChanges"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "startUpdatingLocation"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "stopMonitoringSignificantLocationChanges"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "stopUpdatingLocation"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "subscribeLocation"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "subsribeMQTTForTracking"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "timestamp"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "topic"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "trackingDelegate"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "unsubscribeLocation"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "updateLocationToServer"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "value"]
@@ -1427,13 +1659,13 @@ depends-member:
 - !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
 - !private ["s21_ObjectiveCBridgeableP", "append"]
 - !private ["s21_ObjectiveCBridgeableP", "count"]
-- !private ["s21_ObjectiveCBridgeableP", "getUTCDateString"]
 - !private ["s21_ObjectiveCBridgeableP", "hashValue"]
 - ["s21_ObjectiveCBridgeableP", "init"]
 - !private ["s21_ObjectiveCBridgeableP", "jsonString"]
 - !private ["s21_ObjectiveCBridgeableP", "last"]
 - !private ["s21_ObjectiveCBridgeableP", "latitude"]
 - !private ["s21_ObjectiveCBridgeableP", "longitude"]
+- !private ["s21_ObjectiveCBridgeableP", "millisecondsSince1970"]
 - !private ["s21_ObjectiveCBridgeableP", "remove"]
 - !private ["s21_ObjectiveCBridgeableP", "timeIntervalSince"]
 - !private ["s22_RandomAccessIndexableP", "append"]
@@ -1444,7 +1676,6 @@ depends-member:
 - !private ["s22_RandomAccessIndexableP", "remove"]
 - !private ["s26_RangeReplaceableIndexableP", "append"]
 - !private ["s26_RangeReplaceableIndexableP", "count"]
-- !private ["s26_RangeReplaceableIndexableP", "getUTCDateString"]
 - ["s26_RangeReplaceableIndexableP", "init"]
 - !private ["s26_RangeReplaceableIndexableP", "jsonString"]
 - !private ["s26_RangeReplaceableIndexableP", "last"]
@@ -1456,7 +1687,6 @@ depends-member:
 - !private ["s20_SwiftNewtypeWrapperP", "UIApplicationWillEnterForeground"]
 - !private ["s20_SwiftNewtypeWrapperP", "UIApplicationWillTerminate"]
 - !private ["s20_SwiftNewtypeWrapperP", "init"]
-- !private ["s16_SwiftStringViewP", "getUTCDateString"]
 - ["s16_SwiftStringViewP", "init"]
 depends-nominal:
 - !private "Sa"
@@ -1502,6 +1732,7 @@ depends-nominal:
 - "13TookanTracker08LocationB8DelegateP"
 - "13TookanTracker08LocationB4FileC"
 - "s25LosslessStringConvertibleP"
+- "So17MKMapViewDelegateP"
 - "s10MirrorPathP"
 - !private "13TookanTracker9MqttClassC"
 - !private "s17MutableCollectionP"
@@ -1533,6 +1764,7 @@ depends-nominal:
 - "s16TextOutputStreamP"
 - "s20TextOutputStreamableP"
 - !private "So5TimerC"
+- "13TookanTracker16TrackingDelegateP"
 - !private "So13UIApplicationC"
 - !private "SC25UIBackgroundRefreshStatusO"
 - !private "So8UIDeviceC"
@@ -1586,77 +1818,78 @@ depends-external:
 - "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
 - "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/MapKit.swiftmodule"
 - "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SwiftOnoneSupport.swiftmodule"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanorama.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaCamera.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacePhotoMetadata.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceLikelihood.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlace.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSUserAddedPlace.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaService.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteTableDataSource.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteBoundsMode.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCircle.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapStyle.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPolyline.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GoogleMapsBase.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCameraUpdate.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaCameraUpdate.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorBuilding.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPath.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMutablePath.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaLink.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorLevel.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPolygon.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapView+Animation.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSOrientation.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSProjection.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompletePrediction.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCameraPosition.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGeocoder.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteFetcher.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/TookanTracker.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMarker.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteViewController.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteResultsViewController.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteFilter.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCALayer.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaLayer.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSURLTileLayer.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSTileLayer.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSSyncTileLayer.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapLayer.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMarkerLayer.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSCoordinateBounds.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GooglePlaces.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSServices.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceTypes.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSUISettings.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGeometryUtils.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSDeprecationMacros.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSCompatabilityMacros.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCoordinateBounds+GoogleMaps.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GoogleMaps.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacesErrors.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSAddress.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacesClient.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteMatchFragment.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAddressComponent.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacePhotoMetadataList.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceLikelihoodList.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaView.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapView.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorDisplay.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSOverlay.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGroundOverlay.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/build/TookanTracker.build/Debug-iphoneos/TookanTracker.build/unextended-module.modulemap"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Modules/module.modulemap"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Modules/module.modulemap"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Modules/module.modulemap"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Modules/module.modulemap"
-interface-hash: "fc5b91df959250bf2703faeb3c2a0252"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanorama.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaCamera.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacePhotoMetadata.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceLikelihood.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlace.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSUserAddedPlace.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaService.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteTableDataSource.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteBoundsMode.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCircle.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapStyle.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPolyline.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GoogleMapsBase.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCameraUpdate.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaCameraUpdate.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorBuilding.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPath.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMutablePath.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaLink.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorLevel.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPolygon.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapView+Animation.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSOrientation.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSProjection.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompletePrediction.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCameraPosition.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGeocoder.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteFetcher.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/TookanTracker.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMarker.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteViewController.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteResultsViewController.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteFilter.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCALayer.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaLayer.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSURLTileLayer.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSTileLayer.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSSyncTileLayer.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapLayer.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMarkerLayer.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSCoordinateBounds.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GooglePlaces.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSServices.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceTypes.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSUISettings.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGeometryUtils.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSDeprecationMacros.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSCompatabilityMacros.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCoordinateBounds+GoogleMaps.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GoogleMaps.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacesErrors.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSAddress.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacesClient.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteMatchFragment.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAddressComponent.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacePhotoMetadataList.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceLikelihoodList.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaView.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapView.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorDisplay.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSOverlay.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGroundOverlay.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/build/TookanTracker.build/Debug-iphoneos/TookanTracker.build/unextended-module.modulemap"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Modules/module.modulemap"
+interface-hash: "fb08f7980ef65a0ede956b6f982f34c9"

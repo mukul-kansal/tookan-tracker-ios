@@ -53,7 +53,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         super.viewDidLoad()
         /*----------------- Location Tracker --------------*/
         self.loc.delegate = self
-//        self.loc.registerAllRequiredInitilazers()
+        self.loc.registerAllRequiredInitilazers()
 //        self.loc.initMqtt()
 //        self.loc.locationFrequencyMode = LocationFrequency.high
 //        self.loc.setLocationUpdate()
@@ -146,47 +146,57 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     @IBAction func logoutAction(_ sender: Any) {
         
         self.stopTrackingConformation(pop: true)
-        self.navigationController?.popViewController(animated: true)
-        self.trackingDelegate.logout!()
-        UserDefaults.standard.removeObject(forKey: USER_DEFAULT.userId)
-        UserDefaults.standard.removeObject(forKey: USER_DEFAULT.apiKey)
+        
     }
     
     
     @IBAction func stopTrackingAction(_ sender: Any) {
+        
         self.stopTrackingConformation(pop: false)
     }
     
     
     func stopTrackingConformation(pop: Bool) {
         
-        if self.isTrackingEnabled == true {
-            let alertController = UIAlertController(title: nil, message: "Are you sure?", preferredStyle: UIAlertControllerStyle.actionSheet)
-            let confirmAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive) { (confirmed) -> Void in
-                self.stopTracking()
+        if pop == true {
+            self.stopCalling(pop: pop)
+        } else {
+            if self.isTrackingEnabled == true {
+                self.stopCalling(pop: pop)
+            } else {
+                self.stopTrackingButton.isHidden = true
+                self.startTracking()
             }
             
-            let cancelAction = UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: {(UIAlertAction) in
-            })
-            alertController.addAction(confirmAction)
-            alertController.addAction(cancelAction)
-            self.present(alertController, animated: true, completion: nil)
-        } else {
-            self.startTracking()
         }
         
+    }
+    
+    
+    func stopCalling(pop: Bool) {
+        let alertController = UIAlertController(title: nil, message: "Are you sure?", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let confirmAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive) { (confirmed) -> Void in
+            self.stopTrackingButton.isHidden = true
+            self.stopTracking(pop: pop)
+        }
+        
+        let cancelAction = UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: {(UIAlertAction) in
+        })
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func startTracking() {
         
         let api_key = UserDefaults.standard.value(forKey: USER_DEFAULT.apiKey) as? String ?? ""
         let unique_user_id = UserDefaults.standard.value(forKey: USER_DEFAULT.userId) as? String ?? ""
-        let sessionId = UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) as? String ?? ""
         let location = self.loc.getCurrentLocation()
-        NetworkingHelper.sharedInstance.shareLocationSession(api_key: api_key, unique_user_id: unique_user_id, lat: "\(location?.coordinate.latitude ?? 0)", lng: "\(location?.coordinate.longitude ?? 0)", sessionId: sessionId) { (isSucceeded, response) in
+        NetworkingHelper.sharedInstance.shareLocationSession(api_key: api_key, unique_user_id: unique_user_id, lat: "\(location?.coordinate.latitude ?? 0)", lng: "\(location?.coordinate.longitude ?? 0)", sessionId: "") { (isSucceeded, response) in
             
             DispatchQueue.main.async {
                 print(response)
+                self.stopTrackingButton.isHidden = false
                 if isSucceeded == true {
                     var sessionID = ""
                     if let data = response["data"] as? [String:Any]{
@@ -203,21 +213,31 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         }
     }
     
-    func stopTracking() {
+    func stopTracking(pop: Bool) {
         NetworkingHelper.sharedInstance.stopTracking(self.sessionID, userID: globalUserId, apiKey: globalAPIKey) { (isSucceeded, response) in
             DispatchQueue.main.async {
+                self.stopTrackingButton.isHidden = false
                 if isSucceeded == true {
                     self.googleMapView.clear()
                     self.userStatus = USER_JOB_STATUS.free
                     self.loc.stopLocationService()
                     self.model.resetAllData()
                     self.setTrackingTitle()
+                    if pop == true {
+                        self.dismissVC()
+                    }
                 }
             }
 
         }
     }
     
+    func dismissVC() {
+        self.navigationController?.popToRootViewController(animated: true)
+        self.trackingDelegate.logout!()
+        UserDefaults.standard.removeObject(forKey: USER_DEFAULT.userId)
+        UserDefaults.standard.removeObject(forKey: USER_DEFAULT.apiKey)
+    }
     
     //MARK: SET USER FLOW
     func setUserCurrentJob() {

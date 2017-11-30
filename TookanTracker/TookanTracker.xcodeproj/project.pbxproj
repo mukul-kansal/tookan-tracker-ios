@@ -12,6 +12,7 @@
 			buildConfigurationList = 26F5BD571FC817DC000D2715 /* Build configuration list for PBXAggregateTarget "TookanTrackerUniversal" */;
 			buildPhases = (
 				26F5BD5A1FC817E2000D2715 /* ShellScript */,
+				260C755F1FCFFE69003E957E /* Remove Unused Architectures Script */,
 			);
 			dependencies = (
 			);
@@ -21,6 +22,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		260C75561FCFF559003E957E /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260C75511FCFF559003E957E /* GoogleMaps.framework */; };
+		260C75571FCFF559003E957E /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260C75521FCFF559003E957E /* GoogleMapsBase.framework */; };
+		260C75581FCFF559003E957E /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260C75531FCFF559003E957E /* GoogleMapsCore.framework */; };
+		260C75591FCFF559003E957E /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260C75541FCFF559003E957E /* GooglePlaces.framework */; };
+		260C755B1FCFF57B003E957E /* GooglePlaces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 260C755A1FCFF57B003E957E /* GooglePlaces.bundle */; };
+		260C755D1FCFF58E003E957E /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 260C755C1FCFF58E003E957E /* GoogleMaps.bundle */; };
+		260C755E1FCFFA4D003E957E /* TookanTrackerUniversal-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 26F5BDC71FC82F14000D2715 /* TookanTrackerUniversal-Bridging-Header.h */; };
 		2632131F1FC8647D00E0C2AA /* CocoaAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 26F5BDED1FC834BC000D2715 /* CocoaAsyncSocket.h */; };
 		263213201FC8647F00E0C2AA /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F5BD6B1FC81F7E000D2715 /* GCDAsyncUdpSocket.m */; };
 		263213211FC8648200E0C2AA /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 26F5BD6A1FC81F7E000D2715 /* GCDAsyncUdpSocket.h */; };
@@ -44,10 +52,6 @@
 		26F5BD8E1FC82477000D2715 /* LocationTrackerFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5BD851FC82462000D2715 /* LocationTrackerFile.swift */; };
 		26F5BD901FC8247C000D2715 /* NetworkingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5BD871FC82462000D2715 /* NetworkingHelper.swift */; };
 		26F5BD911FC8247E000D2715 /* ServerCallAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5BD881FC82462000D2715 /* ServerCallAPI.swift */; };
-		26F5BD951FC82A96000D2715 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F5BD941FC82A91000D2715 /* GoogleMaps.framework */; };
-		26F5BD961FC82A98000D2715 /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F5BD921FC82A91000D2715 /* GoogleMapsBase.framework */; };
-		26F5BD971FC82A9A000D2715 /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F5BD931FC82A91000D2715 /* GoogleMapsCore.framework */; };
-		26F5BD991FC82ACD000D2715 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 26F5BD981FC82ACB000D2715 /* GoogleMaps.bundle */; };
 		26F5BD9C1FC82AE8000D2715 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F5BD9B1FC82AE8000D2715 /* Accelerate.framework */; };
 		26F5BDA21FC82AFC000D2715 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F5BD9D1FC82AFB000D2715 /* CoreData.framework */; };
 		26F5BDA31FC82AFC000D2715 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F5BD9E1FC82AFC000D2715 /* CoreText.framework */; };
@@ -66,13 +70,18 @@
 		26F5BDBD1FC82CA8000D2715 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5BDBB1FC82CA4000D2715 /* HomeController.swift */; };
 		26F5BDC21FC82CC8000D2715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26F5BDC11FC82CC2000D2715 /* Assets.xcassets */; };
 		26F5BDC41FC82CDC000D2715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F5BDBF1FC82CC2000D2715 /* Main.storyboard */; };
-		26F5BDC61FC82D5D000D2715 /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F5BDC51FC82D5A000D2715 /* GooglePlaces.framework */; };
 		26F5BDC91FC82F14000D2715 /* TookanTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5BDC81FC82F14000D2715 /* TookanTracker.swift */; };
-		26F5BE041FC859FB000D2715 /* GooglePlaces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 26F5BE031FC859F5000D2715 /* GooglePlaces.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		260C75511FCFF559003E957E /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		260C75521FCFF559003E957E /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
+		260C75531FCFF559003E957E /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsCore.framework; sourceTree = "<group>"; };
+		260C75541FCFF559003E957E /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlaces.framework; sourceTree = "<group>"; };
+		260C755A1FCFF57B003E957E /* GooglePlaces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		260C755C1FCFF58E003E957E /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		263213791FC87D7400E0C2AA /* style.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
+		26B566611FCFE400003CF50E /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 		26F5BD4B1FC817BC000D2715 /* TookanTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TookanTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F5BD4E1FC817BC000D2715 /* TookanTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TookanTracker.h; sourceTree = "<group>"; };
 		26F5BD4F1FC817BC000D2715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,7 +96,6 @@
 		26F5BD6B1FC81F7E000D2715 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		26F5BD711FC82192000D2715 /* SwiftyTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyTimer.swift; sourceTree = "<group>"; };
 		26F5BD731FC82242000D2715 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		26F5BD761FC822EB000D2715 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		26F5BD801FC82462000D2715 /* Auxillary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auxillary.swift; sourceTree = "<group>"; };
 		26F5BD811FC82462000D2715 /* BackgroundTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTaskManager.swift; sourceTree = "<group>"; };
 		26F5BD821FC82462000D2715 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -97,10 +105,6 @@
 		26F5BD861FC82462000D2715 /* MqttClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MqttClass.swift; sourceTree = "<group>"; };
 		26F5BD871FC82462000D2715 /* NetworkingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHelper.swift; sourceTree = "<group>"; };
 		26F5BD881FC82462000D2715 /* ServerCallAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCallAPI.swift; sourceTree = "<group>"; };
-		26F5BD921FC82A91000D2715 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
-		26F5BD931FC82A91000D2715 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsCore.framework; sourceTree = "<group>"; };
-		26F5BD941FC82A91000D2715 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
-		26F5BD981FC82ACB000D2715 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		26F5BD9B1FC82AE8000D2715 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		26F5BD9D1FC82AFB000D2715 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		26F5BD9E1FC82AFC000D2715 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -117,16 +121,13 @@
 		26F5BDB51FC82B4A000D2715 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		26F5BDB81FC82BEB000D2715 /* TrackerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerModel.swift; sourceTree = "<group>"; };
 		26F5BDBB1FC82CA4000D2715 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
-		26F5BDBC1FC82CA4000D2715 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		26F5BDBF1FC82CC2000D2715 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		26F5BDC01FC82CC2000D2715 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26F5BDC11FC82CC2000D2715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		26F5BDC51FC82D5A000D2715 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlaces.framework; sourceTree = "<group>"; };
 		26F5BDC71FC82F14000D2715 /* TookanTrackerUniversal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TookanTrackerUniversal-Bridging-Header.h"; sourceTree = "<group>"; };
 		26F5BDC81FC82F14000D2715 /* TookanTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TookanTracker.swift; sourceTree = "<group>"; };
 		26F5BDED1FC834BC000D2715 /* CocoaAsyncSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaAsyncSocket.h; sourceTree = "<group>"; };
 		26F5BDF21FC836B4000D2715 /* SwiftyTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyTimer.h; sourceTree = "<group>"; };
-		26F5BE031FC859F5000D2715 /* GooglePlaces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26F5BDB61FC82B4A000D2715 /* UIKit.framework in Frameworks */,
+				260C75571FCFF559003E957E /* GoogleMapsBase.framework in Frameworks */,
 				26F5BDB41FC82B45000D2715 /* SystemConfiguration.framework in Frameworks */,
 				26F5BDB21FC82B40000D2715 /* QuartzCore.framework in Frameworks */,
 				26F5BDB01FC82B37000D2715 /* libz.tbd in Frameworks */,
@@ -142,22 +144,34 @@
 				26F5BDAC1FC82B1B000D2715 /* ImageIO.framework in Frameworks */,
 				26F5BDAA1FC82B15000D2715 /* OpenGLES.framework in Frameworks */,
 				26F5BDA81FC82B05000D2715 /* GLKit.framework in Frameworks */,
+				260C75581FCFF559003E957E /* GoogleMapsCore.framework in Frameworks */,
 				26F5BDA21FC82AFC000D2715 /* CoreData.framework in Frameworks */,
 				26F5BDA31FC82AFC000D2715 /* CoreText.framework in Frameworks */,
 				26F5BDA41FC82AFC000D2715 /* CoreGraphics.framework in Frameworks */,
 				26F5BDA51FC82AFC000D2715 /* CoreTelephony.framework in Frameworks */,
-				26F5BDC61FC82D5D000D2715 /* GooglePlaces.framework in Frameworks */,
+				260C75561FCFF559003E957E /* GoogleMaps.framework in Frameworks */,
 				26F5BDA61FC82AFC000D2715 /* CoreLocation.framework in Frameworks */,
 				26F5BD9C1FC82AE8000D2715 /* Accelerate.framework in Frameworks */,
-				26F5BD961FC82A98000D2715 /* GoogleMapsBase.framework in Frameworks */,
-				26F5BD951FC82A96000D2715 /* GoogleMaps.framework in Frameworks */,
-				26F5BD971FC82A9A000D2715 /* GoogleMapsCore.framework in Frameworks */,
+				260C75591FCFF559003E957E /* GooglePlaces.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		260C754F1FCFF559003E957E /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				260C755C1FCFF58E003E957E /* GoogleMaps.bundle */,
+				260C755A1FCFF57B003E957E /* GooglePlaces.bundle */,
+				260C75511FCFF559003E957E /* GoogleMaps.framework */,
+				260C75521FCFF559003E957E /* GoogleMapsBase.framework */,
+				260C75531FCFF559003E957E /* GoogleMapsCore.framework */,
+				260C75541FCFF559003E957E /* GooglePlaces.framework */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
 		26F5BD411FC817BB000D2715 = {
 			isa = PBXGroup;
 			children = (
@@ -182,8 +196,8 @@
 				26F5BD701FC82192000D2715 /* SwiftyTimer */,
 				26F5BD671FC81F7E000D2715 /* GCD */,
 				26F5BDB71FC82BEB000D2715 /* Model */,
-				26F5BD751FC822EB000D2715 /* SDK */,
 				26F5BD7F1FC82462000D2715 /* Helper */,
+				260C754F1FCFF559003E957E /* SDK */,
 				26F5BDBA1FC82CA4000D2715 /* Controller */,
 				26F5BDC11FC82CC2000D2715 /* Assets.xcassets */,
 				26F5BDC01FC82CC2000D2715 /* LaunchScreen.storyboard */,
@@ -228,20 +242,6 @@
 			path = SwiftyTimer;
 			sourceTree = "<group>";
 		};
-		26F5BD751FC822EB000D2715 /* SDK */ = {
-			isa = PBXGroup;
-			children = (
-				26F5BE031FC859F5000D2715 /* GooglePlaces.bundle */,
-				26F5BD981FC82ACB000D2715 /* GoogleMaps.bundle */,
-				26F5BDC51FC82D5A000D2715 /* GooglePlaces.framework */,
-				26F5BD941FC82A91000D2715 /* GoogleMaps.framework */,
-				26F5BD921FC82A91000D2715 /* GoogleMapsBase.framework */,
-				26F5BD931FC82A91000D2715 /* GoogleMapsCore.framework */,
-				26F5BD761FC822EB000D2715 /* CocoaAsyncSocket.framework */,
-			);
-			path = SDK;
-			sourceTree = "<group>";
-		};
 		26F5BD7F1FC82462000D2715 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +262,7 @@
 		26F5BD9A1FC82AE8000D2715 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				26B566611FCFE400003CF50E /* libz.1.dylib */,
 				26F5BDB51FC82B4A000D2715 /* UIKit.framework */,
 				26F5BDB31FC82B45000D2715 /* SystemConfiguration.framework */,
 				26F5BDB11FC82B40000D2715 /* QuartzCore.framework */,
@@ -292,7 +293,6 @@
 			isa = PBXGroup;
 			children = (
 				26F5BDBB1FC82CA4000D2715 /* HomeController.swift */,
-				26F5BDBC1FC82CA4000D2715 /* SplashController.swift */,
 				26F5BDC81FC82F14000D2715 /* TookanTracker.swift */,
 				26F5BDC71FC82F14000D2715 /* TookanTrackerUniversal-Bridging-Header.h */,
 			);
@@ -307,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				263213271FC8649400E0C2AA /* CocoaMQTT.h in Headers */,
+				260C755E1FCFFA4D003E957E /* TookanTrackerUniversal-Bridging-Header.h in Headers */,
 				2632131F1FC8647D00E0C2AA /* CocoaAsyncSocket.h in Headers */,
 				263213211FC8648200E0C2AA /* GCDAsyncUdpSocket.h in Headers */,
 				26F5BD501FC817BC000D2715 /* TookanTracker.h in Headers */,
@@ -381,16 +382,30 @@
 			files = (
 				26F5BDC41FC82CDC000D2715 /* Main.storyboard in Resources */,
 				26F5BDC21FC82CC8000D2715 /* Assets.xcassets in Resources */,
-				26F5BD991FC82ACD000D2715 /* GoogleMaps.bundle in Resources */,
 				2632137A1FC87D7600E0C2AA /* style.json in Resources */,
-				26F5BE041FC859FB000D2715 /* GooglePlaces.bundle in Resources */,
+				260C755D1FCFF58E003E957E /* GoogleMaps.bundle in Resources */,
 				263213261FC8649000E0C2AA /* LICENSE in Resources */,
+				260C755B1FCFF57B003E957E /* GooglePlaces.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		260C755F1FCFFE69003E957E /* Remove Unused Architectures Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Remove Unused Architectures Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FRAMEWORK=\"TookanTracker\"\nFRAMEWORK_EXECUTABLE_PATH=\"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/$FRAMEWORK.framework/$FRAMEWORK\"\nEXTRACTED_ARCHS=()\nfor ARCH in $ARCHS\ndo\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"";
+		};
 		26F5BD5A1FC817E2000D2715 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -574,8 +589,9 @@
 				);
 				INFOPLIST_FILE = TookanTracker/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.click-labs.TookanTracker";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -606,8 +622,9 @@
 				);
 				INFOPLIST_FILE = TookanTracker/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.click-labs.TookanTracker";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -633,9 +650,11 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "TookanTracker/Controller/TookanTrackerUniversal-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -651,11 +670,13 @@
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "TookanTracker/Controller/TookanTrackerUniversal-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};

@@ -13,6 +13,7 @@ import CoreLocation
 import UIKit
 import SystemConfiguration
 import MapKit
+
 @objc public protocol LocationTrackerDelegate {
     @objc optional func currentLocationOfUser(_ location:CLLocation)
     
@@ -60,11 +61,11 @@ open class LocationTrackerFile:NSObject, CLLocationManagerDelegate, MKMapViewDel
     
     override init() {
         super.init()
-        NotificationCenter.default.addObserver(self, selector: #selector(LocationTrackerFile.applicationEnterBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(LocationTrackerFile.appEnterInTerminateState), name: NSNotification.Name.UIApplicationWillTerminate, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(LocationTrackerFile.enterInForegroundFromBackground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(LocationTrackerFile.becomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
-        UserDefaults.standard.set(false, forKey: USER_DEFAULT.isHitInProgress)
+//        NotificationCenter.default.addObserver(self, selector: #selector(LocationTrackerFile.applicationEnterBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(LocationTrackerFile.appEnterInTerminateState), name: NSNotification.Name.UIApplicationWillTerminate, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(LocationTrackerFile.enterInForegroundFromBackground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+////        NotificationCenter.default.addObserver(self, selector: #selector(LocationTrackerFile.becomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+//        UserDefaults.standard.set(false, forKey: USER_DEFAULT.isHitInProgress)
         UIDevice.current.isBatteryMonitoringEnabled = true
     }
     
@@ -246,7 +247,7 @@ open class LocationTrackerFile:NSObject, CLLocationManagerDelegate, MKMapViewDel
                 firstTime = false
                 delegate?.currentLocationOfUser?(locations.last!)
             }
-            self.trackingDelegate.getCoordinates?(locations.last!)
+            self.trackingDelegate?.getCoordinates?(locations.last!)
             if(UserDefaults.standard.bool(forKey: USER_DEFAULT.isLocationTrackingRunning) == true) {
                 self.applyFilterOnGetLocation()
             }

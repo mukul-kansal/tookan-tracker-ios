@@ -177,6 +177,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import Security;
 @import Foundation;
 @import CoreLocation;
+@import MapKit;
 @import UIKit;
 #endif
 
@@ -283,7 +284,7 @@ SWIFT_PROTOCOL("_TtP13TookanTracker23LocationTrackerDelegate_")
 @class CLLocationManager;
 
 SWIFT_CLASS("_TtC13TookanTracker19LocationTrackerFile")
-@interface LocationTrackerFile : NSObject <CLLocationManagerDelegate>
+@interface LocationTrackerFile : NSObject <CLLocationManagerDelegate, MKMapViewDelegate>
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
 @end
@@ -316,6 +317,29 @@ SWIFT_CLASS("_TtC13TookanTracker13TookanTracker")
 @interface TookanTracker : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+SWIFT_PROTOCOL("_TtP13TookanTracker16TrackingDelegate_")
+@protocol TrackingDelegate
+@optional
+- (void)getCoordinates:(CLLocation * _Nonnull)location;
+- (void)logout;
+@end
+
+
+@interface TookanTracker (SWIFT_EXTENSION(TookanTracker)) <TrackingDelegate>
+- (void)getCoordinates:(CLLocation * _Nonnull)location;
+- (void)logout;
+@end
+
+
+SWIFT_PROTOCOL("_TtP13TookanTracker21TookanTrackerDelegate_")
+@protocol TookanTrackerDelegate
+@optional
+- (void)getCurrentCoordinates:(CLLocation * _Nonnull)location;
+- (void)logout;
+@end
+
 
 
 

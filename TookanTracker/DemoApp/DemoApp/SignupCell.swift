@@ -31,7 +31,7 @@ class SignupCell: UITableViewCell {
     
     
     func setNameField() {
-        self.signupField.placeholder = "YOUR NAME"
+        self.signupField.placeholder = "Your name"
         self.signupField.keyboardType = UIKeyboardType.default
         self.signupField.autocapitalizationType = .sentences
         self.signupField.isSecureTextEntry = false
@@ -40,7 +40,7 @@ class SignupCell: UITableViewCell {
     }
     
     func setEmailField() {
-        self.signupField.placeholder = "YOUR EMAIL"
+        self.signupField.placeholder = "Your email"
         self.signupField.keyboardType = UIKeyboardType.emailAddress
         self.signupField.autocapitalizationType = .none
         self.signupField.isSecureTextEntry = false
@@ -49,7 +49,7 @@ class SignupCell: UITableViewCell {
     }
     
     func setPhoneField() {
-        self.signupField.placeholder = "YOUR PHONE_NUMBER"
+        self.signupField.placeholder = "Your phone no"
         self.signupField.keyboardType = UIKeyboardType.phonePad
         self.signupField.autocapitalizationType = .none
         self.signupField.isSecureTextEntry = false
@@ -63,7 +63,7 @@ class SignupCell: UITableViewCell {
     }
     
     func setPasswordField() {
-        self.signupField.placeholder = "SET PASSWORD"
+        self.signupField.placeholder = "Set password"
         self.signupField.keyboardType = UIKeyboardType.default
         self.signupField.autocapitalizationType = .none
         self.signupField.isSecureTextEntry = true
@@ -72,7 +72,7 @@ class SignupCell: UITableViewCell {
     }
     
     func setConfirmPasswordField() {
-        self.signupField.placeholder = "CONFIRM PASSWORD"
+        self.signupField.placeholder = "Confirm password"
         self.signupField.keyboardType = UIKeyboardType.default
         self.signupField.autocapitalizationType = .none
         self.signupField.isSecureTextEntry = true

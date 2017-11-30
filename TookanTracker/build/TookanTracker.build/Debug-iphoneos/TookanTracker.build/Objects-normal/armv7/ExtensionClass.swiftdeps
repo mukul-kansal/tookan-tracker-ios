@@ -7,6 +7,7 @@ provides-member:
 - ["13TookanTracker14ExtensionClassC", ""]
 - ["So10URLSessionC", ""]
 - ["SS", ""]
+- ["10Foundation4DateV", ""]
 - ["So14NSMutableArrayC", ""]
 - ["Sa", ""]
 - ["So7UIColorC", ""]
@@ -20,6 +21,8 @@ provides-member:
 - ["SS", "jsonObjectArray"]
 - ["SS", "blank"]
 - ["SS", "trimText"]
+- ["10Foundation4DateV", "millisecondsSince1970"]
+- ["10Foundation4DateV", "init"]
 - ["So14NSMutableArrayC", "jsonString"]
 - ["Sa", "jsonString"]
 - ["So7UIColorC", "trackerColor"]
@@ -30,6 +33,7 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - !private "!="
+- !private "*"
 - !private "+"
 - !private "/"
 - !private "=="
@@ -40,11 +44,13 @@ depends-top-level:
 - "CastingPrecedence"
 - !private "CharacterSet"
 - "Data"
-- !private "Date"
+- "Date"
 - !private "DateFormatter"
 - !private "DispatchSemaphore"
 - !private "DispatchTime"
 - "ExtensionClass"
+- "Int"
+- "Int64"
 - !private "Int8"
 - !private "JSONSerialization"
 - !private "Locale"
@@ -55,6 +61,7 @@ depends-top-level:
 - !private "NSString"
 - "String"
 - !private "StringLiteralType"
+- !private "TimeInterval"
 - !private "TimeZone"
 - "UIColor"
 - "UIDevice"
@@ -90,6 +97,8 @@ depends-member:
 - !private ["s23BidirectionalCollectionP", "isEmpty"]
 - !private ["s23BidirectionalCollectionP", "print"]
 - !private ["s23BidirectionalCollectionP", "trimmingCharacters"]
+- !private ["s19BinaryFloatingPointP", "init"]
+- !private ["s19BinaryFloatingPointP", "rounded"]
 - !private ["s13BinaryIntegerP", "init"]
 - !private ["Sb", "_getBuiltinLogicValue"]
 - !private ["s7CVarArgP", "CharacterSet"]
@@ -127,6 +136,7 @@ depends-member:
 - !private ["s7CVarArgP", "requestSynchronousData"]
 - !private ["s7CVarArgP", "requestSynchronousJSON"]
 - !private ["s7CVarArgP", "resume"]
+- !private ["s7CVarArgP", "rounded"]
 - !private ["s7CVarArgP", "shared"]
 - !private ["s7CVarArgP", "signal"]
 - !private ["s7CVarArgP", "string"]
@@ -158,16 +168,20 @@ depends-member:
 - !private ["s10ComparableP", "Date"]
 - !private ["s10ComparableP", "DateFormatter"]
 - !private ["s10ComparableP", "Encoding"]
+- !private ["s10ComparableP", "Int64"]
 - !private ["s10ComparableP", "JSONSerialization"]
 - !private ["s10ComparableP", "Locale"]
 - !private ["s10ComparableP", "NSMutableArray"]
 - !private ["s10ComparableP", "String"]
+- !private ["s10ComparableP", "TimeInterval"]
 - !private ["s10ComparableP", "TimeZone"]
 - !private ["s10ComparableP", "data"]
 - !private ["s10ComparableP", "distantFuture"]
 - !private ["s10ComparableP", "init"]
 - !private ["s10ComparableP", "isEmpty"]
 - !private ["s10ComparableP", "print"]
+- !private ["s10ComparableP", "rounded"]
+- !private ["s10ComparableP", "timeIntervalSince1970"]
 - !private ["s10ComparableP", "trimmingCharacters"]
 - !private ["s28CustomDebugStringConvertibleP", "CharacterSet"]
 - !private ["s28CustomDebugStringConvertibleP", "Date"]
@@ -175,6 +189,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "DispatchSemaphore"]
 - !private ["s28CustomDebugStringConvertibleP", "DispatchTime"]
 - !private ["s28CustomDebugStringConvertibleP", "Encoding"]
+- !private ["s28CustomDebugStringConvertibleP", "Int64"]
 - !private ["s28CustomDebugStringConvertibleP", "JSONSerialization"]
 - !private ["s28CustomDebugStringConvertibleP", "Locale"]
 - !private ["s28CustomDebugStringConvertibleP", "Mirror"]
@@ -183,6 +198,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "NSString"]
 - !private ["s28CustomDebugStringConvertibleP", "ReadingOptions"]
 - !private ["s28CustomDebugStringConvertibleP", "String"]
+- !private ["s28CustomDebugStringConvertibleP", "TimeInterval"]
 - !private ["s28CustomDebugStringConvertibleP", "TimeZone"]
 - !private ["s28CustomDebugStringConvertibleP", "UIColor"]
 - !private ["s28CustomDebugStringConvertibleP", "UInt8"]
@@ -204,9 +220,11 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "requestSynchronousData"]
 - !private ["s28CustomDebugStringConvertibleP", "requestSynchronousJSON"]
 - !private ["s28CustomDebugStringConvertibleP", "resume"]
+- !private ["s28CustomDebugStringConvertibleP", "rounded"]
 - !private ["s28CustomDebugStringConvertibleP", "shared"]
 - !private ["s28CustomDebugStringConvertibleP", "signal"]
 - !private ["s28CustomDebugStringConvertibleP", "string"]
+- !private ["s28CustomDebugStringConvertibleP", "timeIntervalSince1970"]
 - !private ["s28CustomDebugStringConvertibleP", "timeZone"]
 - !private ["s28CustomDebugStringConvertibleP", "trimmingCharacters"]
 - !private ["s28CustomDebugStringConvertibleP", "uname"]
@@ -219,26 +237,32 @@ depends-member:
 - !private ["s29CustomPlaygroundQuickLookableP", "Date"]
 - !private ["s29CustomPlaygroundQuickLookableP", "DateFormatter"]
 - !private ["s29CustomPlaygroundQuickLookableP", "Encoding"]
+- !private ["s29CustomPlaygroundQuickLookableP", "Int64"]
 - !private ["s29CustomPlaygroundQuickLookableP", "JSONSerialization"]
 - !private ["s29CustomPlaygroundQuickLookableP", "Locale"]
 - !private ["s29CustomPlaygroundQuickLookableP", "NSMutableArray"]
 - !private ["s29CustomPlaygroundQuickLookableP", "String"]
+- !private ["s29CustomPlaygroundQuickLookableP", "TimeInterval"]
 - !private ["s29CustomPlaygroundQuickLookableP", "TimeZone"]
 - !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
 - !private ["s29CustomPlaygroundQuickLookableP", "data"]
 - !private ["s29CustomPlaygroundQuickLookableP", "init"]
 - !private ["s29CustomPlaygroundQuickLookableP", "isEmpty"]
 - !private ["s29CustomPlaygroundQuickLookableP", "print"]
+- !private ["s29CustomPlaygroundQuickLookableP", "rounded"]
+- !private ["s29CustomPlaygroundQuickLookableP", "timeIntervalSince1970"]
 - !private ["s29CustomPlaygroundQuickLookableP", "trimmingCharacters"]
 - !private ["s17CustomReflectableP", "CharacterSet"]
 - !private ["s17CustomReflectableP", "Date"]
 - !private ["s17CustomReflectableP", "DateFormatter"]
 - !private ["s17CustomReflectableP", "Encoding"]
+- !private ["s17CustomReflectableP", "Int64"]
 - !private ["s17CustomReflectableP", "JSONSerialization"]
 - !private ["s17CustomReflectableP", "Locale"]
 - !private ["s17CustomReflectableP", "NSMutableArray"]
 - !private ["s17CustomReflectableP", "NSString"]
 - !private ["s17CustomReflectableP", "String"]
+- !private ["s17CustomReflectableP", "TimeInterval"]
 - !private ["s17CustomReflectableP", "TimeZone"]
 - !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
 - !private ["s17CustomReflectableP", "children"]
@@ -246,6 +270,8 @@ depends-member:
 - !private ["s17CustomReflectableP", "init"]
 - !private ["s17CustomReflectableP", "isEmpty"]
 - !private ["s17CustomReflectableP", "print"]
+- !private ["s17CustomReflectableP", "rounded"]
+- !private ["s17CustomReflectableP", "timeIntervalSince1970"]
 - !private ["s17CustomReflectableP", "trimmingCharacters"]
 - !private ["s23CustomStringConvertibleP", "CharacterSet"]
 - !private ["s23CustomStringConvertibleP", "Date"]
@@ -253,6 +279,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "DispatchSemaphore"]
 - !private ["s23CustomStringConvertibleP", "DispatchTime"]
 - !private ["s23CustomStringConvertibleP", "Encoding"]
+- !private ["s23CustomStringConvertibleP", "Int64"]
 - !private ["s23CustomStringConvertibleP", "JSONSerialization"]
 - !private ["s23CustomStringConvertibleP", "Locale"]
 - !private ["s23CustomStringConvertibleP", "Mirror"]
@@ -261,6 +288,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "NSString"]
 - !private ["s23CustomStringConvertibleP", "ReadingOptions"]
 - !private ["s23CustomStringConvertibleP", "String"]
+- !private ["s23CustomStringConvertibleP", "TimeInterval"]
 - !private ["s23CustomStringConvertibleP", "TimeZone"]
 - !private ["s23CustomStringConvertibleP", "UIColor"]
 - !private ["s23CustomStringConvertibleP", "UInt8"]
@@ -285,9 +313,11 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "requestSynchronousData"]
 - !private ["s23CustomStringConvertibleP", "requestSynchronousJSON"]
 - !private ["s23CustomStringConvertibleP", "resume"]
+- !private ["s23CustomStringConvertibleP", "rounded"]
 - !private ["s23CustomStringConvertibleP", "shared"]
 - !private ["s23CustomStringConvertibleP", "signal"]
 - !private ["s23CustomStringConvertibleP", "string"]
+- !private ["s23CustomStringConvertibleP", "timeIntervalSince1970"]
 - !private ["s23CustomStringConvertibleP", "timeZone"]
 - !private ["s23CustomStringConvertibleP", "trimmingCharacters"]
 - !private ["s23CustomStringConvertibleP", "uname"]
@@ -297,7 +327,13 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "white"]
 - !private ["s23CustomStringConvertibleP", "whitespacesAndNewlines"]
 - ["s23CustomStringConvertibleP", ""]
-- !private ["10Foundation4DateV", "init"]
+- !private ["10Foundation4DateV", "Date"]
+- ["10Foundation4DateV", "Int"]
+- ["10Foundation4DateV", "Int64"]
+- !private ["10Foundation4DateV", "TimeInterval"]
+- ["10Foundation4DateV", "init"]
+- ["10Foundation4DateV", "millisecondsSince1970"]
+- !private ["10Foundation4DateV", "timeIntervalSince1970"]
 - !private ["So13DateFormatterC", "dateFormat"]
 - !private ["So13DateFormatterC", "init"]
 - !private ["So13DateFormatterC", "locale"]
@@ -307,17 +343,21 @@ depends-member:
 - !private ["s9DecodableP", "Date"]
 - !private ["s9DecodableP", "DateFormatter"]
 - !private ["s9DecodableP", "Encoding"]
+- !private ["s9DecodableP", "Int64"]
 - !private ["s9DecodableP", "JSONSerialization"]
 - !private ["s9DecodableP", "Locale"]
 - !private ["s9DecodableP", "NSMutableArray"]
 - !private ["s9DecodableP", "NSString"]
 - !private ["s9DecodableP", "String"]
+- !private ["s9DecodableP", "TimeInterval"]
 - !private ["s9DecodableP", "TimeZone"]
 - !private ["s9DecodableP", "_getBuiltinLogicValue"]
 - !private ["s9DecodableP", "data"]
 - !private ["s9DecodableP", "init"]
 - !private ["s9DecodableP", "isEmpty"]
 - !private ["s9DecodableP", "print"]
+- !private ["s9DecodableP", "rounded"]
+- !private ["s9DecodableP", "timeIntervalSince1970"]
 - !private ["s9DecodableP", "trimmingCharacters"]
 - !private ["s9DecodableP", "whitespacesAndNewlines"]
 - !private ["So14DispatchObjectC", "init"]
@@ -327,21 +367,27 @@ depends-member:
 - !private ["So17DispatchSemaphoreC", "signal"]
 - !private ["So17DispatchSemaphoreC", "wait"]
 - !private ["8Dispatch0A4TimeV", "distantFuture"]
+- !private ["Sd", "init"]
+- !private ["Sd", "rounded"]
 - !private ["s9EncodableP", "CharacterSet"]
 - !private ["s9EncodableP", "Date"]
 - !private ["s9EncodableP", "DateFormatter"]
 - !private ["s9EncodableP", "Encoding"]
+- !private ["s9EncodableP", "Int64"]
 - !private ["s9EncodableP", "JSONSerialization"]
 - !private ["s9EncodableP", "Locale"]
 - !private ["s9EncodableP", "NSMutableArray"]
 - !private ["s9EncodableP", "NSString"]
 - !private ["s9EncodableP", "String"]
+- !private ["s9EncodableP", "TimeInterval"]
 - !private ["s9EncodableP", "TimeZone"]
 - !private ["s9EncodableP", "_getBuiltinLogicValue"]
 - !private ["s9EncodableP", "data"]
 - !private ["s9EncodableP", "init"]
 - !private ["s9EncodableP", "isEmpty"]
 - !private ["s9EncodableP", "print"]
+- !private ["s9EncodableP", "rounded"]
+- !private ["s9EncodableP", "timeIntervalSince1970"]
 - !private ["s9EncodableP", "trimmingCharacters"]
 - !private ["s9EncodableP", "whitespacesAndNewlines"]
 - !private ["SS10FoundationE8EncodingV", "rawValue"]
@@ -352,6 +398,7 @@ depends-member:
 - !private ["s9EquatableP", "DispatchSemaphore"]
 - !private ["s9EquatableP", "DispatchTime"]
 - !private ["s9EquatableP", "Encoding"]
+- !private ["s9EquatableP", "Int64"]
 - !private ["s9EquatableP", "JSONSerialization"]
 - !private ["s9EquatableP", "Locale"]
 - !private ["s9EquatableP", "Mirror"]
@@ -360,6 +407,7 @@ depends-member:
 - !private ["s9EquatableP", "NSString"]
 - !private ["s9EquatableP", "ReadingOptions"]
 - !private ["s9EquatableP", "String"]
+- !private ["s9EquatableP", "TimeInterval"]
 - !private ["s9EquatableP", "TimeZone"]
 - !private ["s9EquatableP", "UIColor"]
 - !private ["s9EquatableP", "UInt8"]
@@ -386,9 +434,11 @@ depends-member:
 - !private ["s9EquatableP", "requestSynchronousData"]
 - !private ["s9EquatableP", "requestSynchronousJSON"]
 - !private ["s9EquatableP", "resume"]
+- !private ["s9EquatableP", "rounded"]
 - !private ["s9EquatableP", "shared"]
 - !private ["s9EquatableP", "signal"]
 - !private ["s9EquatableP", "string"]
+- !private ["s9EquatableP", "timeIntervalSince1970"]
 - !private ["s9EquatableP", "timeZone"]
 - !private ["s9EquatableP", "trimmingCharacters"]
 - !private ["s9EquatableP", "uname"]
@@ -421,7 +471,10 @@ depends-member:
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "isEmpty"]
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "print"]
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "trimmingCharacters"]
+- !private ["s25ExpressibleByFloatLiteralP", "init"]
+- !private ["s25ExpressibleByFloatLiteralP", "rounded"]
 - !private ["s27ExpressibleByIntegerLiteralP", "init"]
+- !private ["s27ExpressibleByIntegerLiteralP", "rounded"]
 - !private ["s26ExpressibleByStringLiteralP", "CharacterSet"]
 - !private ["s26ExpressibleByStringLiteralP", "Date"]
 - !private ["s26ExpressibleByStringLiteralP", "DateFormatter"]
@@ -453,6 +506,8 @@ depends-member:
 - ["13TookanTracker14ExtensionClassC", "deinit"]
 - ["13TookanTracker14ExtensionClassC", "init"]
 - !private ["s17FixedWidthIntegerP", "init"]
+- !private ["s13FloatingPointP", "init"]
+- !private ["s13FloatingPointP", "rounded"]
 - !private ["So9FormatterC", "dateFormat"]
 - !private ["So9FormatterC", "init"]
 - !private ["So9FormatterC", "locale"]
@@ -464,6 +519,7 @@ depends-member:
 - !private ["s8HashableP", "DispatchSemaphore"]
 - !private ["s8HashableP", "DispatchTime"]
 - !private ["s8HashableP", "Encoding"]
+- !private ["s8HashableP", "Int64"]
 - !private ["s8HashableP", "JSONSerialization"]
 - !private ["s8HashableP", "Locale"]
 - !private ["s8HashableP", "Mirror"]
@@ -472,6 +528,7 @@ depends-member:
 - !private ["s8HashableP", "NSString"]
 - !private ["s8HashableP", "ReadingOptions"]
 - !private ["s8HashableP", "String"]
+- !private ["s8HashableP", "TimeInterval"]
 - !private ["s8HashableP", "TimeZone"]
 - !private ["s8HashableP", "UIColor"]
 - !private ["s8HashableP", "UInt8"]
@@ -495,9 +552,11 @@ depends-member:
 - !private ["s8HashableP", "requestSynchronousData"]
 - !private ["s8HashableP", "requestSynchronousJSON"]
 - !private ["s8HashableP", "resume"]
+- !private ["s8HashableP", "rounded"]
 - !private ["s8HashableP", "shared"]
 - !private ["s8HashableP", "signal"]
 - !private ["s8HashableP", "string"]
+- !private ["s8HashableP", "timeIntervalSince1970"]
 - !private ["s8HashableP", "timeZone"]
 - !private ["s8HashableP", "trimmingCharacters"]
 - !private ["s8HashableP", "uname"]
@@ -507,6 +566,7 @@ depends-member:
 - !private ["s8HashableP", "white"]
 - !private ["s8HashableP", "whitespacesAndNewlines"]
 - ["s8HashableP", ""]
+- !private ["s5Int64V", "init"]
 - !private ["So17JSONSerializationC", "ReadingOptions"]
 - !private ["So17JSONSerializationC", "WritingOptions"]
 - !private ["So17JSONSerializationC", "data"]
@@ -526,7 +586,9 @@ depends-member:
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["s25LosslessStringConvertibleP", "isEmpty"]
 - !private ["s25LosslessStringConvertibleP", "print"]
+- !private ["s25LosslessStringConvertibleP", "rounded"]
 - !private ["s25LosslessStringConvertibleP", "trimmingCharacters"]
+- !private ["10Foundation11MeasurementV", "rounded"]
 - !private ["s6MirrorV", "children"]
 - !private ["s6MirrorV", "init"]
 - !private ["s10MirrorPathP", "CharacterSet"]
@@ -731,6 +793,7 @@ depends-member:
 - !private ["So12NSURLRequestC", "httpMethod"]
 - !private ["So12NSURLRequestC", "init"]
 - !private ["s7NumericP", "init"]
+- !private ["s7NumericP", "rounded"]
 - !private ["So9OS_objectC", "init"]
 - !private ["So9OS_objectC", "signal"]
 - !private ["So9OS_objectC", "wait"]
@@ -761,7 +824,12 @@ depends-member:
 - !private ["s16RawRepresentableP", "rawValue"]
 - !private ["s16RawRepresentableP", "utf8"]
 - !private ["So17JSONSerializationC14ReadingOptionsV", "mutableLeaves"]
+- !private ["10Foundation20ReferenceConvertibleP", "Date"]
+- !private ["10Foundation20ReferenceConvertibleP", "Int64"]
+- !private ["10Foundation20ReferenceConvertibleP", "TimeInterval"]
 - !private ["10Foundation20ReferenceConvertibleP", "init"]
+- !private ["10Foundation20ReferenceConvertibleP", "rounded"]
+- !private ["10Foundation20ReferenceConvertibleP", "timeIntervalSince1970"]
 - !private ["10Foundation20ReferenceConvertibleP", "whitespacesAndNewlines"]
 - !private ["s7UnicodeO6ScalarV", "init"]
 - !private ["s8SequenceP", "CharacterSet"]
@@ -783,7 +851,11 @@ depends-member:
 - !private ["s10SetAlgebraP", "mutableLeaves"]
 - !private ["s10SetAlgebraP", "prettyPrinted"]
 - !private ["s10SetAlgebraP", "whitespacesAndNewlines"]
+- !private ["s13SignedIntegerP", "init"]
+- !private ["s13SignedNumericP", "init"]
+- !private ["s13SignedNumericP", "rounded"]
 - !private ["s10StrideableP", "init"]
+- !private ["s10StrideableP", "rounded"]
 - !private ["SS", "AnyObject"]
 - ["SS", "Bool"]
 - !private ["SS", "CharacterSet"]
@@ -908,6 +980,10 @@ depends-member:
 - !private ["s23_BidirectionalIndexableP", "print"]
 - !private ["s23_BidirectionalIndexableP", "trimmingCharacters"]
 - !private ["s18_BitwiseOperationsP", "init"]
+- !private ["s15_CVarArgAlignedP", "init"]
+- !private ["s15_CVarArgAlignedP", "rounded"]
+- !private ["s22_CVarArgPassedAsDoubleP", "init"]
+- !private ["s22_CVarArgPassedAsDoubleP", "rounded"]
 - !private ["s24_DestructorSafeContainerP", "JSONSerialization"]
 - !private ["s24_DestructorSafeContainerP", "NSString"]
 - !private ["s24_DestructorSafeContainerP", "String"]
@@ -927,7 +1003,10 @@ depends-member:
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "isEmpty"]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "print"]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "trimmingCharacters"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "init"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "rounded"]
 - !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "rounded"]
 - !private ["s34_ExpressibleByBuiltinStringLiteralP", "CharacterSet"]
 - !private ["s34_ExpressibleByBuiltinStringLiteralP", "Date"]
 - !private ["s34_ExpressibleByBuiltinStringLiteralP", "DateFormatter"]
@@ -1072,17 +1151,21 @@ depends-member:
 - !private ["s21_ObjectiveCBridgeableP", "Date"]
 - !private ["s21_ObjectiveCBridgeableP", "DateFormatter"]
 - !private ["s21_ObjectiveCBridgeableP", "Encoding"]
+- !private ["s21_ObjectiveCBridgeableP", "Int64"]
 - !private ["s21_ObjectiveCBridgeableP", "JSONSerialization"]
 - !private ["s21_ObjectiveCBridgeableP", "Locale"]
 - !private ["s21_ObjectiveCBridgeableP", "NSMutableArray"]
 - !private ["s21_ObjectiveCBridgeableP", "NSString"]
 - !private ["s21_ObjectiveCBridgeableP", "String"]
+- !private ["s21_ObjectiveCBridgeableP", "TimeInterval"]
 - !private ["s21_ObjectiveCBridgeableP", "TimeZone"]
 - !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
 - !private ["s21_ObjectiveCBridgeableP", "data"]
 - !private ["s21_ObjectiveCBridgeableP", "init"]
 - !private ["s21_ObjectiveCBridgeableP", "isEmpty"]
 - !private ["s21_ObjectiveCBridgeableP", "print"]
+- !private ["s21_ObjectiveCBridgeableP", "rounded"]
+- !private ["s21_ObjectiveCBridgeableP", "timeIntervalSince1970"]
 - !private ["s21_ObjectiveCBridgeableP", "trimmingCharacters"]
 - !private ["s21_ObjectiveCBridgeableP", "whitespacesAndNewlines"]
 - !private ["s22_RandomAccessIndexableP", "JSONSerialization"]
@@ -1105,6 +1188,7 @@ depends-member:
 - !private ["s26_RangeReplaceableIndexableP", "print"]
 - !private ["s26_RangeReplaceableIndexableP", "trimmingCharacters"]
 - !private ["s11_StrideableP", "init"]
+- !private ["s11_StrideableP", "rounded"]
 - !private ["s14_StringElementP", "init"]
 - !private ["s16_SwiftStringViewP", "CharacterSet"]
 - !private ["s16_SwiftStringViewP", "Date"]
@@ -1126,6 +1210,7 @@ depends-nominal:
 - !private "s13AnyCollectionV"
 - "Sa"
 - !private "s23BidirectionalCollectionP"
+- !private "s19BinaryFloatingPointP"
 - !private "s13BinaryIntegerP"
 - !private "Sb"
 - "s7CVarArgP"
@@ -1136,28 +1221,33 @@ depends-nominal:
 - !private "s29CustomPlaygroundQuickLookableP"
 - !private "s17CustomReflectableP"
 - "s23CustomStringConvertibleP"
-- !private "10Foundation4DateV"
+- "10Foundation4DateV"
 - !private "So13DateFormatterC"
 - !private "s9DecodableP"
 - !private "So14DispatchObjectC"
 - !private "So17DispatchSemaphoreC"
 - !private "8Dispatch0A4TimeV"
+- !private "Sd"
 - !private "s9EncodableP"
 - !private "SS10FoundationE8EncodingV"
 - "s9EquatableP"
 - !private "s25ExpressibleByArrayLiteralP"
 - !private "s27ExpressibleByBooleanLiteralP"
 - !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s25ExpressibleByFloatLiteralP"
 - !private "s27ExpressibleByIntegerLiteralP"
 - !private "s26ExpressibleByStringLiteralP"
 - !private "s33ExpressibleByUnicodeScalarLiteralP"
 - "13TookanTracker14ExtensionClassC"
 - !private "s17FixedWidthIntegerP"
+- !private "s13FloatingPointP"
 - !private "So9FormatterC"
 - "s8HashableP"
+- !private "s5Int64V"
 - !private "So17JSONSerializationC"
 - !private "10Foundation6LocaleV"
 - !private "s25LosslessStringConvertibleP"
+- !private "10Foundation11MeasurementV"
 - !private "s6MirrorV"
 - !private "s10MirrorPathP"
 - !private "s17MutableCollectionP"
@@ -1187,6 +1277,8 @@ depends-nominal:
 - !private "s7UnicodeO6ScalarV"
 - !private "s8SequenceP"
 - !private "s10SetAlgebraP"
+- !private "s13SignedIntegerP"
+- !private "s13SignedNumericP"
 - !private "s10StrideableP"
 - "SS"
 - !private "s14StringProtocolP"
@@ -1207,9 +1299,12 @@ depends-nominal:
 - !private "s14_ArrayProtocolP"
 - !private "s23_BidirectionalIndexableP"
 - !private "s18_BitwiseOperationsP"
+- !private "s15_CVarArgAlignedP"
+- !private "s22_CVarArgPassedAsDoubleP"
 - !private "s24_DestructorSafeContainerP"
 - !private "s35_ExpressibleByBuiltinBooleanLiteralP"
 - !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s33_ExpressibleByBuiltinFloatLiteralP"
 - !private "s35_ExpressibleByBuiltinIntegerLiteralP"
 - !private "s34_ExpressibleByBuiltinStringLiteralP"
 - !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
@@ -1249,77 +1344,78 @@ depends-external:
 - "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreGraphics.swiftmodule"
 - "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Swift.swiftmodule"
 - "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/UIKit.swiftmodule"
+- "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/MapKit.swiftmodule"
 - "/Applications/Xcode 9.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/SwiftOnoneSupport.swiftmodule"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanorama.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaCamera.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacePhotoMetadata.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceLikelihood.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlace.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSUserAddedPlace.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaService.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteTableDataSource.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteBoundsMode.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCircle.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapStyle.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPolyline.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GoogleMapsBase.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCameraUpdate.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaCameraUpdate.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorBuilding.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPath.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMutablePath.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaLink.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorLevel.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPolygon.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapView+Animation.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSOrientation.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSProjection.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompletePrediction.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCameraPosition.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGeocoder.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteFetcher.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/TookanTracker.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMarker.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteViewController.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteResultsViewController.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteFilter.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCALayer.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaLayer.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSURLTileLayer.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSTileLayer.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSSyncTileLayer.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapLayer.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMarkerLayer.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSCoordinateBounds.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GooglePlaces.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSServices.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceTypes.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSUISettings.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGeometryUtils.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSDeprecationMacros.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSCompatabilityMacros.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCoordinateBounds+GoogleMaps.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GoogleMaps.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacesErrors.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSAddress.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacesClient.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteMatchFragment.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAddressComponent.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacePhotoMetadataList.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceLikelihoodList.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaView.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapView.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorDisplay.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSOverlay.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGroundOverlay.h"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/build/TookanTracker.build/Debug-iphoneos/TookanTracker.build/unextended-module.modulemap"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Modules/module.modulemap"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Modules/module.modulemap"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Modules/module.modulemap"
-- "/Users/cl-macmini-110/Desktop/yooooo/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Modules/module.modulemap"
-interface-hash: "3ec79b5cd42af1b4810a9039e3250623"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/CocoaAsyncSocket-umbrella.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanorama.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaCamera.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacePhotoMetadata.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceLikelihood.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlace.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSUserAddedPlace.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaService.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteTableDataSource.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteBoundsMode.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCircle.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapStyle.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPolyline.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GoogleMapsBase.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCameraUpdate.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaCameraUpdate.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorBuilding.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPath.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMutablePath.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaLink.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorLevel.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPolygon.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapView+Animation.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSOrientation.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSProjection.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompletePrediction.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCameraPosition.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGeocoder.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteFetcher.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/TookanTracker.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMarker.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteViewController.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteResultsViewController.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteFilter.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCALayer.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaLayer.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSURLTileLayer.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSTileLayer.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSSyncTileLayer.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapLayer.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMarkerLayer.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSCoordinateBounds.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GooglePlaces.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSServices.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceTypes.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSUISettings.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGeometryUtils.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSDeprecationMacros.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Headers/GMSCompatabilityMacros.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSCoordinateBounds+GoogleMaps.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GoogleMaps.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacesErrors.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSAddress.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/AsyncSocket.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/GCDAsyncSocket.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/AsyncUdpSocket.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Headers/GCDAsyncUdpSocket.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacesClient.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAutocompleteMatchFragment.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSAddressComponent.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlacePhotoMetadataList.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Headers/GMSPlaceLikelihoodList.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSPanoramaView.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSMapView.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSIndoorDisplay.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSOverlay.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Headers/GMSGroundOverlay.h"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/build/TookanTracker.build/Debug-iphoneos/TookanTracker.build/unextended-module.modulemap"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMapsBase.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Modules/module.modulemap"
+- "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Modules/module.modulemap"
+interface-hash: "c60aeaced1345d00ee6a241e3efc9ed8"

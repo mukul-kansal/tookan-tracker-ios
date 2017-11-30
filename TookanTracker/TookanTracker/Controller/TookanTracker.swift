@@ -22,7 +22,9 @@ public class TookanTracker: NSObject {
     public var delegate:TookanTrackerDelegate!
     let model = TrackerModel()
     
+    
     public func createSession(userID:String, apiKey: String, navigationController:UINavigationController) {
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.becomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         globalUserId = userID
         globalAPIKey = apiKey
         self.merchantNavigationController = navigationController
@@ -56,6 +58,12 @@ public class TookanTracker: NSObject {
                     }
                 }
             }
+    }
+    
+    
+    @objc func becomeActive() {
+        self.loc.trackingDelegate = self
+        self.loc.becomeActive()
     }
     
     func initHome(sessionID: String) {

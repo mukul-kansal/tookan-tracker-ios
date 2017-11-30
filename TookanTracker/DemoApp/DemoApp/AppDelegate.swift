@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import TookanTracker
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -58,6 +59,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
+        
+        if UserDefaults.standard.value(forKey: USER_DEFAULT.isSessionExpire) != nil {
+            if UserDefaults.standard.bool(forKey: USER_DEFAULT.isSessionExpire) == false {
+                if let rootNavigation = (window?.rootViewController?.navigationController) {
+                    TookanTracker.shared.createSession(userID: userID, apiKey: apiKey, navigationController: rootNavigation)
+                }
+                
+            }
+        }
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     }
 
