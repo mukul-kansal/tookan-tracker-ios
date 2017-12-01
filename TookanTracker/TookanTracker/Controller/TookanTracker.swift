@@ -9,23 +9,26 @@
 import Foundation
 import GooglePlaces
 import GoogleMaps
+import CoreLocation
 
 @objc public protocol TookanTrackerDelegate {
     @objc optional func getCurrentCoordinates(_ location:CLLocation)
     @objc optional func logout()
 }
 
-public class TookanTracker: NSObject {
+public class TookanTracker: NSObject, CLLocationManagerDelegate {
     public static var shared = TookanTracker()
     private var merchantNavigationController:UINavigationController?
     let loc = LocationTrackerFile.sharedInstance()
     public var delegate:TookanTrackerDelegate!
     let model = TrackerModel()
-    
+    var locationManager:CLLocationManager!
     
     public func createSession(userID:String, apiKey: String, navigationController:UINavigationController) {
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.becomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
-        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+
         globalUserId = userID
         globalAPIKey = apiKey
         self.merchantNavigationController = navigationController
@@ -33,23 +36,32 @@ public class TookanTracker: NSObject {
         UserDefaults.standard.set(userID, forKey: USER_DEFAULT.userId)
         self.loc.trackingDelegate = self
         
-        let location = self.loc.getCurrentLocation()
-//        Auxillary.showAlert("ENterd")
+
+    }
+    
+    public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .denied {
+            locationManager = CLLocationManager()
+//            locationManager.delegate = self
+            locationManager.requestAlwaysAuthorization()
+        } else if status == .authorizedWhenInUse || status == .authorizedAlways {
+            let location = self.loc.getCurrentLocation()
+            //        Auxillary.showAlert("ENterd")
             if let _ = UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) as? String {
-//                Auxillary.showAlert("direct")
+                //                Auxillary.showAlert("direct")
                 self.registerForGoogle()
                 self.initHome()
             } else {
                 if let _ = UserDefaults.standard.value(forKey: USER_DEFAULT.isLocationTrackingRunning) {
-//                    if UserDefaults.standard.bool(forKey: USER_DEFAULT.isLocationTrackingRunning) == true {
-//                       
-//                    } else {
-//                        
-//                    }
+                    //                    if UserDefaults.standard.bool(forKey: USER_DEFAULT.isLocationTrackingRunning) == true {
+                    //
+                    //                    } else {
+                    //
+                    //                    }
                     self.registerForGoogle()
                     self.initHome()
                 } else {
-//                    Auxillary.showAlert("indirect")
+                    //                    Auxillary.showAlert("indirect")
                     NetworkingHelper.sharedInstance.shareLocationSession(api_key: globalAPIKey, unique_user_id: globalUserId, lat: "\(location?.coordinate.latitude ?? 0)", lng: "\(location?.coordinate.longitude ?? 0)", sessionId: "") { (isSucceeded, response) in
                         
                         DispatchQueue.main.async {
@@ -71,8 +83,10 @@ public class TookanTracker: NSObject {
                 
                 
             }
+        }
+        
+        
     }
-    
     
     @objc func becomeActive() {
         self.loc.trackingDelegate = self

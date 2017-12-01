@@ -12,7 +12,7 @@ import TookanTracker
 import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate {
 
     var window: UIWindow?
     var locationManager:CLLocationManager!
@@ -24,26 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(true, forKey: USER_DEFAULT.isSessionExpire)
         }
         
-        /*=========== Register Push Notification =============*/
-//        if #available(iOS 10.0, *) {
-//            // request permissions
-//            UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert, .badge]) {
-//                (granted, error) in
-//                if (granted) {
-//                    DispatchQueue.main.async {
-//                        UIApplication.shared.registerForRemoteNotifications()
-//                    }
-//                }
-//            }
-//        } else { // Fallback on earlier versions
-//            DispatchQueue.main.async {
-//                let pushSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound],categories: nil)
-//                UIApplication.shared.registerUserNotificationSettings(pushSettings)
-//                application.registerUserNotificationSettings(pushSettings)
-//                application.registerForRemoteNotifications()
-//            }
-//        }
-        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
         self.window?.makeKeyAndVisible()
         
         return true
@@ -81,5 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    
+    
 }
 

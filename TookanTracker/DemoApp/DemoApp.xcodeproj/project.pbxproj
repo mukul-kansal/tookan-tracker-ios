@@ -18,6 +18,7 @@
 		2643AF631FCEFAEC00DBB343 /* SignupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2643AF601FCEF52400DBB343 /* SignupCell.xib */; };
 		264719F71FCF021600E91784 /* SignupFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264719F41FCF021600E91784 /* SignupFooterView.swift */; };
 		264719F81FCF022C00E91784 /* SignupFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264719F61FCF021600E91784 /* SignupFooterView.xib */; };
+		26A783351FD1318E000084E0 /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A783341FD1318E000084E0 /* CommonFunctions.swift */; };
 		26F5BDD71FC83335000D2715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5BDD61FC83335000D2715 /* AppDelegate.swift */; };
 		26F5BDD91FC83335000D2715 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5BDD81FC83335000D2715 /* ViewController.swift */; };
 		26F5BDDC1FC83335000D2715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F5BDDA1FC83335000D2715 /* Main.storyboard */; };
@@ -71,6 +72,7 @@
 		2643AF611FCEF52500DBB343 /* SignupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCell.swift; sourceTree = "<group>"; };
 		264719F41FCF021600E91784 /* SignupFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFooterView.swift; sourceTree = "<group>"; };
 		264719F61FCF021600E91784 /* SignupFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupFooterView.xib; sourceTree = "<group>"; };
+		26A783341FD1318E000084E0 /* CommonFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunctions.swift; sourceTree = "<group>"; };
 		26F5BDD31FC83335000D2715 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F5BDD61FC83335000D2715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26F5BDD81FC83335000D2715 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26A783331FD1316D000084E0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				26A783341FD1318E000084E0 /* CommonFunctions.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		26F5BDCA1FC83335000D2715 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 		26F5BDD51FC83335000D2715 /* DemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				26A783331FD1316D000084E0 /* Helper */,
 				26F5BDD61FC83335000D2715 /* AppDelegate.swift */,
 				2632133D1FC86F4F00E0C2AA /* OTPController.swift */,
 				26F5BDD81FC83335000D2715 /* ViewController.swift */,
@@ -241,6 +252,7 @@
 				264719F71FCF021600E91784 /* SignupFooterView.swift in Sources */,
 				2643AF5B1FCEEB5800DBB343 /* SignupViewController.swift in Sources */,
 				26F5BDD91FC83335000D2715 /* ViewController.swift in Sources */,
+				26A783351FD1318E000084E0 /* CommonFunctions.swift in Sources */,
 				2643AF5E1FCEF19900DBB343 /* SignupModel.swift in Sources */,
 				2629CC401FCC1F90009A37B0 /* Extension.swift in Sources */,
 				263213421FC86FF200E0C2AA /* IJReachability.swift in Sources */,
