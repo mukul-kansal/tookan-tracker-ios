@@ -30,7 +30,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     var mapCurrentZoomLevel:Float = 16
     var searchMarker:GMSMarker? = GMSMarker()
     var pathMarker = GMSMarker()
-    var sessionID = ""
+//    var sessionID = ""
     var currentCameraPosition: GMSCameraPosition!
     var moving = true
     var trackingDelegate:TrackingDelegate!
@@ -53,6 +53,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         super.viewDidLoad()
         /*----------------- Location Tracker --------------*/
         self.loc.delegate = self
+//        self.loc.setLocationUpdate()
         self.loc.registerAllRequiredInitilazers()
 //        self.loc.initMqtt()
 //        self.loc.locationFrequencyMode = LocationFrequency.high
@@ -60,7 +61,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
 //        _ = self.loc.startLocationService()
 //        self.loc.subsribeMQTTForTracking()
         self.currentLocation.setImage(getCurrentLocation?.withRenderingMode(.alwaysTemplate), for: .normal)
-        
+        self.currentLocation.tintColor = UIColor.white
         /*----------------- Google Map ---------------*/
         
         if let styleURL = frameworkBundle?.url(forResource: "style", withExtension: "json") {
@@ -77,8 +78,11 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         // self.googleMapView.isTrafficEnabled = true
         self.googleMapView.isMyLocationEnabled = true
         
-        self.logout.setImage(close?.withRenderingMode(.alwaysTemplate), for: .normal)
-        self.logout.tintColor = UIColor.white
+//        self.logout.setImage(close?.withRenderingMode(.alwaysTemplate), for: .normal)
+//        self.logout.tintColor = UIColor.white
+        self.logout.setTitle("Logout", for: .normal)
+        
+        
         
         /*--------------- Set User Status ----------------*/
         if model.isSessionIdExist() == true {
@@ -97,7 +101,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     }
     
     func setTrackingButton() {
-        self.stopTrackingButton.layer.cornerRadius = 25.0
+        self.stopTrackingButton.layer.cornerRadius = 5.0
         self.setTrackingTitle()
         self.stopTrackingButton.backgroundColor = UIColor(red: 70/255, green: 149/255, blue: 246/255, alpha: 1.0)
         self.stopTrackingButton.setTitleColor(UIColor.white, for: .normal)
@@ -105,10 +109,10 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     
     func setTrackingTitle() {
         if let _ = UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) as? String {
-            self.stopTrackingButton.setTitle("Stop Tracking", for: .normal)
+            self.stopTrackingButton.setTitle("Stop Sharing Location", for: .normal)
             self.isTrackingEnabled = true
         } else {
-            self.stopTrackingButton.setTitle("Start Tracking", for: .normal)
+            self.stopTrackingButton.setTitle("Start Sharing Location", for: .normal)
             self.userStatus = USER_JOB_STATUS.free
             self.isTrackingEnabled = false
         }
@@ -203,6 +207,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
                         sessionID = "\(data["session_id"] ?? "")"
                         UserDefaults.standard.set(sessionID, forKey: USER_DEFAULT.sessionId)
                     }
+//                    self.loc.setLocationUpdate()
                     self.loc.registerAllRequiredInitilazers()
                     self.setUserCurrentJob()
                     self.setTrackingTitle()
@@ -214,22 +219,29 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     }
     
     func stopTracking(pop: Bool) {
-        NetworkingHelper.sharedInstance.stopTracking(self.sessionID, userID: globalUserId, apiKey: globalAPIKey) { (isSucceeded, response) in
-            DispatchQueue.main.async {
-                self.stopTrackingButton.isHidden = false
-                if isSucceeded == true {
-                    self.googleMapView.clear()
-                    self.userStatus = USER_JOB_STATUS.free
-                    self.loc.stopLocationService()
-                    self.model.resetAllData()
-                    self.setTrackingTitle()
-                    if pop == true {
-                        self.dismissVC()
+        if let sessionId = UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) as? String {
+            NetworkingHelper.sharedInstance.stopTracking(sessionId, userID: globalUserId, apiKey: globalAPIKey) { (isSucceeded, response) in
+                DispatchQueue.main.async {
+                    self.stopTrackingButton.isHidden = false
+                    if isSucceeded == true {
+                        self.googleMapView.clear()
+                        self.userStatus = USER_JOB_STATUS.free
+                        self.loc.stopLocationService()
+                        self.model.resetAllData()
+                        self.setTrackingTitle()
+                        if pop == true {
+                            self.dismissVC()
+                        }
                     }
                 }
+                
             }
-
+        }else {
+            if pop == true {
+                self.dismissVC()
+            }
         }
+        
     }
     
     func dismissVC() {
@@ -237,6 +249,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         self.trackingDelegate.logout!()
         UserDefaults.standard.removeObject(forKey: USER_DEFAULT.userId)
         UserDefaults.standard.removeObject(forKey: USER_DEFAULT.apiKey)
+        UserDefaults.standard.removeObject(forKey: USER_DEFAULT.isLocationTrackingRunning)
     }
     
     //MARK: SET USER FLOW
@@ -281,7 +294,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     //MARK: SHARE LOCATION
     func shareLocation() {
         UserDefaults.standard.set(true, forKey: USER_DEFAULT.isLocationTrackingRunning)
-        self.loc.topic = UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) as! String
+        self.loc.topic = "\(globalAPIKey)\(globalUserId)" //UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) as! String
         self.loc.updateLocationToServer()
     }
     
@@ -290,8 +303,10 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         let location = loc.getCurrentLocation()
         if  location != nil && location?.coordinate.latitude != 0.0 {
             self.resetLocationTimer()
-            let id = self.sessionID
-            self.startSessionHit(sessionId: id, location: location!)
+            if let id = UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId){
+                self.startSessionHit(sessionId: id as! String, location: location!)
+            }
+            
         }
     }
     
@@ -305,7 +320,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         //                            self.myLocationButtontrailingConstraint.constant = 56
         //                            self.menuButton.setImage(UIImage(named:"share"), for: UIControlState.normal)
 //                                    UserDefaults.standard.set(sessionId, forKey: USER_DEFAULT.sessionId)
-                                    UserDefaults.standard.set(true, forKey: USER_DEFAULT.isLocationTrackingRunning)
+//                                    UserDefaults.standard.set(true, forKey: USER_DEFAULT.isLocationTrackingRunning)
                                     UserDefaults.standard.set(false, forKey: USER_DEFAULT.subscribeLocation)
                                     self.userStatus = USER_JOB_STATUS.sharingLocation
                                     self.shareLocation()
@@ -461,15 +476,15 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             DispatchQueue.main.async {
                 if succeeded == true {
                     if let locationArray = response["location"] as? [String:Any] {
-                        //                        self.menuButton.isHidden = true
-                        //                        self.myLocationButtontrailingConstraint.constant = 11
-                        //                        self.menuButton.setImage(UIImage(named:"menu"), for: UIControlState.normal)
+//                        self.menuButton.isHidden = true
+//                        self.myLocationButtontrailingConstraint.constant = 11
+//                        self.menuButton.setImage(UIImage(named:"menu"), for: UIControlState.normal)
                         self.userStatus = USER_JOB_STATUS.trackingLocation
                         UserDefaults.standard.set(sessionId, forKey: USER_DEFAULT.sessionId)
                         let coordinate = self.model.updatePathLocations(locationArray: locationArray)
                         self.animationForCameraLocation(coordinate: coordinate)
                         print(UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) as! String)
-                        self.loc.topic = UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) as! String
+                        self.loc.topic = "\(globalAPIKey)\(globalUserId)"  //UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) as! String
                         self.loc.subsribeMQTTForTracking()
                         UserDefaults.standard.set(true, forKey: USER_DEFAULT.subscribeLocation)
                         self.viewShowStatus = SHOW_HIDE.showStopTrackingButton

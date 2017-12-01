@@ -120,6 +120,7 @@ open class LocationTrackerFile:NSObject, CLLocationManagerDelegate, MKMapViewDel
         self.initMqtt()
         self.locationFrequencyMode = LocationFrequency.high
         self.setLocationUpdate()
+//        self.setLocationUpdate()
         _ = self.startLocationService()
         self.subsribeMQTTForTracking()
     }
@@ -228,7 +229,7 @@ open class LocationTrackerFile:NSObject, CLLocationManagerDelegate, MKMapViewDel
         }
         let locationManager: CLLocationManager = LocationTrackerFile.sharedLocationManager()
         locationManager.stopUpdatingLocation()
-        
+//        self.myLocation = nil
 //        MqttClass.sharedInstance.stopLocation()
         UserDefaults.standard.set(false, forKey: USER_DEFAULT.isLocationTrackingRunning)
         MqttClass.sharedInstance.unsubscribeLocation()
@@ -268,7 +269,12 @@ open class LocationTrackerFile:NSObject, CLLocationManagerDelegate, MKMapViewDel
                     if(self.myLastLocation == nil) {
                         var myLocationToSend = [String:Any]()
                         let timestamp = "\(Date().millisecondsSince1970)"  //String().getUTCDateString as String
-                        myLocationToSend = ["lat" : myLocation!.coordinate.latitude as Double,"lng" :myLocation!.coordinate.longitude as Double, "tm_stmp" : timestamp, "bat_lvl" : UIDevice.current.batteryLevel * 100, "acc":(self.myLocationAccuracy != nil ? self.myLocationAccuracy! : 300), "api_key": globalAPIKey, "unique_user_id": globalUserId]
+                        guard let sessionid = UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) else {
+                            return
+                        }
+//                        let apikey = UserDefaults.standard.value(forKey: USER_DEFAULT.apiKey)
+//                        let userId = UserDefaults.standard.value(forKey: USER_DEFAULT.userId)
+                        myLocationToSend = ["lat" : myLocation!.coordinate.latitude as Double,"lng" :myLocation!.coordinate.longitude as Double, "tm_stmp" : timestamp, "bat_lvl" : UIDevice.current.batteryLevel * 100, "acc":(self.myLocationAccuracy != nil ? self.myLocationAccuracy! : 300), "api_key": globalAPIKey, "unique_user_id": globalUserId, "session_id" : sessionid]
                         self.addFilteredLocationToLocationArray(myLocationToSend)
                         self.myLastLocation = self.myLocation
                         /*------- For Updating Path ------------*/
@@ -281,13 +287,19 @@ open class LocationTrackerFile:NSObject, CLLocationManagerDelegate, MKMapViewDel
                         updatingLocationArray.append(locationDictionary)
                         UserDefaults.standard.setValue(updatingLocationArray, forKey: USER_DEFAULT.updatingLocationPathArray)
                         NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: OBSERVER.updatePath), object: nil)
+                        
+                        let locationString = [myLocationToSend]
+                        sendRequestToServer(locationString.jsonString)
                         /*-------------------------------------------*/
 
                     } else {
                         if(self.getSpeed() < maxSpeed) {
                             var myLocationToSend = [String:Any]()
                             let timestamp = "\(Date().millisecondsSince1970)" //String().getUTCDateString as String
-                            myLocationToSend = ["lat" : myLocation!.coordinate.latitude as Double,"lng" :myLocation!.coordinate.longitude as Double, "tm_stmp" : timestamp, "bat_lvl" : UIDevice.current.batteryLevel * 100, "acc":(self.myLocationAccuracy != nil ? self.myLocationAccuracy! : 300), "api_key": globalAPIKey, "unique_user_id": globalUserId]
+                            guard let sessionid = UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) else {
+                                return
+                            }
+                            myLocationToSend = ["lat" : myLocation!.coordinate.latitude as Double,"lng" :myLocation!.coordinate.longitude as Double, "tm_stmp" : timestamp, "bat_lvl" : UIDevice.current.batteryLevel * 100, "acc":(self.myLocationAccuracy != nil ? self.myLocationAccuracy! : 300), "api_key": globalAPIKey, "unique_user_id": globalUserId, "session_id" : sessionid]
                             self.addFilteredLocationToLocationArray(myLocationToSend)
                             self.myLastLocation = self.myLocation
 

@@ -134,7 +134,7 @@ class OTPController: UIViewController, TookanTrackerDelegate {
                             if self.navigationController != nil {
                                 UserDefaults.standard.set(false, forKey: USER_DEFAULT.isSessionExpire)
                                 TookanTracker.shared.delegate = self
-                                TookanTracker.shared.createSession(userID: userID, apiKey: apiKey, navigationController: self.navigationController!)
+//                                TookanTracker.shared.createSession(userID: userID, apiKey: apiKey, navigationController: self.navigationController!)
                             }
 //                            if Singleton.sharedInstance.fleetDetails == nil {
 //                                Singleton.sharedInstance.fleetDetails = FleetInfoDetails(json: [:])
@@ -218,7 +218,7 @@ class OTPController: UIViewController, TookanTrackerDelegate {
         self.fourthField.text = ""
         UserDefaults.standard.set(false, forKey: USER_DEFAULT.isSessionExpire)
         TookanTracker.shared.delegate = self
-        TookanTracker.shared.createSession(userID: userID, apiKey: apiKey, navigationController: self.navigationController!)
+//        TookanTracker.shared.createSession(userID: userID, apiKey: apiKey, navigationController: self.navigationController!)
 //        TookanTracker.shared.delegate = self
 //        TookanTracker.shared.getLocationCoordinates = { (coordinates) in
 //            print("INAPP COORDINATES \(coordinates)")

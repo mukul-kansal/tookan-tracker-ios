@@ -33,6 +33,7 @@ class NetworkingHelper: NSObject {
         params["lat"] = lat
         params["lng"] = lng
         params["unique_session_id"] = sessionId
+        
         //            "request_type":requestType, // 1 for start sesstion, 0 for stop session
         //            "session_id":"",
         //            "request_id":requestID,

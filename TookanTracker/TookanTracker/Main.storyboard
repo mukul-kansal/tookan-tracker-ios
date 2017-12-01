@@ -104,19 +104,22 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCD-8p-QvU">
-                                <rect key="frame" x="316" y="609" width="39" height="39"/>
+                                <rect key="frame" x="320" y="613" width="35" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="4uk-v0-QeS"/>
+                                    <constraint firstAttribute="height" constant="35" id="t3e-Ui-wE1"/>
+                                </constraints>
                                 <state key="normal" image="currentLocation"/>
                                 <connections>
                                     <action selector="currentLocationAction:" destination="Ew3-rY-6jo" eventType="touchUpInside" id="aS0-IJ-BnP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uO5-jL-Lnf">
-                                <rect key="frame" x="26" y="54" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="0yv-gs-K3D"/>
-                                    <constraint firstAttribute="width" constant="50" id="5Jc-ek-2m3"/>
-                                </constraints>
+                                <rect key="frame" x="319" y="54" width="30" height="30"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="logoutAction:" destination="Ew3-rY-6jo" eventType="touchUpInside" id="ApZ-Ns-eCZ"/>
                                 </connections>
@@ -125,7 +128,7 @@
                                 <rect key="frame" x="0.0" y="668" width="375" height="110"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ql-od-vMp">
-                                        <rect key="frame" x="35" y="30" width="305" height="50"/>
+                                        <rect key="frame" x="20" y="30" width="335" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Htw-8M-aLT"/>
                                         </constraints>
@@ -137,11 +140,11 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="0ql-od-vMp" secondAttribute="trailing" constant="35" id="6Hb-nR-oNV"/>
+                                    <constraint firstAttribute="trailing" secondItem="0ql-od-vMp" secondAttribute="trailing" constant="20" id="6Hb-nR-oNV"/>
                                     <constraint firstItem="0ql-od-vMp" firstAttribute="centerX" secondItem="nmx-Sv-wQE" secondAttribute="centerX" id="8Cz-zQ-I4N"/>
                                     <constraint firstItem="0ql-od-vMp" firstAttribute="centerY" secondItem="nmx-Sv-wQE" secondAttribute="centerY" id="Emk-sq-pCN"/>
                                     <constraint firstAttribute="height" constant="110" id="lTM-oS-5EW"/>
-                                    <constraint firstItem="0ql-od-vMp" firstAttribute="leading" secondItem="nmx-Sv-wQE" secondAttribute="leading" constant="35" id="yvN-3j-epm"/>
+                                    <constraint firstItem="0ql-od-vMp" firstAttribute="leading" secondItem="nmx-Sv-wQE" secondAttribute="leading" constant="20" id="yvN-3j-epm"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -153,11 +156,11 @@
                             <constraint firstItem="nmx-Sv-wQE" firstAttribute="top" secondItem="tCD-8p-QvU" secondAttribute="bottom" constant="20" id="Q1I-eS-n9X"/>
                             <constraint firstAttribute="trailing" secondItem="fdr-6d-jKe" secondAttribute="trailing" id="SoX-g2-qdS"/>
                             <constraint firstItem="fdr-6d-jKe" firstAttribute="top" secondItem="ufm-C5-hrs" secondAttribute="bottom" constant="-45" id="TBL-pU-xgC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uO5-jL-Lnf" secondAttribute="trailing" constant="10" id="UDc-nu-0cC"/>
                             <constraint firstItem="nmx-Sv-wQE" firstAttribute="leading" secondItem="0pV-sP-9sJ" secondAttribute="leading" id="aqH-oY-jBT"/>
                             <constraint firstAttribute="trailing" secondItem="nmx-Sv-wQE" secondAttribute="trailing" id="eYR-jb-JxN"/>
                             <constraint firstItem="f0D-Mn-r9Z" firstAttribute="top" secondItem="nmx-Sv-wQE" secondAttribute="bottom" id="gKN-5d-FIr"/>
                             <constraint firstItem="fdr-6d-jKe" firstAttribute="leading" secondItem="0pV-sP-9sJ" secondAttribute="leading" id="i4J-Uv-uTk"/>
-                            <constraint firstItem="uO5-jL-Lnf" firstAttribute="leading" secondItem="0pV-sP-9sJ" secondAttribute="leadingMargin" constant="10" id="ilc-eq-xVQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jn6-MI-4jU"/>
@@ -174,7 +177,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="currentLocation" width="39" height="39"/>
+        <image name="currentLocation" width="21" height="21"/>
         <image name="logoIcon" width="120" height="121"/>
         <image name="tookanLogo" width="17" height="22"/>
     </resources>

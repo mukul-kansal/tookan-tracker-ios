@@ -148,7 +148,7 @@ class SignupViewController: UIViewController {
                         switch status {
                         case STATUS_CODES.SHOW_DATA:
                             UserDefaults.standard.set(false, forKey: USER_DEFAULT.isSessionExpire)
-                            
+                            UserDefaults.standard.set(self.signupVCModel.useremail, forKey: USER_DEFAULT.userId)
                             TookanTracker.shared.createSession(userID:self.signupVCModel.useremail, apiKey: apiKey, navigationController:self.navigationController!)
                             break
                         case STATUS_CODES.INVALID_ACCESS_TOKEN:

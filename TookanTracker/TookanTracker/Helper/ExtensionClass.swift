@@ -7,9 +7,15 @@
 //
 
 import UIKit
-
+import CoreLocation
 class ExtensionClass: NSObject {
 
+}
+
+extension CLLocationDegrees {
+    var accuracyFive:CLLocationDegrees! {
+        return (self.accuracyFive*10000)/100000
+    }
 }
 
 //MARK: NSURLSession

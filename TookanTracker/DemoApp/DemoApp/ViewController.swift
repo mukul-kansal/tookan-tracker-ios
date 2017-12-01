@@ -10,8 +10,8 @@ import UIKit
 import TookanTracker
 import CoreLocation
 
-let userID = "1"
-let apiKey = "e740d9d626c69da995bb80c0415c6179"
+//let userID = "1"
+let apiKey = "29467f943f993582d956931e979a3566"
 
 struct USER_DEFAULT {
     static let isSessionExpire = "isSessionExpire"
@@ -24,6 +24,7 @@ struct USER_DEFAULT {
     static let subscribeLocation = "subscribeLocation"
     static let requestID = "requestID"
     static let sessionURL = "sessionUrl"
+    static let userId = "userId"
 }
 
 
@@ -47,9 +48,13 @@ class ViewController: UIViewController, TookanTrackerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         if navigationController != nil {
             if UserDefaults.standard.bool(forKey: USER_DEFAULT.isSessionExpire) == false {
-                UserDefaults.standard.set(false, forKey: USER_DEFAULT.isSessionExpire)
-                TookanTracker.shared.delegate = self
-                TookanTracker.shared.createSession(userID:userID, apiKey: apiKey, navigationController:self.navigationController!)
+                if let id = UserDefaults.standard.value(forKey: USER_DEFAULT.userId) as? String {
+                    UserDefaults.standard.set(false, forKey: USER_DEFAULT.isSessionExpire)
+                    
+                    TookanTracker.shared.delegate = self
+                    TookanTracker.shared.createSession(userID:id, apiKey: apiKey, navigationController:self.navigationController!)
+                }
+                
             }
         }
         
@@ -123,6 +128,7 @@ class ViewController: UIViewController, TookanTrackerDelegate {
 //                            controller.mobileNo = "+91\(self.emailTextField.text ?? "")"
 //                            self.navigationController?.pushViewController(controller, animated: true)
                             UserDefaults.standard.set(false, forKey: USER_DEFAULT.isSessionExpire)
+                            UserDefaults.standard.set("\(self.emailTextField.text ?? "")", forKey: USER_DEFAULT.userId)
                             TookanTracker.shared.delegate = self
                             TookanTracker.shared.createSession(userID:"\(self.emailTextField.text ?? "")", apiKey: apiKey, navigationController:self.navigationController!)
                             break
