@@ -312,6 +312,10 @@ class OTPController: UIViewController, TookanTrackerDelegate {
     @objc func keyboardWillHide(_ notification: Foundation.Notification) {
         
     }
+    
+    func getSessionId(sessionId: String) {
+        print("SeSSiOn_ID: \(sessionId)")
+    }
 }
 
 extension OTPController:UITextFieldDelegate {

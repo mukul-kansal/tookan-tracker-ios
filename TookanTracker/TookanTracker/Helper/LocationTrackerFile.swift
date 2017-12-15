@@ -177,7 +177,7 @@ open class LocationTrackerFile:NSObject, CLLocationManagerDelegate, MKMapViewDel
             break
         case LocationFrequency.high:
             slotTime = 5.0
-            maxDistance = 0
+            maxDistance = 20
             break
         }
     }
@@ -246,6 +246,7 @@ open class LocationTrackerFile:NSObject, CLLocationManagerDelegate, MKMapViewDel
             self.myLocationAccuracy = self.myLocation.horizontalAccuracy
             if(firstTime == true) {
                 firstTime = false
+                self.sendFirstLocation()
                 delegate?.currentLocationOfUser?(locations.last!)
             }
             self.trackingDelegate?.getCoordinates?(locations.last!)
@@ -288,8 +289,8 @@ open class LocationTrackerFile:NSObject, CLLocationManagerDelegate, MKMapViewDel
                         UserDefaults.standard.setValue(updatingLocationArray, forKey: USER_DEFAULT.updatingLocationPathArray)
                         NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: OBSERVER.updatePath), object: nil)
                         
-                        let locationString = [myLocationToSend]
-                        sendRequestToServer(locationString.jsonString)
+//                        let locationString = [myLocationToSend]
+//                        sendRequestToServer(locationString.jsonString)
                         /*-------------------------------------------*/
 
                     } else {
@@ -329,6 +330,33 @@ open class LocationTrackerFile:NSObject, CLLocationManagerDelegate, MKMapViewDel
                 }
             //}
         }
+    }
+    
+    func sendFirstLocation() {
+        var myLocationToSend = [String:Any]()
+        let timestamp = "\(Date().millisecondsSince1970)"  //String().getUTCDateString as String
+        guard let sessionid = UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) else {
+            return
+        }
+        //                        let apikey = UserDefaults.standard.value(forKey: USER_DEFAULT.apiKey)
+        //                        let userId = UserDefaults.standard.value(forKey: USER_DEFAULT.userId)
+        myLocationToSend = ["lat" : myLocation!.coordinate.latitude as Double,"lng" :myLocation!.coordinate.longitude as Double, "tm_stmp" : timestamp, "bat_lvl" : UIDevice.current.batteryLevel * 100, "acc":(self.myLocationAccuracy != nil ? self.myLocationAccuracy! : 300), "api_key": globalAPIKey, "unique_user_id": globalUserId, "session_id" : sessionid]
+        self.addFilteredLocationToLocationArray(myLocationToSend)
+        self.myLastLocation = self.myLocation
+        /*------- For Updating Path ------------*/
+        var locationDictionary = [String:Any]()
+        var updatingLocationArray = [Any]()
+        locationDictionary = ["Latitude":myLocation!.coordinate.latitude, "Longitude":myLocation!.coordinate.longitude]
+        if let array = UserDefaults.standard.value(forKey: USER_DEFAULT.updatingLocationPathArray) as? [Any]{
+            updatingLocationArray = array
+        }
+        print("First Location")
+        updatingLocationArray.append(locationDictionary)
+        UserDefaults.standard.setValue(updatingLocationArray, forKey: USER_DEFAULT.updatingLocationPathArray)
+//        NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: OBSERVER.updatePath), object: nil)
+        
+        let locationString = [myLocationToSend]
+        sendRequestToServer(locationString.jsonString)
     }
     
     fileprivate func addFilteredLocationToLocationArray(_ myLocationToSend:[String:Any]) {
@@ -398,76 +426,12 @@ open class LocationTrackerFile:NSObject, CLLocationManagerDelegate, MKMapViewDel
         if(myLastLocation != nil) {
             let time = self.myLocation.timestamp.timeIntervalSince(myLastLocation.timestamp)
             let distance:CLLocationDistance = myLocation.distance(from: myLastLocation)
-//            if(distance > 200) {
-//                self.locationManager.stopUpdatingLocation()
-//                if let json = NetworkingHelper.sharedInstance.getLatLongFromDirectionAPI("\(myLastLocation.coordinate.latitude),\(myLastLocation.coordinate.longitude)", destination: "\(myLocation.coordinate.latitude),\(myLocation.coordinate.longitude)") {
-//                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
-//                    print(json)
-//                    if let routes = json["routes"] as? [AnyObject] {
-//                        if(routes.count > 0) {
-//                            if let legs = routes[0]["legs"] as? [AnyObject]{
-//                                if(legs.count > 0) {
-//                                    if let distance = legs[0]["distance"] as? [String:Any]{
-//                                        print(distance)
-//                                        if let value = distance["value"] as? Int {
-//                                            print(value)
-//                                            if let overviewPolyline = routes[0]["overview_polyline"] as? [String:Any] {
-//                                                if let polyline = overviewPolyline["points"] as? String {
-//                                                    let locations = NetworkingHelper.sharedInstance.decodePolylineForCoordinates(polyline) as [CLLocation]
-//                                                    for i in (0..<locations.count) {
-//                                                        var myLocationToSend = [String:Any]()
-//                                                        let timestamp = String().getUTCDateString as String
-//                                                        myLocationToSend = ["lat" : locations[i].coordinate.latitude as Double,"lng" :locations[i].coordinate.longitude as Double, "tm_stmp" : timestamp, "bat_lvl" : UIDevice.current.batteryLevel * 100,"acc":(self.myLocationAccuracy != nil ? self.myLocationAccuracy! : 300)]
-//                                                        
-//                                                        self.addFilteredLocationToLocationArray(myLocationToSend)
-//                                                        self.myLastLocation = CLLocation(latitude: locations[i].coordinate.latitude, longitude: locations[i].coordinate.longitude)
-//                                                        self.setLocationUpdate()
-//                                                        /*------- For Updating Path ------------*/
-//                                                        var locationDictionary = [String:Any]()
-//                                                        var updatingLocationArray = [Any]()
-//                                                        locationDictionary = ["Latitude":myLocation!.coordinate.latitude, "Longitude":myLocation!.coordinate.longitude]
-//                                                        if let array = UserDefaults.standard.value(forKey: USER_DEFAULT.updatingLocationPathArray) as? [Any] {
-//                                                            updatingLocationArray = array
-//                                                        }
-//                                                        updatingLocationArray.append(locationDictionary)
-//                                                        UserDefaults.standard.setValue(updatingLocationArray, forKey: USER_DEFAULT.updatingLocationPathArray)
-//                                                        NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: OBSERVER.updatePath), object: nil)
-//                                                        /*----------------------------------------------*/
-//                                                    }
-//                                                }
-//                                            }
-//
-//                                        }
-//                                    }
-//                                }
-//                            }
-//                        }
-//                    } else {
-//                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-//                        self.setLocationUpdate()
-//                        speed = Float(distance) / Float(time)
-//                        if(speed > 0) {
-//                            return speed
-//                        }
-//                        return 0.0
-//                    }
-//                } else {
-//                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
-//                    self.setLocationUpdate()
-//                    speed = Float(distance) / Float(time)
-//                    if(speed > 0) {
-//                        return speed
-//                    }
-//                    return 0.0
-//                }
-//                return 0.0
-//            } else {
+
                 speed = Float(distance) / Float(time)
                 if(speed > 0) {
                     return speed
                 }
                 return 0.0
-           // }
         }
         return 0.0
     }

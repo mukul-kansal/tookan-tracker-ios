@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -196,6 +196,16 @@
                                             <action selector="signupAction:" destination="Dcx-FU-hTt" eventType="touchUpInside" id="RES-WP-Htl"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7V-vh-zHq">
+                                        <rect key="frame" x="171.5" y="417" width="32" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="cGn-mY-4Xk"/>
+                                        </constraints>
+                                        <state key="normal" title="Stop"/>
+                                        <connections>
+                                            <action selector="stopTracking:" destination="Dcx-FU-hTt" eventType="touchUpInside" id="X1n-WR-4PN"/>
+                                        </connections>
+                                    </button>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="asu-Bm-BkV">
                                         <rect key="frame" x="177.5" y="419" width="20" height="20"/>
                                     </activityIndicatorView>
@@ -231,10 +241,12 @@
                                     <constraint firstItem="ggV-yX-wcu" firstAttribute="top" secondItem="asu-Bm-BkV" secondAttribute="bottom" constant="100" id="gdc-Az-pk1"/>
                                     <constraint firstItem="fzP-jA-GJW" firstAttribute="leading" secondItem="o08-vg-hlM" secondAttribute="leading" constant="35" id="hcs-Fx-Wfu"/>
                                     <constraint firstAttribute="trailing" secondItem="ggV-yX-wcu" secondAttribute="trailing" id="iIU-HR-yA4"/>
+                                    <constraint firstItem="fPM-Dh-JlB" firstAttribute="top" secondItem="K7V-vh-zHq" secondAttribute="bottom" constant="20" id="ijE-W8-QV6"/>
                                     <constraint firstAttribute="trailing" secondItem="fzP-jA-GJW" secondAttribute="trailing" constant="35" id="kRd-ux-q2W"/>
                                     <constraint firstItem="fPM-Dh-JlB" firstAttribute="leading" secondItem="o08-vg-hlM" secondAttribute="leading" constant="35" id="mln-dD-1cL"/>
                                     <constraint firstItem="3ek-4T-aAc" firstAttribute="trailing" secondItem="hSt-Qt-DM5" secondAttribute="trailing" id="p8Z-0r-Omg"/>
                                     <constraint firstItem="fJa-KY-IYc" firstAttribute="top" secondItem="1aj-Xw-7ww" secondAttribute="bottom" constant="63" id="tRc-6v-RcC"/>
+                                    <constraint firstItem="K7V-vh-zHq" firstAttribute="centerX" secondItem="o08-vg-hlM" secondAttribute="centerX" id="tcf-Xr-rem"/>
                                     <constraint firstAttribute="trailing" secondItem="fPM-Dh-JlB" secondAttribute="trailing" constant="35" id="uE0-EN-x8K"/>
                                     <constraint firstItem="RUj-Rc-IHR" firstAttribute="trailing" secondItem="3ek-4T-aAc" secondAttribute="trailing" id="wTz-ON-WjL"/>
                                     <constraint firstItem="OKk-64-peR" firstAttribute="top" secondItem="ggV-yX-wcu" secondAttribute="bottom" id="wuX-OA-GaV"/>

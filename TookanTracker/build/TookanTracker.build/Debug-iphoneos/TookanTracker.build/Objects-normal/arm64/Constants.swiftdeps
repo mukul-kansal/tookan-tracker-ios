@@ -417,4 +417,4 @@ depends-external:
 - "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Modules/module.modulemap"
 - "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Modules/module.modulemap"
 - "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Modules/module.modulemap"
-interface-hash: "9b50766db3355ecbe1f3cc6e9e54a423"
+interface-hash: "26250267d6e388266250315b359e5b52"

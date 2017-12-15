@@ -13,37 +13,32 @@ import GooglePlaces
 
 class HomeController: UIViewController, LocationTrackerDelegate {
     
-    //  @IBOutlet weak var myLocationButtontrailingConstraint: NSLayoutConstraint!
-    //   @IBOutlet weak var myLocationButton: UIButton!
     @IBOutlet weak var googleMapView: GMSMapView!
     @IBOutlet var currentLocation: UIButton!
     @IBOutlet var logout: UIButton!
-    //    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet var stopTrackingButton: UIButton!
     var userStatus = USER_JOB_STATUS.free
     var getLocationTimer:Timer!
     var path = GMSMutablePath()
     let loc = LocationTrackerFile.sharedInstance()
     let model = TrackerModel()
-//    var bottomView:BottomButtonView!
     var viewShowStatus:Int!
     var mapCurrentZoomLevel:Float = 16
     var searchMarker:GMSMarker? = GMSMarker()
     var pathMarker = GMSMarker()
-//    var sessionID = ""
     var currentCameraPosition: GMSCameraPosition!
     var moving = true
     var trackingDelegate:TrackingDelegate!
     var isTrackingEnabled = true
-//    var sessionDetailView:SessionDetailView!
-    struct SHOW_HIDE {
-        static let showBottomView = 1
-        static let hideBottomView = 2
-        static let showLoadingStatus = 3
-        static let showStopLocationButton = 4
-        static let showStopTrackingButton = 5
-        static let showSliderButton = 6
-    }
+
+//    struct SHOW_HIDE {
+//        static let showBottomView = 1
+//        static let hideBottomView = 2
+//        static let showLoadingStatus = 3
+//        static let showStopLocationButton = 4
+//        static let showStopTrackingButton = 5
+//        static let showSliderButton = 6
+//    }
     
     override var preferredStatusBarStyle:UIStatusBarStyle {
         return .lightContent
@@ -259,7 +254,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             //            self.menuButton.isHidden = false
             //            self.myLocationButtontrailingConstraint.constant = 56
             //            self.menuButton.setImage(UIImage(named:"menu"), for: UIControlState.normal)
-            self.viewShowStatus = SHOW_HIDE.showBottomView
+//            self.viewShowStatus = SHOW_HIDE.showBottomView
             //            self.setBottomButtonView(stopTitle: "", isSlider: true)
             break
         case USER_JOB_STATUS.sharingLocation:
@@ -269,7 +264,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             let response = loc.startLocationService()
             if(response.0 == true) {
                 self.shareLocation()
-                self.viewShowStatus = SHOW_HIDE.showStopLocationButton
+//                self.viewShowStatus = SHOW_HIDE.showStopLocationButton
                 //                self.setBottomButtonView(stopTitle: "", isSlider: true)
             } else {
                 print(response.1)
@@ -306,7 +301,6 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             if let id = UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId){
                 self.startSessionHit(sessionId: id as! String, location: location!)
             }
-            
         }
     }
     
@@ -487,7 +481,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
                         self.loc.topic = "\(globalAPIKey)\(globalUserId)"  //UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) as! String
                         self.loc.subsribeMQTTForTracking()
                         UserDefaults.standard.set(true, forKey: USER_DEFAULT.subscribeLocation)
-                        self.viewShowStatus = SHOW_HIDE.showStopTrackingButton
+//                        self.viewShowStatus = SHOW_HIDE.showStopTrackingButton
                         //                        self.setBottomButtonView(stopTitle: "", isSlider: true)
                     }
                 } else {
@@ -496,7 +490,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
                     //                    self.menuButton.isHidden = false
                     //                    self.myLocationButtontrailingConstraint.constant = 56
                     self.model.resetAllData()
-                    self.viewShowStatus = SHOW_HIDE.showBottomView
+//                    self.viewShowStatus = SHOW_HIDE.showBottomView
                     //                    self.setBottomButtonView(stopTitle: "", isSlider: true)
                 }
             }
@@ -620,10 +614,10 @@ class HomeController: UIViewController, LocationTrackerDelegate {
                 DispatchQueue.main.async {
                     switch self.userStatus {
                     case USER_JOB_STATUS.free:
-                        self.viewShowStatus = SHOW_HIDE.showSliderButton
+//                        self.viewShowStatus = SHOW_HIDE.showSliderButton
                         break
                     case USER_JOB_STATUS.sharingLocation:
-                        self.viewShowStatus = SHOW_HIDE.showStopLocationButton
+//                        self.viewShowStatus = SHOW_HIDE.showStopLocationButton
                         break
                     default:
                         break
@@ -729,7 +723,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
                 //                self.menuButton.isHidden = false
                 //                self.myLocationButtontrailingConstraint.constant = 56
                 self.model.resetAllData()
-                self.viewShowStatus = SHOW_HIDE.showBottomView
+//                self.viewShowStatus = SHOW_HIDE.showBottomView
                 //                self.setBottomButtonView(stopTitle: "", isSlider: true)
             }
         }
@@ -753,7 +747,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
 //            self.bottomView.transform = CGAffineTransform.identity
         }, completion: { finished in
             DispatchQueue.main.async {
-                self.viewShowStatus = SHOW_HIDE.showLoadingStatus
+//                self.viewShowStatus = SHOW_HIDE.showLoadingStatus
                 UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1.0, options: UIViewAnimationOptions(), animations: { () -> Void in
 //                    self.bottomView.stopButton.isHidden = true
 //                    if(self.bottomView.sliderRequestShareButton != nil) {
@@ -794,7 +788,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             //            self.menuButton.setImage(UIImage(named:"menu"), for: UIControlState.normal)
             self.loc.stopLocationService()
             self.model.resetAllData()
-            self.viewShowStatus = SHOW_HIDE.showSliderButton
+//            self.viewShowStatus = SHOW_HIDE.showSliderButton
             //            self.animationForBottomView()
         })
     }
@@ -833,7 +827,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
 //            self.bottomView.transform = CGAffineTransform.identity
         }, completion: { finished in
             DispatchQueue.main.async {
-                self.viewShowStatus = SHOW_HIDE.showLoadingStatus
+//                self.viewShowStatus = SHOW_HIDE.showLoadingStatus
                 //                    self.animationForBottomView()
             }
         })

@@ -314,7 +314,8 @@ SWIFT_CLASS("_TtC13TookanTracker9MqttClass")
 
 
 SWIFT_CLASS("_TtC13TookanTracker13TookanTracker")
-@interface TookanTracker : NSObject
+@interface TookanTracker : NSObject <CLLocationManagerDelegate>
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -337,6 +338,7 @@ SWIFT_PROTOCOL("_TtP13TookanTracker21TookanTrackerDelegate_")
 @protocol TookanTrackerDelegate
 @optional
 - (void)getCurrentCoordinates:(CLLocation * _Nonnull)location;
+- (void)getSessionIdWithSessionId:(NSString * _Nonnull)sessionId;
 - (void)logout;
 @end
 

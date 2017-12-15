@@ -5,6 +5,7 @@ provides-nominal:
 - "13TookanTracker14ExtensionClassC"
 provides-member:
 - ["13TookanTracker14ExtensionClassC", ""]
+- ["Sd", ""]
 - ["So10URLSessionC", ""]
 - ["SS", ""]
 - ["10Foundation4DateV", ""]
@@ -12,6 +13,7 @@ provides-member:
 - ["Sa", ""]
 - ["So7UIColorC", ""]
 - ["So8UIDeviceC", ""]
+- ["Sd", "accuracyFive"]
 - ["So10URLSessionC", "requestSynchronousData"]
 - ["So10URLSessionC", "requestSynchronousDataWithURLString"]
 - ["So10URLSessionC", "requestSynchronousJSON"]
@@ -41,6 +43,7 @@ depends-top-level:
 - "Array"
 - "AssignmentPrecedence"
 - "Bool"
+- "CLLocationDegrees"
 - "CastingPrecedence"
 - !private "CharacterSet"
 - "Data"
@@ -97,6 +100,7 @@ depends-member:
 - !private ["s23BidirectionalCollectionP", "isEmpty"]
 - !private ["s23BidirectionalCollectionP", "print"]
 - !private ["s23BidirectionalCollectionP", "trimmingCharacters"]
+- !private ["s19BinaryFloatingPointP", "accuracyFive"]
 - !private ["s19BinaryFloatingPointP", "init"]
 - !private ["s19BinaryFloatingPointP", "rounded"]
 - !private ["s13BinaryIntegerP", "init"]
@@ -123,6 +127,7 @@ depends-member:
 - !private ["s7CVarArgP", "URLSession"]
 - !private ["s7CVarArgP", "UnicodeScalar"]
 - !private ["s7CVarArgP", "WritingOptions"]
+- !private ["s7CVarArgP", "accuracyFive"]
 - !private ["s7CVarArgP", "addValue"]
 - !private ["s7CVarArgP", "data"]
 - !private ["s7CVarArgP", "dataTask"]
@@ -175,6 +180,7 @@ depends-member:
 - !private ["s10ComparableP", "String"]
 - !private ["s10ComparableP", "TimeInterval"]
 - !private ["s10ComparableP", "TimeZone"]
+- !private ["s10ComparableP", "accuracyFive"]
 - !private ["s10ComparableP", "data"]
 - !private ["s10ComparableP", "distantFuture"]
 - !private ["s10ComparableP", "init"]
@@ -207,6 +213,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "URLSession"]
 - !private ["s28CustomDebugStringConvertibleP", "UnicodeScalar"]
 - !private ["s28CustomDebugStringConvertibleP", "WritingOptions"]
+- !private ["s28CustomDebugStringConvertibleP", "accuracyFive"]
 - !private ["s28CustomDebugStringConvertibleP", "addValue"]
 - !private ["s28CustomDebugStringConvertibleP", "data"]
 - !private ["s28CustomDebugStringConvertibleP", "dataTask"]
@@ -245,6 +252,7 @@ depends-member:
 - !private ["s29CustomPlaygroundQuickLookableP", "TimeInterval"]
 - !private ["s29CustomPlaygroundQuickLookableP", "TimeZone"]
 - !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "accuracyFive"]
 - !private ["s29CustomPlaygroundQuickLookableP", "data"]
 - !private ["s29CustomPlaygroundQuickLookableP", "init"]
 - !private ["s29CustomPlaygroundQuickLookableP", "isEmpty"]
@@ -265,6 +273,7 @@ depends-member:
 - !private ["s17CustomReflectableP", "TimeInterval"]
 - !private ["s17CustomReflectableP", "TimeZone"]
 - !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "accuracyFive"]
 - !private ["s17CustomReflectableP", "children"]
 - !private ["s17CustomReflectableP", "data"]
 - !private ["s17CustomReflectableP", "init"]
@@ -298,6 +307,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "UnicodeScalar"]
 - !private ["s23CustomStringConvertibleP", "WritingOptions"]
 - !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "accuracyFive"]
 - !private ["s23CustomStringConvertibleP", "addValue"]
 - !private ["s23CustomStringConvertibleP", "children"]
 - !private ["s23CustomStringConvertibleP", "data"]
@@ -352,6 +362,7 @@ depends-member:
 - !private ["s9DecodableP", "TimeInterval"]
 - !private ["s9DecodableP", "TimeZone"]
 - !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "accuracyFive"]
 - !private ["s9DecodableP", "data"]
 - !private ["s9DecodableP", "init"]
 - !private ["s9DecodableP", "isEmpty"]
@@ -367,6 +378,8 @@ depends-member:
 - !private ["So17DispatchSemaphoreC", "signal"]
 - !private ["So17DispatchSemaphoreC", "wait"]
 - !private ["8Dispatch0A4TimeV", "distantFuture"]
+- ["Sd", "CLLocationDegrees"]
+- ["Sd", "accuracyFive"]
 - !private ["Sd", "init"]
 - !private ["Sd", "rounded"]
 - !private ["s9EncodableP", "CharacterSet"]
@@ -382,6 +395,7 @@ depends-member:
 - !private ["s9EncodableP", "TimeInterval"]
 - !private ["s9EncodableP", "TimeZone"]
 - !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "accuracyFive"]
 - !private ["s9EncodableP", "data"]
 - !private ["s9EncodableP", "init"]
 - !private ["s9EncodableP", "isEmpty"]
@@ -417,6 +431,7 @@ depends-member:
 - !private ["s9EquatableP", "UnicodeScalar"]
 - !private ["s9EquatableP", "WritingOptions"]
 - !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "accuracyFive"]
 - !private ["s9EquatableP", "addValue"]
 - !private ["s9EquatableP", "data"]
 - !private ["s9EquatableP", "dataTask"]
@@ -471,8 +486,10 @@ depends-member:
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "isEmpty"]
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "print"]
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "trimmingCharacters"]
+- !private ["s25ExpressibleByFloatLiteralP", "accuracyFive"]
 - !private ["s25ExpressibleByFloatLiteralP", "init"]
 - !private ["s25ExpressibleByFloatLiteralP", "rounded"]
+- !private ["s27ExpressibleByIntegerLiteralP", "accuracyFive"]
 - !private ["s27ExpressibleByIntegerLiteralP", "init"]
 - !private ["s27ExpressibleByIntegerLiteralP", "rounded"]
 - !private ["s26ExpressibleByStringLiteralP", "CharacterSet"]
@@ -506,6 +523,7 @@ depends-member:
 - ["13TookanTracker14ExtensionClassC", "deinit"]
 - ["13TookanTracker14ExtensionClassC", "init"]
 - !private ["s17FixedWidthIntegerP", "init"]
+- !private ["s13FloatingPointP", "accuracyFive"]
 - !private ["s13FloatingPointP", "init"]
 - !private ["s13FloatingPointP", "rounded"]
 - !private ["So9FormatterC", "dateFormat"]
@@ -538,6 +556,7 @@ depends-member:
 - !private ["s8HashableP", "UnicodeScalar"]
 - !private ["s8HashableP", "WritingOptions"]
 - !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "accuracyFive"]
 - !private ["s8HashableP", "addValue"]
 - !private ["s8HashableP", "data"]
 - !private ["s8HashableP", "dataTask"]
@@ -582,6 +601,7 @@ depends-member:
 - !private ["s25LosslessStringConvertibleP", "String"]
 - !private ["s25LosslessStringConvertibleP", "TimeZone"]
 - !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s25LosslessStringConvertibleP", "accuracyFive"]
 - !private ["s25LosslessStringConvertibleP", "data"]
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["s25LosslessStringConvertibleP", "isEmpty"]
@@ -792,6 +812,7 @@ depends-member:
 - !private ["So12NSURLRequestC", "addValue"]
 - !private ["So12NSURLRequestC", "httpMethod"]
 - !private ["So12NSURLRequestC", "init"]
+- !private ["s7NumericP", "accuracyFive"]
 - !private ["s7NumericP", "init"]
 - !private ["s7NumericP", "rounded"]
 - !private ["So9OS_objectC", "init"]
@@ -852,8 +873,10 @@ depends-member:
 - !private ["s10SetAlgebraP", "prettyPrinted"]
 - !private ["s10SetAlgebraP", "whitespacesAndNewlines"]
 - !private ["s13SignedIntegerP", "init"]
+- !private ["s13SignedNumericP", "accuracyFive"]
 - !private ["s13SignedNumericP", "init"]
 - !private ["s13SignedNumericP", "rounded"]
+- !private ["s10StrideableP", "accuracyFive"]
 - !private ["s10StrideableP", "init"]
 - !private ["s10StrideableP", "rounded"]
 - !private ["SS", "AnyObject"]
@@ -980,8 +1003,10 @@ depends-member:
 - !private ["s23_BidirectionalIndexableP", "print"]
 - !private ["s23_BidirectionalIndexableP", "trimmingCharacters"]
 - !private ["s18_BitwiseOperationsP", "init"]
+- !private ["s15_CVarArgAlignedP", "accuracyFive"]
 - !private ["s15_CVarArgAlignedP", "init"]
 - !private ["s15_CVarArgAlignedP", "rounded"]
+- !private ["s22_CVarArgPassedAsDoubleP", "accuracyFive"]
 - !private ["s22_CVarArgPassedAsDoubleP", "init"]
 - !private ["s22_CVarArgPassedAsDoubleP", "rounded"]
 - !private ["s24_DestructorSafeContainerP", "JSONSerialization"]
@@ -1003,8 +1028,10 @@ depends-member:
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "isEmpty"]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "print"]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "trimmingCharacters"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "accuracyFive"]
 - !private ["s33_ExpressibleByBuiltinFloatLiteralP", "init"]
 - !private ["s33_ExpressibleByBuiltinFloatLiteralP", "rounded"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "accuracyFive"]
 - !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
 - !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "rounded"]
 - !private ["s34_ExpressibleByBuiltinStringLiteralP", "CharacterSet"]
@@ -1160,6 +1187,7 @@ depends-member:
 - !private ["s21_ObjectiveCBridgeableP", "TimeInterval"]
 - !private ["s21_ObjectiveCBridgeableP", "TimeZone"]
 - !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "accuracyFive"]
 - !private ["s21_ObjectiveCBridgeableP", "data"]
 - !private ["s21_ObjectiveCBridgeableP", "init"]
 - !private ["s21_ObjectiveCBridgeableP", "isEmpty"]
@@ -1187,6 +1215,7 @@ depends-member:
 - !private ["s26_RangeReplaceableIndexableP", "isEmpty"]
 - !private ["s26_RangeReplaceableIndexableP", "print"]
 - !private ["s26_RangeReplaceableIndexableP", "trimmingCharacters"]
+- !private ["s11_StrideableP", "accuracyFive"]
 - !private ["s11_StrideableP", "init"]
 - !private ["s11_StrideableP", "rounded"]
 - !private ["s14_StringElementP", "init"]
@@ -1227,7 +1256,7 @@ depends-nominal:
 - !private "So14DispatchObjectC"
 - !private "So17DispatchSemaphoreC"
 - !private "8Dispatch0A4TimeV"
-- !private "Sd"
+- "Sd"
 - !private "s9EncodableP"
 - !private "SS10FoundationE8EncodingV"
 - "s9EquatableP"
@@ -1418,4 +1447,4 @@ depends-external:
 - "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GooglePlaces.framework/Modules/module.modulemap"
 - "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/GoogleMaps.framework/Modules/module.modulemap"
 - "/Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/SDK/CocoaAsyncSocket.framework/Modules/module.modulemap"
-interface-hash: "c60aeaced1345d00ee6a241e3efc9ed8"
+interface-hash: "f29903bcec730847c84b33924f7816ce"

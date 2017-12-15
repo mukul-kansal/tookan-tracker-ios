@@ -23,9 +23,9 @@ let destinationMarker  = UIImage(named: "marker", in: frameworkBundle, compatibl
 let close  = UIImage(named: "closeButton", in: frameworkBundle, compatibleWith: nil)
 
 struct SERVER {
-    static let dev = "http://tracking.tookan.io:3008/"//"https://dev.tracking.tookan.io:3008/"//"http://dev.tracking.tookan.io:3005/"
-    static let test = "https://tracking.tookan.io:3012/"//"https://api2.tookanapp.com:5555/"
-    static let live = "https://tracking.tookan.io:3000/" //"http://52.23.253.217:8888/" //
+    static let dev = "https://test-tracking.tookan.io/"//"https://dev.tracking.tookan.io:3008/"//"http://dev.tracking.tookan.io:3005/"
+    static let test = "https://test-tracking.tookan.io/"//"https://api2.tookanapp.com:5555/"
+    static let live = "https://test-tracking.tookan.io/" //"http://52.23.253.217:8888/" //
 }
 
 //let APIKeyForGoogleMaps = "AIzaSyDqZn_rsqd_ZMQUITSKB5FGerbn6DwtdLg"//"AIzaSyDX32ar9JhpTYR1W3vGAAjzQTGeOx7MWm4"//"AIzaSyBFXsZ_biHbFbNkY05VRZ59YnhS6FWSYyg"

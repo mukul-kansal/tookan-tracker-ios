@@ -34,7 +34,7 @@ class ViewController: UIViewController, TookanTrackerDelegate {
     //    let loc = LocationTrackerFile.sharedInstance()
     var getLocationTimer:Timer!
     let SCREEN_SIZE = UIScreen.main.bounds
-    
+    var sessionId = ""
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
 //    @IBOutlet var textFieldBottomView: UIView!
@@ -52,7 +52,8 @@ class ViewController: UIViewController, TookanTrackerDelegate {
                     UserDefaults.standard.set(false, forKey: USER_DEFAULT.isSessionExpire)
                     
                     TookanTracker.shared.delegate = self
-                    TookanTracker.shared.createSession(userID:id, apiKey: apiKey, navigationController:self.navigationController!)
+                    TookanTracker.shared.createSession(userID:id, apiKey: apiKey, isUINeeded: false, navigationController:self.navigationController!)
+                    
                 }
                 
             }
@@ -130,7 +131,7 @@ class ViewController: UIViewController, TookanTrackerDelegate {
                             UserDefaults.standard.set(false, forKey: USER_DEFAULT.isSessionExpire)
                             UserDefaults.standard.set("\(self.emailTextField.text ?? "")", forKey: USER_DEFAULT.userId)
                             TookanTracker.shared.delegate = self
-                            TookanTracker.shared.createSession(userID:"\(self.emailTextField.text ?? "")", apiKey: apiKey, navigationController:self.navigationController!)
+                            TookanTracker.shared.createSession(userID:"\(self.emailTextField.text ?? "")", apiKey: apiKey, isUINeeded: false, navigationController:self.navigationController!)
                             break
                         case STATUS_CODES.INVALID_ACCESS_TOKEN:
                             UIAlertView(title: "", message: response["message"] as! String, delegate: nil, cancelButtonTitle: "OK").show()
@@ -158,6 +159,11 @@ class ViewController: UIViewController, TookanTrackerDelegate {
         let controller  = self.storyboard?.instantiateViewController(withIdentifier:"SignupViewController") as! SignupViewController
         self.navigationController?.pushViewController(controller, animated: true)
         
+    }
+    
+    @IBAction func stopTracking(_ sender: Any) {
+        
+        TookanTracker.shared.stopTracking(sessionID: self.sessionId)
     }
     
     
@@ -193,5 +199,10 @@ class ViewController: UIViewController, TookanTrackerDelegate {
     //        }
     //    }
     
+    
+    func getSessionId(sessionId: String) {
+        print("Sessionid: \(sessionId)")
+        self.sessionId = sessionId
+    }
 }
 
