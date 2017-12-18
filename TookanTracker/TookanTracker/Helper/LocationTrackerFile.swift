@@ -177,7 +177,7 @@ open class LocationTrackerFile:NSObject, CLLocationManagerDelegate, MKMapViewDel
             break
         case LocationFrequency.high:
             slotTime = 5.0
-            maxDistance = 20
+            maxDistance = 0
             break
         }
     }

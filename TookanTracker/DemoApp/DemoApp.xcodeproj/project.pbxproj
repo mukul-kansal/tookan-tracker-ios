@@ -19,12 +19,31 @@
 		264719F71FCF021600E91784 /* SignupFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264719F41FCF021600E91784 /* SignupFooterView.swift */; };
 		264719F81FCF022C00E91784 /* SignupFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264719F61FCF021600E91784 /* SignupFooterView.xib */; };
 		26A783351FD1318E000084E0 /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A783341FD1318E000084E0 /* CommonFunctions.swift */; };
+		26E15D1E1FE3E2C800FF7218 /* TookanTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E15D1D1FE3E2A900FF7218 /* TookanTracker.framework */; };
+		26E15D1F1FE3E2C800FF7218 /* TookanTracker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26E15D1D1FE3E2A900FF7218 /* TookanTracker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26F5BDD71FC83335000D2715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5BDD61FC83335000D2715 /* AppDelegate.swift */; };
 		26F5BDD91FC83335000D2715 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5BDD81FC83335000D2715 /* ViewController.swift */; };
 		26F5BDDC1FC83335000D2715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F5BDDA1FC83335000D2715 /* Main.storyboard */; };
 		26F5BDDE1FC83335000D2715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26F5BDDD1FC83335000D2715 /* Assets.xcassets */; };
 		26F5BDE11FC83335000D2715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F5BDDF1FC83335000D2715 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		26E15D1C1FE3E2A900FF7218 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26E15D171FE3E2A900FF7218 /* TookanTracker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 26F5BD4B1FC817BC000D2715;
+			remoteInfo = TookanTracker;
+		};
+		26E15D201FE3E2C800FF7218 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26E15D171FE3E2A900FF7218 /* TookanTracker.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 26F5BD4A1FC817BB000D2715;
+			remoteInfo = TookanTracker;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		2643AF431FCD505600DBB343 /* Embed Frameworks */ = {
@@ -33,6 +52,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				26E15D1F1FE3E2C800FF7218 /* TookanTracker.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,6 +73,7 @@
 		264719F41FCF021600E91784 /* SignupFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFooterView.swift; sourceTree = "<group>"; };
 		264719F61FCF021600E91784 /* SignupFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupFooterView.xib; sourceTree = "<group>"; };
 		26A783341FD1318E000084E0 /* CommonFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunctions.swift; sourceTree = "<group>"; };
+		26E15D171FE3E2A900FF7218 /* TookanTracker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TookanTracker.xcodeproj; path = ../TookanTracker.xcodeproj; sourceTree = "<group>"; };
 		26F5BDD31FC83335000D2715 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F5BDD61FC83335000D2715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26F5BDD81FC83335000D2715 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26E15D1E1FE3E2C800FF7218 /* TookanTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,9 +103,18 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		26E15D181FE3E2A900FF7218 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26E15D1D1FE3E2A900FF7218 /* TookanTracker.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		26F5BDCA1FC83335000D2715 = {
 			isa = PBXGroup;
 			children = (
+				26E15D171FE3E2A900FF7218 /* TookanTracker.xcodeproj */,
 				26F5BDD51FC83335000D2715 /* DemoApp */,
 				26F5BDD41FC83335000D2715 /* Products */,
 			);
@@ -138,6 +169,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				26E15D211FE3E2C800FF7218 /* PBXTargetDependency */,
 			);
 			name = DemoApp;
 			productName = DemoApp;
@@ -171,12 +203,28 @@
 			mainGroup = 26F5BDCA1FC83335000D2715;
 			productRefGroup = 26F5BDD41FC83335000D2715 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 26E15D181FE3E2A900FF7218 /* Products */;
+					ProjectRef = 26E15D171FE3E2A900FF7218 /* TookanTracker.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				26F5BDD21FC83335000D2715 /* DemoApp */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		26E15D1D1FE3E2A900FF7218 /* TookanTracker.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = TookanTracker.framework;
+			remoteRef = 26E15D1C1FE3E2A900FF7218 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		26F5BDD11FC83335000D2715 /* Resources */ = {
@@ -214,6 +262,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26E15D211FE3E2C800FF7218 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TookanTracker;
+			targetProxy = 26E15D201FE3E2C800FF7218 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		26F5BDDA1FC83335000D2715 /* Main.storyboard */ = {
