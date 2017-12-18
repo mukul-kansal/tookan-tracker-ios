@@ -359,6 +359,33 @@ open class LocationTrackerFile:NSObject, CLLocationManagerDelegate, MKMapViewDel
         sendRequestToServer(locationString.jsonString)
     }
     
+    func sendLastLocation() {
+        var myLocationToSend = [String:Any]()
+        let timestamp = "\(Date().millisecondsSince1970)"  //String().getUTCDateString as String
+        guard let sessionid = UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) else {
+            return
+        }
+        //                        let apikey = UserDefaults.standard.value(forKey: USER_DEFAULT.apiKey)
+        //                        let userId = UserDefaults.standard.value(forKey: USER_DEFAULT.userId)
+        myLocationToSend = ["lat" : myLocation!.coordinate.latitude as Double,"lng" :myLocation!.coordinate.longitude as Double, "tm_stmp" : timestamp, "bat_lvl" : UIDevice.current.batteryLevel * 100, "acc":(self.myLocationAccuracy != nil ? self.myLocationAccuracy! : 300), "api_key": globalAPIKey, "unique_user_id": globalUserId, "session_id" : sessionid]
+        self.addFilteredLocationToLocationArray(myLocationToSend)
+        self.myLastLocation = self.myLocation
+        /*------- For Updating Path ------------*/
+        var locationDictionary = [String:Any]()
+        var updatingLocationArray = [Any]()
+        locationDictionary = ["Latitude":myLocation!.coordinate.latitude, "Longitude":myLocation!.coordinate.longitude]
+        if let array = UserDefaults.standard.value(forKey: USER_DEFAULT.updatingLocationPathArray) as? [Any]{
+            updatingLocationArray = array
+        }
+        print("Last Location")
+        updatingLocationArray.append(locationDictionary)
+        UserDefaults.standard.setValue(updatingLocationArray, forKey: USER_DEFAULT.updatingLocationPathArray)
+        //        NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: OBSERVER.updatePath), object: nil)
+        
+        let locationString = [myLocationToSend]
+        sendRequestToServer(locationString.jsonString)
+    }
+    
     fileprivate func addFilteredLocationToLocationArray(_ myLocationToSend:[String:Any]) {
         if(UserDefaults.standard.bool(forKey: USER_DEFAULT.isLocationTrackingRunning) == true){
             var locationArray = [Any]()

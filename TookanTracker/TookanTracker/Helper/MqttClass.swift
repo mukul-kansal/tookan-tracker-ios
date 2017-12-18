@@ -45,7 +45,7 @@ open class MqttClass: NSObject {
                 UserDefaults.standard.set(true, forKey: USER_DEFAULT.isHitInProgress)
                 UIApplication.shared.isNetworkActivityIndicatorVisible = true
                 var sendData : [String:Any] = ["location":"\(location)"]
-                sendData["is_test"] = true
+                sendData["origin"] = SERVER_KEY
                 print("Send Data = \(sendData)")
                 var sendDataArray = [Any]()
                 sendDataArray.append(sendData)

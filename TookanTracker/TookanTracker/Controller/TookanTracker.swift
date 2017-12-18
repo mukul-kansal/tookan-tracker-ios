@@ -128,6 +128,7 @@ public class TookanTracker: NSObject, CLLocationManagerDelegate {
     
     
     public func stopTracking(sessionID: String) {
+        self.loc.sendLastLocation()
         NetworkingHelper.sharedInstance.stopTracking(sessionID, userID: globalUserId, apiKey: globalAPIKey) { (isSucceeded, response) in
             if isSucceeded == true {
                 self.loc.stopLocationService()

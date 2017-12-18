@@ -26,12 +26,12 @@
                   moduleName = "TookanTracker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/Helper/MqttClass.swift"
-                  timestampString = "535028769.228921"
+                  timestampString = "535289904.765579"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "164"
                   endingLineNumber = "164"
-                  offsetFromSymbolStart = "60">
+                  offsetFromSymbolStart = "39">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,12 @@
                   moduleName = "TookanTracker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/Helper/MqttClass.swift"
-                  timestampString = "535028769.238761"
+                  timestampString = "535289904.767465"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "164"
                   endingLineNumber = "164"
-                  offsetFromSymbolStart = "7820">
+                  offsetFromSymbolStart = "8398">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -191,7 +191,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "378"
             endingLineNumber = "378"
-            landmarkName = "updateLocationToServer()"
+            landmarkName = "sendLastLocation()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -335,7 +335,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "393"
             endingLineNumber = "393"
-            landmarkName = "sendRequestToServer(_:)"
+            landmarkName = "addFilteredLocationToLocationArray(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -714,12 +714,12 @@
                   moduleName = "TookanTracker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/Helper/NetworkingHelper.swift"
-                  timestampString = "535028769.43652"
+                  timestampString = "535289905.572383"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
                   endingLineNumber = "43"
-                  offsetFromSymbolStart = "1300">
+                  offsetFromSymbolStart = "1653">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -729,12 +729,12 @@
                   moduleName = "TookanTracker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/cl-macmini-110/Documents/github/tracking-sdk-ios/tracking-sdk-ios/TookanTracker/TookanTracker/Helper/NetworkingHelper.swift"
-                  timestampString = "535028769.440221"
+                  timestampString = "535289905.57554"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "44"
                   endingLineNumber = "44"
-                  offsetFromSymbolStart = "36">
+                  offsetFromSymbolStart = "44">
                </Location>
             </Locations>
          </BreakpointContent>
