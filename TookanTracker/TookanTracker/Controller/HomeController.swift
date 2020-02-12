@@ -13,6 +13,13 @@ import GooglePlaces
 
 class HomeController: UIViewController, LocationTrackerDelegate {
     
+    @IBOutlet var viewETASelection: UIView!
+    @IBOutlet var btnCloseETA: UIButton!
+    @IBOutlet var btnForMap: UIButton!
+    @IBOutlet var btnForEta: UIButton!
+    @IBOutlet var selectionView: UIView!
+    @IBOutlet var lblETAValue: UILabel!
+    @IBOutlet var viewETA: UIView!
     @IBOutlet weak var googleMapView: GMSMapView!
     @IBOutlet var currentLocation: UIButton!
     @IBOutlet var logout: UIButton!
@@ -30,33 +37,38 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     var moving = true
     var trackingDelegate:TrackingDelegate!
     var isTrackingEnabled = true
+    var myCurrentLocation:CLLocation!
+    var jobModel: JobModel?
+    var jobData: Jobs?
+    var getETA: ((String)->Void)?
+    var etaDict: String = ""
+    var currentMarker:GMSMarker? = GMSMarker()
+    var startingPointMarker:GMSMarker? = GMSMarker()
+    var endPointMarker:GMSMarker? = GMSMarker()
 
-//    struct SHOW_HIDE {
-//        static let showBottomView = 1
-//        static let hideBottomView = 2
-//        static let showLoadingStatus = 3
-//        static let showStopLocationButton = 4
-//        static let showStopTrackingButton = 5
-//        static let showSliderButton = 6
-//    }
-    
     override var preferredStatusBarStyle:UIStatusBarStyle {
-        return .lightContent
+        if #available(iOS 13.0, *) {
+            return .darkContent
+        } else {
+            return .lightContent
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         /*----------------- Location Tracker --------------*/
+        self.viewETA.isHidden = true
+        self.selectionView.isHidden = false
+
+        
         self.loc.delegate = self
-//        self.loc.setLocationUpdate()
+
         self.loc.registerAllRequiredInitilazers()
-//        self.loc.initMqtt()
-//        self.loc.locationFrequencyMode = LocationFrequency.high
-//        self.loc.setLocationUpdate()
-//        _ = self.loc.startLocationService()
-//        self.loc.subsribeMQTTForTracking()
+        self.loc.sessionId = self.jobModel?.sessionId ?? ""
+
         self.currentLocation.setImage(getCurrentLocation?.withRenderingMode(.alwaysTemplate), for: .normal)
         self.currentLocation.tintColor = UIColor.white
+        
         /*----------------- Google Map ---------------*/
         
         if let styleURL = frameworkBundle?.url(forResource: "style", withExtension: "json") {
@@ -70,12 +82,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             NSLog("Unable to find style.json")
         }
         self.googleMapView.delegate = self
-        // self.googleMapView.isTrafficEnabled = true
-        self.googleMapView.isMyLocationEnabled = true
-        
-//        self.logout.setImage(close?.withRenderingMode(.alwaysTemplate), for: .normal)
-//        self.logout.tintColor = UIColor.white
-        self.logout.setTitle("Logout", for: .normal)
+        self.logout.setTitle("BACK", for: .normal)
         
         
         
@@ -93,8 +100,93 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         self.setUserCurrentJob()
         self.setTrackingButton()
         self.sliderShareAction()
+        if self.jobModel?.jobLat != ""{
+        self.drawPathFromCurrentToDestination()
+        }else{
+            print("aaaa")
+        }
     }
     
+    func  getLatitudeLongitudeOf() -> CLLocationCoordinate2D?{
+         var coordinate: CLLocationCoordinate2D!
+        let latitudeString = jobModel?.jobLat as? String ?? ""
+        let longitudeString = jobModel?.joblng as? String ?? ""
+        coordinate = CLLocationCoordinate2D(latitude: Double(latitudeString) as! CLLocationDegrees, longitude: Double(longitudeString) as! CLLocationDegrees)
+         return coordinate
+     }
+    func  getLatitudeLongitudeOfDest() -> CLLocationCoordinate2D?{
+         var coordinate: CLLocationCoordinate2D!
+        let latitudeString = jobData?.jobLat as? String ?? ""
+        let longitudeString = jobData?.jobLng as? String ?? ""
+        coordinate = CLLocationCoordinate2D(latitude: Double(latitudeString) as! CLLocationDegrees, longitude: Double(longitudeString) as! CLLocationDegrees)
+         return coordinate
+     }
+    func drawPath(_ encodedPathString: String, originCoordinate:CLLocationCoordinate2D, destinationCoordinate:CLLocationCoordinate2D, minOrigin:CGFloat, durationDict:[String : AnyObject]?) -> Void{
+        DispatchQueue.main.async {
+            guard UIApplication.shared.applicationState == UIApplication.State.active else {
+                return
+            }
+            self.googleMapView.clear()
+            CATransaction.begin()
+            CATransaction.setValue(NSNumber(value: 1), forKey: kCATransactionAnimationDuration)
+            let path = GMSPath(fromEncodedPath: encodedPathString)
+            let line = GMSPolyline(path: path)
+            line.strokeWidth = 4.0
+            line.strokeColor = UIColor(red: 70/255, green: 149/255, blue: 246/255, alpha: 1.0)
+            line.isTappable = true
+            line.map = self.googleMapView
+            self.endPointMarker?.icon = UIImage(named: "car", in: frameworkBundle, compatibleWith: nil)
+            self.endPointMarker?.position = originCoordinate
+            self.endPointMarker?.map = self.googleMapView
+            self.setMarker(originCoordinate, destinationCoordinate: destinationCoordinate, minOrigin: minOrigin,durationDict:durationDict)
+            // change the camera, set the zoom, whatever.  Just make sure to call the animate* method.
+            self.googleMapView.animate(toViewingAngle: 45)
+            if durationDict != nil {
+                let dict = "\(durationDict!["text"] as? String ?? "")"
+                    self.etaDict = dict
+                
+            }
+            
+            if let eta = self.getETA {
+                eta(self.etaDict)
+            }
+            CATransaction.commit()
+        }
+    }
+      func drawPathFromCurrentToDestination() {
+          let originCoordinate = self.getLatitudeLongitudeOf()
+          let destinationCoordinate = self.getLatitudeLongitudeOfDest()
+
+
+        NetworkingHelper.sharedInstance.getPath(coordinate: originCoordinate ?? CLLocationCoordinate2D(), destinationCoordinate: destinationCoordinate ?? CLLocationCoordinate2D(), completionHander: { (points,durationDict) in
+            if points.count > 0 {
+                self.drawPath(points, originCoordinate: originCoordinate ?? CLLocationCoordinate2D(), destinationCoordinate:destinationCoordinate ?? CLLocationCoordinate2D(), minOrigin:0.5 + 20, durationDict: durationDict)
+            } else {
+                self.setMarker(originCoordinate ?? CLLocationCoordinate2D(), destinationCoordinate: destinationCoordinate ?? CLLocationCoordinate2D(), minOrigin:0.5 + 20,durationDict:durationDict)
+            }
+        }, mapview: self.googleMapView)
+      }
+    
+    
+    func setMarker(_ originCoordinate: CLLocationCoordinate2D, destinationCoordinate: CLLocationCoordinate2D, minOrigin:CGFloat,durationDict: [String:AnyObject]?){
+         googleMapView.padding = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
+         let destinationLocationMarker = GMSMarker(position: destinationCoordinate)
+         destinationLocationMarker.map = googleMapView
+        if durationDict != nil {
+            destinationLocationMarker.title = durationDict!["text"] as? String ?? ""
+        }
+        destinationLocationMarker.isFlat = true
+        self.googleMapView.selectedMarker = destinationLocationMarker
+         let northEastCoordinate = CLLocationCoordinate2D(latitude: max(originCoordinate.latitude, destinationCoordinate.latitude), longitude: max(originCoordinate.longitude, destinationCoordinate.longitude))
+         let southWestCoordinate = CLLocationCoordinate2D(latitude: min(originCoordinate.latitude, destinationCoordinate.latitude), longitude: min(originCoordinate.longitude, destinationCoordinate.longitude))
+         
+         _ = GMSCameraPosition(target: CLLocationCoordinate2D(latitude: (northEastCoordinate.latitude + southWestCoordinate.latitude)/2, longitude: (northEastCoordinate.longitude + southWestCoordinate.longitude)/2), zoom: 12, bearing: 0, viewingAngle: 0)
+         
+         
+         let bounds = GMSCoordinateBounds(coordinate: originCoordinate, coordinate: destinationCoordinate)
+         let update = GMSCameraUpdate.fit(bounds, with: UIEdgeInsets.init(top: 0, left: 20, bottom: minOrigin, right: 20))
+         googleMapView.moveCamera(update)
+     }
     func setTrackingButton() {
         self.stopTrackingButton.layer.cornerRadius = 5.0
         self.setTrackingTitle()
@@ -103,19 +195,12 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     }
     
     func setTrackingTitle() {
-        if let _ = UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) as? String {
-            self.stopTrackingButton.setTitle("Stop Sharing Location", for: .normal)
-            self.isTrackingEnabled = true
-        } else {
-            self.stopTrackingButton.setTitle("Start Sharing Location", for: .normal)
-            self.userStatus = USER_JOB_STATUS.free
-            self.isTrackingEnabled = false
-        }
+        self.stopTrackingButton.setTitle("Stop Sharing Location", for: .normal)
+        self.isTrackingEnabled = true
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //        menuButton.layer.cornerRadius = 45/2
         NotificationCenter.default.addObserver(self, selector: #selector(self.updatePath), name: NSNotification.Name(rawValue: OBSERVER.updatePath), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.requestIdReceivedFromURL), name: NSNotification.Name(rawValue: OBSERVER.requestIdURL), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.sessionIDRecivedFromPush), name: NSNotification.Name(rawValue: OBSERVER.sessionIdPush), object: nil)
@@ -124,14 +209,8 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        if let mylocation = loc.getCurrentLocation() {
-            let camera = GMSCameraPosition.camera(withLatitude: mylocation.coordinate.latitude, longitude: mylocation.coordinate.longitude, zoom: 16)
-            googleMapView.camera = camera
-            self.mapCurrentZoomLevel = self.googleMapView.camera.zoom
-        } else {
-            print("User's location is unknown")
-        }
+
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -148,10 +227,22 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         
     }
     
+    @IBAction func btnForETa(_ sender: Any) {
+        self.viewETA.isHidden = false
+        self.selectionView.isHidden = true
+        self.lblETAValue.text = "ETA - \(etaDict)"
+
+    }
     
+    @IBAction func mapBtnAction(_ sender: Any) {
+        self.viewETA.isHidden = true
+        self.selectionView.isHidden = true
+        viewETASelection.isHidden = true
+    }
     @IBAction func stopTrackingAction(_ sender: Any) {
         
-        self.stopTrackingConformation(pop: false)
+
+        self.stopTrackingConformation(pop: true)
     }
     
     
@@ -173,13 +264,13 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     
     
     func stopCalling(pop: Bool) {
-        let alertController = UIAlertController(title: nil, message: "Are you sure?", preferredStyle: UIAlertControllerStyle.actionSheet)
-        let confirmAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive) { (confirmed) -> Void in
+        let alertController = UIAlertController(title: nil, message: "Are you sure?", preferredStyle: UIAlertController.Style.actionSheet)
+        let confirmAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive) { (confirmed) -> Void in
             self.stopTrackingButton.isHidden = true
-            self.stopTracking(pop: pop)
+            self.dismissVC()
         }
         
-        let cancelAction = UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: {(UIAlertAction) in
+        let cancelAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: {(UIAlertAction) in
         })
         alertController.addAction(confirmAction)
         alertController.addAction(cancelAction)
@@ -202,7 +293,6 @@ class HomeController: UIViewController, LocationTrackerDelegate {
                         sessionID = "\(data["session_id"] ?? "")"
                         UserDefaults.standard.set(sessionID, forKey: USER_DEFAULT.sessionId)
                     }
-//                    self.loc.setLocationUpdate()
                     self.loc.registerAllRequiredInitilazers()
                     self.setUserCurrentJob()
                     self.setTrackingTitle()
@@ -240,8 +330,8 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     }
     
     func dismissVC() {
-        self.navigationController?.popToRootViewController(animated: true)
         self.trackingDelegate.logout!()
+        self.navigationController?.popToRootViewController(animated: true)
         UserDefaults.standard.removeObject(forKey: USER_DEFAULT.userId)
         UserDefaults.standard.removeObject(forKey: USER_DEFAULT.apiKey)
         UserDefaults.standard.removeObject(forKey: USER_DEFAULT.isLocationTrackingRunning)
@@ -305,40 +395,11 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     }
     
     func startSessionHit(sessionId:String, location:CLLocation) {
-        //        NetworkingHelper.sharedInstance.shareStartStopLocationSession("", location: model.getLocationArrayObject(location: location), phone: "", requestType: 1, sessionId: sessionId, requestID: requestId, receivedResponse: { (succeeded, response) in
-        //            DispatchQueue.main.async {
-        //                if(succeeded == true) {
-        //                    if let data = response["data"] as? [String:Any] {
-        //                        if let sessionID = data["session_id"] {
-        //                            self.menuButton.isHidden = false
-        //                            self.myLocationButtontrailingConstraint.constant = 56
-        //                            self.menuButton.setImage(UIImage(named:"share"), for: UIControlState.normal)
-//                                    UserDefaults.standard.set(sessionId, forKey: USER_DEFAULT.sessionId)
-//                                    UserDefaults.standard.set(true, forKey: USER_DEFAULT.isLocationTrackingRunning)
-                                    UserDefaults.standard.set(false, forKey: USER_DEFAULT.subscribeLocation)
-                                    self.userStatus = USER_JOB_STATUS.sharingLocation
-                                    self.shareLocation()
-        //                            if let sessionUrl = data["session_url"] as? String {
-        //                                NetworkingHelper.sharedInstance.sessionURL = sessionUrl
-        //                                UserDefaults.standard.setValue(sessionUrl, forKey: USER_DEFAULT.sessionURL)
-        //                                self.showActivityViewController(link: sessionUrl)
-        //                            }
-        //                        }
-        //                    }
-        //                } else {
-        //                    DispatchQueue.main.async {
-        //                        self.menuButton.setImage(UIImage(named:"menu"), for: UIControlState.normal)
-        //                        self.userStatus = USER_JOB_STATUS.free
-        //                        self.menuButton.isHidden = false
-        //                        self.myLocationButtontrailingConstraint.constant = 56
-        //                        self.model.resetAllData()
-        //                        self.viewShowStatus = SHOW_HIDE.showBottomView
-        //                        self.setBottomButtonView(stopTitle: "", isSlider: true)
-        //                    }
-        //                }
-        //            }
-        //
-        //        })
+        
+        UserDefaults.standard.set(false, forKey: USER_DEFAULT.subscribeLocation)
+        self.userStatus = USER_JOB_STATUS.sharingLocation
+        self.shareLocation()
+        
     }
     
     /*----------------------------------- REQUEST ID URL ---------------------------------*/
@@ -470,75 +531,36 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             DispatchQueue.main.async {
                 if succeeded == true {
                     if let locationArray = response["location"] as? [String:Any] {
-//                        self.menuButton.isHidden = true
-//                        self.myLocationButtontrailingConstraint.constant = 11
-//                        self.menuButton.setImage(UIImage(named:"menu"), for: UIControlState.normal)
                         self.userStatus = USER_JOB_STATUS.trackingLocation
                         UserDefaults.standard.set(sessionId, forKey: USER_DEFAULT.sessionId)
                         let coordinate = self.model.updatePathLocations(locationArray: locationArray)
                         self.animationForCameraLocation(coordinate: coordinate)
                         print(UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) as! String)
-                        self.loc.topic = "\(globalAPIKey)\(globalUserId)"  //UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) as! String
+                        self.loc.topic = "\(globalAPIKey)\(globalUserId)"
                         self.loc.subsribeMQTTForTracking()
                         UserDefaults.standard.set(true, forKey: USER_DEFAULT.subscribeLocation)
-//                        self.viewShowStatus = SHOW_HIDE.showStopTrackingButton
-                        //                        self.setBottomButtonView(stopTitle: "", isSlider: true)
+
                     }
                 } else {
-                    //                    self.menuButton.setImage(UIImage(named:"menu"), for: UIControlState.normal)
-                    //                    self.userStatus = USER_JOB_STATUS.free
-                    //                    self.menuButton.isHidden = false
-                    //                    self.myLocationButtontrailingConstraint.constant = 56
+
                     self.model.resetAllData()
-//                    self.viewShowStatus = SHOW_HIDE.showBottomView
-                    //                    self.setBottomButtonView(stopTitle: "", isSlider: true)
+
                 }
             }
         }
     }
     
-    //    func alertPopupForSessionId() {
-    //        guard sessionDetailView == nil else {
-    //            return
-    //        }
-    //        UIView.animate(withDuration: 0.5, animations: {
-    //            self.bottomView.transform = CGAffineTransform.identity
-    //            }, completion: { finished in
-    //                DispatchQueue.main.async {
-    //
-    //                    self.sessionDetailView = UINib(nibName: "SessionDetailView", bundle: frameworkBundle).instantiate(withOwner: self, options: nil)[0] as! SessionDetailView
-    //                    self.sessionDetailView.frame = self.view.frame
-    //                    self.sessionDetailView.delegate = self
-    //                    self.sessionDetailView.setSessionView()
-    //                    self.sessionDetailView.delegate = self
-    //                    self.view.addSubview(self.sessionDetailView)
-    //                }
-    //        })
-    //
-    ////        let alert = UIAlertController(title: "Enter session id for tracking", message: nil, preferredStyle: .alert)
-    ////        alert.addTextField(configurationHandler: { (textField) -> Void in
-    ////            textField.placeholder = "Session id"
-    ////        })
-    ////        alert.addAction(UIAlertAction(title: "Submit", style: .default, handler: { (action) -> Void in
-    ////            let textField = alert.textFields![0] as UITextField
-    ////            if !(textField.text!.blank(textField.text!)){
-    ////                self.startTracking(sessionId: textField.text!.trimText)
-    ////            } else{
-    ////                Auxillary.showAlert("Pleas enter session id.")
-    ////            }
-    ////        }))
-    ////        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
-    ////
-    ////        }))
-    ////        self.present(alert, animated: true, completion: nil)
-    //    }
+
+    @IBAction func tapCloseETA(_ sender: Any) {
+        self.viewETA.isHidden = true
+        self.selectionView.isHidden = false
+    }
     
     func alertPopupForTracking() {
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
-        let trackAction = UIAlertAction(title: "Track", style: UIAlertActionStyle.default) { (UIAlertAction) in
-            //            self.alertPopupForSessionId()
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+        let trackAction = UIAlertAction(title: "Track", style: UIAlertAction.Style.default) { (UIAlertAction) in
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler:nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler:nil)
         alertController.addAction(trackAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
@@ -553,7 +575,6 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         case USER_JOB_STATUS.sharingLocation:
             if let sessionURL = UserDefaults.standard.value(forKey: USER_DEFAULT.sessionURL) as? String {
                 UIView.animate(withDuration: 0.2, animations: {
-//                    self.bottomView.transform = CGAffineTransform.identity
                 }, completion: nil)
                 
                 self.showActivityViewController(link: sessionURL)
@@ -609,20 +630,20 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         /*----------------- Handling when any event called off on activity controller -----------------*/
         activityController.completionWithItemsHandler = { activity, success, items, error in
             UIView.animate(withDuration: 0.5, animations: {
-//                self.bottomView.transform = CGAffineTransform.identity
+
             }, completion: { finished in
                 DispatchQueue.main.async {
                     switch self.userStatus {
                     case USER_JOB_STATUS.free:
-//                        self.viewShowStatus = SHOW_HIDE.showSliderButton
+
                         break
                     case USER_JOB_STATUS.sharingLocation:
-//                        self.viewShowStatus = SHOW_HIDE.showStopLocationButton
+
                         break
                     default:
                         break
                     }
-                    //                        self.animationForBottomView()
+            
                 }
             })
         }
@@ -638,61 +659,137 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     
     //MARK: MAP
     @objc func updatePath() {
-        guard self.loc.myLocationAccuracy < self.loc.maxAccuracy else {
-            return
-        }
-        self.googleMapView.isMyLocationEnabled = true
+        
         self.mapCurrentZoomLevel = self.googleMapView.camera.zoom
-        path = GMSMutablePath()
-        var coordinate = CLLocationCoordinate2D()
+        let path = GMSMutablePath()
+        var startingCoordinate = CLLocationCoordinate2D(latitude: 30.741482, longitude: 76.768066)
+        startingCoordinate = CLLocationCoordinate2D()
+        
+        var coordinate: CLLocationCoordinate2D?
+        var lastSecondCoordinate: CLLocationCoordinate2D?
+        var count = Int()
         if let locationDictionaryArray = UserDefaults.standard.value(forKey: USER_DEFAULT.updatingLocationPathArray) as? [Any] {
+            print("locationDictionaryArray count",locationDictionaryArray.count )
+            print("locationDictionaryArray val",locationDictionaryArray)
+            count = locationDictionaryArray.count
             for i in (0..<locationDictionaryArray.count) {
                 if let locationDictionary = locationDictionaryArray[i] as? [String:Any] {
                     let latitudeString = locationDictionary["Latitude"] as! NSNumber
                     let longitudeString = locationDictionary["Longitude"] as! NSNumber
                     coordinate = CLLocationCoordinate2D(latitude: latitudeString.doubleValue, longitude: longitudeString.doubleValue)
-                    path.add(CLLocationCoordinate2D(latitude: locationDictionary["Latitude"] as! Double, longitude: locationDictionary["Longitude"] as! Double))
+                    path.add(coordinate!)
+                    if i == 0 {
+                        startingCoordinate = coordinate!
+                    }
+                    if locationDictionaryArray.count > 1 {
+                        if i == (locationDictionaryArray.count - 2) {
+                            lastSecondCoordinate = coordinate
+                        }
+                    }
+                    
+                    print("inloop coordinate \(i)", coordinate ?? 0)
                 }
             }
         }
-        self.createRoutePathArray(originCoordinate: coordinate)
+        
+        
+        if coordinate == nil {
+            coordinate = CLLocationCoordinate2D(latitude: 30.741482, longitude: 76.768066)
+            coordinate = CLLocationCoordinate2D()
+        }
+       
+        self.createRoutePathArray(originCoordinate: startingCoordinate, currentCoordinate: coordinate!, coordinateForBearing: lastSecondCoordinate, pathCoordinates: path,arrayCount:count)
+        
     }
     
+        func createRoutePathArray(originCoordinate: CLLocationCoordinate2D, currentCoordinate:CLLocationCoordinate2D, coordinateForBearing: CLLocationCoordinate2D?, pathCoordinates:GMSMutablePath,arrayCount:Int) {
+            
+
+                let polyline = GMSPolyline(path: pathCoordinates)
+                polyline.strokeColor = UIColor.white //UIColor(red: 62/255, green: 89/255, blue: 165/255, alpha: 1.0)
+                polyline.strokeWidth = 10.0
+                polyline.geodesic = true;
+            self.startingPointMarker?.icon = UIImage(named: "marker", in: frameworkBundle, compatibleWith: nil)
+            self.endPointMarker?.icon = UIImage(named: "car", in: frameworkBundle, compatibleWith: nil)
+                
+                CATransaction.begin()
+                CATransaction.setValue(NSNumber(value: 0.8), forKey: kCATransactionAnimationDuration)
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5, execute: {
+                    
+                    let destinationCoordinate = self.getLatitudeLongitudeOfDest()
+                    self.startingPointMarker?.position = destinationCoordinate ?? CLLocationCoordinate2D()
+                    NetworkingHelper.sharedInstance.getPath(coordinate: destinationCoordinate ?? CLLocationCoordinate2D(), destinationCoordinate: currentCoordinate , completionHander: { (points,durationDict) in
+                        if points.count > 0 {
+                            self.drawPathForMarker(points, originCoordinate: originCoordinate , destinationCoordinate:destinationCoordinate ?? CLLocationCoordinate2D(), minOrigin:0.5 + 20,durationDict: durationDict)
+                        }
+                    }, mapview: self.googleMapView)
+
+                })
+                DispatchQueue.main.async {
+                    self.startingPointMarker?.map = self.googleMapView
+                }
+                
+                
+              
+                    if arrayCount != 0 {
+                        DispatchQueue.main.async {
+                            self.endPointMarker?.icon = UIImage(named: "car", in: frameworkBundle, compatibleWith: nil)
+                            self.endPointMarker?.position = currentCoordinate
+                            self.endPointMarker?.map = self.googleMapView
+                        }
+                    }
+                    self.currentMarker = nil
+                    let bounds = GMSCoordinateBounds(path: pathCoordinates)
+                    self.googleMapView!.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50.0))
+                    DispatchQueue.main.async {
+
+                    }
+                  
+                CATransaction.commit()
+
+        }
+
+    
+    func drawPathForMarker(_ encodedPathString: String, originCoordinate:CLLocationCoordinate2D, destinationCoordinate:CLLocationCoordinate2D, minOrigin:CGFloat,durationDict:[String : AnyObject]?) -> Void{
+        DispatchQueue.main.async {
+            guard UIApplication.shared.applicationState == UIApplication.State.active else {
+                return
+            }
+            self.googleMapView.clear()
+            CATransaction.begin()
+            CATransaction.setValue(NSNumber(value: 1), forKey: kCATransactionAnimationDuration)
+            let path = GMSPath(fromEncodedPath: encodedPathString)
+            let line = GMSPolyline(path: path)
+            line.strokeWidth = 4.0
+            line.strokeColor = UIColor(red: 70/255, green: 149/255, blue: 246/255, alpha: 1.0)
+            line.isTappable = true
+            line.map = self.googleMapView
+            // change the camera, set the zoom, whatever.  Just make sure to call the animate* method.
+            if durationDict != nil {
+                let dict = "\(durationDict!["text"] as? String ?? "")"
+                self.etaDict = dict
+                
+            }
+            
+            if let eta = self.getETA {
+                eta(self.etaDict)
+            }
+            self.googleMapView.animate(toViewingAngle: 45)
+            CATransaction.commit()
+        }
+    }
     func setMarker(_ originCoordinate: CLLocationCoordinate2D, marker:GMSMarker) {
         CATransaction.begin()
         CATransaction.setValue(NSNumber(value: 2.0), forKey: kCATransactionAnimationDuration)
         marker.position = originCoordinate
         marker.icon = destinationMarker
+        marker.title = "eta"
+        marker.isFlat = true
         marker.map = googleMapView
         CATransaction.commit()
     }
     
-    func createRoutePathArray(originCoordinate: CLLocationCoordinate2D) {
-        
-        let polyline = GMSPolyline(path: path)
-        polyline.strokeColor = UIColor.blue
-        polyline.strokeWidth = 8.0
-        polyline.geodesic = true;
-        
-        pathMarker.position = originCoordinate
-        pathMarker.icon = destinationMarker
-        
-        CATransaction.begin()
-        CATransaction.setValue(NSNumber(value: 2.0), forKey: kCATransactionAnimationDuration)
-        googleMapView.clear()
-        
-        self.mapCurrentZoomLevel = self.googleMapView.camera.zoom
-        self.currentCameraPosition = GMSCameraPosition.camera(withLatitude: originCoordinate.latitude, longitude: originCoordinate.longitude, zoom: self.mapCurrentZoomLevel)
-        if moving == true {
-            self.googleMapView.animate(to: self.currentCameraPosition)
-        }
-        polyline.map = googleMapView
-        self.mapCurrentZoomLevel = self.googleMapView.camera.zoom
-        if userStatus == USER_JOB_STATUS.trackingLocation {
-            pathMarker.map = googleMapView
-        }
-        CATransaction.commit()
-    }
+
     
     //MARK: LocationTrackerDelegate Method
     func currentLocationOfUser(_ location: CLLocation) {
@@ -718,13 +815,9 @@ class HomeController: UIViewController, LocationTrackerDelegate {
                     }
                 }
             } else {
-                //                self.menuButton.setImage(UIImage(named:"menu"), for: UIControlState.normal)
-                self.userStatus = USER_JOB_STATUS.free
-                //                self.menuButton.isHidden = false
-                //                self.myLocationButtontrailingConstraint.constant = 56
+
                 self.model.resetAllData()
-//                self.viewShowStatus = SHOW_HIDE.showBottomView
-                //                self.setBottomButtonView(stopTitle: "", isSlider: true)
+
             }
         }
     }
@@ -744,11 +837,11 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     
     func stopSharingAfterConfirmation() {
         UIView.animate(withDuration: 0.2, animations: {
-//            self.bottomView.transform = CGAffineTransform.identity
+
         }, completion: { finished in
             DispatchQueue.main.async {
-//                self.viewShowStatus = SHOW_HIDE.showLoadingStatus
-                UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1.0, options: UIViewAnimationOptions(), animations: { () -> Void in
+
+                UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1.0, options: UIView.AnimationOptions(), animations: { () -> Void in
 //                    self.bottomView.stopButton.isHidden = true
 //                    if(self.bottomView.sliderRequestShareButton != nil) {
 //                        self.bottomView.sliderRequestShareButton.isHidden = true
@@ -778,7 +871,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     }
     
     func stopSession() {
-        UIView.animate(withDuration: 0.5, delay:0.0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.5, delay:0.0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
 //            self.bottomView.transform = CGAffineTransform.identity
         }, completion: { finished in
             self.googleMapView.clear()
@@ -817,8 +910,8 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     }
     
     func dismissComplete() {
-        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1.0, options: UIViewAnimationOptions(), animations: { () -> Void in
-//            self.bottomView.transform = CGAffineTransform.identity
+        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1.0, options: UIView.AnimationOptions(), animations: { () -> Void in
+
         }, completion: nil)
     }
     
@@ -833,74 +926,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         })
     }
     
-    //MARK: Set Bottom Button View
-    //    func setBottomButtonView(stopTitle:String, isSlider:Bool) {
-    //        if(bottomView == nil) {
-    //            bottomView = UINib(nibName: "BottomButtonView", bundle: frameworkBundle).instantiate(withOwner: self, options: nil)[0] as! BottomButtonView
-    //            bottomView.delegate = self
-    //            self.view.addSubview(bottomView)
-    //        }
-    //        self.bottomView.transform = CGAffineTransform.identity
-    //        bottomView.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: bottomView.frame.height)
-    //        bottomView.setView("Swipe to Request", rejectButtonTitle: "Swipe to Share", stopButtonTitle: stopTitle, sliderType: isSlider)
-    //        animationForBottomView()
-    //    }
-    
-    //    func animationForBottomView() {
-    //        var height:CGFloat!
-    //        switch(viewShowStatus) {
-    //        case SHOW_HIDE.showBottomView:
-    //            self.bottomView.pleaseWaitLabel.isHidden = true
-    //            self.bottomView.acitivityIndicator.stopAnimating()
-    //            height = -self.bottomView.frame.height
-    //        case SHOW_HIDE.hideBottomView:
-    //            height = self.view.frame.height
-    //        case SHOW_HIDE.showLoadingStatus:
-    //            self.bottomView.stopButton.isHidden = true
-    //            if(self.bottomView.sliderRequestShareButton != nil) {
-    //                self.bottomView.sliderRequestShareButton.isHidden = true
-    //            }
-    //            self.bottomView.pleaseWaitLabel.isHidden = false
-    //            self.bottomView.acitivityIndicator.startAnimating()
-    //            height = -self.bottomView.frame.height
-    //            break
-    //        case SHOW_HIDE.showStopLocationButton:
-    //            self.bottomView.stopButton.isHidden = false
-    //            self.bottomView.stopButton.setTitle("Stop sharing location", for: UIControlState.normal)
-    //            if(self.bottomView.sliderRequestShareButton != nil) {
-    //                self.bottomView.sliderRequestShareButton.isHidden = true
-    //            }
-    //            self.bottomView.pleaseWaitLabel.isHidden = true
-    //            self.bottomView.acitivityIndicator.stopAnimating()
-    //            height = -self.bottomView.frame.height
-    //            break
-    //        case SHOW_HIDE.showStopTrackingButton:
-    //            self.bottomView.stopButton.isHidden = false
-    //            self.bottomView.stopButton.setTitle("Stop tracking location", for: UIControlState.normal)
-    //            if(self.bottomView.sliderRequestShareButton != nil) {
-    //                self.bottomView.sliderRequestShareButton.isHidden = true
-    //            }
-    //            self.bottomView.pleaseWaitLabel.isHidden = true
-    //            self.bottomView.acitivityIndicator.stopAnimating()
-    //            height = -self.bottomView.frame.height
-    //            break
-    //        case SHOW_HIDE.showSliderButton:
-    //            self.bottomView.sliderRequestShareButton.backToOriginalPosition()
-    //            self.bottomView.stopButton.isHidden = true
-    //            if(self.bottomView.sliderRequestShareButton != nil) {
-    //                self.bottomView.sliderRequestShareButton.isHidden = false
-    //            }
-    //            self.bottomView.pleaseWaitLabel.isHidden = true
-    //            self.bottomView.acitivityIndicator.stopAnimating()
-    //            height = -self.bottomView.frame.height
-    //            break
-    //        default:
-    //            break
-    //        }
-    //        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1.0, options: UIViewAnimationOptions(), animations: { () -> Void in
-    //            self.bottomView.transform = CGAffineTransform(translationX: 0, y: height)
-    //            }, completion: nil)
-    //    }
+ 
     
     func animationForCameraLocation(coordinate:CLLocationCoordinate2D) {
         CATransaction.begin()
@@ -975,14 +1001,14 @@ extension HomeController: GMSAutocompleteViewControllerDelegate, GMSMapViewDeleg
         let framelong = round(position.target.longitude * 1000) / 1000
         print("currnt \(lat) \(long)" )
         print("frame \(framelat) \(framelong)" )
-//        if self.currentCameraPosition != nil {
+
         
             if ((lat == framelat) && (long == framelong)) {
                 self.moving = true
             } else {
                 self.moving = false
             }
-//        }
+
     }
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {

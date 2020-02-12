@@ -9,6 +9,8 @@
 import Foundation
 import CoreLocation
 import UIKit
+import GoogleMaps
+import GooglePlaces
 
 class NetworkingHelper: NSObject {
     
@@ -52,12 +54,12 @@ class NetworkingHelper: NSObject {
                         break
                         
                     case STATUS_CODES.SHOW_MESSAGE:
-                        Auxillary.showAlert(response["message"] as! String!)
+                        Auxillary.showAlert(response["message"] as? String ?? "")
                         receivedResponse(false, [:])
                         break
                         
                     default:
-                        Auxillary.showAlert(response["message"] as! String!)
+                        Auxillary.showAlert(response["message"] as? String ?? "")
                         receivedResponse(false, [:])
                     }
                 } else {
@@ -70,7 +72,113 @@ class NetworkingHelper: NSObject {
             receivedResponse(false, [:])
         }
     }
-    
+    /*------------ Start Tracking Acoording To Related Job ---------------*/
+    func getLocationForJobTracking(sharedSecert:String, jobId:String,userId:String, receivedResponse:@escaping (_ succeeded:Bool, _ response:[String:Any]) -> ()){
+        
+        let params = ["shared_secret":sharedSecert,
+                      "job_id":jobId,
+                      "user_id":userId,
+                      "request_type":"1",
+                      "fleet_tracking":"1"]
+        print(params)
+        if IJReachability.isConnectedToNetwork() == true{
+            sendRequestToServer("create_sdk_tracking_session",params: params as [String : AnyObject], httpMethod: "POST") { (succeeded:Bool, response:[String:Any]) -> () in
+               if(succeeded) {
+                    switch(response["status"] as! Int) {
+                    case STATUS_CODES.SHOW_DATA, STATUS_CODES.INVALID_ACCESS_TOKEN:
+                        DispatchQueue.main.async(execute: { () -> Void in
+                            receivedResponse(true, response)
+                        })
+                        break
+                        
+                    case STATUS_CODES.SHOW_MESSAGE:
+                        Auxillary.showAlert(response["message"] as? String ?? "")
+                        receivedResponse(false, [:])
+                        break
+                        
+                    default:
+                        Auxillary.showAlert(response["message"] as? String ?? "")
+                        receivedResponse(false, [:])
+                    }
+                } else{
+                    Auxillary.showAlert(STATUS_CODES.SERVER_NOT_RESPONDING)
+                    receivedResponse(false, [:])
+                }
+                
+            }
+        } else{
+            Auxillary.showAlert(STATUS_CODES.NO_INTERNET_CONNECTION)
+            receivedResponse(false, [:])
+        }
+    }
+    /*------------ Start Tracking Acoording To Related Job ---------------*/
+    func getLocationRelatedToAgent(sharedSecert:String, fleetId:String,userId:String, receivedResponse:@escaping (_ succeeded:Bool, _ response:[String:Any]) -> ()) {
+        let params = ["shared_secret":sharedSecert,
+                      "fleet_id":fleetId,
+                      "user_id":userId,
+                      "request_type":"1"]
+        print(params)
+        if IJReachability.isConnectedToNetwork() == true{
+            sendRequestToServer("sdk_track_agent", params: params as [String : AnyObject], httpMethod: "POST") { (succeeded:Bool, response:[String:Any]) -> () in
+                print(response)
+                if(succeeded){
+                    switch (response["status"] as! Int) {
+                    case STATUS_CODES.SHOW_DATA, STATUS_CODES.INVALID_ACCESS_TOKEN:
+                        DispatchQueue.main.async(execute: { () -> Void in
+                            receivedResponse(true, response)
+                        })
+                        break
+                        
+                    case STATUS_CODES.SHOW_MESSAGE:
+                        Auxillary.showAlert(response["message"] as? String ?? "")
+                        receivedResponse(false, [:])
+                        break
+                        
+                    default:
+                        Auxillary.showAlert(response["message"] as? String ?? "")
+                        receivedResponse(false, [:])
+                    }
+                } else {
+                    Auxillary.showAlert(STATUS_CODES.SERVER_NOT_RESPONDING)
+                    receivedResponse(false, [:])
+                }
+            }
+        }else{
+            Auxillary.showAlert(STATUS_CODES.NO_INTERNET_CONNECTION)
+        }
+    }
+       func fetchPathPoints(_ from: CLLocationCoordinate2D, to: CLLocationCoordinate2D, completion: @escaping ((NSDictionary?) -> Void)) -> () {
+           let session = URLSession.shared
+           let urlString = GoogleMapsUtils.getDirectionUrl(from, to: to)///"https://maps.googleapis.com/maps/api/directions/json?origin=\(from.latitude),\(from.longitude)&destination=\(to.latitude),\(to.longitude)&mode=driving&key=\(APIKeyForGoogleMaps)"
+           
+           guard let url = URL(string: urlString) else {
+               return
+           }
+           
+           UIApplication.shared.isNetworkActivityIndicatorVisible = true
+           
+           session.dataTask(with: url) {data, response, error in
+               var encodedRoute: NSDictionary?
+               if(data != nil) {
+                   do {
+                       let json = try JSONSerialization.jsonObject(with: data!, options:[]) as? [String:AnyObject]
+                       if let jsonData = json {
+                           encodedRoute = jsonData as NSDictionary
+                       }
+                   } catch {
+                       print("Error")
+                   }
+               }
+               DispatchQueue.main.async {
+                   if(encodedRoute != nil) {
+                       completion(encodedRoute)
+                   } else {
+                       completion([:])
+                   }
+               }
+               }.resume()
+       }
+
     /*------------ Start Tracking ---------------*/
     func getLocationForStartTracking(_ sessionId:String, receivedResponse:@escaping (_ succeeded:Bool, _ response:[String:Any]) -> ()) {
         let params = [
@@ -89,12 +197,12 @@ class NetworkingHelper: NSObject {
                         break
                         
                     case STATUS_CODES.SHOW_MESSAGE:
-                        Auxillary.showAlert(response["message"] as! String!)
+                        Auxillary.showAlert(response["message"] as? String ?? "")
                         receivedResponse(false, [:])
                         break
                         
                     default:
-                        Auxillary.showAlert(response["message"] as! String!)
+                        Auxillary.showAlert(response["message"] as? String ?? "")
                         receivedResponse(false, [:])
                     }
                 } else {
@@ -130,12 +238,12 @@ class NetworkingHelper: NSObject {
                         break
                         
                     case STATUS_CODES.SHOW_MESSAGE:
-                        Auxillary.showAlert(response["message"] as! String!)
+                        Auxillary.showAlert(response["message"] as? String ?? "")
                         receivedResponse(false, [:])
                         break
                         
                     default:
-                        Auxillary.showAlert(response["message"] as! String!)
+                        Auxillary.showAlert(response["message"] as? String ?? "")
                         receivedResponse(false, [:])
                     }
                 } else {
@@ -169,12 +277,12 @@ class NetworkingHelper: NSObject {
                         break
                         
                     case STATUS_CODES.SHOW_MESSAGE:
-                        Auxillary.showAlert(response["message"] as! String!)
+                        Auxillary.showAlert(response["message"] as? String ?? "")
                         receivedResponse(false, [:])
                         break
                         
                     default:
-                        Auxillary.showAlert(response["message"] as! String!)
+                        Auxillary.showAlert(response["message"] as? String ?? "")
                         receivedResponse(false, [:])
                     }
                 } else {
@@ -188,6 +296,45 @@ class NetworkingHelper: NSObject {
         }
     }
     
+    func parsingLocations(locationArray:[Any]) {
+        if locationArray.count > 0 {
+            for i in (0..<locationArray.count) {
+                if let locationData = locationArray[i] as? [String:Any] {
+                    /*------- For Updating Path ------------*/
+                    var locationDictionary = [String:Any]()
+                    var updatingLocationArray = [Any]()
+                    var latitudeString:Double?
+                    var longitudeString:Double?
+                    if let lat = locationData["lat"] as? NSNumber {
+                        latitudeString = Double(truncating: lat)
+                    } else if let lat = locationData["lat"] as? String {
+                        latitudeString = Double(lat)
+                    }
+                    
+                    if let long = locationData["lng"] as? NSNumber {
+                        longitudeString = Double(truncating: long)
+                    } else if let long = locationData["lng"] as? String {
+                        longitudeString = Double(long)
+                    }
+                    if latitudeString != nil && longitudeString != nil  {
+                        let coordinate = CLLocationCoordinate2D(latitude: latitudeString!, longitude: longitudeString!)
+                        locationDictionary = [
+                            "Latitude":coordinate.latitude,
+                            "Longitude":coordinate.longitude
+                        ]
+                        if let array = UserDefaults.standard.value(forKey: USER_DEFAULT.updatingLocationPathArray) as? [Any] {
+                            updatingLocationArray = array
+                        }
+                        updatingLocationArray.append(locationDictionary)
+                        UserDefaults.standard.setValue(updatingLocationArray, forKey: USER_DEFAULT.updatingLocationPathArray)
+                    }
+                    /*----------------------------------------------*/
+                }
+                
+            }
+        }
+//        NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: NOTIFICATION_OBSERVER.updatePath), object: nil)
+    }
     func stopTracking(_ sessionID:String,userID: String, apiKey:String, receivedResponse:@escaping (_ succeeded:Bool, _ response:[String:Any]) -> ()){
         var params : [String : Any] = ["session_id": sessionID]
         params["unique_user_id"] = userID
@@ -205,12 +352,12 @@ class NetworkingHelper: NSObject {
                         break
                         
                     case STATUS_CODES.SHOW_MESSAGE:
-                        Auxillary.showAlert(response["message"] as! String!)
+                        Auxillary.showAlert(response["message"] as? String ?? "")
                         receivedResponse(false, [:])
                         break
                         
                     default:
-                        Auxillary.showAlert(response["message"] as! String!)
+                        Auxillary.showAlert(response["message"] as? String ?? "")
                         receivedResponse(false, [:])
                     }
                 } else {
@@ -365,6 +512,90 @@ class NetworkingHelper: NSObject {
         case chunkExtractingError
     }
     
+    func setMarker(_ originCoordinate: CLLocationCoordinate2D, destinationCoordinate: CLLocationCoordinate2D, minOrigin:CGFloat,googleMapView: GMSMapView){
+        googleMapView.padding = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
+        let destinationLocationMarker = GMSMarker(position: destinationCoordinate)
+//        destinationLocationMarker.icon = #imageLiteral(resourceName: "selectedIcon").withRenderingMode(.alwaysTemplate)//self.jobModel.getSelectedMarker(jobStatus: Singleton.sharedInstance.selectedTaskDetails.jobStatus)
+        destinationLocationMarker.map = googleMapView
+        
+        
+        let northEastCoordinate = CLLocationCoordinate2D(latitude: max(originCoordinate.latitude, destinationCoordinate.latitude), longitude: max(originCoordinate.longitude, destinationCoordinate.longitude))
+        let southWestCoordinate = CLLocationCoordinate2D(latitude: min(originCoordinate.latitude, destinationCoordinate.latitude), longitude: min(originCoordinate.longitude, destinationCoordinate.longitude))
+        
+        _ = GMSCameraPosition(target: CLLocationCoordinate2D(latitude: (northEastCoordinate.latitude + southWestCoordinate.latitude)/2, longitude: (northEastCoordinate.longitude + southWestCoordinate.longitude)/2), zoom: 12, bearing: 0, viewingAngle: 0)
+        
+        //        googleMapView.animateToCameraPosition(cameraPosition)
+        
+        let bounds = GMSCoordinateBounds(coordinate: originCoordinate, coordinate: destinationCoordinate)
+        let update = GMSCameraUpdate.fit(bounds, with: UIEdgeInsets.init(top: 0, left: 20, bottom: minOrigin, right: 20))
+        googleMapView.moveCamera(update)
+    }
+    
+    func drawPath(_ encodedPathString: String, originCoordinate:CLLocationCoordinate2D, destinationCoordinate:CLLocationCoordinate2D, minOrigin:CGFloat, googleMapView: GMSMapView) -> Void{
+        DispatchQueue.main.async {
+            guard UIApplication.shared.applicationState == UIApplication.State.active else {
+                return
+            }
+         //   self.googleMapView.clear()
+            CATransaction.begin()
+            CATransaction.setValue(NSNumber(value: 1), forKey: kCATransactionAnimationDuration)
+            let path = GMSPath(fromEncodedPath: encodedPathString)
+            let line = GMSPolyline(path: path)
+            line.strokeWidth = 4.0
+            line.strokeColor = UIColor(red: 70/255, green: 149/255, blue: 246/255, alpha: 1.0)
+            line.isTappable = true
+            line.map = googleMapView
+            self.setMarker(originCoordinate, destinationCoordinate: destinationCoordinate, minOrigin: minOrigin,googleMapView:googleMapView)
+            // change the camera, set the zoom, whatever.  Just make sure to call the animate* method.
+            googleMapView.animate(toViewingAngle: 45)
+            CATransaction.commit()
+        }
+    }
+    
+    func getPath(coordinate: CLLocationCoordinate2D, destinationCoordinate: CLLocationCoordinate2D, completionHander:@escaping (String,[String : AnyObject]) -> Void, mapview: GMSMapView) {
+        NetworkingHelper.sharedInstance.fetchPathPoints((coordinate), to: destinationCoordinate ) { (optionalRoute) in
+
+
+            if let jsonRoutes = optionalRoute,
+                let routes = jsonRoutes["routes"] as? NSArray{
+                if routes.count > 0 {
+                    if let shortestRoute = routes[0] as? [String: AnyObject],
+                        let legs = shortestRoute["legs"] as? Array<[String: AnyObject]>,
+                        let durationDict = legs[0]["duration"] as? [String: AnyObject],
+                        let distanceDict = legs[0]["distance"] as? [String: AnyObject],
+                        let distance = distanceDict["value"] as? NSNumber,
+                        let polyline = shortestRoute["overview_polyline"] as? [String: String],
+                        let points = polyline["points"]
+                        , distance.doubleValue >= 0 {
+                        completionHander(points,durationDict)
+                      //  self.drawPath(points, originCoordinate:(originCoordinate?.coordinate)!, destinationCoordinate:destinationCoordinate!, minOrigin:0.5 + 20)
+                    }
+                } else{
+                   // self.setMarker((originCoordinate?.coordinate)!, destinationCoordinate: destinationCoordinate ?? CLLocationCoordinate2D(), minOrigin:0.5 + 20)
+                }
+            } else {
+                // check
+                self.setMapview(googleMapView: mapview, coordinate: coordinate, destinationCoordinate: destinationCoordinate)
+            }
+        }
+    }
+    
+    func setMapview(googleMapView: GMSMapView, coordinate: CLLocationCoordinate2D, destinationCoordinate: CLLocationCoordinate2D) {
+        DispatchQueue.main.async {
+            guard UIApplication.shared.applicationState == UIApplication.State.active else {
+                return
+            }
+            googleMapView.padding = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
+            CATransaction.begin()
+            CATransaction.setValue(NSNumber(value: 1), forKey: kCATransactionAnimationDuration)
+            let bounds = GMSCoordinateBounds(coordinate: (coordinate), coordinate: destinationCoordinate ?? CLLocationCoordinate2D())
+            let update = GMSCameraUpdate.fit(bounds, with: UIEdgeInsets.init(top: 40, left: 20, bottom: 0.5 + 20, right: 20))
+            googleMapView.moveCamera(update)
+            //googleMapView.padding = UIEdgeInsetsMake(0, 0, 0, 0)
+            googleMapView.animate(toViewingAngle: 45)
+            CATransaction.commit()
+        }
+    }
     
 }
 

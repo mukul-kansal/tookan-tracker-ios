@@ -1,0 +1,16 @@
+version: "Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)"
+options: "a1e14f517f199b139c0501a877b16342"
+build_time: [1581325265, 363983000]
+inputs:
+  "/Users/mac/Documents/TrackingSDK/tracking-sdk-ios/TookanTracker/DemoApp/DemoApp/SignupVCModel.swift": [1581318556, 725181781]
+  "/Users/mac/Documents/TrackingSDK/tracking-sdk-ios/TookanTracker/DemoApp/DemoApp/SignupCell.swift": [1581318556, 724475512]
+  "/Users/mac/Documents/TrackingSDK/tracking-sdk-ios/TookanTracker/DemoApp/DemoApp/OTPController.swift": [1581318556, 724268333]
+  "/Users/mac/Documents/TrackingSDK/tracking-sdk-ios/TookanTracker/DemoApp/DemoApp/SignupFooterView.swift": [1581318556, 724793358]
+  "/Users/mac/Documents/TrackingSDK/tracking-sdk-ios/TookanTracker/DemoApp/DemoApp/SignupViewController.swift": [1581318556, 725364182]
+  "/Users/mac/Documents/TrackingSDK/tracking-sdk-ios/TookanTracker/DemoApp/DemoApp/ViewController.swift": [1581320381, 184365592]
+  "/Users/mac/Documents/TrackingSDK/tracking-sdk-ios/TookanTracker/DemoApp/DemoApp/Helper/CommonFunctions.swift": [1581318556, 723643991]
+  "/Users/mac/Documents/TrackingSDK/tracking-sdk-ios/TookanTracker/DemoApp/DemoApp/SignupModel.swift": [1581318556, 725062232]
+  "/Users/mac/Documents/TrackingSDK/tracking-sdk-ios/TookanTracker/DemoApp/DemoApp/Extension.swift": [1581318556, 723461407]
+  "/Users/mac/Documents/TrackingSDK/tracking-sdk-ios/TookanTracker/DemoApp/DemoApp/IJReachability.swift": [1581318556, 723773034]
+  "/Users/mac/Documents/TrackingSDK/tracking-sdk-ios/TookanTracker/DemoApp/DemoApp/AppDelegate.swift": [1581318639, 796466500]
+  "/Users/mac/Documents/TrackingSDK/tracking-sdk-ios/TookanTracker/DemoApp/DemoApp/Networking.swift": [1581318556, 724056378]

@@ -99,6 +99,37 @@ extension String {
     }
 }
 
+//MARK: NSDictionary
+extension Dictionary {
+    var jsonString:String {
+        do {
+            
+//            let jsonData = try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
+//            // here "jsonData" is the dictionary encoded in JSON data
+//
+//            let decoded = try JSONSerialization.jsonObject(with: jsonData, options: [])
+//            // here "decoded" is an `AnyObject` decoded from JSON data
+//
+//            // you can now cast it with the right type
+//            if let dictFromJSON = decoded as? [String:String] {
+//                // use dictFromJSON
+//            }
+            
+            
+            let dataObject:Data? = try JSONSerialization.data(withJSONObject: self, options: JSONSerialization.WritingOptions.prettyPrinted)
+            if let data = dataObject {
+                let json = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+                if let json = json {
+                    return json as String
+                }
+            }
+        } catch {
+            print("Error")
+        }
+        return ""
+    }
+}
+
 extension Date {
     var millisecondsSince1970:Int64 {
         return Int64((self.timeIntervalSince1970 * 1000.0).rounded())

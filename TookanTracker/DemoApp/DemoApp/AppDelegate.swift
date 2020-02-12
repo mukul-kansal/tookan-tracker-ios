@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate 
     var window: UIWindow?
     var locationManager:CLLocationManager!
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         if UserDefaults.standard.value(forKey: USER_DEFAULT.isSessionExpire) == nil {
@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate 
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         self.window?.makeKeyAndVisible()
-        
+        LocationTrackerFile.sharedInstance().setLocationUpdate()
         return true
     }
 

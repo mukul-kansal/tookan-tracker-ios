@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/mac/Documents/TrackingSDK/tracking-sdk-ios/TookanTracker/DemoApp/Build/Products/Debug-iphonesimulator/TookanTracker.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/mac/Documents/TrackingSDK/tracking-sdk-ios/TookanTracker/DemoApp/Build/Intermediates.noindex/TookanTracker.build/Debug-iphonesimulator/TookanTracker.build/unextended-module.modulemap",
+    }]
+  }]
+}

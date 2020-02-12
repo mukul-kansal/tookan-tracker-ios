@@ -33,7 +33,7 @@ class Auxillary: NSObject {
         var timeToSend = String()
         
         let formatter  = DateFormatter()
-        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
+        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale?
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss" 
         let time1 = formatter.date(from: dateReceived)
         if(time1 != nil) {
@@ -57,7 +57,7 @@ class Auxillary: NSObject {
 
     class func convertStringToDate(_ dateString:String) -> Date {
         let styler = DateFormatter()
-        styler.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
+        styler.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale?
         styler.timeZone = TimeZone(abbreviation:  "UTC")
         styler.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let dateFromServer = styler.date(from: dateString)
@@ -75,7 +75,7 @@ class Auxillary: NSObject {
     class func convertUTCStringToLocalString(_ utcDate:String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(abbreviation:  "UTC")
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale?
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let date = dateFormatter.date(from: utcDate)
         dateFormatter.timeZone = TimeZone.current
@@ -86,7 +86,7 @@ class Auxillary: NSObject {
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone.current
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale?
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return dateFormatter.string(from: date)
     }
@@ -95,7 +95,7 @@ class Auxillary: NSObject {
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(abbreviation:  "UTC")
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale?
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return dateFormatter.string(from: date)
     }
@@ -103,7 +103,7 @@ class Auxillary: NSObject {
     
     class func convertDateToString() -> String {
         let styler = DateFormatter()
-        styler.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
+        styler.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale?
         styler.timeZone = TimeZone(abbreviation:  "UTC")
         styler.dateFormat = "yyyy-MM-dd_HH:mm:ss"
         return styler.string(from: Date())
@@ -112,7 +112,7 @@ class Auxillary: NSObject {
     
     class func currentDate() -> Date {
        let styler = DateFormatter()
-        styler.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
+        styler.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale?
         styler.timeZone = TimeZone.autoupdatingCurrent
         styler.dateFormat = "yyyy-MM-dd HH:mm:ss +0000"
         let currentDateString = styler.string(from: Date())

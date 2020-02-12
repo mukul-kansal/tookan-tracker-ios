@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import CoreLocation
+
 
 class Constants: NSObject {
 }
-
-let SERVER_PORT = 1  // 1 dev, 2 test, 3 Live
+let IP_ADDRESS = "test.tookanapp.com"
+let PORT = 8015
+let SERVER_PORT = 2  // 1 dev, 2 test, 3 Live
 let SERVER_KEY = 1 // 1 Test, 2 Live
-let APIKeyForGoogleMaps = "AIzaSyDqZn_rsqd_ZMQUITSKB5FGerbn6DwtdLg"//"AIzaSyDX32ar9JhpTYR1W3vGAAjzQTGeOx7MWm4"//"AIzaSyBFXsZ_biHbFbNkY05VRZ59YnhS6FWSYyg"
+let APIKeyForGoogleMaps = TookanTracker.shared.googleMapKey
 var globalAPIKey = ""
 var globalUserId = ""
 let frameworkBundle = Bundle(identifier: "com.click-labs.TookanTracker")
@@ -24,11 +27,41 @@ let close  = UIImage(named: "closeButton", in: frameworkBundle, compatibleWith: 
 
 struct SERVER {
     static let dev = "https://test-tracking.tookan.io/"//"https://dev.tracking.tookan.io:3008/"//"http://dev.tracking.tookan.io:3005/"
-    static let test = "https://test-tracking.tookan.io/"//"https://api2.tookanapp.com:5555/"
+    static let test = "https://test-api-7008.tookanapp.com:444/"//"https://api2.tookanapp.com:5555/"
     static let live = "https://test-tracking.tookan.io/" //"http://52.23.253.217:8888/" //
 }
 
-//let APIKeyForGoogleMaps = "AIzaSyDqZn_rsqd_ZMQUITSKB5FGerbn6DwtdLg"//"AIzaSyDX32ar9JhpTYR1W3vGAAjzQTGeOx7MWm4"//"AIzaSyBFXsZ_biHbFbNkY05VRZ59YnhS6FWSYyg"
+
+struct GoogleMapsUtils{
+    
+    static let iOSGoogleMapKey = APIKeyForGoogleMaps
+    
+    static let GoogleApiUrl = "https://maps.googleapis.com"
+    
+    static let keyForWhiteLabel = "enter_your_key" 
+    
+    static func getDirectionUrl(_ from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -> String {
+        
+        let URLPortionToSign = "https://maps.googleapis.com/maps/api/directions/json?origin=\(from.latitude),\(from.longitude)&destination=\(to.latitude),\(to.longitude)&sensor=false&mode=driving&key=\(iOSGoogleMapKey)"
+        return URLPortionToSign
+//        let map = Singleton.sharedInstance.maps
+//        if map.planType == MAP_ACCOUNT_TYPE.premium {
+//            let urlSigner = GMUrlSigner()
+//            let URLPortionToSign = "/maps/api/directions/json?origin=\(from.latitude),\(from.longitude)&destination=\(to.latitude),\(to.longitude)&sensor=false&mode=driving&client=\(map.clientId)"
+//            print(map.signature)
+//            if let signature = urlSigner.signUrl(URLPortionToSign, withThisKey: map.signature) {
+//                let fullSignedURL = GoogleApiUrl + "\(URLPortionToSign)&signature=\(signature)"
+//                return fullSignedURL
+//            } else {
+//                return "http://maps.googleapis.com/maps/api/directions/json?origin=\(from.latitude),\(from.longitude)&destination=\(to.latitude),\(to.longitude)&sensor=false&mode=driving"
+//            }
+//        } else {
+//            return "https://maps.googleapis.com/maps/api/directions/json?origin=\(from.latitude),\(from.longitude)&destination=\(to.latitude),\(to.longitude)&sensor=false&mode=driving"
+//        }
+    }
+    
+    
+}
 
 struct USER_JOB_STATUS {
     static let free = 0
@@ -49,6 +82,7 @@ struct USER_DEFAULT {
     static let sessionURL = "sessionUrl"
     static let apiKey = "apiKey"
     static let userId = "userId"
+    static let lastAccurateUserLocation = "lastUserLocation"
 }
 
 struct OBSERVER {
@@ -110,11 +144,5 @@ struct STORYBOARD_NAME {
 
 struct STORYBOARD_ID {
     static let home = "HomeController"
-    //    static let listVC = "ListTableViewController"
-    //    static let addLocation = "addLocation"
-    //    static let addCardWeb = "addCardWeb"
-    //    static let payment = "payment"
-    //    static let orderDetail = "OrderDetail"
-    //    static let orderHistoryVC = "OrderHistoryVC"
     
 }

@@ -71,6 +71,16 @@
 		26F5BDC21FC82CC8000D2715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26F5BDC11FC82CC2000D2715 /* Assets.xcassets */; };
 		26F5BDC41FC82CDC000D2715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F5BDBF1FC82CC2000D2715 /* Main.storyboard */; };
 		26F5BDC91FC82F14000D2715 /* TookanTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5BDC81FC82F14000D2715 /* TookanTracker.swift */; };
+		5E41ECD023D178C5007EA990 /* JobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E41ECCF23D178C5007EA990 /* JobModel.swift */; };
+		5E41ECD423D17997007EA990 /* JobData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E41ECD323D17997007EA990 /* JobData.swift */; };
+		5E7F3CF523D090470062FCB9 /* AgentDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F3CF423D090470062FCB9 /* AgentDetailModel.swift */; };
+		5EAF3CB723D7478700AE9AFB /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF3CB623D7478700AE9AFB /* Jobs.swift */; };
+		5EF84B7423E81ED200935BFB /* LocationShareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF84B7323E81ED200935BFB /* LocationShareModel.swift */; };
+		5EF84B8023E837A400935BFB /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 5EF84B7B23E837A400935BFB /* yudpsocket.c */; };
+		5EF84B8123E837A400935BFB /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF84B7C23E837A400935BFB /* yudpsocket.swift */; };
+		5EF84B8223E837A400935BFB /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 5EF84B7D23E837A400935BFB /* ytcpsocket.c */; };
+		5EF84B8323E837A400935BFB /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF84B7E23E837A400935BFB /* ysocket.swift */; };
+		5EF84B8423E837A400935BFB /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF84B7F23E837A400935BFB /* ytcpsocket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +138,17 @@
 		26F5BDC81FC82F14000D2715 /* TookanTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TookanTracker.swift; sourceTree = "<group>"; };
 		26F5BDED1FC834BC000D2715 /* CocoaAsyncSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaAsyncSocket.h; sourceTree = "<group>"; };
 		26F5BDF21FC836B4000D2715 /* SwiftyTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyTimer.h; sourceTree = "<group>"; };
+		5E41ECCF23D178C5007EA990 /* JobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobModel.swift; sourceTree = "<group>"; };
+		5E41ECD323D17997007EA990 /* JobData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobData.swift; sourceTree = "<group>"; };
+		5E7F3CF423D090470062FCB9 /* AgentDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentDetailModel.swift; sourceTree = "<group>"; };
+		5EAF3CB623D7478700AE9AFB /* Jobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jobs.swift; sourceTree = "<group>"; };
+		5EF84B7323E81ED200935BFB /* LocationShareModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationShareModel.swift; sourceTree = "<group>"; };
+		5EF84B7723E8356100935BFB /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = GoogleMaps.framework/Resources/GoogleMaps.bundle/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		5EF84B7B23E837A400935BFB /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
+		5EF84B7C23E837A400935BFB /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yudpsocket.swift; sourceTree = "<group>"; };
+		5EF84B7D23E837A400935BFB /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
+		5EF84B7E23E837A400935BFB /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ysocket.swift; sourceTree = "<group>"; };
+		5EF84B7F23E837A400935BFB /* ytcpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytcpsocket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +183,7 @@
 		260C754F1FCFF559003E957E /* SDK */ = {
 			isa = PBXGroup;
 			children = (
+				5EF84B7723E8356100935BFB /* CocoaAsyncSocket.framework */,
 				260C755C1FCFF58E003E957E /* GoogleMaps.bundle */,
 				260C755A1FCFF57B003E957E /* GooglePlaces.bundle */,
 				260C75511FCFF559003E957E /* GoogleMaps.framework */,
@@ -192,6 +214,7 @@
 		26F5BD4D1FC817BC000D2715 /* TookanTracker */ = {
 			isa = PBXGroup;
 			children = (
+				5EF84B7A23E837A400935BFB /* ysocket */,
 				26F5BD5D1FC81F22000D2715 /* MQTT */,
 				26F5BD701FC82192000D2715 /* SwiftyTimer */,
 				26F5BD671FC81F7E000D2715 /* GCD */,
@@ -285,6 +308,11 @@
 			isa = PBXGroup;
 			children = (
 				26F5BDB81FC82BEB000D2715 /* TrackerModel.swift */,
+				5E7F3CF423D090470062FCB9 /* AgentDetailModel.swift */,
+				5E41ECCF23D178C5007EA990 /* JobModel.swift */,
+				5E41ECD323D17997007EA990 /* JobData.swift */,
+				5EAF3CB623D7478700AE9AFB /* Jobs.swift */,
+				5EF84B7323E81ED200935BFB /* LocationShareModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -297,6 +325,18 @@
 				26F5BDC71FC82F14000D2715 /* TookanTrackerUniversal-Bridging-Header.h */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5EF84B7A23E837A400935BFB /* ysocket */ = {
+			isa = PBXGroup;
+			children = (
+				5EF84B7B23E837A400935BFB /* yudpsocket.c */,
+				5EF84B7C23E837A400935BFB /* yudpsocket.swift */,
+				5EF84B7D23E837A400935BFB /* ytcpsocket.c */,
+				5EF84B7E23E837A400935BFB /* ysocket.swift */,
+				5EF84B7F23E837A400935BFB /* ytcpsocket.swift */,
+			);
+			path = ysocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,21 +467,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				26F5BD911FC8247E000D2715 /* ServerCallAPI.swift in Sources */,
+				5E41ECD023D178C5007EA990 /* JobModel.swift in Sources */,
 				263213221FC8648400E0C2AA /* GCDAsyncSocket.m in Sources */,
 				26F5BD8C1FC82471000D2715 /* ExtensionClass.swift in Sources */,
 				2632132A1FC8649C00E0C2AA /* CocoaMQTTMessage.swift in Sources */,
+				5EAF3CB723D7478700AE9AFB /* Jobs.swift in Sources */,
 				263213241FC8648B00E0C2AA /* SwiftyTimer.swift in Sources */,
+				5E7F3CF523D090470062FCB9 /* AgentDetailModel.swift in Sources */,
+				5EF84B8023E837A400935BFB /* yudpsocket.c in Sources */,
 				26F5BD8D1FC82474000D2715 /* IJReachability.swift in Sources */,
 				263213291FC8649900E0C2AA /* CocoaMQTTFrame.swift in Sources */,
 				26F5BDC91FC82F14000D2715 /* TookanTracker.swift in Sources */,
+				5EF84B8423E837A400935BFB /* ytcpsocket.swift in Sources */,
 				263213281FC8649700E0C2AA /* CocoaMQTT.swift in Sources */,
 				263213201FC8647F00E0C2AA /* GCDAsyncUdpSocket.m in Sources */,
+				5EF84B8223E837A400935BFB /* ytcpsocket.c in Sources */,
 				26F5BDBD1FC82CA8000D2715 /* HomeController.swift in Sources */,
 				26F5BD8A1FC8246A000D2715 /* BackgroundTaskManager.swift in Sources */,
+				5EF84B8123E837A400935BFB /* yudpsocket.swift in Sources */,
 				26F5BD891FC82467000D2715 /* Auxillary.swift in Sources */,
 				26F5BDB91FC82BEF000D2715 /* TrackerModel.swift in Sources */,
 				26F5BD8E1FC82477000D2715 /* LocationTrackerFile.swift in Sources */,
+				5EF84B8323E837A400935BFB /* ysocket.swift in Sources */,
 				26F5BD901FC8247C000D2715 /* NetworkingHelper.swift in Sources */,
+				5E41ECD423D17997007EA990 /* JobData.swift in Sources */,
+				5EF84B7423E81ED200935BFB /* LocationShareModel.swift in Sources */,
 				2632132B1FC864AB00E0C2AA /* MqttClass.swift in Sources */,
 				26F5BD8B1FC8246E000D2715 /* Constants.swift in Sources */,
 			);
@@ -597,7 +647,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -630,7 +680,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

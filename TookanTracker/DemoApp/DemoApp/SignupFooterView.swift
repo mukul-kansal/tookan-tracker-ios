@@ -33,11 +33,11 @@ class SignupFooterView: UIView {
         self.signupButton.layer.cornerRadius = 3.0
         
         /*================ Signup Button ======================*/
-        let attributedTitle = NSMutableAttributedString(string: "Have an account? ", attributes: [NSAttributedStringKey.foregroundColor:UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1.0), NSAttributedStringKey.font:self.signinButton.titleLabel?.font.withSize(14) ?? 14])
-        attributedTitle.addAttribute(NSAttributedStringKey.kern, value: CGFloat(0.5), range: NSRange(location: 0, length: attributedTitle.length))
+        let attributedTitle = NSMutableAttributedString(string: "Have an account? ", attributes: [NSAttributedString.Key.foregroundColor:UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1.0), NSAttributedString.Key.font:self.signinButton.titleLabel?.font.withSize(14) ?? 14])
+        attributedTitle.addAttribute(NSAttributedString.Key.kern, value: CGFloat(0.5), range: NSRange(location: 0, length: attributedTitle.length))
         
-        let signinTitle = NSMutableAttributedString(string: "Sign in", attributes: [NSAttributedStringKey.foregroundColor:UIColor(red: 70/255, green: 149/255, blue: 246/255, alpha: 1.0), NSAttributedStringKey.font:self.signinButton.titleLabel?.font.withSize(14) ?? 14])
-        signinTitle.addAttribute(NSAttributedStringKey.kern, value: CGFloat(0.5), range: NSRange(location: 0, length: signinTitle.length))
+        let signinTitle = NSMutableAttributedString(string: "Sign in", attributes: [NSAttributedString.Key.foregroundColor:UIColor(red: 70/255, green: 149/255, blue: 246/255, alpha: 1.0), NSAttributedString.Key.font:self.signinButton.titleLabel?.font.withSize(14) ?? 14])
+        signinTitle.addAttribute(NSAttributedString.Key.kern, value: CGFloat(0.5), range: NSRange(location: 0, length: signinTitle.length))
         
         attributedTitle.append(signinTitle)
         self.signinButton.setAttributedTitle(attributedTitle, for: .normal)

@@ -45,14 +45,14 @@ class OTPController: UIViewController, TookanTrackerDelegate {
 //        keyboardToolbar = KeyboardToolbar()
 //        keyboardToolbar.keyboardDelegate = self
 //        keyboardToolbar.addButtons()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         UIApplication.shared.statusBarStyle = .lightContent
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc func backgroundTouch() {
@@ -234,25 +234,25 @@ class OTPController: UIViewController, TookanTrackerDelegate {
     }
     
     @IBAction func verifyAction(_ sender: Any) {
-        guard self.firstField.text?.characters.count == 1 else {
+        guard self.firstField.text?.count == 1 else {
             print("PLEASE_ENTER_VALID1")
 //            Singleton.sharedInstance.showErrorMessage(error: "\(ERROR_MESSAGE.PLEASE_ENTER_VALID) OTP", isError: .error)
             return
         }
         
-        guard self.secondField.text?.characters.count == 1 else {
+        guard self.secondField.text?.count == 1 else {
             print("PLEASE_ENTER_VALID2")
 //            Singleton.sharedInstance.showErrorMessage(error: "\(ERROR_MESSAGE.PLEASE_ENTER_VALID) OTP", isError: .error)
             return
         }
         
-        guard self.thirdField.text?.characters.count == 1 else {
+        guard self.thirdField.text?.count == 1 else {
             print("PLEASE_ENTER_VALID3")
 //            Singleton.sharedInstance.showErrorMessage(error: "\(ERROR_MESSAGE.PLEASE_ENTER_VALID) OTP", isError: .error)
             return
         }
         
-        guard self.fourthField.text?.characters.count == 1 else {
+        guard self.fourthField.text?.count == 1 else {
             print("PLEASE_ENTER_VALID4")
 //            Singleton.sharedInstance.showErrorMessage(error: "\(ERROR_MESSAGE.PLEASE_ENTER_VALID) OTP", isError: .error)
             return
@@ -262,13 +262,13 @@ class OTPController: UIViewController, TookanTrackerDelegate {
     }
     @IBAction func logoutAction(_ sender: Any) {
         /*------------- Firebase ---------------*/
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
-        let confirmAction = UIAlertAction(title: "TEXT.LOGOUT", style: UIAlertActionStyle.destructive) { (confirmed) -> Void in
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+        let confirmAction = UIAlertAction(title: "TEXT.LOGOUT", style: UIAlertAction.Style.destructive) { (confirmed) -> Void in
 //            self.sendRequestForLogout()
             self.navigationController?.popViewController(animated: true)
         }
         
-        let cancelAction = UIAlertAction(title: "TEXT.CANCEL", style: UIAlertActionStyle.cancel, handler: {(UIAlertAction) in
+        let cancelAction = UIAlertAction(title: "TEXT.CANCEL", style: UIAlertAction.Style.cancel, handler: {(UIAlertAction) in
         })
         alertController.addAction(confirmAction)
         alertController.addAction(cancelAction)
@@ -341,17 +341,17 @@ extension OTPController:UITextFieldDelegate {
         updatedTextField.resignFirstResponder()
         switch(updatedTextField) {
         case self.firstField:
-            if self.secondField.text?.characters.count == 0 {
+            if self.secondField.text?.count == 0 {
                 self.secondField.becomeFirstResponder()
             }
             break
         case self.secondField:
-            if self.thirdField.text?.characters.count == 0 {
+            if self.thirdField.text?.count == 0 {
                 self.thirdField.becomeFirstResponder()
             }
             break
         case self.thirdField:
-            if self.fourthField.text?.characters.count == 0 {
+            if self.fourthField.text?.count == 0 {
                 self.fourthField.becomeFirstResponder()
             }
             break

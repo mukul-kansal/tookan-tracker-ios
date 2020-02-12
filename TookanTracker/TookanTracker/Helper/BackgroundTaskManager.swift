@@ -18,7 +18,7 @@ class BackgroundTaskManager: LocationTrackerFile {
     override init() {
         super.init()
         bgTaskIdList = NSMutableArray()
-        masterTaskId = UIBackgroundTaskInvalid
+        masterTaskId = UIBackgroundTaskIdentifier.invalid
     }
 
     class func sharedBackgroundTaskManager() -> BackgroundTaskManager {
@@ -27,13 +27,13 @@ class BackgroundTaskManager: LocationTrackerFile {
     
     func beginNewBackgroundTask() -> UIBackgroundTaskIdentifier {
         let application = UIApplication.shared
-        var bgTaskId = UIBackgroundTaskInvalid
+        var bgTaskId = UIBackgroundTaskIdentifier.invalid
         
         if application.responds(to: #selector(UIApplication.beginBackgroundTask(expirationHandler:))){
             bgTaskId = application.beginBackgroundTask(expirationHandler: {
                 
             })
-            if self.masterTaskId == UIBackgroundTaskInvalid {
+            if self.masterTaskId == UIBackgroundTaskIdentifier.invalid {
                 self.masterTaskId = bgTaskId
             }
             else {
@@ -59,7 +59,7 @@ class BackgroundTaskManager: LocationTrackerFile {
             let count = self.bgTaskIdList.count
             for _ in ((all ? 0 : 1)..<count){
 //            for var i = (all ? 0 : 1); i < count; i += 1 {
-                let bgTaskId: UIBackgroundTaskIdentifier = (self.bgTaskIdList.object(at: 0) as AnyObject).intValue
+                let bgTaskId: UIBackgroundTaskIdentifier = self.bgTaskIdList.object(at: 0) as! UIBackgroundTaskIdentifier
                 application.endBackgroundTask(bgTaskId)
                 self.bgTaskIdList.removeObject(at: 0)
             }
@@ -67,7 +67,7 @@ class BackgroundTaskManager: LocationTrackerFile {
             }
             if all {
                 application.endBackgroundTask(self.masterTaskId)
-                self.masterTaskId = UIBackgroundTaskInvalid
+                self.masterTaskId = UIBackgroundTaskIdentifier.invalid
             }
             else {
             }

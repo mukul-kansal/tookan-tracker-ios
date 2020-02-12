@@ -57,7 +57,7 @@ class SignupViewController: UIViewController {
         self.signupTable.delegate = self
         self.signupTable.dataSource = self
         self.signupTable.register(UINib(nibName: "SignupCell", bundle: nil), forCellReuseIdentifier: "SignupCell")
-        self.signupTable.rowHeight = UITableViewAutomaticDimension
+        self.signupTable.rowHeight = UITableView.automaticDimension
         self.setFooterView()
     }
 
@@ -82,13 +82,13 @@ class SignupViewController: UIViewController {
     
     func addingObserver() {
         /*--------- Observers -------------*/
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     func removingObserver() {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -222,7 +222,7 @@ class SignupViewController: UIViewController {
     }
     
     func checkValidation() -> Bool {
-        guard self.signupVCModel.username.characters.count > 0 else {
+        guard self.signupVCModel.username.count > 0 else {
             UIAlertView(title: "", message: "Please enter name", delegate: nil, cancelButtonTitle: "OK").show()
             return false
         }
@@ -232,13 +232,13 @@ class SignupViewController: UIViewController {
             return false
         }
         
-        let lengthOfNumber = self.signupVCModel.userPhone.characters.count
+        let lengthOfNumber = self.signupVCModel.userPhone.count
         guard lengthOfNumber >= 8 && lengthOfNumber <= 16  else {
             UIAlertView(title: "", message: "Please enter valid Phone Number", delegate: nil, cancelButtonTitle: "OK").show()
             return false
         }
         
-        guard self.signupVCModel.password.characters.count >= 6 else {
+        guard self.signupVCModel.password.count >= 6 else {
             UIAlertView(title: "", message: "Password must contain atleast 6 characters", delegate: nil, cancelButtonTitle: "OK").show()
             return false
         }
@@ -257,7 +257,7 @@ class SignupViewController: UIViewController {
     }
     
     @objc func keyboardWillShow(_ notification : Foundation.Notification){
-        let value: NSValue = (notification as NSNotification).userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
+        let value: NSValue = (notification as NSNotification).userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
 //        Singleton.sharedInstance.keyboardSize = value.cgRectValue.size
         let keyboardSize = value.cgRectValue.size
         self.bottomConstraint.constant = keyboardSize.height
@@ -311,11 +311,11 @@ extension SignupViewController:UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
