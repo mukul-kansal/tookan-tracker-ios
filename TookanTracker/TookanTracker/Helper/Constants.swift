@@ -27,7 +27,7 @@ let close  = UIImage(named: "closeButton", in: frameworkBundle, compatibleWith: 
 
 struct SERVER {
     static let dev = "https://test-tracking.tookan.io/"//"https://dev.tracking.tookan.io:3008/"//"http://dev.tracking.tookan.io:3005/"
-    static let test = "https://test-api-7008.tookanapp.com:444/"//"https://api2.tookanapp.com:5555/"
+    static let test = "https://node1-api.tookanapp.com:444/"//"https://api2.tookanapp.com:5555/"
     static let live = "https://test-tracking.tookan.io/" //"http://52.23.253.217:8888/" //
 }
 
@@ -87,6 +87,7 @@ struct USER_DEFAULT {
 
 struct OBSERVER {
     static let updatePath = "updatePath"
+    static let updateJobData = "updateJobData"
     static let requestIdURL = "requestIDUrl"
     static let sessionIdURL = "sessionIDUrl"
     static let sessionIdPush = "sessionIdPush"

@@ -136,14 +136,28 @@ extension MqttClass: CocoaMQTTDelegate {
         var locationDictionary1 = [[String:Any]]()
         
         locationDictionary1 = message.string!.parseJSONString as! [[String : Any]]
-       // let locationDictionary = message.string?.jsonObjectArray[0] as! [String:Any]
         let locationDictionary = locationDictionary1[0] as! [String: Any]
         print(locationDictionary)
-
+        var dictProfileInfo: [String: Any]?
+        if let jobArray = (locationDictionary["resp_obj"] as? [[String: Any]]){
+            print("jobArray -- >>>")
+            var jobData = Jobs()
+            for i in (0..<jobArray.count){
+                jobData = Jobs(json: jobArray[i] as! [String:Any])
+                 dictProfileInfo = ["data": jobData] as? [String: Any]
+//                if let image = jobData["fleet_image"] as? String {
+//                    jobData.fleetImage = image
+//                }
+                
+            }
+            NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: OBSERVER.updateJobData), object: nil,userInfo: dictProfileInfo)
+        }
         if let locationArray = (locationDictionary["location"] as? [[String: Any]]){
-           // let locationArray = locationString.jsonObjectArray
-            for i in (0..<locationArray.count) {
+         for i in (0..<locationArray.count) {
+                
+                
                 let locationData = locationArray[i] as! [String:Any]
+
                 /*------- For Updating Path ------------*/
                 var locationDictionary = [String:Any]()
                 var updatingLocationArray = [Any]()

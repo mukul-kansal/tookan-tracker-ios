@@ -13,6 +13,11 @@ import GooglePlaces
 
 class HomeController: UIViewController, LocationTrackerDelegate {
     
+    @IBOutlet var callButton: UIButton!
+    @IBOutlet var licenceNumber: UILabel!
+    @IBOutlet var driverName: UILabel!
+    @IBOutlet var detailView: UIView!
+    @IBOutlet var profileImage: UIImageView!
     @IBOutlet var viewETASelection: UIView!
     @IBOutlet var btnCloseETA: UIButton!
     @IBOutlet var btnForMap: UIButton!
@@ -45,7 +50,8 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     var currentMarker:GMSMarker? = GMSMarker()
     var startingPointMarker:GMSMarker? = GMSMarker()
     var endPointMarker:GMSMarker? = GMSMarker()
-
+    var contactNumber: String = ""
+    
     override var preferredStatusBarStyle:UIStatusBarStyle {
         if #available(iOS 13.0, *) {
             return .darkContent
@@ -82,7 +88,6 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             NSLog("Unable to find style.json")
         }
         self.googleMapView.delegate = self
-        self.logout.setTitle("BACK", for: .normal)
         
         
         
@@ -105,20 +110,55 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         }else{
             print("aaaa")
         }
+        
+         /*--------------- Set Driver Detail ----------------*/
+
+        let imageString = self.jobData?.fleetThumbImage
+        if let image = getImage(from: imageString ?? ""){
+        self.profileImage.image =  image
+        }
+        self.profileImage.layer.cornerRadius = 20
+        self.callButton.layer.cornerRadius = 22
+        self.driverName.text = self.jobData?.fleetName
+        self.licenceNumber.text = self.jobData?.fleetId
+        self.contactNumber = "\(self.jobData?.fleetPhone ?? "")"
+        /*-------------------------------------------------*/
     }
     
+    func getImage(from string: String) -> UIImage? {
+        //2. Get valid URL
+        guard let url = URL(string: string)
+            else {
+                print("Unable to create URL")
+                return nil
+        }
+
+        var image: UIImage? = nil
+        do {
+            //3. Get valid data
+            let data = try Data(contentsOf: url, options: [])
+
+            //4. Make image
+            image = UIImage(data: data)
+        }
+        catch {
+            print(error.localizedDescription)
+        }
+
+        return image
+    }
     func  getLatitudeLongitudeOf() -> CLLocationCoordinate2D?{
          var coordinate: CLLocationCoordinate2D!
-        let latitudeString = jobModel?.jobLat as? String ?? ""
-        let longitudeString = jobModel?.joblng as? String ?? ""
-        coordinate = CLLocationCoordinate2D(latitude: Double(latitudeString) as! CLLocationDegrees, longitude: Double(longitudeString) as! CLLocationDegrees)
+        let latitudeString = jobData?.fleetLatitude ?? ""//jobModel?.jobLat as? String ?? ""
+        let longitudeString = jobData?.fleetlongitude ?? ""//jobModel?.joblng as? String ?? ""
+        coordinate = CLLocationCoordinate2D(latitude: Double(latitudeString)!, longitude: Double(longitudeString)!)
          return coordinate
      }
     func  getLatitudeLongitudeOfDest() -> CLLocationCoordinate2D?{
          var coordinate: CLLocationCoordinate2D!
-        let latitudeString = jobData?.jobLat as? String ?? ""
-        let longitudeString = jobData?.jobLng as? String ?? ""
-        coordinate = CLLocationCoordinate2D(latitude: Double(latitudeString) as! CLLocationDegrees, longitude: Double(longitudeString) as! CLLocationDegrees)
+        let latitudeString = jobData?.jobLat ?? ""
+        let longitudeString = jobData?.jobLng ?? ""
+        coordinate = CLLocationCoordinate2D(latitude: Double(latitudeString)!, longitude: Double(longitudeString)!)
          return coordinate
      }
     func drawPath(_ encodedPathString: String, originCoordinate:CLLocationCoordinate2D, destinationCoordinate:CLLocationCoordinate2D, minOrigin:CGFloat, durationDict:[String : AnyObject]?) -> Void{
@@ -206,6 +246,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(self.sessionIDRecivedFromPush), name: NSNotification.Name(rawValue: OBSERVER.sessionIdPush), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.startTrackingFromURL), name: NSNotification.Name(rawValue: OBSERVER.sessionIdURL), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.stopSharingOrTracking), name: NSNotification.Name(rawValue: OBSERVER.stopTracking), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateJobData), name: NSNotification.Name(rawValue: OBSERVER.updateJobData), object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -219,6 +260,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: OBSERVER.sessionIdURL), object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: OBSERVER.stopTracking), object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: OBSERVER.sessionIdPush), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: OBSERVER.updateJobData), object: nil)
     }
     
     @IBAction func logoutAction(_ sender: Any) {
@@ -656,7 +698,23 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             getLocationTimer = nil
         }
     }
-    
+    //MARK: Driver Detail
+    @objc func updateJobData(_ notification: NSNotification){
+        
+        print(notification.userInfo ?? "")
+        if let dict = notification.userInfo as NSDictionary? {
+            if let id = dict["data"] as? Jobs{
+                let imageString = id.fleetImage
+                if let image = getImage(from: imageString ){
+                    self.profileImage.image =  image
+                }
+                self.licenceNumber.text = id.fleetId
+                self.driverName.text = id.fleetName
+                self.contactNumber = "\(id.fleetPhone)"
+            }
+        }
+
+    }
     //MARK: MAP
     @objc func updatePath() {
         
@@ -793,7 +851,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     
     //MARK: LocationTrackerDelegate Method
     func currentLocationOfUser(_ location: CLLocation) {
-        //  self.mapCurrentZoomLevel = self.googleMapView.camera.zoom
+        
         NSLog("Current Location = %@", location)
         CATransaction.begin()
         CATransaction.setValue(NSNumber(value: 1), forKey: kCATransactionAnimationDuration)
@@ -842,29 +900,9 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             DispatchQueue.main.async {
 
                 UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1.0, options: UIView.AnimationOptions(), animations: { () -> Void in
-//                    self.bottomView.stopButton.isHidden = true
-//                    if(self.bottomView.sliderRequestShareButton != nil) {
-//                        self.bottomView.sliderRequestShareButton.isHidden = true
-//                    }
-//                    self.bottomView.pleaseWaitLabel.isHidden = false
-//                    self.bottomView.acitivityIndicator.startAnimating()
-//                    self.bottomView.transform = CGAffineTransform(translationX: 0, y: -self.bottomView.frame.height)
+
                 }, completion: { finished in
-                    //                        NetworkingHelper.sharedInstance.shareStartStopLocationSession("", location: [""], phone: "", requestType: 0, sessionId: UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) as! String, requestID: "") { (succeeded, response) in
-                    //                            DispatchQueue.main.async {
-                    //                                if succeeded == true {
-                    //                                    self.stopSession()
-                    //                                } else {
-                    //                                    UIView.animate(withDuration: 0.5, delay:0.0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
-                    //                                        self.bottomView.transform = CGAffineTransform.identity
-                    //                                        }, completion: { finished in
-                    //                                            self.viewShowStatus = SHOW_HIDE.showStopLocationButton
-                    //                                            self.animationForBottomView()
-                    //                                    })
-                    //
-                    //                                }
-                    //                            }
-                    //                        }
+
                 })
             }
         })
@@ -872,17 +910,14 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     
     func stopSession() {
         UIView.animate(withDuration: 0.5, delay:0.0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
-//            self.bottomView.transform = CGAffineTransform.identity
+
         }, completion: { finished in
             self.googleMapView.clear()
             self.userStatus = USER_JOB_STATUS.free
-            //            self.menuButton.isHidden = false
-            //            self.myLocationButtontrailingConstraint.constant = 56
-            //            self.menuButton.setImage(UIImage(named:"menu"), for: UIControlState.normal)
+
             self.loc.stopLocationService()
             self.model.resetAllData()
-//            self.viewShowStatus = SHOW_HIDE.showSliderButton
-            //            self.animationForBottomView()
+
         })
     }
     
@@ -917,11 +952,10 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     
     func showLoadingStatus() {
         UIView.animate(withDuration: 0.2, animations: {
-//            self.bottomView.transform = CGAffineTransform.identity
+
         }, completion: { finished in
             DispatchQueue.main.async {
-//                self.viewShowStatus = SHOW_HIDE.showLoadingStatus
-                //                    self.animationForBottomView()
+
             }
         })
     }
@@ -940,21 +974,25 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     
     //MARK: SessionViewDelegate Methods
     func dismissSessionView() {
-//        if self.sessionDetailView != nil {
-//            self.sessionDetailView.removeFromSuperview()
-//            self.sessionDetailView = nil
-//            //            self.animationForBottomView()
-//        }
+
     }
     
     func delegateStartTracking(sessionId: String) {
         self.startTracking(sessionId: sessionId)
-//        if self.sessionDetailView != nil {
-//            self.sessionDetailView.removeFromSuperview()
-//            self.sessionDetailView = nil
-//        }
+
     }
     
+    @IBAction func callBtn(_ sender: Any) {
+        self.makeCall(phone: self.contactNumber)
+    }
+    
+    func makeCall(phone: String) {
+        let formatedNumber = phone.components(separatedBy: NSCharacterSet.decimalDigits.inverted).joined(separator: "")
+        print("calling \(formatedNumber)")
+        let phoneUrl = "tel://\(formatedNumber)"
+        let url:URL = URL(string: phoneUrl)!
+        UIApplication.shared.openURL(url)
+    }
 }
 extension HomeController: GMSAutocompleteViewControllerDelegate, GMSMapViewDelegate {
     // Handle the user's selection.

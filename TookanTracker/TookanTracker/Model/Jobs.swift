@@ -21,6 +21,15 @@ class Jobs: NSObject{
     var jobPickupLng = ""
     var jobStatus = ""
     var jobType = ""
+    var fleetId = ""
+    var fleetImage = ""
+    var fleetLatitude = ""
+    var fleetlongitude = ""
+    var fleetName = ""
+    var fleetPhone = ""
+    var fleetStatus = ""
+    var fleetThumbImage = ""
+    
     override init() {
         
     }
@@ -76,18 +85,51 @@ class Jobs: NSObject{
         }else if let value = json["job_type"] as? NSNumber{
             self.jobType = "\(value)"
         }
-        
- 
-        //                    "job_address" = "Unnamed Road, Chaunki, Panchkula, Haryana, India, 134107";
-        //                    "job_hash" = 8dd7ee77caeb20519798d7522a106bd2;
-        //                    "job_id" = 436463;
-        //                    "job_latitude" = "30.6951933";
-        //                    "job_longitude" = "76.8793952";
-        //                    "job_pickup_address" = "Unnamed Road, Chaunki, Panchkula, Haryana, India, 134107";
-        //                    "job_pickup_latitude" = "30.6951933";
-        //                    "job_pickup_longitude" = "76.8793952";
-        //                    "job_status" = 4;
-        //                    "job_type" = 3;
+        if let value = json["fleet_id"] as? String{
+            self.fleetId = value
+        }else if let value = json["fleet_id"] as? NSNumber{
+            self.fleetId = "\(value)"
+        }
+        if let value = json["fleet_image"] as? String{
+            self.fleetImage = value
+        }else if let value = json["fleet_image"] as? NSNumber{
+            self.fleetImage = "\(value)"
+        }
+        if let value = json["fleet_latitude"] as? String{
+            self.fleetLatitude = value
+        }else if let value = json["fleet_latitude"] as? NSNumber{
+            self.fleetLatitude = "\(value)"
+        }
+        if let value = json["fleet_latitude"] as? String{
+            self.fleetLatitude = value
+        }else if let value = json["fleet_latitude"] as? NSNumber{
+            self.fleetLatitude = "\(value)"
+        }
+        if let value = json["fleet_longitude"] as? String{
+            self.fleetlongitude = value
+        }else if let value = json["fleet_longitude"] as? NSNumber{
+            self.fleetlongitude = "\(value)"
+        }
+        if let value = json["fleet_name"] as? String{
+            self.fleetName = value
+        }else if let value = json["fleet_name"] as? NSNumber{
+            self.fleetName = "\(value)"
+        }
+        if let value = json["fleet_phone"] as? String{
+            self.fleetPhone = value
+        }else if let value = json["fleet_phone"] as? NSNumber{
+            self.fleetPhone = "\(value)"
+        }
+        if let value = json["fleet_status"] as? String{
+            self.fleetStatus = value
+        }else if let value = json["fleet_status"] as? NSNumber{
+            self.fleetStatus = "\(value)"
+        }
+        if let value = json["fleet_thumb_image"] as? String{
+             self.fleetThumbImage = value
+         }else if let value = json["fleet_thumb_image"] as? NSNumber{
+             self.fleetThumbImage = "\(value)"
+         }
 
         
         
