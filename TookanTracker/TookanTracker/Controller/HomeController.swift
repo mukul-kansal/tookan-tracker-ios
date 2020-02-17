@@ -151,14 +151,14 @@ class HomeController: UIViewController, LocationTrackerDelegate {
          var coordinate: CLLocationCoordinate2D!
         let latitudeString = jobData?.fleetLatitude ?? ""//jobModel?.jobLat as? String ?? ""
         let longitudeString = jobData?.fleetlongitude ?? ""//jobModel?.joblng as? String ?? ""
-        coordinate = CLLocationCoordinate2D(latitude: Double(latitudeString)!, longitude: Double(longitudeString)!)
+        coordinate = CLLocationCoordinate2D(latitude: Double(latitudeString) as! CLLocationDegrees, longitude: Double(longitudeString) as! CLLocationDegrees)
          return coordinate
      }
     func  getLatitudeLongitudeOfDest() -> CLLocationCoordinate2D?{
          var coordinate: CLLocationCoordinate2D!
-        let latitudeString = jobData?.jobLat ?? ""
-        let longitudeString = jobData?.jobLng ?? ""
-        coordinate = CLLocationCoordinate2D(latitude: Double(latitudeString)!, longitude: Double(longitudeString)!)
+        let latitudeString = jobData?.jobPickupLat ?? ""
+        let longitudeString = jobData?.jobPickupLng ?? ""
+        coordinate = CLLocationCoordinate2D(latitude: Double(latitudeString) as! CLLocationDegrees, longitude: Double(longitudeString) as! CLLocationDegrees)
          return coordinate
      }
     func drawPath(_ encodedPathString: String, originCoordinate:CLLocationCoordinate2D, destinationCoordinate:CLLocationCoordinate2D, minOrigin:CGFloat, durationDict:[String : AnyObject]?) -> Void{
@@ -175,9 +175,10 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             line.strokeColor = UIColor(red: 70/255, green: 149/255, blue: 246/255, alpha: 1.0)
             line.isTappable = true
             line.map = self.googleMapView
-            self.endPointMarker?.icon = UIImage(named: "car", in: frameworkBundle, compatibleWith: nil)
-            self.endPointMarker?.position = originCoordinate
-            self.endPointMarker?.map = self.googleMapView
+            self.startingPointMarker?.icon = UIImage(named: "car", in: frameworkBundle, compatibleWith: nil)
+            self.startingPointMarker?.position = originCoordinate
+            self.endPointMarker?.icon = UIImage(named: "marker", in: frameworkBundle, compatibleWith: nil)
+            self.startingPointMarker?.map = self.googleMapView
             self.setMarker(originCoordinate, destinationCoordinate: destinationCoordinate, minOrigin: minOrigin,durationDict:durationDict)
             // change the camera, set the zoom, whatever.  Just make sure to call the animate* method.
             self.googleMapView.animate(toViewingAngle: 45)
@@ -769,13 +770,13 @@ class HomeController: UIViewController, LocationTrackerDelegate {
                 polyline.geodesic = true;
             self.startingPointMarker?.icon = UIImage(named: "marker", in: frameworkBundle, compatibleWith: nil)
             self.endPointMarker?.icon = UIImage(named: "car", in: frameworkBundle, compatibleWith: nil)
-                
+                let destinationCoordinate = self.getLatitudeLongitudeOfDest()
+                self.startingPointMarker?.position = destinationCoordinate ?? CLLocationCoordinate2D()
                 CATransaction.begin()
                 CATransaction.setValue(NSNumber(value: 0.8), forKey: kCATransactionAnimationDuration)
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5, execute: {
                     
-                    let destinationCoordinate = self.getLatitudeLongitudeOfDest()
-                    self.startingPointMarker?.position = destinationCoordinate ?? CLLocationCoordinate2D()
+                    
                     NetworkingHelper.sharedInstance.getPath(coordinate: destinationCoordinate ?? CLLocationCoordinate2D(), destinationCoordinate: currentCoordinate , completionHander: { (points,durationDict) in
                         if points.count > 0 {
                             self.drawPathForMarker(points, originCoordinate: originCoordinate , destinationCoordinate:destinationCoordinate ?? CLLocationCoordinate2D(), minOrigin:0.5 + 20,durationDict: durationDict)

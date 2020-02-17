@@ -14,8 +14,8 @@ class Constants: NSObject {
 }
 let IP_ADDRESS = "test.tookanapp.com"
 let PORT = 8015
-let SERVER_PORT = 2  // 1 dev, 2 test, 3 Live
-let SERVER_KEY = 1 // 1 Test, 2 Live
+let SERVER_PORT = 3  // 1 dev, 2 test, 3 Live
+let SERVER_KEY = 2 // 1 Test, 2 Live
 let APIKeyForGoogleMaps = TookanTracker.shared.googleMapKey
 var globalAPIKey = ""
 var globalUserId = ""
@@ -28,7 +28,7 @@ let close  = UIImage(named: "closeButton", in: frameworkBundle, compatibleWith: 
 struct SERVER {
     static let dev = "https://test-tracking.tookan.io/"//"https://dev.tracking.tookan.io:3008/"//"http://dev.tracking.tookan.io:3005/"
     static let test = "https://node1-api.tookanapp.com:444/"//"https://api2.tookanapp.com:5555/"
-    static let live = "https://test-tracking.tookan.io/" //"http://52.23.253.217:8888/" //
+    static let live = "https://api.tookanapp.com/" //"http://52.23.253.217:8888/" //
 }
 
 

@@ -48,6 +48,8 @@ class ViewController: UIViewController, TookanTrackerDelegate {
         self.setSignInButton()
         self.setSignUpButton()
         self.navigationController?.isNavigationBarHidden = true
+        self.emailTextField.isHidden = true
+        self.signup.isHidden = true
         
     }
     
@@ -62,7 +64,7 @@ class ViewController: UIViewController, TookanTrackerDelegate {
     func setTextField() {
         self.emailTextField.placeholder = "Enter Agent Id"
         self.passwordTextField.placeholder = "Enter Job Id"
-        self.userIdTextField.text = "159217"
+        self.userIdTextField.placeholder = "Enter User Id"
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
     }
