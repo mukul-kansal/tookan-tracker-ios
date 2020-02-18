@@ -51,7 +51,10 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     var startingPointMarker:GMSMarker? = GMSMarker()
     var endPointMarker:GMSMarker? = GMSMarker()
     var contactNumber: String = ""
-    
+    let apiKey = "546b6480f1075f02431774714310214114e7ccf22ad87d3b581d"
+    var latlngArray = [CLLocationCoordinate2D]()
+    var polylineArray = [GMSPolyline]()
+    var markers = [GMSMarker]()
     override var preferredStatusBarStyle:UIStatusBarStyle {
         if #available(iOS 13.0, *) {
             return .darkContent
@@ -105,10 +108,17 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         self.setUserCurrentJob()
         self.setTrackingButton()
         self.sliderShareAction()
-        if self.jobModel?.jobLat != ""{
-        self.drawPathFromCurrentToDestination()
-        }else{
-            print("aaaa")
+        
+        if self.jobData?.jobPickupLat != "" {
+            switch self.jobData?.jobStatus{
+            case JOB_STATUS.started, JOB_STATUS.arrived:
+                self.drawPathFromCurrentToDestination()
+                break
+            default:
+                self.setMarkerForJob(self.getLatitudeLongitudeOf() ?? CLLocationCoordinate2D(), destinationCoordinate: self.getLatitudeLongitudeOfDest() ?? CLLocationCoordinate2D(), minOrigin: 0.5 + 20)
+                break
+            }
+            
         }
         
          /*--------------- Set Driver Detail ----------------*/
@@ -123,6 +133,8 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         self.licenceNumber.text = self.jobData?.fleetId
         self.contactNumber = "\(self.jobData?.fleetPhone ?? "")"
         /*-------------------------------------------------*/
+        
+        
     }
     
     func getImage(from string: String) -> UIImage? {
@@ -181,7 +193,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             self.startingPointMarker?.map = self.googleMapView
             self.setMarker(originCoordinate, destinationCoordinate: destinationCoordinate, minOrigin: minOrigin,durationDict:durationDict)
             // change the camera, set the zoom, whatever.  Just make sure to call the animate* method.
-            self.googleMapView.animate(toViewingAngle: 45)
+            self.googleMapView.animate(toViewingAngle: 0)
             if durationDict != nil {
                 let dict = "\(durationDict!["text"] as? String ?? "")"
                     self.etaDict = dict
@@ -191,6 +203,23 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             if let eta = self.getETA {
                 eta(self.etaDict)
             }
+//            if TookanTracker.shared.jobArrayCount > 0{
+//                for i in (0..<TookanTracker.shared.jobArrayCount){
+//                    let lat = CLLocationCoordinate2D.init(latitude: Double(TookanTracker.shared.jobArray[i].jobPickupLat )!, longitude: Double(TookanTracker.shared.jobArray[i].jobPickupLng)!)
+//                    self.latlngArray.append(lat)
+//                }
+//                if self.latlngArray.count > 0{
+//                    for i in stride(from: 0, to: self.latlngArray.count , by: 1) {
+//                        let marker = GMSMarker()
+//                        for j in stride(from: 0, to: self.latlngArray.count , by: 1){
+//                            marker.position = CLLocationCoordinate2D.init(latitude: Double(TookanTracker.shared.jobArray[i].jobPickupLat )!, longitude: Double(TookanTracker.shared.jobArray[i].jobPickupLng)!)
+//                            marker.icon = UIImage(named: "car", in: frameworkBundle, compatibleWith: nil)
+//                            marker.map = self.googleMapView
+//                        }
+//
+//                    }
+//                }
+//            }
             CATransaction.commit()
         }
     }
@@ -225,9 +254,30 @@ class HomeController: UIViewController, LocationTrackerDelegate {
          
          
          let bounds = GMSCoordinateBounds(coordinate: originCoordinate, coordinate: destinationCoordinate)
-         let update = GMSCameraUpdate.fit(bounds, with: UIEdgeInsets.init(top: 0, left: 20, bottom: minOrigin, right: 20))
+         let update = GMSCameraUpdate.fit(bounds, withPadding: CGFloat(40))
          googleMapView.moveCamera(update)
      }
+    
+    func setMarkerForJob(_ originCoordinate: CLLocationCoordinate2D, destinationCoordinate: CLLocationCoordinate2D, minOrigin:CGFloat){
+         googleMapView.padding = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
+         let destinationLocationMarker = GMSMarker(position: destinationCoordinate)
+         destinationLocationMarker.map = googleMapView
+        let startingLocationMarker = GMSMarker(position: originCoordinate)
+        startingLocationMarker.icon = UIImage(named: "car", in: frameworkBundle, compatibleWith: nil)
+        startingLocationMarker.map = googleMapView
+        destinationLocationMarker.isFlat = true
+        self.googleMapView.selectedMarker = destinationLocationMarker
+         let northEastCoordinate = CLLocationCoordinate2D(latitude: max(originCoordinate.latitude, destinationCoordinate.latitude), longitude: max(originCoordinate.longitude, destinationCoordinate.longitude))
+         let southWestCoordinate = CLLocationCoordinate2D(latitude: min(originCoordinate.latitude, destinationCoordinate.latitude), longitude: min(originCoordinate.longitude, destinationCoordinate.longitude))
+         
+         _ = GMSCameraPosition(target: CLLocationCoordinate2D(latitude: (northEastCoordinate.latitude + southWestCoordinate.latitude)/2, longitude: (northEastCoordinate.longitude + southWestCoordinate.longitude)/2), zoom: 12, bearing: 0, viewingAngle: 0)
+         
+         
+         let bounds = GMSCoordinateBounds(coordinate: originCoordinate, coordinate: destinationCoordinate)
+         let update = GMSCameraUpdate.fit(bounds, withPadding: CGFloat(40))
+         googleMapView.moveCamera(update)
+     }
+    
     func setTrackingButton() {
         self.stopTrackingButton.layer.cornerRadius = 5.0
         self.setTrackingTitle()
@@ -712,6 +762,8 @@ class HomeController: UIViewController, LocationTrackerDelegate {
                 self.licenceNumber.text = id.fleetId
                 self.driverName.text = id.fleetName
                 self.contactNumber = "\(id.fleetPhone)"
+                TookanTracker.shared.createSession(userID: id.userID, isUINeeded: false, navigationController: self.navigationController!)
+                TookanTracker.shared.startTarckingByJob(sharedSecertId: "tookan-sdk-345#!@", jobId: id.jobId, userId: id.userID)
             }
         }
 
@@ -775,13 +827,25 @@ class HomeController: UIViewController, LocationTrackerDelegate {
                 CATransaction.begin()
                 CATransaction.setValue(NSNumber(value: 0.8), forKey: kCATransactionAnimationDuration)
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5, execute: {
+                    switch self.jobData?.jobStatus{
+                    case JOB_STATUS.started, JOB_STATUS.arrived:
+                        NetworkingHelper.sharedInstance.getPath(coordinate: destinationCoordinate ?? CLLocationCoordinate2D(), destinationCoordinate: currentCoordinate , completionHander: { (points,durationDict) in
+                            if points.count > 0 {
+                                
+                                
+                                self.drawPathForMarker(points, originCoordinate: originCoordinate , destinationCoordinate:destinationCoordinate ?? CLLocationCoordinate2D(), minOrigin:0.5 + 20,durationDict: durationDict)
+                                
+                                
+                            }
+                        }, mapview: self.googleMapView)
+                        break
+                        
+                    default:
+                        self.drawPathForMarker(nil, originCoordinate: originCoordinate , destinationCoordinate:destinationCoordinate ?? CLLocationCoordinate2D(), minOrigin:0.5 + 20,durationDict: nil)
+                        break
+                    }
                     
-                    
-                    NetworkingHelper.sharedInstance.getPath(coordinate: destinationCoordinate ?? CLLocationCoordinate2D(), destinationCoordinate: currentCoordinate , completionHander: { (points,durationDict) in
-                        if points.count > 0 {
-                            self.drawPathForMarker(points, originCoordinate: originCoordinate , destinationCoordinate:destinationCoordinate ?? CLLocationCoordinate2D(), minOrigin:0.5 + 20,durationDict: durationDict)
-                        }
-                    }, mapview: self.googleMapView)
+
 
                 })
                 DispatchQueue.main.async {
@@ -799,7 +863,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
                     }
                     self.currentMarker = nil
                     let bounds = GMSCoordinateBounds(path: pathCoordinates)
-                    self.googleMapView!.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50.0))
+                    self.googleMapView!.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 40.0))
                     DispatchQueue.main.async {
 
                     }
@@ -809,7 +873,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         }
 
     
-    func drawPathForMarker(_ encodedPathString: String, originCoordinate:CLLocationCoordinate2D, destinationCoordinate:CLLocationCoordinate2D, minOrigin:CGFloat,durationDict:[String : AnyObject]?) -> Void{
+    func drawPathForMarker(_ encodedPathString: String?, originCoordinate:CLLocationCoordinate2D, destinationCoordinate:CLLocationCoordinate2D, minOrigin:CGFloat,durationDict:[String : AnyObject]?) -> Void{
         DispatchQueue.main.async {
             guard UIApplication.shared.applicationState == UIApplication.State.active else {
                 return
@@ -817,13 +881,19 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             self.googleMapView.clear()
             CATransaction.begin()
             CATransaction.setValue(NSNumber(value: 1), forKey: kCATransactionAnimationDuration)
-            let path = GMSPath(fromEncodedPath: encodedPathString)
+            let path = GMSPath(fromEncodedPath: encodedPathString!)
             let line = GMSPolyline(path: path)
             line.strokeWidth = 4.0
             line.strokeColor = UIColor(red: 70/255, green: 149/255, blue: 246/255, alpha: 1.0)
             line.isTappable = true
             line.map = self.googleMapView
             // change the camera, set the zoom, whatever.  Just make sure to call the animate* method.
+            let destinationLocationMarker = GMSMarker(position: destinationCoordinate)
+            destinationLocationMarker.map = self.googleMapView
+            if durationDict != nil {
+                destinationLocationMarker.title = durationDict!["text"] as? String ?? ""
+            }
+            destinationLocationMarker.isFlat = true
             if durationDict != nil {
                 let dict = "\(durationDict!["text"] as? String ?? "")"
                 self.etaDict = dict
@@ -833,7 +903,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             if let eta = self.getETA {
                 eta(self.etaDict)
             }
-            self.googleMapView.animate(toViewingAngle: 45)
+//            self.googleMapView.animate(toViewingAngle: 45)
             CATransaction.commit()
         }
     }

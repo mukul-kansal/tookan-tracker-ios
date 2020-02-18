@@ -115,6 +115,21 @@ struct SHARE_MESSAGE {
     static let REQUEST_MESSAGE = "Hey, I am using Tookan Tracker app for location sharing. Can you share yours with me ? Just click on link -  "
     static let SHARE_LOCATION_MESSAGE = "Hey, I am using Tookan Tracker app for location sharing. You can track me via this link - "
 }
+struct JOB_STATUS {
+    static let assigned = "0";
+    static let started = "1";
+    static let successful = "2";
+    static let failed = "3";
+    static let arrived = "4";
+    static let partial = "5";
+    static let unassigned = "6";
+    static let accepted = "7"; // Acknowledged
+    static let declined = "8";
+    static let canceled = "9";
+    static let ignored = "11";
+    static let okAcceptStatus = "12";
+    //static let complete = 99
+}
 
 struct ALERT_MESSAGE {
     static let SHARE_LOCATION = "Your friend has requested you to share your location. Would you like to start sharing?"

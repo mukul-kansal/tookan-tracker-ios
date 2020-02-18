@@ -96,7 +96,8 @@ class ViewController: UIViewController, TookanTrackerDelegate {
     @IBAction func signInAction(_ sender: Any) {
         TookanTracker.shared.delegate = self
         TookanTracker.shared.googleMapKey = "AIzaSyDHjZIxrZR2R9RAVCb3YXs_FOP5bbFeVgU"
-        TookanTracker.shared.createSession(userID: "27278", apiKey: apiKey, isUINeeded: false, navigationController: self.navigationController!)
+        TookanTracker.shared.apiKey = apiKey
+        TookanTracker.shared.createSession(userID: "27278",isUINeeded: false, navigationController: self.navigationController!)
         TookanTracker.shared.startTarckingByJob(sharedSecertId: "tookan-sdk-345#!@", jobId: "\(self.passwordTextField.text ?? "")", userId: "\(self.userIdTextField.text ?? "")")
 
         
@@ -106,7 +107,7 @@ class ViewController: UIViewController, TookanTrackerDelegate {
     @IBAction func signupAction(_ sender: Any) {
         TookanTracker.shared.delegate = self
         TookanTracker.shared.googleMapKey = "AIzaSyDHjZIxrZR2R9RAVCb3YXs_FOP5bbFeVgU"
-        TookanTracker.shared.createSession(userID:"68451", apiKey: apiKey, isUINeeded: false, navigationController:self.navigationController!)
+        TookanTracker.shared.createSession(userID:"68451",isUINeeded: false, navigationController:self.navigationController!)
         TookanTracker.shared.startTrackingByAgent(sharedSecertId: "tookan-sdk-345#!@", fleetId: "\(self.emailTextField.text ?? "")", userId: "\(self.userIdTextField.text ?? "")")
 
 

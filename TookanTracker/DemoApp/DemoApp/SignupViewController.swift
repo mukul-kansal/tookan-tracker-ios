@@ -149,7 +149,7 @@ class SignupViewController: UIViewController {
                         case STATUS_CODES.SHOW_DATA:
                             UserDefaults.standard.set(false, forKey: USER_DEFAULT.isSessionExpire)
                             UserDefaults.standard.set(self.signupVCModel.useremail, forKey: USER_DEFAULT.userId)
-                            TookanTracker.shared.createSession(userID:self.signupVCModel.useremail, apiKey: apiKey, isUINeeded: false, navigationController:self.navigationController!)
+                            TookanTracker.shared.createSession(userID:self.signupVCModel.useremail, isUINeeded: false, navigationController:self.navigationController!)
                             break
                         case STATUS_CODES.INVALID_ACCESS_TOKEN:
                             UIAlertView(title: "", message: response["message"] as! String, delegate: nil, cancelButtonTitle: "OK").show()

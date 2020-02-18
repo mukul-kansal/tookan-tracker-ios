@@ -29,7 +29,7 @@ class Jobs: NSObject{
     var fleetPhone = ""
     var fleetStatus = ""
     var fleetThumbImage = ""
-    
+    var userID = ""
     override init() {
         
     }
@@ -85,9 +85,9 @@ class Jobs: NSObject{
         }else if let value = json["job_type"] as? NSNumber{
             self.jobType = "\(value)"
         }
-        if let value = json["fleet_id"] as? String{
+        if let value = json["license"] as? String{
             self.fleetId = value
-        }else if let value = json["fleet_id"] as? NSNumber{
+        }else if let value = json["license"] as? NSNumber{
             self.fleetId = "\(value)"
         }
         if let value = json["fleet_image"] as? String{
@@ -129,6 +129,11 @@ class Jobs: NSObject{
              self.fleetThumbImage = value
          }else if let value = json["fleet_thumb_image"] as? NSNumber{
              self.fleetThumbImage = "\(value)"
+         }
+        if let value = json["user_id"] as? String{
+             self.userID = value
+         }else if let value = json["user_id"] as? NSNumber{
+             self.userID = "\(value)"
          }
 
         

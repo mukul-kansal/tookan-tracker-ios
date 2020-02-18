@@ -163,6 +163,7 @@ extension MqttClass: CocoaMQTTDelegate {
                 var updatingLocationArray = [Any]()
                 var latitudeString:Double?
                 var longitudeString:Double?
+            var bearingString:String?
                 if let lat = locationData["lat"] as? NSNumber {
                     latitudeString = Double(lat)
                 } else if let lat = locationData["lat"] as? String {
@@ -174,12 +175,17 @@ extension MqttClass: CocoaMQTTDelegate {
                 } else if let long = locationData["lng"] as? String {
                     longitudeString = Double(long)
                 }
-                
+            if let bearing = locationData["bearing"] as? NSNumber{
+                bearingString = "\(bearing)"
+            }else if let bearing = locationData["bearing"] as? String{
+                bearingString = bearing
+            }
                 if latitudeString != nil && longitudeString != nil  {
                     let coordinate = CLLocationCoordinate2D(latitude: latitudeString!, longitude: longitudeString!)
                     locationDictionary = [
                         "Latitude":coordinate.latitude,
-                        "Longitude":coordinate.longitude
+                        "Longitude":coordinate.longitude,
+                        "bearing":bearingString ?? ""
                     ]
                     if let array = UserDefaults.standard.value(forKey: USER_DEFAULT.updatingLocationPathArray) as? [Any] {
                         updatingLocationArray = array

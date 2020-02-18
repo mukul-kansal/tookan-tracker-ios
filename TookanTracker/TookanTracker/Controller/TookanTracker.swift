@@ -27,19 +27,22 @@ public class TookanTracker: NSObject, CLLocationManagerDelegate {
     var jobModel = JobModel()
     var jobData = JobData()
     var jobs = Jobs()
+    var jobArray = [Jobs]()
     public var getETA = ""
+    public var apiKey = ""
     public var googleMapKey = ""
+    public var jobArrayCount = 0
     var locationManager:CLLocationManager!
     var uiNeeded = false
-    public func createSession(userID:String, apiKey: String,isUINeeded:Bool, navigationController:UINavigationController) {
+    public func createSession(userID:String,isUINeeded:Bool, navigationController:UINavigationController) {
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         self.uiNeeded = isUINeeded
         globalUserId = userID
-        globalAPIKey = apiKey
+//        globalAPIKey = apiKey
         self.merchantNavigationController = navigationController
-        UserDefaults.standard.set(apiKey, forKey: USER_DEFAULT.apiKey)
+//        UserDefaults.standard.set(apiKey, forKey: USER_DEFAULT.apiKey)
         UserDefaults.standard.set(userID, forKey: USER_DEFAULT.userId)
         self.loc.trackingDelegate = self
     }
@@ -54,8 +57,15 @@ public class TookanTracker: NSObject, CLLocationManagerDelegate {
                         if let jobdata = data["jobs_data"] as? [String:Any]{
                             self.jobData = JobData(json: jobdata)
                             if let job = jobdata["jobs"] as? [Any] {
+                                print("count - \(job.count)")
+                                self.jobArrayCount = job.count
                                 if let dict = job.first as? [String: Any] {
                                     self.jobs = Jobs(json: dict)
+                                }
+                                for i in (0..<job.count){
+                                    let dict = job[i]
+                                    let model = Jobs(json: dict as! [String : Any])
+                                    self.jobArray.append(model)
                                 }
                             }
                         }
