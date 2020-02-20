@@ -48,7 +48,7 @@ class ViewController: UIViewController, TookanTrackerDelegate {
         self.setSignInButton()
         self.setSignUpButton()
         self.navigationController?.isNavigationBarHidden = true
-        self.emailTextField.isHidden = true
+        
         self.signup.isHidden = true
         
     }
@@ -62,7 +62,7 @@ class ViewController: UIViewController, TookanTrackerDelegate {
     }
     
     func setTextField() {
-        self.emailTextField.placeholder = "Enter Agent Id"
+        self.emailTextField.placeholder = "Please Update Path update time in second"
         self.passwordTextField.placeholder = "Enter Job Id"
         self.userIdTextField.placeholder = "Enter User Id"
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
@@ -98,6 +98,7 @@ class ViewController: UIViewController, TookanTrackerDelegate {
         TookanTracker.shared.googleMapKey = "AIzaSyDHjZIxrZR2R9RAVCb3YXs_FOP5bbFeVgU"
         TookanTracker.shared.apiKey = apiKey
         TookanTracker.shared.createSession(userID: "27278",isUINeeded: false, navigationController: self.navigationController!)
+        TookanTracker.shared.delayTimer = Int("\(self.emailTextField.text ?? "")") ?? 5
         TookanTracker.shared.startTarckingByJob(sharedSecertId: "tookan-sdk-345#!@", jobId: "\(self.passwordTextField.text ?? "")", userId: "\(self.userIdTextField.text ?? "")")
 
         
