@@ -71,6 +71,7 @@
 		26F5BDC21FC82CC8000D2715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26F5BDC11FC82CC2000D2715 /* Assets.xcassets */; };
 		26F5BDC41FC82CDC000D2715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F5BDBF1FC82CC2000D2715 /* Main.storyboard */; };
 		26F5BDC91FC82F14000D2715 /* TookanTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5BDC81FC82F14000D2715 /* TookanTracker.swift */; };
+		5E373F1723FFDAD9004FE7B0 /* ReadMe in Resources */ = {isa = PBXBuildFile; fileRef = 5E373F1623FFDAD9004FE7B0 /* ReadMe */; };
 		5E41ECD023D178C5007EA990 /* JobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E41ECCF23D178C5007EA990 /* JobModel.swift */; };
 		5E41ECD423D17997007EA990 /* JobData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E41ECD323D17997007EA990 /* JobData.swift */; };
 		5E7F3CF523D090470062FCB9 /* AgentDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F3CF423D090470062FCB9 /* AgentDetailModel.swift */; };
@@ -138,6 +139,7 @@
 		26F5BDC81FC82F14000D2715 /* TookanTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TookanTracker.swift; sourceTree = "<group>"; };
 		26F5BDED1FC834BC000D2715 /* CocoaAsyncSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaAsyncSocket.h; sourceTree = "<group>"; };
 		26F5BDF21FC836B4000D2715 /* SwiftyTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyTimer.h; sourceTree = "<group>"; };
+		5E373F1623FFDAD9004FE7B0 /* ReadMe */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe; sourceTree = "<group>"; };
 		5E41ECCF23D178C5007EA990 /* JobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobModel.swift; sourceTree = "<group>"; };
 		5E41ECD323D17997007EA990 /* JobData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobData.swift; sourceTree = "<group>"; };
 		5E7F3CF423D090470062FCB9 /* AgentDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentDetailModel.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		26F5BD411FC817BB000D2715 = {
 			isa = PBXGroup;
 			children = (
+				5E373F1623FFDAD9004FE7B0 /* ReadMe */,
 				26F5BD4D1FC817BC000D2715 /* TookanTracker */,
 				26F5BD4C1FC817BC000D2715 /* Products */,
 				26F5BD9A1FC82AE8000D2715 /* Frameworks */,
@@ -425,6 +428,7 @@
 				2632137A1FC87D7600E0C2AA /* style.json in Resources */,
 				260C755D1FCFF58E003E957E /* GoogleMaps.bundle in Resources */,
 				263213261FC8649000E0C2AA /* LICENSE in Resources */,
+				5E373F1723FFDAD9004FE7B0 /* ReadMe in Resources */,
 				260C755B1FCFF57B003E957E /* GooglePlaces.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
