@@ -134,7 +134,7 @@ extension MqttClass: CocoaMQTTDelegate {
     public func mqtt(_ mqtt: CocoaMQTT, didReceiveMessage message: CocoaMQTTMessage, id: UInt16 ) {
         
         var locationDictionary1 = [[String:Any]]()
-        
+        if message.string != "NaN"{
         locationDictionary1 = message.string!.parseJSONString as! [[String : Any]]
         let locationDictionary = locationDictionary1[0] 
         print(locationDictionary)
@@ -195,6 +195,7 @@ extension MqttClass: CocoaMQTTDelegate {
                 }
             }
             NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: OBSERVER.updatePath), object: nil)
+        }
         }
     }
     

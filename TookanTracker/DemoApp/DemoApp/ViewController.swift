@@ -76,7 +76,7 @@ class ViewController: UIViewController, TookanTrackerDelegate {
     }
     
     func setSignInButton() {
-        self.signInButton.setTitle("Start Tarcking", for: .normal)
+        self.signInButton.setTitle("Start Tracking", for: .normal)
         self.signInButton.backgroundColor = UIColor(red: 70/255, green: 149/255, blue: 246/255, alpha: 1.0)
         self.signInButton.setTitleColor(UIColor.white, for: .normal)
     }
@@ -98,7 +98,7 @@ class ViewController: UIViewController, TookanTrackerDelegate {
         TookanTracker.shared.googleMapKey = "AIzaSyDHjZIxrZR2R9RAVCb3YXs_FOP5bbFeVgU"
         TookanTracker.shared.apiKey = apiKey
         TookanTracker.shared.createSession(userID: "27278",isUINeeded: false, navigationController: self.navigationController!)
-        TookanTracker.shared.delayTimer = Int("\(self.emailTextField.text ?? "")") ?? 5
+        TookanTracker.shared.delayTimer = Double("\(self.emailTextField.text ?? "")") ?? 60.0
         TookanTracker.shared.startTarckingByJob(sharedSecertId: "tookan-sdk-345#!@", jobId: "\(self.passwordTextField.text ?? "")", userId: "\(self.userIdTextField.text ?? "")")
 
         

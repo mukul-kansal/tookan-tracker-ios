@@ -30,11 +30,12 @@ public class TookanTracker: NSObject, CLLocationManagerDelegate {
     var jobArray = [Jobs]()
     public var getETA = ""
     public var apiKey = ""
-    public var delayTimer = 0
+    public var delayTimer = 60.0
     public var googleMapKey = ""
     public var jobArrayCount = 0
     var locationManager:CLLocationManager!
     var uiNeeded = false
+    var jobID = ""
     public func createSession(userID:String,isUINeeded:Bool, navigationController:UINavigationController) {
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -51,6 +52,7 @@ public class TookanTracker: NSObject, CLLocationManagerDelegate {
     public func startTarckingByJob(sharedSecertId: String, jobId: String, userId: String){
         NetworkingHelper.sharedInstance.getLocationForJobTracking(sharedSecert: sharedSecertId, jobId: jobId, userId: userId) { (isSucceeded, response) in
             DispatchQueue.main.async {
+                self.jobID = jobId
                 print(response)
                 if isSucceeded == true{
                     if let data = response["data"] as? [String:Any]{

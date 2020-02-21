@@ -109,17 +109,35 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         self.setUserCurrentJob()
         self.setTrackingButton()
         self.sliderShareAction()
-        
-        if self.jobData?.jobPickupLat != "" {
-            switch self.jobData?.jobStatus{
-            case JOB_STATUS.started, JOB_STATUS.arrived:
-                self.drawPathFromCurrentToDestination()
-                break
-            default:
-                self.setMarkerForJob(self.getLatitudeLongitudeOf() ?? CLLocationCoordinate2D(), destinationCoordinate: self.getLatitudeLongitudeOfDest() ?? CLLocationCoordinate2D(), minOrigin: 0.5 + 20)
-                break
+        if TookanTracker.shared.jobArrayCount > 1{
+            for i in (0..<TookanTracker.shared.jobArray.count){
+                if TookanTracker.shared.jobArray[i].jobId == TookanTracker.shared.jobID{
+                    if self.jobData?.jobPickupLat != "" {
+                        print("yea \(i)")
+                        switch TookanTracker.shared.jobArray[i].jobStatus{
+                        case JOB_STATUS.started, JOB_STATUS.arrived:
+                            self.drawPathFromCurrentToDestination()
+                            break
+                        default:
+                            self.setMarkerForJob(self.getLatitudeLongitudeOf() ?? CLLocationCoordinate2D(), destinationCoordinate: self.getLatitudeLongitudeOfDest() ?? CLLocationCoordinate2D(), minOrigin: 0.5 + 20)
+                            break
+                        }
+                    }
+                    
+                }
             }
-            
+        }
+        else{
+            if self.jobData?.jobPickupLat != "" {
+                switch self.jobData?.jobStatus{
+                case JOB_STATUS.started, JOB_STATUS.arrived:
+                    self.drawPathFromCurrentToDestination()
+                    break
+                default:
+                    self.setMarkerForJob(self.getLatitudeLongitudeOf() ?? CLLocationCoordinate2D(), destinationCoordinate: self.getLatitudeLongitudeOfDest() ?? CLLocationCoordinate2D(), minOrigin: 0.5 + 20)
+                    break
+                }
+            }
         }
         
          /*--------------- Set Driver Detail ----------------*/
@@ -169,8 +187,24 @@ class HomeController: UIViewController, LocationTrackerDelegate {
      }
     func  getLatitudeLongitudeOfDest() -> CLLocationCoordinate2D?{
          var coordinate: CLLocationCoordinate2D!
-        let latitudeString = jobData?.jobPickupLat ?? ""
-        let longitudeString = jobData?.jobPickupLng ?? ""
+        var latitudeString:String!
+        var longitudeString:String!
+        if TookanTracker.shared.jobArrayCount > 1{
+            for i in (0..<TookanTracker.shared.jobArray.count){
+                if TookanTracker.shared.jobArray[i].jobId == TookanTracker.shared.jobID{
+                    if self.jobData?.jobPickupLat != "" {
+                         latitudeString = TookanTracker.shared.jobArray[i].jobPickupLat
+                         longitudeString = TookanTracker.shared.jobArray[i].jobPickupLng
+
+                    }
+                    
+                }
+            }
+        }else{
+             latitudeString = jobData?.jobPickupLat ?? ""
+            longitudeString = jobData?.jobPickupLng ?? ""
+        }
+     
         coordinate = CLLocationCoordinate2D(latitude: Double(latitudeString) as! CLLocationDegrees, longitude: Double(longitudeString) as! CLLocationDegrees)
          return coordinate
      }
@@ -202,22 +236,11 @@ class HomeController: UIViewController, LocationTrackerDelegate {
 //           line.strokeColor = UIColor(red: 70/255, green: 149/255, blue: 246/255, alpha: 1.0)
 //           line.isTappable = true
 //           line.map = self.googleMapView
-            self.startingPointMarker?.icon = UIImage(named: "car", in: frameworkBundle, compatibleWith: nil)
-            self.startingPointMarker?.position = originCoordinate
-            self.endPointMarker?.icon = UIImage(named: "marker", in: frameworkBundle, compatibleWith: nil)
-            self.startingPointMarker?.map = self.googleMapView
-            self.endPointMarker?.position = destinationCoordinate
-            
-            if durationDict != nil {
-                self.endPointMarker?.title = durationDict!["text"] as? String ?? ""
-            }
-            self.endPointMarker?.map = self.googleMapView
-            self.endPointMarker?.isFlat = true
-            self.googleMapView.selectedMarker = self.endPointMarker
+           
             var bounds = GMSCoordinateBounds()
             if setBoundOnlyOnOrigin == true{
+                self.googleMapView.camera = GMSCameraPosition.camera(withTarget: originCoordinate, zoom: 15)
                  self.googleMapView.animate(toLocation: originCoordinate)
-                 self.googleMapView.camera = GMSCameraPosition.camera(withTarget: originCoordinate, zoom: 15)
             }else{
                   bounds = GMSCoordinateBounds(coordinate: originCoordinate, coordinate: destinationCoordinate)
                 let update = GMSCameraUpdate.fit(bounds, withPadding: CGFloat(40))
@@ -228,6 +251,35 @@ class HomeController: UIViewController, LocationTrackerDelegate {
 //            self.setMarker(originCoordinate, destinationCoordinate: destinationCoordinate, minOrigin: minOrigin,durationDict:durationDict)
             // change the camera, set the zoom, whatever.  Just make sure to call the animate* method.
             self.googleMapView.animate(toViewingAngle: 0)
+       let imageString = ""
+            if imageString != ""{
+                if let image = self.getImage(from: imageString ){
+                    self.startingPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                }
+            }else{
+                self.startingPointMarker?.icon = UIImage(named: "car", in: frameworkBundle, compatibleWith: nil)
+            }
+            if imageString != ""{
+                if let image = self.getImage(from: imageString ){
+                    self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                }
+            }else{
+                 self.endPointMarker?.icon = UIImage(named: "marker", in: frameworkBundle, compatibleWith: nil)
+            }
+
+            
+
+                       self.startingPointMarker?.position = originCoordinate
+                      
+                       self.startingPointMarker?.map = self.googleMapView
+                       self.endPointMarker?.position = destinationCoordinate
+                       
+                       if durationDict != nil {
+                           self.endPointMarker?.title = durationDict!["text"] as? String ?? ""
+                       }
+                       self.endPointMarker?.map = self.googleMapView
+                       self.endPointMarker?.isFlat = true
+                       self.googleMapView.selectedMarker = self.endPointMarker
             if durationDict != nil {
                 let dict = "\(durationDict!["text"] as? String ?? "")"
                     self.etaDict = dict
@@ -244,6 +296,16 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             CATransaction.commit()
         }
     }
+    func image(_ originalImage:UIImage, scaledToSize:CGSize) -> UIImage {
+        if originalImage.size.equalTo(scaledToSize) {
+            return originalImage
+        }
+        UIGraphicsBeginImageContextWithOptions(scaledToSize, false, 0.0)
+        originalImage.draw(in: CGRect(x: 0, y: 0, width: scaledToSize.width, height: scaledToSize.height))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
     func setJobMarkers()
     {
 
@@ -255,23 +317,48 @@ class HomeController: UIViewController, LocationTrackerDelegate {
                  let cateAryrray = TookanTracker.shared.jobArray[element]
                 let mylatitude = Double(cateAryrray.jobPickupLat)
                 let mylongitude = Double(cateAryrray.jobPickupLng)
-                let marker = GMSMarker()
-                marker.position =  CLLocationCoordinate2D.init(latitude: mylatitude!, longitude: mylongitude!)
-                switch cateAryrray.jobType {
-                case "0":
-                    marker.icon = UIImage(named: "arrived_pickup", in: frameworkBundle, compatibleWith: nil)
-                    break
-                case "1":
-                     marker.icon = UIImage(named: "arrived_delivery", in: frameworkBundle, compatibleWith: nil)
-                    break
-                case "2":
-                     marker.icon = UIImage(named: "arrived_appointment", in: frameworkBundle, compatibleWith: nil)
-                    break
-                default:
-                    break
+                if TookanTracker.shared.jobArray[element].jobId != TookanTracker.shared.jobID{
+                    let marker = GMSMarker()
+                    marker.position =  CLLocationCoordinate2D.init(latitude: mylatitude!, longitude: mylongitude!)
+                    switch cateAryrray.jobType {
+                    case "0":
+                         let imageString = "https://tookan.s3.amazonaws.com/fleet_thumb_profile/thumb-LvgR1581675711907-KCd31581675711258178198rng2w.jpg"
+                         if imageString != nil{
+                            if let image = self.getImage(from: imageString ){
+                                marker.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                            }
+                         }else{
+                            marker.icon = UIImage(named: "arrived_pickup", in: frameworkBundle, compatibleWith: nil)
+                         }
+
+                        break
+                    case "1":
+                        let imageString = "https://tookan.s3.amazonaws.com/company_images/UmTo1581675480321-178191bwgp7l.jpeg"
+                        if imageString != nil{
+                           if let image = self.getImage(from: imageString ){
+                               marker.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                           }
+                        }else{
+                           marker.icon = UIImage(named: "arrived_delivery", in: frameworkBundle, compatibleWith: nil)
+                        }
+                        break
+                    case "2":
+                         let imageString = "https://tookan.s3.amazonaws.com/company_images/UmTo1581675480321-178191bwgp7l.jpeg"
+                         if imageString != nil{
+                            if let image = self.getImage(from: imageString ){
+                                marker.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                            }
+                         }else{
+                            marker.icon = UIImage(named: "arrived_appointment", in: frameworkBundle, compatibleWith: nil)
+                         }
+                        break
+                    default:
+                        break
+                    }
+                    
+                    marker.map = self.googleMapView
                 }
-                
-                marker.map = self.googleMapView
+
 
                 
           }
@@ -283,7 +370,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
           let originCoordinate = self.getLatitudeLongitudeOf()
           let destinationCoordinate = self.getLatitudeLongitudeOfDest()
 
-         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5, execute: {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5, execute: {
         NetworkingHelper.sharedInstance.getPath(coordinate: originCoordinate ?? CLLocationCoordinate2D(), destinationCoordinate: destinationCoordinate ?? CLLocationCoordinate2D(), completionHander: { (points,durationDict) in
             if points.count > 0 {
                 self.drawPath(points, originCoordinate: originCoordinate ?? CLLocationCoordinate2D(), destinationCoordinate:destinationCoordinate ?? CLLocationCoordinate2D(), minOrigin:0.5 + 20, durationDict: durationDict, setBoundOnlyOnOrigin: false)
@@ -297,13 +384,32 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     
     func setMarker(_ originCoordinate: CLLocationCoordinate2D, destinationCoordinate: CLLocationCoordinate2D, minOrigin:CGFloat,durationDict: [String:AnyObject]?){
          googleMapView.padding = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
-         let destinationLocationMarker = GMSMarker(position: destinationCoordinate)
-         destinationLocationMarker.map = googleMapView
+        let imageString = ""//"https://tookan.s3.amazonaws.com/fleet_thumb_profile/thumb-LvgR1581675711907-KCd31581675711258178198rng2w.jpg"
+             if imageString != ""{
+                 if let image = self.getImage(from: imageString ){
+                     self.startingPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                 }
+             }else{
+                 self.startingPointMarker?.icon = UIImage(named: "car", in: frameworkBundle, compatibleWith: nil)
+             }
+             if imageString != ""{
+                 if let image = self.getImage(from: imageString ){
+                     self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                 }
+             }else{
+                  self.endPointMarker?.icon = UIImage(named: "marker", in: frameworkBundle, compatibleWith: nil)
+             }
+
+        self.startingPointMarker?.position = originCoordinate
+        
+        self.startingPointMarker?.map = self.googleMapView
+        self.endPointMarker?.position = destinationCoordinate
+        self.endPointMarker?.map = self.googleMapView
         if durationDict != nil {
-            destinationLocationMarker.title = durationDict!["text"] as? String ?? ""
+            endPointMarker?.title = durationDict!["text"] as? String ?? ""
         }
-        destinationLocationMarker.isFlat = true
-        self.googleMapView.selectedMarker = destinationLocationMarker
+        endPointMarker?.isFlat = true
+        self.googleMapView.selectedMarker = endPointMarker
          let northEastCoordinate = CLLocationCoordinate2D(latitude: max(originCoordinate.latitude, destinationCoordinate.latitude), longitude: max(originCoordinate.longitude, destinationCoordinate.longitude))
          let southWestCoordinate = CLLocationCoordinate2D(latitude: min(originCoordinate.latitude, destinationCoordinate.latitude), longitude: min(originCoordinate.longitude, destinationCoordinate.longitude))
          
@@ -317,13 +423,29 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     
     func setMarkerForJob(_ originCoordinate: CLLocationCoordinate2D, destinationCoordinate: CLLocationCoordinate2D, minOrigin:CGFloat){
          googleMapView.padding = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
-         let destinationLocationMarker = GMSMarker(position: destinationCoordinate)
-         destinationLocationMarker.map = googleMapView
-        let startingLocationMarker = GMSMarker(position: originCoordinate)
-        startingLocationMarker.icon = UIImage(named: "car", in: frameworkBundle, compatibleWith: nil)
-        startingLocationMarker.map = googleMapView
-        destinationLocationMarker.isFlat = true
-        self.googleMapView.selectedMarker = destinationLocationMarker
+          let imageString = ""
+               if imageString != ""{
+                   if let image = self.getImage(from: imageString ){
+                       self.startingPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                   }
+               }else{
+                   self.startingPointMarker?.icon = UIImage(named: "car", in: frameworkBundle, compatibleWith: nil)
+               }
+               if imageString != ""{
+                   if let image = self.getImage(from: imageString ){
+                       self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                   }
+               }else{
+                    self.endPointMarker?.icon = UIImage(named: "marker", in: frameworkBundle, compatibleWith: nil)
+               }
+
+          self.startingPointMarker?.position = originCoordinate
+          
+          self.startingPointMarker?.map = self.googleMapView
+          self.endPointMarker?.position = destinationCoordinate
+          self.endPointMarker?.map = self.googleMapView
+        endPointMarker?.isFlat = true
+        self.googleMapView.selectedMarker = endPointMarker
          let northEastCoordinate = CLLocationCoordinate2D(latitude: max(originCoordinate.latitude, destinationCoordinate.latitude), longitude: max(originCoordinate.longitude, destinationCoordinate.longitude))
          let southWestCoordinate = CLLocationCoordinate2D(latitude: min(originCoordinate.latitude, destinationCoordinate.latitude), longitude: min(originCoordinate.longitude, destinationCoordinate.longitude))
          
@@ -333,6 +455,9 @@ class HomeController: UIViewController, LocationTrackerDelegate {
          let bounds = GMSCoordinateBounds(coordinate: originCoordinate, coordinate: destinationCoordinate)
          let update = GMSCameraUpdate.fit(bounds, withPadding: CGFloat(40))
          googleMapView.moveCamera(update)
+        if TookanTracker.shared.jobArrayCount > 1{
+            self.setJobMarkers()
+        }
      }
     
     func setTrackingButton() {
@@ -819,6 +944,9 @@ class HomeController: UIViewController, LocationTrackerDelegate {
                 self.licenceNumber.text = id.fleetId
                 self.driverName.text = id.fleetName
                 self.contactNumber = "\(id.fleetPhone)"
+                self.googleMapView.clear()
+                self.stopSession()
+                self.jobData?.jobStatus = id.jobStatus
                 TookanTracker.shared.createSession(userID: id.userID, isUINeeded: false, navigationController: self.navigationController!)
                 TookanTracker.shared.startTarckingByJob(sharedSecertId: "tookan-sdk-345#!@", jobId: id.jobId, userId: id.userID)
             }
@@ -866,7 +994,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             coordinate = CLLocationCoordinate2D()
         }
         let destinationCoordinate = self.getLatitudeLongitudeOfDest()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+Double(TookanTracker.shared.delayTimer), execute: {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5, execute: {
             NetworkingHelper.sharedInstance.getPath(coordinate: coordinate ?? CLLocationCoordinate2D(), destinationCoordinate: destinationCoordinate ?? CLLocationCoordinate2D(), completionHander: { (points,durationDict) in
             if points.count > 0 {
                 self.drawPath(points, originCoordinate: coordinate!, destinationCoordinate: destinationCoordinate ?? CLLocationCoordinate2D(), minOrigin: 0.5 + 20, durationDict: nil, setBoundOnlyOnOrigin: true)
