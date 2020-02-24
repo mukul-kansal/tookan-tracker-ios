@@ -149,7 +149,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         self.profileImage.layer.cornerRadius = 20
         self.callButton.layer.cornerRadius = 22
         self.driverName.text = self.jobData?.fleetName
-        self.licenceNumber.text = self.jobData?.fleetId
+        self.licenceNumber.text = self.jobData?.licenseNumber
         self.contactNumber = "\(self.jobData?.fleetPhone ?? "")"
         /*-------------------------------------------------*/
         
@@ -198,7 +198,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
 
                     }
                     
-                }
+            }
             }
         }else{
              latitudeString = jobData?.jobPickupLat ?? ""
@@ -259,14 +259,83 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             }else{
                 self.startingPointMarker?.icon = UIImage(named: "car", in: frameworkBundle, compatibleWith: nil)
             }
-            if imageString != ""{
-                if let image = self.getImage(from: imageString ){
-                    self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
-                }
-            }else{
-                 self.endPointMarker?.icon = UIImage(named: "marker", in: frameworkBundle, compatibleWith: nil)
-            }
+            if TookanTracker.shared.jobArrayCount > 1{
+                 let first = 0
+                            let last = TookanTracker.shared.jobArray.count
+                             let interval = 1
+                             let sequence = stride(from: first, to: last, by: interval)
+                             for element in sequence {
+                                 let cateAryrray = TookanTracker.shared.jobArray[element]
+                     switch cateAryrray.jobType {
+                     case "0":
+                          if imageString != ""{
+                              if let image = self.getImage(from: imageString ){
+                                  self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                              }
+                          }else{
+                               self.endPointMarker?.icon = UIImage(named: "arrived_pickup", in: frameworkBundle, compatibleWith: nil)
+                          }
 
+                         break
+                     case "1":
+                         if imageString != ""{
+                             if let image = self.getImage(from: imageString ){
+                                 self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                             }
+                         }else{
+                              self.endPointMarker?.icon = UIImage(named: "arrived_delivery", in: frameworkBundle, compatibleWith: nil)
+                         }
+                         break
+                     case "2":
+                          if imageString != ""{
+                              if let image = self.getImage(from: imageString ){
+                                  self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                              }
+                          }else{
+                               self.endPointMarker?.icon = UIImage(named: "arrived_appointment", in: frameworkBundle, compatibleWith: nil)
+                          }
+                         break
+                     default:
+                         break
+                     }
+                 }
+                 
+             }else{
+                switch self.jobData?.jobStatus {
+                case "0":
+                    if imageString != ""{
+                        if let image = self.getImage(from: imageString ){
+                            self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                        }
+                    }else{
+                        self.endPointMarker?.icon = UIImage(named: "arrived_pickup", in: frameworkBundle, compatibleWith: nil)
+                    }
+
+                    break
+                case "1":
+                    if imageString != ""{
+                        if let image = self.getImage(from: imageString ){
+                            self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                        }
+                    }else{
+                        self.endPointMarker?.icon = UIImage(named: "arrived_pickup", in: frameworkBundle, compatibleWith: nil)
+                    }
+                    
+                    break
+                case "2":
+                    if imageString != ""{
+                        if let image = self.getImage(from: imageString ){
+                            self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                        }
+                    }else{
+                        self.endPointMarker?.icon = UIImage(named: "arrived_pickup", in: frameworkBundle, compatibleWith: nil)
+                    }
+                    break
+                default:
+                    break
+                }
+             
+            }
             
 
                        self.startingPointMarker?.position = originCoordinate
@@ -392,14 +461,83 @@ class HomeController: UIViewController, LocationTrackerDelegate {
              }else{
                  self.startingPointMarker?.icon = UIImage(named: "car", in: frameworkBundle, compatibleWith: nil)
              }
-             if imageString != ""{
-                 if let image = self.getImage(from: imageString ){
-                     self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
-                 }
-             }else{
-                  self.endPointMarker?.icon = UIImage(named: "marker", in: frameworkBundle, compatibleWith: nil)
-             }
+             if TookanTracker.shared.jobArrayCount > 1{
+                 let first = 0
+                            let last = TookanTracker.shared.jobArray.count
+                             let interval = 1
+                             let sequence = stride(from: first, to: last, by: interval)
+                             for element in sequence {
+                                 let cateAryrray = TookanTracker.shared.jobArray[element]
+                     switch cateAryrray.jobType {
+                     case "0":
+                          if imageString != ""{
+                              if let image = self.getImage(from: imageString ){
+                                  self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                              }
+                          }else{
+                               self.endPointMarker?.icon = UIImage(named: "arrived_pickup", in: frameworkBundle, compatibleWith: nil)
+                          }
 
+                         break
+                     case "1":
+                         if imageString != ""{
+                             if let image = self.getImage(from: imageString ){
+                                 self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                             }
+                         }else{
+                              self.endPointMarker?.icon = UIImage(named: "arrived_delivery", in: frameworkBundle, compatibleWith: nil)
+                         }
+                         break
+                     case "2":
+                          if imageString != ""{
+                              if let image = self.getImage(from: imageString ){
+                                  self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                              }
+                          }else{
+                               self.endPointMarker?.icon = UIImage(named: "arrived_appointment", in: frameworkBundle, compatibleWith: nil)
+                          }
+                         break
+                     default:
+                         break
+                     }
+                 }
+                 
+             }else{
+
+             switch self.jobData?.jobStatus {
+             case "0":
+                 if imageString != ""{
+                     if let image = self.getImage(from: imageString ){
+                         self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                     }
+                 }else{
+                     self.endPointMarker?.icon = UIImage(named: "arrived_pickup", in: frameworkBundle, compatibleWith: nil)
+                 }
+
+                 break
+             case "1":
+                 if imageString != ""{
+                     if let image = self.getImage(from: imageString ){
+                         self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                     }
+                 }else{
+                     self.endPointMarker?.icon = UIImage(named: "arrived_pickup", in: frameworkBundle, compatibleWith: nil)
+                 }
+                 
+                 break
+             case "2":
+                 if imageString != ""{
+                     if let image = self.getImage(from: imageString ){
+                         self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                     }
+                 }else{
+                     self.endPointMarker?.icon = UIImage(named: "arrived_pickup", in: frameworkBundle, compatibleWith: nil)
+                 }
+                 break
+             default:
+                 break
+             }
+        }
         self.startingPointMarker?.position = originCoordinate
         
         self.startingPointMarker?.map = self.googleMapView
@@ -431,12 +569,55 @@ class HomeController: UIViewController, LocationTrackerDelegate {
                }else{
                    self.startingPointMarker?.icon = UIImage(named: "car", in: frameworkBundle, compatibleWith: nil)
                }
-               if imageString != ""{
-                   if let image = self.getImage(from: imageString ){
-                       self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                    if TookanTracker.shared.jobArrayCount > 1{
+                   let first = 0
+                              let last = TookanTracker.shared.jobArray.count
+                               let interval = 1
+                               let sequence = stride(from: first, to: last, by: interval)
+                               for element in sequence {
+                                   let cateAryrray = TookanTracker.shared.jobArray[element]
+                       switch cateAryrray.jobType {
+                       case "0":
+                            if imageString != ""{
+                                if let image = self.getImage(from: imageString ){
+                                    self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                                }
+                            }else{
+                                 self.endPointMarker?.icon = UIImage(named: "arrived_pickup", in: frameworkBundle, compatibleWith: nil)
+                            }
+
+                           break
+                       case "1":
+                           if imageString != ""{
+                               if let image = self.getImage(from: imageString ){
+                                   self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                               }
+                           }else{
+                                self.endPointMarker?.icon = UIImage(named: "arrived_delivery", in: frameworkBundle, compatibleWith: nil)
+                           }
+                           break
+                       case "2":
+                            if imageString != ""{
+                                if let image = self.getImage(from: imageString ){
+                                    self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                                }
+                            }else{
+                                 self.endPointMarker?.icon = UIImage(named: "arrived_appointment", in: frameworkBundle, compatibleWith: nil)
+                            }
+                           break
+                       default:
+                           break
+                       }
                    }
+                   
                }else{
-                    self.endPointMarker?.icon = UIImage(named: "marker", in: frameworkBundle, compatibleWith: nil)
+                   if imageString != ""{
+                       if let image = self.getImage(from: imageString ){
+                           self.endPointMarker?.icon = self.image(image, scaledToSize: CGSize(width: 22, height: 22))
+                       }
+                   }else{
+                        self.endPointMarker?.icon = UIImage(named: "marker", in: frameworkBundle, compatibleWith: nil)
+                   }
                }
 
           self.startingPointMarker?.position = originCoordinate
@@ -941,14 +1122,20 @@ class HomeController: UIViewController, LocationTrackerDelegate {
                 if let image = getImage(from: imageString ){
                     self.profileImage.image =  image
                 }
-                self.licenceNumber.text = id.fleetId
+                self.licenceNumber.text = id.licenseNumber
                 self.driverName.text = id.fleetName
                 self.contactNumber = "\(id.fleetPhone)"
                 self.googleMapView.clear()
-                self.stopSession()
                 self.jobData?.jobStatus = id.jobStatus
-                TookanTracker.shared.createSession(userID: id.userID, isUINeeded: false, navigationController: self.navigationController!)
-                TookanTracker.shared.startTarckingByJob(sharedSecertId: "tookan-sdk-345#!@", jobId: id.jobId, userId: id.userID)
+                if self.jobData?.fleetID != id.fleetID{
+                    self.trackingDelegate.logout?()
+                    TookanTracker.shared.createSession(userID: id.userID, isUINeeded: false, navigationController: self.navigationController!)
+                    TookanTracker.shared.startTarckingByJob(sharedSecertId: "tookan-sdk-345#!@", jobId: id.jobId, userId: id.userID)
+                }else{
+                     TookanTracker.shared.createSession(userID: id.userID, isUINeeded: false, navigationController: self.navigationController!)
+                    TookanTracker.shared.startTarckingByJob(sharedSecertId: "tookan-sdk-345#!@", jobId: id.jobId, userId: id.userID)
+                }
+
             }
         }
 
@@ -994,7 +1181,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             coordinate = CLLocationCoordinate2D()
         }
         let destinationCoordinate = self.getLatitudeLongitudeOfDest()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5, execute: {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+TookanTracker.shared.delayTimer, execute: {
             NetworkingHelper.sharedInstance.getPath(coordinate: coordinate ?? CLLocationCoordinate2D(), destinationCoordinate: destinationCoordinate ?? CLLocationCoordinate2D(), completionHander: { (points,durationDict) in
             if points.count > 0 {
                 self.drawPath(points, originCoordinate: coordinate!, destinationCoordinate: destinationCoordinate ?? CLLocationCoordinate2D(), minOrigin: 0.5 + 20, durationDict: nil, setBoundOnlyOnOrigin: true)

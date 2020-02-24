@@ -21,7 +21,8 @@ class Jobs: NSObject{
     var jobPickupLng = ""
     var jobStatus = ""
     var jobType = ""
-    var fleetId = ""
+    var licenseNumber = ""
+    var fleetID = ""
     var fleetImage = ""
     var fleetLatitude = ""
     var fleetlongitude = ""
@@ -86,9 +87,14 @@ class Jobs: NSObject{
             self.jobType = "\(value)"
         }
         if let value = json["license"] as? String{
-            self.fleetId = value
+            self.licenseNumber = value
         }else if let value = json["license"] as? NSNumber{
-            self.fleetId = "\(value)"
+            self.licenseNumber = "\(value)"
+        }
+        if let value = json["fleet_id"] as? String{
+            self.fleetID = value
+        }else if let value = json["fleet_id"] as? NSNumber{
+            self.fleetID = "\(value)"
         }
         if let value = json["fleet_image"] as? String{
             self.fleetImage = value

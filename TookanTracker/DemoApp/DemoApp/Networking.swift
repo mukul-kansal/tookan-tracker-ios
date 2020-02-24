@@ -32,7 +32,7 @@ struct HTTP_METHOD {
 
 class Networking: NSObject {
     static let sharedInstance = Networking()
-    var baseURL = "https://api.tookanapp.com/"
+    var baseURL = "https://node1-api.tookanapp.com:444/"
     var VERSION = "123"
     
     func sendRequestToServer(_ url: String, params: [String:AnyObject], httpMethod: String, isZipped:Bool, receivedResponse:@escaping (_ succeeded:Bool, _ response:[String:Any]) -> ()){
