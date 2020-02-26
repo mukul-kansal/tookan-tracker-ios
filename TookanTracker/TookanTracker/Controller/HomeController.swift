@@ -257,14 +257,10 @@ class HomeController: UIViewController, LocationTrackerDelegate {
             // change the camera, set the zoom, whatever.  Just make sure to call the animate* method.
             self.googleMapView.animate(toViewingAngle: 0)
             let imageString = ""
-            if TookanTracker.shared.jobArrayCount > 1{
-                 let first = 0
-                            let last = TookanTracker.shared.jobArray.count
-                             let interval = 1
-                             let sequence = stride(from: first, to: last, by: interval)
-                             for element in sequence {
-                                 let cateAryrray = TookanTracker.shared.jobArray[element]
-                     switch cateAryrray.jobType {
+         if TookanTracker.shared.jobArrayCount > 1{
+                     for i in (0..<TookanTracker.shared.jobArray.count){
+//                         if TookanTracker.shared.jobArray[i].jobId == TookanTracker.shared.jobID{
+                     switch TookanTracker.shared.jobArray[i].jobType {
                      case "0":
                           if imageString != ""{
                               if let image = self.getImage(from: imageString ){
@@ -457,14 +453,10 @@ class HomeController: UIViewController, LocationTrackerDelegate {
              }else{
                  self.startingPointMarker?.icon = UIImage(named: "car", in: frameworkBundle, compatibleWith: nil)
              }
-             if TookanTracker.shared.jobArrayCount > 1{
-                 let first = 0
-                            let last = TookanTracker.shared.jobArray.count
-                             let interval = 1
-                             let sequence = stride(from: first, to: last, by: interval)
-                             for element in sequence {
-                                 let cateAryrray = TookanTracker.shared.jobArray[element]
-                     switch cateAryrray.jobType {
+                      if TookanTracker.shared.jobArrayCount > 1{
+                                  for i in (0..<TookanTracker.shared.jobArray.count){
+             //                         if TookanTracker.shared.jobArray[i].jobId == TookanTracker.shared.jobID{
+                                  switch TookanTracker.shared.jobArray[i].jobType {
                      case "0":
                           if imageString != ""{
                               if let image = self.getImage(from: imageString ){
@@ -565,14 +557,10 @@ class HomeController: UIViewController, LocationTrackerDelegate {
                }else{
                    self.startingPointMarker?.icon = UIImage(named: "car", in: frameworkBundle, compatibleWith: nil)
                }
-            if TookanTracker.shared.jobArrayCount > 1{
-                   let first = 0
-                              let last = TookanTracker.shared.jobArray.count
-                               let interval = 1
-                               let sequence = stride(from: first, to: last, by: interval)
-                               for element in sequence {
-                                   let cateAryrray = TookanTracker.shared.jobArray[element]
-                       switch cateAryrray.jobType {
+                    if TookanTracker.shared.jobArrayCount > 1{
+                                 for i in (0..<TookanTracker.shared.jobArray.count){
+            //                         if TookanTracker.shared.jobArray[i].jobId == TookanTracker.shared.jobID{
+                                 switch TookanTracker.shared.jobArray[i].jobType {
                        case "0":
                             if imageString != ""{
                                 if let image = self.getImage(from: imageString ){
@@ -1233,15 +1221,10 @@ class HomeController: UIViewController, LocationTrackerDelegate {
                 }else{
                     self.startingPointMarker?.icon = UIImage(named: "car", in: frameworkBundle, compatibleWith: nil)
                 }
-                if TookanTracker.shared.jobArrayCount > 1{
-                     let first = 0
-                                let last = TookanTracker.shared.jobArray.count
-                                 let interval = 1
-                                 let sequence = stride(from: first, to: last, by: interval)
-                                 for element in sequence {
-                                     let cateAryrray = TookanTracker.shared.jobArray[element]
-                                    if TookanTracker.shared.jobArray[element].jobId != TookanTracker.shared.jobID{
-                         switch cateAryrray.jobType {
+                         if TookanTracker.shared.jobArrayCount > 1{
+                                     for i in (0..<TookanTracker.shared.jobArray.count){
+                //                         if TookanTracker.shared.jobArray[i].jobId == TookanTracker.shared.jobID{
+                                     switch TookanTracker.shared.jobArray[i].jobType {
                          case "0":
                               if imageString != ""{
                                   if let image = self.getImage(from: imageString ){
@@ -1274,9 +1257,7 @@ class HomeController: UIViewController, LocationTrackerDelegate {
                              break
                          }
                                     }
-                     }
-                     
-                 }else{
+                     }else{
                     switch self.jobData?.jobType {
                     case "0":
                         if imageString != ""{
