@@ -50,7 +50,6 @@
 		26F5BD8C1FC82471000D2715 /* ExtensionClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5BD831FC82462000D2715 /* ExtensionClass.swift */; };
 		26F5BD8D1FC82474000D2715 /* IJReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5BD841FC82462000D2715 /* IJReachability.swift */; };
 		26F5BD8E1FC82477000D2715 /* LocationTrackerFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5BD851FC82462000D2715 /* LocationTrackerFile.swift */; };
-		26F5BD901FC8247C000D2715 /* NetworkingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5BD871FC82462000D2715 /* NetworkingHelper.swift */; };
 		26F5BD911FC8247E000D2715 /* ServerCallAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5BD881FC82462000D2715 /* ServerCallAPI.swift */; };
 		26F5BD9C1FC82AE8000D2715 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F5BD9B1FC82AE8000D2715 /* Accelerate.framework */; };
 		26F5BDA21FC82AFC000D2715 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F5BD9D1FC82AFB000D2715 /* CoreData.framework */; };
@@ -114,7 +113,6 @@
 		26F5BD841FC82462000D2715 /* IJReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IJReachability.swift; sourceTree = "<group>"; };
 		26F5BD851FC82462000D2715 /* LocationTrackerFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTrackerFile.swift; sourceTree = "<group>"; };
 		26F5BD861FC82462000D2715 /* MqttClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MqttClass.swift; sourceTree = "<group>"; };
-		26F5BD871FC82462000D2715 /* NetworkingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHelper.swift; sourceTree = "<group>"; };
 		26F5BD881FC82462000D2715 /* ServerCallAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCallAPI.swift; sourceTree = "<group>"; };
 		26F5BD9B1FC82AE8000D2715 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		26F5BD9D1FC82AFB000D2715 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -278,7 +276,6 @@
 				26F5BD841FC82462000D2715 /* IJReachability.swift */,
 				26F5BD851FC82462000D2715 /* LocationTrackerFile.swift */,
 				26F5BD861FC82462000D2715 /* MqttClass.swift */,
-				26F5BD871FC82462000D2715 /* NetworkingHelper.swift */,
 				26F5BD881FC82462000D2715 /* ServerCallAPI.swift */,
 				263213791FC87D7400E0C2AA /* style.json */,
 			);
@@ -493,7 +490,6 @@
 				26F5BDB91FC82BEF000D2715 /* TrackerModel.swift in Sources */,
 				26F5BD8E1FC82477000D2715 /* LocationTrackerFile.swift in Sources */,
 				5EF84B8323E837A400935BFB /* ysocket.swift in Sources */,
-				26F5BD901FC8247C000D2715 /* NetworkingHelper.swift in Sources */,
 				5E41ECD423D17997007EA990 /* JobData.swift in Sources */,
 				5EF84B7423E81ED200935BFB /* LocationShareModel.swift in Sources */,
 				2632132B1FC864AB00E0C2AA /* MqttClass.swift in Sources */,

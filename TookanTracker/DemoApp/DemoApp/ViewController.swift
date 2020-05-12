@@ -10,7 +10,7 @@ import UIKit
 import TookanTracker
 import CoreLocation
 
-let apiKey = "546b6480f1075f02431774714310214114e7ccf22ad87d3b581d"
+
 
 struct USER_DEFAULT {
     static let isSessionExpire = "isSessionExpire"
@@ -94,22 +94,14 @@ class ViewController: UIViewController, TookanTrackerDelegate {
     }
     
     @IBAction func signInAction(_ sender: Any) {
-        TookanTracker.shared.delegate = self
-        TookanTracker.shared.googleMapKey = "AIzaSyDHjZIxrZR2R9RAVCb3YXs_FOP5bbFeVgU"
-        TookanTracker.shared.apiKey = apiKey
-        TookanTracker.shared.createSession(userID: "27278",isUINeeded: false, navigationController: self.navigationController!)
-        TookanTracker.shared.delayTimer = Double("\(self.emailTextField.text ?? "")") ?? 60.0
-        TookanTracker.shared.startTarckingByJob(sharedSecertId: "tookan-sdk-345#!@", jobId: "\(self.passwordTextField.text ?? "")", userId: "\(self.userIdTextField.text ?? "")")
+        
 
         
     }
     
     
     @IBAction func signupAction(_ sender: Any) {
-        TookanTracker.shared.delegate = self
-        TookanTracker.shared.googleMapKey = "AIzaSyDHjZIxrZR2R9RAVCb3YXs_FOP5bbFeVgU"
-        TookanTracker.shared.createSession(userID:"68451",isUINeeded: false, navigationController:self.navigationController!)
-        TookanTracker.shared.startTrackingByAgent(sharedSecertId: "tookan-sdk-345#!@", fleetId: "\(self.emailTextField.text ?? "")", userId: "\(self.userIdTextField.text ?? "")")
+    
 
 
         

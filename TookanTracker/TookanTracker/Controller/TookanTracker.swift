@@ -50,72 +50,10 @@ public class TookanTracker: NSObject, CLLocationManagerDelegate {
     }
     
     public func startTarckingByJob(sharedSecertId: String, jobId: String, userId: String){
-        NetworkingHelper.sharedInstance.getLocationForJobTracking(sharedSecert: sharedSecertId, jobId: jobId, userId: userId) { (isSucceeded, response) in
-            DispatchQueue.main.async {
-                self.jobID = jobId
-                print(response)
-                if isSucceeded == true{
-                    if let data = response["data"] as? [String:Any]{
-                        self.jobModel = JobModel(json: data)
-                        if let jobdata = data["jobs_data"] as? [String:Any]{
-                            self.jobData = JobData(json: jobdata)
-                            if let job = jobdata["jobs"] as? [Any] {
-                                print("count - \(job.count)")
-                                self.jobArrayCount = job.count
-                                if let dict = job.first as? [String: Any] {
-                                    self.jobs = Jobs(json: dict)
-                                }
-                                for i in (0..<job.count){
-                                    let dict = job[i]
-                                    let model = Jobs(json: dict as! [String : Any])
-                                    self.jobArray.append(model)
-                                }
-                            }
-                        }
-                    }
-                    self.registerForGoogle()
-                    if self.uiNeeded {
-                        self.loc.registerAllRequiredInitilazers()
-                        self.initHome()
-                    } else {
-                        self.loc.topic = "\(globalAPIKey)\(globalUserId)"
-                        UserDefaults.standard.set(true, forKey: USER_DEFAULT.isLocationTrackingRunning)
-                        UserDefaults.standard.set(true, forKey: USER_DEFAULT.subscribeLocation)
-                        self.loc.registerAllRequiredInitilazers()
-                        self.initHome()
-                    }
-                } else {
-                    self.model.resetAllData()
-                }
-            }
-        }
+        
     }
     
     public func startTrackingByAgent(sharedSecertId: String, fleetId: String, userId: String){
-        NetworkingHelper.sharedInstance.getLocationRelatedToAgent(sharedSecert: sharedSecertId, fleetId: fleetId, userId: userId) { (isSucceeded, response) in
-            DispatchQueue.main.async {
-                if isSucceeded == true{
-                      var sessionID = ""
-                     if let data = response["data"] as? [String:Any]{
-                        self.agentDetailModel = AgentDetailModel(json: data)
-                        sessionID = "\(data["session_id"] ?? "")"
-                        self.delegate.getSessionId?(sessionId: sessionID)
-                        UserDefaults.standard.set(sessionID, forKey: USER_DEFAULT.sessionId)
-                    }
-                    self.registerForGoogle()
-                    if self.uiNeeded {
-                        self.loc.registerAllRequiredInitilazers()
-                        self.initHome()
-                    } else {
-                        self.loc.topic = "\(globalAPIKey)\(globalUserId)"
-                        UserDefaults.standard.set(true, forKey: USER_DEFAULT.isLocationTrackingRunning)
-                        UserDefaults.standard.set(true, forKey: USER_DEFAULT.subscribeLocation)
-                        self.loc.registerAllRequiredInitilazers()
-                        self.initHome()
-                    }
-                }
-            }
-        }
     }
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         
@@ -177,36 +115,7 @@ public class TookanTracker: NSObject, CLLocationManagerDelegate {
     }
     
     func startSharingLocation() {
-        let location = self.loc.getCurrentLocation()
-        NetworkingHelper.sharedInstance.shareLocationSession(api_key: globalAPIKey, unique_user_id: globalUserId, lat: "\(location?.coordinate.latitude ?? 0)", lng: "\(location?.coordinate.longitude ?? 0)", sessionId: "") { (isSucceeded, response) in
-            
-            DispatchQueue.main.async {
-                print(response)
-                if isSucceeded == true {
-                    var sessionID = ""
-                    if let data = response["data"] as? [String:Any]{
-                        sessionID = "\(data["session_id"] ?? "")"
-                        self.delegate.getSessionId?(sessionId: sessionID)
-                        UserDefaults.standard.set(sessionID, forKey: USER_DEFAULT.sessionId)
-                    }
-                    
-                    
-//                    self.loc.sendFirstLocation()
-                    self.registerForGoogle()
-                    if self.uiNeeded {
-                        self.loc.registerAllRequiredInitilazers()
-                        self.initHome()
-                    } else {
-                        self.loc.topic = "\(globalAPIKey)\(globalUserId)"
-                        UserDefaults.standard.set(true, forKey: USER_DEFAULT.isLocationTrackingRunning)
-                        UserDefaults.standard.set(true, forKey: USER_DEFAULT.subscribeLocation)
-                        self.loc.registerAllRequiredInitilazers()
-                    }
-                } else {
-                    self.model.resetAllData()
-                }
-            }
-        }
+        _ = self.loc.getCurrentLocation()
     }
     
     func registerForGoogle(){
@@ -217,15 +126,6 @@ public class TookanTracker: NSObject, CLLocationManagerDelegate {
     
     public func stopTracking(sessionID: String) {
         self.loc.sendLastLocation()
-        NetworkingHelper.sharedInstance.stopTracking(sessionID, userID: globalUserId, apiKey: globalAPIKey) { (isSucceeded, response) in
-            if isSucceeded == true {
-                self.loc.stopLocationService()
-                self.model.resetAllData()
-                UserDefaults.standard.removeObject(forKey: USER_DEFAULT.userId)
-                UserDefaults.standard.removeObject(forKey: USER_DEFAULT.apiKey)
-                UserDefaults.standard.removeObject(forKey: USER_DEFAULT.isLocationTrackingRunning)
-            }
-        }
     }
 }
 

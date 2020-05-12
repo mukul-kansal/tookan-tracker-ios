@@ -431,15 +431,6 @@ class HomeController: UIViewController, LocationTrackerDelegate {
           let originCoordinate = self.getLatitudeLongitudeOf()
           let destinationCoordinate = self.getLatitudeLongitudeOfDest()
 
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5, execute: {
-        NetworkingHelper.sharedInstance.getPath(coordinate: originCoordinate ?? CLLocationCoordinate2D(), destinationCoordinate: destinationCoordinate ?? CLLocationCoordinate2D(), completionHander: { (points,durationDict) in
-            if points.count > 0 {
-                self.drawPath(points, originCoordinate: originCoordinate ?? CLLocationCoordinate2D(), destinationCoordinate:destinationCoordinate ?? CLLocationCoordinate2D(), minOrigin:0.5 + 20, durationDict: durationDict, setBoundOnlyOnOrigin: false)
-            } else {
-                self.setMarker(originCoordinate ?? CLLocationCoordinate2D(), destinationCoordinate: destinationCoordinate ?? CLLocationCoordinate2D(), minOrigin:0.5 + 20,durationDict:durationDict)
-            }
-        }, mapview: self.googleMapView)
-        })
       }
     
     
@@ -745,54 +736,10 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     }
     
     func startTracking() {
-        
-        let api_key = UserDefaults.standard.value(forKey: USER_DEFAULT.apiKey) as? String ?? ""
-        let unique_user_id = UserDefaults.standard.value(forKey: USER_DEFAULT.userId) as? String ?? ""
-        let location = self.loc.getCurrentLocation()
-        NetworkingHelper.sharedInstance.shareLocationSession(api_key: api_key, unique_user_id: unique_user_id, lat: "\(location?.coordinate.latitude ?? 0)", lng: "\(location?.coordinate.longitude ?? 0)", sessionId: "") { (isSucceeded, response) in
-            
-            DispatchQueue.main.async {
-                print(response)
-                self.stopTrackingButton.isHidden = false
-                if isSucceeded == true {
-                    var sessionID = ""
-                    if let data = response["data"] as? [String:Any]{
-                        sessionID = "\(data["session_id"] ?? "")"
-                        UserDefaults.standard.set(sessionID, forKey: USER_DEFAULT.sessionId)
-                    }
-                    self.loc.registerAllRequiredInitilazers()
-                    self.setUserCurrentJob()
-                    self.setTrackingTitle()
-                    self.sliderShareAction()
-                    
-                }
-            }
-        }
+    
     }
     
     func stopTracking(pop: Bool) {
-        if let sessionId = UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) as? String {
-            NetworkingHelper.sharedInstance.stopTracking(sessionId, userID: globalUserId, apiKey: globalAPIKey) { (isSucceeded, response) in
-                DispatchQueue.main.async {
-                    self.stopTrackingButton.isHidden = false
-                    if isSucceeded == true {
-                        self.googleMapView.clear()
-                        self.userStatus = USER_JOB_STATUS.free
-                        self.loc.stopLocationService()
-                        self.model.resetAllData()
-                        self.setTrackingTitle()
-                        if pop == true {
-                            self.dismissVC()
-                        }
-                    }
-                }
-                
-            }
-        }else {
-            if pop == true {
-                self.dismissVC()
-            }
-        }
         
     }
     
@@ -888,34 +835,11 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     }
     
     func validateRequestId() {
-        NetworkingHelper.sharedInstance.validateUserRequestId(NetworkingHelper.sharedInstance.requestId) { (succeeded, response) in
-            if(succeeded == true) {
-                if let data = response["data"] as? [String:Any] {
-                    if let id = data["session_id"] as? String {
-                        NetworkingHelper.sharedInstance.sessionId = id
-                    }
-                    
-                    if let sessionUrl = data["session_url"] as? String {
-                        NetworkingHelper.sharedInstance.sessionURL = sessionUrl
-                    }
-                    
-                    if let role = data["role"] as? Int {
-                        NetworkingHelper.sharedInstance.requestRole = role
-                    }
-                    self.setFlowAfterValidationOfRequest()
-                }
-            }
-        }
     }
     
     func setFlowAfterValidationOfRequest() {
         switch userStatus {
         case USER_JOB_STATUS.free:
-            if NetworkingHelper.sharedInstance.requestRole == 0 {
-                self.showAlertForSharingLocation()
-            } else if NetworkingHelper.sharedInstance.requestRole == 1 {
-                self.showAlertForTrackingOwnRequestedLocation()
-            }
             break
         case USER_JOB_STATUS.sharingLocation:
             self.showAlertForSharingLocation()
@@ -939,7 +863,6 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     func showAlertForTrackingOwnRequestedLocation() {
         let alert = UIAlertController(title: "", message: ALERT_MESSAGE.OWN_REQUEST_LINK, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) -> Void in
-            self.startTracking(sessionId: NetworkingHelper.sharedInstance.sessionId)
         }))
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
@@ -948,10 +871,8 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     func shareLocationAfterConfirmation() {
         switch userStatus {
         case USER_JOB_STATUS.free:
-            self.startSessionHit(sessionId: NetworkingHelper.sharedInstance.sessionId, location: loc.getCurrentLocation())
             break
         case USER_JOB_STATUS.sharingLocation:
-            self.startSessionHit(sessionId: NetworkingHelper.sharedInstance.sessionId, location: loc.getCurrentLocation())
             break
         case USER_JOB_STATUS.trackingLocation:
             break
@@ -966,7 +887,6 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     @objc func startTrackingFromURL() {
         switch userStatus {
         case USER_JOB_STATUS.free:
-            self.startTracking(sessionId: NetworkingHelper.sharedInstance.sessionId)
             break
         case USER_JOB_STATUS.sharingLocation:
             Auxillary.showAlert(ALERT_MESSAGE.ALREADY_SHARING_LOCATION)
@@ -993,28 +913,6 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     
     //MARK: START TRACKING
     func startTracking(sessionId:String) {
-        NetworkingHelper.sharedInstance.getLocationForStartTracking(sessionId) { (succeeded, response) in
-            print(response)
-            DispatchQueue.main.async {
-                if succeeded == true {
-                    if let locationArray = response["location"] as? [String:Any] {
-                        self.userStatus = USER_JOB_STATUS.trackingLocation
-                        UserDefaults.standard.set(sessionId, forKey: USER_DEFAULT.sessionId)
-                        let coordinate = self.model.updatePathLocations(locationArray: locationArray)
-                        self.animationForCameraLocation(coordinate: coordinate)
-                        print(UserDefaults.standard.value(forKey: USER_DEFAULT.sessionId) as! String)
-                        self.loc.topic = "\(globalAPIKey)\(globalUserId)"
-                        self.loc.subsribeMQTTForTracking()
-                        UserDefaults.standard.set(true, forKey: USER_DEFAULT.subscribeLocation)
-
-                    }
-                } else {
-
-                    self.model.resetAllData()
-
-                }
-            }
-        }
     }
     
 
@@ -1193,14 +1091,6 @@ class HomeController: UIViewController, LocationTrackerDelegate {
         }
         let destinationCoordinate = self.getLatitudeLongitudeOfDest()
         self.movingMarker(originCoordinate: coordinate!, destinationCoordinate: destinationCoordinate ?? CLLocationCoordinate2D())
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+TookanTracker.shared.delayTimer, execute: {
-            NetworkingHelper.sharedInstance.getPath(coordinate: coordinate ?? CLLocationCoordinate2D(), destinationCoordinate: destinationCoordinate ?? CLLocationCoordinate2D(), completionHander: { (points,durationDict) in
-            if points.count > 0 {
-                self.drawPath(points, originCoordinate: coordinate!, destinationCoordinate: destinationCoordinate ?? CLLocationCoordinate2D(), minOrigin: 0.5 + 20, durationDict: nil, setBoundOnlyOnOrigin: true)
-                }
-                
-                  }, mapview: self.googleMapView)
-        })
     }
     func movingMarker(originCoordinate:CLLocationCoordinate2D, destinationCoordinate:CLLocationCoordinate2D){
             DispatchQueue.main.async {
@@ -1337,20 +1227,6 @@ class HomeController: UIViewController, LocationTrackerDelegate {
     //MARK: Bottom Button Delegate Methods
     func sliderRequestAction() {
         self.showLoadingStatus()
-        NetworkingHelper.sharedInstance.requestForTracking("") { (succeeded, response) in
-            print(response)
-            if succeeded == true {
-                if let data = response["data"] as? [String:Any] {
-                    if let requestURL = data["requestURL"] {
-                        self.showActivityViewController(link: requestURL as! String)
-                    }
-                }
-            } else {
-
-                self.model.resetAllData()
-
-            }
-        }
     }
     
     func sliderShareAction() {
